@@ -1,0 +1,51 @@
+[
+    {
+        "key": "frameworks-and-libraries",
+        "title": "Frameworks and Libraries",
+        "subtitle": "Guidelines to using them efficiently",
+        "created": "2020-07-05",
+        "updated": "2020-07-05",
+        "tags": ["java", "kotlin", "spring-boot", "frameworks", "programming", "advanced", "rabbit-mq", "flink", "kafka"],
+        "markdown": "blog/Frameworks.md",
+        "popularity": 1,
+        "related": [],
+        "type": "article"
+    },
+    {
+        "key": "listening-to-music",
+        "title": "Listening to Music",
+        "subtitle": "The right way",
+        "created": "2020-07-12",
+        "updated": "2020-08-14",
+        "tags": ["dance", "music", "sing"],
+        "markdown": "blog/ListeningToMusic.md",
+        "popularity": 1,
+        "related": [],
+        "type": "article"
+    },
+    {
+        "key": "organization-and-structure",
+        "title": "Organization and Structure of Applications",
+        "subtitle": "Group together items that are likely to change together",
+        "created": "2020-08-01",
+        "updated": "2020-08-01",
+        "tags": ["programming", "java", "linux", "windows"],
+        "markdown": "blog/OrganizationAndStructure.md",
+        "popularity": 1,
+        "related": [],
+        "type": "article"
+    },
+    {
+        "key": "java-programming-language",
+        "title": "The Java Programming Language",
+        "subtitle": "The quick guide to start using Java",
+        "created": "2020-08-16",
+        "updated": "2020-08-16",
+        "tags": ["programming", "java", "languages"],
+        "markdown": "blog/JavaProgrammingLanguage.md",
+        "popularity": 1,
+        "related": [],
+        "type": "article"
+    }
+
+]
