@@ -9,6 +9,20 @@ sudo apt install inotify-tools
 
 
 
+Libraries
+
+Web framework
+https://github.com/matt-42/lithium
+
+
+C++ code goes through a 4-step process 
+pre-processor
+compiler
+Linker
+
+
+
+
 
 {
     // See https://go.microsoft.com/fwlink/?LinkId=733558
@@ -100,8 +114,6 @@ Overloading - C++ uses the types of the parameters to determine which version of
 Note: NULL is actually an int
 
 You can give default values for parameters of functions in the .H file.
-void setValues(int a, int b=5) { m_a = a; m_b = b; }
-parameters without default values must precede all the parameters with defaults
 
 //________________________________________________________________________________ 
 // CLASS 
@@ -131,16 +143,6 @@ class B : public A {
 This says that B has a public superclass A; 
 
 
-Instance variables can not be assigned a value when declared in the header file; they are initialized in the constructor instead.)
-
-Foo myFooInstance = new Foo(0, 0); // NOT VALID
-The new operator returns a pointer to whatever follows it. 
-
-Foo* myFooInstance = new Foo(0, 0);
-myFooInstance->bar(); // dereference the pointer and call the method
-Foo myFooInstance(0, 0);
-Foo myFooInstance; // same as Foo myFooInstance();
-
 References are essentially the same as pointers, except that they are dereferenced like instances, can never be NULL, and can only be assigned to once, at creation.
 References are used most commonly when dealing with parameters
 int foo = 10;
@@ -148,10 +150,7 @@ int& bar = foo;
 
 
  
-Foo* fooPointer = new Foo(0, 0); // create a pointer to Foo and give it a
-                             // value
-Foo myFooInstance = *fooPointer; // dereference the pointer and assign it
-                             // to myFooInstance; copy is made (!)
+
 
 A copy constructor is a constructor that is invoked when one instance of a class is initialized with another instance of the same type.
 The syntax for a copy constructor is:
@@ -163,8 +162,7 @@ class Foo {
 local storage: valid only within a certain scope. Local storage is also known as automatic memory or storage on the stack.
 global storage: valid throughout the execution of the program. Global storage is also called the free store, dynamic memory, or storage on the heap.
 
-In C++, we can request a block of memory in global storage for certain data types by using new, and we return the memory by using delete.
-only objects created using new should be deleted with delete!
+!
 
 
 

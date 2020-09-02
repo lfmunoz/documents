@@ -16,9 +16,6 @@
 
 using namespace std;
 
-// ________________________________________________________________________________
-// VECTOR
-// ________________________________________________________________________________
 
 // ________________________________________________________________________________
 // MAP
@@ -77,6 +74,15 @@ std::map<std::string, int>::iterator serachByValue(std::map<std::string, int> & 
     {
         if(it->second == val)
         return it;
+        it++;
+    }
+}
+
+
+void mapIterate(std::map<char, int> &ourMap) {
+    std::map<char, int>::iterator it = ourMap.begin();
+    while(it != mapOfWords.end()) {
+        std::cout<< it->first <<" :: "<< it->second << std::endl;
         it++;
     }
 }

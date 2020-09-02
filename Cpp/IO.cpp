@@ -8,21 +8,12 @@ using namespace std;
 
 
 
-Reference
-https://abitofcs.blogspot.com/search/label/UVa
-http://www.cplusplus.com/reference/vector/vector/size/
+// https://abitofcs.blogspot.com/search/label/UVa
+/  http://www.cplusplus.com/reference/vector/vector/size/
 
-## Common input patterns
+// Common input patterns
 
-```
-
-//  include the standard template library (STL)
-#include <bits/stdc++.h>
-
-using namespace std;
-
-
-
+/*
 
 int n, k, t; 
 int cnt = 0; 
@@ -66,78 +57,54 @@ while (T--)
 
 
 
-```
-
-## Common output patterns
-
-```
-
-cout << ans1 << " " << ans2 << "\n";
+**/
 
 
-cout << fixed << setprecision(2) << num1 << " " << num2;
+// Reference : https://marcoarena.wordpress.com/2016/03/13/cpp-competitive-programming-io/
+
+void read_vector_of_numbers() {
+  int length; 
+  cin >> length;
+  vector<int> sequence; 
+  // Requests that the vector capacity be at least enough to contain n elements.
+  sequence.reserve(length);
+  // single-pass input iterator that reads successive objects of type T from the std::basic_istream object 
+  // for which it was constructed, by calling the appropriate operator>>.
+  copy_n(istream_iterator<int>(cin), length, back_inserter(sequence));
 
 
-```
+  // std::endl is actually slower because it forces a flush
 
 
-Reference
+    // used to ignore or clear one or more characters from the input buffer.
+    // (streamsize n = 1, int delim = EOF);
+    cin.ignore(); // eat new lin
 
-```
-#include <vector>
-#include <set>
-#include <algorithm>
-#include <iostream>
-
-using namespace std;
-
-
-int main() {
-
-  // VECTOR
-  vector<int> A = {1,3,4,5};
-  // O(NlogN)
-  sort(A.begin(), A.end()); 
-
-  // O(logN)
-  bool present = binary_search(A.begin(), A.end(), 3);
-
-  A.push_back(100); 
-  A.push_back(100); 
-
-  // find first occurrence of 100
-  vector<int>::iterator it = lower_bound(A.begin(), A.end(), 100);
-
-  for(int &x : A) // reference 
-  {
-    x++;
-  }
-
-  for(int x : A) {
-    count << x << " ";
-  }
-  cout << "\n";
+    // delim = ('\n') for the first form, when found in the input sequence, 
+    // it is extracted from the input sequence, but discarded and not written to s.
+    istream& getline (char* s, streamsize n ); 
+    istream& getline (char* s, streamsize n, char delim );
 
 
-  // SET
+// getline is an unformatted function.
 
+//int N; string line; 
+// cin >> N; getline(cin, line);
 
-  // kept in ascending order
-  // insert LogN 
-  set<int> S;
-  S.insert(1);
-  S.insert(2);
-  s.insert(-1);
+// The problem here is that we want to ignore the separator between the int and the line. E.g.:
 
-  auto it = S.find(-1);
-  if( it == S.end()) // not present
+// 10'\n'
+// a line representing some data
 
+// This problem is easy to solve by passing std::ws (a manipulator which discards leading whitespaces from an input stream) :
+
+   // cin >> N >> std::ws;
+
+   //ranges can also be used
+
+// vector<int> boundedIn = view::bounded(istream_iterator<int>(cin), length);
 
 }
-
-
-```
-
 
 // ________________________________________________________________________________
 // INPUT
@@ -182,3 +149,11 @@ void number_then_lines() {
 // ________________________________________________________________________________
 // OUTPUT
 // ________________________________________________________________________________
+
+
+void common_output_patterns() {
+
+  cout << ans1 << " " << ans2 << "\n";
+
+  cout << fixed << setprecision(2) << num1 << " " << num2;
+}
