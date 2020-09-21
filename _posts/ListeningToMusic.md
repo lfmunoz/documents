@@ -1,4 +1,7 @@
-
+---
+title: Listening to Music
+layout: default
+---
 
 
 For years I've been listening to music wrong. You may think that there is no way to listen to music wrong, but there is if you are active listening or _dancing_. You want to piece together the structure of what the producer created and understand her intentions.  All music has structure and if you are listening correctly you can reverse engineer the production of the song and predict the sounds that will naturally follow.

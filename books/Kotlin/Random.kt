@@ -1,5 +1,4 @@
 
-fun randomId(): Int = (1..99999).random()
 
 
 fun getRandomString(length: Int) : String {
@@ -7,4 +6,11 @@ fun getRandomString(length: Int) : String {
     return (1..length)
         .map { allowedChars.random() }
         .joinToString("")
+}
+
+fun randomId(): Int = (1..99999).random()
+
+
+fun getRandomPortNumber() : Int {
+    return (41413..61612).random()
 }

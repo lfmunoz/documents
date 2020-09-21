@@ -1,14 +1,27 @@
-# mathematical-logic
-
-Mathematical Logic Notes
-
-https://plantuml.com/
-
-Katex
+# Documents
 
 
+Jekyll
 
 
-Technologies
+### Articles
 
-https://marketplace.visualstudio.com/items?itemName=goessner.mdmath
+* Frameworks.md
+* ListeningToMusic.md
+* OrganizationAndStructure.md
+
+### Reference Guides
+
+* Cpp
+* Java
+* Kotlin
+
+### Books
+
+* Logic
+
+### _DRAFTS
+
+* LatexReference.md
+* LinuxTerminal.md
+

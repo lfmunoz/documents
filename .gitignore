@@ -1,2 +1,7 @@
 .idea/
 .vscode/
+
+_site/
+
+.jekyll-metadata
+

@@ -1,4 +1,7 @@
-
+---
+title: Organization and Structure of Applications
+layout: default
+---
 
 
 In programming there is a guideline that says  

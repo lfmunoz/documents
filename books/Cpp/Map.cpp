@@ -24,6 +24,27 @@ using namespace std;
 int map()
 {
 
+  map<string, int> Map;
+
+  If k matches the key of an element in the container, the function returns a reference to its mapped value.
+
+If k does not match the key of any element in the container, the function inserts a new element with that key and returns a reference to its mapped value. 
+Notice that this always increases the container size by one, even if no mapped value is assigned to the element (the element is constructed using its default constructor).
+
+default constructor of int i 0
+
+      if (!Map[tmp]) Map[tmp] = 1;
+            else Map[tmp]++;
+
+
+ for (auto &m : Map) { // m為pair structure
+            if (m.second > Max) {
+                Max = m.second;
+                str = m.first;
+            }
+        }
+
+
     // DECLARE
     std::map<std::string, int> mapOfWords;
 
@@ -79,7 +100,14 @@ std::map<std::string, int>::iterator serachByValue(std::map<std::string, int> & 
 }
 
 
-void mapIterate(std::map<char, int> &ourMap) {
+void mapIteratefor() {
+
+    for(auto it = freqTbl.begin(); it != mapOfWords.end(); it++) {
+            std::cout<< it->first <<" :: "<< it->second << std::endl;
+        }
+}
+
+void mapIterateWhile(std::map<char, int> &ourMap) {
     std::map<char, int>::iterator it = ourMap.begin();
     while(it != mapOfWords.end()) {
         std::cout<< it->first <<" :: "<< it->second << std::endl;

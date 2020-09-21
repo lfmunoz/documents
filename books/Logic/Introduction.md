@@ -62,3 +62,4 @@ The **terms** of $\mathcal{L}$ play the role of the nouns of the language.
 
 The **formulas** will be the statements. Statements can be either true or false
 
+
