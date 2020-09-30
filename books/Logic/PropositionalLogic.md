@@ -1,4 +1,9 @@
-
+---
+title: Propositional Logic
+mathjax: true
+layout: default
+toc: true
+---
 
 R, Q, P - formulae, Schematic Letters, propositions
 

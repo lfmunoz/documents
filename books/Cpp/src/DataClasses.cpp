@@ -55,7 +55,6 @@ class Generic {
     bool isEven() const {
         return (value % 2) == 0;
     }
-}
 
 }; // NOTE: Ending semicolon is important to remember
 

@@ -1,0 +1,17 @@
+books_title: Books 
+list:
+
+- title: Logic
+  url: /books/Logic/Introduction.html
+
+- title: Java
+  url: /books/Java/Introduction.html
+
+- title: C++ 
+  url: /books/Cpp/Introduction.html
+
+- title: Kotlin
+  url: /books/Kotlin/Introduction.html
+
+- title: Non-Duality
+  url: /books/Non-Duality/Introduction.html

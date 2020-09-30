@@ -1,0 +1,26 @@
+<div class="column-sidebar">
+    <div>
+        <h2>{{ site.data.books.books_title }}</h2>
+        <ul>
+            {% for item in site.data.books.list %}
+            <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+
+
+    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
+        {%- for post in site.posts -%}
+            <div class="post-container">
+                {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+                <a class="post-link" href="{{ post.url | relative_url }}"> {{ post.title | escape }}</a>
+                <span class="post-meta">{{ post.date | date: date_format }}</span>
+                {%- if site.show_excerpts -%}
+                {{ post.excerpt }}
+                {%- endif -%}
+            </div>
+        {%- endfor -%}
+
+
+    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+</div>
