@@ -45,3 +45,32 @@ rabbit-stop:
 	docker stop rabbitmq
 
 
+#________________________________________________________________________________
+# Zookepper
+#  Public port 2181 2888 3888 8091  (2181 is cconnection port)
+#  Public port
+# IP: 172.18.0.6
+#________________________________________________________________________________
+zookeeper-start:
+	-docker run -d --rm --name zookeeper-${RND} --network=${NETWORK} --network-alias=zooKeeperNet ${ZOOKEEPER_PORT} \
+	    -e "ZOO_4LW_COMMANDS_WHITELIST=*" \
+	    zookeeper:3.5.5
+
+zookeeper-stop:
+	-docker stop zookeeper-${RND}
+
+
+#________________________________________________________________________________
+# Kafka (version = 2.12-2.4.0)
+#  Public port 9092 (bootstrapServer)
+# IP: 172.18.0.8
+#________________________________________________________________________________
+kafka-start:
+	-docker run -d --rm --name kafka-${RND} --network=${NETWORK} ${KAFKA_PORT} --network-alias=kafkaNet \
+	    -e "ADVERTISED_HOST_NAME=${KAFKA_IP}" \
+	    -e "ZOOKEEPER_CONNECT=zookeeper-${RND}:2181" \
+	    debezium/kafka:1.0
+
+kafka-stop:
+	-docker stop kafka-${RND}
+

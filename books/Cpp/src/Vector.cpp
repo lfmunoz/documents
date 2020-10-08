@@ -26,14 +26,20 @@ ostream& operator<<(ostream& os, const vector<T>& v)
     return os; 
 } 
 
-
-
-
+void foo(vector<int> bar); // by value
+void foo(vector<int> &bar); // by reference (non-const, so modifiable inside foo)
+void foo(vector<int> const &bar); // by const-reference
 
 int main() {
 
+  // Create an empty vector 
+  vector<int> vect; 
+
   // VECTOR
   vector<int> A = {1,3,4,5};
+
+  vector<int> vect2(vect1.begin(), vect1.end()); 
+
   // O(NlogN)
   sort(A.begin(), A.end()); 
 

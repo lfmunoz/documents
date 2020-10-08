@@ -14,7 +14,8 @@ Mathematics is disconnected from reality, but not completely. Mathematical objec
 
 
 
-
+For sets D and F, we use the notation $F^D$ to denote all functions from D to F.
+set of functions from the set W of words to the set $\mathbb{R}$ of real numbers is denoted $\mathbb{R}^W$
 
 
 

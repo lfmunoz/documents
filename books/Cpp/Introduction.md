@@ -5,6 +5,17 @@ layout: default
 toc: true
 ---
 
+
+# C++
+
+
+* [Data Types](DataTypes.html)
+* [Conditionals](DataTypes.html)
+* [Conditionals](DataTypes.html)
+
+
+
+
 C language (as well as C++) is historically a mix of two completely different programming styles,
  which one can refer to as "statement programming" and "expression programming"
 
@@ -51,10 +62,6 @@ if (something) { dothis(); dothat(); x++; }
 {% include_relative src/DataClasses.cpp %}
 ```
 
-## Data Types
-```cpp
-{% include_relative src/DataTypes.cpp %}
-```
 
 
 ```cpp

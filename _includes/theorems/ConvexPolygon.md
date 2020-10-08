@@ -24,11 +24,3 @@ and the sum of the angles in convex polygon C (which, by the IH, is (n – 2) ·
 
 
 
-$[ P(1) \land \forall n P(n) \implies P(n+1) ] \implies \forall n P(n)$
-
-
-If you can get to the first step of the ladder and you can always take one more step, then you can go as high as you want.
-
-To this the quantified statement  $\forall n P(n) \implies P(n+1)$ it suffices to prove the unquantified implication. This will usually be proved by condtional proof, which means the induction step starts with assuming P(n).
-
-You assume P(n)  and that leads to a proof of \forall n P(n)

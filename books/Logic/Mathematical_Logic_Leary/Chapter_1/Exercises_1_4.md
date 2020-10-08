@@ -1,3 +1,12 @@
+---
+title: Exercises 1.4 
+mathjax: true
+layout: default
+toc: true
+---
+
+
+{% include theorems/ConvexPolygon.md %}
 
 
 # Exercises 1.4.1

@@ -97,8 +97,26 @@ What makes a proof by induction work is the fact that the natural numbers can be
 
 We abstract away natural numbers for a different object, call it P(n) but this new object has this same induction property as the natural numbers.
 
+Definition: The principle of mathematical induction(statement form) consists of all statements in the form 
+
+$$[ P(1) \land \forall n  ( P(n) \implies P(n+1) ) ] \implies \forall n P(n)$$
+
+where P(n) is any statement containing a free natural number variable n.
+
+If you can get to the first step and you can always take one more step, then you can go as high as you want.
+
+P is true for a particular number 1. P is 
 
 
+People sometimes are surprised by teh fact that, in an inductin proof, you get to assume P(n), which is very similiar to what you are trying to prove. But note that the statement to be proved is $\forall n P(n)$, whereas the induction hypthosesis is just P(n).
+
+
+
+If you can get to the first step of the ladder and you can always take one more step, then you can go as high as you want.
+
+To this the quantified statement  $\forall n P(n) \implies P(n+1)$ it suffices to prove the unquantified implication. This will usually be proved by condtional proof, which means the induction step starts with assuming P(n).
+
+You assume P(n)  and that leads to a proof of \forall n P(n)
 
 
 
@@ -348,5 +366,5 @@ Key Sentence:  if you have a set of 2 elements it has 4 subsets, a set with 3 el
 ## Example: Convex Polygon
 
 
-{% include_relative theorems/ConvexPolygon.md %}
+{% include theorems/ConvexPolygon.md %}
 
