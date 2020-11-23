@@ -1,17 +1,32 @@
 books_title: Books 
 list:
+  Computer Science:
+    - title: Algorithms
+      url: /books/Algorithms/Introduction.html
+    - title: Software Engineering
+      url: /articles/SoftwareEngineering.html
+    - title: Design Patterns
+      url: /books/DesignPatterns.html
+    - title:  Linux
+      url: /books/Linux/Introduction.html
+  Programming Languages:
+    - title: Java
+      url: /books/Java/Introduction.html
+    - title: C 
+      url: /books/C/Introduction.html
+    - title: C++ 
+      url: /books/Cpp/Introduction.html
+    - title: Kotlin
+      url: /books/Kotlin/Introduction.html
+  Mathematics:
+    - title: Logic
+      url: /books/Logic/Introduction.html
+    - title: Geometry
+      url: /books/Geometry/Introduction.html
+    - title: Analysis
+      url: /books/Analysis/Introduction.html
+  Miscellaneous:
+    - title: Non-Duality
+      url: /books/Non-Duality/Introduction.html
 
-- title: Logic
-  url: /books/Logic/Introduction.html
 
-- title: Java
-  url: /books/Java/Introduction.html
-
-- title: C++ 
-  url: /books/Cpp/Introduction.html
-
-- title: Kotlin
-  url: /books/Kotlin/Introduction.html
-
-- title: Non-Duality
-  url: /books/Non-Duality/Introduction.html

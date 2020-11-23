@@ -81,4 +81,9 @@ class JavaStreamsApp {
 
 
     }
+
+
+    void intStreamExamples() {
+
+    }
 }

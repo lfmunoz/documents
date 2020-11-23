@@ -5,7 +5,9 @@ layout: default
 toc: true
 ---
 
+## Exercises 1.3
 
+----
 1. Suppose that the language L consists of two constant symbols, ♦ and
 ♥, a unary relation symbol U, a binary function symbol [, and a 3-
 ary function symbol ]. Write down at least three distinct terms of the
@@ -14,15 +16,17 @@ be terms and explain why they are not terms. Write a couple of formulas
 and a couple of nonformulas that look like they ought to be formulas.
 
 L♦ ♥  constant
+
 b binary
-# 3-anary function
+
+\# 3-anary function
 
 ♦♦
 Y♦
 ♦b♦
 
 
-
+----
 2. The fact that we write all of our operations on the left is important
 for unique readability. Suppose, for example, that we wrote our binary
 operations in the middle (and did not allow the use of parentheses). If
@@ -38,7 +42,7 @@ u # v # w
 
 
 
-
+----
 3. The language of number theory is
 LNT is {0, S, +, ·, E, <},
 where the intended meanings of the symbols are as follows: 0 stands for
@@ -65,7 +69,7 @@ Prime(p), and use Prime(p) in your later answers.
 LNt is 
 {0, s, t, *, E, <}
 
-
+----
 4. Suppose that our language has infinitely many constant symbols of the
 form 0
 ,

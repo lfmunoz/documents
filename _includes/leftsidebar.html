@@ -2,8 +2,16 @@
     <div>
         <h2>{{ site.data.books.books_title }}</h2>
         <ul>
-            {% for item in site.data.books.list %}
-            <li><a href="{{ item.url  | relative_url}}">{{ item.title }}</a></li>
+            {% for category in site.data.books.list %}
+            <li>
+                <strong> {{category[0]}}</strong>
+                <ul>
+                    {% for book in category[1] %}
+                        <li><a href="{{ book.url  | relative_url}}">{{ book.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </li>
+
             {% endfor %}
         </ul>
     </div>

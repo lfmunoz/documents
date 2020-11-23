@@ -8,3 +8,9 @@ _site
 .jekyll-cache
 .jekyll-metadata
 vendor
+
+**.tmp
+**.o
+**.elf
+
+**.out

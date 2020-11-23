@@ -9,16 +9,13 @@ toc: true
 
 > We must know we shall know - Hilbert's tombstone
 
-
+> We can't predict the future based on simply the rules the future doesn't exist until the program runs the code.
 
 
 * [Induction](Induction.html)
 * [Propositional Logic](PropositionalLogic.html)
 * [Structures and Languages](StructuresAndLanguages.html)
 
-
-
-{% include_relative Automata.md %}
 
 
 ## Learning
@@ -31,7 +28,7 @@ Christopher C. Leary \
 ISBN 0-13-010705-0 
 
 
-https://minerva.geneseo.edu/a-friendly-introduction-to-mathematical-logic/
+Book: [https://minerva.geneseo.edu/a-friendly-introduction-to-mathematical-logic/](https://minerva.geneseo.edu/a-friendly-introduction-to-mathematical-logic/)
 
 
 * Chapter 1

@@ -1,3 +1,11 @@
+
+
+
+
+A __convex polygon__ is a polygon where, for any two points in or on the polygon, the line between those points is contained within the polygon.
+
+
+
 **Theorem:** For any convex polygon with n vertices, the sum of the angles in that polygon is (n – 2) · 180°
 
  By induction. 

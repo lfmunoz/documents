@@ -27,4 +27,32 @@ assertThat(actualProductList)
     .allSatisfy(product -> assertThat(product.isLiked()).isTrue());
     
     
+    assertThatExceptionOfType(IOException.class).isThrownBy(() -> { throw new IOException("boom!"); })
+    .withMessage("%s!", "boom")
+    .withMessageContaining("boom")
+    .withNoCause();
+
 }
+
+fun main () { 
+    await.timeout(5, TimeUnit.SECONDS).untilAsserted {
+        assertThat(atomicInteger.get()).isEqualTo(totalMessages)
+    }
+
+
+
+    testImplementation("org.awaitility:awaitility:2.0.0")
+    testImplementation("org.awaitility:awaitility-kotlin:4.0.1")
+    testImplementation("org.assertj:assertj-core:$assertJVersion")
+
+}
+
+
+
+
+SoftAssertions softly = new SoftAssertions();
+softly.assertThat(rectangle.getLength()).isEqualTo(length);
+softly.assertThat(rectangle.getWidth()).isEqualTo(width);
+softly.assertThat(rectangle.area()).isEqualTo(6);
+softly.assertThat(rectangle.perimeter()).isEqualTo(10);
+softly.assertAll();

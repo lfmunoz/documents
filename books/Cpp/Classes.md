@@ -1,3 +1,24 @@
+---
+title: C++ - Classes
+mathjax: true
+layout: default
+toc: true
+---
+
+
+
+# Classes
+
+
+
+
+
+A "const function", denoted with the keyword const after a function declaration, makes it a compiler error for this class function to change a member variable of the class.
+Another way of thinking about such "const function" is by viewing a class function as a normal function taking an implicit this pointer. 
+ adding the const at the end can then be understood as a declaration with a const this pointer
+
+```cpp
+
 
 // ________________________________________________________________________________
 //  INCLUDE
@@ -6,7 +27,7 @@
 
 using namespace std;
 
-
+https://en.wikipedia.org/wiki/Rule_of_three_%28C++_programming%29
 //________________________________________________________________________________ 
 // Generic.hpp
 //________________________________________________________________________________ 
@@ -58,12 +79,28 @@ class Generic {
 
 }; // NOTE: Ending semicolon is important to remember
 
+
+// Is possible to declare an array (size not known), as a private member of a class 
+// and later set the size in the constructor of the class? 
+// No array declarations in headers must have constant sized value. Use vector or a pointer.
+
+// The options for initializing objects bewilder even experienced C++ pro-
+// grammers. Here’s a general rule to make initialization simple: use braced
+// ­initializers everywhere
+
 // Filename: main.cpp
 
 // non-member or global function
 // argc - argument count
 // argv - argument of values
 void main(int argc, char* argv[]) {
+
+
+    HwProblem hw; // calls default constructor
+    // Empty set of parentheses would make of rectc a function declaration instead 
+    // of an object declaration: It would be a function that takes no arguments and
+    //  returns a value of type Rectangle.
+    Rectangle rectc(); // oops, default constructor NOT called 
 
     Generic aGeneric = new Generic(0, 0); // NOT VALID 
 
@@ -261,3 +298,6 @@ class Fibonacci {
         }
 };
 
+
+
+```

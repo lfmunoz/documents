@@ -1,3 +1,9 @@
+---
+title: Software Engineering
+mathjax: true
+layout: default
+toc: true
+---
 
 
 # Software Engineering
@@ -67,20 +73,11 @@ Requirement Roles
 
 While requirements are decisions that are made by somebody else (e.g., stakeholders). Design is made up of decisions that developers make.
 
-You must understand requirements to create a good design; design must be consistent with the requirements.
-Implication Requirements must be good, complete, and unambiguous.
-
-Real-world designs are constrained and influenced by technology.
-Implication Prototyping is very useful for exploring and testing various design ideas.
-
-Design involves tradeoffs.
-Implication No single “right” design exists, only better or worse mixes of tradeoffs. Your professional judgement is required. 
-
-Design is almost always an evolutionary process.
-Implication You’re never going to get it right the first time. Some iteration will always be required.
-
-Some design is better than no design, but the best is the enemy of the good.
-Implication Sometimes you just need to go into production.
+* You must understand requirements to create a good design; design must be consistent with the requirements. - Implication Requirements must be good, complete, and unambiguous.
+* Real-world designs are constrained and influenced by technology.  - Prototyping is very useful for exploring and testing various design ideas.
+* Design involves tradeoffs. -  No single “right” design exists, only better or worse mixes of tradeoffs. Your professional judgement is required. 
+* Design is almost always an evolutionary process. - You’re never going to get it right the first time. Some iteration will always be required.
+* Some design is better than no design, but the best is the enemy of the good. - Sometimes you just need to go into production.
 
 
 Identify the significant elements of that internal structure
@@ -128,6 +125,15 @@ how can you be so productive at first and so unproductive later. the issue is no
 **re-use:** when a problem is solved correctly once, it is solved for all time; the solution can be re-used in the creation of new solutions. Techniques such as making a library of utility functions, or making functionality in a base class that can be extended by a derived class, or architectures that encourage composition, are all techniques for code re-use. Again, the point is to lower costs.
 
 **automatic detection of errors:** a team working on a large program is wise to build a device which determines early when a programming error has been made and tells you about it so that it can be fixed quickly, before the error is compounded with more errors. Techniques such as writing a test suite, or running a static analyzer fall into this category.
+
+
+
+
+Complexity has essential and accidental properties:
+
+Essential properties The properties a thing has by virtue of being that thing.
+
+Accidental properties The properties a thing happens to have.
 
 
 

@@ -1,1 +1,0 @@
-int foo = (bar > bash) ? bar : bash;

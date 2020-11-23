@@ -1,6 +1,11 @@
 
 
 
+# Set Theory
+
+Set theory is that branch of mathematics whose task is to investigate mathematically the fundamental notions “number”, “order”, and “function”, taking them in their pristine, simple form, and to develop thereby the logical foundations of all of arithmetic and analysis; thus it constitutes an indispensable component of the science of mathematics. (1908b: 261)
+
+
 Intuitively speaking, a set is any collection of objects
 
 These objects are referred

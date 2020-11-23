@@ -1,3 +1,12 @@
+---
+title: Analysis
+mathjax: true
+layout: default
+toc: true
+---
+
+
+
 More formally stated,
 a field is any set where addition and multiplication are well-defined operations
 that are commutative, associative, and obey the familiar distributive property
@@ -12,7 +21,24 @@ Neither
 Z nor N is a field.
 
 
+# Learning
 
+Principles of Mathematical Analysis \
+3rd Edition. \
+Walter Rudin \
+ISBN-10: 007054235X
+
+* Chapter 1
+
+
+https://minds.wisconsin.edu/handle/1793/67009
+https://minds.wisconsin.edu/bitstream/handle/1793/67009/rudin%20ch%201.pdf?sequence=11&isAllowed=y
+https://www.math.arizona.edu/~jtaylor/notes/baby_rudin_solutions.pdf
+
+
+
+Real Analysis Lectures by Professor Francis Su (Harvey Mudd College)
+http://analysisyawp.blogspot.com/
 
 
 # Functions

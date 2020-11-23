@@ -251,4 +251,3 @@ self voice/thinking
 
 
 c
-

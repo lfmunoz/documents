@@ -10,9 +10,8 @@
 using namespace std;
 
 // ________________________________________________________________________________
-// VECTOR
+// VECTOR 
 // ________________________________________________________________________________
-
 template <typename T> 
 ostream& operator<<(ostream& os, const vector<T>& v) 
 { 
@@ -25,6 +24,19 @@ ostream& operator<<(ostream& os, const vector<T>& v)
     os << "]\n"; 
     return os; 
 } 
+
+
+template <typename T>
+std::ostream& operator<< (std::ostream& out, const std::vector<T>& v) {
+  if ( !v.empty() ) {
+    out << '[';
+    std::copy (v.begin(), v.end(), std::ostream_iterator<T>(out, ", "));
+    out << "\b\b]";
+  }
+  return out;
+}
+
+
 
 void foo(vector<int> bar); // by value
 void foo(vector<int> &bar); // by reference (non-const, so modifiable inside foo)

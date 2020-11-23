@@ -1,6 +1,23 @@
 
 
 // ________________________________________________________________________________
+//  INCLUDE
+// ________________________________________________________________________________
+#include <bits/stdc++.h>
+
+using namespace std;
+
+
+
+ for ( std::string::iterator it=str.begin(); it!=str.end(); ++it)
+    std::cout << *it;
+  std::cout << '\n';
+
+
+
+
+
+// ________________________________________________________________________________
 // Iterating through an array (or other structure) of data is quite a common thing
 //  to do in programming. And so far, we’ve covered many different ways to do so: 
 //  with loops and an index (for-loops and while loops), with pointers and pointer 
@@ -9,7 +26,7 @@
 An iterator is an object designed to traverse through a container, providing 
 access to each element along the way.
 
-. Just as templates make algorithm independent of the type of data stored
+Just as templates make algorithm independent of the type of data stored
  iterators make the algorithms independent of the type of container used
 
 Operator *
@@ -35,6 +52,7 @@ This is also called a past-the-end iterator.
 We have a simple end criterion for loops that iterate over the elements: They simply march through until they meet end().
 It avoids special handling for empty ranges. For empty ranges, begin is equal to end().
 
+incrementing an iterator when pointing to end() is undefined behavior.
 
 
 	// iterator
@@ -98,6 +116,8 @@ bool isPalindrome(Bidirectional first, Bidirectional last)
 
 
 
+
+
 If there is an iterator representing the output stream, we can use it with copy().
  STL provides us such an iterator with the ostream_iterator template. 
 
@@ -117,3 +137,19 @@ The character string argument is a separator to be displayed after each item sen
 
  std::ostream_iterator<int> out_it (std::cout,", ");
   std::copy ( myvector.begin(), myvector.end(), out_it );
+
+
+
+
+
+  good() goodbit The stream is in a good working state.
+eof() eofbit The stream encountered an EOF.
+fail() failbit An input or output operation failed, but the stream might still be in a good working state.
+bad() badbit A catastrophic error occurred, and the stream is not in a good state.
+
+
+ws istream Skips over all whitespaces
+flush ostream Writes any buffered data to the stream by
+invoking its flush method
+ends ostream Sends a null byte
+endl ostream Sends a newline and flushes

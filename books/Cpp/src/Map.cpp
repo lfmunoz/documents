@@ -114,3 +114,11 @@ void mapIterateWhile(std::map<char, int> &ourMap) {
         it++;
     }
 }
+
+
+
+bool mapContainsKey(std::map<int, string>& map, int key)
+{
+  if (map.find(key) == map.end()) return false;
+  return true;
+}
