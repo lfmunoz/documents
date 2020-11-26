@@ -1,5 +1,20 @@
+---
+title: Data Classes
+mathjax: true
+layout: default
+toc: true
+---
 
 
+#  Data Classes
+
+
+* [The Kotlin Programming Language](Introduction.html)
+
+
+# Data Class
+
+```kotlin
 data class OurDto(
    id: Long = 0L,
    metaData: String = "N/A"
@@ -22,8 +37,12 @@ data class WfDto(
 
   fun toJson() : String =  mapper.writeValueAsString(this)
 }
+```
 
 
+# Enum
+
+```kotlin
 enum class WfType(val value: String) {
   RUN_BY_ID("RUN_BY_ID"),
   REFRESH_WF("REFRESH_WF"),
@@ -36,5 +55,15 @@ enum class WfType(val value: String) {
   RSP_SUCCESS("RSP_SUCCESS"),
   RSP_FAILURE("RSP_FAILURE")
 }
+```
 
 
+# Sealed Classes
+
+```kotlin
+
+sealed class GenericResult<R> {
+    data class Success<R>(val result: R): GenericResult<R>()
+    data class Failure<R>(val message: String, val cause: Exception? = null) : GenericResult<R>()
+}
+```

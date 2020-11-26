@@ -11,50 +11,105 @@ toc: true
 
 
 ----
-## Exercise 1.5.1
+## Exercise 1.6.1
 
-1. Consider the structure constructed in Example 1.6.2. Find the value of
-each of the following: 0 + 0, 0E0, S0 · SS0. Do you think 0 < 0 in this
-structure?
+**Problem:** Consider the structure constructed in Example 1.6.2. Find the value of each of the following: 0 + 0, 0E0, S0 · SS0. Do you think 0 < 0 in this structure?
 
 
-Bottom + Botton = Oberon
+**Solution:**
 
-OEO = Pink
+$A = \\{ Oberon, Titania, Puck, Bottom \\}$
 
-SO = Titania
+$0^{\mathbb{A}} = Bottom $
+
+
+**(a)** 0 + 0
+
+$Bottom +^{\mathbb{A}} Bottom = Oberon$
+
+**(b)** 0E0 
+
+$Bottom E^{\mathbb{A}} Bottom = Punk$
+
+**(c)** S0*SS0 
+
+$S^{\mathbb{A}}(Bottom) \cdot^{\mathbb{A}} S^{\mathbb{A}}(S^{\mathbb{A}}(Bottom))$
+
+$ = Titania \cdot^{\mathbb{A}} Bottom$
+ 
+$ = Titania $
+
+
+**(d)** Do you think 0 < 0 is in this structure?
+
+Yes it is in the structure, you can look it up in the table. 
+
+0 < 0 is false.
 
 
 
 ----
-## Exercise 1.5.2
+## Exercise 1.6.2
 
 
-2. Suppose that L is the language {0, +, <}. Let’s work together to de-
-scribe an L-structure A. Let the universe A be the set consisting of all
-of the natural numbers together with Ingrid Bergman and Humphrey
+**Problem:** Suppose that L is the language {0, +, <}. Let’s work together to describe an L-structure A. Let the universe A be the set consisting of all of the natural numbers together with Ingrid Bergman and Humphrey
 Bogart. You decide on the interpretations of the symbols. What is the
-value of 5 + Ingrid? Is Bogie < 0? (Suggested solution on page 286.)
+value of 5 + Ingrid? Is Bogie < 0? 
+
+
+**Solution:**
+
+We define the structure $\mathbb{A}$ by
+
+$A = \mathbb{N} \cup \\{  Ingrid,, Bogie \\}$ and
+
+
+$0^\mathbb{A}  = Bogie$
+
+$<^\mathbb{A}$ is the equality relation, that is, 
+$<^\mathbb{A} = \\{ (x, x) | x \in A \\}$
+
+$a +^\mathbb{A}  b = 0$ for any $a, b \in A$
+
+**(a)**  What is the value of 5 + Ingrid? 
+
+0. The sum of any two elements of the universe is 0.
+
+**(b)** Is Bogie < 0? 
+
+The answer is Yes if the pair is in the set $<^\mathbb{A}$ \
+The answer is No if the pair is not in set. 
+
+In this case the answer is no,
+the pair (Bogie, 0) is not in the set.
+
 
 
 
 
 ----
-## Exercise 1.5.3
+## Exercise 1.6.3
 
-3. Here is a language consisting of one constant symbol, one 3-ary function
-symbol, and one binary relation symbol: L is {[, ], \}. Describe an L-
-model that has as its universe R, the set of real numbers. Describe
+**Problem** Here is a language consisting of one constant symbol, one 3-ary function
+symbol, and one binary relation symbol: L is {[, ], \}. Describe an L-model that has as its universe R, the set of real numbers. Describe
 another L-model that has a finite universe.
 
-----
-## Exercise 1.5.4
 
-4. Write a short paragraph explaining the difference between a language
+
+
+----
+## Exercise 1.6.4
+
+**Problem:** Write a short paragraph explaining the difference between a language
 and a structure for a language.
 
+A language is a collection of distinct symbols which are categorized into parenthesis, quantifier, function symbols, constant symbols etc.  The structure of a language gives an interpretation of what the symbols mean, 1 is a constant symbol but what it represents is a quantity or length.
+
+
+
+
 ----
-## Exercise 1.5.5
+## Exercise 1.6.5
 
 
 5. Suppose that A and B are two L-structures. We will say that A
@@ -93,14 +148,14 @@ the structures have the same number of elements in their universes
 but they are still not isomorphic. Prove they are not isomorphic.
 
 ----
-## Exercise 1.5.6
+## Exercise 1.6.6
 
 6. Take the language of Example 1.6.4 and let C be the set of all L-terms.
 Create an L-structure C by using this universe in such a way that the
 interpretation of a term t is not equal to t.
 
 ----
-## Exercise 1.5.7
+## Exercise 1.6.7
 
 7. If we take the language L N T , we can create a Henkin structure for that
 language in the same way as in Example 1.6.4. Do so. Consider the

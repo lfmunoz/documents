@@ -1,3 +1,15 @@
+---
+title: Metrics
+mathjax: true
+layout: default
+toc: true
+---
+
+
+# Metrics
+
+
+* [The Java Programming Language](Introduction.html)
 
 
 ```kotlin

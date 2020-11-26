@@ -7,6 +7,6 @@
 // gcc -o program program.c
 // ________________________________________________________________________________
 int main(int argc, char *argv[]) {
-   printf("Hello World\n");
+   printf("Hello World\n"); // Hello Word
    return 0;
 }

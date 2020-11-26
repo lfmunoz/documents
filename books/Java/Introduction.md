@@ -6,67 +6,39 @@ toc: true
 ---
 
 
-## Casting
+# The Java Programming Language
 
-```java
-{% include_relative src/CastingApp.java %}
-```
+High-level language, Object-Oriented, Multi-threaded, Architecture Neutral, Portable, High Performance, Robust, Secure
 
-## LoopingApp
+* Source Code
+    * https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/classes/java/util/Timer.java
 
-```java
-{% include_relative src/LoopingApp.java %}
-```
-
-## Sorting
-
-```java
-{% include_relative src/SortingApp.java %}
-```
+In the Java programming language, all source code is first written in plain text files ending with the .java extension. Those source files are then compiled into .class files by the javac compiler. A .class file does not contain code that is native to your processor; it instead contains bytecodes — the machine language of the Java Virtual Machine (Java VM). The java launcher tool then runs your application with an instance of the Java Virtual Machine.
 
 
-## Steams App
+<details>
+<summary> <strong> [ Skeleton.java ] </strong> </summary>
 
-```java
-{% include_relative src/StreamsApp.java %}
-```
-
-## Assert J
-
-```java
-{% include_relative src/AssertJ.java %}
-```
+<p markdown="block">
+```cpp
+{% include_relative src/Skeleton.java %}
+````
+</p></details>  
 
 
 
-## AlgorithmPatterns
-
-```java
-{% include_relative src/AlgorithmPatternsApp.java %}
-```
-
-## ExperimentalApp.java
-
-```java
-{% include_relative src/ExperimentalApp.java %}
-```
+## TOC
 
 
 
-## NIO
+# References 
 
-```java
-{% include_relative src/NIO.java %}
-```
+* Java Language Specification
+    * http://docs.oracle.com/javase/specs/jls/se7/html/index.html
+* Java API Documentation
+    * http://docs.oracle.com/javase/7/docs/api/index.html
 
-## Regex
 
-```java
-{% include_relative src/Regex.java %}
-```
+# Learning
 
-## RegexpApp
 
-```java
-{% include_relative src/RegExpApp.java %}
-```

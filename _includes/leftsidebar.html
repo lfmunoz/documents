@@ -1,13 +1,13 @@
 <div class="column-sidebar">
-    <div>
-        <h2>{{ site.data.books.books_title }}</h2>
+    <div class="nav-section">
+        <div class="nav-title">{{ site.data.books.books_title }}</div>
         <ul>
             {% for category in site.data.books.list %}
             <li>
                 <strong> {{category[0]}}</strong>
                 <ul>
                     {% for book in category[1] %}
-                        <li><a href="{{ book.url  | relative_url}}">{{ book.title }}</a></li>
+                    <li><a href="{{ book.url  | relative_url}}">{{ book.title }}</a></li>
                     {% endfor %}
                 </ul>
             </li>
@@ -17,18 +17,17 @@
     </div>
 
 
-    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
+    <div class="nav-section">
+        <div class="nav-title">{{ page.list_title | default: "Posts" }}</div>
         {%- for post in site.posts -%}
-            <div class="post-container">
-                {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-                <a class="post-link" href="{{ post.url | relative_url }}"> {{ post.title | escape }}</a>
-                <span class="post-meta">{{ post.date | date: date_format }}</span>
-                {%- if site.show_excerpts -%}
-                {{ post.excerpt }}
-                {%- endif -%}
-            </div>
+        <div class="post-container">
+            {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+            <a class="post-link" href="{{ post.url | relative_url }}"> {{ post.title | escape }}</a>
+            <span class="post-meta">{{ post.date | date: date_format }}</span>
+        </div>
         {%- endfor -%}
 
 
-    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+        <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+    </div>
 </div>

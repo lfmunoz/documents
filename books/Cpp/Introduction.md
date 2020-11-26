@@ -9,7 +9,7 @@ toc: true
 # The C++ Programming Language
 
 
-* C++ language is a case sensitive language
+Case sensitive, strongly typed, no garbage collection
 
 
 * [Data Types](DataTypes.html)
@@ -28,6 +28,8 @@ toc: true
 * Collections
     * Map
     * Vector
+* [Strings](String.html)
+
 
 
 
@@ -40,33 +42,7 @@ toc: true
 
 
 
-“C++ Crash Course” by Lospinso.
+C++ Crash Course by Lospinso.
 
-I found that tremendously helpful with his approach of “assuming you really know C [I do], here is C++”
+**Description:** I Recommend you learn C first then read this book which is written like you already really know C. 
 
-
-
-
-```cpp
-{% include_relative src/LoopingExample.cpp %}
-```
-
-```cpp
-{% include_relative src/Macros.cpp %}
-```
-
-```cpp
-{% include_relative src/Map.cpp %}
-```
-
-```cpp
-{% include_relative src/PairApp.cpp %}
-```
-
-```cpp
-{% include_relative src/Pointers.cpp %}
-```
-
-```cpp
-{% include_relative src/Vector.cpp %}
-```

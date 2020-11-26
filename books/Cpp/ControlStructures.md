@@ -63,6 +63,14 @@ int foo = (bar > bash) ? bar : bash;
 
 
 
+
+
+```cpp
+{% include_relative src/LoopingExample.cpp %}
+```
+
+
+
 # References
 
 *  [https://stackoverflow.com/questions/1613230/uses-of-c-comma-operator](https://stackoverflow.com/questions/1613230/uses-of-c-comma-operator)
