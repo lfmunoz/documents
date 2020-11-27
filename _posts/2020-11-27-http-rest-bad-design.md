@@ -3,8 +3,6 @@ title: RESTful HTTP creates coupling
 layout: default
 ---
 
-# RESTful HTTP creates coupling
-
 
 Imagine your requirements for a design wasn't to support some RPC technology but instead it was support all RPC technologies. This may seem like a lot of unnecessary work to some, but I would say it takes similar effort and follows the principle of **Design For Change**. I pick a technology but at the same time I am also designing it like I'm going to change to another ( HTTP, gRPC, WebSocket, Kafka, AMPQ, STOMP, etc). When there is no coupling it doesn't make a difference how the data is arriving.
 
