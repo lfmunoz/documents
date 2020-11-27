@@ -1,4 +1,6 @@
 // Mandatory statement, as Go programs run in packages.
+// Note: If your main function doesn’t exist in package main,
+//  the build tools won’t produce an executable.
 package main
 
 import "fmt"

@@ -10,14 +10,14 @@ list:
     - title:  Linux
       url: /books/Linux/Introduction.html
   Programming Languages:
-    - title: Go
-      url: /books/Go/Introduction.html
     - title: C 
       url: /books/C/Introduction.html
     - title: C++ 
       url: /books/Cpp/Introduction.html
     - title: Rust
       url: /books/Rust/Introduction.html
+    - title: Go
+      url: /books/Go/Introduction.html
     - title: Java
       url: /books/Java/Introduction.html
     - title: Kotlin

@@ -9,12 +9,21 @@ toc: true
 
 # The Go Programming Language
 
-Go is a general-purpose language designed with systems programming in mind.   It is strongly and statically typed, provides inbuilt support for garbage collection, and supports concurrent programming.
+Go is a general-purpose language designed with systems programming in mind.  
 
-Go programming implementations use a traditional compile and link model to generate executable binaries.
-
-* No semicolon.
+* Syntax similar to [C Programming Language](../C/Introduction.html)
+* Traditional compile and link model to generate executable binaries
+* Strongly and statically typed
+* Inbuilt support for Garbage Collection
+* Inbuilt support for Concurrent Programming
+* concise syntax with few keywords to memorize
+* fast compiler
+* No semicolon
 * Case-sensitive
+
+This language sits between Java and C++ as far as performance, rapid development and abstractions. Libraries tend to be less clean, mature and lacking features that equivalent Java libraries have. The code is less verbose and more straightforward compared to C++. That is in part because of Garbage Collection and built-in concurrency.
+
+Notable projects using Go: CockroachDB, Kubernetes, Terraform
 
 <details>
 <summary> skeleton.go </summary>
@@ -24,6 +33,23 @@ Go programming implementations use a traditional compile and link model to gener
 {% include_relative src/skeleton.go %}
 ````
 </p></details> <br>
+
+
+
+## Table of Contents
+
+* [Data Types](DataTypes.html)
+   * identifiers, literals, primitives
+   * variables
+* [Control Statements](ControlStatements.html)
+    * if, switch, ?:
+    * do, do-while, for, goto
+* [Functions](Functions.html)
+* [Collections](Collections.html)
+* [Structures](Structures.html)
+* [Concurrency](Concurrency.html)
+
+
 
 # Installation
 
@@ -38,249 +64,163 @@ export PATH=$PATH:/usr/local/go/bin
  ```
 
 
- 
 
- An **identifier** starts with a letter A to Z or a to z or an underscore _ followed by zero or more letters, underscores, and digits (0 to 9).
+All code files in a folder must use the same package name, and it’s common practice to name the package after the folder.
 
- Go does not allow punctuation characters such as @, $, and % within identifiers.
+All init functions in any code file that are part of the program will get called before
+the main function.
 
-architecture-independent:
-
- uint8,uint16,uint32,uint64
- int8,int16,int32,int64
-
- float32, float64, complex64, complex128
-
-byte - same as uint8
-
-uintptr - an unsigned integer to store the uninterpreted bits of a pointer value
-
-
-
-Variables are lvalues 
-Numeric literals are rvalues
-
-
-### Variables
+By default, the logger is set to write to the stderr device.
 
 ```go
-var variable_list optional_data_type;
-// declare a variable and initialize with 0
-var  i, j, k int
-var  c, ch byte;
-var  f, salary float32;
-
-// declare variable and assign value 
-var u2 uint32 = 32 
-
-// The type of variable is automatically judged by the compiler
-d = 3, f = 5;
-
-// Declaration and initialization
-// Either the type or the = expression can be omitted, but not both.
-var name type = expression
-
-// := is called short variable declaration
-name := expression
-//  in case of type inference, we initialized the variable with :=
-y := 42 
-
-// Variables of different types can be declared in one go using type inference.
-var a, b, c = 3, 4, "foo"  
-fmt.Println(a) // 3  int
-fmt.Println(b) // 4  int
-fmt.Println(c) // "foo" string
-
-// Integer Literals
-85         /* decimal */
-0213       /* octal */
-0x4b       /* hexadecimal */
-30         /* int */
-30u        /* unsigned int */
-30l        /* long */
-30ul       /* unsigned long */
-
-// Floating-point Literals
-3.14159      
-314159E-5L   
-
-
-// const prefix to declare constants 
-// define constants in CAPITALS.
-const LENGTH int = 10
-
-
+var matchers = make(map[string]Matcher)
 ```
+This variable is located outside the scope of any function and so is considered a
+package-level variable.
+
+In Go, identifiers are either exported or unexported from a package. An exported
+identifier can be directly accessed by code in other packages when the respective
+package is imported. These identifiers start with a capital letter. Unexported identifi-
+ers start with a lowercase letter and can’t be directly accessed by code in other pack-
+ages
 
 
-## Operators
+Go is a statically typed programming language. What that means is the compiler
+always wants to know what the type is for every value in the program. When the
+compiler knows the type information ahead of time, it can help to make sure that
+the program is working with values in a safe way. This helps to reduce potential
+memory corruption and bugs, and provides the compiler the opportunity to pro-
+duce more performant code.
 
 
-
-
-```go
-
-// sizeof
-// ?:
-
-// & - returns thbe address of a variable
-
-// * - Pointer to a variable.
-
-```
-
-
-## Control Statements
-
-if, switch, select
-
+User-defined types
 
 ```go
-
-   score := 85
-   if score >= 90 {
-      fmt.Printf("You get an A. \n");
-   } else if >= 80 {
-      fmt.Printf("You get a B. \n");
-   else {
-      fmt.Printf("You failed. \n");
-   }
-
-   yourAge := 16
-   switch yourAge {
-      case 16: fmt.Println("16")
-      case 18: fmt.Println("18")
-      default: fmt.Println("Invalid")
-   }
-
-```
-
-
-break, continue, goto
-
-
-```go
-
-for true  {
-   fmt.Printf("This loop will run forever.\n");
+type user struct {
+   name string
+   email string
+   ext int
+   privileged bool
 }
-
-for i := 0; i < 5; i++ {
-   fmt.Printf("%d \n", i);
-}
-
+// Once you have a type declared, you can create values from the type.
+var bill user
 ```
 
-## Functions
+When you declare variables, the value that the variable represents is always initialized.
 
+Any time a variable is created and initialized to its zero value, it’s idiomatic to use
+the keyword var .
 
+If the variable will be initialized to something other than
+its zero value, then use the short variable declaration operator with a struct literal.
 
-Go doesn't support default function arguments 
-Go doesn't support function overloading
+```go
+// Declare a variable of type user and initialize all the fields.
+lisa := user{
+   name: "Lisa",
+   email: "lisa@email.com", 
+   ext: 123,
+   privileged: true, // it requires a trailing comma.
+}
+// Order is important
+lisa := user{"Lisa", "lisa@email.com", 123, true}
+```
 
+short variable declaration operator. ( := )
+it both declares and initializes a variable. Based on the type information on the
+right side of the operator, the short variable declaration operator can determine the
+type for the variable.
 
-built-in functions:
- len()
+taking an existing type and using
+it as the type specification for the new type.
+```
+type Duration int64
+```
+
+Methods
+
+Methods provide a way to add behavior to user-defined types. Methods are really func-
+tions that contain an extra parameter that’s declared between the keyword func and
+the function name.
 
 
 ```go
-func function_name( [parameter list] ) [return_types]
-{
-   body of the function
-}
-```
 
-```go
-// Returning multiple values
-func swap(x, y string) (string, string) {
-   return y, x
+func (user u) notify() {
+
 }
 
 ```
 
 
-## Strings
+The parameter between
+the keyword func and the function name is called a receiver and binds the function to
+the specified type.
 
+The reason ?: is absent from Go is that the language's designers had seen the operation used too often to create impenetrably complex expressions.
+
+
+
+If the amount of extra code required to write good errors seems repetitive and overwhelming, the test might work better if table-driven, iterating over a list of inputs and outputs defined in a data structure
+
+Put all the source files for the package in a directory by themselves. Source files can refer to items from different files at will; there is no need for forward declarations or a header file.
+
+Other than being split into multiple files, the package will compile and test just like a single-file package.
+
+
+There are two types of receivers in Go: value receivers and pointer receivers
 
 ```go
 
-// A string literal holds a valid UTF-8 sequences called runes.
-// A String holds arbitrary bytes.
-var greeting = "Hello world!"
-fmt.Printf("String Length is: ")
-fmt.Println(len(greeting))
-
-// concatenate
-strings.Join(sample, " ")
+lisa := &user{"Lisa", "lisa@email.com"}
+lisa.notify()
 
 ```
 
-## Arrays
+a variable named lisa of pointer type user is declared and initialized with a name
+and email address. Then on line 37, the notify method is called using the pointer
+variable.
 
+
+JSON
 
 ```go
-
-var favNums2[5] float64
-
-favNums3 := [5]float64 {1,2,3,4,5}
-
-for i, value := range favNums3 {
-   fmt.Println(i, value)
+type Feed struct {
+   URI string `json:"link"`
+   Type string `json:"type"`
 }
 
-// Get 3 and 4 ignore 5
-numSlice2 :=numSlice[3:5]
-
-
-
+var feeds []*Feed
+err = json.NewDecoder(file).Decode(&feeds)
 ```
 
-# Map
+https://www.ribice.ba/golang-enums/
 
-```go
+enums in Go aren’t as useful due to Go’s implementation. The biggest drawback is that they aren’t strictly typed, thus you have to manually validate them.
 
-presAge := make(map[string] int)
+type LeaveType string
 
-
-
-```
-
-
-# Concurrency
-
-A wait group is a synchronisation primitive that allows you to 'hang' your program until the counter goes down to 0. It is similar to CountDownLatch in JVM land. 
-
-```go
-
- // parallel with mutex and waitgroup
-    // create a wait group
-    wg := &sync.WaitGroup{}
-    // init a mutex
-    mutex := & ync.Mutex{}
-    startTime := time.Now()
-
-     wg.Add(1)
-
-      defer wg.Done()
-
-       mutex.Lock()
-
-        mutex.Unlock()
-
-         wg.Wait()
-    elapsedTime := time.Now().Sub(startTime)
-    fmt.Println(elapsedTimeMt)
+const(
+    AnnualLeave LeaveType = "AnnualLeave"
+    Sick = "Sick"
+    BankHoliday = "BankHoliday"
+    Other = "Other"
+)
 
 
-```
-
-Roman Elizarov on goroutines verses kotlin coroutines
-https://stackoverflow.com/questions/46864623/which-of-coroutines-goroutines-and-kotlin-coroutines-are-faster
+Error Handling in Go
+https://blog.golang.org/errors-are-values
 
 
-http://journal.stuffwithstuff.com/2015/02/01/what-color-is-your-function/
+
+When you try to build a program with this import path, the go build command will
+search the GOPATH for this package location on disk.
 
 
+
+# Resources 
+
+* http://play.golang.org
 
 # Learning
 
