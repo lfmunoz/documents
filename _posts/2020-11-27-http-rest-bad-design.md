@@ -6,7 +6,7 @@ layout: default
 
 Imagine your requirements for a design wasn't to support some RPC technology but instead it was support all RPC technologies. This may seem like a lot of unnecessary work to some, but I would say it takes similar effort to at least support the possibility and it follows the principle of **Design For Change**. I will pick a technology but at the same time I am also designing it like I'm going to change to another ( HTTP, gRPC, WebSocket, Kafka, AMPQ, STOMP, etc). When there is no coupling it doesn't make a difference how the data is arriving.
 
-The problem is that technologies will tilt you into coupling your code. For example HTTP REST wants you to split your data into a header and body payload.
+The problem is that technologies will tilt you into coupling your code. For example HTTP REST wants you to split your data into a header and body payload:
 
 ```
 DELETE /api/appSpecific/{id}
@@ -19,7 +19,7 @@ DELETE /api/appSpecific/{id}
 }
 ```
 
-Data objects will often need the ID embedded into the object also other RPC technologies will not have this split. It is fine to make the decision that the application is going to use HTTP and changing it will be a complete re-write but point is that often this is poor design. A better approach is to layer it like this:
+Data objects will often need the Id embedded into the object and other RPC technologies will not have this split. It is fine to make the decision that the application is going to use HTTP and that changing it will be a complete re-write but my point is this is often poor design. A better approach is to layer it like this:
 
 ```
 HTTP Generic Packet -> MyAppDTO -> Application Code
@@ -27,26 +27,26 @@ GRPC Generic Packet -> MyAppDTO -> Application Code
 Kafka Generic Packet -> MyAppDTO -> Application Code
 ```
 
-Often when people see code layed like this and it doesn't seem clean because:
+Often when people see code layered like this and it doesn't seem clean because:
 
 * A) They have no experience in having gone through a re-write. For example I've had to refactor applications from RabbitMQ to KAFKA and from HTTP to WebSockets.
-* B) They're used to seeing example code from all these projects doing what I am suggesting not to do. These programmers often don't write actual applications using competing technologies. 
+* B) They're used to seeing example code from all these projects doing what I am suggesting not to do. These programmers often don't write many applications using competing technologies. 
 
-Looking at typical gRPC designs you see:
+Looking at a typical gRPC designs you see:
 
 ```protobuf
-// Naive implementation
+// Naive implementation (beginner design)
 service Greeter {
     // Sends a greeting
     rpc SayHello (HelloRequest) returns (HelloReply) {}
 }
 
-// Design for change implementation A
+// Intermediate implementation
 service GRPC {
     rpc grpc(RpcRequest) returns (RpcResponse) {}
 }
 
-// Design for change implementation B
+// Advanced implementation additionally decouples serialization
 service GRPC {
     rpc grpc(bytes) returns (bytes) {}
 }
@@ -57,8 +57,8 @@ In Kafka designs you will often see
 
 ```java
 // Naive implementation
-props.setProperty("key.deserializer", "MyObjectSerializer"); // not generic
-props.setProperty("value.deserializer", "MyKeySerializer"); // not generic
+props.setProperty("key.deserializer", "MyObjectSerializer"); // not generic  (coupled)
+props.setProperty("value.deserializer", "MyKeySerializer"); // not generic (cohesion)
 KafkaConsumer<MyAppObjectKey, MyAppObjectValue> consumer = new KafkaConsumer<>(props);
 
 // Design for change implementation
