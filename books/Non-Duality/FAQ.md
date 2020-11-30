@@ -17,13 +17,13 @@ toc: true
 **Related questions:**
 * What is the meaning of life?
 
-If you are not seeking, the question doesn't come up, because there isn't someone to do or not do something. That doesn't mean nothing happens.
+If you are not seeking, the question doesn't come up, because there isn't someone to do or not do something. That doesn't mean nothing happens. 
 
-It would be better to understand who or what is asking that question because only a Separate-Self would ask that question. If you are a Separate-Self by definition you are seeking, the thing you should do or seek is the nature or source of the Self.
+It would be better to understand who or what is asking that question because only a Separate-Self would ask that question. If you are a Separate-Self by definition you are seeking, the thing you should do or seek is the nature or source of the Self. You can't understand something without knowing the source or nature of the understanding or your Self.
 
 If you feel you are separate be honest, be aware of feelings of loneliness, worthless, incompleteness when they inevitably come up.  Be honest especially with those feelings of separation. There is something missing and you are seeking. What do reach for? What can complete you? Perhaps a feeling, relationship, substance, or experience. Sometimes you need to go out into the world to become disillusioned enough.  When you realize X won't make you happy, then you embark on a different journey perhaps in an inner direction.
 
-What is the best thing for me? Could also be a better question.
+What is the best thing for me right now? 
 
 
 ## What happens when I die?
@@ -31,16 +31,15 @@ What is the best thing for me? Could also be a better question.
 
 There are many incorrect assumptions implied by this question. You are assuming there is a beginning and an end, but you have never experienced a beginning or an end or time or space. It is always here and it is always now, yesterday is a thought that exists now. You are assuming that you are a collection of thoughts, feelings and perceptions these create space and time. You are not a thought, you are aware of thoughts. What is the evidence that you are a body?  
 
-You need to do an investigation. Who is the I that is going to die? Perhaps you have some abstract vague notion, or a story of who you are. You have lost yourself in experience. You have mixed I with the objects of experience. The subject is not the object. What is the subject?
+You need to do an investigation. Who is the I that is going to die? Perhaps you have some abstract vague notion, or a story of who you are. You have lost yourself in experience. You have mixed I with the objects of experience. The subject is not the object. What is the subject? 
 
-
+Stand-up and take a step towards yourself, that is similar to know yourself.
 
 ## Is there different levels of awareness? I.e, Animals have more awareness than plants, and humans have more awareness than animals.
 
 **Related questions:**
 * Is there a higher self?
 * How do I increase my vibration?
-
 
 Awareness has everything, nothing has awareness. Awareness is the primary element, it isn't an attribute of something, everything else is an attribute of it.
 
@@ -75,20 +74,15 @@ There is this and nothing else, but why this? There is one reality. If there wer
 * Why is there starving children?
 * Why did this bad thing happen to be or to my friend?
 
-Ancient Christian Scripture took on this doctrine of the good.
-That good is veiled and you get evil. Nature is good but
+Ancient Christian Scripture took on this doctrine of the good. That good is veiled and you get evil. Nature is good but
 it can be clouded or covered, and that is what evil is.
 
-There is a lot of explanatory power in such a doctrine, but
-as Carl Jung pointed out this arguments is begging the question.
-It assumes the thing you are trying to prove. I.e, you start
-with the assumption that God is good, then you show there is no evil. 
+There is a lot of explanatory power in such a doctrine, but as Carl Jung pointed out this argument is a fallacy called begging the question. It assumes the thing you are trying to prove. I.e, you start with the assumption that God is good, then you show there is no evil because God is everything.
 
-Evil is an Illusion. Nothing bad ever happens. 
+TEvil is an Illusion, but all illusions have a reality. You may look at a computer screen and see a landscape but that is an illusions, there is no mountains, it is an illusion's whose reality are the pixels. Nothing bad ever happens, it is an illusion, what is its reality? 
 
 If that isn't your experience, If you witness evil then you are in a position to bring good into the world.
 You have power over knowledge of good and evil. What are you going to do with that power? Obviously do good.
-
 
 
 ## Why am I unhappy?
@@ -110,14 +104,15 @@ gives meaning to your life, and perhaps the piano is irrelevant.
 Why don't you just wake up with curiosity, a feeling that anything is possible,
 gratitude, excitement, courage, love, and passion.
 
-
-Imagine you are happy walking down a park trail, you receive a call and are informed that a loved one has died. All the sudden you become unhappy. How was the unhappiness created, where did it come from? Could the opposite happen? Does it take external sounds or images to create unhappy or happiness or can you simply self generate it?
+Imagine you are happy walking down a park trail, you receive a call and are informed that a loved one has died. All the sudden you become unhappy. How was the unhappiness created, where did it come from? Could the opposite happen? Does it take external sounds or images to create unhappiness or happiness or can you simply self generate it?
 
 
 ## I am not a body but it isn't obvious
 
 **Related questions:**
 * Why do I feel separate?
+
+
 
 
 

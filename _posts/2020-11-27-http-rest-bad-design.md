@@ -27,7 +27,7 @@ GRPC Generic Packet -> MyAppDTO -> Application Code
 Kafka Generic Packet -> MyAppDTO -> Application Code
 ```
 
-Often when people see code layered like this and it doesn't seem clean because:
+Often, people see code layered like this and it doesn't look clean because:
 
 * A) They have no experience in having gone through a re-write. For example I've had to refactor applications from RabbitMQ to KAFKA and from HTTP to WebSockets.
 * B) They're used to seeing example code from all these projects doing what I am suggesting not to do. These programmers often don't write many applications using competing technologies. 
@@ -41,7 +41,7 @@ service Greeter {
     rpc SayHello (HelloRequest) returns (HelloReply) {}
 }
 
-// Intermediate implementation
+// Intermediate implementation decouples what objects you send
 service GRPC {
     rpc grpc(RpcRequest) returns (RpcResponse) {}
 }
@@ -52,7 +52,10 @@ service GRPC {
 }
 ```
 
-In Kafka designs you will often see 
+Many libraries will want you to register your serializer with their implementations or worse
+specify a serializer for each object type. Avoid this feature, don't allow the frameworks to wrap their tentacles around your code. If you do it generically it will work with any library.
+
+Let's look at Kafka, you will often see:
 
 
 ```java
@@ -64,7 +67,7 @@ KafkaConsumer<MyAppObjectKey, MyAppObjectValue> consumer = new KafkaConsumer<>(p
 // Design for change implementation
 props.setProperty("key.deserializer", "ByteArraySerializer"); // generic
 props.setProperty("value.deserializer", "ByteArraySerializer");  // generic
-KafkaConsumer<ByteArray, ByteArray>(consumerProps(aKafkaConfig)
+KafkaConsumer<ByteArray, ByteArray>(props)
 ```
 
 The naive implementations don't clearly separate out the applications objects from the input and output implementations. This means you cannot easily switch between them. If you simply create a intermediate object, there is hard separation. In Kafka this would look like this:
@@ -72,8 +75,8 @@ The naive implementations don't clearly separate out the applications objects fr
 ```kotlin
 // Kafka specific intermediate container object
 data class KafkaMessage (
-    val key: ByteArray
-    val value: ByteArray
+    val key: ByteArray,
+    val value: ByteArray,
     val headers: MutableMap<String, ByteArray>
 )
 ```
@@ -92,14 +95,23 @@ data class SomeAppSpecificDomainObject(
     }
     // domain object going to gRpc
     fun toGrpcMessage() {}
-    // domain object going to it doesn't matter code is all the same
-    fun toAnything() { } }
+    // domain object going to... it doesn't matter code will write itself
+    fun toAnything() { } 
+}
 ```
 
-When testing I only care that I can send and receive KafkaMessages, what is inside of those messages doesn't make a difference. There is clear decoupling, In my application I use domain objects when sending out I simply convert to a specific messages container depending out what technology I am going to use.
+There is clear decoupling in the application. I use domain objects but when doing input/output/rpc I simply convert to a specific messages container that is technology specific. When testing I verify the consumer and producers work but only care that I can send and receive KafkaMessages, what is inside of those messages doesn't make a difference that is a different layer and a separate test. If I verify I can create a generic KafkaMessages out of my domain objects and I separately verify I can send KafkaMessage objects across the network then that is a verification for the full path, that is how managing complexity is done. 
 
+Would you have Kafka tests for each topic? Why is that you see HTTP tests hitting every endpoint? With HTTP the container object looks something like this:
 
+```kotlin
+data class HttRequest(
+    val method: String = "POST"
+    val body: String = "some payload",
+    val headers: String = "cookies, and tokens"
+    val path: String = "/home/url/string"
+)
+```
 
-
-
+This is implicit and hidden in many frameworks which causes coupling. If you were to use explicit container objects with clear separations then you get malleable, verifiable, and readable code. 
 
