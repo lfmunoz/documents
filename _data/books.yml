@@ -22,6 +22,9 @@ list:
       url: /books/Java/Introduction.html
     - title: Kotlin
       url: /books/Kotlin/Introduction.html
+  Technologies:
+    - title: Terraform
+      url: /books/Terraform/Introduction.html
   Mathematics:
     - title: Logic
       url: /books/Logic/Introduction.html

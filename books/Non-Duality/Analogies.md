@@ -11,6 +11,9 @@ toc: true
 [Non-Duality](Introduction.html)
 
 
+Any spiritual path makes a concession to a separate-Self.
+
+
 # Dream and Dreamer
 
 Imagine you are at home in Los Angeles and fall asleep you have a dream that you are walking in the streets of Paris. Perhaps that is what is happening now. God is having a dream that he is you at home reading these words.

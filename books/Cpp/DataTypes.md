@@ -30,8 +30,9 @@ int a;
 int b;
 int c;
 
-// Initialization
-int a = 1, b = 1;
+// Initialization on the same line
+int column = 0, row = 0, index = 0;
+int column{0}, row{0}, index{0};
 ```
 
 
