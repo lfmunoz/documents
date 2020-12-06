@@ -14,6 +14,7 @@ toc: true
 * [Processes](Processes.html)
     * Conversions
 * [System Calls](SystemCall.html)
+* [Inter-process communication](IPC.html)
 
 
 

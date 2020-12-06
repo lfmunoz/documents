@@ -9,6 +9,8 @@ list:
       url: /books/DesignPatterns.html
     - title:  Linux
       url: /books/Linux/Introduction.html
+    - title:  Concurrency
+      url: /books/SoftwareEngineering/Concurrency.html
   Programming Languages:
     - title: C 
       url: /books/C/Introduction.html

@@ -47,6 +47,7 @@ C is a general purpose language developed in 1972 by Dennis Ritchie at the Bell 
 * [Memory Management](MemoryManagement.html)
     * malloc, free, calloc, memcpy
     * memory leaks
+* [Inline Assembly](Assembly.html)
 
 
 # References 

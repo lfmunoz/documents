@@ -14,3 +14,6 @@ vendor
 **.elf
 **.jar
 **.out
+
+**.s
+**.key

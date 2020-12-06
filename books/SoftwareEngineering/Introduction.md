@@ -1,5 +1,14 @@
 
 
+
+
+
+
+ non-functional aspects of software, also known as quality attributes or qualities for short, such as reliability, efficiency, security, maintainability, usability,
+ 
+ 
+
+
 Requirements
 
 

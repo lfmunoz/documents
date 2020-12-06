@@ -24,11 +24,11 @@ toc: true
 
 Everything is controlled by a Command Line Interface (CLI)
 
-* terraform init
+* terraform init  - initializes project, downloads plugins, checks modules
+* terraform plan - Analyze code and show you the changes that will be made
 * terraform apply - Applying a configuration is the process of creating, updating, and destroying real infrastructure objects in order to make their settings match the configuration.
-* terraform destroy
+* terraform destroy - Process of destroying all the resources that were built
 * terraform show
-* terraform plan
 * terraform fmt  - format the .tf files
 * terraform validate - validate the .tf files have correct syntaxx
 * terraform graph
