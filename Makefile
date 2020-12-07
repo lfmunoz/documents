@@ -35,15 +35,15 @@ build:
 # ________________________________________________________________________________
 
 deploy: build
-	find . -maxdepth 1 ! -name _site ! -name .git -not -path '.' -exec rm -rf {} +
-	mv _site/* ./
-	rm -rf _site
 	# get remote branches
 	git fetch --all
 	# the branch you want to overwrite
 	git checkout gh 
 	# reset to the new branch
 	git reset --hard origin/master
+	find . -maxdepth 1 ! -name _site ! -name .git -not -path '.' -exec rm -rf {} +
+	mv _site/* ./
+	rm -rf _site
 	#  push to remote
 	git push -f
 
