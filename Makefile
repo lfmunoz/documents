@@ -46,6 +46,7 @@ deploy: build
 	find . -maxdepth 1 ! -name _site ! -name .git -not -path '.' -exec rm -rf {} +
 	mv _site/* ./
 	rm -rf _site
+	touch .nojekyll
 	git config --global user.email "${EMAIL}"
 	git config --global user.name "Luis F Munoz"
 	git add .

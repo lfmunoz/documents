@@ -22,8 +22,8 @@ title: LFMUNOZ
 # email: lfmunoz4@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   articles, notes, and references
-baseurl: "/" # the subpath of your site, e.g. /blog
-url: "localhost" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/documents" # the subpath of your site, e.g. /blog
+url: "lfmunoz.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: lfmunoz4
 github_username:  lfmunoz
 
