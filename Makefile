@@ -4,6 +4,8 @@
 ################################################################################
 .PHONY: run trace build clean deploy default
 
+DATE=$(shell date)
+
 default:
 	@echo "docker"
 	ruby --version
@@ -44,6 +46,8 @@ deploy: build
 	find . -maxdepth 1 ! -name _site ! -name .git -not -path '.' -exec rm -rf {} +
 	mv _site/* ./
 	rm -rf _site
+	git add .
+	git commit -m "auto commit from master ${DATE}"
 	#  push to remote
 	git push -f
 
