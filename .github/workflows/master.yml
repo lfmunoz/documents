@@ -25,6 +25,9 @@ jobs:
         echo GITHUB_EVENT_NAME=$GITHUB_EVENT_NAME
         echo VERSION=$VERSION
         make default
+    - name: install bundler
+      run: |
+        gem install bundler
     - name: deploy
       run: |
         make deploy
