@@ -24,6 +24,8 @@ list:
       url: /books/Java/Introduction.html
     - title: Kotlin
       url: /books/Kotlin/Introduction.html
+    - title: Makefile
+      url: /books/Make/Introduction.html
   Technologies:
     - title: Terraform
       url: /books/Terraform/Introduction.html
