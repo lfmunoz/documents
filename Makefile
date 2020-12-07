@@ -41,7 +41,7 @@ deploy: build
 	# //the branch you want to overwrite
 	git checkout gh 
 	# //reset to the new branch
-	git reset --hard origin/staging
+	git reset --hard origin/master
 	# // push to remote
 	git push -f
 
