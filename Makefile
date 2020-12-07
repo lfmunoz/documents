@@ -6,9 +6,9 @@
 
 default:
 	@echo "docker"
-	bundle --version
 	ruby --version
 	gem --version
+	bundle --version
 
 
 # ________________________________________________________________________________
