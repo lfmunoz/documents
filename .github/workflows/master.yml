@@ -17,6 +17,10 @@ jobs:
     - uses: actions/setup-ruby@v1
       with:
         ruby-version: '2.5' 
+    - name: install dependencies
+      run: |
+        gem install bundler
+        bundle install
     - name: show environment
       run: |
         ls -l
@@ -25,9 +29,6 @@ jobs:
         echo GITHUB_EVENT_NAME=$GITHUB_EVENT_NAME
         echo VERSION=$VERSION
         make default
-    - name: install bundler
-      run: |
-        gem install bundler
     - name: deploy
       run: |
         make deploy
