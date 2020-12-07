@@ -47,7 +47,7 @@ deploy: build
 	mv _site/* ./
 	rm -rf _site
 	git config --global user.email "${EMAIL}"
-  	git config --global user.name "Luis F. Munoz"
+	git config --global user.name "Luis F Munoz"
 	git add .
 	git commit -m "auto commit from master ${DATE}"
 	#  push to remote
