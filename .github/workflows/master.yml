@@ -37,5 +37,7 @@ jobs:
         echo VERSION=$VERSION
         make default
     - name: deploy
+      env:
+        EMAIL: ${{secrets.EMAIL}}
       run: |
         make deploy
