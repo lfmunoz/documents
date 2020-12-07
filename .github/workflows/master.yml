@@ -14,7 +14,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-
+    - uses: actions/setup-ruby@v1
+      with:
+        ruby-version: '2.6' 
     - name: show environment
       run: |
         ls -l
