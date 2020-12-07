@@ -32,11 +32,13 @@ build:
 # ________________________________________________________________________________
 
 deploy: build
+	find . -maxdepth 1 ! -name _site ! -name .git -not -path '.' -exec rm -rf {} +
+	mv _site/* ./
+	rm -rf _site
 	# //the branch you want to overwrite
-	# git checkout gh 
+	git checkout gh 
 	# //reset to the new branch
-	# git reset --hard origin/staging
+	git reset --hard origin/staging
 	# // push to remote
-	# git push -f
-	find . -maxdepth 1 ! -name _site -not -path '.' -exec rm -rf {} +
+	git push -f
 
