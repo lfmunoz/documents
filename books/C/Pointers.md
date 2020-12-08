@@ -319,7 +319,7 @@ The second dimension is still required. (For a three- or more dimensional array,
 array is a pointer-to-pointer-to-int: at the first level, it points to a block of pointers, one for each row. That first-level pointer is the first one we allocate; it has nrows elements, with each element big enough to hold a pointer-to-int, or int *. If we successfully allocate it, we then fill in the pointers (all nrows of them) with a pointer (also obtained from malloc) to ncolumns number of ints, the storage for that row of the array.
 
 
-![ptr_to_ptr](/assets/ptrptr.gif)
+![ptr_to_ptr](/documents/assets/ptrptr.gif)
 
 
 

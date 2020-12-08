@@ -13,99 +13,14 @@ An algorithm is a well defined set of rules for solving a problem.
 **Note** If you need to write a program that will be used once on small amounts of data and then discarded, then you should select the easiest-to-implement algorithm you know, get the program written and debugged, and move on to something else
 
 
-# String Matching 
-
-String Matching or String Searching is the problem of finding the starting index (or indices) of a substring called a pattern in a longer string called the text.
-
-<details>
-<summary> string_matching.cpp </summary>
-
-<p markdown="block">
-```cpp
-{% include_relative src/string_matching.cpp %}
-````
-</p></details>  
-
-
-## Reference 
-
-* Knuth-Morris-Pratt KMP String Matching Algorithm - Abdul Bari
-* https://www.youtube.com/watch?v=V5-7GzOfADQ
-
-
-# Sorting
-
-**Problem Statement:**
-
-**Input:** Sequence $a_1,a_2, \dots, a_n$ of numbers. \
-**Output:** Permutation  of $a_1, a_2, \dots, a_n$  such that $a_1 < a_2 <  \dots < a_n$ 
-
-**Note:** A **permutation** is a re-arrangement of numbers.
-
-
-**Should I use built-in sorting?** Yes
-
-* C++ STL algorithm::sort
-* Java Collections.sort
-* JavaScript [].sort()
-
-**What is the quickest sorting method to use?**
-
-No algorithm is best in all cases. Generally Quick Sort, Merge Sort, or Radix Sort.
-
-
-| Algorithm | Data Structure | Time Complexity | Worst Case Auxiliary Space Complexity |||
-| | | Best | Average | Worst | Worst | 
-| --- | --- | --- | --- | --- | --- | 
-| [Quick Sort](QuickSort.html) | Array | O(n log(n)) | O(n log(n))  | $O(n^2)$  | O(log(n))  | 
-| [Merge sort]() | Array | O(n log(n))| O(n log(n))  | O(n log(n)) | O(n)  | 
-| [Heapsort]() | Array | O(n log(n)) | O(n log(n))  | O(n log(n)) | O(1)  | 
-| [Bubble Sort]() | Array | O(n) | $O(n^2)$ | $O(n^2)$  | O(1) | 
-| [Insertion Sort]() | Array| $O(n^2)$ | $O(n^2)$ | $O(n^2)$  | O(1) | 
-| [Selection Sort]() | Array| $O(n^2)$ | $O(n^2)$ | $O(n^2)$  | O(1) | 
-| [Bucket Sort]() | Array| O(n+k) | O(n+k) | $O(n^2)$ | O(nk) | 
-| [Radix Sort]() | Array | O(nk) | O(nk) | O(nk) | O(n+k) | 
-
-----
-**Theorem:** Complexity of sorting. 
-
-Any comparison-based sorting program must use at least $$\lceil \lg{N!} \rceil > N \lg{N - N / ln2}$$ comparisons for some input.
-
-**Proof**
-
-Each comparison can cut down the number of possible arrangements of the elements to be considered by at most 2. Since there are N! possible arrangements before the sort and the goal is to have one possible arrangement (the sorted one), the number of comparisons must be at least the number of times N! can be divided by 2 before reaching a number less than unity, that is to say $\lceil lg N! \rceil$
-
-----
-
-
-
-# Complete Search
-
-The **Complete Search** technique, also known as **brute force** or **recursive backtracking**, is a method for solving a problem by traversing the entire (or part of the) search space to obtain the required solution. During the search, we are allowed to prune (that is, choose not to explore) parts of the search space if we have determined that these parts have no possibility of containing the required solution.
-
-* Generally, the earlier you can prune the search space, the better.
-* Considering symmetries can actually complicate the code. We want shorter code to minimize bugs.
-
-
-Iterative approaches are used when one can derive the different states easily with some formula relative to a certain counter and (almost) all states have to be checked, e.g. scanning all the indices of an array, enumerating (almost) all possible subsets of a small set, generating (almost) all permutations, etc.
-
-Recursive Backtracking is used when it is hard to derive the different states with a simple index and/or one also wants to (heavily) prune the search space, e.g. the 8-queens chess problem.
-
-Complete Search
-
-A complete Search solution is used when there is clearly no other algorithm available (e.g. the task of enumerating all permutations of {0, 1, 2, . . . , N − 1} clearly requires O(N!) operations)
-
-Recursive Complete Search
-
-The main idea is to construct solutions one component at a time and evaluate such partially constructed candidates as follows: If a partially constructed solution can be developed further without violating the problem’s constraints, it is done by taking the first remaining legitimate option for the next component. If there is no legitimate option for the next component, no alternatives for any remaining component need to be considered. In this case, the algorithm backtracks to replace the last component of the partially constructed solution with the next option for that component.
-
-Typically, backtracking involves undoing a number of wrong choices—the smaller this number, the faster the algorithm finds a solution. Although in the worst-case scenario a backtracking algorithm may end up generating all the same candidate solutions as an exhaustive search, this rarely happens.
-
-
-###  n-Queens Problem
-
-**Problem:** Place n queens on an n × n chessboard so that no two queens attack each other by being in the same column, row, or diagonal.
-
+**Table of Contents**
+* [Sorting](Sorting.html)
+    * Quick Sort, Merge Sort, Radix Sort
+* [String](String.html)
+    * Longest Common Subsequence
+    * String Matching
+* [Complete Search](CompleteSearch.html)
+    * bute force or recursive backtracking
 
 
 
@@ -130,6 +45,13 @@ A = (0,0), B = (0, 1), C = (1, 0) , D = (1,1)
 {% include_relative src/matrix.cpp %}
 ````
 </p></details>  
+
+
+```
+size_t index( int x, int y ) const { return x + m_width * y; }
+array = new int[ width * height ];
+array[ index( x, y )]
+```
 
 
 # Masters method

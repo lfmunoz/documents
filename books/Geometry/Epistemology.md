@@ -1,3 +1,9 @@
+---
+title: Epistemology
+mathjax: true
+layout: default
+toc: true
+---
 
 # Epistemology
 

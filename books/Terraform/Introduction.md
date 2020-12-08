@@ -17,7 +17,7 @@ toc: true
 
 * Written in [The Go Programming Language](../Go/Introduction.html).
 * What is running on a virtual server is outside of Terraform's scope and the responsibility of some other tool.
-* Uses a declarative language known as **HashiCorp Configuration Language (HCL)**
+* Uses a declarative language known as **HashiCorp Configuration Language (HCL)** (use ruby syntax highlighting markdown)
 * Terraform attemps to be **idempotent** in the sense that if you haven't changed anything about your configuration and you apply it again to the same environment, nothing will change in the environment. 
 * Terraform is a push-type model. Constrast to if there was an agent running on the environment and it pulls its configuration from a central source on a regular basis.
 
@@ -36,6 +36,10 @@ Everything is controlled by a Command Line Interface (CLI)
 ```bash
 # specific modules
 terraform apply -target=aws_security_group.my_sg -target=aws_security_group.my_2nd_sg
+
+
+# run with debug
+TF_LOG=DEBUG terraform apply
 ```
 
 
@@ -55,6 +59,11 @@ terraform -help
 /usr/local/bin/aws --version
 aws configure
 ```
+
+
+
+
+* https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource
 
 # Overview
 
@@ -83,7 +92,7 @@ Do not store **.tfstate** into git, storing in source control could expose poten
 To declare that a module requires particular versions of a specific provider, use a required_providers block inside a terraform block:
 
 
-```hcl
+```ruby
 # NAME is an identifier you can use throughout the Terraform code
 module "<NAME>" {
   # SOURCE is the path where the module code can be found
@@ -98,7 +107,7 @@ module "webserver_cluster" {
 }
 ```
 
-```hcl
+```ruby
 terraform {
   required_providers {
     aws = {
@@ -129,7 +138,7 @@ A **provider** is a plugin that Terraform uses to translate the API interactions
     * https://registry.terraform.io/browse/providers
 * Provider configurations belong in the root module of a Terraform configuration. 
  
-```hcl
+```ruby
  terraform {
   required_providers {
     docker = {
@@ -172,7 +181,7 @@ The **resource** block defines a piece of infrastructure.
 * The arguments within the body of a resource block are specific to the selected resource type.
 
 
-```hcl
+```ruby
 resource "aws_instance" "example" {
   ami           = "ami-830c94e3"
   instance_type = "t2.micro"
@@ -211,7 +220,7 @@ meta-arguments can be used with any resource type to change the behavior:
 
 Multiple provisioners can be specified within a resource. Multiple provisioners are executed in the order they're defined in the configuration file.
 
-```hcl
+```ruby
 provisioner "remote-exec" {
         inline = [
           "export PATH=$PATH:/usr/bin",
@@ -257,7 +266,7 @@ I would like to run in order as follows.
 get_my_public_ip -> ec2 -> db -> test_http_status
 
 
-```hcl
+```ruby
 data "external" "get_my_public_ip" {
   program = ["sh", "scripts/get_my_public_ip.sh"]
 }
@@ -279,7 +288,7 @@ data "external" "test_http_status" {
 
  You can use depends_on to explicitly declare the dependency. You can also specify multiple resources in the depends_on argument, and Terraform will wait until all of them have been created before creating the target resource.
 
-```hcl
+```ruby
 resource "null_resource" "test_status" {
   depends_on = ["module.db.id"] #or any output variable
   provisioner "local-exec" {
@@ -316,7 +325,7 @@ https://www.terraform.io/docs/configuration-0-11/resources.html#explicit-depende
 
 Terraform requires that it can compute count and for_each during the plan phase, before any resources are created or modified. That means count and for_each can reference hard-coded values, variables, data sources, and even lists of resources (so long as the length of the list can be determined during plan), but not computed resource outputs.
 
-```hcl
+```ruby
 // string 
 variable "image_id" {
   type = string
@@ -399,7 +408,7 @@ A variable definitions file
 * consists only of variable name assignments
 * ends in either **.tfvars** or **.tfvars.json**
 
-```hcl
+```ruby
 // .tfvars
 image_id = "ami-abc123"
 availability_zone_names = [
@@ -425,7 +434,7 @@ availability_zone_names = [
 # Patterns
 
 
-```hcl
+```ruby
 variable "create_vm_images" {
   default = true
 }

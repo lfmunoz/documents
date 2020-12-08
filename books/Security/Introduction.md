@@ -1,4 +1,17 @@
+---
+title: Security
+mathjax: true
+layout: default
+toc: true
+---
 
+
+# Security
+
+
+
+
+# Certificates
 
 
 Most users turn to OpenSSL because they wish to configure and run a web server that supports SSL. That process consists of three steps:
@@ -21,7 +34,7 @@ You must make several decisions:
 
 ```bash
 #To generate an RSA key, use the genrsa command:
-# -aes128, -aes192 and -aes256 are used to password protect the key
+# -aes128, -aes192, and -aes256 are used to password protect the key
 openssl genrsa -aes128 -out fd.key 2048
 Generating RSA private key, 2048 bit long modulus
 ....+++++
@@ -231,30 +244,415 @@ For web server keys, you're limited to only two curves that are supported by all
 
 
 ```bash
+# Create a certificate signing request
+# use -subj or -config file to not get prompted
+# -subj "/C=US/ST=Texas/L=Austin/O=LFM/OU=Engineering Depeartment/CN=jenkins"
 openssl req -new -key fd.key -out fd.csr
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter '.', the field will be left blank.
+-----
+Country Name (2 letter code) [AU]:US
+State or Province Name (full name) [Some-State]:CA
+Locality Name (eg, city) []:Austin
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:
+Organizational Unit Name (eg, section) []:
+Common Name (e.g. server FQDN or YOUR name) []:
+Email Address []:
+
+Please enter the following 'extra' attributes
+to be sent with your certificate request
+A challenge password []:
+An optional company name []:
 
 # check your CSR
 openssl req -text -in fd.csr -noout
+Certificate Request:
+    Data:
+        Version: 0 (0x0)
+        Subject: C=US, ST=CA, L=Austin, O=Internet Widgits Pty Ltd
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (2048 bit)
+                Modulus:
+                    00:b8:48:a1:91:1f:39:83:e8:b5:96:3c:9d:92:fb:
+                    7e:c7:10:9c:60:fe:81:c0:14:3b:1e:cc:bc:01:e2:
+                    f5:ce:6a:5e:9f:c8:57:32:fb:40:45:de:43:5a:ee:
+                    2e:e8:12:02:25:15:4a:43:3d:c1:a7:79:d7:2f:6f:
+                    93:23:35:a1:ef:b0:71:e0:53:07:00:8a:9a:19:9f:
+                    be:90:77:f8:00:c8:5b:cb:83:84:01:9a:f3:23:fa:
+                    d0:d2:bc:25:24:99:89:50:7b:5b:f5:96:99:41:54:
+                    a0:37:0c:3b:ba:57:c6:6b:9a:3e:0c:37:ce:89:30:
+                    c0:33:fd:d8:56:0e:98:cb:1e:e9:e2:2b:d1:65:72:
+                    80:14:3b:43:20:a7:cc:57:9f:3c:d6:bd:9a:9f:02:
+                    04:72:86:99:ba:43:5c:7f:2d:4f:5e:07:a4:b5:e8:
+                    38:16:a6:21:4f:e6:72:5a:71:96:5e:88:ab:69:fa:
+                    67:aa:f4:36:2a:5a:1b:b6:a8:f0:23:22:80:cf:08:
+                    65:d1:3e:23:71:af:a7:d1:38:0f:b4:08:c2:da:f0:
+                    31:f8:49:31:0f:95:31:ba:bb:aa:a3:56:6c:89:f4:
+                    6c:94:c3:be:c6:62:a1:de:a2:a7:fb:ac:aa:0b:39:
+                    d9:86:df:eb:6e:83:e1:80:13:62:9e:e6:e1:9d:fe:
+                    64:ef
+                Exponent: 65537 (0x10001)
+        Attributes:
+            a0:00
+    Signature Algorithm: sha256WithRSAEncryption
+         5a:18:93:fc:20:09:2c:7c:42:a3:b9:81:62:a6:5b:be:89:f5:
+         24:b9:11:e6:72:a4:58:4c:1d:f5:40:ae:11:c5:cc:f3:35:c4:
+         99:91:3c:84:62:38:82:2a:0d:26:21:67:a8:01:39:f7:ea:3b:
+         f5:0b:fb:73:80:ee:fb:81:16:f7:01:c7:24:bb:14:96:05:b4:
+         b3:c8:7d:93:bb:a3:38:c4:68:02:7b:d3:22:e9:ec:d9:5f:f2:
+         be:d0:5e:0a:4f:5f:b9:3c:77:4b:59:b8:da:4e:39:d7:3b:cd:
+         ef:05:72:10:4d:ed:59:d8:e1:55:71:58:83:c0:46:47:ab:17:
+         dd:7a:ea:06:48:96:4d:df:38:fc:e1:08:a7:ed:4c:fd:15:fb:
+         ea:f9:34:db:8a:34:f4:06:3e:1c:08:01:2f:f6:f0:f7:09:87:
+         e6:b8:c0:8f:b0:da:7e:ea:b4:38:d4:7a:1a:be:c7:ca:ee:91:
+         b2:cf:84:da:dd:e7:b6:d3:0c:20:4b:3e:73:b1:2f:60:a8:26:
+         73:41:2d:99:c2:bc:45:b5:ea:7b:fd:d9:42:19:30:2f:d8:f3:
+         75:fc:7f:0c:32:49:4c:1a:d4:2e:50:15:f2:a8:33:36:b0:5e:
+         ff:b3:f6:0c:27:a1:09:f5:8a:dd:8f:6b:37:d6:f6:d6:a3:d6:
+         0e:81:ac:6e
+
 ```
 
 
-```
+Required fields for the CSR (used with -subj)
+* /C=	Country	 GB
+* /ST=	State	London
+* /L=	Location	London
+* /O=	Organization	Global Security
+* /OU=	Organizational Unit	IT Department
+* /CN=	Common Name	example.com
+
+
+You can also use -config file (instead of -subj)
+```ini
+# config.cnf
 [req]
 prompt = no
 distinguished_name = dn
 req_extensions = ext
 
 [dn]
-CN = www.feistyduck.com
+C=
+ST=
+L=
+O=
+OU=
+CN=
+
 emailAddress = webmaster@feistyduck.com
-O = Feisty Duck Ltd
-L = London
-C = GB
 
 [ext]
 subjectAltName = DNS:www.feistyduck.com,DNS:feistyduck.com
+
+# or 
+
+[ ext ]
+subjectAltName = @alt_names
+
+[alt_names]
+DNS.1 = hostname.domain.tld
+DNS.2 = hostname
+IP.1 = 10.20.30.40
+
 ```
 
+# Singing your own certificates
+
+If you’re installing a TLS server for your own use, you probably don’t want to go to a CA to get a publicly trusted certificate.
+
+It's much better to use a private CA in a development environment than to use self-signed certificates everywhere.
+
+```bash
+# Create a x509 certificate if you have a CSR
+openssl x509 -req -days 365 -in fd.csr -signkey fd.key -out fd.crt
+
+
+# creates a self-signed certificate starting with a key alone
+#  In other words, don't create a CSR just straight create the self-signed cert
+openssl req -new -x509 -days 365 -key fd.key -out fd.crt
+
+# create a self-signed certificate with key alone and don't prompt
+openssl req -new -x509 -days 365 -key fd.key -out fd.crt \
+-subj "/C=GB/L=London/O=Feisty Duck Ltd/CN=www.feistyduck.com"
+
+
+# Examine the certificate
+#  -text - print certificate contents
+#  -noout - reduce clutter by not printing the encoded certificate itself
+openssl x509 -text -in fd.crt -noout
+Certificate:
+    Data:
+        Version: 1 (0x0)
+        Serial Number:
+            fe:d8:fb:bc:c5:16:ff:f7
+    Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C=US, ST=Texas, L=Austin, O=LFM, OU=Engineering Department, CN=jenkins
+        Validity
+            Not Before: Dec  8 20:07:02 2020 GMT
+            Not After : Dec  8 20:07:02 2021 GMT
+        Subject: C=US, ST=Texas, L=Austin, O=LFM, OU=Engineering Department, CN=jenkins
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (2048 bit)
+                Modulus:
+                    00:e8:30:dd:4e:56:23:d5:44:18:88:de:57:05:fd:
+                    a9:57:1f:2c:46:48:c4:51:b4:ab:cb:f1:01:bb:2d:
+                    80:a7:06:9a:f9:ed:bc:03:b5:a1:87:fe:6a:57:dc:
+                    b3:e1:30:b9:4d:fb:96:e3:22:fe:38:05:63:33:de:
+                    db:a2:56:e3:f8:37:a5:68:26:90:7b:9b:8b:b4:87:
+                    11:fa:22:24:4a:d8:f2:3f:25:38:8c:cf:53:f6:28:
+                    f0:07:c9:52:fb:51:12:1a:1f:9f:d3:39:bb:17:6f:
+                    de:d1:d5:41:2b:f3:4f:5f:40:a7:3e:71:1f:bd:c2:
+                    45:be:fb:67:91:fb:a8:dc:32:e0:fb:d9:2c:89:3d:
+                    42:33:69:96:e0:61:75:d8:b3:36:05:d9:6a:12:33:
+                    c5:9e:a8:73:d1:0d:eb:1a:02:06:b5:2f:dc:56:4d:
+                    90:4a:cf:56:d4:68:5d:df:9b:40:f1:78:45:97:ca:
+                    f5:e1:eb:26:f5:57:5b:5b:36:c0:05:0a:39:6c:eb:
+                    f9:1d:cd:b1:dc:0f:55:12:3c:fa:36:e6:a5:af:67:
+                    a3:41:61:84:d1:65:79:cb:77:b2:fd:ca:ef:c2:b5:
+                    99:22:1e:4e:9f:2d:dd:1f:c9:4b:92:18:89:8a:f1:
+                    9a:34:c7:16:82:ee:8f:0a:ce:67:cf:23:21:09:5a:
+                    1b:0d
+                Exponent: 65537 (0x10001)
+    Signature Algorithm: sha256WithRSAEncryption
+         52:b7:b2:a7:bd:bf:bd:69:6a:9c:88:db:75:9c:fa:13:15:f3:
+         48:7d:74:a8:e5:8e:73:ce:52:af:f5:23:a4:fd:89:65:c5:82:
+         a7:3b:5e:69:56:71:8e:77:60:f0:b1:7d:45:c0:3c:44:9e:d3:
+         e1:46:9e:09:fa:cd:a8:c5:53:be:eb:72:dc:14:33:19:03:29:
+         27:2e:aa:70:89:11:f2:dd:2b:48:e8:42:24:45:97:4d:18:a0:
+         37:6f:e5:08:e6:a2:2d:53:9e:17:16:f4:ab:b6:e1:ae:19:b9:
+         5b:a6:47:0b:16:f0:06:a9:0f:03:c2:19:36:de:89:12:38:cb:
+         e0:06:77:d8:bb:25:1c:7f:8f:23:c4:84:c9:34:8c:1e:13:14:
+         e7:d6:fa:bb:b0:8f:52:c6:d6:23:40:15:f0:de:0b:1f:03:59:
+         0c:58:ce:82:4b:65:19:3b:71:c2:09:86:1c:1c:19:e9:77:b8:
+         b0:11:35:2c:bf:62:cd:b4:84:55:00:0a:75:ad:8e:f9:5d:a3:
+         9a:48:d7:41:01:76:25:17:59:45:9c:0a:9f:0c:41:b4:1a:53:
+         00:b3:79:90:37:d4:a1:3e:63:ec:13:59:29:7e:aa:1f:7a:10:
+         3e:e0:e8:90:64:ff:e3:91:c0:a3:9a:7a:cc:e8:fe:8b:7f:a5:
+         10:1c:18:bd
+
+```
+
+Warning: When a certificate contains alternative names, all common names are ignored.
+
+There are two mechanisms for supporting multiple hostnames in a certificate. The first is to list all desired hostnames using an X.509 extension called Subject Alternative Name (SAN). The second is to use wildcards.
+
+```ini
+# fd.ext
+subjectAltName = DNS:*.feistyduck.com, DNS:feistyduck.com
+```
+
+
+# Performance
+
+```bash
+openssl speed -multi 4 rsa
+Forked child 0
+Forked child 1
+Forked child 2
+Forked child3
++DTP:512:private:rsa:10
++DTP:512:private:rsa:10
++DTP:512:private:rsa:10
++DTP:512:private:rsa:10
++R1:265814:512:10.00
++DTP:512:public:rsa:10
++R1:264622:512:10.00
++DTP:512:public:rsa:10
++R1:265482:512:10.00
++DTP:512:public:rsa:10
++R1:264064:512:10.00
++DTP:512:public:rsa:10
++R2:4978119:512:10.00
++R2:4965095:512:10.00
++R2:4949064:512:10.00
++R2:4961196:512:10.00
++DTP:1024:private:rsa:10
++DTP:1024:private:rsa:10
++DTP:1024:private:rsa:10
++DTP:1024:private:rsa:10
++R1:123240:1024:10.00
++DTP:1024:public:rsa:10
++R1:122939:1024:10.00
++DTP:1024:public:rsa:10
++R1:123341:1024:10.00
++DTP:1024:public:rsa:10
++R1:123040:1024:10.00
++DTP:1024:public:rsa:10
++R2:2080715:1024:10.00
++R2:2049657:1024:10.00
++R2:2082599:1024:10.00
++R2:2076420:1024:10.00
++DTP:2048:private:rsa:10
++DTP:2048:private:rsa:10
++DTP:2048:private:rsa:10
++DTP:2048:private:rsa:10
++R1:19037:2048:10.00
++DTP:2048:public:rsa:10
++R1:18884:2048:10.00
++R1:18860:2048:10.00
++DTP:2048:public:rsa:10
++DTP:2048:public:rsa:10
++R1:18954:2048:10.00
++DTP:2048:public:rsa:10
++R2:658241:2048:10.00
++R2:657726:2048:10.00
++R2:663370:2048:10.00
++R2:661916:2048:10.00
++DTP:4096:private:rsa:10
++DTP:4096:private:rsa:10
++DTP:4096:private:rsa:10
++DTP:4096:private:rsa:10
++R1:2843:4096:10.00
++DTP:4096:public:rsa:10
++R1:2715:4096:10.00
++DTP:4096:public:rsa:10
++R1:2717:4096:10.00
++DTP:4096:public:rsa:10
++R1:2829:4096:10.00
++DTP:4096:public:rsa:10
++R2:185001:4096:10.00
++R2:187334:4096:10.00
++R2:182507:4096:10.00
++R2:184055:4096:10.00
+Got: +F2:0:512:0.000038:0.000002 from 0
+Got: +F2:1:1024:0.000081:0.000005 from 0
+Got: +F2:2:2048:0.000530:0.000015 from 0
+Got: +F2:3:4096:0.003681:0.000055 from 0
+Got: +F2:0:512:0.000038:0.000002 from 1
+Got: +F2:1:1024:0.000081:0.000005 from 1
+Got: +F2:2:2048:0.000530:0.000015 from 1
+Got: +F2:3:4096:0.003517:0.000054 from 1
+Got: +F2:0:512:0.000038:0.000002 from 2
+Got: +F2:1:1024:0.000081:0.000005 from 2
+Got: +F2:2:2048:0.000525:0.000015 from 2
+Got: +F2:3:4096:0.003683:0.000053 from 2
+Got: +F2:0:512:0.000038:0.000002 from 3
+Got: +F2:1:1024:0.000081:0.000005 from 3
+Got: +F2:2:2048:0.000528:0.000015 from 3
+Got: +F2:3:4096:0.003535:0.000054 from 3
+OpenSSL 1.0.2p  14 Aug 2018
+built on: reproducible build, date unspecified
+options:bn(64,64) rc4(16x,int) des(idx,cisc,16,int) aes(partial) idea(int) blowfish(idx)
+compiler: /home/conda/feedstock_root/build_artifacts/openssl_1546586955028/_build_env/bin/x86_64-conda_cos6-linux-gnu-cc -DNDEBUG -D_FORTIFY_SOURCE=2 -O2 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -pipe -I/home/luis/anaconda3/include -fdebug-prefix-map=/home/conda/feedstock_root/build_artifacts/openssl_1546586955028/work=/usr/local/src/conda/openssl-1.0.2p -fdebug-prefix-map=/home/luis/anaconda3=/usr/local/src/conda-prefix -Wa,--noexecstack -I. -I.. -I../include  -fPIC -DOPENSSL_PIC -DOPENSSL_THREADS -D_REENTRANT -DDSO_DLFCN -DHAVE_DLFCN_H -m64 -DL_ENDIAN -O3 -Wall -DOPENSSL_IA32_SSE2 -DOPENSSL_BN_ASM_MONT -DOPENSSL_BN_ASM_MONT5 -DOPENSSL_BN_ASM_GF2m -DRC4_ASM -DSHA1_ASM -DSHA256_ASM -DSHA512_ASM -DMD5_ASM -DAES_ASM -DVPAES_ASM -DBSAES_ASM -DWHIRLPOOL_ASM -DGHASH_ASM -DECP_NISTZ256_ASM
+                  sign    verify    sign/s verify/s
+rsa  512 bits 0.000010s 0.000000s 105263.2 2000000.0
+rsa 1024 bits 0.000020s 0.000001s  49382.7 800000.0
+rsa 2048 bits 0.000132s 0.000004s   7572.3 266666.7
+rsa 4096 bits 0.000901s 0.000013s   1110.4  74086.8
+
+# Run (1)
+              sign      verify      sign/s  verify/s
+rsa 2048 bits 0.003606s 0.000102s   277.3   9762.6
+
+# Run (2)
+rsa 2048 bits 0.002209s 0.000068s   452.8   14693.6
+# NOTE: The performance went from 277 signatures/s to 450 signatures/s.
+
+# Run (3) with multi 4
+rsa 2048 bits 0.000917s 0.000027s   1090.7  37068.1
+
+
+# activate hardware acceleration, use the -evp switch 
+openssl speed -evp aes-128-cbc
+```
+
+I’m looking at how many RSA signatures can be executed per second, because this is the most CPU-intensive operation performed on a server and is thus always the first bottleneck. The example number of 1,090 signatures/second tells us that this server can handle about 1,000 brand-new TLS connections per second. I wish I had enough traffic on that server to worry about the performance of TLS.
+
+
+# Client Authentication (two-way TSL)
+
+From a theoretical perspective, there is no major difference between a server certificate and a client certificate.
+
+The major difference between a server certificate and a client certificate is the way they are issued: 
+* server certificate - issued by an internationally operating trusted CA, 
+* client certificate - issued by any locally operating CA that is trusted by the server(s).
+
+TLS Client Authentication can be CPU intensive to implement - it’s an additional cryptographic operation on every request.
+
+```bash
+
+# This creates the private key “client-key1” in PEM format.
+# create a client certificate
+openssl req -newkey rsa:2048 -days 1000 -nodes -keyout client-key1.pem > client-req.pem
+
+# create a client certificate that will be signed by the CA certificate created in Step 2.
+openssl x509 -req -in client-req.pem -days 1000 -CA ca-cert.pem -CAkey ca-key.pem -set_serial 01 > client-cert1.pem
+```
+
+```bash
+# create client private key
+openssl genrsa -out client-private.key 2048
+Generating RSA private key, 2048 bit long modulus
+.............+++++
+....................................................+++++
+e is 65537 (0x10001)
+
+# create client certificate signing request
+openssl req -new -key client-private.key -out client.csr \
+        -subj "/C=US/ST=Texas/L=Austin/O=LFM/OU=Engineering Department/CN=app"
+openssl genrsa -out server-private.key 2048
+Generating RSA private key, 2048 bit long modulus
+.........................................................................+++++
+.................................................................+++++
+e is 65537 (0x10001)
+
+# sign the client certificate with the server private key and server.crt as the CA
+openssl x509 -req -in client.csr  -CA server.crt  -CAkey server-private.key \
+        -set_serial 1001 -extensions client -days 365 -out client.crt
+Signature ok
+subject=/C=US/ST=Texas/L=Austin/O=LFM/OU=Engineering Department/CN=app
+Getting CA Private Key
+
+
+```
+
+
+
+
+### References
+
+https://www.makethenmakeinstall.com/2014/05/ssl-client-authentication-step-by-step/
+
+
+```bash
+curl --cacert ca.crt \
+   --key client.key \
+   --cert client.crt \
+   https://cloud-controller-ng.service.cf.internal:9023/internal/v4/syslog_drain_urls
+   
+```
+
+
+# Testing with OpenSSL
+
+OpenSSL comes with a client tool that you can use to connect to a secure server.
+
+```bash
+openssl s_client -connect www.feistyduck.com:443
+
+openssl s_client -connect www.feistyduck.com:443 -CAfile /etc/ssl/certs/ca-certificates.crt
+
+```
+The most important information here is the protocol version (TLS 1.1) and cipher suite used ( ECDHE-RSA-AES256-SHA ). 
+
+
+When coupled with the -reconnect switch, the s_client command can be used to test session reuse.
+
+```
+echo | openssl s_client -connect www.feistyduck.com:443 -reconnect
+echo | openssl s_client -connect www.feistyduck.com:443 -reconnect -no_ssl2 2> \
+/dev/null | grep 'New\|Reuse'
+```
+
+You should see 1 new and the rest Reused
+
+Reused, TLSv1/SSLv3, Cipher is RC4-SHA
 
 
 # public-key infrastructure

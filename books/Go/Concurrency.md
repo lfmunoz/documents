@@ -39,9 +39,13 @@ A wait group is a synchronisation primitive that allows you to 'hang' your progr
 
 ```
 
-Roman Elizarov on goroutines verses kotlin coroutines
-https://stackoverflow.com/questions/46864623/which-of-coroutines-goroutines-and-kotlin-coroutines-are-faster
+* Roman Elizarov on goroutines verses kotlin coroutines
+    * https://stackoverflow.com/questions/46864623/which-of-coroutines-goroutines-and-kotlin-coroutines-are-faster
 
 
 http://journal.stuffwithstuff.com/2015/02/01/what-color-is-your-function/
 
+
+
+* Bryan C Mills - An overview of sync.Map
+    * https://www.youtube.com/watch?v=C1EtfDnsdDs

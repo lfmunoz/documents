@@ -9,6 +9,7 @@ toc: true
 
 # Linux
 
+* [Important Commands](Commands.html)
 
 * [Universal File I/O](UniversalFileIO.html)
 * [Processes](Processes.html)

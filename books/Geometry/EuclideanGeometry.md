@@ -10,85 +10,13 @@ toc: true
 
 > Geometry is the art of applying good reasoning to bad diagrams
 
+[Geometry](Introduction.html)
 
 
-David Hilbert - Foundations of Geometry
-reformulation
-
-Euclid's Elements
-
-
-
-mathematically proven was a folk-wisdom synonym for "absolutely certain". I concluded that if absolute truth is to be found anywhere it must lie in mathematics.
-
-To what extend is mathematics the truth? ...I made little progress
-
-
-
-
-
-What I learned that summer was that a struggle with the notion of mathematics as truth  similiar to my own had unfolded in mathematics and philosophical circles from about 400 B.C. into the 19th century; that it had climaxed with the invention of non-Euclidean geometry and as a result over the second half of that centry mathematicians changed the way they viewed their subject.
-
-absolutely certain knowledge about the world, it offers striking evidence that such knowledge is impossible, but cannot prove it. 
-
-
-Before science we explained things in nature through personalities. Myths, stories populated with an assortment of gods and goddesses whose interaction with  one an-other and with human beings produced natural phenomena like spring, thunder, eclipses etc.
-
-Thales invented science. He was interested in surveying and wanted to abstract the work. Pythagoras was born when Thales was in his fifties
-
-The Pythagoreans discovered that logic and intuition can disagree.
-
-
-It was intuitively evident to the early Pytahgoereans that a common measure can be found for any pair of segments-- though of course it may be neccessary to take a quite small segment.
-
-
-
-
-Now take a square with side equal to 1 and draw a diagonal. If the early Pythagoreans had been correct that the quotients of two lengths is always rational, $/sqrt{2}$ would be rational.
-
-
-
-Theorem: $/sqrt{2}$ is not rational
-Proof:
-
-Assume $/sqrt[2}$ is rational.
-
-Let $/sqrt{2} = /frac{p}{q}$
-
-where p and q are whole numbers with no common factor.
-
-Squaring both sides gives 
-
-$$2 = \frac{p^2}{q^2}$$
-
-$$2 q^2 = p^2$$
-
-This means $p^2$ is even. Then $p$ must also be even.
-
-This has two consequences:
-p is twice some other whole number.
-q is odd, for which we said p and q have no common factor, and an even q would have a factor 2 in common with p
-
-
-
-
-Pytahgoreans were preplexed. They were sure, on intuitive grounds, that $/sqrt{2}$ being the quotient of two lengths, is a rational number.
-
-On the other hand they were equally sure, on the grounds of logic and computation, that $/sqrt{2}$ is not a rational number!.
-
-
-
-
-This to me means, there is no smallest number. You can always compute a smaller number. In other words reality is finite in the sense there is always a smaller distance or measure.
-
-
-Mathematicians decided to accept logic instead of intuition.
-To say mathematicians consider intuition unreliable, however is not to say they have banished it from mathematics. The axioms are accepted without proof primarily because of intuitive appeal.
 
 Elements of Euclid completed about 300 B.C.
 
 A beginning student of geometry asks him "What shall I get by learning these thigns? Euclid responds by calling a servant and saying " Give him a coin, since he must make gain out of what he learns"
-
 
 
 King Ptolemy I asks him "Is there in geometry any shorter awy than the Elements? to which Euclid replies, "there is no royal road to geometry"
