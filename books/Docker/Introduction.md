@@ -22,3 +22,13 @@ dockerd --debug \
 nohup dockerd -s vfs &
 
 ```
+
+
+```
+docker run -d --name bmweb \
+    # <host file or dir>:<container file or dir>
+    -v ~/projects/docker/example-docs:/usr/share/nginx/html:ro \
+    # <hostPort>:<containerPort>
+    -p 80:80 \
+    nginx:latest
+``

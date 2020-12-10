@@ -1,6 +1,6 @@
 ---
 title: Organization and Structure of Applications
-layout: default
+layout: page
 ---
 
 

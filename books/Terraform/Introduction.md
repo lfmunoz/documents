@@ -11,8 +11,10 @@ toc: true
 **Terraform** is an open-source tool that is specifically dedicated to creating, modifying, and even deleting infrastructure on cloud, focusing on "Infrastructure as Code." **Infrastructure as code** means provisioning infrastructure through software to achieve consistent and predictable environments
 
 
-* [](https://registry.terraform.io/)
+* [https://registry.terraform.io/)](https://registry.terraform.io/)
 * [https://www.terraform.io/docs/configuration/index.html](https://www.terraform.io/docs/configuration/index.html)
+* [https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource)
+
 
 
 * Written in [The Go Programming Language](../Go/Introduction.html).
@@ -24,46 +26,53 @@ toc: true
 
 Everything is controlled by a Command Line Interface (CLI)
 
-* terraform init  - initializes project, downloads plugins, checks modules
-* terraform plan - Analyze code and show you the changes that will be made
-* terraform apply - Applying a configuration is the process of creating, updating, and destroying real infrastructure objects in order to make their settings match the configuration.
-* terraform destroy - Process of destroying all the resources that were built
-* terraform show
-* terraform fmt  - format the .tf files
-* terraform validate - validate the .tf files have correct syntaxx
-* terraform graph
 
 ```bash
+# Initializes project, downloads plugins, checks modules
+terraform init  
+
+# Analyze code and show you the changes that will be made
+terraform plan 
+
+# Applying a configuration is the process of creating, updating, and destroying
+#  real infrastructure objects in order to make their settings match the configuration
+terraform apply 
 # specific modules
 terraform apply -target=aws_security_group.my_sg -target=aws_security_group.my_2nd_sg
 
+# Process of destroying all the resources that were built
+terraform destroy
 
-# run with debug
+terraform show
+
+# Format the .tf files
+terraform fmt 
+
+# Validate the .tf files have correct syntaxx
+terraform validate 
+
+terraform graph
+
+
+# Run with debug enabled
 TF_LOG=DEBUG terraform apply
+
 ```
 
 
 # Installation 
 
+
+<details>
+<summary> <strong> cat src/install_terraform.bash </strong> </summary>
+
+<p markdown="block">
 ```bash
-curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
-sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
-sudo apt-get update && sudo apt-get install terraform
-terraform -help
-
-# Initialize the project, which downloads a plugin
- terraform init
- 
-# Install aws cli
-#  https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html
-/usr/local/bin/aws --version
-aws configure
-```
+{% include_relative src/install_terraform.bash  %}
+````
+</p></details>  
 
 
-
-
-* https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource
 
 # Overview
 

@@ -33,6 +33,10 @@ You must make several decisions:
 
 
 ```bash
+# check the version for following along
+openssl version
+OpenSSL 1.0.2p  14 Aug 201
+
 #To generate an RSA key, use the genrsa command:
 # -aes128, -aes192, and -aes256 are used to password protect the key
 openssl genrsa -aes128 -out fd.key 2048

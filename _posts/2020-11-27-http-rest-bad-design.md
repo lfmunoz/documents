@@ -1,6 +1,6 @@
 ---
 title: RESTful HTTP creates coupling
-layout: default
+layout: page
 ---
 
 

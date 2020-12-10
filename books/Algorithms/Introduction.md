@@ -21,6 +21,7 @@ An algorithm is a well defined set of rules for solving a problem.
     * String Matching
 * [Complete Search](CompleteSearch.html)
     * bute force or recursive backtracking
+* [Dynamic Programming](DP.html)
 
 
 

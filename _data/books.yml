@@ -29,9 +29,13 @@ list:
   Technologies:
     - title: Terraform
       url: /books/Terraform/Introduction.html
+    - title: Envoy
+      url: /books/Envoy/Introduction.html
   Mathematics:
     - title: Logic
       url: /books/Logic/Introduction.html
+    - title: Set Theory
+      url: /books/SetTheory/Introduction.html
     - title: Geometry
       url: /books/Geometry/Introduction.html
     - title: Analysis

@@ -9,7 +9,14 @@ toc: true
 
 # Linux
 
-* [Important Commands](Commands.html)
+* [Commands](Commands.html)
+  * tar
+  * grep, find, xarg
+  * sed, awk, less
+
+* [eBPF](eBPF.html)
+
+* [Inter-process communication](IPC.html)
 
 * [Universal File I/O](UniversalFileIO.html)
 * [Processes](Processes.html)

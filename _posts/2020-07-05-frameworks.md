@@ -1,6 +1,6 @@
 ---
 title: Frameworks and Libraries
-layout: default
+layout: page
 ---
 
 <span class="intro">Should Frameworks and Libraries be avoided or embraced? </span> Obviously I can't give you an absolute answer, but there are guidelines, rules and code smells that will separate a well structured system from a kludge.

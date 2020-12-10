@@ -1,6 +1,6 @@
 ---
 title: Listening to Music
-layout: default
+layout: page
 ---
 
 
