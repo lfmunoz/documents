@@ -57,7 +57,11 @@ terraform graph
 # Run with debug enabled
 TF_LOG=DEBUG terraform apply
 
+
+${path.module}
+path.root 
 ```
+
 
 
 # Installation 
@@ -88,17 +92,56 @@ Do not store **.tfstate** into git, storing in source control could expose poten
 
 # Module
 
-* Any set of Terraform configuration files in a folder is a module. 
-* A module is a container for multiple resources that are used together.
-* Every Terraform configuration has at least one module, known as its root module, which consists of the resources defined in the .tf files in the main working directory.
+ 
 
-* Explicit provider blocks appear only in the root module, and downstream modules can simply declare resources for that provider and have them automatically associated with the root provider configurations.
+Every Terraform configuration has at least one module, known as its **root module**, which consists of the resources defined in the .tf files in the main working directory (**./**). 
 
 
-* Providers should be configured by the user of the module and not by the module itself.
-* A module intended to be called by one or more other modules must not contain any provider blocks
+<details>
+<summary> <strong> cat src/install_terraform.bash </strong> </summary>
 
-To declare that a module requires particular versions of a specific provider, use a required_providers block inside a terraform block:
+<p markdown="block">
+```bash
+{% include_relative src/example_aws/root.tf %}
+````
+</p></details>  
+
+
+```
+├── example_aws              - root module of aws example
+│   ├── root.tf
+│   └── terraform.tfvars
+├── modules
+│   ├── aws
+│   │   └── aws.tf
+│   ├── docker
+│   │   └── docker.tf
+│   ├── copy
+│   │   └── copy.tf
+│   ├── copy_multiple
+│   │   └── copy_multiple.tf
+
+
+```
+
+Any set of Terraform configuration files in a folder is a module.
+
+
+
+<details>
+<summary> <strong> cat src/modules/aws/aws.tf </strong> </summary>
+
+<p markdown="block">
+```bash
+{% include_relative src/modules/aws/aws.tf %}
+````
+</p></details>  
+
+
+
+
+
+
 
 
 ```ruby
@@ -143,9 +186,15 @@ Name your workspaces with both their component and their environment
 A **provider** is a plugin that Terraform uses to translate the API interactions with the service. Also offers a collection of resource types. 
 
 * Every provider has its own documentation, describing its resource types and their arguments.
+
+
 * Public providers are distributed on the Terraform Registry
     * https://registry.terraform.io/browse/providers
+
+
 * Provider configurations belong in the root module of a Terraform configuration. 
+
+
  
 ```ruby
  terraform {
@@ -437,7 +486,20 @@ availability_zone_names = [
 * https://www.terraform.io/docs/configuration/outputs.html
 
 
+# Data Source
 
+```
+data "local_file" "input" {
+  filename = var.input_file
+}
+
+resource "aws_cloudwatch_event_target" "data" {
+  rule      = aws_cloudwatch_event_rule.scheduler.name
+  target_id = "finance_producer_cloudwatch"
+  arn       = aws_lambda_function.finance_data_producer.arn
+  input     = data.local_file.input.content
+}
+```
 
 
 # Patterns

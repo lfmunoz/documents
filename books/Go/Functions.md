@@ -14,22 +14,14 @@ toc: true
  
 ## Functions
 
-
-
-Go doesn't support default function arguments 
-Go doesn't support function overloading
+* Go doesn't support default function arguments 
+* Go doesn't support function overloading
 
 
 built-in functions:
  len()
 
 
-```go
-func function_name( [parameter list] ) [return_types]
-{
-   body of the function
-}
-```
 
 ```go
 // Returning multiple values

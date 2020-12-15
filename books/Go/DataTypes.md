@@ -8,10 +8,9 @@ toc: true
 
 # Data Types
 
-In Go, types are composed of smaller types, which is in contrast to traditional inheritance-based models.
-
-
 * [The Go Programming Language](Introduction.html)
+
+In Go, types are composed of smaller types, which is in contrast to traditional inheritance-based models.
 
 
 ## Identifiers
@@ -21,8 +20,6 @@ In Go, types are composed of smaller types, which is in contrast to traditional 
  Go does not allow punctuation characters such as @, $, and % within identifiers.
 
 
-* Variables are lvalues 
-* Numeric literals are rvalues
 
 
 ## Primitive daa types
@@ -43,26 +40,25 @@ uintptr // an unsigned integer to store the uninterpreted bits of a pointer valu
 
 ## Variables
 
+In general use **=** to initialize to the default value and use **:=** when you want to initialize to a specific value.
+
+
 ```go
-var variable_list optional_data_type;
-// declare a variable and initialize with 0
+// Declaration and initialization
+//  Either the type or the = expression can be omitted, but not both.
+//   var name type = expression
+var u2 uint32 = 32 
+
+// Declare a variable and initialize with 0
 var  i, j, k int
 var  c, ch byte;
 var  f, salary float32;
 
-// declare variable and assign value 
-var u2 uint32 = 32 
-
-// The type of variable is automatically judged by the compiler
+// Auto specify the type, the type of variable is automatically 
+//  computed by the compiler
 d = 3, f = 5;
 
-// Declaration and initialization
-// Either the type or the = expression can be omitted, but not both.
-var name type = expression
-
-// := is called short variable declaration
-name := expression
-//  in case of type inference, we initialized the variable with :=
+// := is called short variable declaration (type is inferred)
 y := 42 
 
 // Variables of different types can be declared in one go using type inference.
@@ -71,6 +67,19 @@ fmt.Println(a) // 3  int
 fmt.Println(b) // 4  int
 fmt.Println(c) // "foo" string
 
+// const prefix to declare constants 
+// define constants in CAPITALS.
+const LENGTH int = 10
+
+```
+
+## Literals 
+
+
+* Variables are lvalues 
+* Numeric literals are rvalues
+
+```go
 // Integer Literals
 85         /* decimal */
 0213       /* octal */
@@ -84,27 +93,19 @@ fmt.Println(c) // "foo" string
 3.14159      
 314159E-5L   
 
-
-// const prefix to declare constants 
-// define constants in CAPITALS.
-const LENGTH int = 10
-
-
 ```
-
 
 ## Operators
 
 similar to [C Programming Language](../C/Introduction.html)
 
 ```go
-
-// sizeof
-// ?:
-
-// & - returns thbe address of a variable
-
-// * - Pointer to a variable.
+& // This operator returns the address of the variable.
+* // This operator provides pointer to a variable.
+<- // The name of this operator is receive. 
+   // It is used to receive a value from the channel.
 
 ```
 
+
+Go doesn't have a ternary operator, using if/else syntax is the idiomatic way

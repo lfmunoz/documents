@@ -13,41 +13,30 @@ toc: true
 * [The Go Programming Language](Introduction.html)
 
 
-if, switch, select
+##  Conditional
 
+<details>
+<summary> cat src/if.go </summary>
 
+<p markdown="block">
 ```go
-
-   score := 85
-   if score >= 90 {
-      fmt.Printf("You get an A. \n");
-   } else if >= 80 {
-      fmt.Printf("You get a B. \n");
-   else {
-      fmt.Printf("You failed. \n");
-   }
-
-   yourAge := 16
-   switch yourAge {
-      case 16: fmt.Println("16")
-      case 18: fmt.Println("18")
-      default: fmt.Println("Invalid")
-   }
-
-```
+{% include_relative src/if.go %}
+````
+</p></details> <br>
 
 
-break, continue, goto
+The reason ?: is absent from Go is that the language's designers had seen the operation used too often to create impenetrably complex expressions.
 
 
+##  Looping
+
+<details>
+<summary> cat src/lopping.go </summary>
+
+<p markdown="block">
 ```go
+{% include_relative src/looping.go %}
+````
+</p></details> <br>
 
-for true  {
-   fmt.Printf("This loop will run forever.\n");
-}
 
-for i := 0; i < 5; i++ {
-   fmt.Printf("%d \n", i);
-}
-
-```

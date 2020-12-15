@@ -42,7 +42,7 @@ Automatic Variables
 * $? - names of all the prerequisites that are newer than the target, with spaces between them
 * $^ - names of all the prerequisites (no repeat)
 * $+ - names of all the prerequisites (repeat allowed)
-* $| - names of all the order-only prerequisites
+* $\| - names of all the order-only prerequisites
 * $* - stem with which an implicit rule matches
 
 

@@ -17,6 +17,7 @@ Case sensitive, strongly typed, no garbage collection
     * Modifiers
     * Arrays
     * Conversions
+* [Time](Time.html)
 * [Control Structures](ControlStructures.html)
     * statements
     * expressions

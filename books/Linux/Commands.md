@@ -113,7 +113,6 @@ The leading (optional) '-' means print all but the last K lines (or bytes) of ea
 
 
 
-
 # Archiving and compression 
 
 **tar Archiving** 
@@ -132,8 +131,12 @@ The leading (optional) '-' means print all but the last K lines (or bytes) of ea
   * -z  Use the option z for uncompressing a gzip tar archive.
 * tar xvfj archive_name.tar.**bz2**
   * -j Use the option j for uncompressing a bzip2 tar archive. 
+* tar xvzf /path/to/yourfile**.tgz**
+  * f for file, should come at last just before file name.
+* tar -xvzf /path/to/yourfile.tgz -C /path/where/to/extract/
+  * -C option to extract archive contents to a different directory
 
-
+  
 **tar Listing**
 * tar tvf archive_name.tar
   * -t  View the tar archive file content without extracting
@@ -155,3 +158,66 @@ The leading (optional) '-' means print all but the last K lines (or bytes) of ea
   * tar -cjf - /directory/to/archive/ \| wc -c
 
 https://www.cyberciti.biz/howto/question/general/compress-file-unix-linux-cheat-sheet.php
+
+
+
+# Debugging
+
+
+* od
+  * od -c input.txt  # the contents of input in character format (meaning show \n)
+  * od -c -          # - accepts input from stdin
+  * od -x input.txt  # output as 2-byte hex
+* hd
+* hexdump 
+* xxd 
+  * xxd text.tmp     # show hex and ascii
+
+
+
+* 48 decimal/ 30 hex = 0
+* 64 decimal/ 41 hex = A
+* 97 decimal/ 61 hex = a
+
+
+
+
+
+# tmux
+
+
+* tmux new -s session_name
+* tmux attach -t session_name
+* tmux switch -t session_name
+* tmux list-sessions
+* tmux detach (prefix + d)
+
+
+* ctrl+b ?  - help
+* ctrl+b c  - create new window
+* ctrl+b ,  - rename window
+* ctrl+b <num> - go to window number
+* ctrl+b n   - go to next window
+* ctrl+b p   - go to previous window
+* ctrl+b l  - go to last window (good for switchin between windows)
+* ctrl+b & - close window
+* ctrl+b w - to select from a list of windows
+
+* windows can be split into panes
+* ctrl+b "  - slit window vertically
+* ctrl+b o - cycle between panes
+* ctrl+b % - slip window horizontaly
+* ctrl+b <arrow key> - move to differen panes
+* ctrl+b ; - switch to last used pane
+* ctrl+b x - close a pane
+
+* ctrl+b+d -detach from session
+* tmux ls - list the runnin sessions
+* tmux attach -t <num> - attach to a session
+* ctrl+b $ - rename session (keep them short)
+* ctrl+b s - show show session list and swtich
+* ctrl+b % - kill session
+
+### References
+
+* https://robots.thoughtbot.com/a-tmux-crash-course

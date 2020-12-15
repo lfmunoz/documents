@@ -11,7 +11,6 @@ toc: true
 [Non-Duality](Introduction.html)
 
 
-Any spiritual path makes a concession to a separate-Self.
 
 
 # Dream and Dreamer

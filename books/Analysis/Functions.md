@@ -8,6 +8,7 @@ toc: true
 
 # Functions
 
+* [Analysis](Introduction.html)
 
 
 Loosely speaking, a function is rule that, for each element in some set D of possible inputs, assigns a possible output.
@@ -41,9 +42,21 @@ Let A and B be two sets and let f be a mapping of A into B.
 If $E \subset A$, $f(E)$ is defined to be the set of all elements $f(x)$, for $x \in E$. We call $f(E)$ the **image** of E under f. In this notation, $f(A)$ is the range of f. It is clear that $f(A) \subset B$. If $f(A) = B$ then we say that f maps A **onto** B (onto is more specific than into).
 </div>
 
-f is onto or surjective if every element of B is the image under f of some element of A.
 
-Symbolically: If $f\colon A \rightarrow B$, then $f$ is said to be onto or surjective if $\forall y \in B, \, \exists x \in A, \;\; f(x)=y$
+<div class="definition" markdown="block">
+**Definition**:  onto (or surjective)
+
+A function is said to be **onto** if for each $y \in Y$ there is an $x \in X$ with $f(x)=y$.
+
+or
+
+A function is **onto** or **surjective** if every element of B is the image under f of some element of A.
+
+or
+
+If $f\colon X \rightarrow Y$, then $f$ is said to be **onto** or **surjective** if $\forall y \in Y, \, \exists x \in X, \;\; f(x)=y$
+</div>
+
 
 <div class="definition" markdown="block">
 **Definition**:  Inverse image
@@ -58,9 +71,22 @@ This may be also expressed as follows: f is a 1-1 mapping of A into B provided t
 
 </div>
 
+<div class="definition" markdown="block">
+**Definition**:  one-to-one (or injective)
+
+The function f is said to be **one-to-one** if for all $x, x' \in X$, if f(x) = f(x') then x = x' (or, equivalently, if $x \neq x'$ then $f(x) \neq f(x')$).
+
+or 
+
 f is called one-to-one, or injective, iff different elements of X always have different elements of Y.
 
-Symbolically: $ \forall a,b \in X, \;\; f(a)=f(b) \Rightarrow a=b$
+or
+
+$ \forall a,b \in X, \;\; f(a)=f(b) \Rightarrow a=b$
+</div>
+
+
+
 
 A bijection is one-to-one and onto. 
 

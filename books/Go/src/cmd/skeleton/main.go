@@ -6,7 +6,7 @@ package main
 import "fmt"
 
 // Main
-//  go run skeleton.go
+//  go run main.go
 func main() {
 	// Single line comment
 	/* Multi-line comment */

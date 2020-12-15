@@ -23,6 +23,7 @@ dynamic_resources:
 node:
   cluster: service_greeter
   id: test-id
+
 static_resources:
   clusters:
   - connect_timeout: 1s
@@ -36,7 +37,7 @@ static_resources:
         - endpoint:
             address:
               socket_address:
-                address: 127.0.0.1
+                address: 192.168.0.101
                 port_value: 18000
 
   # secrets:

@@ -85,19 +85,108 @@ kafka-ui:
 
 
 
+#________________________________________________________________________________
+# Grafana / Prometheus
+#  Prometheus exposes 9090
+#  Grafana exposes 3000
+#________________________________________________________________________________
+grafana-start:
+	docker run -d --rm --name grafana --network=${NETWORK} -p 3000:3000 grafana/grafana
+
+
+
+prometheus-start:
+	docker run -d --rm --name prometheus --network=${NETWORK} -p 9090:9090 -v ~/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus
+
+
+
+	docker run -d --rm --name prometheus --network=host -v ~/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus
+
+
+
+
+# Sample global config for monitoring JHipster applications
+global:
+  scrape_interval: 15s # By default, scrape targets every 15 seconds.
+  evaluation_interval: 15s # By default, scrape targets every 15 seconds.
+  # scrape_timeout is set to the global default (10s).
+
+  # Attach these labels to any time series or alerts when communicating with
+  # external systems (federation, remote storage, Alertmanager).
+  external_labels:
+    monitor: 'jhipster'
+
+# A scrape configuration containing exactly one endpoint to scrape:
+# Here it's Prometheus itself.
+scrape_configs:
+  # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
+  - job_name: 'prometheus'
+
+    # Override the global default and scrape targets from this job every 5 seconds.
+    scrape_interval: 5s
+
+    # scheme defaults to 'http'.
+    metrics_path: /management/prometheus
+    static_configs:
+      - targets:
+          # On MacOS, replace localhost by host.docker.internal
+          - localhost:8080
 
 
 
 
 
+global:
+  scrape_interval:     15s # Set the scrape interval to every 15 seconds. Default is every 1 minute.
+  evaluation_interval: 15s # Evaluate rules every 15 seconds. The default is every 1 minute.
+
+# A scrape configuration containing exactly one endpoint to scrape:
+# # Here it's Prometheus itself.
+scrape_configs:
+  # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
+  - job_name: 'cwmp-simulators'
+    consul_sd_configs:
+      - server: 'oc112-16.maas.auslab.2wire.com:8500'
+        services: ['cwmp-simulator']
+    metrics_path: '/actuator/prometheus'
+    params:
+      format: ['prometheus']
+      honor_labels: [true]
 
 
 
 
 
+https://github.com/prometheus-community/windows_exporter/blob/master/docs/collector.textfile.md
+
+
+The directory containing the files to be ingested. Only files with the extension .prom are read. The .prom file must end with an empty line feed to work properly.
+
+
+--collector.textfile.directory
+
+
+
+https://github.com/prometheus/node_exporter
+
+
+https://github.com/prometheus/node_exporter
+
+
+textfile	Exposes statistics read from local disk. The --collector.textfile.directory flag must be set.	any
 
 
 
 
 
+To use it, set the --collector.textfile.directory flag on the node_exporter commandline. The collector will parse all files in that directory matching the glob *.prom
 
+
+docker run -d \
+  --net="host" \
+  --pid="host" \
+  -v "/:/host:ro,rslave" \
+  quay.io/prometheus/node-exporter:latest \
+  --path.rootfs=/host
+
+The node_exporter will use path.rootfs as prefix to access host filesystem.

@@ -9,8 +9,12 @@ list:
       url: /books/DesignPatterns.html
     - title:  Linux
       url: /books/Linux/Introduction.html
+    - title:  Databases
+      url: /books/Databases/Introduction.html
     - title:  Concurrency
       url: /books/SoftwareEngineering/Concurrency.html
+    - title:  Security
+      url: /books/Security/Introduction.html
   Programming Languages:
     - title: C 
       url: /books/C/Introduction.html
@@ -24,6 +28,8 @@ list:
       url: /books/Java/Introduction.html
     - title: Kotlin
       url: /books/Kotlin/Introduction.html
+    - title: Bash
+      url: /lang/Bash/Introduction.html
     - title: Makefile
       url: /books/Make/Introduction.html
   Technologies:

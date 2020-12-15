@@ -4,7 +4,6 @@ import (
 	"context"
 	"flag"
 	"fmt"
-	"io/ioutil"
 	"net"
 	"os"
 
@@ -12,27 +11,24 @@ import (
 	"sync/atomic"
 	"time"
 
-	envoy_api_v2_auth "github.com/envoyproxy/go-control-plane/envoy/api/v2/auth"
-	envoy_api_v2_core "github.com/envoyproxy/go-control-plane/envoy/api/v2/core"
-	core "github.com/envoyproxy/go-control-plane/envoy/config/core/v3"
-	auth "github.com/envoyproxy/go-control-plane/envoy/extensions/transport_sockets/tls/v3"
-
-	"github.com/golang/protobuf/ptypes"
-
-	"github.com/envoyproxy/go-control-plane/pkg/cache/types"
-	cachev3 "github.com/envoyproxy/go-control-plane/pkg/cache/v3"
-
+	// LOGGING
 	log "github.com/sirupsen/logrus"
+
+	// GRPC
+	"github.com/golang/protobuf/ptypes"
 	"google.golang.org/grpc"
 
+	// GO CONTROL PLANE
+	envoy_api_v2_auth "github.com/envoyproxy/go-control-plane/envoy/api/v2/auth"
 	cluster "github.com/envoyproxy/go-control-plane/envoy/config/cluster/v3"
+	core "github.com/envoyproxy/go-control-plane/envoy/config/core/v3"
 	endpoint "github.com/envoyproxy/go-control-plane/envoy/config/endpoint/v3"
-	route "github.com/envoyproxy/go-control-plane/envoy/config/route/v3"
-
 	listener "github.com/envoyproxy/go-control-plane/envoy/config/listener/v3"
+	route "github.com/envoyproxy/go-control-plane/envoy/config/route/v3"
 	hcm "github.com/envoyproxy/go-control-plane/envoy/extensions/filters/network/http_connection_manager/v3"
 	discoverygrpc "github.com/envoyproxy/go-control-plane/envoy/service/discovery/v3"
-
+	"github.com/envoyproxy/go-control-plane/pkg/cache/types"
+	cachev3 "github.com/envoyproxy/go-control-plane/pkg/cache/v3"
 	serverv3 "github.com/envoyproxy/go-control-plane/pkg/server/v3"
 	"github.com/envoyproxy/go-control-plane/pkg/wellknown"
 )
@@ -42,7 +38,8 @@ var (
 	onlyLogging bool
 	withALS     bool
 
-	localhost = "127.0.0.1"
+	localhost         = "0.0.0.0" //127.0.0.1
+	listenPort uint32 = 80
 
 	port        uint
 	gatewayPort uint
@@ -62,6 +59,9 @@ const (
 	Ads        = "ads"
 	Xds        = "xds"
 	Rest       = "rest"
+
+	ServerCertFilePath = "certs/server.crt"
+	ServerKeyFilePath  = "certs/server.key"
 )
 
 func init() {
@@ -71,6 +71,9 @@ func init() {
 	flag.StringVar(&mode, "ads", Ads, "Management server type (ads only now)")
 }
 
+// ________________________________________________________________________________
+// callback handlers
+// ________________________________________________________________________________
 func (cb *Callbacks) Report() {
 	cb.mu.Lock()
 	defer cb.mu.Unlock()
@@ -85,6 +88,9 @@ func (cb *Callbacks) OnStreamClosed(id int64) {
 }
 func (cb *Callbacks) OnStreamRequest(id int64, r *discoverygrpc.DiscoveryRequest) error {
 	log.Infof("OnStreamRequest %v", r.TypeUrl)
+	log.Infof("OnStreamRequest %v", r.Node.Id)
+	log.Infof("OnStreamRequest %v", r.Node.Cluster)
+	log.Infof("OnStreamRequest %v", r.Node.ListeningAddresses)
 	cb.mu.Lock()
 	defer cb.mu.Unlock()
 	cb.Requests++
@@ -121,9 +127,11 @@ type Callbacks struct {
 	mu       sync.Mutex
 }
 
+// ________________________________________________________________________________
+// RunManagementServer starts an xDS server at the given port.
+// ________________________________________________________________________________
 const grpcMaxConcurrentStreams = 1000000
 
-// RunManagementServer starts an xDS server at the given port.
 func RunManagementServer(ctx context.Context, server serverv3.Server, port uint) {
 	var grpcOptions []grpc.ServerOption
 	grpcOptions = append(grpcOptions, grpc.MaxConcurrentStreams(grpcMaxConcurrentStreams))
@@ -143,7 +151,7 @@ func RunManagementServer(ctx context.Context, server serverv3.Server, port uint)
 	// routeservice.RegisterRouteDiscoveryServiceServer(grpcServer, server)
 	// listenerservice.RegisterListenerDiscoveryServiceServer(grpcServer, server)
 
-	log.WithFields(log.Fields{"port": port}).Info("management server listening")
+	log.WithFields(log.Fields{"port": port}).Info("[Management Server Listening]")
 	go func() {
 		if err = grpcServer.Serve(lis); err != nil {
 			log.Error(err)
@@ -154,14 +162,26 @@ func RunManagementServer(ctx context.Context, server serverv3.Server, port uint)
 	grpcServer.GracefulStop()
 }
 
+func pwd() {
+	path, err := os.Getwd()
+	if err != nil {
+		log.Println(err)
+	}
+	fmt.Println(path)
+}
+
+// ________________________________________________________________________________
+// MAIN
+// ________________________________________________________________________________
 func main() {
+	pwd()
+
 	flag.Parse()
-
 	log.SetLevel(log.DebugLevel)
-
+	// A Context carries a deadline, cancelation signal, and request-scoped values
+	// 	across API boundaries.
 	ctx := context.Background()
-
-	log.Printf("Starting control plane")
+	log.Printf("[Starting] - Control Plane Application")
 
 	signal := make(chan struct{})
 	cb := &Callbacks{
@@ -182,10 +202,13 @@ func main() {
 
 		nodeId := cache.GetStatusKeys()[0]
 
+		// ________________________________________________________________________________
+		// Create Cluster
+		// ________________________________________________________________________________
 		var clusterName = "service_bbc"
 		var remoteHost = v
 
-		log.Infof(">>>>>>>>>>>>>>>>>>> creating cluster, remoteHost, nodeID %s,  %s, %s", clusterName, v, nodeId)
+		log.Infof("[Creating Cluster] - remoteHost= %s, nodeID=%s,  clusterName=%s", v, nodeId, clusterName)
 
 		hst := &core.Address{Address: &core.Address_SocketAddress{
 			SocketAddress: &core.SocketAddress{
@@ -231,24 +254,23 @@ func main() {
 			},
 		}
 
-		// =================================================================================
+		// ________________________________________________________________________________
+		// Create Listener
+		// ________________________________________________________________________________
 		var listenerName = "listener_0"
 		var targetHost = v
-		var targetPrefix = "/"
-		var virtualHostName = "local_service"
-		var routeConfigName = "local_route"
 
-		log.Infof(">>>>>>>>>>>>>>>>>>> creating listener " + listenerName)
+		log.Infof("[Creating listener] - %s", listenerName)
 
 		rte := &route.RouteConfiguration{
-			Name: routeConfigName,
+			Name: "local_route",
 			VirtualHosts: []*route.VirtualHost{{
-				Name:    virtualHostName,
+				Name:    "local_service",
 				Domains: []string{"*"},
 				Routes: []*route.Route{{
 					Match: &route.RouteMatch{
 						PathSpecifier: &route.RouteMatch_Prefix{
-							Prefix: targetPrefix,
+							Prefix: "/",
 						},
 					},
 					Action: &route.Route_Route{
@@ -276,43 +298,53 @@ func main() {
 				Name: wellknown.Router,
 			}},
 		}
-
 		pbst, err := ptypes.MarshalAny(manager)
 		if err != nil {
 			log.Fatal(err)
 		}
-
-		priv, err := ioutil.ReadFile("certs/server.key")
-		if err != nil {
-			log.Fatal(err)
-		}
-		pub, err := ioutil.ReadFile("certs/server.crt")
-		if err != nil {
-			log.Fatal(err)
-		}
-
+		// ________________________________________________________________________________
+		//
 		// use the following imports
 		// envoy_api_v2_core "github.com/envoyproxy/go-control-plane/envoy/api/v2/core"
 		// envoy_api_v2_auth "github.com/envoyproxy/go-control-plane/envoy/api/v2/auth"
 		// core "github.com/envoyproxy/go-control-plane/envoy/config/core/v3"
 		// auth "github.com/envoyproxy/go-control-plane/envoy/extensions/transport_sockets/tls/v3"
+		// ________________________________________________________________________________
 
+		// ________________________________________________________________________________
 		// 1. send TLS certs filename back directly
+		// 	create a static TLS certs to beam down:
+		// ________________________________________________________________________________
 
-		sdsTls := &envoy_api_v2_auth.DownstreamTlsContext{
-			CommonTlsContext: &envoy_api_v2_auth.CommonTlsContext{
-				TlsCertificates: []*envoy_api_v2_auth.TlsCertificate{{
-					CertificateChain: &envoy_api_v2_core.DataSource{
-						Specifier: &envoy_api_v2_core.DataSource_InlineBytes{InlineBytes: []byte(pub)},
-					},
-					PrivateKey: &envoy_api_v2_core.DataSource{
-						Specifier: &envoy_api_v2_core.DataSource_InlineBytes{InlineBytes: []byte(priv)},
-					},
-				}},
-			},
-		}
+		/*
+			priv, err := ioutil.ReadFile(ServerKeyFilePath)
+			if err != nil {
+				log.Fatal(err)
+			}
+			pub, err := ioutil.ReadFile(ServerCertFilePath)
+			if err != nil {
+				log.Fatal(err)
+			}
+		*/
 
+		/*
+			sdsTls := &envoy_api_v2_auth.DownstreamTlsContext{
+				CommonTlsContext: &envoy_api_v2_auth.CommonTlsContext{
+					TlsCertificates: []*envoy_api_v2_auth.TlsCertificate{{
+						CertificateChain: &envoy_api_v2_core.DataSource{
+							Specifier: &envoy_api_v2_core.DataSource_InlineBytes{InlineBytes: []byte(pub)},
+						},
+						PrivateKey: &envoy_api_v2_core.DataSource{
+							Specifier: &envoy_api_v2_core.DataSource_InlineBytes{InlineBytes: []byte(priv)},
+						},
+					}},
+				},
+			}
+		*/
+
+		// ________________________________________________________________________________
 		// or
+		// Secret discovery service
 		// 2. send TLS SDS Reference value
 		// sdsTls := &envoy_api_v2_auth.DownstreamTlsContext{
 		// 	CommonTlsContext: &envoy_api_v2_auth.CommonTlsContext{
@@ -321,7 +353,10 @@ func main() {
 		// 		}},
 		// 	},
 		// }
+		// ________________________________________________________________________________
 
+		// ________________________________________________________________________________
+		// AggregatedDiscoveryService
 		// 3. SDS via ADS
 
 		// sdsTls := &auth.DownstreamTlsContext{
@@ -338,10 +373,10 @@ func main() {
 		// 	},
 		// }
 
-		scfg, err := ptypes.MarshalAny(sdsTls)
-		if err != nil {
-			log.Fatal(err)
-		}
+		// scfg, err := ptypes.MarshalAny(sdsTls)
+		// if err != nil {
+		// log.Fatal(err)
+		// }
 
 		var l = []types.Resource{
 			&listener.Listener{
@@ -352,7 +387,7 @@ func main() {
 							Protocol: core.SocketAddress_TCP,
 							Address:  localhost,
 							PortSpecifier: &core.SocketAddress_PortValue{
-								PortValue: 10000,
+								PortValue: listenPort,
 							},
 						},
 					},
@@ -364,39 +399,41 @@ func main() {
 							TypedConfig: pbst,
 						},
 					}},
-					TransportSocket: &core.TransportSocket{
-						Name: "envoy.transport_sockets.tls",
-						ConfigType: &core.TransportSocket_TypedConfig{
-							TypedConfig: scfg,
-						},
-					},
+					// TransportSocket: &core.TransportSocket{
+					// Name: "envoy.transport_sockets.tls",
+					// ConfigType: &core.TransportSocket_TypedConfig{
+					// TypedConfig: scfg,
+					// },
+					// },
 				}},
 			}}
 
-		var secretName = "server_cert"
+		/*
+			var secretName = "server_cert"
 
-		log.Infof(">>>>>>>>>>>>>>>>>>> creating Secret " + secretName)
-		var s = []types.Resource{
-			&auth.Secret{
-				Name: secretName,
-				Type: &auth.Secret_TlsCertificate{
-					TlsCertificate: &auth.TlsCertificate{
-						CertificateChain: &core.DataSource{
-							Specifier: &core.DataSource_InlineBytes{InlineBytes: []byte(pub)},
-						},
-						PrivateKey: &core.DataSource{
-							Specifier: &core.DataSource_InlineBytes{InlineBytes: []byte(priv)},
+			log.Infof(">>>>>>>>>>>>>>>>>>> creating Secret " + secretName)
+			var s = []types.Resource{
+				&auth.Secret{
+					Name: secretName,
+					Type: &auth.Secret_TlsCertificate{
+						TlsCertificate: &auth.TlsCertificate{
+							CertificateChain: &core.DataSource{
+								Specifier: &core.DataSource_InlineBytes{InlineBytes: []byte(pub)},
+							},
+							PrivateKey: &core.DataSource{
+								Specifier: &core.DataSource_InlineBytes{InlineBytes: []byte(priv)},
+							},
 						},
 					},
 				},
-			},
-		}
+			}
+		*/
 
 		// =================================================================================
 		atomic.AddInt32(&version, 1)
 		log.Infof(">>>>>>>>>>>>>>>>>>> creating snapshot Version " + fmt.Sprint(version))
 
-		snap := cachev3.NewSnapshot(fmt.Sprint(version), nil, c, nil, l, nil, s)
+		snap := cachev3.NewSnapshot(fmt.Sprint(version), nil, c, nil, l, nil, nil)
 		if err := snap.Consistent(); err != nil {
 			log.Errorf("snapshot inconsistency: %+v\n%+v", snap, err)
 			os.Exit(1)

@@ -9,8 +9,7 @@ toc: true
 
 # Concurrency
 
-
-Does a computer execute the program you wrote? No, that would be too slow, you didn't mean to do that, so the compiler or processor or cache system will re-write it for you. 
+The most important thing to understand is that a computer does NOT execute the program you wrote. That would be too slow, you didn't mean to do that, so the compiler or processor or cache system will re-write it for you. 
 
 **Important:** Re-ordering can happen for many reasons (compiler, caching system, CPU pre-fetch) but it doesn't matter, the end effect is re-ordering. 
 
@@ -22,13 +21,11 @@ Does a computer execute the program you wrote? No, that would be too slow, you d
 This means the execution order of a program in the same processor (or thread) is the same as the program order. The execution order of a program between processors (or threads) is undefined.
 
 
-
-
 Let's explore the classic example of trying to modify a global variable from two different threads.
 
 ```
- thread 1:     [incr global variable]  [incr global variable]  [incr global variable]
- thread 2:       [incr global variable]  [incr global variable]  [incr global variable]
+ thread 1:     [read incr write]  [read incr write]  [read incr write]
+ thread 2:       [read incr write]  [read incr write]  [read incr write]
  Time   t: -------------------------------------------------------------------------------->
 ```
 

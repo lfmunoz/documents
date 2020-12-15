@@ -12,6 +12,9 @@ toc: true
 [Non-Duality](Introduction.html)
 
 
+> Any spiritual path makes a concession to a separate-Self. -Rupert Spira
+
+
 ## Is there something to do?
 
 **Related questions:**
@@ -54,7 +57,9 @@ A human doesn't have consciousness and they are not consciousness. Only consciou
 
 The why question cannot be answered. Any answer will beg another question. Imagine the answer is X, then you would need an explanation for X. It is a mystery, there could be a surrendering into the unknown or a seeing the situation for what it is. Understand.
 
-Cause and effect is how the mind works, not how reality works.
+Cause and effect is how the mind works, not how reality works.  
+
+The reason would be a manifestation already in the universe, that cannot explain how it itself ended up being created. The nature of reality is manifestation of it's potential it doesn't do it for a reason. 
 
 Because of love, because it is self-asserting, because God was bored, because all possible worlds exist. All answers will ultimately be unsatisfying to the mind. Better to see the situation for what it is. Understand.
 
@@ -105,6 +110,24 @@ Why don't you just wake up with curiosity, a feeling that anything is possible,
 gratitude, excitement, courage, love, and passion.
 
 Imagine you are happy walking down a park trail, you receive a call and are informed that a loved one has died. All the sudden you become unhappy. How was the unhappiness created, where did it come from? Could the opposite happen? Does it take external sounds or images to create unhappiness or happiness or can you simply self generate it?
+
+
+
+## Did the Big Bang happen or is that just another creation myth?
+
+It is a creation myth that is in alignment with a world made of time and space. It is consistent with the believe that matter is real in its own right. That there is stuff called matter that has independent existence from mind. There is no evidence of anything existing outside of mind, that is a just a belief.
+
+Time and space are the way the mind views reality, from the view point of a finite mind consciousness sees itself as the world. In reality there is no time and there is no space. You exist in ever present never changing eternity. 
+
+The past is a memory which is a thought, everything actually happens now which is not a moment or an event. The Big Bang exists as a thought now. There a sense that the mind can trace itself back.
+
+## Was there a universe before minds conceived it? 
+
+No. There isn't even a universe now as it is normally conceived.
+
+What we call the universe is the activity of infinite consciousness. It isn't an object with existence, it is an activity of consciousness. The universe is what the activity of consciousness looks like when perceived from a localized perspective. Thought makes eternity appear as time.
+
+Reconsider the Big Bang which supposedly occurred billions of years ago. It is present now in the depths of the psyche.  We cannot experience it because of the limitations of the finite mind which can only experience this waking state experience.
 
 
 ## I am not a body but it isn't obvious
