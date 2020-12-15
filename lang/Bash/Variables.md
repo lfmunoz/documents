@@ -39,15 +39,13 @@ PS1: The primary command prompt definition. This is used to define what your pro
 ## Command Line Arguments
 
 
-
 <details>
 <summary> <strong> cat src/cmd_line_args.sh </strong> </summary>
 <p markdown="block">
 ```bash
 {% include_relative src/cmd_line_args.sh %}
 ````
-</p></details>  
-
+</p></details><br>
 
 
 
@@ -61,7 +59,7 @@ PS1: The primary command prompt definition. This is used to define what your pro
 ```bash
 {% include_relative src/predefined_vars.sh %}
 ````
-</p></details>  
+</p></details><br>
 
 
 

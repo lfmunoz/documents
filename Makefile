@@ -39,6 +39,7 @@ build:
 deploy: build
 	# get remote branches
 	git fetch --all
+	rm -rf Gemfile.lock
 	# the branch you want to overwrite
 	git checkout gh 
 	# reset to the new branch
