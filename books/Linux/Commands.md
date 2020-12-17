@@ -133,9 +133,11 @@ The leading (optional) '-' means print all but the last K lines (or bytes) of ea
   * -j Use the option j for uncompressing a bzip2 tar archive. 
 * tar xvzf /path/to/yourfile**.tgz**
   * f for file, should come at last just before file name.
-* tar -xvzf /path/to/yourfile.tgz -C /path/where/to/extract/
+* tar -xvzf /path/to/yourfile.tgz -C /path/where/to/extract/  --strip-components=1
   * -C option to extract archive contents to a different directory
-
+  * --strip-components=1 automatically remove that first folder for you.
+* tar -xjf linux-2.6.38.tar.bz2 --transform 's/linux-2.6.38/linux-2.6.38.1/'
+  * use --transform option for a bit more flexibility. It accepts any sed replacement operation.
   
 **tar Listing**
 * tar tvf archive_name.tar
@@ -221,3 +223,83 @@ https://www.cyberciti.biz/howto/question/general/compress-file-unix-linux-cheat-
 ### References
 
 * https://robots.thoughtbot.com/a-tmux-crash-course
+
+
+
+
+
+# Networking
+
+
+```bash
+# netstat
+apt install net-tools
+
+```
+
+```bash
+for i in {21..121}; do sudo ifconfig eth0:$i 10.37.137.$i up ; done
+
+```
+
+
+
+```
+
+
+sysctl:
+        @sysctl fs.epoll.max_user_watches #= 27007754
+        @sysctl fs.file-max #= 11000000
+        @sysctl fs.nr_open #= 11000000
+        @sysctl kernel.threads-max #= 1030264
+        @sysctl net.core.netdev_max_backlog #= 1000
+        @sysctl net.core.rmem_max #= 134217728
+        @sysctl net.core.somaxconn #= 10000
+        @sysctl net.core.wmem_max #= 134217728
+        @sysctl net.ipv4.ip_local_port_range #= 1025    65000
+        @sysctl net.ipv4.tcp_max_orphans #= 262144
+        @sysctl net.ipv4.tcp_max_syn_backlog #= 10000
+        @sysctl net.ipv4.tcp_max_tw_buckets #= 262144
+        @sysctl net.ipv4.tcp_mem #= 3088632     4118178 6177264
+        @sysctl net.netfilter.nf_conntrack_count #= 707669
+        @sysctl net.netfilter.nf_conntrack_max #= 2000000
+        @sysctl net.nf_conntrack_max #= 2000000
+
+
+set-sysctl:
+        @sudo sysctl -w fs.epoll.max_user_watches=27007754
+        @sudo sysctl -w fs.file-max=11000000
+        @sudo sysctl -w fs.nr_open=11000000
+        @sudo sysctl -w kernel.threads-max=1030264
+        @sudo sysctl -w net.core.netdev_max_backlog=1000
+        @sudo sysctl -w net.core.rmem_max=134217728
+        @sudo sysctl -w net.core.somaxconn=10000
+        @sudo sysctl -w net.core.wmem_max=134217728
+        @sudo sysctl -w net.ipv4.ip_local_port_range="1025 65000"
+        @sudo sysctl -w net.ipv4.tcp_max_orphans=262144
+        @sudo sysctl -w net.ipv4.tcp_max_syn_backlog=10000
+        @sudo sysctl -w net.ipv4.tcp_max_tw_buckets=262144
+        #@sudo sysctl -w net.ipv4.tcp_mem=3088632       4118178 6177264
+        @sudo sysctl -w net.netfilter.nf_conntrack_count=707669
+        @sudo sysctl -w net.netfilter.nf_conntrack_max=2000000
+        @sudo sysctl -w net.nf_conntrack_max=2000000
+
+
+
+```
+
+
+
+## CURL
+
+```bash
+# Download with retries
+curl ftp://server/dir/file[01-30].ext --user user:pass -O --retry 999 --retry-max-time 0 -C -
+[01-30] will make it download 30 files named file01.ext, file02.ext and so on
+--user user:pass should be obvious
+-O to output to files with original name
+--retry 999 to retry 999 times
+--retry-max-time 0 to prevent it from timing out the retrys. The default behavior if you don't specify a fixed --retry-delay is to sleep first one second between retries, then doubling that, until it reaches 10 min. between retries
+-C - to make it continue where it dropped of (if you run the command again). The dash afterwards tells it to figure out where to resume from
+
+```

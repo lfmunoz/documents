@@ -32,3 +32,9 @@ docker run -d --name bmweb \
     -p 80:80 \
     nginx:latest
 ``
+
+
+
+
+
+
