@@ -134,9 +134,43 @@ var slice []int
 numSlice2 :=numSlice[3:5]
 
 
+   var s []int
+   // Go provides a built-in append function. 
+   //  func append(s []T, vs ...T) []T
+   // If the backing array of s is too small to fit all the given values 
+   //  a bigger array will be allocated. The returned slice will point to 
+   //  the newly allocated array.
+
+	// We can add more than one element at a time.
+   s = append(s, 2, 3, 4)
+   
+
+   // The length and capacity of a slice s can be obtained 
+   // using the expressions len(s) and cap(s).
+   // The length of a slice is the number of elements it contains.
+   len(s)
+   // The capacity of a slice is the number of elements in the 
+   // underlying array, counting from the first element in the slice.
+   cap(s)
+
+```
+
+Removing an item from the middle of a slice
+
+```go
+func remove(slice []int, i int) []int {
+  copy(slice[i:], slice[i+1:])
+  return slice[:len(slice)-1]
+}
+
+// Removing an element from the first or last position is slightly easier:
+slice = slice[1:len(slice)]
+slice = slice[:len(slice)-1]
 ```
 
 # Map
+
+A map is an unordered collection of key-value pairs. If you need a stable iteration order, you must maintain a separate data structure.
 
 ```go
 
@@ -149,3 +183,27 @@ dict := map[string]string{"Red": "#da1337", "Orange": "#e95a22"}
 
 
 ```
+
+```go
+m := map[string]int{"Alice": 2, "Cecil": 1, "Bob": 3}
+
+keys := make([]string, 0, len(m))
+for k := range m {
+    keys = append(keys, k)
+}
+sort.Strings(keys)
+
+for _, k := range keys {
+    fmt.Println(k, m[k])
+}
+// Output:
+// Alice 2
+// Bob 3
+// Cecil 1
+```
+
+
+## Reference
+
+* Treeset
+   * https://godoc.org/github.com/emirpasic/gods/sets/treeset#Iterator.Value

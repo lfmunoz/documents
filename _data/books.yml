@@ -32,12 +32,20 @@ list:
       url: /lang/Bash/Introduction.html
     - title: Makefile
       url: /books/Make/Introduction.html
+    - title: SQL
+      url: /lang/SQL/Introduction.html
   Technologies:
-    - title: Terraform
-      url: /books/Terraform/Introduction.html
+    - title: Android
+      url: /tech/Android/Introduction.html
+    - title: Docker
+      url: /books/Docker/Introduction.html
     - title: Envoy
       url: /books/Envoy/Introduction.html
+    - title: Terraform
+      url: /books/Terraform/Introduction.html
   Mathematics:
+    - title: Foundations
+      url: /mathematics/Foundations.html
     - title: Logic
       url: /books/Logic/Introduction.html
     - title: Set Theory

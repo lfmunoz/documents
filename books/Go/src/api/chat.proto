@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+
+option go_package = "github.com/lfmunoz/documents/tree/master/books/Go/src/chat";
+package chat;
+
+
+
+message Message {
+  string body = 1;
+}
+
+service ChatService {
+  rpc SayHello(Message) returns (Message) {}
+}
+

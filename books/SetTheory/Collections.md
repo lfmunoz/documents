@@ -11,21 +11,21 @@ toc: true
 
 * [Introduction](Introduction.html)
 
+Note: a, b, c denote collections
+
+
 ## Foundations 
 
-Aggregate - a single entity which is in some manner composed of, or formed from, some other entities.
+An **aggregate** is a single entity which is in some manner composed of, or formed from, some other entities.
 Aggregate is an umbrella term for all notions: set, class, extension, collection.
 
-Understanding a **fusion** can help with collections, both are formed by bundling objects together.
+Understanding a **fusion** can help with collections, both are formed by bundling objects together. A fusion is nothing more than the sum of its parts, where a collection is something more, what more is difficult to say. A collection does not merely lump several objects together into one, it keeps the things distinct and is a further entity over and above them.
 
-A fusion is nothing more than the sum of its parts, where a collection is something more, what  is difficult to say. A collection does not merely lump several objects together into one, it keeps the things distinct and is a further entity over and above them.
+Collections can always be characterized determinately by their **membership**. The relation of membership is primitive. It has a non-logical primitive the binary relation symbol "$\in"$. The formula "$x \in y$" is read "x belongs to y"
 
-Collections can always be characterized determinately by their membership. The relation of membership is primitive. It has a non-logical primitive the binary relation symbol "$\in"$. The formula "$x \in y$" is read "x belongs to y"
+We start with a theory T about objects and the objects in the domain of interpretation of T are called **individuals**. To not confuse claims about T as applying to collections we defined the predicate U(x) to mean that x is an individual and relativize all the axioms of T to U.
 
-We start with a theory T about objects and the objects in the domain of interpretation of T are called **individuals**.
-
-To not confuse claims about T as applying to collections we defined the predicate U(x) to mean that x is an individual and relativize all the axioms of T to U.
-
+An urelement or individual is an object that is not a set, but that may be an element of a set.
 
 
 <div class="definition" markdown="block">
@@ -73,11 +73,10 @@ A **paradox** is a fact that is contrary to expectation.  The property of non-se
 
 A property is **self-reproductive** or **indefinitely extensible** if, "given any class of terms all having [the] property, we can always define a new term also having the property". A property F is indefinitely extensible if there is a process which, when applied to some Fs, gives rise to another object which is not among them but is nevertheless an F.
 
-## Sets
 
 
 <div class="definition" markdown="block">
-**Definition**: Collection
+**Definition**: 
 
 We say that b is a **collection** if $b = \\{x : x \in b \\}$.
 
@@ -86,13 +85,6 @@ We say that b is a **collection** if $b = \\{x : x \in b \\}$.
 </div>
 
 Nothing is both a collection and an individual.
-
-
-We can describe a set using curly brackets in terms of a property possessed by all its elements. In general we write:
-
-$$\{ x: x ~~ \text{has property P} \}$$ 
-
-The colon ":" is read as "such that".
 
 
 
@@ -113,6 +105,9 @@ and so a = b.
 </div>
 
 In words: a collection is determined by its elements.
+
+Zermelo calls this the axiom of definiteness. 
+
 
 <div class="definition" markdown="block">
 **Definition:** Empty Set
@@ -228,3 +223,26 @@ We write $X \times Y$ for the **Cartesian product** of X and Y which is the set 
 $$\bigcup_{i \in I} A_i$$
 
 $$\bigcap_{i \in I} A_i$$
+
+
+
+
+
+
+
+
+
+Strategies that have guided realists in formulating axiomatizations
+
+The object of a good axiomatization is to retain as many possible naive set-theory argumnets but stop short of permitting those arguments that lead to paradoxes.
+
+The security of a theory depend on no more than its failure so far to lead to contradiction
+
+
+
+Motivation for a conception of collection that gives us reason to believe that the axioms we shall be stating are true independent of their consequences.
+
+
+
+It is only recent that the idea of deriving our conception of collections from a relation of dependence between them.
+

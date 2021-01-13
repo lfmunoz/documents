@@ -5,15 +5,15 @@ import "fmt"
 // ________________________________________________________________________________
 // Types
 // ________________________________________________________________________________
-type user struct {
+type userT struct {
 	name       string
 	email      string
 	ext        int
 	privileged bool
 }
 
-type admin struct {
-	person user
+type adminT struct {
+	person userT
 	level  string
 }
 
@@ -26,13 +26,13 @@ type Duration int64
 func basicUsage() {
 	// initialized with default value
 	// idiomatic to use the keyword var
-	var bill user
+	var bill userT
 	fmt.Println(bill) // {0   false}
 
 	// If the variable will be initialized to something other than
 	// its zero value, then use the short variable declaration operator
 	// with a struct literal.
-	lisa := user{
+	lisa := userT{
 		name:       "Lisa",
 		email:      "lisa@email.com",
 		ext:        123,
@@ -41,13 +41,13 @@ func basicUsage() {
 	fmt.Println(lisa)
 
 	// Order is important
-	lisaAlt := user{"Lisa", "lisa@email.com", 123, true}
+	lisaAlt := userT{"Lisa", "lisa@email.com", 123, true}
 	fmt.Println(lisaAlt)
 }
 
 func nested() {
-	fred := admin{
-		person: user{
+	fred := adminT{
+		person: userT{
 			name:       "Lisa",
 			email:      "lisa@email.com",
 			ext:        123,
@@ -61,7 +61,7 @@ func nested() {
 // ________________________________________________________________________________
 // Main
 // ________________________________________________________________________________
-func main() {
+func mainA() {
 	basicUsage()
 	nested()
 	var dur Duration

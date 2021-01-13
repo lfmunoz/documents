@@ -59,9 +59,6 @@ const (
 	Ads        = "ads"
 	Xds        = "xds"
 	Rest       = "rest"
-
-	ServerCertFilePath = "certs/server.crt"
-	ServerKeyFilePath  = "certs/server.key"
 )
 
 func init() {
@@ -144,12 +141,6 @@ func RunManagementServer(ctx context.Context, server serverv3.Server, port uint)
 
 	// register services
 	discoverygrpc.RegisterAggregatedDiscoveryServiceServer(grpcServer, server)
-
-	// NOT used since we run ADS
-	// endpointservice.RegisterEndpointDiscoveryServiceServer(grpcServer, server)
-	// clusterservice.RegisterClusterDiscoveryServiceServer(grpcServer, server)
-	// routeservice.RegisterRouteDiscoveryServiceServer(grpcServer, server)
-	// listenerservice.RegisterListenerDiscoveryServiceServer(grpcServer, server)
 
 	log.WithFields(log.Fields{"port": port}).Info("[Management Server Listening]")
 	go func() {
@@ -302,81 +293,6 @@ func main() {
 		if err != nil {
 			log.Fatal(err)
 		}
-		// ________________________________________________________________________________
-		//
-		// use the following imports
-		// envoy_api_v2_core "github.com/envoyproxy/go-control-plane/envoy/api/v2/core"
-		// envoy_api_v2_auth "github.com/envoyproxy/go-control-plane/envoy/api/v2/auth"
-		// core "github.com/envoyproxy/go-control-plane/envoy/config/core/v3"
-		// auth "github.com/envoyproxy/go-control-plane/envoy/extensions/transport_sockets/tls/v3"
-		// ________________________________________________________________________________
-
-		// ________________________________________________________________________________
-		// 1. send TLS certs filename back directly
-		// 	create a static TLS certs to beam down:
-		// ________________________________________________________________________________
-
-		/*
-			priv, err := ioutil.ReadFile(ServerKeyFilePath)
-			if err != nil {
-				log.Fatal(err)
-			}
-			pub, err := ioutil.ReadFile(ServerCertFilePath)
-			if err != nil {
-				log.Fatal(err)
-			}
-		*/
-
-		/*
-			sdsTls := &envoy_api_v2_auth.DownstreamTlsContext{
-				CommonTlsContext: &envoy_api_v2_auth.CommonTlsContext{
-					TlsCertificates: []*envoy_api_v2_auth.TlsCertificate{{
-						CertificateChain: &envoy_api_v2_core.DataSource{
-							Specifier: &envoy_api_v2_core.DataSource_InlineBytes{InlineBytes: []byte(pub)},
-						},
-						PrivateKey: &envoy_api_v2_core.DataSource{
-							Specifier: &envoy_api_v2_core.DataSource_InlineBytes{InlineBytes: []byte(priv)},
-						},
-					}},
-				},
-			}
-		*/
-
-		// ________________________________________________________________________________
-		// or
-		// Secret discovery service
-		// 2. send TLS SDS Reference value
-		// sdsTls := &envoy_api_v2_auth.DownstreamTlsContext{
-		// 	CommonTlsContext: &envoy_api_v2_auth.CommonTlsContext{
-		// 		TlsCertificateSdsSecretConfigs: []*envoy_api_v2_auth.SdsSecretConfig{{
-		// 			Name: "server_cert",
-		// 		}},
-		// 	},
-		// }
-		// ________________________________________________________________________________
-
-		// ________________________________________________________________________________
-		// AggregatedDiscoveryService
-		// 3. SDS via ADS
-
-		// sdsTls := &auth.DownstreamTlsContext{
-		// 	CommonTlsContext: &auth.CommonTlsContext{
-		// 		TlsCertificateSdsSecretConfigs: []*auth.SdsSecretConfig{{
-		// 			Name: "server_cert",
-		// 			SdsConfig: &core.ConfigSource{
-		// 				ConfigSourceSpecifier: &core.ConfigSource_Ads{
-		// 					Ads: &core.AggregatedConfigSource{},
-		// 				},
-		// 				ResourceApiVersion: core.ApiVersion_V3,
-		// 			},
-		// 		}},
-		// 	},
-		// }
-
-		// scfg, err := ptypes.MarshalAny(sdsTls)
-		// if err != nil {
-		// log.Fatal(err)
-		// }
 
 		var l = []types.Resource{
 			&listener.Listener{
@@ -407,27 +323,6 @@ func main() {
 					// },
 				}},
 			}}
-
-		/*
-			var secretName = "server_cert"
-
-			log.Infof(">>>>>>>>>>>>>>>>>>> creating Secret " + secretName)
-			var s = []types.Resource{
-				&auth.Secret{
-					Name: secretName,
-					Type: &auth.Secret_TlsCertificate{
-						TlsCertificate: &auth.TlsCertificate{
-							CertificateChain: &core.DataSource{
-								Specifier: &core.DataSource_InlineBytes{InlineBytes: []byte(pub)},
-							},
-							PrivateKey: &core.DataSource{
-								Specifier: &core.DataSource_InlineBytes{InlineBytes: []byte(priv)},
-							},
-						},
-					},
-				},
-			}
-		*/
 
 		// =================================================================================
 		atomic.AddInt32(&version, 1)

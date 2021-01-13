@@ -31,19 +31,54 @@ func swap(x, y string) (string, string) {
 
 ```
 
+## Variadic Functions
 
-## Strings
+```go
+
+func sum(nums ...int) {
+    fmt.Print(nums, " ")
+    total := 0
+    for _, num := range nums {
+        total += num
+    }
+    fmt.Println(total)
+}
+
+```
+
+## Anonymous functions
+
+```go
+// This function intSeq returns another function
+func intSeq() func() int {
+    i := 0
+    return func() int {
+        i++
+        return i
+    }
+}
+
+```
 
 
 ```go
 
-// A string literal holds a valid UTF-8 sequences called runes.
-// A String holds arbitrary bytes.
-var greeting = "Hello world!"
-fmt.Printf("String Length is: ")
-fmt.Println(len(greeting))
+//  Go compiler is very Intelligent!. It will not allocate the memory on the stack to the local variable of the function. It will allocate this variable on the heap.
 
-// concatenate
-strings.Join(sample, " ")
-
+// defining function having integer pointer as return type 
+func rpf() *int { 
+  
+    // taking a local variable inside the function 
+    // using short declaration operator 
+    lv := 100 
+  
+    // returning the address of lv 
+    return &lv 
+} 
 ```
+
+## References
+
+* Straightforward tutorial
+   * https://gobyexample.com/closures
+

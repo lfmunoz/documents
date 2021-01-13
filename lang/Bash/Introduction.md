@@ -42,6 +42,8 @@ Bash only looks in those specific directories and doesn't consider sub directori
 
 
 
+
+
 # Learning
 
 * https://www.gnu.org/software/bash/manual/bash.html

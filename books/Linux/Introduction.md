@@ -15,6 +15,9 @@ toc: true
   * sed, awk, less
   * tmux
   * od, hd, hexdump, xxd
+* [Networking Commands](NetworkCommands.html)
+  * nc, tcpdump, ufw, cURL
+
 * [GDB](GDB.html)
 * [eBPF](eBPF.html)
 
@@ -46,6 +49,8 @@ toc: true
   * https://sploitfun.wordpress.com/2015/02/10/understanding-glibc-malloc/
 
 
+* Hw
+  * lstopo
 
 
 ## Resources

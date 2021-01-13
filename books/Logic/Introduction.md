@@ -12,10 +12,19 @@ toc: true
 > We can't predict the future based on simply the rules the future doesn't exist until the program runs the code.
 
 
-* [Induction](Induction.html)
+
+
+
 * [Propositional Logic](PropositionalLogic.html)
+* [Predicate Logic](PredicateLogic.html)
+* [Axiomatic Systems](Axioms.html)
+
+* [Proof Theory](ProofTheory.html)
+
+
 * [Structures and Languages](StructuresAndLanguages.html)
 
+* [Induction](Induction.html)
 
 
 ## Learning

@@ -288,18 +288,3 @@ set-sysctl:
 
 ```
 
-
-
-## CURL
-
-```bash
-# Download with retries
-curl ftp://server/dir/file[01-30].ext --user user:pass -O --retry 999 --retry-max-time 0 -C -
-[01-30] will make it download 30 files named file01.ext, file02.ext and so on
---user user:pass should be obvious
--O to output to files with original name
---retry 999 to retry 999 times
---retry-max-time 0 to prevent it from timing out the retrys. The default behavior if you don't specify a fixed --retry-delay is to sleep first one second between retries, then doubling that, until it reaches 10 min. between retries
--C - to make it continue where it dropped of (if you run the command again). The dash afterwards tells it to figure out where to resume from
-
-```

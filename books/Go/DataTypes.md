@@ -109,3 +109,24 @@ similar to [C Programming Language](../C/Introduction.html)
 
 
 Go doesn't have a ternary operator, using if/else syntax is the idiomatic way
+
+
+## Conversions
+
+Functions and packages will at times return interface{} as a type because the type would be unpredictable or unknown to them. Returning interface allows them to pass data around without know it’s type
+
+```
+cannot convert result (type interface {}) to type float64: need type assertion
+invalid operation: myInt += 5 (mismatched types interface {} and int)
+```
+
+
+```go
+
+myInt, ok := result.(int)
+if !ok {
+    log.Printf("got data of type %T but wanted int", result)
+    os.Exit(1)
+}
+
+```

@@ -42,7 +42,7 @@ func switchAge() {
 	//  This construct can be a clean way to write long if-then-else chains.
 }
 
-func main() {
+func mainZ() {
 	ifScore()
 	switchAge()
 	fmt.Println(pow(2, 2, 10))

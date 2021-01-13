@@ -18,9 +18,7 @@ Also known as: String Searching
 * pattern of size m is the string we are searching for
 * text of size n is the string where we are searching for pattern
 
-**Solution:**
-
-In the naive implementation you get a O(n*m) algorithm by searching for the pattern 
+**Solution:** In the naive implementation you get a O(n*m) algorithm by searching for the pattern 
 starting from each index in the text. You can get worse case with the following inputs: 
 
 * text    = aaaaaaaaaaaaaab
@@ -33,7 +31,7 @@ starting from each index in the text. You can get worse case with the following 
 ```cpp
 {% include_relative src/string_matching.cpp %}
 ````
-</p></details>  
+</p></details> <br> 
 
 
 
@@ -47,20 +45,15 @@ starting from each index in the text. You can get worse case with the following 
 
 ## String Edit Distance
 
-Also known as: String Alignment 
+Also known as: **String Alignment**
 
-
-
+**Applications:** Spell checking, Comparing DNA Sequences, Longest Common Subsequence.
 
 **Problem:** Given two strings A and B and the operations, replace, delete, or insert,  
 what is the minimum number operations to convert A into B?
 
 
-Spell checking, Comparing DNA Sequences, Longest Common Subsequence.
-
-**Solution:**
-
-This is solved using [Dynamic Programming](DP.html) because it is an optimization problem.
+**Solution:** This is solved using [Dynamic Programming](DP.html) because it is an optimization problem.
 
 ```
       a b c d e f
@@ -92,13 +85,22 @@ DP(i,j) = min(
 ```
 
 
+<details>
+<summary> string_alignment.cpp </summary>
+
+<p markdown="block">
+```cpp
+{% include_relative src/string_alignment.cpp %}
+````
+</p></details><br>
 
 
 
 
 
 
-### Longest Common Subsequence (LCS)
+
+## Longest Common Subsequence (LCS)
 
 
 **Problem:** The characters are not together but they are coming in the same order.
@@ -116,7 +118,7 @@ With [memozation](DP.html) you create a table so the time is $O(m*n)$
 ```cpp
 {% include_relative src/lcs.cpp %}
 ````
-</p></details>  
+</p></details><br>
 
 
 

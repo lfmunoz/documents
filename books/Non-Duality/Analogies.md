@@ -79,7 +79,16 @@ The Sun lights the moon, it is self illuminating. The Sun cannot illuminate itse
 **Inaccurate**
 
 Suppose you asked a flashlight in a completely dark room to turn itself on and to look around and see if there was any light — the flashlight as it looked around would of course see light everywhere and come to the conclusion
-that the room was brilliantly lit when in fact it was mostly just the opposite. So with consciousness. We have an illusion that it is all mentality. 
+that the room was brilliantly lit when in fact it was mostly just the opposite. So with consciousness. We have an illusion that it is all mentality.  
+
+**Note**
+
+Or is it an illusion? Can anything exist without the knowing of it?  I'm having difficulty with this because I have two opposing views:
+
+A)  Everything that exists is known. Known is a common property of all manifestation.  Imagine there is an object (a thought, feeling, perception), you take away the knowing of it, what is left? I would say nothing because the knowing of it is primary and essential to any object.
+
+B)  All objects depend on knowing for their existence but what if there is something more primary than knowing. Obviously we have no direct access to that, but we may be able to infer or deduce its nature.
+
 
 
 ## The Self-Aware Screen

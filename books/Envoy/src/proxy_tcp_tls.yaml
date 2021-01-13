@@ -1,0 +1,55 @@
+static_resources:
+  listeners:
+  - name: listener_mqtt
+    address:
+      socket_address:
+        protocol: TCP
+        address: 0.0.0.0
+        port_value: 1883
+    listener_filters:
+    - name: "envoy.listener.tls_inspector"
+      config: {}
+    filter_chains:
+    - filter_chain_match: 
+        server_names: ["dev.8hoot.com"]
+        transport_protocol: tls
+        application_protocols: []
+      tls_context:
+        common_tls_context:
+          tls_certificates:
+          - certificate_chain:
+              filename: "./docker_volume_path/cert.pem"
+            private_key:
+              filename: "./docker_volume_path/privkey.pem"
+      filters:
+      - name: envoy.tcp_proxy
+        config:
+          stat_prefix: ingress_tcp
+          cluster: service_mqtt
+
+  clusters:
+  # - name: service_other
+  - name: service_mqtt
+    connect_timeout: 0.25s
+    type: STATIC
+    dns_lookup_family: V4_ONLY
+    lb_policy: ROUND_ROBIN
+    load_assignment:
+      cluster_name: service_mqtt
+      endpoints:
+      - lb_endpoints:
+        - endpoint:
+            address:
+              socket_address:
+                address: 172.17.0.10
+                port_value: 1883
+
+
+admin:
+  access_log_path: /tmp/admin_access.log
+  address:
+    socket_address:
+      protocol: TCP
+      address: 127.0.0.1
+      port_value: 9901
+

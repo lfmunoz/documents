@@ -36,7 +36,7 @@ func aWhileLoop() {
 	}
 }
 
-func main() {
+func mainY() {
 	stdForLoop()
 	aWhileLoop()
 	rangeLoop()

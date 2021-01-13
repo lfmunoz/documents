@@ -86,3 +86,15 @@ The square brackets ( [ ] ) in the if statement above are actually a reference t
 * -x FILE	FILE exists and the execute permission is granted.
 
 
+
+
+```bash
+
+if [ -z ${var+x} ]; 
+then 
+    echo "var is unset"; 
+else 
+    echo "var is set to '$var'"; 
+fi
+
+```

@@ -22,6 +22,10 @@ toc: true
 ````
 </p></details> <br>
 
+
+
+But the cool thing about Go is that, when we use an anonymous nested struct, all the nested struct fields are automatically available on parent struct. This is called field promotion.
+
 ## Methods
 
 Methods provide a way to add behavior to user-defined types.
@@ -44,6 +48,8 @@ There are two types of receivers in Go: value receivers and pointer receivers.
 
 ## Interfaces
 
+Interfaces in Go provide a way to specify the behavior of an object: if something can do this, then it can be used here.
+
 <details>
 <summary> cat src/interfaces.go </summary>
 
@@ -53,6 +59,25 @@ There are two types of receivers in Go: value receivers and pointer receivers.
 ````
 </p></details> <br>
 
+
+
+## Embedding
+
+Go does not provide the typical, type-driven notion of subclassing, but it does have the ability to “borrow” pieces of an implementation by embedding types within a struct or interface.
+
+https://golang.org/doc/effective_go.html#embedding
+
+```go
+// Only interfaces can be embedded within interfaces.
+// ReadWriter is the interface that combines the Reader and Writer interfaces.
+type ReadWriter interface {
+    Reader
+    Writer
+}
+
+```
+
+ When we embed a type, the methods of that type become methods of the outer type, but when they are invoked the receiver of the method is the inner type, not the outer one. 
 
 
 ## Enums
@@ -72,3 +97,11 @@ const(
     Other = "Other"
 )
 ```
+
+
+
+
+## Reference
+
+
+https://medium.com/rungo/structures-in-go-76377cc106a2

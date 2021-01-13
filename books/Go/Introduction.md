@@ -18,6 +18,7 @@ Go is a general-purpose language designed with systems programming in mind.
 * Inbuilt support for Garbage Collection
 * Inbuilt support for Concurrent Programming
 * Concise syntax with few keywords to memorize
+* Simplicity and minimalism - No Generics
 * Fast compiler
 * No semicolon
 * Case-sensitive
@@ -44,6 +45,7 @@ Notable projects using Go: CockroachDB, Kubernetes, Terraform
     * for, range, break, continue
 * [Functions](Functions.html)
 * [Collections](Collections.html)
+* [Strings](Strings.html)
 * [Structures](Structures.html)
    * type keyword
    * methods (extension functions)
@@ -52,6 +54,10 @@ Notable projects using Go: CockroachDB, Kubernetes, Terraform
    * Modules
 * [Concurrency](Concurrency.html)
 * [Testing](Testing.html)
+
+* [JSON](JSON.html)
+* [gRPC](gRPC.html)
+* [HTTP](HTTP.html)
 
 
 
@@ -68,6 +74,21 @@ Notable projects using Go: CockroachDB, Kubernetes, Terraform
 </p></details> <br>
 
 
+```bash
+
+# Statically build binary
+env CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build cmd/main/main.go
+# CGO_ENABLED=0 This tells compiler to disable CGO and statically link C bindings as well.
+# GOOS=linux This tells compiler for which OS it needs to compile.
+# GOARCH=amd64 This tells compiler to compile for an amd64 compatible system architecture (64 bit processor).
+
+#  see current latest OS/ARCH combination that you can target
+go tool dist list
+```
+* Cgo lets Go packages call C code.
+   * https://blog.golang.org/cgo
+
+
 # Project Layout
 
 ```
@@ -77,8 +98,11 @@ Notable projects using Go: CockroachDB, Kubernetes, Terraform
 │   └── skeleton
 │       └── main.go
 ├── Makefile
+├── api             OpenAPI/Swagger specs, JSON schema files, protocol definition files
 ├── pkg             Library code that's ok to use by external applications
 ├── internal        Private application and library code.
+├── web             Web application specific components: static web assets
+├── test            Additional external test apps and test data.
 ```
 
 * https://github.com/golang-standards/project-layout
@@ -89,16 +113,6 @@ By default, the logger is set to write to the stderr device.
 
 
 JSON
-
-```go
-type Feed struct {
-   URI string `json:"link"`
-   Type string `json:"type"`
-}
-
-var feeds []*Feed
-err = json.NewDecoder(file).Decode(&feeds)
-```
 
 
 
@@ -134,19 +148,17 @@ ISBN 9781617291784
 * https://www.golang-book.com/books/intro
 
 
-
-Introduction
-https://tour.golang.org/welcome/1
-
-
-https://golang.org/doc/code.html
-
-https://golang.org/doc/effective_go.html
-
+* Good source of Go examples 
+   * Mark McGranaghan 
+   * https://gobyexample.com/closures
+   * https://github.com/mmcgrana/gobyexample
+* Introduction
+   * https://tour.golang.org/welcome/1
+   * https://golang.org/doc/effective_go.html
 
 
+* https://golang.org/doc/code.html
 
 
-https://medium.com/@trevor4e/learning-gos-concurrency-through-illustrations-8c4aff603b3
 
-https://yourbasic.org/golang/concurrent-programming/
+

@@ -6,13 +6,21 @@ toc: true
 ---
 
 
-
-
 # Envoy 
+
+**Envoy** is an open source edge and service proxy, designed for cloud-native applications.
+
+It is an application written in C++ that runs as a service and has many networking features generally centered around proxying network connections.  You write a config file (generally YAML or JSON) which often can be complicated and you feed that to envoy instructing it what to do. It gives you the ability to:
+
+  * Make intelligent routing decisions based on source destination port, address, protocol, SNI (rate limiting,  load balance, block)
+  * Gather statistics  (measure API usage)
+  * Secure connections (enable mutual TSL, terminate TSL)
+  * Service discovery by having envoy read its configuration dynamically and/or remotely (reload without dropping connections)
 
 
 * Homepage
   * https://www.envoyproxy.io/
+  * https://github.com/envoyproxy/envoy
 
 
 * Alternatives
@@ -21,15 +29,17 @@ toc: true
 
 
 * Important Terms
-  * **downstream:** A downstream host **connects to Envoy**, sends requests, and receives responses.
-  * **upstream:** An upstream host **receives connections and requests from Envoy** and returns responses.
-  * **listener:** A listener is a named network location (e.g., port, unix domain socket, etc.) that can be connected to by downstream clients. Envoy exposes one or more listeners that downstream hosts connect to.
-  * **cluster:** A cluster is a group of logically similar upstream hosts that Envoy connects to. 
+  * **Downstream:** A downstream host **connects to Envoy**, sends requests, and receives responses.
+  * **Upstream:** An upstream host **receives connections and requests from Envoy** and returns responses.
+  * **Listener:** A listener is a named network location (e.g., port, unix domain socket, etc.) that can be connected to by downstream clients. Envoy exposes one or more listeners that downstream hosts connect to.
+  * **Cluster:** A cluster is a group of logically similar upstream hosts that Envoy connects to. 
+  * A **Service mesh** - consists of two major components:
+    * **Control plane** - manages and configures the data plane to route traffic.
+    * **Data plane** - Composed of a set of intelligent proxies (Envoy). The proxies mediate and control all network communication between microservices. 
 
 
-* A **service mesh** - consists of two major components:
-  * **control plane** - manages and configures the data plane to route traffic.
-  * **data plane** - Composed of a set of intelligent proxies (Envoy). The proxies mediate and control all network communication between microservices. 
+
+## Install
 
 
 <details>
@@ -38,8 +48,18 @@ toc: true
 ```bash
 {% include_relative src/install_envoy.bash  %}
 ````
-</p></details>  
+</p></details><br>
 
+
+## Skeleton
+
+This example will proxy 0.0.0.0:80 to www.lfmunoz.com:80
+
+```bash
+# run envoy with the following command
+envoy -c src/proxy_http.yaml
+
+```
 
 <details>
 <summary> <strong> cat src/proxy_http.yaml </strong> </summary>
@@ -47,11 +67,10 @@ toc: true
 ```yaml
 {% include_relative src/proxy_http.yaml %}
 ````
-</p></details>
+</p></details><br>
 
 
-
-
+## Command line
 
 ```bash
 # Run and specify the config file
@@ -68,8 +87,6 @@ envoy -c envoy-demo.yaml --log-path logs/custom.log
 # levels: trace debug info warning/warn error critical off
 envoy -c envoy-demo.yaml --log-level debug
 ```
-
-
 
 
 
@@ -110,6 +127,32 @@ You will need to specify
 * clusters 
 * static_resources.
 
+
+By configuring a Listener, users can enable the flow of traffic through the proxy, and then perform operations on the data using Filters. 
+
+
+This example will proxy HTTP 0.0.0.0:80 to HTTP www.lfmunoz.com:80
+
+<details>
+<summary> <strong> cat src/proxy_http.yaml </strong> </summary>
+<p markdown="block">
+```yaml
+{% include_relative src/proxy_http.yaml %}
+````
+</p></details>
+
+This example will proxy TCP 0.0.0.0:80 to TCP www.lfmunoz.com:2010
+
+<details>
+<summary> <strong> cat src/proxy_tcp.yaml </strong> </summary>
+<p markdown="block">
+```yaml
+{% include_relative src/proxy_tcp.yaml %}
+````
+</p></details>
+
+This example will proxy https
+
 <details>
 <summary> <strong> cat src/proxy_https.yaml </strong> </summary>
 <p markdown="block">
@@ -117,6 +160,8 @@ You will need to specify
 {% include_relative src/proxy_https.yaml %}
 ````
 </p></details>
+
+
 
 
 # Dynamic Configuration
@@ -184,16 +229,17 @@ There are a number of control planes compatible with Envoy’s API such as Gloo 
 * https://istio.io/
 * https://github.com/heptio/contour
 * https://gloo.solo.io/
+* https://github.com/uswitch/yggdrasil/blob/master/pkg/envoy/boilerplate.go
 
-* Create your own using this reference implementation
+* Create your own using this official reference implementation
     * https://github.com/envoyproxy/go-control-plane
+    * https://github.com/envoyproxy/java-control-plane
 
-https://github.com/envoyproxy/java-control-plane
 
 
-https://github.com/uswitch/yggdrasil/blob/master/pkg/envoy/boilerplate.go
 
- Envoy’s configuration via its xDS APIs is eventually consistent by design meaning there is no way to affect an “atomic update” to all of the proxies in the cluster.
+Envoy’s configuration via its xDS APIs is eventually consistent by design meaning there is no way to affect an “atomic update” to all of the proxies in the cluster.
+
 
 
 
@@ -206,7 +252,6 @@ https://github.com/uswitch/yggdrasil/blob/master/pkg/envoy/boilerplate.go
 # References
 
 
-https://github.com/envoyproxy/envoy
 
 
 https://github.com/salrashid123/envoy_control
