@@ -19,3 +19,9 @@
 
 
                 docker-compose -f src/main/docker/dev.yml exec usp-elasticsearch curl -XDELETE localhost:9200/manage
+
+
+
+                sysctl -w vm.max_map_count=262144
+                
+                sysctl vm.max_map_count

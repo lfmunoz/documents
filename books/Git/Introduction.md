@@ -158,3 +158,10 @@ git lg --all
 * bc7db88  - // 0. Start of project (skeleton)
 
 ```
+
+
+# Archive
+
+```
+git archive --output=../infra_dev_envoy.tar --format=tar HEAD
+```

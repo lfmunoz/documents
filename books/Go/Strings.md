@@ -15,6 +15,10 @@ toc: true
 
 
 ```go
+// We can use back quotes (`) or double quotes (") within Go
+// back quotes creates a raw string literal, and using double quotes creates an interpreted string literal. 
+
+// A raw string literal tells Go to ignore all formatting within a string, including escape characters.
 
 // A string literal holds a valid UTF-8 sequences called runes.
 // A String holds arbitrary bytes.

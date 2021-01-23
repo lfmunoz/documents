@@ -23,6 +23,9 @@ curl ftp://server/dir/file[01-30].ext --user user:pass -O --retry 999 --retry-ma
 --retry-max-time 0 to prevent it from timing out the retrys. The default behavior if you don't specify a fixed --retry-delay is to sleep first one second between retries, then doubling that, until it reaches 10 min. between retries
 -C - to make it continue where it dropped of (if you run the command again). The dash afterwards tells it to figure out where to resume from
 
+# POST JSON file 
+curl -vX POST http://server/api/v1/places.json -d @testplace.json --header "Content-Type: application/json"
+
 ```
 
 

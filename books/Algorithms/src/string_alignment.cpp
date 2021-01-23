@@ -13,24 +13,30 @@ std::ostream& operator<< (std::ostream& out, const std::vector<T>& v) {
   return out;
 }
 // ________________________________________________________________________________
-// NaiveMatching
-//  O(t) on average
-//  O(t*p) worse case
-//   If there is a mismatch we move p to the beginning and increment t, this means
-//   that in the worse case we scan every p for every t  (t*p)
+// Naive - Edit Distance by Recursion
+//   We can define a recursive algorithm using the observation that the last character in
+//    the string must either be matched, substituted, inserted, or deleted.
 // ________________________________________________________________________________
-int naiveMatching(const string &pattern, const string &text) {
-    for(int t = 0; t < text.size(); t++) {
-        bool found = true;
-        for(int p = 0; p < pattern.size() && found; p++) {
-            if (t+p >= text.size() || pattern[p] != text[t+p]) {
-                found = false;
-            }
-        }
-        if (found) return t;
+#define MATCH 0 /* enumerated type symbol for match */
+#define INSERT 1  /* enumerated type symbol for insert */
+#define DELETE 2 /* enumerated type symbol for delete */
+
+int string_compare(char *s, char *t, int i, int j) {
+    int k; /* counter */
+    int opt[3]; /* cost of the three options */
+    int lowest_cost; /* lowest cost */
+    if (i == 0) return(j * indel(’ ’));
+    if (j == 0) return(i * indel(’ ’));
+    opt[MATCH] = string_compare(s,t,i-1,j-1) + match(s[i],t[j]);
+    opt[INSERT] = string_compare(s,t,i,j-1) + indel(t[j]);
+    opt[DELETE] = string_compare(s,t,i-1,j) + indel(s[i]);
+    lowest_cost = opt[MATCH];
+    for (k=INSERT; k<=DELETE; k++) {
+        if (opt[k] < lowest_cost) lowest_cost = opt[k];
     }
-    return -1;
+    return( lowest_cost );
 }
+
 // ________________________________________________________________________________
 // Knuth-Morris-Pratt's (KPM) Algorithm
 //  KPM algorithm never re-compares a character in the text that has matched a 

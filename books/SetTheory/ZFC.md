@@ -25,26 +25,25 @@ A relation is a predicate of two variables $\epsilon$ is a relation, it has no d
 
 
 <div class="definition" markdown="block">
-**1. Axiom on Epsilon-Relation**
+**ZF1. Axiom on Epsilon-Relation**
 
 $x \in y$  is a proposition if and only if x and y are both sets
 
 
-Axiom of extensionality 
+**ZF1 (Alternative): Axiom of Extensionality**
 
 Two sets are equal if and only if they contain the same elements.
 
-$\forall x \forall y ( x = y \iff \forall z (z \in x \iff z in y))$
+$\forall x \forall y ( x = y \iff \forall z (z \in x \iff z \in y))$
 
 </div>
 
-Remeber proposition mean it is either true or false. 
-
+Remember proposition mean it is either true or false. 
 
 $\forall x : \forall y : (x \in y)  XOR \neg (x \in y)$
 
 <div class="definition" markdown="block">
-**2. Axiom on existence of an empty set**
+**ZF2. Axiom on existence of an empty set**
 
 There exists a set that contains no elements
 
@@ -70,7 +69,7 @@ This just mens $x \subset x'$ but then $x \subset x$. In summary x = x' so they 
 
 
 <div class="definition" markdown="block">
-**3. Axiom on Pair Sets**
+**ZF3. Axiom on Pair Sets**
 
 Let x and y be sets. Then there exists a set that contains
 as its elements precisely the sets x and y
@@ -95,8 +94,41 @@ By the axiom of extensionality we have z=z.
 
 </div>
 
+
 <div class="definition" markdown="block">
-**4. Axiom on Union Sets**
+**Definition:**  Ordered Pair
+
+Given sets x and y, we write $(x,y)$ for the set $\\{\\{x\\}, \\{x,y\\}\\}$
+
+which is called an **ordered pair**. The x and y are called the first and
+second coordinates, respectively, of the ordered pair.
+
+</div>
+
+
+<div class="definition" markdown="block">
+**Theorem:**  The ordered pair property
+
+For any sets x,y,u,v, if $(x,y) = (u, v)$, then x = u and y = v.
+
+</div>
+
+An order must have the following
+1. For any sets x and y, we want a unique set to stand for (x,y).
+2. We want to be able to distinguish (x,y) from (y,x), or indeed from any other (a,b) where
+$a \neq x$ or $b \neq y$.
+
+
+<br>
+
+----
+
+<br>
+
+
+
+<div class="definition" markdown="block">
+**ZF4. Axiom on Union Sets**
 
 Let x be a set. Then there exists a set that whose elements are precisely the elements of the elements of x.
 
@@ -114,7 +146,7 @@ x = { {a}, {a,b}}
 Ux is a set by union set axiom
 
 <div class="definition" markdown="block">
-**5. Axiom of replacement**
+**ZF5. Axiom of replacement**
 
 Let R be a functional relation let m be a set. Then
 the image of m under R is again a set.
@@ -145,7 +177,7 @@ any set m P(m) (power set)  :=  { y | y \subset m }
 
 
 <div class="definition" markdown="block">
-**6. Axiom on existence power sets**
+**ZF6. Axiom on existence power sets**
 
 Let m be a set . then there exists a set  denoted
 P(m) whose elements are precisely the subsets of m.
@@ -166,7 +198,7 @@ we need an extra axiom for the existence of power set
 
 
 <div class="definition" markdown="block">
-**7. Axiom of infinity**
+**ZF7. Axiom of infinity**
 
 there exists a set that contains the empty set
 and with every  of its elements y,
@@ -189,7 +221,7 @@ P(N)
 
 
 <div class="definition" markdown="block">
-**8. Axiom of Choice**
+**ZF8. Axiom of Choice**
 
 let x be a set whose elements are 
 non empty

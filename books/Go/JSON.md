@@ -13,6 +13,8 @@ toc: true
 
 
 ```go
+
+
 type Feed struct {
    URI string `json:"link"`
    Type string `json:"type"`
@@ -35,7 +37,7 @@ json.NewEncoder(rw).Encode(&u)
 
 ```go
 
-
+// The encoding/json package and similar packages ignore unexported fields (lower case fields)
 m := Message{"Alice", "Hello", 1294706395881547000}
 
 b, err := json.Marshal(m)

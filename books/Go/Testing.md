@@ -31,6 +31,14 @@ Put all the source files for the package in a directory by themselves. Source fi
 
 Other than being split into multiple files, the package will compile and test just like a single-file package.
 
+
+```go
+func TestSerializeDeserialize(t *testing.T) {
+    // t.Skip()
+}
+
+```
+
 ## Basic Unit Test
 
 

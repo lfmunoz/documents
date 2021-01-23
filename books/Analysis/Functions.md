@@ -23,6 +23,12 @@ The set X is called the **domain** of f, and the elements $f(x)$ are called the 
 
 </div>
 
+
+It never has one "A" pointing to more than one "B",
+
+If it passes the vertical line test it is a function
+
+
 * Dom(f) denotes the domain of f.
 * Cod(f) denote the co-domain of f.
 
@@ -30,7 +36,10 @@ We can think of f as matching subsets of X with subsets of Y and vice-versa. X, 
 
 The notation $f: X \to Y$ is read "f is a function from X to Y" or "f is a function that maps X to Y".
 
+the set of elements that get pointed to in Y (the actual values produced by the function) is called the Range.
 
+
+A function can then be defined as a set of ordered pairs
 
 
 
@@ -56,6 +65,12 @@ or
 
 If $f\colon X \rightarrow Y$, then $f$ is said to be **onto** or **surjective** if $\forall y \in Y, \, \exists x \in X, \;\; f(x)=y$
 </div>
+
+A not-surjective function has a "hole" in its range. 
+This means the function lacks a “right inverse” $f∘g=1$. 
+There’s no complete way, given a desired  f(x) , to find the desired x .
+
+The function  $f: \mathbb{N} \to \mathbb{N}$  given by $f(x)=x^2$ is not surjective, because not all numbers are perfect integer squares. For example, there is no x such that $f(x)=3$ because $\sqrt{3} \not \in \mathbb{N}$. 
 
 
 <div class="definition" markdown="block">
@@ -85,6 +100,18 @@ or
 $ \forall a,b \in X, \;\; f(a)=f(b) \Rightarrow a=b$
 </div>
 
+A not-injective function has a "collision" in its range. 
+This means the function lacks a “left inverse”  $g∘f=1$.
+There’s not a complete way to recover the original value of x, given only f(x).
+
+To be Injective, a Horizontal Line should never intersect the curve at 2 or more points.
+
+
+$f(x)=x^2$ is not injective, because  $f(−x)=f(x)$
+
+
+
+
 
 
 
@@ -108,3 +135,20 @@ The function f is continuous at some point a of its domain if the limit of f(x) 
 $$\lim_{x \to a} f(x) = f(a) $$
 
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# References
+
+* https://www.mathsisfun.com/sets/injective-surjective-bijective.html

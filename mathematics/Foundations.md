@@ -8,10 +8,6 @@ toc: true
 #  Foundations
 
 
-
-
-
-
 Mathematics is just a language.
 
 > What we cannot speak about clearly, that we must passover in silence - Wittgenstein
@@ -81,6 +77,83 @@ However, mathematicians have long recognized that arithmetic can be
 reduced to set theory in many different ways: the natural numbers can
 be identified with the von Neumann numbers, the Zermelo numbers, or
 with any of an infinite number of other sequences of sets.
+
+
+<div class="definition" markdown="block">
+
+**Definition:** 
+
+Let x be a set. 
+
+For each formula $\phi(x)$ we write $\\{ z \in x : \phi(z) \\}$ for the set y in ZF4 such that
+
+$\forall z (z \in y \iff (z \in x \land \phi(z)))$.
+
+We write $\mathscr{P}(x)$, called the power set of x, for the y in ZF5 such that
+
+$\forall z ( z \in y \iff z \subseteq x).$
+
+We write $\cup x$, called the union of x, for the y in ZF6 such that
+
+$\forall z (z \in y \iff \exists w ( z \in w \land w \in x))$.
+
+</div>
+
+
+<div class="definition" markdown="block">
+
+**Definition:** Function
+
+Let F be a set of ordered pairs. F is said to be a function if
+
+$\forall a \forall b \forall b' (( \langle a, b \rangle \in F \land \langle a, b' \rangle  \in F ) \to b = b' )$
+
+The **domain** of a function F, written as Dom(F), is the set defined by
+
+$Dom(F) = \\{a \in \cup (\cup F) : \exists b \langle a, b \rangle \in F \\}$
+
+
+ **Alternative:**
+
+ Let A, B and F be sets with $F \subseteq A \times B$. We say that F is a **function** with **domain** A
+ and **codomain** B if
+
+ $\forall a (a \in A \to \exists b( b \in B \land \langle a,b \rangle \in F \land \forall b' ( \langle a,b' \rangle \in F \to b' = b) ))$
+
+ In words: A function with domain A and codomain B is a subset f of $A \times B$ such that, for each $a \in A$, there is one and only one $b \in B$ such that  $(a,b) \in f$
+</div>
+
+
+<div class="definition" markdown="block">
+
+**Definition:** 
+
+For sets X and Y the **Cartesian product**, written as $X \times Y$, is the set
+
+$\\{x \in \mathscr{P}(\mathscr{P}(X \cup Y)): \exists x \exists y ((x \in X \land y \in Y) \land z = \langle x,y \rangle)\\}$
+
+</div>
+
+<div class="definition" markdown="block">
+
+**Definition:** 
+
+
+Suppose that the set F is a function
+
+The range of a function F, written as Range(F), is the set defined by
+
+$Range(F) = \\{b \in \cup(\cup(F)) : \exists a \langle a,b \rangle \in F \\}$.
+
+Suppose that X is a subset of Dom(F). Then the restriction of the function F to X, written as $F\|_x$ is the set
+
+$\\{\langle x, y \rangle \in F : a \in X \\}$.
+
+In general, if G is a function with $G \subseteq F$, then G is said to be a restriction of F and F is said to be an 
+extension of G.
+
+</div>
+
 
 
 # Analysis
@@ -158,6 +231,47 @@ If {ak} converges to L we will write lim k→∞ ak = L or simply ak → L. If a
 
 Also known as Modern Algebra
 
+<div class="definition" markdown="block">
+**Definition:** Group  
 
-A group is an ordered pair (G, *) where G is a set and * is binary operation on G satisfying the following axioms:
+A **group** is an ordered pair (G, *) where G is a set and * is binary operation on G satisfying the following axioms:
+
+(i) Associative: (a * b) * c = a * (b * c), for all $a,b,c \in G$.
+
+(ii) Identity: There exists an element e in G, called an **identify** of G, such that for all $a \in G$ we have 
+a * e  = e * a = a.
+
+(iii) Inverse: For each $a \in G$ there is an element $a^{-1}$ of G, called an **inverse** of a, such that 
+$a * a^{-1} = a^{-1} * a = e$.
+
+**Definition:** Abelian Group (commutative)
+
+The group (G, *) is called **abelian** (or commutative) if a * b = b * a for all $a, b \in G$
+
+</div>
+
+Mnemonic: AII A
+
+If G is finite we say G is a **finite group**. Note that axiom (ii) ensures that a group is always nonempty.
+
+
+
+
+
+
+# Latex
+
+
+
+$\mathfrak{A}$
+
+$\mathcal{A}$
+
+
+$\mathbb{A}$
+
+$\mathbf{A}$
+
+$\mathscr{A}$
+
 

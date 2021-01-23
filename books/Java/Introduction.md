@@ -27,6 +27,25 @@ In the Java programming language, all source code is first written in plain text
 
 
 
+## JMX 
+
+```java
+
+@ManagedResource
+public class KafkaPublishingService {
+    //________________________________________________________________________________
+    // JMX
+    //________________________________________________________________________________
+    @ManagedOperation(description = "Send all Subscribers and Elements to Kafka")
+    public Boolean sendAllSubscribersAndElmsToKafka() {
+        sendAllSubscribersAndElements();
+        return true;
+    }
+}
+
+```
+
+
 ## TOC
 
 

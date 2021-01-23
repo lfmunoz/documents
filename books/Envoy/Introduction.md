@@ -237,7 +237,6 @@ There are a number of control planes compatible with Envoy’s API such as Gloo 
 
 
 
-
 Envoy’s configuration via its xDS APIs is eventually consistent by design meaning there is no way to affect an “atomic update” to all of the proxies in the cluster.
 
 

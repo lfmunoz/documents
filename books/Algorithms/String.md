@@ -45,45 +45,44 @@ starting from each index in the text. You can get worse case with the following 
 
 ## String Edit Distance
 
-Also known as: **String Alignment**
+Also known as: **String Alignment Problem**
+
+The **edit distance** or Levenshtein distance is the minimum number of editing operations needed to transform a string into another string.
+
+```
+distance(LOVE,MOVIE) = 2
+LOVE -> MOVE  (Replace L with M)
+MOVE -> MOVIE (INSERT I)
+```
 
 **Applications:** Spell checking, Comparing DNA Sequences, Longest Common Subsequence.
 
-**Problem:** Given two strings A and B and the operations, replace, delete, or insert,  
-what is the minimum number operations to convert A into B?
+**Problem Statement:** Given two strings A and B and the operations, replace, delete, or insert, what is the minimum number operations to convert A into B?
 
 
 **Solution:** This is solved using [Dynamic Programming](DP.html) because it is an optimization problem.
 
 ```
-      a b c d e f
-    --------------
-  | 0 1 2 3 4 5 6
-a | 1 0 1 2 3 4 5
-z | 2 1 1 2 3 4 5
-c | 3 2 2 1 2 3 4
-e | 4 3 3 2 2 2 3
-d | 5 4 4 3 2 3 3 
-
+    M O V I E
+  0 1 2 3 4 5
+L 1 1 2 3 4 5
+O 2 2 1 2 3 4
+V 3 3 2 1 2 3
+E 4 4 3 2 2 2
 ```
 
-Looking at the first row, the 0 means that given the empty string, it takes 0 operations to convert it into an empty string. The 1 means, given the string "a" and the empty string it takes 1 operations to convert the empty string to "a". 
-
-Looking at the second row, the 1 means given the string "a" and the empty string it takes 0 operations to convert one to the other.  The next column is a 0, it means to convert "a" to "a" is zero operations.
-
-If they are the same you get the diagonal value, if they are different you get the minimum of three.
-
-Recurrence 
+Suppose string x has length n and string y has length m. We want to calculate the distance between x and y. We define a function distance(a,b) which gives the distance between prefixes x[0...a] and y[0...b]. The distance is then distance(n-1, m-1).
 
 ```
-DP(i,j) = min( 
-    cost of replace x[i] -> y[y] + DP(i+1, j + 1) ,  
-    cost of insert y[j] into x + DP(i, j+1),
-    cost of delete of x[i] + DP(i+1, j)
-  )
+distance(a,b) = min (
+  distance(a, b-1) + 1,   // insert char at end of x
+  distance(a-1, b) + 1,   // remove last char from x
+  distance(a-1, b-1) + cost(a,b) // match or modify last char of x
+)
 
+cost(a,b) = 0  if x[a] = x[b]
+            1  otherwise
 ```
-
 
 <details>
 <summary> string_alignment.cpp </summary>
@@ -93,9 +92,6 @@ DP(i,j) = min(
 {% include_relative src/string_alignment.cpp %}
 ````
 </p></details><br>
-
-
-
 
 
 

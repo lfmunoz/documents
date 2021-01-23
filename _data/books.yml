@@ -34,6 +34,8 @@ list:
       url: /books/Make/Introduction.html
     - title: SQL
       url: /lang/SQL/Introduction.html
+    - title: HTML
+      url: /lang/HTML/Introduction.html
   Technologies:
     - title: Android
       url: /tech/Android/Introduction.html

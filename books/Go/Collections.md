@@ -200,6 +200,13 @@ for _, k := range keys {
 // Alice 2
 // Bob 3
 // Cecil 1
+
+
+m = make(map[string]Vertex)
+	m["Bell Labs"] = Vertex{
+		40.68433, -74.39967,
+   }
+   
 ```
 
 
