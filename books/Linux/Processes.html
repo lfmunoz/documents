@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Processes | LFMUNOZ</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Processes" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="articles, notes, and references" />
+<meta property="og:description" content="articles, notes, and references" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/Linux/Processes.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/Linux/Processes.html" />
+<meta property="og:site_name" content="LFMUNOZ" />
+<script type="application/ld+json">
+{"@type":"WebPage","headline":"Processes","url":"lfmunoz.github.io/documents/books/Linux/Processes.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
+<body><header class="site-header" role="banner">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2YJDWQX6GK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-2YJDWQX6GK');
+  </script>
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/documents/">LFMUNOZ</a><nav class="site-nav">
+      <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+      <label for="nav-trigger">
+        <span class="menu-icon">
+          <svg viewBox="0 0 18 15" width="18px" height="15px">
+            <path
+              d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+          </svg>
+        </span>
+      </label>
+
+      <div class="trigger"><a class="page-link" href="/documents/about/">About</a></div>
+    </nav></div>
+</header><div class="main"><div class="column-sidebar">
+
+    <div class="nav-section">
+        <div class="nav-title">Posts</div><div class="post-container"><a class="post-link" href="/documents/2020/12/17/i-wish-i-was-worse.html"> I wish I was worse at dancing</a>
+            <span class="post-meta">Dec 17, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/12/13/too-many-options.html"> Too many options slows production</a>
+            <span class="post-meta">Dec 13, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/12/06/dream-cats-and-dogs.html"> A dream of dogs and cats</a>
+            <span class="post-meta">Dec 6, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/11/27/http-rest-bad-design.html"> RESTful HTTP creates coupling</a>
+            <span class="post-meta">Nov 27, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/08/01/organization-and-structure.html"> Organization and Structure of Applications</a>
+            <span class="post-meta">Aug 1, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/07/12/listening-to-music.html"> Listening to Music</a>
+            <span class="post-meta">Jul 12, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/07/05/frameworks.html"> Frameworks and Libraries</a>
+            <span class="post-meta">Jul 5, 2020</span>
+        </div><p class="rss-subscribe">subscribe <a href="/documents/feed.xml">via RSS</a></p>
+    </div>
+
+    <div class="nav-section">
+        <div class="nav-title">Guides</div>
+        <ul>
+            
+            <li>
+                <strong> Computer Science</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/Algorithms/Introduction.html">Algorithms</a></li>
+                    
+                    <li><a href="/documents/articles/SoftwareEngineering.html">Software Engineering</a></li>
+                    
+                    <li><a href="/documents/books/DesignPatterns.html">Design Patterns</a></li>
+                    
+                    <li><a href="/documents/books/Linux/Introduction.html">Linux</a></li>
+                    
+                    <li><a href="/documents/books/Databases/Introduction.html">Databases</a></li>
+                    
+                    <li><a href="/documents/books/SoftwareEngineering/Concurrency.html">Concurrency</a></li>
+                    
+                    <li><a href="/documents/books/Security/Introduction.html">Security</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Programming Languages</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/C/Introduction.html">C</a></li>
+                    
+                    <li><a href="/documents/books/Cpp/Introduction.html">C++</a></li>
+                    
+                    <li><a href="/documents/books/Rust/Introduction.html">Rust</a></li>
+                    
+                    <li><a href="/documents/books/Go/Introduction.html">Go</a></li>
+                    
+                    <li><a href="/documents/books/Java/Introduction.html">Java</a></li>
+                    
+                    <li><a href="/documents/books/Kotlin/Introduction.html">Kotlin</a></li>
+                    
+                    <li><a href="/documents/lang/Python/Introduction.html">Python</a></li>
+                    
+                    <li><a href="/documents/lang/Bash/Introduction.html">Bash</a></li>
+                    
+                    <li><a href="/documents/books/Make/Introduction.html">Makefile</a></li>
+                    
+                    <li><a href="/documents/lang/SQL/Introduction.html">SQL</a></li>
+                    
+                    <li><a href="/documents/lang/HTML/Introduction.html">HTML</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Technologies</strong>
+                <ul>
+                    
+                    <li><a href="/documents/tech/Android/Introduction.html">Android</a></li>
+                    
+                    <li><a href="/documents/books/Docker/Introduction.html">Docker</a></li>
+                    
+                    <li><a href="/documents/books/Envoy/Introduction.html">Envoy</a></li>
+                    
+                    <li><a href="/documents/books/Terraform/Introduction.html">Terraform</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Mathematics</strong>
+                <ul>
+                    
+                    <li><a href="/documents/mathematics/Foundations.html">Foundations</a></li>
+                    
+                    <li><a href="/documents/books/Logic/Introduction.html">Logic</a></li>
+                    
+                    <li><a href="/documents/books/SetTheory/Introduction.html">Set Theory</a></li>
+                    
+                    <li><a href="/documents/books/Geometry/Introduction.html">Geometry</a></li>
+                    
+                    <li><a href="/documents/books/Analysis/Introduction.html">Analysis</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Miscellaneous</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/Non-Duality/Introduction.html">Non-Duality</a></li>
+                    
+                </ul>
+            </li>
+
+            
+        </ul>
+    </div>
+
+
+</div><div class="column-main">
+            <main class="page-content" aria-label="Content">
+                <div class="wrapper">
+                    <h1 id="processes">Processes</h1>
+
+<p>A <strong>process</strong> is an instance of an executing program. It is an abstract entity, defined by the kernel, to which system resources are allocated (CPU time, memory, etc.) in order to execute a program. Often called tasks or threads in the Linux source code.</p>
+
+<p>A <strong>program</strong> is a file containing a range of information that describes how to construct a process at run time.</p>
+
+<p><strong>Segments</strong> are logical divisions of a process’s virtual memory. Sometimes, the term <strong>section</strong> is used instead since section is more consistent with the terminology used in the ELF specification.</p>
+
+<h2 id="layout">Layout</h2>
+
+<p>Parent and child processes may share the pages containing same the program code (text), they have
+separate copies of the data (stack and heap)</p>
+
+<details>
+<summary> <strong> cat program_layout.cpp </strong> </summary>
+
+<p>
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;stdio.h&gt; // standard io
+#include &lt;stdlib.h&gt; // C standard library
+#include &lt;unistd.h&gt; // unix standard library
+#include &lt;sys/types.h&gt; // system types for linux
+</span>
+<span class="k">extern</span> <span class="kt">char</span> <span class="n">etext</span><span class="p">;</span> <span class="cm">/* end of program text / start of initialized data */</span>
+<span class="k">extern</span> <span class="kt">char</span> <span class="n">edata</span><span class="p">;</span> <span class="c1">//</span>
+<span class="k">extern</span> <span class="kt">char</span> <span class="n">end</span><span class="p">;</span>
+
+<span class="kt">char</span> <span class="n">globBuf</span><span class="p">[</span><span class="mi">65536</span><span class="p">];</span>   <span class="cm">/* Uninitialized data segment */</span>
+<span class="kt">int</span> <span class="n">primes</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span> <span class="p">};</span>  <span class="cm">/* Initialized data segment */</span>
+
+
+<span class="k">static</span> <span class="kt">int</span> <span class="nf">square</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span>  <span class="cm">/* Allocated in frame for square() */</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">result</span><span class="p">;</span>  <span class="cm">/* Allocated in frame for square() */</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">result</span><span class="p">;</span>  <span class="cm">/* Return value passed via register */</span>
+<span class="p">}</span>
+
+<span class="k">static</span> <span class="kt">void</span> <span class="nf">doCalc</span><span class="p">(</span><span class="kt">int</span> <span class="n">val</span><span class="p">)</span> <span class="cm">/* Allocated in frame for doCalc() */</span>
+<span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"The square of %d is %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">square</span><span class="p">(</span><span class="n">val</span><span class="p">));</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">val</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">t</span><span class="p">;</span>                  <span class="cm">/* Allocated in frame for doCalc() */</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">val</span> <span class="o">*</span> <span class="n">val</span> <span class="o">*</span> <span class="n">val</span><span class="p">;</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"The cube of %d is %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">t</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// gcc program_layout.c</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span>       <span class="cm">/* Allocated in frame for main() */</span>
+<span class="p">{</span>
+    <span class="k">static</span> <span class="kt">int</span> <span class="n">key</span> <span class="o">=</span> <span class="mi">9973</span><span class="p">;</span>     <span class="cm">/* Initialized data segment */</span>
+    <span class="k">static</span> <span class="kt">char</span> <span class="n">mbuf</span><span class="p">[</span><span class="mi">10240000</span><span class="p">];</span>     <span class="cm">/* Uninitialized data segment */</span>
+    <span class="kt">char</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span>                        <span class="cm">/* Allocated in frame for main() */</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span> <span class="n">malloc</span><span class="p">(</span><span class="mi">1024</span><span class="p">);</span>              <span class="cm">/* Points to memory in heap segment */</span>
+ 
+    <span class="n">doCalc</span><span class="p">(</span><span class="n">key</span><span class="p">);</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">"PID = %d </span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">getpid</span><span class="p">());</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"etext = %p </span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">etext</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"edata = %p </span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">edata</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"end = %p </span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">end</span><span class="p">);</span>
+    <span class="n">getchar</span><span class="p">();</span>
+    <span class="n">exit</span><span class="p">(</span><span class="n">EXIT_SUCCESS</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </p></details>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># dump a process's memory contents onto disk.</span>
+<span class="nb">sudo </span>gcore 1255
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>getconf PAGESIZE 
+4096
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>size program_layout
+  text    data     bss        dec        hex        filename
+  1918     636   10305568   10308122   9d4a1a   program_layout
+</code></pre></div></div>
+
+<details>
+<summary> <strong> cat /proc/3570/maps </strong> </summary>
+
+<p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># describes a region of contiguous virtual memory in a process</span>
+<span class="nb">cat</span> /proc/3570/maps
+5652868c2000-5652868c3000 r-xp 00000000 103:03 4612851                   /home/luis/github/documents/books/Linux/src/a.out
+565286ac2000-565286ac3000 r--p 00000000 103:03 4612851                   /home/luis/github/documents/books/Linux/src/a.out
+565286ac3000-565286ac4000 rw-p 00001000 103:03 4612851                   /home/luis/github/documents/books/Linux/src/a.out
+565286ac4000-565287498000 rw-p 00000000 00:00 0 
+565287d2d000-565287d4e000 rw-p 00000000 00:00 0                          <span class="o">[</span>heap]
+7f5014619000-7f5014800000 r-xp 00000000 103:03 3943189                   /lib/x86_64-linux-gnu/libc-2.27.so
+7f5014800000-7f5014a00000 <span class="nt">---p</span> 001e7000 103:03 3943189                   /lib/x86_64-linux-gnu/libc-2.27.so
+7f5014a00000-7f5014a04000 r--p 001e7000 103:03 3943189                   /lib/x86_64-linux-gnu/libc-2.27.so
+7f5014a04000-7f5014a06000 rw-p 001eb000 103:03 3943189                   /lib/x86_64-linux-gnu/libc-2.27.so
+7f5014a06000-7f5014a0a000 rw-p 00000000 00:00 0 
+7f5014a0a000-7f5014a31000 r-xp 00000000 103:03 3943182                   /lib/x86_64-linux-gnu/ld-2.27.so
+7f5014c0e000-7f5014c10000 rw-p 00000000 00:00 0 
+7f5014c31000-7f5014c32000 r--p 00027000 103:03 3943182                   /lib/x86_64-linux-gnu/ld-2.27.so
+7f5014c32000-7f5014c33000 rw-p 00028000 103:03 3943182                   /lib/x86_64-linux-gnu/ld-2.27.so
+7f5014c33000-7f5014c34000 rw-p 00000000 00:00 0 
+7ffdde410000-7ffdde432000 rw-p 00000000 00:00 0                          <span class="o">[</span>stack]
+7ffdde518000-7ffdde51b000 r--p 00000000 00:00 0                          <span class="o">[</span>vvar]
+7ffdde51b000-7ffdde51c000 r-xp 00000000 00:00 0                          <span class="o">[</span>vdso]
+ffffffffff600000-ffffffffff601000 <span class="nt">--xp</span> 00000000 00:00 0                  <span class="o">[</span>vsyscall]
+</code></pre></div>    </div>
+  </p></details>
+
+<details>
+<summary> <strong> readelf --file-header ./program_layou</strong> </summary>
+
+<p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>readelf <span class="nt">--file-header</span> ./program_layout
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2<span class="s1">'s complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              DYN (Shared object file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x5d0
+  Start of program headers:          64 (bytes into file)
+  Start of section headers:          11816 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           56 (bytes)
+  Number of program headers:         9
+  Size of section headers:           64 (bytes)
+  Number of section headers:         34
+  Section header string table index: 33
+</span></code></pre></div>    </div>
+  </p></details>
+
+<details>
+<summary> <strong> hexdump -C -s 0x0  ./a.out   </strong> </summary>
+
+<p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>hexdump <span class="nt">-C</span> <span class="nt">-s</span> 0x0  ./a.out  
+</code></pre></div>    </div>
+  </p></details>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+
+High Addresses ---&gt; .----------------------.
+0xFFFFFFFFF (4GB)   |        Kernel        |   mapped into process virtual memory
+                    |        Space         |   but not accessible to program
+                    |                      |
+                    |                      |   Anything not in Kernel Space is
+                    |                      |    User Space
+0xC0000000          |----------------------|
+                    |                      |   argv, environ
+                    |     Environment      |    command line arguments
+                    |                      |    process environment list
+                    |                      |
+                    |                      |
+Top of stack ---&gt;   |----------------------|
+                    |                      |   Dynamically growing and shrinking.
+                    |                      |   Contains stack frames.
+                    |         STACK        |   Local variables, parameter passing
+                    |           v          |
+                    |           v          |   
+                    |           v          |
+base pointer -&gt;     | - - - - - - - - - - -|
+                    |           |          |
+                    |           v          |
+                    :                      :
+                    .                      .   The stack grows down into unused space
+                    .         Empty        .   while the heap grows up. 
+                    .                      .
+                    .                      .   (other memory maps do occur here, such 
+                    .                      .    as dynamic libraries, and different memory
+                    :           ^          :    allocate)
+                    |           ^          |
+                    |           |          |
+ brk point -&gt;       | - - - - - - - - - - -|   Top of heap is called the program break.
+                    |                      |   brk() system call is used to adjust
+                    |          HEAP        |
+                    |                      | Dynamically allocated memory is declared on the heap
+                    |                      |
+extern end          |----------------------|
+                    |         BSS          |   Uninitialized Data (BSS)
+                    |                      |    Holds global and static variables that are not initialized.
+                    |                      |    The size that the bss will require at runtime is 
+                    |                      |    recorded into the object file but bss doesn't take
+                    |                      |    up any actual space in the object file.  
+                    |                      |    Initialized to 0. BSS = block started by symbol
+                    |                      |     
+                    |                      |    char globBuf[65536];   
+                    |                      |    static char localBuf[10240000];  
+                    |                      |     
+extern edata        |----------------------|   
+                    |        Data          |   Initialized Data (DS)
+                    |                      |     Global and static variables with their assigned values.
+                    |                      |     Values read from the executable file.
+                    |                      |     
+                    |                      |    int primes[] = { 2, 3, 5, 7 }; 
+                    |                      |    static int key = 9973; 
+                    |                      |     
+                    |                      |     
+extern etext        |----------------------|
+                    |        Text          |   Text Segment (machine-language instructions of program)
+                    |                      |    Program instructions, copied directly from file into memory.
+                    |                      |    Read-only. Shareable.
+                    |                      |     
+                    |                      |     
+                    |                      |     
+0x08048000 (32-bit) |----------------------|
+0x00400000 (64-bit) |                      |     
+                    |                      |     
+Low Addresses ----&gt; '----------------------'
+0x00000000
+
+
+</code></pre></div></div>
+
+<p>The entry point of a non-PIE executable should be 0x400000, whereas for 32 bit ELF executables, the entry point is 0x08048000.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// C program environment provides three global symbols</span>
+<span class="k">extern</span> <span class="kt">char</span> <span class="n">etext</span><span class="p">;</span>  <span class="c1">// end of the program text</span>
+<span class="k">extern</span> <span class="kt">char</span> <span class="n">edata</span><span class="p">;</span>   <span class="c1">// end of the initialized data segment</span>
+<span class="k">extern</span> <span class="kt">char</span> <span class="n">end</span><span class="p">;</span>  <span class="c1">// end of the uninitialized data segment</span>
+</code></pre></div></div>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;unistd.h&gt;
+</span><span class="n">pid_t</span> <span class="nf">getpid</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+<span class="c1">// Always successfully returns process ID of caller</span>
+</code></pre></div></div>
+
+<h2 id="process-creation">Process Creation</h2>
+
+<p>The fork() system call allows one process, the parent, to create a new process,
+the child</p>
+
+<p>This is done by making the new child process an (almost) exact duplicate of the parent: the child obtains copies of the parent’s stack, data, heap, and text segments</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># The Linux kernel limits process IDs to being less than </span>
+<span class="c"># or equal to 32,767. This limit is adjustable.</span>
+<span class="nb">cat</span> /proc/sys/kernel/pid_max        
+32768
+
+<span class="c"># The parent of any process can be found by looking at the Ppid field in</span>
+<span class="nb">cat</span> /proc/PID/status
+
+<span class="c"># The command-line arguments of any process (can be read)</span>
+<span class="nb">cat</span> /proc/PID/cmdline 
+</code></pre></div></div>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;unistd.h&gt;
+</span><span class="n">pid_t</span> <span class="nf">getpid</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+<span class="c1">// Always successfully returns process ID of caller</span>
+
+<span class="cp">#include &lt;unistd.h&gt;
+</span><span class="n">pid_t</span> <span class="nf">getppid</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+<span class="c1">// Always successfully returns process ID of parent of caller</span>
+
+</code></pre></div></div>
+
+<h2 id="process-credentials">Process Credentials</h2>
+
+<p>The effective user ID and group ID, in conjunction with the supplementary group IDs, are used to determine the permissions granted to a process when it tries to perform various operations (i.e., system calls).</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="cp">#include &lt;unistd.h&gt;
+</span><span class="n">uid_t</span> <span class="nf">getuid</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+<span class="c1">// Returns real user ID of calling process</span>
+<span class="n">uid_t</span> <span class="nf">geteuid</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+<span class="c1">// Returns effective user ID of calling process</span>
+<span class="n">gid_t</span> <span class="nf">getgid</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+<span class="c1">// Returns real group ID of calling process</span>
+<span class="n">gid_t</span> <span class="nf">getegid</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+<span class="c1">// Returns effective group ID of calling process</span>
+
+<span class="cp">#include &lt;unistd.h&gt;
+</span><span class="kt">int</span> <span class="nf">setuid</span><span class="p">(</span><span class="n">uid_t</span> <span class="n">uid</span> <span class="p">);</span>
+<span class="kt">int</span> <span class="nf">setgid</span><span class="p">(</span><span class="n">gid_t</span> <span class="n">gid</span> <span class="p">);</span>
+<span class="c1">// Both return 0 on success, or –1 on error</span>
+
+<span class="cp">#include &lt;unistd.h&gt;
+</span><span class="kt">int</span> <span class="nf">seteuid</span><span class="p">(</span><span class="n">uid_t</span> <span class="n">euid</span> <span class="p">);</span>
+<span class="kt">int</span> <span class="nf">setegid</span><span class="p">(</span><span class="n">gid_t</span> <span class="n">egid</span> <span class="p">);</span>
+<span class="c1">// Both return 0 on success, or –1 on erro</span>
+
+<span class="cp">#include &lt;sys/fsuid.h&gt;
+</span><span class="kt">int</span> <span class="nf">setfsuid</span><span class="p">(</span><span class="n">uid_t</span> <span class="n">fsuid</span> <span class="p">);</span>
+<span class="c1">// Always returns the previous file-system user ID</span>
+<span class="kt">int</span> <span class="nf">setfsgid</span><span class="p">(</span><span class="n">gid_t</span> <span class="n">fsgid</span> <span class="p">);</span>
+<span class="c1">// Always returns the previous file-system group ID</span>
+</code></pre></div></div>
+
+<h2 id="implementation-in-kernel">Implementation in Kernel</h2>
+
+<p>To manage processes, the kernel must have a clear picture of what each process is
+doing. It must know, for instance, the process’s priority, whether it is running on a
+CPU or blocked on an event, what address space has been assigned to it, which files
+it is allowed to address, and so on. This is the role of the process descriptor—a task_
+struct type structure whose fields contain all the information related to a single process.</p>
+
+<details>
+<summary> <strong> task_struct </strong> </summary>
+
+<p>
+
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// https://elixir.bootlin.com/linux/v5.9.9/source/include/linux/sched.h</span>
+<span class="c1">// line 632</span>
+<span class="k">struct</span> <span class="n">task_struct</span> <span class="p">{</span>
+<span class="cp">#ifdef CONFIG_THREAD_INFO_IN_TASK
+</span>	<span class="cm">/*
+	 * For reasons of header soup (see current_thread_info()), this
+	 * must be the first element of task_struct.
+	 */</span>
+	<span class="k">struct</span> <span class="n">thread_info</span>		<span class="n">thread_info</span><span class="p">;</span>
+<span class="cp">#endif
+</span>	<span class="cm">/* -1 unrunnable, 0 runnable, &gt;0 stopped: */</span>
+	<span class="k">volatile</span> <span class="kt">long</span>			<span class="n">state</span><span class="p">;</span>
+
+	<span class="cm">/*
+	 * This begins the randomizable portion of task_struct. Only
+	 * scheduling-critical items should be added above here.
+	 */</span>
+	<span class="n">randomized_struct_fields_start</span>
+
+	<span class="kt">void</span>				<span class="o">*</span><span class="n">stack</span><span class="p">;</span>
+	<span class="n">refcount_t</span>			<span class="n">usage</span><span class="p">;</span>
+	<span class="cm">/* Per task flags (PF_*), defined further below: */</span>
+	<span class="kt">unsigned</span> <span class="kt">int</span>			<span class="n">flags</span><span class="p">;</span>
+	<span class="kt">unsigned</span> <span class="kt">int</span>			<span class="n">ptrace</span><span class="p">;</span>
+
+<span class="cp">#ifdef CONFIG_SMP
+</span>	<span class="kt">int</span>				<span class="n">on_cpu</span><span class="p">;</span>
+	<span class="k">struct</span> <span class="n">__call_single_node</span>	<span class="n">wake_entry</span><span class="p">;</span>
+<span class="cp">#ifdef CONFIG_THREAD_INFO_IN_TASK
+</span>	<span class="cm">/* Current CPU: */</span>
+	<span class="kt">unsigned</span> <span class="kt">int</span>			<span class="n">cpu</span><span class="p">;</span>
+<span class="cp">#endif
+</span>	<span class="kt">unsigned</span> <span class="kt">int</span>			<span class="n">wakee_flips</span><span class="p">;</span>
+	<span class="kt">unsigned</span> <span class="kt">long</span>			<span class="n">wakee_flip_decay_ts</span><span class="p">;</span>
+	<span class="k">struct</span> <span class="n">task_struct</span>		<span class="o">*</span><span class="n">last_wakee</span><span class="p">;</span>
+
+	<span class="cm">/*
+	 * recent_used_cpu is initially set as the last CPU used by a task
+	 * that wakes affine another task. Waker/wakee relationships can
+	 * push tasks around a CPU where each wakeup moves to the next one.
+	 * Tracking a recently used CPU allows a quick search for a recently
+	 * used CPU that may be idle.
+	 */</span>
+	<span class="kt">int</span>				<span class="n">recent_used_cpu</span><span class="p">;</span>
+	<span class="kt">int</span>				<span class="n">wake_cpu</span><span class="p">;</span>
+<span class="cp">#endif
+</span>	<span class="kt">int</span>				<span class="n">on_rq</span><span class="p">;</span>
+
+	<span class="kt">int</span>				<span class="n">prio</span><span class="p">;</span>
+	<span class="kt">int</span>				<span class="n">static_prio</span><span class="p">;</span>
+	<span class="kt">int</span>				<span class="n">normal_prio</span><span class="p">;</span>
+	<span class="kt">unsigned</span> <span class="kt">int</span>			<span class="n">rt_priority</span><span class="p">;</span>
+
+	<span class="k">const</span> <span class="k">struct</span> <span class="n">sched_class</span>	<span class="o">*</span><span class="n">sched_class</span><span class="p">;</span>
+	<span class="k">struct</span> <span class="n">sched_entity</span>		<span class="n">se</span><span class="p">;</span>
+	<span class="k">struct</span> <span class="n">sched_rt_entity</span>		<span class="n">rt</span><span class="p">;</span>
+<span class="cp">#ifdef CONFIG_CGROUP_SCHED
+</span>	<span class="k">struct</span> <span class="n">task_group</span>		<span class="o">*</span><span class="n">sched_task_group</span><span class="p">;</span>
+<span class="cp">#endif
+</span>	<span class="k">struct</span> <span class="n">sched_dl_entity</span>		<span class="n">dl</span><span class="p">;</span>
+
+<span class="cp">#ifdef CONFIG_UCLAMP_TASK
+</span>	<span class="cm">/*
+	 * Clamp values requested for a scheduling entity.
+	 * Must be updated with task_rq_lock() held.
+	 */</span>
+	<span class="k">struct</span> <span class="n">uclamp_se</span>		<span class="n">uclamp_req</span><span class="p">[</span><span class="n">UCLAMP_CNT</span><span class="p">];</span>
+	<span class="cm">/*
+	 * Effective clamp values used for a scheduling entity.
+	 * Must be updated with task_rq_lock() held.
+	 */</span>
+	<span class="k">struct</span> <span class="n">uclamp_se</span>		<span class="n">uclamp</span><span class="p">[</span><span class="n">UCLAMP_CNT</span><span class="p">];</span>
+<span class="cp">#endif
+</span>
+<span class="cp">#ifdef CONFIG_PREEMPT_NOTIFIERS
+</span>	<span class="cm">/* List of struct preempt_notifier: */</span>
+	<span class="k">struct</span> <span class="n">hlist_head</span>		<span class="n">preempt_notifiers</span><span class="p">;</span>
+<span class="cp">#endif
+</span>
+<span class="cp">#ifdef CONFIG_BLK_DEV_IO_TRACE
+</span>	<span class="kt">unsigned</span> <span class="kt">int</span>			<span class="n">btrace_seq</span><span class="p">;</span>
+<span class="cp">#endif
+</span>
+	<span class="kt">unsigned</span> <span class="kt">int</span>			<span class="n">policy</span><span class="p">;</span>
+	<span class="kt">int</span>				<span class="n">nr_cpus_allowed</span><span class="p">;</span>
+	<span class="k">const</span> <span class="n">cpumask_t</span>			<span class="o">*</span><span class="n">cpus_ptr</span><span class="p">;</span>
+	<span class="n">cpumask_t</span>			<span class="n">cpus_mask</span><span class="p">;</span>
+
+<span class="cp">#ifdef CONFIG_PREEMPT_RCU
+</span>	<span class="kt">int</span>				<span class="n">rcu_read_lock_nesting</span><span class="p">;</span>
+	<span class="k">union</span> <span class="n">rcu_special</span>		<span class="n">rcu_read_unlock_special</span><span class="p">;</span>
+	<span class="k">struct</span> <span class="n">list_head</span>		<span class="n">rcu_node_entry</span><span class="p">;</span>
+	<span class="k">struct</span> <span class="n">rcu_node</span>			<span class="o">*</span><span class="n">rcu_blocked_node</span><span class="p">;</span>
+<span class="cp">#endif </span><span class="cm">/* #ifdef CONFIG_PREEMPT_RCU */</span><span class="cp">
+</span>
+<span class="cp">#ifdef CONFIG_TASKS_RCU
+</span>	<span class="kt">unsigned</span> <span class="kt">long</span>			<span class="n">rcu_tasks_nvcsw</span><span class="p">;</span>
+	<span class="n">u8</span>				<span class="n">rcu_tasks_holdout</span><span class="p">;</span>
+	<span class="n">u8</span>				<span class="n">rcu_tasks_idx</span><span class="p">;</span>
+	<span class="kt">int</span>				<span class="n">rcu_tasks_idle_cpu</span><span class="p">;</span>
+	<span class="k">struct</span> <span class="n">list_head</span>		<span class="n">rcu_tasks_holdout_list</span><span class="p">;</span>
+<span class="cp">#endif </span><span class="cm">/* #ifdef CONFIG_TASKS_RCU */</span><span class="cp">
+</span>
+<span class="cp">#ifdef CONFIG_TASKS_TRACE_RCU
+</span>	<span class="kt">int</span>				<span class="n">trc_reader_nesting</span><span class="p">;</span>
+	<span class="kt">int</span>				<span class="n">trc_ipi_to_cpu</span><span class="p">;</span>
+	<span class="k">union</span> <span class="n">rcu_special</span>		<span class="n">trc_reader_special</span><span class="p">;</span>
+	<span class="n">bool</span>				<span class="n">trc_reader_checked</span><span class="p">;</span>
+	<span class="k">struct</span> <span class="n">list_head</span>		<span class="n">trc_holdout_list</span><span class="p">;</span>
+<span class="cp">#endif </span><span class="cm">/* #ifdef CONFIG_TASKS_TRACE_RCU */</span><span class="cp">
+</span>
+	<span class="k">struct</span> <span class="n">sched_info</span>		<span class="n">sched_info</span><span class="p">;</span>
+
+	<span class="k">struct</span> <span class="n">list_head</span>		<span class="n">tasks</span><span class="p">;</span>
+<span class="cp">#ifdef CONFIG_SMP
+</span>	<span class="k">struct</span> <span class="n">plist_node</span>		<span class="n">pushable_tasks</span><span class="p">;</span>
+	<span class="k">struct</span> <span class="n">rb_node</span>			<span class="n">pushable_dl_tasks</span><span class="p">;</span>
+<span class="cp">#endif
+</span>
+	<span class="k">struct</span> <span class="n">mm_struct</span>		<span class="o">*</span><span class="n">mm</span><span class="p">;</span>
+	<span class="k">struct</span> <span class="n">mm_struct</span>		<span class="o">*</span><span class="n">active_mm</span><span class="p">;</span>
+
+	<span class="cm">/* Per-thread vma caching: */</span>
+	<span class="k">struct</span> <span class="n">vmacache</span>			<span class="n">vmacache</span><span class="p">;</span>
+
+<span class="cp">#ifdef SPLIT_RSS_COUNTING
+</span>	<span class="k">struct</span> <span class="n">task_rss_stat</span>		<span class="n">rss_stat</span><span class="p">;</span>
+<span class="cp">#endif
+</span>	<span class="kt">int</span>				<span class="n">exit_state</span><span class="p">;</span>
+	<span class="kt">int</span>				<span class="n">exit_code</span><span class="p">;</span>
+	<span class="kt">int</span>				<span class="n">exit_signal</span><span class="p">;</span>
+	<span class="cm">/* The signal sent when the parent dies: */</span>
+	<span class="kt">int</span>				<span class="n">pdeath_signal</span><span class="p">;</span>
+	<span class="cm">/* JOBCTL_*, siglock protected: */</span>
+	<span class="kt">unsigned</span> <span class="kt">long</span>			<span class="n">jobctl</span><span class="p">;</span>
+
+	<span class="cm">/* Used for emulating ABI behavior of previous Linux versions: */</span>
+	<span class="kt">unsigned</span> <span class="kt">int</span>			<span class="n">personality</span><span class="p">;</span>
+
+	<span class="cm">/* Scheduler bits, serialized by scheduler locks: */</span>
+	<span class="kt">unsigned</span>			<span class="n">sched_reset_on_fork</span><span class="o">:</span><span class="mi">1</span><span class="p">;</span>
+	<span class="kt">unsigned</span>			<span class="n">sched_contributes_to_load</span><span class="o">:</span><span class="mi">1</span><span class="p">;</span>
+	<span class="kt">unsigned</span>			<span class="n">sched_migrated</span><span class="o">:</span><span class="mi">1</span><span class="p">;</span>
+	<span class="kt">unsigned</span>			<span class="n">sched_remote_wakeup</span><span class="o">:</span><span class="mi">1</span><span class="p">;</span>
+<span class="cp">#ifdef CONFIG_PSI
+</span>	<span class="kt">unsigned</span>			<span class="n">sched_psi_wake_requeue</span><span class="o">:</span><span class="mi">1</span><span class="p">;</span>
+<span class="cp">#endif
+</span>
+	<span class="cm">/* Force alignment to the next boundary: */</span>
+	<span class="kt">unsigned</span>			<span class="o">:</span><span class="mi">0</span><span class="p">;</span>
+
+	<span class="cm">/* Unserialized, strictly 'current' */</span>
+
+	<span class="cm">/* Bit to tell LSMs we're in execve(): */</span>
+	<span class="kt">unsigned</span>			<span class="n">in_execve</span><span class="o">:</span><span class="mi">1</span><span class="p">;</span>
+	<span class="kt">unsigned</span>			<span class="n">in_iowait</span><span class="o">:</span><span class="mi">1</span><span class="p">;</span>
+<span class="cp">#ifndef TIF_RESTORE_SIGMASK
+</span>	<span class="kt">unsigned</span>			<span class="n">restore_sigmask</span><span class="o">:</span><span class="mi">1</span><span class="p">;</span>
+<span class="cp">#endif
+#ifdef CONFIG_MEMCG
+</span>	<span class="kt">unsigned</span>			<span class="n">in_user_fault</span><span class="o">:</span><span class="mi">1</span><span class="p">;</span>
+<span class="cp">#endif
+#ifdef CONFIG_COMPAT_BRK
+</span>	<span class="kt">unsigned</span>			<span class="n">brk_randomized</span><span class="o">:</span><span class="mi">1</span><span class="p">;</span>
+<span class="cp">#endif
+#ifdef CONFIG_CGROUPS
+</span>	<span class="cm">/* disallow userland-initiated cgroup migration */</span>
+	<span class="kt">unsigned</span>			<span class="n">no_cgroup_migration</span><span class="o">:</span><span class="mi">1</span><span class="p">;</span>
+	<span class="cm">/* task is frozen/stopped (used by the cgroup freezer) */</span>
+	<span class="kt">unsigned</span>			<span class="n">frozen</span><span class="o">:</span><span class="mi">1</span><span class="p">;</span>
+<span class="cp">#endif
+#ifdef CONFIG_BLK_CGROUP
+</span>	<span class="kt">unsigned</span>			<span class="n">use_memdelay</span><span class="o">:</span><span class="mi">1</span><span class="p">;</span>
+<span class="cp">#endif
+#ifdef CONFIG_PSI
+</span>	<span class="cm">/* Stalled due to lack of memory */</span>
+	<span class="kt">unsigned</span>			<span class="n">in_memstall</span><span class="o">:</span><span class="mi">1</span><span class="p">;</span>
+<span class="cp">#endif
+</span>
+	<span class="kt">unsigned</span> <span class="kt">long</span>			<span class="n">atomic_flags</span><span class="p">;</span> <span class="cm">/* Flags requiring atomic access. */</span>
+
+	<span class="k">struct</span> <span class="n">restart_block</span>		<span class="n">restart_block</span><span class="p">;</span>
+
+	<span class="n">pid_t</span>				<span class="n">pid</span><span class="p">;</span>
+	<span class="n">pid_t</span>				<span class="n">tgid</span><span class="p">;</span>
+
+<span class="cp">#ifdef CONFIG_STACKPROTECTOR
+</span>	<span class="cm">/* Canary value for the -fstack-protector GCC feature: */</span>
+	<span class="kt">unsigned</span> <span class="kt">long</span>			<span class="n">stack_canary</span><span class="p">;</span>
+<span class="cp">#endif
+</span>	<span class="cm">/*
+	 * Pointers to the (original) parent process, youngest child, younger sibling,
+	 * older sibling, respectively.  (p-&gt;father can be replaced with
+	 * p-&gt;real_parent-&gt;pid)
+	 */</span>
+
+	<span class="cm">/* Real parent process: */</span>
+	<span class="k">struct</span> <span class="n">task_struct</span> <span class="n">__rcu</span>	<span class="o">*</span><span class="n">real_parent</span><span class="p">;</span>
+
+	<span class="cm">/* Recipient of SIGCHLD, wait4() reports: */</span>
+	<span class="k">struct</span> <span class="n">task_struct</span> <span class="n">__rcu</span>	<span class="o">*</span><span class="n">parent</span><span class="p">;</span>
+
+	<span class="cm">/*
+	 * Children/sibling form the list of natural children:
+	 */</span>
+	<span class="k">struct</span> <span class="n">list_head</span>		<span class="n">children</span><span class="p">;</span>
+	<span class="k">struct</span> <span class="n">list_head</span>		<span class="n">sibling</span><span class="p">;</span>
+	<span class="k">struct</span> <span class="n">task_struct</span>		<span class="o">*</span><span class="n">group_leader</span><span class="p">;</span>
+
+	<span class="cm">/*
+	 * 'ptraced' is the list of tasks this task is using ptrace() on.
+	 *
+	 * This includes both natural children and PTRACE_ATTACH targets.
+	 * 'ptrace_entry' is this task's link on the p-&gt;parent-&gt;ptraced list.
+	 */</span>
+	<span class="k">struct</span> <span class="n">list_head</span>		<span class="n">ptraced</span><span class="p">;</span>
+	<span class="k">struct</span> <span class="n">list_head</span>		<span class="n">ptrace_entry</span><span class="p">;</span>
+
+	<span class="cm">/* PID/PID hash table linkage. */</span>
+	<span class="k">struct</span> <span class="n">pid</span>			<span class="o">*</span><span class="n">thread_pid</span><span class="p">;</span>
+	<span class="k">struct</span> <span class="n">hlist_node</span>		<span class="n">pid_links</span><span class="p">[</span><span class="n">PIDTYPE_MAX</span><span class="p">];</span>
+	<span class="k">struct</span> <span class="n">list_head</span>		<span class="n">thread_group</span><span class="p">;</span>
+	<span class="k">struct</span> <span class="n">list_head</span>		<span class="n">thread_node</span><span class="p">;</span>
+
+	<span class="k">struct</span> <span class="n">completion</span>		<span class="o">*</span><span class="n">vfork_done</span><span class="p">;</span>
+
+	<span class="cm">/* CLONE_CHILD_SETTID: */</span>
+	<span class="kt">int</span> <span class="n">__user</span>			<span class="o">*</span><span class="n">set_child_tid</span><span class="p">;</span>
+
+	<span class="cm">/* CLONE_CHILD_CLEARTID: */</span>
+	<span class="kt">int</span> <span class="n">__user</span>			<span class="o">*</span><span class="n">clear_child_tid</span><span class="p">;</span>
+
+	<span class="n">u64</span>				<span class="n">utime</span><span class="p">;</span>
+	<span class="n">u64</span>				<span class="n">stime</span><span class="p">;</span>
+<span class="cp">#ifdef CONFIG_ARCH_HAS_SCALED_CPUTIME
+</span>	<span class="n">u64</span>				<span class="n">utimescaled</span><span class="p">;</span>
+	<span class="n">u64</span>				<span class="n">stimescaled</span><span class="p">;</span>
+<span class="cp">#endif
+</span>	<span class="n">u64</span>				<span class="n">gtime</span><span class="p">;</span>
+	<span class="k">struct</span> <span class="n">prev_cputime</span>		<span class="n">prev_cputime</span><span class="p">;</span>
+<span class="cp">#ifdef CONFIG_VIRT_CPU_ACCOUNTING_GEN
+</span>	<span class="k">struct</span> <span class="n">vtime</span>			<span class="n">vtime</span><span class="p">;</span>
+<span class="cp">#endif
+</span>
+<span class="cp">#ifdef CONFIG_NO_HZ_FULL
+</span>	<span class="n">atomic_t</span>			<span class="n">tick_dep_mask</span><span class="p">;</span>
+<span class="cp">#endif
+</span>	<span class="cm">/* Context switch counts: */</span>
+	<span class="kt">unsigned</span> <span class="kt">long</span>			<span class="n">nvcsw</span><span class="p">;</span>
+	<span class="kt">unsigned</span> <span class="kt">long</span>			<span class="n">nivcsw</span><span class="p">;</span>
+
+	<span class="cm">/* Monotonic time in nsecs: */</span>
+	<span class="n">u64</span>				<span class="n">start_time</span><span class="p">;</span>
+
+	<span class="cm">/* Boot based time in nsecs: */</span>
+	<span class="n">u64</span>				<span class="n">start_boottime</span><span class="p">;</span>
+
+	<span class="cm">/* MM fault and swap info: this can arguably be seen as either mm-specific or thread-specific: */</span>
+	<span class="kt">unsigned</span> <span class="kt">long</span>			<span class="n">min_flt</span><span class="p">;</span>
+	<span class="kt">unsigned</span> <span class="kt">long</span>			<span class="n">maj_flt</span><span class="p">;</span>
+
+	<span class="cm">/* Empty if CONFIG_POSIX_CPUTIMERS=n */</span>
+	<span class="k">struct</span> <span class="n">posix_cputimers</span>		<span class="n">posix_cputimers</span><span class="p">;</span>
+
+<span class="cp">#ifdef CONFIG_POSIX_CPU_TIMERS_TASK_WORK
+</span>	<span class="k">struct</span> <span class="n">posix_cputimers_work</span>	<span class="n">posix_cputimers_work</span><span class="p">;</span>
+<span class="cp">#endif
+</span>
+	<span class="cm">/* Process credentials: */</span>
+
+	<span class="cm">/* Tracer's credentials at attach: */</span>
+	<span class="k">const</span> <span class="k">struct</span> <span class="n">cred</span> <span class="n">__rcu</span>		<span class="o">*</span><span class="n">ptracer_cred</span><span class="p">;</span>
+
+	<span class="cm">/* Objective and real subjective task credentials (COW): */</span>
+	<span class="k">const</span> <span class="k">struct</span> <span class="n">cred</span> <span class="n">__rcu</span>		<span class="o">*</span><span class="n">real_cred</span><span class="p">;</span>
+
+	<span class="cm">/* Effective (overridable) subjective task credentials (COW): */</span>
+	<span class="k">const</span> <span class="k">struct</span> <span class="n">cred</span> <span class="n">__rcu</span>		<span class="o">*</span><span class="n">cred</span><span class="p">;</span>
+
+<span class="cp">#ifdef CONFIG_KEYS
+</span>	<span class="cm">/* Cached requested key. */</span>
+	<span class="k">struct</span> <span class="n">key</span>			<span class="o">*</span><span class="n">cached_requested_key</span><span class="p">;</span>
+<span class="cp">#endif
+</span>
+	<span class="cm">/*
+	 * executable name, excluding path.
+	 *
+	 * - normally initialized setup_new_exec()
+	 * - access it with [gs]et_task_comm()
+	 * - lock it with task_lock()
+	 */</span>
+	<span class="kt">char</span>				<span class="n">comm</span><span class="p">[</span><span class="n">TASK_COMM_LEN</span><span class="p">];</span>
+
+	<span class="k">struct</span> <span class="n">nameidata</span>		<span class="o">*</span><span class="n">nameidata</span><span class="p">;</span>
+
+<span class="cp">#ifdef CONFIG_SYSVIPC
+</span>	<span class="k">struct</span> <span class="n">sysv_sem</span>			<span class="n">sysvsem</span><span class="p">;</span>
+	<span class="k">struct</span> <span class="n">sysv_shm</span>			<span class="n">sysvshm</span><span class="p">;</span>
+<span class="cp">#endif
+#ifdef CONFIG_DETECT_HUNG_TASK
+</span>	<span class="kt">unsigned</span> <span class="kt">long</span>			<span class="n">last_switch_count</span><span class="p">;</span>
+	<span class="kt">unsigned</span> <span class="kt">long</span>			<span class="n">last_switch_time</span><span class="p">;</span>
+<span class="cp">#endif
+</span>	<span class="cm">/* Filesystem information: */</span>
+	<span class="k">struct</span> <span class="n">fs_struct</span>		<span class="o">*</span><span class="n">fs</span><span class="p">;</span>
+
+	<span class="cm">/* Open file information: */</span>
+	<span class="k">struct</span> <span class="n">files_struct</span>		<span class="o">*</span><span class="n">files</span><span class="p">;</span>
+
+<span class="cp">#ifdef CONFIG_IO_URING
+</span>	<span class="k">struct</span> <span class="n">io_uring_task</span>		<span class="o">*</span><span class="n">io_uring</span><span class="p">;</span>
+<span class="cp">#endif
+</span>
+	<span class="cm">/* Namespaces: */</span>
+	<span class="k">struct</span> <span class="n">nsproxy</span>			<span class="o">*</span><span class="n">nsproxy</span><span class="p">;</span>
+
+	<span class="cm">/* Signal handlers: */</span>
+	<span class="k">struct</span> <span class="n">signal_struct</span>		<span class="o">*</span><span class="n">signal</span><span class="p">;</span>
+	<span class="k">struct</span> <span class="n">sighand_struct</span> <span class="n">__rcu</span>		<span class="o">*</span><span class="n">sighand</span><span class="p">;</span>
+	<span class="n">sigset_t</span>			<span class="n">blocked</span><span class="p">;</span>
+	<span class="n">sigset_t</span>			<span class="n">real_blocked</span><span class="p">;</span>
+	<span class="cm">/* Restored if set_restore_sigmask() was used: */</span>
+	<span class="n">sigset_t</span>			<span class="n">saved_sigmask</span><span class="p">;</span>
+	<span class="k">struct</span> <span class="n">sigpending</span>		<span class="n">pending</span><span class="p">;</span>
+	<span class="kt">unsigned</span> <span class="kt">long</span>			<span class="n">sas_ss_sp</span><span class="p">;</span>
+	<span class="kt">size_t</span>				<span class="n">sas_ss_size</span><span class="p">;</span>
+	<span class="kt">unsigned</span> <span class="kt">int</span>			<span class="n">sas_ss_flags</span><span class="p">;</span>
+
+	<span class="k">struct</span> <span class="n">callback_head</span>		<span class="o">*</span><span class="n">task_works</span><span class="p">;</span>
+
+<span class="cp">#ifdef CONFIG_AUDIT
+#ifdef CONFIG_AUDITSYSCALL
+</span>	<span class="k">struct</span> <span class="n">audit_context</span>		<span class="o">*</span><span class="n">audit_context</span><span class="p">;</span>
+<span class="cp">#endif
+</span>	<span class="n">kuid_t</span>				<span class="n">loginuid</span><span class="p">;</span>
+	<span class="kt">unsigned</span> <span class="kt">int</span>			<span class="n">sessionid</span><span class="p">;</span>
+<span class="cp">#endif
+</span>	<span class="k">struct</span> <span class="n">seccomp</span>			<span class="n">seccomp</span><span class="p">;</span>
+
+	<span class="cm">/* Thread group tracking: */</span>
+	<span class="n">u64</span>				<span class="n">parent_exec_id</span><span class="p">;</span>
+	<span class="n">u64</span>				<span class="n">self_exec_id</span><span class="p">;</span>
+
+	<span class="cm">/* Protection against (de-)allocation: mm, files, fs, tty, keyrings, mems_allowed, mempolicy: */</span>
+	<span class="n">spinlock_t</span>			<span class="n">alloc_lock</span><span class="p">;</span>
+
+	<span class="cm">/* Protection of the PI data structures: */</span>
+	<span class="n">raw_spinlock_t</span>			<span class="n">pi_lock</span><span class="p">;</span>
+
+	<span class="k">struct</span> <span class="n">wake_q_node</span>		<span class="n">wake_q</span><span class="p">;</span>
+
+<span class="cp">#ifdef CONFIG_RT_MUTEXES
+</span>	<span class="cm">/* PI waiters blocked on a rt_mutex held by this task: */</span>
+	<span class="k">struct</span> <span class="n">rb_root_cached</span>		<span class="n">pi_waiters</span><span class="p">;</span>
+	<span class="cm">/* Updated under owner's pi_lock and rq lock */</span>
+	<span class="k">struct</span> <span class="n">task_struct</span>		<span class="o">*</span><span class="n">pi_top_task</span><span class="p">;</span>
+	<span class="cm">/* Deadlock detection and priority inheritance handling: */</span>
+	<span class="k">struct</span> <span class="n">rt_mutex_waiter</span>		<span class="o">*</span><span class="n">pi_blocked_on</span><span class="p">;</span>
+<span class="cp">#endif
+</span>
+<span class="cp">#ifdef CONFIG_DEBUG_MUTEXES
+</span>	<span class="cm">/* Mutex deadlock detection: */</span>
+	<span class="k">struct</span> <span class="n">mutex_waiter</span>		<span class="o">*</span><span class="n">blocked_on</span><span class="p">;</span>
+<span class="cp">#endif
+</span>
+<span class="cp">#ifdef CONFIG_DEBUG_ATOMIC_SLEEP
+</span>	<span class="kt">int</span>				<span class="n">non_block_count</span><span class="p">;</span>
+<span class="cp">#endif
+</span>
+<span class="cp">#ifdef CONFIG_TRACE_IRQFLAGS
+</span>	<span class="k">struct</span> <span class="n">irqtrace_events</span>		<span class="n">irqtrace</span><span class="p">;</span>
+	<span class="kt">unsigned</span> <span class="kt">int</span>			<span class="n">hardirq_threaded</span><span class="p">;</span>
+	<span class="n">u64</span>				<span class="n">hardirq_chain_key</span><span class="p">;</span>
+	<span class="kt">int</span>				<span class="n">softirqs_enabled</span><span class="p">;</span>
+	<span class="kt">int</span>				<span class="n">softirq_context</span><span class="p">;</span>
+	<span class="kt">int</span>				<span class="n">irq_config</span><span class="p">;</span>
+<span class="cp">#endif
+</span>
+<span class="cp">#ifdef CONFIG_LOCKDEP
+# define MAX_LOCK_DEPTH			48UL
+</span>	<span class="n">u64</span>				<span class="n">curr_chain_key</span><span class="p">;</span>
+	<span class="kt">int</span>				<span class="n">lockdep_depth</span><span class="p">;</span>
+	<span class="kt">unsigned</span> <span class="kt">int</span>			<span class="n">lockdep_recursion</span><span class="p">;</span>
+	<span class="k">struct</span> <span class="n">held_lock</span>		<span class="n">held_locks</span><span class="p">[</span><span class="n">MAX_LOCK_DEPTH</span><span class="p">];</span>
+<span class="cp">#endif
+</span>
+<span class="cp">#ifdef CONFIG_UBSAN
+</span>	<span class="kt">unsigned</span> <span class="kt">int</span>			<span class="n">in_ubsan</span><span class="p">;</span>
+<span class="cp">#endif
+</span>
+	<span class="cm">/* Journalling filesystem info: */</span>
+	<span class="kt">void</span>				<span class="o">*</span><span class="n">journal_info</span><span class="p">;</span>
+
+	<span class="cm">/* Stacked block device info: */</span>
+	<span class="k">struct</span> <span class="n">bio_list</span>			<span class="o">*</span><span class="n">bio_list</span><span class="p">;</span>
+
+<span class="cp">#ifdef CONFIG_BLOCK
+</span>	<span class="cm">/* Stack plugging: */</span>
+	<span class="k">struct</span> <span class="n">blk_plug</span>			<span class="o">*</span><span class="n">plug</span><span class="p">;</span>
+<span class="cp">#endif
+</span>
+	<span class="cm">/* VM state: */</span>
+	<span class="k">struct</span> <span class="n">reclaim_state</span>		<span class="o">*</span><span class="n">reclaim_state</span><span class="p">;</span>
+
+	<span class="k">struct</span> <span class="n">backing_dev_info</span>		<span class="o">*</span><span class="n">backing_dev_info</span><span class="p">;</span>
+
+	<span class="k">struct</span> <span class="n">io_context</span>		<span class="o">*</span><span class="n">io_context</span><span class="p">;</span>
+
+<span class="cp">#ifdef CONFIG_COMPACTION
+</span>	<span class="k">struct</span> <span class="n">capture_control</span>		<span class="o">*</span><span class="n">capture_control</span><span class="p">;</span>
+<span class="cp">#endif
+</span>	<span class="cm">/* Ptrace state: */</span>
+	<span class="kt">unsigned</span> <span class="kt">long</span>			<span class="n">ptrace_message</span><span class="p">;</span>
+	<span class="n">kernel_siginfo_t</span>		<span class="o">*</span><span class="n">last_siginfo</span><span class="p">;</span>
+
+	<span class="k">struct</span> <span class="n">task_io_accounting</span>	<span class="n">ioac</span><span class="p">;</span>
+<span class="cp">#ifdef CONFIG_PSI
+</span>	<span class="cm">/* Pressure stall state */</span>
+	<span class="kt">unsigned</span> <span class="kt">int</span>			<span class="n">psi_flags</span><span class="p">;</span>
+<span class="cp">#endif
+#ifdef CONFIG_TASK_XACCT
+</span>	<span class="cm">/* Accumulated RSS usage: */</span>
+	<span class="n">u64</span>				<span class="n">acct_rss_mem1</span><span class="p">;</span>
+	<span class="cm">/* Accumulated virtual memory usage: */</span>
+	<span class="n">u64</span>				<span class="n">acct_vm_mem1</span><span class="p">;</span>
+	<span class="cm">/* stime + utime since last update: */</span>
+	<span class="n">u64</span>				<span class="n">acct_timexpd</span><span class="p">;</span>
+<span class="cp">#endif
+#ifdef CONFIG_CPUSETS
+</span>	<span class="cm">/* Protected by -&gt;alloc_lock: */</span>
+	<span class="n">nodemask_t</span>			<span class="n">mems_allowed</span><span class="p">;</span>
+	<span class="cm">/* Seqence number to catch updates: */</span>
+	<span class="n">seqcount_spinlock_t</span>		<span class="n">mems_allowed_seq</span><span class="p">;</span>
+	<span class="kt">int</span>				<span class="n">cpuset_mem_spread_rotor</span><span class="p">;</span>
+	<span class="kt">int</span>				<span class="n">cpuset_slab_spread_rotor</span><span class="p">;</span>
+<span class="cp">#endif
+#ifdef CONFIG_CGROUPS
+</span>	<span class="cm">/* Control Group info protected by css_set_lock: */</span>
+	<span class="k">struct</span> <span class="n">css_set</span> <span class="n">__rcu</span>		<span class="o">*</span><span class="n">cgroups</span><span class="p">;</span>
+	<span class="cm">/* cg_list protected by css_set_lock and tsk-&gt;alloc_lock: */</span>
+	<span class="k">struct</span> <span class="n">list_head</span>		<span class="n">cg_list</span><span class="p">;</span>
+<span class="cp">#endif
+#ifdef CONFIG_X86_CPU_RESCTRL
+</span>	<span class="n">u32</span>				<span class="n">closid</span><span class="p">;</span>
+	<span class="n">u32</span>				<span class="n">rmid</span><span class="p">;</span>
+<span class="cp">#endif
+#ifdef CONFIG_FUTEX
+</span>	<span class="k">struct</span> <span class="n">robust_list_head</span> <span class="n">__user</span>	<span class="o">*</span><span class="n">robust_list</span><span class="p">;</span>
+<span class="cp">#ifdef CONFIG_COMPAT
+</span>	<span class="k">struct</span> <span class="n">compat_robust_list_head</span> <span class="n">__user</span> <span class="o">*</span><span class="n">compat_robust_list</span><span class="p">;</span>
+<span class="cp">#endif
+</span>	<span class="k">struct</span> <span class="n">list_head</span>		<span class="n">pi_state_list</span><span class="p">;</span>
+	<span class="k">struct</span> <span class="n">futex_pi_state</span>		<span class="o">*</span><span class="n">pi_state_cache</span><span class="p">;</span>
+	<span class="k">struct</span> <span class="n">mutex</span>			<span class="n">futex_exit_mutex</span><span class="p">;</span>
+	<span class="kt">unsigned</span> <span class="kt">int</span>			<span class="n">futex_state</span><span class="p">;</span>
+<span class="cp">#endif
+#ifdef CONFIG_PERF_EVENTS
+</span>	<span class="k">struct</span> <span class="n">perf_event_context</span>	<span class="o">*</span><span class="n">perf_event_ctxp</span><span class="p">[</span><span class="n">perf_nr_task_contexts</span><span class="p">];</span>
+	<span class="k">struct</span> <span class="n">mutex</span>			<span class="n">perf_event_mutex</span><span class="p">;</span>
+	<span class="k">struct</span> <span class="n">list_head</span>		<span class="n">perf_event_list</span><span class="p">;</span>
+<span class="cp">#endif
+#ifdef CONFIG_DEBUG_PREEMPT
+</span>	<span class="kt">unsigned</span> <span class="kt">long</span>			<span class="n">preempt_disable_ip</span><span class="p">;</span>
+<span class="cp">#endif
+#ifdef CONFIG_NUMA
+</span>	<span class="cm">/* Protected by alloc_lock: */</span>
+	<span class="k">struct</span> <span class="n">mempolicy</span>		<span class="o">*</span><span class="n">mempolicy</span><span class="p">;</span>
+	<span class="kt">short</span>				<span class="n">il_prev</span><span class="p">;</span>
+	<span class="kt">short</span>				<span class="n">pref_node_fork</span><span class="p">;</span>
+<span class="cp">#endif
+#ifdef CONFIG_NUMA_BALANCING
+</span>	<span class="kt">int</span>				<span class="n">numa_scan_seq</span><span class="p">;</span>
+	<span class="kt">unsigned</span> <span class="kt">int</span>			<span class="n">numa_scan_period</span><span class="p">;</span>
+	<span class="kt">unsigned</span> <span class="kt">int</span>			<span class="n">numa_scan_period_max</span><span class="p">;</span>
+	<span class="kt">int</span>				<span class="n">numa_preferred_nid</span><span class="p">;</span>
+	<span class="kt">unsigned</span> <span class="kt">long</span>			<span class="n">numa_migrate_retry</span><span class="p">;</span>
+	<span class="cm">/* Migration stamp: */</span>
+	<span class="n">u64</span>				<span class="n">node_stamp</span><span class="p">;</span>
+	<span class="n">u64</span>				<span class="n">last_task_numa_placement</span><span class="p">;</span>
+	<span class="n">u64</span>				<span class="n">last_sum_exec_runtime</span><span class="p">;</span>
+	<span class="k">struct</span> <span class="n">callback_head</span>		<span class="n">numa_work</span><span class="p">;</span>
+
+	<span class="cm">/*
+	 * This pointer is only modified for current in syscall and
+	 * pagefault context (and for tasks being destroyed), so it can be read
+	 * from any of the following contexts:
+	 *  - RCU read-side critical section
+	 *  - current-&gt;numa_group from everywhere
+	 *  - task's runqueue locked, task not running
+	 */</span>
+	<span class="k">struct</span> <span class="n">numa_group</span> <span class="n">__rcu</span>		<span class="o">*</span><span class="n">numa_group</span><span class="p">;</span>
+
+	<span class="cm">/*
+	 * numa_faults is an array split into four regions:
+	 * faults_memory, faults_cpu, faults_memory_buffer, faults_cpu_buffer
+	 * in this precise order.
+	 *
+	 * faults_memory: Exponential decaying average of faults on a per-node
+	 * basis. Scheduling placement decisions are made based on these
+	 * counts. The values remain static for the duration of a PTE scan.
+	 * faults_cpu: Track the nodes the process was running on when a NUMA
+	 * hinting fault was incurred.
+	 * faults_memory_buffer and faults_cpu_buffer: Record faults per node
+	 * during the current scan window. When the scan completes, the counts
+	 * in faults_memory and faults_cpu decay and these values are copied.
+	 */</span>
+	<span class="kt">unsigned</span> <span class="kt">long</span>			<span class="o">*</span><span class="n">numa_faults</span><span class="p">;</span>
+	<span class="kt">unsigned</span> <span class="kt">long</span>			<span class="n">total_numa_faults</span><span class="p">;</span>
+
+	<span class="cm">/*
+	 * numa_faults_locality tracks if faults recorded during the last
+	 * scan window were remote/local or failed to migrate. The task scan
+	 * period is adapted based on the locality of the faults with different
+	 * weights depending on whether they were shared or private faults
+	 */</span>
+	<span class="kt">unsigned</span> <span class="kt">long</span>			<span class="n">numa_faults_locality</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
+
+	<span class="kt">unsigned</span> <span class="kt">long</span>			<span class="n">numa_pages_migrated</span><span class="p">;</span>
+<span class="cp">#endif </span><span class="cm">/* CONFIG_NUMA_BALANCING */</span><span class="cp">
+</span>
+<span class="cp">#ifdef CONFIG_RSEQ
+</span>	<span class="k">struct</span> <span class="n">rseq</span> <span class="n">__user</span> <span class="o">*</span><span class="n">rseq</span><span class="p">;</span>
+	<span class="n">u32</span> <span class="n">rseq_sig</span><span class="p">;</span>
+	<span class="cm">/*
+	 * RmW on rseq_event_mask must be performed atomically
+	 * with respect to preemption.
+	 */</span>
+	<span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">rseq_event_mask</span><span class="p">;</span>
+<span class="cp">#endif
+</span>
+	<span class="k">struct</span> <span class="n">tlbflush_unmap_batch</span>	<span class="n">tlb_ubc</span><span class="p">;</span>
+
+	<span class="k">union</span> <span class="p">{</span>
+		<span class="n">refcount_t</span>		<span class="n">rcu_users</span><span class="p">;</span>
+		<span class="k">struct</span> <span class="n">rcu_head</span>		<span class="n">rcu</span><span class="p">;</span>
+	<span class="p">};</span>
+
+	<span class="cm">/* Cache last used pipe for splice(): */</span>
+	<span class="k">struct</span> <span class="n">pipe_inode_info</span>		<span class="o">*</span><span class="n">splice_pipe</span><span class="p">;</span>
+
+	<span class="k">struct</span> <span class="n">page_frag</span>		<span class="n">task_frag</span><span class="p">;</span>
+
+<span class="cp">#ifdef CONFIG_TASK_DELAY_ACCT
+</span>	<span class="k">struct</span> <span class="n">task_delay_info</span>		<span class="o">*</span><span class="n">delays</span><span class="p">;</span>
+<span class="cp">#endif
+</span>
+<span class="cp">#ifdef CONFIG_FAULT_INJECTION
+</span>	<span class="kt">int</span>				<span class="n">make_it_fail</span><span class="p">;</span>
+	<span class="kt">unsigned</span> <span class="kt">int</span>			<span class="n">fail_nth</span><span class="p">;</span>
+<span class="cp">#endif
+</span>	<span class="cm">/*
+	 * When (nr_dirtied &gt;= nr_dirtied_pause), it's time to call
+	 * balance_dirty_pages() for a dirty throttling pause:
+	 */</span>
+	<span class="kt">int</span>				<span class="n">nr_dirtied</span><span class="p">;</span>
+	<span class="kt">int</span>				<span class="n">nr_dirtied_pause</span><span class="p">;</span>
+	<span class="cm">/* Start of a write-and-pause period: */</span>
+	<span class="kt">unsigned</span> <span class="kt">long</span>			<span class="n">dirty_paused_when</span><span class="p">;</span>
+
+<span class="cp">#ifdef CONFIG_LATENCYTOP
+</span>	<span class="kt">int</span>				<span class="n">latency_record_count</span><span class="p">;</span>
+	<span class="k">struct</span> <span class="n">latency_record</span>		<span class="n">latency_record</span><span class="p">[</span><span class="n">LT_SAVECOUNT</span><span class="p">];</span>
+<span class="cp">#endif
+</span>	<span class="cm">/*
+	 * Time slack values; these are used to round up poll() and
+	 * select() etc timeout values. These are in nanoseconds.
+	 */</span>
+	<span class="n">u64</span>				<span class="n">timer_slack_ns</span><span class="p">;</span>
+	<span class="n">u64</span>				<span class="n">default_timer_slack_ns</span><span class="p">;</span>
+
+<span class="cp">#ifdef CONFIG_KASAN
+</span>	<span class="kt">unsigned</span> <span class="kt">int</span>			<span class="n">kasan_depth</span><span class="p">;</span>
+<span class="cp">#endif
+</span>
+<span class="cp">#ifdef CONFIG_KCSAN
+</span>	<span class="k">struct</span> <span class="n">kcsan_ctx</span>		<span class="n">kcsan_ctx</span><span class="p">;</span>
+<span class="cp">#ifdef CONFIG_TRACE_IRQFLAGS
+</span>	<span class="k">struct</span> <span class="n">irqtrace_events</span>		<span class="n">kcsan_save_irqtrace</span><span class="p">;</span>
+<span class="cp">#endif
+#endif
+</span>
+<span class="cp">#ifdef CONFIG_FUNCTION_GRAPH_TRACER
+</span>	<span class="cm">/* Index of current stored address in ret_stack: */</span>
+	<span class="kt">int</span>				<span class="n">curr_ret_stack</span><span class="p">;</span>
+	<span class="kt">int</span>				<span class="n">curr_ret_depth</span><span class="p">;</span>
+
+	<span class="cm">/* Stack of return addresses for return function tracing: */</span>
+	<span class="k">struct</span> <span class="n">ftrace_ret_stack</span>		<span class="o">*</span><span class="n">ret_stack</span><span class="p">;</span>
+
+	<span class="cm">/* Timestamp for last schedule: */</span>
+	<span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span>		<span class="n">ftrace_timestamp</span><span class="p">;</span>
+
+	<span class="cm">/*
+	 * Number of functions that haven't been traced
+	 * because of depth overrun:
+	 */</span>
+	<span class="n">atomic_t</span>			<span class="n">trace_overrun</span><span class="p">;</span>
+
+	<span class="cm">/* Pause tracing: */</span>
+	<span class="n">atomic_t</span>			<span class="n">tracing_graph_pause</span><span class="p">;</span>
+<span class="cp">#endif
+</span>
+<span class="cp">#ifdef CONFIG_TRACING
+</span>	<span class="cm">/* State flags for use by tracers: */</span>
+	<span class="kt">unsigned</span> <span class="kt">long</span>			<span class="n">trace</span><span class="p">;</span>
+
+	<span class="cm">/* Bitmask and counter of trace recursion: */</span>
+	<span class="kt">unsigned</span> <span class="kt">long</span>			<span class="n">trace_recursion</span><span class="p">;</span>
+<span class="cp">#endif </span><span class="cm">/* CONFIG_TRACING */</span><span class="cp">
+</span>
+<span class="cp">#ifdef CONFIG_KCOV
+</span>	<span class="cm">/* See kernel/kcov.c for more details. */</span>
+
+	<span class="cm">/* Coverage collection mode enabled for this task (0 if disabled): */</span>
+	<span class="kt">unsigned</span> <span class="kt">int</span>			<span class="n">kcov_mode</span><span class="p">;</span>
+
+	<span class="cm">/* Size of the kcov_area: */</span>
+	<span class="kt">unsigned</span> <span class="kt">int</span>			<span class="n">kcov_size</span><span class="p">;</span>
+
+	<span class="cm">/* Buffer for coverage collection: */</span>
+	<span class="kt">void</span>				<span class="o">*</span><span class="n">kcov_area</span><span class="p">;</span>
+
+	<span class="cm">/* KCOV descriptor wired with this task or NULL: */</span>
+	<span class="k">struct</span> <span class="n">kcov</span>			<span class="o">*</span><span class="n">kcov</span><span class="p">;</span>
+
+	<span class="cm">/* KCOV common handle for remote coverage collection: */</span>
+	<span class="n">u64</span>				<span class="n">kcov_handle</span><span class="p">;</span>
+
+	<span class="cm">/* KCOV sequence number: */</span>
+	<span class="kt">int</span>				<span class="n">kcov_sequence</span><span class="p">;</span>
+
+	<span class="cm">/* Collect coverage from softirq context: */</span>
+	<span class="kt">unsigned</span> <span class="kt">int</span>			<span class="n">kcov_softirq</span><span class="p">;</span>
+<span class="cp">#endif
+</span>
+<span class="cp">#ifdef CONFIG_MEMCG
+</span>	<span class="k">struct</span> <span class="n">mem_cgroup</span>		<span class="o">*</span><span class="n">memcg_in_oom</span><span class="p">;</span>
+	<span class="n">gfp_t</span>				<span class="n">memcg_oom_gfp_mask</span><span class="p">;</span>
+	<span class="kt">int</span>				<span class="n">memcg_oom_order</span><span class="p">;</span>
+
+	<span class="cm">/* Number of pages to reclaim on returning to userland: */</span>
+	<span class="kt">unsigned</span> <span class="kt">int</span>			<span class="n">memcg_nr_pages_over_high</span><span class="p">;</span>
+
+	<span class="cm">/* Used by memcontrol for targeted memcg charge: */</span>
+	<span class="k">struct</span> <span class="n">mem_cgroup</span>		<span class="o">*</span><span class="n">active_memcg</span><span class="p">;</span>
+<span class="cp">#endif
+</span>
+<span class="cp">#ifdef CONFIG_BLK_CGROUP
+</span>	<span class="k">struct</span> <span class="n">request_queue</span>		<span class="o">*</span><span class="n">throttle_queue</span><span class="p">;</span>
+<span class="cp">#endif
+</span>
+<span class="cp">#ifdef CONFIG_UPROBES
+</span>	<span class="k">struct</span> <span class="n">uprobe_task</span>		<span class="o">*</span><span class="n">utask</span><span class="p">;</span>
+<span class="cp">#endif
+#if defined(CONFIG_BCACHE) || defined(CONFIG_BCACHE_MODULE)
+</span>	<span class="kt">unsigned</span> <span class="kt">int</span>			<span class="n">sequential_io</span><span class="p">;</span>
+	<span class="kt">unsigned</span> <span class="kt">int</span>			<span class="n">sequential_io_avg</span><span class="p">;</span>
+<span class="cp">#endif
+#ifdef CONFIG_DEBUG_ATOMIC_SLEEP
+</span>	<span class="kt">unsigned</span> <span class="kt">long</span>			<span class="n">task_state_change</span><span class="p">;</span>
+<span class="cp">#endif
+</span>	<span class="kt">int</span>				<span class="n">pagefault_disabled</span><span class="p">;</span>
+<span class="cp">#ifdef CONFIG_MMU
+</span>	<span class="k">struct</span> <span class="n">task_struct</span>		<span class="o">*</span><span class="n">oom_reaper_list</span><span class="p">;</span>
+<span class="cp">#endif
+#ifdef CONFIG_VMAP_STACK
+</span>	<span class="k">struct</span> <span class="n">vm_struct</span>		<span class="o">*</span><span class="n">stack_vm_area</span><span class="p">;</span>
+<span class="cp">#endif
+#ifdef CONFIG_THREAD_INFO_IN_TASK
+</span>	<span class="cm">/* A live task holds one reference: */</span>
+	<span class="n">refcount_t</span>			<span class="n">stack_refcount</span><span class="p">;</span>
+<span class="cp">#endif
+#ifdef CONFIG_LIVEPATCH
+</span>	<span class="kt">int</span> <span class="n">patch_state</span><span class="p">;</span>
+<span class="cp">#endif
+#ifdef CONFIG_SECURITY
+</span>	<span class="cm">/* Used by LSM modules for access restriction: */</span>
+	<span class="kt">void</span>				<span class="o">*</span><span class="n">security</span><span class="p">;</span>
+<span class="cp">#endif
+</span>
+<span class="cp">#ifdef CONFIG_GCC_PLUGIN_STACKLEAK
+</span>	<span class="kt">unsigned</span> <span class="kt">long</span>			<span class="n">lowest_stack</span><span class="p">;</span>
+	<span class="kt">unsigned</span> <span class="kt">long</span>			<span class="n">prev_lowest_stack</span><span class="p">;</span>
+<span class="cp">#endif
+</span>
+<span class="cp">#ifdef CONFIG_X86_MCE
+</span>	<span class="n">u64</span>				<span class="n">mce_addr</span><span class="p">;</span>
+	<span class="n">__u64</span>				<span class="n">mce_ripv</span> <span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+					<span class="n">mce_whole_page</span> <span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+					<span class="n">__mce_reserved</span> <span class="o">:</span> <span class="mi">62</span><span class="p">;</span>
+	<span class="k">struct</span> <span class="n">callback_head</span>		<span class="n">mce_kill_me</span><span class="p">;</span>
+<span class="cp">#endif
+</span>
+	<span class="cm">/*
+	 * New fields for task_struct should be added above here, so that
+	 * they are included in the randomized portion of task_struct.
+	 */</span>
+	<span class="n">randomized_struct_fields_end</span>
+
+	<span class="cm">/* CPU-specific state of this task: */</span>
+	<span class="k">struct</span> <span class="n">thread_struct</span>		<span class="kr">thread</span><span class="p">;</span>
+
+	<span class="cm">/*
+	 * WARNING: on x86, 'thread_struct' contains a variable-sized
+	 * structure.  It *MUST* be at the end of 'task_struct'.
+	 *
+	 * Do not put anything below here!
+	 */</span>
+<span class="p">};</span>
+
+</code></pre></div>    </div>
+
+  </p></details>
+
+<h1 id="references">References</h1>
+
+<ul>
+  <li>https://gist.github.com/neraliu/dc7c9a9f1980075c9c9f649da71cf37c</li>
+  <li>https://gist.github.com/CMCDragonkai/10ab53654b2aa6ce55c11cfc5b2432a4</li>
+</ul>
+
+                </div>
+            </main>
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#processes">Processes</a>
+    <ul>
+      <li><a href="#layout">Layout</a></li>
+      <li><a href="#process-creation">Process Creation</a></li>
+      <li><a href="#process-credentials">Process Credentials</a></li>
+      <li><a href="#implementation-in-kernel">Implementation in Kernel</a></li>
+    </ul>
+  </li>
+  <li><a href="#references">References</a></li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
+  <data class="u-url" href="/documents/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">LFMUNOZ</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">LFMUNOZ</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/lfmunoz"><svg class="svg-icon"><use xlink:href="/documents/assets/minima-social-icons.svg#github"></use></svg> <span class="username">lfmunoz</span></a></li><li><a href="https://www.twitter.com/lfmunoz4"><svg class="svg-icon"><use xlink:href="/documents/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">lfmunoz4</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>articles, notes, and references</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

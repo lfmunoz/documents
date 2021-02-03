@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Variables | LFMUNOZ</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Variables" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="articles, notes, and references" />
+<meta property="og:description" content="articles, notes, and references" />
+<link rel="canonical" href="lfmunoz.github.io/documents/lang/Bash/Variables.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/lang/Bash/Variables.html" />
+<meta property="og:site_name" content="LFMUNOZ" />
+<script type="application/ld+json">
+{"@type":"WebPage","headline":"Variables","url":"lfmunoz.github.io/documents/lang/Bash/Variables.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
+<body><header class="site-header" role="banner">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2YJDWQX6GK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-2YJDWQX6GK');
+  </script>
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/documents/">LFMUNOZ</a><nav class="site-nav">
+      <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+      <label for="nav-trigger">
+        <span class="menu-icon">
+          <svg viewBox="0 0 18 15" width="18px" height="15px">
+            <path
+              d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+          </svg>
+        </span>
+      </label>
+
+      <div class="trigger"><a class="page-link" href="/documents/about/">About</a></div>
+    </nav></div>
+</header><div class="main"><div class="column-sidebar">
+
+    <div class="nav-section">
+        <div class="nav-title">Posts</div><div class="post-container"><a class="post-link" href="/documents/2020/12/17/i-wish-i-was-worse.html"> I wish I was worse at dancing</a>
+            <span class="post-meta">Dec 17, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/12/13/too-many-options.html"> Too many options slows production</a>
+            <span class="post-meta">Dec 13, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/12/06/dream-cats-and-dogs.html"> A dream of dogs and cats</a>
+            <span class="post-meta">Dec 6, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/11/27/http-rest-bad-design.html"> RESTful HTTP creates coupling</a>
+            <span class="post-meta">Nov 27, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/08/01/organization-and-structure.html"> Organization and Structure of Applications</a>
+            <span class="post-meta">Aug 1, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/07/12/listening-to-music.html"> Listening to Music</a>
+            <span class="post-meta">Jul 12, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/07/05/frameworks.html"> Frameworks and Libraries</a>
+            <span class="post-meta">Jul 5, 2020</span>
+        </div><p class="rss-subscribe">subscribe <a href="/documents/feed.xml">via RSS</a></p>
+    </div>
+
+    <div class="nav-section">
+        <div class="nav-title">Guides</div>
+        <ul>
+            
+            <li>
+                <strong> Computer Science</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/Algorithms/Introduction.html">Algorithms</a></li>
+                    
+                    <li><a href="/documents/articles/SoftwareEngineering.html">Software Engineering</a></li>
+                    
+                    <li><a href="/documents/books/DesignPatterns.html">Design Patterns</a></li>
+                    
+                    <li><a href="/documents/books/Linux/Introduction.html">Linux</a></li>
+                    
+                    <li><a href="/documents/books/Databases/Introduction.html">Databases</a></li>
+                    
+                    <li><a href="/documents/books/SoftwareEngineering/Concurrency.html">Concurrency</a></li>
+                    
+                    <li><a href="/documents/books/Security/Introduction.html">Security</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Programming Languages</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/C/Introduction.html">C</a></li>
+                    
+                    <li><a href="/documents/books/Cpp/Introduction.html">C++</a></li>
+                    
+                    <li><a href="/documents/books/Rust/Introduction.html">Rust</a></li>
+                    
+                    <li><a href="/documents/books/Go/Introduction.html">Go</a></li>
+                    
+                    <li><a href="/documents/books/Java/Introduction.html">Java</a></li>
+                    
+                    <li><a href="/documents/books/Kotlin/Introduction.html">Kotlin</a></li>
+                    
+                    <li><a href="/documents/lang/Python/Introduction.html">Python</a></li>
+                    
+                    <li><a href="/documents/lang/Bash/Introduction.html">Bash</a></li>
+                    
+                    <li><a href="/documents/books/Make/Introduction.html">Makefile</a></li>
+                    
+                    <li><a href="/documents/lang/SQL/Introduction.html">SQL</a></li>
+                    
+                    <li><a href="/documents/lang/HTML/Introduction.html">HTML</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Technologies</strong>
+                <ul>
+                    
+                    <li><a href="/documents/tech/Android/Introduction.html">Android</a></li>
+                    
+                    <li><a href="/documents/books/Docker/Introduction.html">Docker</a></li>
+                    
+                    <li><a href="/documents/books/Envoy/Introduction.html">Envoy</a></li>
+                    
+                    <li><a href="/documents/books/Terraform/Introduction.html">Terraform</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Mathematics</strong>
+                <ul>
+                    
+                    <li><a href="/documents/mathematics/Foundations.html">Foundations</a></li>
+                    
+                    <li><a href="/documents/books/Logic/Introduction.html">Logic</a></li>
+                    
+                    <li><a href="/documents/books/SetTheory/Introduction.html">Set Theory</a></li>
+                    
+                    <li><a href="/documents/books/Geometry/Introduction.html">Geometry</a></li>
+                    
+                    <li><a href="/documents/books/Analysis/Introduction.html">Analysis</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Miscellaneous</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/Non-Duality/Introduction.html">Non-Duality</a></li>
+                    
+                </ul>
+            </li>
+
+            
+        </ul>
+    </div>
+
+
+</div><div class="column-main">
+            <main class="page-content" aria-label="Content">
+                <div class="wrapper">
+                    <h1 id="variable">Variable</h1>
+
+<p>Bash reads .bashrc file in non login interactive shell and .bash_profile in login shells.</p>
+
+<p>Zsh reads .zshrc in an interactive shell and .zprofile in a login shell.</p>
+
+<ul>
+  <li>${variable} is just a disambiguation mechanism</li>
+  <li>$(command) is a modern synonym for <code class="language-plaintext highlighter-rouge">command</code> which stands for command substitution; it means run command and put its output here</li>
+</ul>
+
+<p>. Before Bash interprets (or runs) every line of our script it first checks to see if any variable names are present. For every variable it has identified, it replaces the variable name with its value. Then it runs that line of code and begins the process again on the next line.</p>
+
+<p>A variable may be placed anywhere in a script (or on the command line for that matter) and, when run, Bash will replace it with the value of the variable. This is made possible as the substitution is done before the command is run.</p>
+
+<p>HOSTNAME: The hostname of the computer at this time.
+IFS: The internal field separator to separate input on the command line. By default, this is a space.</p>
+
+<p>PS1: The primary command prompt definition. This is used to define what your prompt looks like when you start a shell session. The PS2 is used to declare secondary prompts for when a command spans multiple lines.</p>
+
+<h2 id="command-line-arguments">Command Line Arguments</h2>
+
+<details>
+<summary> <strong> cat src/cmd_line_args.sh </strong> </summary>
+<p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+<span class="c"># bash ./cmd_line_args.sh one two three four five six seven eight nine ten eleven twelve</span>
+
+<span class="c"># The name of the Bash script.</span>
+<span class="nb">echo</span> <span class="nv">$0</span> 
+<span class="c"># ./cmd_line_args.sh</span>
+
+<span class="c"># The first 9 arguments to the Bash script. </span>
+<span class="nb">echo</span> <span class="nv">$1</span> 
+<span class="c"># one</span>
+<span class="nb">echo</span> <span class="nv">$2</span> 
+<span class="c"># two</span>
+<span class="nb">echo</span> <span class="nv">$3</span> 
+<span class="c"># three</span>
+<span class="nb">echo</span> <span class="nv">$4</span> 
+<span class="c"># four</span>
+<span class="nb">echo</span> <span class="nv">$5</span> 
+<span class="c"># five</span>
+<span class="nb">echo</span> <span class="nv">$6</span> 
+<span class="c"># six</span>
+<span class="nb">echo</span> <span class="nv">$7</span> 
+<span class="c"># seven</span>
+<span class="nb">echo</span> <span class="nv">$8</span> 
+<span class="c"># eight</span>
+<span class="nb">echo</span> <span class="nv">$9</span> 
+<span class="c"># nine</span>
+
+<span class="nb">echo</span> <span class="k">${</span><span class="nv">10</span><span class="k">}</span> 
+<span class="c"># ten</span>
+
+<span class="c"># How many arguments were passed to the Bash script.</span>
+<span class="nb">echo</span> <span class="nv">$#</span>
+<span class="c"># 12</span>
+
+<span class="c"># All the arguments supplied to the Bash script.</span>
+<span class="nb">echo</span> <span class="nv">$@</span>
+<span class="c"># one two three four five six seven eight nine ten eleven twelve</span>
+
+<span class="c"># The exit status of the most recently run process.</span>
+<span class="nb">echo</span> <span class="nv">$?</span>
+<span class="c"># 0 </span>
+
+</code></pre></div>    </div>
+  </p></details>
+<p><br /></p>
+
+<h2 id="predefined-variables">Predefined Variables</h2>
+
+<details>
+<summary> <strong> cat src/predefined_vars.sh </strong> </summary>
+<p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+
+<span class="c"># This describes the shell that will be interpreting any commands you type in. </span>
+<span class="c">#  In most cases, this will be bash by default, but other values can be set if </span>
+<span class="c">#  you prefer other options.</span>
+<span class="nb">echo</span> <span class="nv">$SHELL</span>
+<span class="c"># /usr/bin/zsh</span>
+
+<span class="c"># This specifies the type of terminal to emulate when running the shell. Different </span>
+<span class="c">#   hardware terminals can be emulated for different operating requirements. You</span>
+<span class="c">#   usually won’t need to worry about this though.</span>
+<span class="nb">echo</span> <span class="nv">$TERM</span>
+<span class="c"># screen-256color</span>
+
+<span class="c"># The current logged in user.</span>
+<span class="nb">echo</span> <span class="nv">$USER</span>
+<span class="c"># luis</span>
+
+<span class="c">#  The current working directory.</span>
+<span class="nb">echo</span> <span class="nv">$PWD</span>
+<span class="c"># /home/luis/github/documents/lang/Bash/src</span>
+
+<span class="c"># The previous working directory. This is kept by the shell in order to switch back </span>
+<span class="c">#  to your previous directory by running cd -.</span>
+<span class="nb">echo</span> <span class="nv">$OLDPWD</span>
+<span class="c"># /home/luis/github/documents/lang/Bash</span>
+
+<span class="c"># This defines color codes that are used to optionally add colored output to </span>
+<span class="c">#  the ls command. This is used to distinguish different file types and provide </span>
+<span class="c">#  more info to the user at a glance.</span>
+<span class="nb">echo</span> <span class="nv">$LS_COLORS</span> 
+
+<span class="c">#  The path to the current user’s mailbox.</span>
+<span class="nb">echo</span> <span class="nv">$MAIL</span>
+<span class="c"># blank</span>
+
+<span class="c">#  A list of directories that the system will check when looking for commands. </span>
+<span class="c">#   When a user types in a command, the system will check directories in this order for the executable.</span>
+<span class="nb">echo</span> <span class="nv">$PATH</span>
+<span class="c"># /home/luis/anaconda3/bin:/home/luis/.cargo/bin::/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin</span>
+
+<span class="c">#  The current language and localization settings, including character encoding.</span>
+<span class="nb">echo</span> <span class="nv">$LANG</span>
+<span class="c"># en_US.UTF-8</span>
+
+<span class="c"># The current user’s home directory.</span>
+<span class="nb">echo</span> <span class="nv">$HOME</span>
+<span class="c"># /home/luis</span>
+
+<span class="c"># The most recent previously executed command.</span>
+<span class="nb">echo</span> <span class="nv">$_</span>
+<span class="c"># /home/luis</span>
+
+<span class="c"># The hostname of the machine the script is running on.</span>
+<span class="nb">echo</span> <span class="nv">$HOSTNAME</span> 
+<span class="c"># luis-workstation</span>
+
+<span class="c"># The number of seconds since the script was started.</span>
+<span class="nb">echo</span> <span class="nv">$SECONDS</span> 
+<span class="c"># 0</span>
+
+<span class="c"># Returns a different random number each time is it referred to.</span>
+<span class="nb">echo</span> <span class="nv">$RANDOM</span>  
+<span class="nb">echo</span> <span class="nv">$RANDOM</span>  
+<span class="c"># 26732</span>
+<span class="c"># 8430</span>
+
+<span class="c"># Returns the current line number in the Bash script.</span>
+<span class="nb">echo</span> <span class="nv">$LINENO</span>
+<span class="c"># 69</span>
+
+<span class="c"># The process ID of the current script.</span>
+<span class="nb">echo</span> <span class="nv">$$</span> 
+<span class="c"># 11107</span>
+
+</code></pre></div>    </div>
+  </p></details>
+<p><br /></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c"># Note there is no space on either side of the equals sign</span>
+<span class="nv">myvariable</span><span class="o">=</span>Hello
+</code></pre></div></div>
+<p>under normal circumstances Bash uses a space to determine separate items.</p>
+
+<h3 id="environment-variables">Environment Variables</h3>
+
+<p>child processes typically inherit the environmental variables of the parent process</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#  List of all of our environmental variables by using the env or printenv commands</span>
+<span class="nb">printenv</span>
+
+
+<span class="c"># env lets you modify the environment that programs run in by passing </span>
+<span class="c"># a set of variable definitions into a command like this:</span>
+<span class="nb">env </span><span class="nv">VAR1</span><span class="o">=</span><span class="s2">"value"</span> command_to_run command_options
+
+</code></pre></div></div>
+
+<h3 id="shell-variables">Shell Variables</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># to see shell variables use set    </span>
+<span class="nb">set</span>
+
+<span class="c"># POSIX mode, won’t print the shell functions</span>
+<span class="o">(</span><span class="nb">set</span> <span class="nt">-o</span> posix<span class="p">;</span> <span class="nb">set</span><span class="o">)</span>
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># To create a shell variable </span>
+<span class="nv">TEST_VAR</span><span class="o">=</span><span class="s1">'Hello World!'</span>
+
+<span class="nb">echo</span> <span class="nv">$TEST_VAR</span>
+
+<span class="c"># if you spawn a new shell nothing is returned</span>
+bash
+<span class="nb">echo</span> <span class="nv">$TEST_VAR</span>
+
+<span class="c"># Turn a shell variable into an environmental variable</span>
+<span class="nb">export </span>TEST_VAR
+<span class="c"># or create an environment variable in a single step</span>
+<span class="nb">export </span><span class="nv">NEW_VAR</span><span class="o">=</span><span class="s2">"Testing export"</span>
+<span class="nb">printenv</span> | <span class="nb">grep </span>TEST_VAR
+
+<span class="c"># change it back into a shell variable </span>
+<span class="nb">export</span> <span class="nt">-n</span> TEST_VAR
+
+<span class="c"># completely unset a variable, either shell or environmental</span>
+<span class="nb">unset </span>TEST_VAR
+</code></pre></div></div>
+
+<p>Note: Environmental variables are only passed to child processes.</p>
+
+<h2 id="setting-environmental-variables-at-login">Setting Environmental Variables at Login</h2>
+
+<p>The bash shell reads different configuration files depending on how the session is started.</p>
+
+<p>Login - A shell session that begins by authenticating the user (i.e, ssh)</p>
+<ul>
+  <li>Reads global config file: /etc/profile</li>
+  <li>Then user specific first of: ~/.bash_profile or ~/.bash_login or  ~/.profile
+Non-Login - simply calling bash command, you weren’t asked for a authentication</li>
+  <li>/etc/bash.bashrc</li>
+  <li>~/.bashrc
+Interactive - session is attached to a terminal
+Non-Interactive - session is NOT attached to a terminal session (i.e., running a script)</li>
+  <li>read file defined in BASH_ENV</li>
+</ul>
+
+
+                </div>
+            </main>
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#variable">Variable</a>
+    <ul>
+      <li><a href="#command-line-arguments">Command Line Arguments</a></li>
+      <li><a href="#predefined-variables">Predefined Variables</a>
+        <ul>
+          <li><a href="#environment-variables">Environment Variables</a></li>
+          <li><a href="#shell-variables">Shell Variables</a></li>
+        </ul>
+      </li>
+      <li><a href="#setting-environmental-variables-at-login">Setting Environmental Variables at Login</a></li>
+    </ul>
+  </li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
+  <data class="u-url" href="/documents/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">LFMUNOZ</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">LFMUNOZ</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/lfmunoz"><svg class="svg-icon"><use xlink:href="/documents/assets/minima-social-icons.svg#github"></use></svg> <span class="username">lfmunoz</span></a></li><li><a href="https://www.twitter.com/lfmunoz4"><svg class="svg-icon"><use xlink:href="/documents/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">lfmunoz4</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>articles, notes, and references</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

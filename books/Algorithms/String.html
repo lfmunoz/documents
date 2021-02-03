@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>String | LFMUNOZ</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="String" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="articles, notes, and references" />
+<meta property="og:description" content="articles, notes, and references" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/Algorithms/String.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/Algorithms/String.html" />
+<meta property="og:site_name" content="LFMUNOZ" />
+<script type="application/ld+json">
+{"@type":"WebPage","headline":"String","url":"lfmunoz.github.io/documents/books/Algorithms/String.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
+<body><header class="site-header" role="banner">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2YJDWQX6GK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-2YJDWQX6GK');
+  </script>
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/documents/">LFMUNOZ</a><nav class="site-nav">
+      <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+      <label for="nav-trigger">
+        <span class="menu-icon">
+          <svg viewBox="0 0 18 15" width="18px" height="15px">
+            <path
+              d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+          </svg>
+        </span>
+      </label>
+
+      <div class="trigger"><a class="page-link" href="/documents/about/">About</a></div>
+    </nav></div>
+</header><div class="main"><div class="column-sidebar">
+
+    <div class="nav-section">
+        <div class="nav-title">Posts</div><div class="post-container"><a class="post-link" href="/documents/2020/12/17/i-wish-i-was-worse.html"> I wish I was worse at dancing</a>
+            <span class="post-meta">Dec 17, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/12/13/too-many-options.html"> Too many options slows production</a>
+            <span class="post-meta">Dec 13, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/12/06/dream-cats-and-dogs.html"> A dream of dogs and cats</a>
+            <span class="post-meta">Dec 6, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/11/27/http-rest-bad-design.html"> RESTful HTTP creates coupling</a>
+            <span class="post-meta">Nov 27, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/08/01/organization-and-structure.html"> Organization and Structure of Applications</a>
+            <span class="post-meta">Aug 1, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/07/12/listening-to-music.html"> Listening to Music</a>
+            <span class="post-meta">Jul 12, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/07/05/frameworks.html"> Frameworks and Libraries</a>
+            <span class="post-meta">Jul 5, 2020</span>
+        </div><p class="rss-subscribe">subscribe <a href="/documents/feed.xml">via RSS</a></p>
+    </div>
+
+    <div class="nav-section">
+        <div class="nav-title">Guides</div>
+        <ul>
+            
+            <li>
+                <strong> Computer Science</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/Algorithms/Introduction.html">Algorithms</a></li>
+                    
+                    <li><a href="/documents/articles/SoftwareEngineering.html">Software Engineering</a></li>
+                    
+                    <li><a href="/documents/books/DesignPatterns.html">Design Patterns</a></li>
+                    
+                    <li><a href="/documents/books/Linux/Introduction.html">Linux</a></li>
+                    
+                    <li><a href="/documents/books/Databases/Introduction.html">Databases</a></li>
+                    
+                    <li><a href="/documents/books/SoftwareEngineering/Concurrency.html">Concurrency</a></li>
+                    
+                    <li><a href="/documents/books/Security/Introduction.html">Security</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Programming Languages</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/C/Introduction.html">C</a></li>
+                    
+                    <li><a href="/documents/books/Cpp/Introduction.html">C++</a></li>
+                    
+                    <li><a href="/documents/books/Rust/Introduction.html">Rust</a></li>
+                    
+                    <li><a href="/documents/books/Go/Introduction.html">Go</a></li>
+                    
+                    <li><a href="/documents/books/Java/Introduction.html">Java</a></li>
+                    
+                    <li><a href="/documents/books/Kotlin/Introduction.html">Kotlin</a></li>
+                    
+                    <li><a href="/documents/lang/Python/Introduction.html">Python</a></li>
+                    
+                    <li><a href="/documents/lang/Bash/Introduction.html">Bash</a></li>
+                    
+                    <li><a href="/documents/books/Make/Introduction.html">Makefile</a></li>
+                    
+                    <li><a href="/documents/lang/SQL/Introduction.html">SQL</a></li>
+                    
+                    <li><a href="/documents/lang/HTML/Introduction.html">HTML</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Technologies</strong>
+                <ul>
+                    
+                    <li><a href="/documents/tech/Android/Introduction.html">Android</a></li>
+                    
+                    <li><a href="/documents/books/Docker/Introduction.html">Docker</a></li>
+                    
+                    <li><a href="/documents/books/Envoy/Introduction.html">Envoy</a></li>
+                    
+                    <li><a href="/documents/books/Terraform/Introduction.html">Terraform</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Mathematics</strong>
+                <ul>
+                    
+                    <li><a href="/documents/mathematics/Foundations.html">Foundations</a></li>
+                    
+                    <li><a href="/documents/books/Logic/Introduction.html">Logic</a></li>
+                    
+                    <li><a href="/documents/books/SetTheory/Introduction.html">Set Theory</a></li>
+                    
+                    <li><a href="/documents/books/Geometry/Introduction.html">Geometry</a></li>
+                    
+                    <li><a href="/documents/books/Analysis/Introduction.html">Analysis</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Miscellaneous</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/Non-Duality/Introduction.html">Non-Duality</a></li>
+                    
+                </ul>
+            </li>
+
+            
+        </ul>
+    </div>
+
+
+</div><div class="column-main">
+            <main class="page-content" aria-label="Content">
+                <div class="wrapper">
+                    <h1 id="string-algorithms">String Algorithms</h1>
+
+<p><a href="Introduction.html">Algorithms</a></p>
+
+<h2 id="string-matching">String Matching</h2>
+
+<p>Also known as: String Searching</p>
+
+<p><strong>Problem:</strong> Find the starting index (or indices) of a substring called a pattern in a longer string called the text.</p>
+
+<ul>
+  <li>pattern of size m is the string we are searching for</li>
+  <li>text of size n is the string where we are searching for pattern</li>
+</ul>
+
+<p><strong>Solution:</strong> In the naive implementation you get a O(n*m) algorithm by searching for the pattern 
+starting from each index in the text. You can get worse case with the following inputs:</p>
+
+<ul>
+  <li>text    = aaaaaaaaaaaaaab</li>
+  <li>pattern = aaaaaaaaaaaaab</li>
+</ul>
+
+<details>
+<summary> string_matching.cpp </summary>
+
+<p>
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;bits/stdc++.h&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="c1">// ________________________________________________________________________________</span>
+<span class="c1">// Helper Methods</span>
+<span class="c1">// ________________________________________________________________________________</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="p">&gt;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">out</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span> <span class="o">!</span><span class="n">v</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="n">out</span> <span class="o">&lt;&lt;</span> <span class="sc">'['</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">copy</span> <span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">std</span><span class="o">::</span><span class="n">ostream_iterator</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="s">", "</span><span class="p">));</span>
+    <span class="n">out</span> <span class="o">&lt;&lt;</span> <span class="s">"</span><span class="se">\b\b</span><span class="s">]"</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="n">out</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// ________________________________________________________________________________</span>
+<span class="c1">// NaiveMatching</span>
+<span class="c1">//  O(t) on average</span>
+<span class="c1">//  O(t*p) worse case</span>
+<span class="c1">//   If there is a mismatch we move p to the beginning and increment t, this means</span>
+<span class="c1">//   that in the worse case we scan every p for every t  (t*p)</span>
+<span class="c1">// ________________________________________________________________________________</span>
+<span class="kt">int</span> <span class="nf">naiveMatching</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span> <span class="o">&amp;</span><span class="n">pattern</span><span class="p">,</span> <span class="k">const</span> <span class="n">string</span> <span class="o">&amp;</span><span class="n">text</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">t</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="n">text</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">t</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">bool</span> <span class="n">found</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">p</span> <span class="o">&lt;</span> <span class="n">pattern</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">found</span><span class="p">;</span> <span class="n">p</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">t</span><span class="o">+</span><span class="n">p</span> <span class="o">&gt;=</span> <span class="n">text</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">||</span> <span class="n">pattern</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">!=</span> <span class="n">text</span><span class="p">[</span><span class="n">t</span><span class="o">+</span><span class="n">p</span><span class="p">])</span> <span class="p">{</span>
+                <span class="n">found</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">found</span><span class="p">)</span> <span class="k">return</span> <span class="n">t</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// ________________________________________________________________________________</span>
+<span class="c1">// Knuth-Morris-Pratt's (KPM) Algorithm</span>
+<span class="c1">//  KPM algorithm never re-compares a character in the text that has matched a </span>
+<span class="c1">//   a character in the pattern</span>
+<span class="c1">// ________________________________________________________________________________</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">kmpPreprocess</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span> <span class="o">&amp;</span><span class="n">pattern</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">bTable</span><span class="p">(</span><span class="n">pattern</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+    <span class="n">bTable</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span> 
+    <span class="k">while</span><span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">pattern</span><span class="p">.</span><span class="n">size</span><span class="p">())</span> <span class="p">{</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">j</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">pattern</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="n">pattern</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="p">{</span>
+            <span class="n">j</span> <span class="o">=</span> <span class="n">bTable</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+        <span class="p">}</span> 
+        <span class="n">i</span><span class="o">++</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">;</span> <span class="n">bTable</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">j</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">bTable</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">kmpMatching</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span> <span class="o">&amp;</span><span class="n">pattern</span><span class="p">,</span> <span class="k">const</span> <span class="n">string</span> <span class="o">&amp;</span><span class="n">text</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">bTable</span> <span class="o">=</span> <span class="n">kmpPreprocess</span><span class="p">(</span><span class="n">pattern</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">text</span><span class="p">.</span><span class="n">size</span><span class="p">())</span> <span class="p">{</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">j</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">text</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="n">pattern</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="p">{</span>
+            <span class="n">j</span> <span class="o">=</span> <span class="n">bTable</span><span class="p">[</span><span class="n">j</span><span class="p">];</span> <span class="c1">// j doesn't reset all the way to 0</span>
+        <span class="p">}</span>
+        <span class="n">i</span><span class="o">++</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">j</span> <span class="o">==</span> <span class="n">pattern</span><span class="p">.</span><span class="n">size</span><span class="p">())</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">i</span> <span class="o">-</span> <span class="n">j</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// ________________________________________________________________________________</span>
+<span class="c1">// Main</span>
+<span class="c1">//  g++ string_matching.cpp </span>
+<span class="c1">// ________________________________________________________________________________</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="c1">// [-1, 0, 0, 0, 1, 2, 0, 1, 2] </span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">kmpPreprocess</span><span class="p">(</span><span class="s">"abcabeabf"</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+    <span class="n">string</span> <span class="n">pattern</span> <span class="o">=</span> <span class="s">"dog"</span><span class="p">;</span>
+    <span class="n">string</span> <span class="n">text</span> <span class="o">=</span> <span class="s">"The quick brown fox jumps over the lazy dog"</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"[naive] found at index "</span> <span class="o">&lt;&lt;</span> <span class="n">naiveMatching</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"[kpm] found at index "</span> <span class="o">&lt;&lt;</span> <span class="n">kmpMatching</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+    <span class="n">pattern</span> <span class="o">=</span> <span class="s">"aaab"</span><span class="p">;</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="s">"aaaaaaaaaaaab"</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"[naive] found at index "</span> <span class="o">&lt;&lt;</span> <span class="n">naiveMatching</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"[kpm] found at index "</span> <span class="o">&lt;&lt;</span> <span class="n">kmpMatching</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </p></details>
+<p><br /></p>
+
+<h3 id="reference">Reference</h3>
+
+<ul>
+  <li>Knuth-Morris-Pratt KMP String Matching Algorithm - Abdul Bari</li>
+  <li>https://www.youtube.com/watch?v=V5-7GzOfADQ</li>
+</ul>
+
+<h2 id="string-edit-distance">String Edit Distance</h2>
+
+<p>Also known as: <strong>String Alignment Problem</strong></p>
+
+<p>The <strong>edit distance</strong> or Levenshtein distance is the minimum number of editing operations needed to transform a string into another string.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>distance(LOVE,MOVIE) = 2
+LOVE -&gt; MOVE  (Replace L with M)
+MOVE -&gt; MOVIE (INSERT I)
+</code></pre></div></div>
+
+<p><strong>Applications:</strong> Spell checking, Comparing DNA Sequences, Longest Common Subsequence.</p>
+
+<p><strong>Problem Statement:</strong> Given two strings A and B and the operations, replace, delete, or insert, what is the minimum number operations to convert A into B?</p>
+
+<p><strong>Solution:</strong> This is solved using <a href="DP.html">Dynamic Programming</a> because it is an optimization problem.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    M O V I E
+  0 1 2 3 4 5
+L 1 1 2 3 4 5
+O 2 2 1 2 3 4
+V 3 3 2 1 2 3
+E 4 4 3 2 2 2
+</code></pre></div></div>
+
+<p>Suppose string x has length n and string y has length m. We want to calculate the distance between x and y. We define a function distance(a,b) which gives the distance between prefixes x[0…a] and y[0…b]. The distance is then distance(n-1, m-1).</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>distance(a,b) = min (
+  distance(a, b-1) + 1,   // insert char at end of x
+  distance(a-1, b) + 1,   // remove last char from x
+  distance(a-1, b-1) + cost(a,b) // match or modify last char of x
+)
+
+cost(a,b) = 0  if x[a] = x[b]
+            1  otherwise
+</code></pre></div></div>
+
+<details>
+<summary> string_alignment.cpp </summary>
+
+<p>
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;bits/stdc++.h&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="c1">// ________________________________________________________________________________</span>
+<span class="c1">// Helper Methods</span>
+<span class="c1">// ________________________________________________________________________________</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="p">&gt;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">out</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span> <span class="o">!</span><span class="n">v</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="n">out</span> <span class="o">&lt;&lt;</span> <span class="sc">'['</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">copy</span> <span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">std</span><span class="o">::</span><span class="n">ostream_iterator</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="s">", "</span><span class="p">));</span>
+    <span class="n">out</span> <span class="o">&lt;&lt;</span> <span class="s">"</span><span class="se">\b\b</span><span class="s">]"</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="n">out</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// ________________________________________________________________________________</span>
+<span class="c1">// Naive - Edit Distance by Recursion</span>
+<span class="c1">//   We can define a recursive algorithm using the observation that the last character in</span>
+<span class="c1">//    the string must either be matched, substituted, inserted, or deleted.</span>
+<span class="c1">// ________________________________________________________________________________</span>
+<span class="cp">#define MATCH 0 </span><span class="cm">/* enumerated type symbol for match */</span><span class="cp">
+#define INSERT 1  </span><span class="cm">/* enumerated type symbol for insert */</span><span class="cp">
+#define DELETE 2 </span><span class="cm">/* enumerated type symbol for delete */</span><span class="cp">
+</span>
+<span class="kt">int</span> <span class="nf">string_compare</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">s</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">t</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="kt">int</span> <span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">k</span><span class="p">;</span> <span class="cm">/* counter */</span>
+    <span class="kt">int</span> <span class="n">opt</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span> <span class="cm">/* cost of the three options */</span>
+    <span class="kt">int</span> <span class="n">lowest_cost</span><span class="p">;</span> <span class="cm">/* lowest cost */</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span><span class="p">(</span><span class="n">j</span> <span class="o">*</span> <span class="n">indel</span><span class="p">(</span><span class="err">’</span> <span class="err">’</span><span class="p">));</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span><span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="n">indel</span><span class="p">(</span><span class="err">’</span> <span class="err">’</span><span class="p">));</span>
+    <span class="n">opt</span><span class="p">[</span><span class="n">MATCH</span><span class="p">]</span> <span class="o">=</span> <span class="n">string_compare</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">match</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">t</span><span class="p">[</span><span class="n">j</span><span class="p">]);</span>
+    <span class="n">opt</span><span class="p">[</span><span class="n">INSERT</span><span class="p">]</span> <span class="o">=</span> <span class="n">string_compare</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">indel</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">j</span><span class="p">]);</span>
+    <span class="n">opt</span><span class="p">[</span><span class="n">DELETE</span><span class="p">]</span> <span class="o">=</span> <span class="n">string_compare</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span><span class="p">)</span> <span class="o">+</span> <span class="n">indel</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+    <span class="n">lowest_cost</span> <span class="o">=</span> <span class="n">opt</span><span class="p">[</span><span class="n">MATCH</span><span class="p">];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">k</span><span class="o">=</span><span class="n">INSERT</span><span class="p">;</span> <span class="n">k</span><span class="o">&lt;=</span><span class="n">DELETE</span><span class="p">;</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">opt</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">lowest_cost</span><span class="p">)</span> <span class="n">lowest_cost</span> <span class="o">=</span> <span class="n">opt</span><span class="p">[</span><span class="n">k</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="k">return</span><span class="p">(</span> <span class="n">lowest_cost</span> <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// ________________________________________________________________________________</span>
+<span class="c1">// Knuth-Morris-Pratt's (KPM) Algorithm</span>
+<span class="c1">//  KPM algorithm never re-compares a character in the text that has matched a </span>
+<span class="c1">//   a character in the pattern</span>
+<span class="c1">// ________________________________________________________________________________</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">kmpPreprocess</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span> <span class="o">&amp;</span><span class="n">pattern</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">bTable</span><span class="p">(</span><span class="n">pattern</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+    <span class="n">bTable</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span> 
+    <span class="k">while</span><span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">pattern</span><span class="p">.</span><span class="n">size</span><span class="p">())</span> <span class="p">{</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">j</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">pattern</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="n">pattern</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="p">{</span>
+            <span class="n">j</span> <span class="o">=</span> <span class="n">bTable</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+        <span class="p">}</span> 
+        <span class="n">i</span><span class="o">++</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">;</span> <span class="n">bTable</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">j</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">bTable</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">kmpMatching</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span> <span class="o">&amp;</span><span class="n">pattern</span><span class="p">,</span> <span class="k">const</span> <span class="n">string</span> <span class="o">&amp;</span><span class="n">text</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">bTable</span> <span class="o">=</span> <span class="n">kmpPreprocess</span><span class="p">(</span><span class="n">pattern</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">text</span><span class="p">.</span><span class="n">size</span><span class="p">())</span> <span class="p">{</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">j</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">text</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="n">pattern</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="p">{</span>
+            <span class="n">j</span> <span class="o">=</span> <span class="n">bTable</span><span class="p">[</span><span class="n">j</span><span class="p">];</span> <span class="c1">// j doesn't reset all the way to 0</span>
+        <span class="p">}</span>
+        <span class="n">i</span><span class="o">++</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">j</span> <span class="o">==</span> <span class="n">pattern</span><span class="p">.</span><span class="n">size</span><span class="p">())</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">i</span> <span class="o">-</span> <span class="n">j</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// ________________________________________________________________________________</span>
+<span class="c1">// Main</span>
+<span class="c1">//  g++ string_matching.cpp </span>
+<span class="c1">// ________________________________________________________________________________</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="c1">// [-1, 0, 0, 0, 1, 2, 0, 1, 2] </span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">kmpPreprocess</span><span class="p">(</span><span class="s">"abcabeabf"</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+    <span class="n">string</span> <span class="n">pattern</span> <span class="o">=</span> <span class="s">"dog"</span><span class="p">;</span>
+    <span class="n">string</span> <span class="n">text</span> <span class="o">=</span> <span class="s">"The quick brown fox jumps over the lazy dog"</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"[naive] found at index "</span> <span class="o">&lt;&lt;</span> <span class="n">naiveMatching</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"[kpm] found at index "</span> <span class="o">&lt;&lt;</span> <span class="n">kmpMatching</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+    <span class="n">pattern</span> <span class="o">=</span> <span class="s">"aaab"</span><span class="p">;</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="s">"aaaaaaaaaaaab"</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"[naive] found at index "</span> <span class="o">&lt;&lt;</span> <span class="n">naiveMatching</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"[kpm] found at index "</span> <span class="o">&lt;&lt;</span> <span class="n">kmpMatching</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </p></details>
+<p><br /></p>
+
+<h2 id="longest-common-subsequence-lcs">Longest Common Subsequence (LCS)</h2>
+
+<p><strong>Problem:</strong> The characters are not together but they are coming in the same order.</p>
+
+<p><strong>Solution:</strong></p>
+
+<p>The naive implementation is exponential time $O(2^n)$</p>
+
+<p>With <a href="DP.html">memozation</a> you create a table so the time is $O(m*n)$</p>
+
+<details>
+<summary> lcs.cpp </summary>
+
+<p>
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;bits/stdc++.h&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">using</span> <span class="n">uint</span> <span class="o">=</span> <span class="kt">unsigned</span> <span class="kt">int</span><span class="p">;</span>
+
+<span class="c1">// ________________________________________________________________________________</span>
+<span class="c1">// HELPER METHODS</span>
+<span class="c1">// ________________________________________________________________________________</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="p">&gt;</span> 
+<span class="n">ostream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">os</span><span class="p">,</span> <span class="k">const</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span> 
+    <span class="n">os</span> <span class="o">&lt;&lt;</span> <span class="s">"["</span><span class="p">;</span> 
+    <span class="k">for</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">v</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span> 
+        <span class="n">os</span> <span class="o">&lt;&lt;</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">];</span> 
+        <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">!=</span> <span class="n">v</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> 
+            <span class="n">os</span> <span class="o">&lt;&lt;</span> <span class="s">", "</span><span class="p">;</span> 
+    <span class="p">}</span> 
+    <span class="n">os</span> <span class="o">&lt;&lt;</span> <span class="s">"]</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span> 
+    <span class="k">return</span> <span class="n">os</span><span class="p">;</span> 
+<span class="p">}</span> 
+
+
+<span class="c1">// ________________________________________________________________________________</span>
+<span class="c1">// Longest Common Subsequence Naive</span>
+<span class="c1">// ________________________________________________________________________________</span>
+<span class="n">string</span> <span class="n">a</span><span class="p">;</span>
+<span class="n">string</span> <span class="n">b</span><span class="p">;</span>
+<span class="kt">int</span> <span class="nf">lcs</span><span class="p">(</span><span class="n">uint</span> <span class="n">i</span><span class="p">,</span> <span class="n">uint</span> <span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">length</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">i</span> <span class="o">||</span> <span class="n">b</span><span class="p">.</span><span class="n">length</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">b</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">lcs</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">max</span><span class="p">(</span><span class="n">lcs</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">lcs</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">j</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="c1">// ________________________________________________________________________________</span>
+<span class="c1">// Longest Common Subsequence Memoization</span>
+<span class="c1">// ________________________________________________________________________________</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span>  <span class="n">lcs_m</span><span class="p">(</span><span class="n">string</span> <span class="n">a</span><span class="p">,</span> <span class="n">string</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">lcsTable</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">+</span><span class="mi">1</span><span class="p">));</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">lcsTable</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">lcsTable</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">size</span><span class="p">();</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">b</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="p">{</span>
+                <span class="n">lcsTable</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span>  <span class="n">lcsTable</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="n">lcsTable</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">lcsTable</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">lcsTable</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">lcsTable</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="c1">// ________________________________________________________________________________</span>
+<span class="c1">// Main</span>
+<span class="c1">//  g++ lcs.cpp</span>
+<span class="c1">// ________________________________________________________________________________</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="n">a</span> <span class="o">=</span> <span class="s">"stone"</span><span class="p">;</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="s">"longest"</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">lcs</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">lcs_m</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="cm">/********************************************************************************
+# OUTPUT
+./lcs.elf
+4
+[[0, 0, 0, 0, 0, 0, 0, 0]
+, [0, 0, 0, 0, 0, 0, 1, 1]
+, [0, 1, 1, 1, 1, 1, 1, 1]
+, [0, 1, 2, 2, 2, 2, 2, 2]
+, [0, 1, 2, 2, 3, 3, 3, 3]
+, [0, 1, 2, 2, 3, 3, 3, 4]
+]
+
+********************************************************************************/</span>
+
+</code></pre></div>    </div>
+  </p></details>
+<p><br /></p>
+
+<h3 id="reference-1">Reference</h3>
+
+<ul>
+  <li>4.9 Longest Common Subsequence (LCS) - Recursion and Dynamic Programming- Abdul Bari</li>
+  <li>https://www.youtube.com/watch?v=sSno9rV8Rhg</li>
+</ul>
+
+
+                </div>
+            </main>
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#string-algorithms">String Algorithms</a>
+    <ul>
+      <li><a href="#string-matching">String Matching</a>
+        <ul>
+          <li><a href="#reference">Reference</a></li>
+        </ul>
+      </li>
+      <li><a href="#string-edit-distance">String Edit Distance</a></li>
+      <li><a href="#longest-common-subsequence-lcs">Longest Common Subsequence (LCS)</a>
+        <ul>
+          <li><a href="#reference-1">Reference</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
+  <data class="u-url" href="/documents/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">LFMUNOZ</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">LFMUNOZ</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/lfmunoz"><svg class="svg-icon"><use xlink:href="/documents/assets/minima-social-icons.svg#github"></use></svg> <span class="username">lfmunoz</span></a></li><li><a href="https://www.twitter.com/lfmunoz4"><svg class="svg-icon"><use xlink:href="/documents/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">lfmunoz4</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>articles, notes, and references</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

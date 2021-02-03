@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Pointers And Arrays | LFMUNOZ</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Pointers And Arrays" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="articles, notes, and references" />
+<meta property="og:description" content="articles, notes, and references" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/C/Pointers.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/C/Pointers.html" />
+<meta property="og:site_name" content="LFMUNOZ" />
+<script type="application/ld+json">
+{"@type":"WebPage","headline":"Pointers And Arrays","url":"lfmunoz.github.io/documents/books/C/Pointers.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
+<body><header class="site-header" role="banner">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2YJDWQX6GK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-2YJDWQX6GK');
+  </script>
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/documents/">LFMUNOZ</a><nav class="site-nav">
+      <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+      <label for="nav-trigger">
+        <span class="menu-icon">
+          <svg viewBox="0 0 18 15" width="18px" height="15px">
+            <path
+              d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+          </svg>
+        </span>
+      </label>
+
+      <div class="trigger"><a class="page-link" href="/documents/about/">About</a></div>
+    </nav></div>
+</header><div class="main"><div class="column-sidebar">
+
+    <div class="nav-section">
+        <div class="nav-title">Posts</div><div class="post-container"><a class="post-link" href="/documents/2020/12/17/i-wish-i-was-worse.html"> I wish I was worse at dancing</a>
+            <span class="post-meta">Dec 17, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/12/13/too-many-options.html"> Too many options slows production</a>
+            <span class="post-meta">Dec 13, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/12/06/dream-cats-and-dogs.html"> A dream of dogs and cats</a>
+            <span class="post-meta">Dec 6, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/11/27/http-rest-bad-design.html"> RESTful HTTP creates coupling</a>
+            <span class="post-meta">Nov 27, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/08/01/organization-and-structure.html"> Organization and Structure of Applications</a>
+            <span class="post-meta">Aug 1, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/07/12/listening-to-music.html"> Listening to Music</a>
+            <span class="post-meta">Jul 12, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/07/05/frameworks.html"> Frameworks and Libraries</a>
+            <span class="post-meta">Jul 5, 2020</span>
+        </div><p class="rss-subscribe">subscribe <a href="/documents/feed.xml">via RSS</a></p>
+    </div>
+
+    <div class="nav-section">
+        <div class="nav-title">Guides</div>
+        <ul>
+            
+            <li>
+                <strong> Computer Science</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/Algorithms/Introduction.html">Algorithms</a></li>
+                    
+                    <li><a href="/documents/articles/SoftwareEngineering.html">Software Engineering</a></li>
+                    
+                    <li><a href="/documents/books/DesignPatterns.html">Design Patterns</a></li>
+                    
+                    <li><a href="/documents/books/Linux/Introduction.html">Linux</a></li>
+                    
+                    <li><a href="/documents/books/Databases/Introduction.html">Databases</a></li>
+                    
+                    <li><a href="/documents/books/SoftwareEngineering/Concurrency.html">Concurrency</a></li>
+                    
+                    <li><a href="/documents/books/Security/Introduction.html">Security</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Programming Languages</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/C/Introduction.html">C</a></li>
+                    
+                    <li><a href="/documents/books/Cpp/Introduction.html">C++</a></li>
+                    
+                    <li><a href="/documents/books/Rust/Introduction.html">Rust</a></li>
+                    
+                    <li><a href="/documents/books/Go/Introduction.html">Go</a></li>
+                    
+                    <li><a href="/documents/books/Java/Introduction.html">Java</a></li>
+                    
+                    <li><a href="/documents/books/Kotlin/Introduction.html">Kotlin</a></li>
+                    
+                    <li><a href="/documents/lang/Python/Introduction.html">Python</a></li>
+                    
+                    <li><a href="/documents/lang/Bash/Introduction.html">Bash</a></li>
+                    
+                    <li><a href="/documents/books/Make/Introduction.html">Makefile</a></li>
+                    
+                    <li><a href="/documents/lang/SQL/Introduction.html">SQL</a></li>
+                    
+                    <li><a href="/documents/lang/HTML/Introduction.html">HTML</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Technologies</strong>
+                <ul>
+                    
+                    <li><a href="/documents/tech/Android/Introduction.html">Android</a></li>
+                    
+                    <li><a href="/documents/books/Docker/Introduction.html">Docker</a></li>
+                    
+                    <li><a href="/documents/books/Envoy/Introduction.html">Envoy</a></li>
+                    
+                    <li><a href="/documents/books/Terraform/Introduction.html">Terraform</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Mathematics</strong>
+                <ul>
+                    
+                    <li><a href="/documents/mathematics/Foundations.html">Foundations</a></li>
+                    
+                    <li><a href="/documents/books/Logic/Introduction.html">Logic</a></li>
+                    
+                    <li><a href="/documents/books/SetTheory/Introduction.html">Set Theory</a></li>
+                    
+                    <li><a href="/documents/books/Geometry/Introduction.html">Geometry</a></li>
+                    
+                    <li><a href="/documents/books/Analysis/Introduction.html">Analysis</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Miscellaneous</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/Non-Duality/Introduction.html">Non-Duality</a></li>
+                    
+                </ul>
+            </li>
+
+            
+        </ul>
+    </div>
+
+
+</div><div class="column-main">
+            <main class="page-content" aria-label="Content">
+                <div class="wrapper">
+                    <h1 id="pointers-and-arrays">Pointers And Arrays</h1>
+
+<ul>
+  <li><a href="Introduction.html">The C Programming Language</a></li>
+</ul>
+
+<h1 id="pointers">Pointers</h1>
+
+<p>A <strong>pointer</strong> is simply a variable that stores the address where a piece of data resides in memory rather than storing the data itself. A pointer is a location that has an address to some type. Allocates space for 1 address. We must associate a pointer to a particular type: You can’t assign the address of a short int to a long int, for instance.  The reason we associate a pointer to a data type is so that it knows how many bytes the data is stored in. When we increment a pointer we increase the pointer by one “block” memory.  So for a character pointer ++ch_ptr adds 1 byte to the address. For an integer ++int_ptr adds 4 bytes to the address.</p>
+
+<ul>
+  <li>The <strong>unary</strong> or monadic operator &amp; gives the “address of a variable”.</li>
+  <li>The <strong>indirection</strong> or <strong>dereference</strong> operator * gives the “contents of an object pointed to by a pointer”.</li>
+</ul>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// declare a pointer to int</span>
+<span class="kt">int</span> <span class="o">*</span><span class="n">pointer</span><span class="p">;</span>
+<span class="c1">// declare a variable of type int</span>
+<span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="c1">// assign the pointer the address of x</span>
+<span class="n">pointer</span><span class="o">=</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">;</span>
+<span class="c1">// access the variable using the pointer</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"%x</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="o">*</span><span class="n">pointer</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h1 id="arrays">Arrays</h1>
+<p>An array holds a number of objects of a given type next to each other in memory. To create an array with N element the syntax is</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kt">int</span> <span class="n">my_array</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+<span class="c1">// Wrong, out of range</span>
+ <span class="n">my_array</span><span class="p">[</span><span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> 
+<span class="c1">// Correct, assign last element the value 10</span>
+ <span class="n">my_array</span><span class="p">[</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="mi">10</span><span class="p">;</span> 
+<span class="c1">// Assign 0 to first element</span>
+ <span class="n">my_array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>  
+</code></pre></div></div>
+
+<ul>
+  <li>The first element is at 0 and the last at N-1</li>
+  <li>An array name is the address where a block of data starts.</li>
+  <li>the syntax a[i] means the same thing as *(a+i)</li>
+</ul>
+
+<h2 id="ways-to-initalize-an-array">Ways to Initalize an array</h2>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Equivalent</span>
+<span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">16</span><span class="p">};</span>
+<span class="kt">int</span> <span class="n">b</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">16</span><span class="p">};</span>
+
+<span class="c1">//       0   1   2   3   4    5    6    7</span>
+<span class="c1">//  a: | 2 | 4 | 6 | 8 | 10 | 12 | 14 | 16 |</span>
+<span class="c1">//</span>
+
+</code></pre></div></div>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// In evaluating a[i], C converts it to *(a+i) immediately; the two forms are equivalent. </span>
+<span class="c1">// &amp;a[i] and a+i are also identical: a+i is the address of the i-th element beyond a</span>
+<span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="o">*</span><span class="p">(</span><span class="n">matrix</span> <span class="o">+</span> <span class="n">i</span> <span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">x</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">};</span>
+
+<span class="n">x</span><span class="p">;</span>  <span class="c1">//address where 10 is located</span>
+<span class="o">&amp;</span><span class="n">x</span><span class="p">;</span>  <span class="c1">//  address where 10 is located</span>
+<span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1">// 10 itself</span>
+
+<span class="kt">int</span> <span class="o">*</span><span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="p">)</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="o">*</span><span class="mi">4</span><span class="p">);</span>
+<span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="mi">9</span><span class="p">;</span> <span class="n">y</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">=</span><span class="mi">8</span><span class="p">;,</span> <span class="n">y</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">=</span><span class="mi">7</span><span class="p">;</span>
+
+<span class="n">y</span><span class="p">;</span>  <span class="c1">//  address where 10 is located;</span>
+<span class="o">&amp;</span><span class="n">y</span><span class="p">;</span> <span class="c1">//  address where y is locate</span>
+<span class="o">*</span><span class="n">y</span><span class="p">;</span>  <span class="c1">//  10 itself</span>
+
+</code></pre></div></div>
+
+<h1 id="arrays-verses-pointers">Arrays verses Pointers</h1>
+
+<p>Arrays are not pointers.  The array declaration “char a[6];” requests that space for six characters be set aside, to be known by the name “a.”  That is, there is a location named “a” at which six characters can sit. The pointer declaration “char *p;” on the other hand, requests a place which holds a pointer.  The pointer is to be known by the name “p,” and can point to any char (or contiguous array of chars) anywhere.</p>
+
+<p>As usual, a picture is worth a thousand words.  The statements</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">char</span> <span class="n">a</span><span class="p">[]</span> <span class="o">=</span> <span class="s">"hello"</span><span class="p">;</span>
+<span class="kt">char</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="s">"world"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>would result in data structures which could be represented like this:</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	   <span class="o">+---+---+---+---+---+---+</span>
+	<span class="n">a</span><span class="o">:</span> <span class="o">|</span> <span class="n">h</span> <span class="o">|</span> <span class="n">e</span> <span class="o">|</span> <span class="n">l</span> <span class="o">|</span> <span class="n">l</span> <span class="o">|</span> <span class="n">o</span> <span class="o">|</span><span class="err">\</span><span class="mi">0</span> <span class="o">|</span>
+	   <span class="o">+---+---+---+---+---+---+</span>
+
+	   <span class="o">+-----+</span>     <span class="o">+---+---+---+---+---+---+</span>
+	<span class="n">p</span><span class="o">:</span> <span class="o">|</span>  <span class="o">*======&gt;</span> <span class="o">|</span> <span class="n">w</span> <span class="o">|</span> <span class="n">o</span> <span class="o">|</span> <span class="n">r</span> <span class="o">|</span> <span class="n">l</span> <span class="o">|</span> <span class="n">d</span> <span class="o">|</span><span class="err">\</span><span class="mi">0</span> <span class="o">|</span>
+	   <span class="o">+-----+</span>     <span class="o">+---+---+---+---+---+---+</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Pointers and arrays are different</li>
+  <li>The array is the location of where the data is actually at</li>
+  <li>A pointer holds the location of where the data is at, but it is just a plain varible able to hold an address location.</li>
+</ul>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span><span class="o">*</span> <span class="n">xptr</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">xarray</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+
+<span class="n">xptr</span>  <span class="c1">// address of where the data is held</span>
+<span class="o">&amp;</span><span class="n">xtpr</span> <span class="c1">// address of the pointer variable </span>
+<span class="o">*</span><span class="n">xptr</span> <span class="c1">// the value of the data </span>
+
+<span class="n">xarray</span>  <span class="c1">// address of first location where data is held</span>
+<span class="o">&amp;</span><span class="n">xarray</span> <span class="c1">// same as above</span>
+
+
+</code></pre></div></div>
+
+<h1 id="null-pointer">Null Pointer</h1>
+
+<p>There is no portable way to check whether a pointer is valid, howeve, when an object is freed, pointers to it become invalid. What C provides is a special kind of pointer guaranteed to be invalid, but which can be compared with it, called a null pointer. A null pointer does not point to any object, but it is safe to compare other pointers to a null pointer, and any valid pointer is guaranteed to compare unequal to a null pointer. Syntactically, you can create a null pointer by using a 0 in place of a pointer, or by casting 0 to pointer type.</p>
+
+<h1 id="pointers-to-pointers">Pointers to Pointers</h1>
+<p>Since we can have pointers to int, and pointers to char, and pointers to any structures we’ve defined, and in fact pointers to any type in C, it shouldn’t come as too much of a surprise that we can have pointers to other pointers. If we’re used to thinking about simple pointers, and to keeping clear in our minds the distinction between the pointer itself and what it points to, we should be able to think about pointers to pointers, too, although we’ll now have to distinguish between the pointer, what it points to, and what the pointer that it points to points to.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">char</span> <span class="n">ch</span><span class="p">;</span>     <span class="cm">/* a character */</span> 
+<span class="kt">char</span> <span class="o">*</span><span class="n">pch</span><span class="p">;</span> 	 <span class="cm">/* a pointer to a character */</span>
+<span class="kt">char</span> <span class="o">**</span><span class="n">ppch</span><span class="p">;</span> <span class="cm">/* a pointer to a pointer to a character  
+				identical to declaring char *ppch[[]] */</span>
+</code></pre></div></div>
+
+<p>When you pass a pointer-pointer to a function it allows you to modify where the pointer points to</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">pop</span><span class="p">(</span><span class="k">struct</span> <span class="n">Stack</span> <span class="o">**</span><span class="n">head</span><span class="p">)</span> <span class="p">{</span>
+   <span class="p">...</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<ul>
+  <li>*head is the address of where the pointer points</li>
+  <li>**head is the location the pointer points to</li>
+  <li>head is location where the pointer address is stored.</li>
+</ul>
+
+<p>What are pointers to pointers good for, in practice? One use is returning pointers from functions, via pointer arguments rather than as the formal return value. To explain this, let’s first step back and consider the case of returning a simple type, such as int, from a function via a pointer argument. If we write the function</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	<span class="n">f</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">ip</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="o">*</span><span class="n">ip</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+	<span class="p">}</span>
+</code></pre></div></div>
+
+<p>and then call it like this:</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	<span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+	<span class="n">f</span><span class="p">(</span><span class="o">&amp;</span><span class="n">i</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>then f will <strong>return</strong> the value 5 by writing it to the location specified by the pointer passed by the caller; in this case, to the caller’s variable i. A function might <strong>return</strong> values in this way if it had multiple things to return, since a function can only have one formal return value (that is, it can only return one value via the return statement.) The important thing to notice is that for the function to return a value of type int, it used a parameter of type pointer-to-int.</p>
+
+<p>Now, suppose that a function wants to return a pointer in this way.  The corresponding parameter will then have to be a pointer to a pointer.</p>
+
+<h1 id="how-to-determine-size-of-array">How to determine size of Array?</h1>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="mi">17</span><span class="p">];</span>
+<span class="n">n</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="k">sizeof</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+</code></pre></div></div>
+<p>It is worth noting that sizeof doesn’t help if you are dealing with a pointer to an array:</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+<span class="kt">int</span><span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+
+<span class="n">assert</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">==</span> <span class="mi">10</span><span class="p">);</span>
+<span class="n">assert</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="o">==</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="p">));</span>
+</code></pre></div></div>
+
+<h1 id="multidimensional-arrays">Multidimensional Arrays</h1>
+<p>In computing, <strong>row-major order</strong> and** column-major order** describe methods for storing multidimensional arrays in linear memory.</p>
+
+<p>Following standard matrix notation, rows are numbered by the first index and columns by the second index.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">Matrix</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">column</span><span class="p">];</span>
+</code></pre></div></div>
+
+<p>C uses row-major storage, a multidimensional array in linear memory is organized such that rows are stored one after the other.</p>
+
+<p>For example, consider this 2×3 array:</p>
+
+\[\begin{pmatrix} 1 &amp; 2 &amp; 3 \\  4 &amp; 5 &amp; 6  \end{pmatrix}\]
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">A</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">},</span> <span class="p">{</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">}</span> <span class="p">};</span>
+</code></pre></div></div>
+
+<p>would be laid out contiguously in linear memory as:</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="mi">1</span>  <span class="mi">2</span>  <span class="mi">3</span>  <span class="mi">4</span>  <span class="mi">5</span>  <span class="mi">6</span>
+</code></pre></div></div>
+
+<p>To traverse this array in the order in which it is laid out in memory, one would use the following nested loop:</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> 
+    <span class="k">for</span> <span class="p">(</span><span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> 
+        <span class="n">printf</span><span class="p">(</span><span class="s">"%d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]);</span>
+</code></pre></div></div>
+<p>The difference in offset from one column to the next is 1 and from one row to the next is 3. The linear offset from the beginning of the array to any given element A[row][column] can then be computed as:</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">offset</span> <span class="o">=</span> <span class="n">row</span><span class="o">*</span><span class="n">NUMCOLS</span> <span class="o">+</span> <span class="n">column</span>
+</code></pre></div></div>
+
+<p>where NUMCOLS is the number of columns in the array.</p>
+
+<p>There is no such thing as a multi-dimensional array.  All arrays are 1-dimensional, but some of them contain arrays, or arrays of arrays. What this means is that when you see</p>
+
+<p>In reality, the computer cannot store a “grid”, because memory is one long line of addresses. multiarray[0] is an array of 2 elements, multiarray[1] is an array of 2 elements, etc. That also means that multiarray[0] is a pointer!</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">zippo</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
+<span class="c1">// Is really the same as:</span>
+<span class="kt">int</span> <span class="n">zippo</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="o">*</span><span class="p">(</span> <span class="o">*</span><span class="p">(</span><span class="n">matrix</span> <span class="o">+</span> <span class="n">i</span> <span class="p">)</span> <span class="o">+</span> <span class="n">j</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h1 id="initializing">Initializing</h1>
+
+<p>Multidimensional arrays can be described as “arrays of arrays”.</p>
+
+<p>Multidimensional arrays are just an abstraction for programmers, since we can obtain the same results with a simple array just by putting a factor between its indices:</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">jimmy</span> <span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">5</span><span class="p">];</span>   <span class="c1">// is equivalent to</span>
+<span class="kt">int</span> <span class="n">jimmy</span> <span class="p">[</span><span class="mi">15</span><span class="p">];</span>     <span class="c1">// (3 * 5 = 15) </span>
+</code></pre></div></div>
+
+<p>With the only difference that with multidimensional arrays the compiler remembers the depth of each imaginary dimension for us.</p>
+
+<p>Ways to initialize a two dimensional array:</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kt">int</span> <span class="n">c</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">},</span> <span class="p">{</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">9</span><span class="p">}</span> <span class="p">};</span>
+
+<span class="kt">int</span> <span class="n">c</span><span class="p">[][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">},</span> <span class="p">{</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">9</span><span class="p">}</span> <span class="p">};</span>
+
+<span class="kt">int</span> <span class="n">c</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">9</span><span class="p">};</span>
+
+</code></pre></div></div>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">func</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">[][</span><span class="mi">7</span><span class="p">])</span>
+ <span class="p">{</span>
+   <span class="p">...</span>
+ <span class="p">}</span>
+</code></pre></div></div>
+<p>The second dimension is still required. (For a three- or more dimensional array, all but the first dimension are required; again, only the first dimension may be omitted.)</p>
+
+<h1 id="dynamically-allocating-multidimensional-arrays">Dynamically Allocating Multidimensional Arrays</h1>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	<span class="kt">int</span> <span class="o">**</span><span class="n">array</span><span class="p">;</span>
+	<span class="n">array</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="n">nrows</span> <span class="o">*</span> <span class="nf">sizeof</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="p">));</span>
+	<span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">nrows</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+          <span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="n">ncolumns</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+        <span class="p">}</span>
+
+	<span class="kt">void</span> <span class="nf">zeroit</span><span class="p">(</span><span class="kt">int</span> <span class="o">**</span><span class="n">array</span><span class="p">,</span> <span class="kt">int</span> <span class="n">nrows</span><span class="p">,</span> <span class="kt">int</span> <span class="n">ncolumns</span><span class="p">)</span>
+	<span class="p">{</span>
+	<span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">;</span>
+	<span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">nrows</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+		<span class="p">{</span>
+		<span class="k">for</span><span class="p">(</span><span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">ncolumns</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+			<span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+
+
+	<span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">nrows</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+		<span class="n">free</span><span class="p">(</span><span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+	<span class="n">free</span><span class="p">(</span><span class="n">array</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>array is a pointer-to-pointer-to-int: at the first level, it points to a block of pointers, one for each row. That first-level pointer is the first one we allocate; it has nrows elements, with each element big enough to hold a pointer-to-int, or int *. If we successfully allocate it, we then fill in the pointers (all nrows of them) with a pointer (also obtained from malloc) to ncolumns number of ints, the storage for that row of the array.</p>
+
+<p><img src="/documents/assets/ptrptr.gif" alt="ptr_to_ptr" /></p>
+
+<p>If a program uses simulated, dynamically allocated multidimensional arrays, it becomes possible to write “heterogeneous” functions which don’t have to know (at compile time) how big the “arrays” are. In other words, one function can operate on “arrays” of various sizes and shapes. The function will look something like</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">func2</span><span class="p">(</span><span class="kt">int</span> <span class="o">**</span><span class="n">array</span><span class="p">,</span> <span class="kt">int</span> <span class="n">nrows</span><span class="p">,</span> <span class="kt">int</span> <span class="n">ncolumns</span><span class="p">)</span> <span class="p">{</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="best-advice-forget-2d">Best Advice, forget 2D</h1>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">func_2d</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">M</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">N</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="kt">size_t</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">;</span>
+  <span class="p">...</span>
+  <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="n">N</span><span class="o">+</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="p">...;</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<p>Take as example these two pieces of code, with both exactly the same result. One uses a bidimensional array and the other one uses a simple array:</p>
+
+<h1 id="multidimensional-array">multidimensional array</h1>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#define WIDTH 5
+#define HEIGHT 3
+</span>
+<span class="kt">int</span> <span class="n">jimmy</span> <span class="p">[</span><span class="n">HEIGHT</span><span class="p">][</span><span class="n">WIDTH</span><span class="p">];</span>
+<span class="kt">int</span> <span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span> <span class="p">()</span>
+<span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">n</span><span class="o">&lt;</span><span class="n">HEIGHT</span><span class="p">;</span><span class="n">n</span><span class="o">++</span><span class="p">)</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">m</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">m</span><span class="o">&lt;</span><span class="n">WIDTH</span><span class="p">;</span><span class="n">m</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+      <span class="n">jimmy</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="n">m</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="pseudo-multidimensional-array">pseudo-multidimensional array</h1>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#define WIDTH 5
+#define HEIGHT 3
+</span>
+<span class="kt">int</span> <span class="n">jimmy</span> <span class="p">[</span><span class="n">HEIGHT</span> <span class="o">*</span> <span class="n">WIDTH</span><span class="p">];</span>
+<span class="kt">int</span> <span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span> <span class="p">()</span>
+<span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">n</span><span class="o">&lt;</span><span class="n">HEIGHT</span><span class="p">;</span><span class="n">n</span><span class="o">++</span><span class="p">)</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">m</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">m</span><span class="o">&lt;</span><span class="n">WIDTH</span><span class="p">;</span><span class="n">m</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+      <span class="n">jimmy</span><span class="p">[</span><span class="n">n</span><span class="o">*</span><span class="n">WIDTH</span><span class="o">+</span><span class="n">m</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>http://www.eskimo.com/~scs/cclass/int/sx9b.html</p>
+
+<p>http://en.wikipedia.org/wiki/Row-major_order</p>
+
+<p>Why a double pointer can’t be used as a 2D array?</p>
+
+<p>When a double pointer that points to the first element of an array, 
+ is used with subscript notation “ptr[0][0]”, it is fully dereferenced 
+ two times</p>
+
+<p>After two full dereferencings the resulting 
+ object will have an address equal to whatever value was found INSIDE 
+ the first element of the array. Since the first element contains 
+ our data, we would have wild memory accesses.</p>
+
+<h1 id="get-the-values-in-a-two-dimensional-array-through-array-pointer">Get the values in a two-dimensional array through array pointer</h1>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="cp">#include &lt;stdio.h&gt;
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="kt">char</span> <span class="n">board</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+                       <span class="p">{</span><span class="sc">'1'</span><span class="p">,</span><span class="sc">'2'</span><span class="p">,</span><span class="sc">'3'</span><span class="p">},</span>
+                       <span class="p">{</span><span class="sc">'4'</span><span class="p">,</span><span class="sc">'5'</span><span class="p">,</span><span class="sc">'6'</span><span class="p">},</span>
+                       <span class="p">{</span><span class="sc">'7'</span><span class="p">,</span><span class="sc">'8'</span><span class="p">,</span><span class="sc">'9'</span><span class="p">}</span>
+                     <span class="p">};</span>
+
+
+  <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+  <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">9</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">" board: %c</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="n">board</span> <span class="o">+</span> <span class="n">i</span><span class="p">));</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="nl">board:</span> <span class="mi">1</span>
+      <span class="n">board</span><span class="o">:</span> <span class="mi">2</span>
+      <span class="n">board</span><span class="o">:</span> <span class="mi">3</span>
+      <span class="n">board</span><span class="o">:</span> <span class="mi">4</span>
+      <span class="n">board</span><span class="o">:</span> <span class="mi">5</span>
+      <span class="n">board</span><span class="o">:</span> <span class="mi">6</span>
+      <span class="n">board</span><span class="o">:</span> <span class="mi">7</span>
+      <span class="n">board</span><span class="o">:</span> <span class="mi">8</span>
+      <span class="n">board</span><span class="o">:</span> <span class="mi">9</span>
+</code></pre></div></div>
+<h1 id="when-using-a-function">When using a function</h1>
+
+<p>Multi-dimensional arrays must be fully dimensioned in the “calling” module, and partially dimensioned in the source function.</p>
+
+<p>As always, the name of the array may be different in each module, but it must be in the same position in the list and agree in type</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">sub</span><span class="p">(</span><span class="kt">double</span> <span class="n">x</span><span class="p">[][</span><span class="mi">100</span><span class="p">]){</span>
+
+<span class="p">}</span>
+
+<span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kt">double</span> <span class="n">a</span><span class="p">[</span><span class="mi">100</span><span class="p">][</span><span class="mi">100</span><span class="p">]</span>
+  <span class="n">sub</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Notice that the first brackets [] (the row) are left empty while the following ones specify sizes for their respective dimensions. This is necessary in order for the compiler to be able to determine the depth of each additional dimension.</p>
+
+<p>http://www.taranets.net/cgi/ts/1.37/ts.ws.pl?w=329;b=284</p>
+
+<p>http://www.cplusplus.com/doc/tutorial/arrays/</p>
+
+<p>http://www.eskimo.com/~scs/cclass/int/sx9.html</p>
+
+<p>http://www.programiz.com/c-programming/c-multi-dimensional-arrays</p>
+
+<p>http://stackoverflow.com/questions/274865/what-is-int-usermask34-pointing-to/274943#274943</p>
+
+<h1 id="pointers-to-functions">Pointers to functions</h1>
+
+<p>A function pointer is, in its simplest form, the address at which some code is stored. To declare a pointer to a function do:</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+ <span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">pf</span><span class="p">)</span> <span class="p">();</span>  
+</code></pre></div></div>
+
+<p>This simply declares a pointer *pf to function that returns and int. No actual function is pointed to yet. If we have a function int f() then we can point to it by simply writing:</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+ <span class="cm">/* the ampersand is actually optional */</span>
+ <span class="n">pf</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">f</span><span class="p">;</span>
+ <span class="n">pf</span><span class="p">();</span>
+ <span class="p">(</span><span class="o">*</span><span class="n">pf</span><span class="p">)();</span> <span class="c1">// same as above</span>
+</code></pre></div></div>
+
+<p>it is not safe to call a function with the wrong type.</p>
+
+<h1 id="references">References</h1>
+
+<ul>
+  <li>http://www.cprogramming.com/tutorial/function-pointers.html</li>
+  <li>http://www.lysator.liu.se/c/c-faq/c-2.html</li>
+</ul>
+
+                </div>
+            </main>
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#pointers-and-arrays">Pointers And Arrays</a></li>
+  <li><a href="#pointers">Pointers</a></li>
+  <li><a href="#arrays">Arrays</a>
+    <ul>
+      <li><a href="#ways-to-initalize-an-array">Ways to Initalize an array</a></li>
+    </ul>
+  </li>
+  <li><a href="#arrays-verses-pointers">Arrays verses Pointers</a></li>
+  <li><a href="#null-pointer">Null Pointer</a></li>
+  <li><a href="#pointers-to-pointers">Pointers to Pointers</a></li>
+  <li><a href="#how-to-determine-size-of-array">How to determine size of Array?</a></li>
+  <li><a href="#multidimensional-arrays">Multidimensional Arrays</a></li>
+  <li><a href="#initializing">Initializing</a></li>
+  <li><a href="#dynamically-allocating-multidimensional-arrays">Dynamically Allocating Multidimensional Arrays</a></li>
+  <li><a href="#best-advice-forget-2d">Best Advice, forget 2D</a></li>
+  <li><a href="#multidimensional-array">multidimensional array</a></li>
+  <li><a href="#pseudo-multidimensional-array">pseudo-multidimensional array</a></li>
+  <li><a href="#get-the-values-in-a-two-dimensional-array-through-array-pointer">Get the values in a two-dimensional array through array pointer</a></li>
+  <li><a href="#when-using-a-function">When using a function</a></li>
+  <li><a href="#pointers-to-functions">Pointers to functions</a></li>
+  <li><a href="#references">References</a></li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
+  <data class="u-url" href="/documents/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">LFMUNOZ</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">LFMUNOZ</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/lfmunoz"><svg class="svg-icon"><use xlink:href="/documents/assets/minima-social-icons.svg#github"></use></svg> <span class="username">lfmunoz</span></a></li><li><a href="https://www.twitter.com/lfmunoz4"><svg class="svg-icon"><use xlink:href="/documents/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">lfmunoz4</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>articles, notes, and references</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

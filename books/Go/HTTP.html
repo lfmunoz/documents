@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>HTTP | LFMUNOZ</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="HTTP" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="articles, notes, and references" />
+<meta property="og:description" content="articles, notes, and references" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/Go/HTTP.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/Go/HTTP.html" />
+<meta property="og:site_name" content="LFMUNOZ" />
+<script type="application/ld+json">
+{"@type":"WebPage","headline":"HTTP","url":"lfmunoz.github.io/documents/books/Go/HTTP.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
+<body><header class="site-header" role="banner">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2YJDWQX6GK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-2YJDWQX6GK');
+  </script>
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/documents/">LFMUNOZ</a><nav class="site-nav">
+      <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+      <label for="nav-trigger">
+        <span class="menu-icon">
+          <svg viewBox="0 0 18 15" width="18px" height="15px">
+            <path
+              d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+          </svg>
+        </span>
+      </label>
+
+      <div class="trigger"><a class="page-link" href="/documents/about/">About</a></div>
+    </nav></div>
+</header><div class="main"><div class="column-sidebar">
+
+    <div class="nav-section">
+        <div class="nav-title">Posts</div><div class="post-container"><a class="post-link" href="/documents/2020/12/17/i-wish-i-was-worse.html"> I wish I was worse at dancing</a>
+            <span class="post-meta">Dec 17, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/12/13/too-many-options.html"> Too many options slows production</a>
+            <span class="post-meta">Dec 13, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/12/06/dream-cats-and-dogs.html"> A dream of dogs and cats</a>
+            <span class="post-meta">Dec 6, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/11/27/http-rest-bad-design.html"> RESTful HTTP creates coupling</a>
+            <span class="post-meta">Nov 27, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/08/01/organization-and-structure.html"> Organization and Structure of Applications</a>
+            <span class="post-meta">Aug 1, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/07/12/listening-to-music.html"> Listening to Music</a>
+            <span class="post-meta">Jul 12, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/07/05/frameworks.html"> Frameworks and Libraries</a>
+            <span class="post-meta">Jul 5, 2020</span>
+        </div><p class="rss-subscribe">subscribe <a href="/documents/feed.xml">via RSS</a></p>
+    </div>
+
+    <div class="nav-section">
+        <div class="nav-title">Guides</div>
+        <ul>
+            
+            <li>
+                <strong> Computer Science</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/Algorithms/Introduction.html">Algorithms</a></li>
+                    
+                    <li><a href="/documents/articles/SoftwareEngineering.html">Software Engineering</a></li>
+                    
+                    <li><a href="/documents/books/DesignPatterns.html">Design Patterns</a></li>
+                    
+                    <li><a href="/documents/books/Linux/Introduction.html">Linux</a></li>
+                    
+                    <li><a href="/documents/books/Databases/Introduction.html">Databases</a></li>
+                    
+                    <li><a href="/documents/books/SoftwareEngineering/Concurrency.html">Concurrency</a></li>
+                    
+                    <li><a href="/documents/books/Security/Introduction.html">Security</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Programming Languages</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/C/Introduction.html">C</a></li>
+                    
+                    <li><a href="/documents/books/Cpp/Introduction.html">C++</a></li>
+                    
+                    <li><a href="/documents/books/Rust/Introduction.html">Rust</a></li>
+                    
+                    <li><a href="/documents/books/Go/Introduction.html">Go</a></li>
+                    
+                    <li><a href="/documents/books/Java/Introduction.html">Java</a></li>
+                    
+                    <li><a href="/documents/books/Kotlin/Introduction.html">Kotlin</a></li>
+                    
+                    <li><a href="/documents/lang/Python/Introduction.html">Python</a></li>
+                    
+                    <li><a href="/documents/lang/Bash/Introduction.html">Bash</a></li>
+                    
+                    <li><a href="/documents/books/Make/Introduction.html">Makefile</a></li>
+                    
+                    <li><a href="/documents/lang/SQL/Introduction.html">SQL</a></li>
+                    
+                    <li><a href="/documents/lang/HTML/Introduction.html">HTML</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Technologies</strong>
+                <ul>
+                    
+                    <li><a href="/documents/tech/Android/Introduction.html">Android</a></li>
+                    
+                    <li><a href="/documents/books/Docker/Introduction.html">Docker</a></li>
+                    
+                    <li><a href="/documents/books/Envoy/Introduction.html">Envoy</a></li>
+                    
+                    <li><a href="/documents/books/Terraform/Introduction.html">Terraform</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Mathematics</strong>
+                <ul>
+                    
+                    <li><a href="/documents/mathematics/Foundations.html">Foundations</a></li>
+                    
+                    <li><a href="/documents/books/Logic/Introduction.html">Logic</a></li>
+                    
+                    <li><a href="/documents/books/SetTheory/Introduction.html">Set Theory</a></li>
+                    
+                    <li><a href="/documents/books/Geometry/Introduction.html">Geometry</a></li>
+                    
+                    <li><a href="/documents/books/Analysis/Introduction.html">Analysis</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Miscellaneous</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/Non-Duality/Introduction.html">Non-Duality</a></li>
+                    
+                </ul>
+            </li>
+
+            
+        </ul>
+    </div>
+
+
+</div><div class="column-main">
+            <main class="page-content" aria-label="Content">
+                <div class="wrapper">
+                    <h1 id="http">HTTP</h1>
+
+<ul>
+  <li><a href="Introduction.html">The Go Programming Language</a></li>
+</ul>
+
+<details>
+<summary> cat src/cmd/http/main.go </summary>
+
+<p>
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// ________________________________________________________________________________</span>
+<span class="c1">// http</span>
+<span class="c1">// ________________________________________________________________________________</span>
+<span class="n">package</span> <span class="n">main</span>
+
+<span class="nf">import</span> <span class="p">(</span>
+	<span class="s">"fmt"</span>
+	<span class="s">"net/http"</span>
+	<span class="s">"time"</span>
+<span class="p">)</span>
+
+<span class="c1">// ________________________________________________________________________________</span>
+<span class="c1">// CONFIG</span>
+<span class="c1">// ________________________________________________________________________________</span>
+<span class="k">const</span> <span class="n">port</span> <span class="o">=</span> <span class="s">":8090"</span>
+
+<span class="c1">// ________________________________________________________________________________</span>
+<span class="c1">// ENDPOINTS</span>
+<span class="c1">// ________________________________________________________________________________</span>
+<span class="n">func</span> <span class="n">hello</span><span class="p">(</span><span class="n">w</span> <span class="n">http</span><span class="p">.</span><span class="n">ResponseWriter</span><span class="p">,</span> <span class="n">req</span> <span class="o">*</span><span class="n">http</span><span class="p">.</span><span class="n">Request</span><span class="p">)</span> <span class="p">{</span>
+	<span class="n">fmt</span><span class="p">.</span><span class="n">Fprintf</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="s">"hello</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">func</span> <span class="nf">headers</span><span class="p">(</span><span class="n">w</span> <span class="n">http</span><span class="p">.</span><span class="n">ResponseWriter</span><span class="p">,</span> <span class="n">req</span> <span class="o">*</span><span class="n">http</span><span class="p">.</span><span class="n">Request</span><span class="p">)</span> <span class="p">{</span>
+	<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">headers</span> <span class="o">:=</span> <span class="n">range</span> <span class="n">req</span><span class="p">.</span><span class="n">Header</span> <span class="p">{</span>
+		<span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">h</span> <span class="o">:=</span> <span class="n">range</span> <span class="n">headers</span> <span class="p">{</span>
+			<span class="n">fmt</span><span class="p">.</span><span class="n">Fprintf</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="s">"%v: %v</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">func</span> <span class="nf">context</span><span class="p">(</span><span class="n">w</span> <span class="n">http</span><span class="p">.</span><span class="n">ResponseWriter</span><span class="p">,</span> <span class="n">req</span> <span class="o">*</span><span class="n">http</span><span class="p">.</span><span class="n">Request</span><span class="p">)</span> <span class="p">{</span>
+	<span class="c1">// A context.Context is created for each request by the net/http machinery,</span>
+	<span class="c1">//  and is available with the Context() method.</span>
+	<span class="n">ctx</span> <span class="o">:=</span> <span class="n">req</span><span class="p">.</span><span class="n">Context</span><span class="p">()</span>
+	<span class="n">fmt</span><span class="p">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"server: hello handler started"</span><span class="p">)</span>
+	<span class="n">defer</span> <span class="n">fmt</span><span class="p">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"server: hello handler ended"</span><span class="p">)</span>
+
+	<span class="n">select</span> <span class="p">{</span>
+	<span class="k">case</span> <span class="o">&lt;-</span><span class="n">time</span><span class="p">.</span><span class="n">After</span><span class="p">(</span><span class="mi">5</span> <span class="o">*</span> <span class="n">time</span><span class="p">.</span><span class="n">Second</span><span class="p">):</span>
+		<span class="n">fmt</span><span class="p">.</span><span class="n">Fprintf</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="s">"hello</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+	<span class="k">case</span> <span class="o">&lt;-</span><span class="n">ctx</span><span class="p">.</span><span class="n">Done</span><span class="p">():</span>
+
+		<span class="n">err</span> <span class="o">:=</span> <span class="n">ctx</span><span class="p">.</span><span class="n">Err</span><span class="p">()</span>
+		<span class="n">fmt</span><span class="p">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"server:"</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
+		<span class="n">internalError</span> <span class="o">:=</span> <span class="n">http</span><span class="p">.</span><span class="n">StatusInternalServerError</span>
+		<span class="n">http</span><span class="p">.</span><span class="n">Error</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">err</span><span class="p">.</span><span class="n">Error</span><span class="p">(),</span> <span class="n">internalError</span><span class="p">)</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// ________________________________________________________________________________</span>
+<span class="c1">// MAIN</span>
+<span class="c1">// ________________________________________________________________________________</span>
+<span class="n">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+
+	<span class="n">fmt</span><span class="p">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"Listening on port: "</span><span class="p">,</span> <span class="n">port</span><span class="p">)</span>
+	<span class="n">http</span><span class="p">.</span><span class="n">HandleFunc</span><span class="p">(</span><span class="s">"/api/hello"</span><span class="p">,</span> <span class="n">hello</span><span class="p">)</span>
+	<span class="n">http</span><span class="p">.</span><span class="n">HandleFunc</span><span class="p">(</span><span class="s">"/api/headers"</span><span class="p">,</span> <span class="n">headers</span><span class="p">)</span>
+	<span class="n">http</span><span class="p">.</span><span class="n">HandleFunc</span><span class="p">(</span><span class="s">"/api/context"</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
+
+	<span class="c1">// http://localhost:8090/ will server index.html</span>
+	<span class="n">http</span><span class="p">.</span><span class="n">Handle</span><span class="p">(</span><span class="s">"/"</span><span class="p">,</span> <span class="n">http</span><span class="p">.</span><span class="n">FileServer</span><span class="p">(</span><span class="n">http</span><span class="p">.</span><span class="n">Dir</span><span class="p">(</span><span class="s">"./web"</span><span class="p">)))</span>
+	<span class="c1">//  nil tells it to use the default router</span>
+	<span class="n">http</span><span class="p">.</span><span class="n">ListenAndServe</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">nil</span><span class="p">)</span>
+<span class="p">}</span>
+
+</code></pre></div>    </div>
+  </p></details>
+<p><br /></p>
+
+<p>A Context carries deadlines, cancellation signals, and other request-scoped values across API boundaries and goroutines.</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">rw</span><span class="o">.</span><span class="n">Header</span><span class="p">()</span><span class="o">.</span><span class="n">Set</span><span class="p">(</span><span class="s">"Content-Type"</span><span class="p">,</span> <span class="s">"application/json"</span><span class="p">)</span>
+<span class="n">rw</span><span class="o">.</span><span class="n">WriteHeader</span><span class="p">(</span><span class="m">200</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h1 id="reference">Reference</h1>
+
+<ul>
+  <li>https://www.alexedwards.net/blog/how-to-properly-parse-a-json-request-body</li>
+  <li>https://github.com/go-chi/chi</li>
+</ul>
+
+                </div>
+            </main>
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#http">HTTP</a></li>
+  <li><a href="#reference">Reference</a></li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
+  <data class="u-url" href="/documents/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">LFMUNOZ</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">LFMUNOZ</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/lfmunoz"><svg class="svg-icon"><use xlink:href="/documents/assets/minima-social-icons.svg#github"></use></svg> <span class="username">lfmunoz</span></a></li><li><a href="https://www.twitter.com/lfmunoz4"><svg class="svg-icon"><use xlink:href="/documents/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">lfmunoz4</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>articles, notes, and references</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Collections | LFMUNOZ</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Collections" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="articles, notes, and references" />
+<meta property="og:description" content="articles, notes, and references" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/Go/Collections.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/Go/Collections.html" />
+<meta property="og:site_name" content="LFMUNOZ" />
+<script type="application/ld+json">
+{"@type":"WebPage","headline":"Collections","url":"lfmunoz.github.io/documents/books/Go/Collections.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
+<body><header class="site-header" role="banner">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2YJDWQX6GK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-2YJDWQX6GK');
+  </script>
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/documents/">LFMUNOZ</a><nav class="site-nav">
+      <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+      <label for="nav-trigger">
+        <span class="menu-icon">
+          <svg viewBox="0 0 18 15" width="18px" height="15px">
+            <path
+              d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+          </svg>
+        </span>
+      </label>
+
+      <div class="trigger"><a class="page-link" href="/documents/about/">About</a></div>
+    </nav></div>
+</header><div class="main"><div class="column-sidebar">
+
+    <div class="nav-section">
+        <div class="nav-title">Posts</div><div class="post-container"><a class="post-link" href="/documents/2020/12/17/i-wish-i-was-worse.html"> I wish I was worse at dancing</a>
+            <span class="post-meta">Dec 17, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/12/13/too-many-options.html"> Too many options slows production</a>
+            <span class="post-meta">Dec 13, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/12/06/dream-cats-and-dogs.html"> A dream of dogs and cats</a>
+            <span class="post-meta">Dec 6, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/11/27/http-rest-bad-design.html"> RESTful HTTP creates coupling</a>
+            <span class="post-meta">Nov 27, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/08/01/organization-and-structure.html"> Organization and Structure of Applications</a>
+            <span class="post-meta">Aug 1, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/07/12/listening-to-music.html"> Listening to Music</a>
+            <span class="post-meta">Jul 12, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/07/05/frameworks.html"> Frameworks and Libraries</a>
+            <span class="post-meta">Jul 5, 2020</span>
+        </div><p class="rss-subscribe">subscribe <a href="/documents/feed.xml">via RSS</a></p>
+    </div>
+
+    <div class="nav-section">
+        <div class="nav-title">Guides</div>
+        <ul>
+            
+            <li>
+                <strong> Computer Science</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/Algorithms/Introduction.html">Algorithms</a></li>
+                    
+                    <li><a href="/documents/articles/SoftwareEngineering.html">Software Engineering</a></li>
+                    
+                    <li><a href="/documents/books/DesignPatterns.html">Design Patterns</a></li>
+                    
+                    <li><a href="/documents/books/Linux/Introduction.html">Linux</a></li>
+                    
+                    <li><a href="/documents/books/Databases/Introduction.html">Databases</a></li>
+                    
+                    <li><a href="/documents/books/SoftwareEngineering/Concurrency.html">Concurrency</a></li>
+                    
+                    <li><a href="/documents/books/Security/Introduction.html">Security</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Programming Languages</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/C/Introduction.html">C</a></li>
+                    
+                    <li><a href="/documents/books/Cpp/Introduction.html">C++</a></li>
+                    
+                    <li><a href="/documents/books/Rust/Introduction.html">Rust</a></li>
+                    
+                    <li><a href="/documents/books/Go/Introduction.html">Go</a></li>
+                    
+                    <li><a href="/documents/books/Java/Introduction.html">Java</a></li>
+                    
+                    <li><a href="/documents/books/Kotlin/Introduction.html">Kotlin</a></li>
+                    
+                    <li><a href="/documents/lang/Python/Introduction.html">Python</a></li>
+                    
+                    <li><a href="/documents/lang/Bash/Introduction.html">Bash</a></li>
+                    
+                    <li><a href="/documents/books/Make/Introduction.html">Makefile</a></li>
+                    
+                    <li><a href="/documents/lang/SQL/Introduction.html">SQL</a></li>
+                    
+                    <li><a href="/documents/lang/HTML/Introduction.html">HTML</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Technologies</strong>
+                <ul>
+                    
+                    <li><a href="/documents/tech/Android/Introduction.html">Android</a></li>
+                    
+                    <li><a href="/documents/books/Docker/Introduction.html">Docker</a></li>
+                    
+                    <li><a href="/documents/books/Envoy/Introduction.html">Envoy</a></li>
+                    
+                    <li><a href="/documents/books/Terraform/Introduction.html">Terraform</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Mathematics</strong>
+                <ul>
+                    
+                    <li><a href="/documents/mathematics/Foundations.html">Foundations</a></li>
+                    
+                    <li><a href="/documents/books/Logic/Introduction.html">Logic</a></li>
+                    
+                    <li><a href="/documents/books/SetTheory/Introduction.html">Set Theory</a></li>
+                    
+                    <li><a href="/documents/books/Geometry/Introduction.html">Geometry</a></li>
+                    
+                    <li><a href="/documents/books/Analysis/Introduction.html">Analysis</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Miscellaneous</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/Non-Duality/Introduction.html">Non-Duality</a></li>
+                    
+                </ul>
+            </li>
+
+            
+        </ul>
+    </div>
+
+
+</div><div class="column-main">
+            <main class="page-content" aria-label="Content">
+                <div class="wrapper">
+                    <h1 id="collections">Collections</h1>
+
+<ul>
+  <li><a href="Introduction.html">The Go Programming Language</a></li>
+</ul>
+
+<p>Go has three different data structures that are baked into the language arrays, slices, and maps.</p>
+
+<h2 id="arrays">Arrays</h2>
+<p>An array in Go is a fixed-length data type that contains a contiguous block of elements of the same type.
+The memory is allocated sequentially.</p>
+
+<p>Once an array is declared, neither the type of data being stored nor its length can be changed.</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">// Declare an integer array of five elements.</span>
+<span class="k">var</span> <span class="n">array</span> <span class="p">[</span><span class="m">5</span><span class="p">]</span><span class="kt">int</span>
+
+<span class="c">// initialized to their zero value (use var)</span>
+<span class="k">var</span> <span class="n">favNums2</span><span class="p">[</span><span class="m">5</span><span class="p">]</span> <span class="kt">float64</span>
+
+<span class="c">// Initialize each element with a specific value.</span>
+<span class="n">favNums3</span> <span class="o">:=</span> <span class="p">[</span><span class="m">5</span><span class="p">]</span><span class="kt">float64</span> <span class="p">{</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">}</span>
+
+<span class="c">// Capacity is determined based on the number of values initialized.</span>
+<span class="n">array</span> <span class="o">:=</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span><span class="kt">int</span><span class="p">{</span><span class="m">10</span><span class="p">,</span> <span class="m">20</span><span class="p">,</span> <span class="m">30</span><span class="p">,</span> <span class="m">40</span><span class="p">,</span> <span class="m">50</span><span class="p">}</span>
+
+<span class="c">// Initialize index 1 and 2 with specific values.</span>
+<span class="c">// The rest of the elements contain their zero value.</span>
+<span class="n">array</span> <span class="o">:=</span> <span class="p">[</span><span class="m">5</span><span class="p">]</span><span class="kt">int</span><span class="p">{</span><span class="m">1</span><span class="o">:</span> <span class="m">10</span><span class="p">,</span> <span class="m">2</span><span class="o">:</span> <span class="m">20</span><span class="p">}</span>
+
+<span class="c">// Change the value at index 2.</span>
+<span class="n">array</span><span class="p">[</span><span class="m">2</span><span class="p">]</span> <span class="o">=</span> <span class="m">35</span>
+
+<span class="n">array</span> <span class="o">:=</span> <span class="p">[</span><span class="m">5</span><span class="p">]</span><span class="o">*</span><span class="kt">int</span><span class="p">{</span><span class="m">0</span><span class="o">:</span> <span class="nb">new</span><span class="p">(</span><span class="kt">int</span><span class="p">),</span> <span class="m">1</span><span class="o">:</span> <span class="nb">new</span><span class="p">(</span><span class="kt">int</span><span class="p">)}</span>
+<span class="o">*</span><span class="n">array</span><span class="p">[</span><span class="m">0</span><span class="p">]</span> <span class="o">=</span> <span class="m">10</span>
+<span class="c">// note array[2] = nil</span>
+
+
+<span class="c">// Copy the values from array2 into array1.</span>
+<span class="n">array1</span> <span class="o">=</span> <span class="n">array2</span>
+
+<span class="c">// Copying an array of pointers copies the pointer </span>
+<span class="c">// values and not the values that the</span>
+<span class="n">array1</span> <span class="o">=</span> <span class="n">array2</span>
+
+</code></pre></div></div>
+
+<p>An array is a value in Go. The type of an array variable includes both the length and the type of data that can be
+stored in each element. This means you cannot assign an array of length 4 to an array of length 5.</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">// Declare a two dimensional integer array</span>
+<span class="k">var</span> <span class="n">array</span> <span class="p">[</span><span class="m">4</span><span class="p">][</span><span class="m">2</span><span class="p">]</span><span class="kt">int</span>
+
+<span class="c">// Declare and initialize a two dimensional array.</span>
+<span class="n">array</span> <span class="o">:=</span> <span class="p">[</span><span class="m">4</span><span class="p">][</span><span class="m">2</span><span class="p">]</span><span class="kt">int</span><span class="p">{</span>
+   <span class="p">{</span><span class="m">10</span><span class="p">,</span> <span class="m">11</span><span class="p">},</span> <span class="p">{</span><span class="m">20</span><span class="p">,</span> <span class="m">21</span><span class="p">},</span> <span class="p">{</span><span class="m">30</span><span class="p">,</span> <span class="m">31</span><span class="p">},</span> <span class="p">{</span><span class="m">40</span><span class="p">,</span> <span class="m">41</span><span class="p">}</span>
+<span class="p">}</span>
+
+
+</code></pre></div></div>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c">// Declare an array of 8 megabytes.</span>
+<span class="k">var</span> <span class="n">array</span> <span class="p">[</span><span class="m">1e6</span><span class="p">]</span><span class="kt">int</span>
+<span class="c">// Pass the array to the function foo.</span>
+<span class="n">foo</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
+
+<span class="c">// Function foo accepts an array of one million integers.</span>
+<span class="k">func</span> <span class="n">foo</span><span class="p">(</span><span class="n">array</span> <span class="p">[</span><span class="m">1e6</span><span class="p">]</span><span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c">// ...</span>
+<span class="p">}</span>
+
+<span class="c">// Allocate an array of 8 megabytes.</span>
+<span class="k">var</span> <span class="n">array</span> <span class="p">[</span><span class="m">1e6</span><span class="p">]</span><span class="kt">int</span>
+<span class="c">// Pass the address of the array to the function foo.</span>
+<span class="n">foo</span><span class="p">(</span><span class="o">&amp;</span><span class="n">array</span><span class="p">)</span>
+
+<span class="c">// Function foo accepts a pointer to an array of one million integers.</span>
+<span class="k">func</span> <span class="n">foo</span><span class="p">(</span><span class="n">array</span> <span class="o">*</span><span class="p">[</span><span class="m">1e6</span><span class="p">]</span><span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+   <span class="c">//...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">value</span> <span class="o">:=</span> <span class="k">range</span> <span class="n">favNums3</span> <span class="p">{</span>
+   <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+<span class="p">}</span>
+
+
+
+</code></pre></div></div>
+
+<h2 id="slices">Slices</h2>
+
+<p>Slices are built around the concept of dynamic arrays that can grow and
+shrink as you see fit.</p>
+
+<p>if you specify a value inside the [ ] operator, you’re creating an array. If
+you don’t specify a value, you’re creating a slice.</p>
+
+<p>A slice is a pointer a length and a capacity</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">// Create a slice of integers.</span>
+<span class="c">// Contains a length of 3 and has a capacity of 5 elements.</span>
+<span class="n">slice</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">5</span><span class="p">)</span>
+
+<span class="c">// Create a slice of integers.</span>
+<span class="n">slice</span> <span class="o">:=</span> <span class="p">[]</span><span class="kt">int</span><span class="p">{</span><span class="m">10</span><span class="p">,</span> <span class="m">20</span><span class="p">,</span> <span class="m">30</span><span class="p">}</span>
+
+<span class="c">// Create a nil slice of integers.</span>
+<span class="k">var</span> <span class="n">slice</span> <span class="p">[]</span><span class="kt">int</span>
+
+<span class="c">// Get 3 and 4 ignore 5</span>
+<span class="n">numSlice2</span> <span class="o">:=</span><span class="n">numSlice</span><span class="p">[</span><span class="m">3</span><span class="o">:</span><span class="m">5</span><span class="p">]</span>
+
+
+   <span class="k">var</span> <span class="n">s</span> <span class="p">[]</span><span class="kt">int</span>
+   <span class="c">// Go provides a built-in append function. </span>
+   <span class="c">//  func append(s []T, vs ...T) []T</span>
+   <span class="c">// If the backing array of s is too small to fit all the given values </span>
+   <span class="c">//  a bigger array will be allocated. The returned slice will point to </span>
+   <span class="c">//  the newly allocated array.</span>
+
+	<span class="c">// We can add more than one element at a time.</span>
+   <span class="n">s</span> <span class="o">=</span> <span class="nb">append</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">)</span>
+   
+
+   <span class="c">// The length and capacity of a slice s can be obtained </span>
+   <span class="c">// using the expressions len(s) and cap(s).</span>
+   <span class="c">// The length of a slice is the number of elements it contains.</span>
+   <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+   <span class="c">// The capacity of a slice is the number of elements in the </span>
+   <span class="c">// underlying array, counting from the first element in the slice.</span>
+   <span class="nb">cap</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<p>Removing an item from the middle of a slice</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">func</span> <span class="n">remove</span><span class="p">(</span><span class="n">slice</span> <span class="p">[]</span><span class="kt">int</span><span class="p">,</span> <span class="n">i</span> <span class="kt">int</span><span class="p">)</span> <span class="p">[]</span><span class="kt">int</span> <span class="p">{</span>
+  <span class="nb">copy</span><span class="p">(</span><span class="n">slice</span><span class="p">[</span><span class="n">i</span><span class="o">:</span><span class="p">],</span> <span class="n">slice</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="m">1</span><span class="o">:</span><span class="p">])</span>
+  <span class="k">return</span> <span class="n">slice</span><span class="p">[</span><span class="o">:</span><span class="nb">len</span><span class="p">(</span><span class="n">slice</span><span class="p">)</span><span class="o">-</span><span class="m">1</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="c">// Removing an element from the first or last position is slightly easier:</span>
+<span class="n">slice</span> <span class="o">=</span> <span class="n">slice</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="nb">len</span><span class="p">(</span><span class="n">slice</span><span class="p">)]</span>
+<span class="n">slice</span> <span class="o">=</span> <span class="n">slice</span><span class="p">[</span><span class="o">:</span><span class="nb">len</span><span class="p">(</span><span class="n">slice</span><span class="p">)</span><span class="o">-</span><span class="m">1</span><span class="p">]</span>
+</code></pre></div></div>
+
+<h1 id="map">Map</h1>
+
+<p>A map is an unordered collection of key-value pairs. If you need a stable iteration order, you must maintain a separate data structure.</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">presAge</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="k">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span> <span class="kt">int</span><span class="p">)</span>
+<span class="c">// Create a map with a key of type string and a value of type int.</span>
+<span class="n">dict</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="k">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">int</span><span class="p">)</span>
+<span class="c">// Create a map with a key and value of type string.</span>
+<span class="c">// Initialize the map with 2 key/value pairs.</span>
+<span class="n">dict</span> <span class="o">:=</span> <span class="k">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">string</span><span class="p">{</span><span class="s">"Red"</span><span class="o">:</span> <span class="s">"#da1337"</span><span class="p">,</span> <span class="s">"Orange"</span><span class="o">:</span> <span class="s">"#e95a22"</span><span class="p">}</span>
+
+
+</code></pre></div></div>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">m</span> <span class="o">:=</span> <span class="k">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">int</span><span class="p">{</span><span class="s">"Alice"</span><span class="o">:</span> <span class="m">2</span><span class="p">,</span> <span class="s">"Cecil"</span><span class="o">:</span> <span class="m">1</span><span class="p">,</span> <span class="s">"Bob"</span><span class="o">:</span> <span class="m">3</span><span class="p">}</span>
+
+<span class="n">keys</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">string</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">m</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">k</span> <span class="o">:=</span> <span class="k">range</span> <span class="n">m</span> <span class="p">{</span>
+    <span class="n">keys</span> <span class="o">=</span> <span class="nb">append</span><span class="p">(</span><span class="n">keys</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="n">sort</span><span class="o">.</span><span class="n">Strings</span><span class="p">(</span><span class="n">keys</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">k</span> <span class="o">:=</span> <span class="k">range</span> <span class="n">keys</span> <span class="p">{</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">m</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+<span class="p">}</span>
+<span class="c">// Output:</span>
+<span class="c">// Alice 2</span>
+<span class="c">// Bob 3</span>
+<span class="c">// Cecil 1</span>
+
+
+<span class="n">m</span> <span class="o">=</span> <span class="nb">make</span><span class="p">(</span><span class="k">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="n">Vertex</span><span class="p">)</span>
+	<span class="n">m</span><span class="p">[</span><span class="s">"Bell Labs"</span><span class="p">]</span> <span class="o">=</span> <span class="n">Vertex</span><span class="p">{</span>
+		<span class="m">40.68433</span><span class="p">,</span> <span class="o">-</span><span class="m">74.39967</span><span class="p">,</span>
+   <span class="p">}</span>
+   
+</code></pre></div></div>
+
+<h2 id="reference">Reference</h2>
+
+<ul>
+  <li>Treeset
+    <ul>
+      <li>https://godoc.org/github.com/emirpasic/gods/sets/treeset#Iterator.Value</li>
+    </ul>
+  </li>
+</ul>
+
+                </div>
+            </main>
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#collections">Collections</a>
+    <ul>
+      <li><a href="#arrays">Arrays</a></li>
+      <li><a href="#slices">Slices</a></li>
+    </ul>
+  </li>
+  <li><a href="#map">Map</a>
+    <ul>
+      <li><a href="#reference">Reference</a></li>
+    </ul>
+  </li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
+  <data class="u-url" href="/documents/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">LFMUNOZ</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">LFMUNOZ</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/lfmunoz"><svg class="svg-icon"><use xlink:href="/documents/assets/minima-social-icons.svg#github"></use></svg> <span class="username">lfmunoz</span></a></li><li><a href="https://www.twitter.com/lfmunoz4"><svg class="svg-icon"><use xlink:href="/documents/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">lfmunoz4</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>articles, notes, and references</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

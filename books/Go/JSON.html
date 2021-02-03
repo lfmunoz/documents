@@ -2,21 +2,42 @@
 <html lang="en">
 
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>LFMUNOZ | articles, notes, and references</title>
+<title>JSON | LFMUNOZ</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="LFMUNOZ" />
+<meta property="og:title" content="JSON" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="articles, notes, and references" />
 <meta property="og:description" content="articles, notes, and references" />
-<link rel="canonical" href="lfmunoz.github.io/documents/404.html" />
-<meta property="og:url" content="lfmunoz.github.io/documents/404.html" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/Go/JSON.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/Go/JSON.html" />
 <meta property="og:site_name" content="LFMUNOZ" />
 <script type="application/ld+json">
-{"@type":"WebPage","headline":"LFMUNOZ","url":"lfmunoz.github.io/documents/404.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+{"@type":"WebPage","headline":"JSON","url":"lfmunoz.github.io/documents/books/Go/JSON.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
 <body><header class="site-header" role="banner">
@@ -169,30 +190,63 @@
 </div><div class="column-main">
             <main class="page-content" aria-label="Content">
                 <div class="wrapper">
-                    <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+                    <h1 id="json">JSON</h1>
 
-<div class="container">
-  <h1>404</h1>
+<ul>
+  <li><a href="Introduction.html">The Go Programming Language</a></li>
+</ul>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+
+<span class="k">type</span> <span class="n">Feed</span> <span class="k">struct</span> <span class="p">{</span>
+   <span class="n">URI</span> <span class="kt">string</span> <span class="s">`json:"link"`</span>
+   <span class="n">Type</span> <span class="kt">string</span> <span class="s">`json:"type"`</span>
+<span class="p">}</span>
+
+<span class="k">var</span> <span class="n">feeds</span> <span class="p">[]</span><span class="o">*</span><span class="n">Feed</span>
+<span class="n">err</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">NewDecoder</span><span class="p">(</span><span class="n">file</span><span class="p">)</span><span class="o">.</span><span class="n">Decode</span><span class="p">(</span><span class="o">&amp;</span><span class="n">feeds</span><span class="p">)</span>
+
+<span class="n">u</span> <span class="o">:=</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="n">Name</span> <span class="kt">string</span>
+    <span class="n">Email</span> <span class="kt">string</span>
+<span class="p">}{</span>
+    <span class="n">Name</span><span class="o">:</span> <span class="s">"Bill"</span><span class="p">,</span>
+    <span class="n">Email</span><span class="o">:</span> <span class="s">"bill@ardanstudios.com"</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">json</span><span class="o">.</span><span class="n">NewEncoder</span><span class="p">(</span><span class="n">rw</span><span class="p">)</span><span class="o">.</span><span class="n">Encode</span><span class="p">(</span><span class="o">&amp;</span><span class="n">u</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c">// The encoding/json package and similar packages ignore unexported fields (lower case fields)</span>
+<span class="n">m</span> <span class="o">:=</span> <span class="n">Message</span><span class="p">{</span><span class="s">"Alice"</span><span class="p">,</span> <span class="s">"Hello"</span><span class="p">,</span> <span class="m">1294706395881547000</span><span class="p">}</span>
+
+<span class="n">b</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">json</span><span class="o">.</span><span class="n">Marshal</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">// We must first create a place where the decoded data will be stored</span>
+<span class="k">var</span> <span class="n">m</span> <span class="n">Message</span>
+
+<span class="c">// call json.Unmarshal, passing it a []byte of JSON data and a pointer to m</span>
+<span class="n">err</span> <span class="o">:=</span> <span class="n">json</span><span class="o">.</span><span class="n">Unmarshal</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="references">References</h2>
+
+<p>https://blog.golang.org/json</p>
 
                 </div>
             </main>
-        </div></div><footer class="site-footer h-card">
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#json">JSON</a>
+    <ul>
+      <li><a href="#references">References</a></li>
+    </ul>
+  </li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
   <data class="u-url" href="/documents/"></data>
 
   <div class="wrapper">

@@ -2,21 +2,42 @@
 <html lang="en">
 
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>LFMUNOZ | articles, notes, and references</title>
+<title>Linux | LFMUNOZ</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="LFMUNOZ" />
+<meta property="og:title" content="Linux" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="articles, notes, and references" />
 <meta property="og:description" content="articles, notes, and references" />
-<link rel="canonical" href="lfmunoz.github.io/documents/404.html" />
-<meta property="og:url" content="lfmunoz.github.io/documents/404.html" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/Linux/Introduction.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/Linux/Introduction.html" />
 <meta property="og:site_name" content="LFMUNOZ" />
 <script type="application/ld+json">
-{"@type":"WebPage","headline":"LFMUNOZ","url":"lfmunoz.github.io/documents/404.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+{"@type":"WebPage","headline":"Linux","url":"lfmunoz.github.io/documents/books/Linux/Introduction.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
 <body><header class="site-header" role="banner">
@@ -169,30 +190,123 @@
 </div><div class="column-main">
             <main class="page-content" aria-label="Content">
                 <div class="wrapper">
-                    <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+                    <h1 id="linux">Linux</h1>
 
-<div class="container">
-  <h1>404</h1>
+<ul>
+  <li><a href="Commands.html">Commands</a>
+    <ul>
+      <li>tar</li>
+      <li>grep, find, xarg</li>
+      <li>sed, awk, less</li>
+      <li>tmux</li>
+      <li>od, hd, hexdump, xxd</li>
+    </ul>
+  </li>
+  <li><a href="NetworkCommands.html">Networking Commands</a>
+    <ul>
+      <li>nc, tcpdump, ufw, cURL</li>
+    </ul>
+  </li>
+  <li><a href="GDB.html">GDB</a></li>
+  <li>
+    <p><a href="eBPF.html">eBPF</a></p>
+  </li>
+  <li><a href="UniversalFileIO.html">Universal File I/O</a></li>
+  <li><a href="Processes.html">Processes</a>
+    <ul>
+      <li>program layout, elf</li>
+      <li>/proc/PID</li>
+      <li>process creation</li>
+      <li>process credentials</li>
+    </ul>
+  </li>
+  <li><a href="SystemCall.html">System Calls</a></li>
+  <li><a href="Permissions.html">Permissions</a>
+    <ul>
+      <li>chmod</li>
+      <li>users and groups, /etc/passwd</li>
+    </ul>
+  </li>
+  <li><a href="IPC.html">Inter-process communication</a>
+    <ul>
+      <li>POSIX shared memory</li>
+    </ul>
+  </li>
+  <li><a href="Manual.html">man pages</a></li>
+</ul>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+<h1 id="learning">Learning</h1>
+
+<ul>
+  <li>Understanding glibc malloc
+    <ul>
+      <li>https://sploitfun.wordpress.com/2015/02/10/understanding-glibc-malloc/</li>
+    </ul>
+  </li>
+  <li>Hw
+    <ul>
+      <li>lstopo</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="resources">Resources</h2>
+
+<ul>
+  <li>Linux Source Code
+    <ul>
+      <li><a href="https://elixir.bootlin.com/linux/v5.9.9/source/">https://elixir.bootlin.com/linux/v5.9.9/source/</a></li>
+    </ul>
+  </li>
+  <li>Collection of lectures and labs  on the Linux kernel
+    <ul>
+      <li><a href="https://linux-kernel-labs.github.io/refs/heads/master/lectures/intro.html">https://linux-kernel-labs.github.io/refs/heads/master/lectures/intro.html</a></li>
+    </ul>
+  </li>
+  <li>
+    <p>https://0xax.gitbooks.io/linux-insides/content/</p>
+  </li>
+  <li>
+    <p>https://www.gnu.org/software/libc/</p>
+  </li>
+  <li>https://tldp.org/LDP/tlk/mm/memory.html</li>
+</ul>
+
+<h2 id="books">Books</h2>
+
+<p><strong>The Linux Programming Interface</strong> <br />
+Michael Kerrisk <br />
+No Starch Press 2010 <br />
+ISBN 978-1-59327-220-3</p>
+
+<p>https://man7.org/tlpi/index.html</p>
+
+<p><strong>Advanced Programming in the UNIX Environment, 3rd Edition</strong>  <br />
+W. Richard Stevens and Stephen A. Rago <br />
+Addison-Wesley 2013 <br />
+ISBN 978-0-321-63773-4</p>
+
+<p><strong>Understanding the Linux Kernel 3rd Editon</strong> <br />
+Covers Version 2.6 <br />
+Daniel P. Bovet and Marco Cesati <br />
+O’Reilly Media November 2005 <br />
+ISBN-13: 978-0-596-00565-8</p>
+
 
                 </div>
             </main>
-        </div></div><footer class="site-footer h-card">
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#linux">Linux</a></li>
+  <li><a href="#learning">Learning</a>
+    <ul>
+      <li><a href="#resources">Resources</a></li>
+      <li><a href="#books">Books</a></li>
+    </ul>
+  </li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
   <data class="u-url" href="/documents/"></data>
 
   <div class="wrapper">

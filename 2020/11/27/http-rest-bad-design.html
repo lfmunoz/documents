@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>RESTful HTTP creates coupling | LFMUNOZ</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="RESTful HTTP creates coupling" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Imagine your requirements for a design wasn’t to support some RPC technology but instead it was support all RPC technologies. This may seem like a lot of unnecessary work to some, but I would say it takes similar effort to at least support the possibility and it follows the principle of Design For Change. I will pick a technology but at the same time I am also designing it like I’m going to change to another ( HTTP, gRPC, WebSocket, Kafka, AMPQ, STOMP, etc). When there is no coupling it doesn’t make a difference how the data is arriving." />
+<meta property="og:description" content="Imagine your requirements for a design wasn’t to support some RPC technology but instead it was support all RPC technologies. This may seem like a lot of unnecessary work to some, but I would say it takes similar effort to at least support the possibility and it follows the principle of Design For Change. I will pick a technology but at the same time I am also designing it like I’m going to change to another ( HTTP, gRPC, WebSocket, Kafka, AMPQ, STOMP, etc). When there is no coupling it doesn’t make a difference how the data is arriving." />
+<link rel="canonical" href="lfmunoz.github.io/documents/2020/11/27/http-rest-bad-design.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/2020/11/27/http-rest-bad-design.html" />
+<meta property="og:site_name" content="LFMUNOZ" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-11-27T00:00:00+00:00" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","headline":"RESTful HTTP creates coupling","dateModified":"2020-11-27T00:00:00+00:00","datePublished":"2020-11-27T00:00:00+00:00","url":"lfmunoz.github.io/documents/2020/11/27/http-rest-bad-design.html","mainEntityOfPage":{"@type":"WebPage","@id":"lfmunoz.github.io/documents/2020/11/27/http-rest-bad-design.html"},"description":"Imagine your requirements for a design wasn’t to support some RPC technology but instead it was support all RPC technologies. This may seem like a lot of unnecessary work to some, but I would say it takes similar effort to at least support the possibility and it follows the principle of Design For Change. I will pick a technology but at the same time I am also designing it like I’m going to change to another ( HTTP, gRPC, WebSocket, Kafka, AMPQ, STOMP, etc). When there is no coupling it doesn’t make a difference how the data is arriving.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
+<body><header class="site-header" role="banner">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2YJDWQX6GK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-2YJDWQX6GK');
+  </script>
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/documents/">LFMUNOZ</a><nav class="site-nav">
+      <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+      <label for="nav-trigger">
+        <span class="menu-icon">
+          <svg viewBox="0 0 18 15" width="18px" height="15px">
+            <path
+              d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+          </svg>
+        </span>
+      </label>
+
+      <div class="trigger"><a class="page-link" href="/documents/about/">About</a></div>
+    </nav></div>
+</header><div class="main"><div class="column-sidebar">
+
+    <div class="nav-section">
+        <div class="nav-title">Posts</div><div class="post-container"><a class="post-link" href="/documents/2020/12/17/i-wish-i-was-worse.html"> I wish I was worse at dancing</a>
+            <span class="post-meta">Dec 17, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/12/13/too-many-options.html"> Too many options slows production</a>
+            <span class="post-meta">Dec 13, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/12/06/dream-cats-and-dogs.html"> A dream of dogs and cats</a>
+            <span class="post-meta">Dec 6, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/11/27/http-rest-bad-design.html"> RESTful HTTP creates coupling</a>
+            <span class="post-meta">Nov 27, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/08/01/organization-and-structure.html"> Organization and Structure of Applications</a>
+            <span class="post-meta">Aug 1, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/07/12/listening-to-music.html"> Listening to Music</a>
+            <span class="post-meta">Jul 12, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/07/05/frameworks.html"> Frameworks and Libraries</a>
+            <span class="post-meta">Jul 5, 2020</span>
+        </div><p class="rss-subscribe">subscribe <a href="/documents/feed.xml">via RSS</a></p>
+    </div>
+
+    <div class="nav-section">
+        <div class="nav-title">Guides</div>
+        <ul>
+            
+            <li>
+                <strong> Computer Science</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/Algorithms/Introduction.html">Algorithms</a></li>
+                    
+                    <li><a href="/documents/articles/SoftwareEngineering.html">Software Engineering</a></li>
+                    
+                    <li><a href="/documents/books/DesignPatterns.html">Design Patterns</a></li>
+                    
+                    <li><a href="/documents/books/Linux/Introduction.html">Linux</a></li>
+                    
+                    <li><a href="/documents/books/Databases/Introduction.html">Databases</a></li>
+                    
+                    <li><a href="/documents/books/SoftwareEngineering/Concurrency.html">Concurrency</a></li>
+                    
+                    <li><a href="/documents/books/Security/Introduction.html">Security</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Programming Languages</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/C/Introduction.html">C</a></li>
+                    
+                    <li><a href="/documents/books/Cpp/Introduction.html">C++</a></li>
+                    
+                    <li><a href="/documents/books/Rust/Introduction.html">Rust</a></li>
+                    
+                    <li><a href="/documents/books/Go/Introduction.html">Go</a></li>
+                    
+                    <li><a href="/documents/books/Java/Introduction.html">Java</a></li>
+                    
+                    <li><a href="/documents/books/Kotlin/Introduction.html">Kotlin</a></li>
+                    
+                    <li><a href="/documents/lang/Python/Introduction.html">Python</a></li>
+                    
+                    <li><a href="/documents/lang/Bash/Introduction.html">Bash</a></li>
+                    
+                    <li><a href="/documents/books/Make/Introduction.html">Makefile</a></li>
+                    
+                    <li><a href="/documents/lang/SQL/Introduction.html">SQL</a></li>
+                    
+                    <li><a href="/documents/lang/HTML/Introduction.html">HTML</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Technologies</strong>
+                <ul>
+                    
+                    <li><a href="/documents/tech/Android/Introduction.html">Android</a></li>
+                    
+                    <li><a href="/documents/books/Docker/Introduction.html">Docker</a></li>
+                    
+                    <li><a href="/documents/books/Envoy/Introduction.html">Envoy</a></li>
+                    
+                    <li><a href="/documents/books/Terraform/Introduction.html">Terraform</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Mathematics</strong>
+                <ul>
+                    
+                    <li><a href="/documents/mathematics/Foundations.html">Foundations</a></li>
+                    
+                    <li><a href="/documents/books/Logic/Introduction.html">Logic</a></li>
+                    
+                    <li><a href="/documents/books/SetTheory/Introduction.html">Set Theory</a></li>
+                    
+                    <li><a href="/documents/books/Geometry/Introduction.html">Geometry</a></li>
+                    
+                    <li><a href="/documents/books/Analysis/Introduction.html">Analysis</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Miscellaneous</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/Non-Duality/Introduction.html">Non-Duality</a></li>
+                    
+                </ul>
+            </li>
+
+            
+        </ul>
+    </div>
+
+
+</div><div class="column-main">
+            <main class="page-content" aria-label="Content">
+                <div class="wrapper">
+                    <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">RESTful HTTP creates coupling</h1>
+  </header>
+
+  <div class="post-content">
+    <p>Imagine your requirements for a design wasn’t to support some RPC technology but instead it was support all RPC technologies. This may seem like a lot of unnecessary work to some, but I would say it takes similar effort to at least support the possibility and it follows the principle of <strong>Design For Change</strong>. I will pick a technology but at the same time I am also designing it like I’m going to change to another ( HTTP, gRPC, WebSocket, Kafka, AMPQ, STOMP, etc). When there is no coupling it doesn’t make a difference how the data is arriving.</p>
+
+<p>The problem is that technologies will tilt you into coupling your code. For example HTTP REST wants you to split your data into a header and body payload:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DELETE /api/appSpecific/{id}
+   +                      +
+   |                      |
+   |                      +-----+ http specific header causes 
+   +----------------------------+  coupling and redundancy
+{
+  object payload...    
+}
+</code></pre></div></div>
+
+<p>Data objects will often need the Id embedded into the object and other RPC technologies will not have this split. It is fine to make the decision that the application is going to use HTTP and that changing it will be a complete re-write but my point is this is often poor design. A better approach is to layer it like this:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP Generic Packet -&gt; MyAppDTO -&gt; Application Code
+GRPC Generic Packet -&gt; MyAppDTO -&gt; Application Code
+Kafka Generic Packet -&gt; MyAppDTO -&gt; Application Code
+</code></pre></div></div>
+
+<p>Often, people see code layered like this and it doesn’t look clean because:</p>
+
+<ul>
+  <li>A) They have no experience in having gone through a re-write. For example I’ve had to refactor applications from RabbitMQ to KAFKA and from HTTP to WebSockets.</li>
+  <li>B) They’re used to seeing example code from all these projects doing what I am suggesting not to do. These programmers often don’t write many applications using competing technologies.</li>
+</ul>
+
+<p>Looking at a typical gRPC designs you see:</p>
+
+<div class="language-protobuf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Naive implementation (beginner design)</span>
+<span class="kd">service</span> <span class="n">Greeter</span> <span class="p">{</span>
+    <span class="c1">// Sends a greeting</span>
+    <span class="k">rpc</span> <span class="n">SayHello</span> <span class="p">(</span><span class="n">HelloRequest</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">HelloReply</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+
+<span class="c1">// Intermediate implementation decouples what objects you send</span>
+<span class="kd">service</span> <span class="n">GRPC</span> <span class="p">{</span>
+    <span class="k">rpc</span> <span class="n">grpc</span><span class="p">(</span><span class="n">RpcRequest</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">RpcResponse</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+
+<span class="c1">// Advanced implementation additionally decouples serialization</span>
+<span class="kd">service</span> <span class="n">GRPC</span> <span class="p">{</span>
+    <span class="k">rpc</span> <span class="n">grpc</span><span class="p">(</span><span class="kt">bytes</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="kt">bytes</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Many libraries will want you to register your serializer with their implementations or worse
+specify a serializer for each object type. Avoid this feature, don’t allow the frameworks to wrap their tentacles around your code. If you do it generically it will work with any library.</p>
+
+<p>Let’s look at Kafka, you will often see:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Naive implementation</span>
+<span class="n">props</span><span class="o">.</span><span class="na">setProperty</span><span class="o">(</span><span class="s">"key.deserializer"</span><span class="o">,</span> <span class="s">"MyObjectSerializer"</span><span class="o">);</span> <span class="c1">// not generic  (coupled)</span>
+<span class="n">props</span><span class="o">.</span><span class="na">setProperty</span><span class="o">(</span><span class="s">"value.deserializer"</span><span class="o">,</span> <span class="s">"MyKeySerializer"</span><span class="o">);</span> <span class="c1">// not generic (cohesion)</span>
+<span class="nc">KafkaConsumer</span><span class="o">&lt;</span><span class="nc">MyAppObjectKey</span><span class="o">,</span> <span class="nc">MyAppObjectValue</span><span class="o">&gt;</span> <span class="n">consumer</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">KafkaConsumer</span><span class="o">&lt;&gt;(</span><span class="n">props</span><span class="o">);</span>
+
+<span class="c1">// Design for change implementation</span>
+<span class="n">props</span><span class="o">.</span><span class="na">setProperty</span><span class="o">(</span><span class="s">"key.deserializer"</span><span class="o">,</span> <span class="s">"ByteArraySerializer"</span><span class="o">);</span> <span class="c1">// generic</span>
+<span class="n">props</span><span class="o">.</span><span class="na">setProperty</span><span class="o">(</span><span class="s">"value.deserializer"</span><span class="o">,</span> <span class="s">"ByteArraySerializer"</span><span class="o">);</span>  <span class="c1">// generic</span>
+<span class="nc">KafkaConsumer</span><span class="o">&lt;</span><span class="nc">ByteArray</span><span class="o">,</span> <span class="nc">ByteArray</span><span class="o">&gt;(</span><span class="n">props</span><span class="o">)</span>
+</code></pre></div></div>
+
+<p>The naive implementations don’t clearly separate out the applications objects from the input and output implementations. This means you cannot easily switch between them. If you simply create a intermediate object, there is hard separation. In Kafka this would look like this:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Kafka specific intermediate container object</span>
+<span class="kd">data class</span> <span class="nc">KafkaMessage</span> <span class="p">(</span>
+    <span class="kd">val</span> <span class="py">key</span><span class="p">:</span> <span class="nc">ByteArray</span><span class="p">,</span>
+    <span class="kd">val</span> <span class="py">value</span><span class="p">:</span> <span class="nc">ByteArray</span><span class="p">,</span>
+    <span class="kd">val</span> <span class="py">headers</span><span class="p">:</span> <span class="nc">MutableMap</span><span class="p">&lt;</span><span class="nc">String</span><span class="p">,</span> <span class="nc">ByteArray</span><span class="p">&gt;</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">data class</span> <span class="nc">SomeAppSpecificDomainObject</span><span class="p">(</span>
+    <span class="kd">val</span> <span class="py">id</span><span class="p">:</span> <span class="nc">String</span> <span class="p">=</span> <span class="s">""</span><span class="p">,</span>
+    <span class="kd">val</span> <span class="py">meataData</span><span class="p">:</span> <span class="nc">String</span> <span class="p">=</span> <span class="s">""</span><span class="p">,</span>
+    <span class="kd">val</span> <span class="py">created</span><span class="p">:</span> <span class="nc">Instant</span> <span class="p">=</span> <span class="nc">Instant</span><span class="p">.</span><span class="nf">now</span><span class="p">()</span>
+<span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// domain object going to kafka</span>
+    <span class="k">fun</span> <span class="nf">toKafkaMessage</span><span class="p">()</span> <span class="p">:</span> <span class="nc">KafkaMessage</span> <span class="p">{</span>
+        <span class="kd">val</span> <span class="py">value</span> <span class="p">=</span> <span class="n">mapper</span><span class="p">.</span><span class="nf">writeAsByteArray</span><span class="p">(</span><span class="k">this</span><span class="p">)</span> 
+        <span class="kd">val</span> <span class="py">key</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="nf">toByteArray</span><span class="p">()</span>
+        <span class="k">return</span> <span class="nc">KafkaMessage</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="c1">// domain object going to gRpc</span>
+    <span class="k">fun</span> <span class="nf">toGrpcMessage</span><span class="p">()</span> <span class="p">{}</span>
+    <span class="c1">// domain object going to... it doesn't matter code will write itself</span>
+    <span class="k">fun</span> <span class="nf">toAnything</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span> 
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>There is clear decoupling in the application. I use domain objects but when doing input/output/rpc I simply convert to a specific messages container that is technology specific. When testing I verify the consumer and producers work but only care that I can send and receive KafkaMessages, what is inside of those messages doesn’t make a difference that is a different layer and a separate test. If I verify I can create a generic KafkaMessages out of my domain objects and I separately verify I can send KafkaMessage objects across the network then that is a verification for the full path, that is how managing complexity is done.</p>
+
+<p>Would you have Kafka tests for each topic? Why is that you see HTTP tests hitting every endpoint? With HTTP the container object looks something like this:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">data class</span> <span class="nc">HttRequest</span><span class="p">(</span>
+    <span class="kd">val</span> <span class="py">method</span><span class="p">:</span> <span class="nc">String</span> <span class="p">=</span> <span class="s">"POST"</span>
+    <span class="kd">val</span> <span class="py">body</span><span class="p">:</span> <span class="nc">String</span> <span class="p">=</span> <span class="s">"some payload"</span><span class="p">,</span>
+    <span class="kd">val</span> <span class="py">headers</span><span class="p">:</span> <span class="nc">String</span> <span class="p">=</span> <span class="s">"cookies, and tokens"</span>
+    <span class="kd">val</span> <span class="py">path</span><span class="p">:</span> <span class="nc">String</span> <span class="p">=</span> <span class="s">"/home/url/string"</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p>This is implicit and hidden in many frameworks which causes coupling. If you were to use explicit container objects with clear separations then you get malleable, verifiable, and readable code.</p>
+
+
+  </div>
+
+</article>
+                </div>
+            </main>
+        </div></div><footer class="site-footer h-card">
+  <data class="u-url" href="/documents/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">LFMUNOZ</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">LFMUNOZ</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/lfmunoz"><svg class="svg-icon"><use xlink:href="/documents/assets/minima-social-icons.svg#github"></use></svg> <span class="username">lfmunoz</span></a></li><li><a href="https://www.twitter.com/lfmunoz4"><svg class="svg-icon"><use xlink:href="/documents/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">lfmunoz4</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>articles, notes, and references</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

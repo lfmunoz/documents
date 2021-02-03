@@ -2,21 +2,42 @@
 <html lang="en">
 
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>LFMUNOZ | articles, notes, and references</title>
+<title>Logging | LFMUNOZ</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="LFMUNOZ" />
+<meta property="og:title" content="Logging" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="articles, notes, and references" />
 <meta property="og:description" content="articles, notes, and references" />
-<link rel="canonical" href="lfmunoz.github.io/documents/404.html" />
-<meta property="og:url" content="lfmunoz.github.io/documents/404.html" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/Kotlin/Logging.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/Kotlin/Logging.html" />
 <meta property="og:site_name" content="LFMUNOZ" />
 <script type="application/ld+json">
-{"@type":"WebPage","headline":"LFMUNOZ","url":"lfmunoz.github.io/documents/404.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+{"@type":"WebPage","headline":"Logging","url":"lfmunoz.github.io/documents/books/Kotlin/Logging.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
 <body><header class="site-header" role="banner">
@@ -169,30 +190,81 @@
 </div><div class="column-main">
             <main class="page-content" aria-label="Content">
                 <div class="wrapper">
-                    <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+                    <h1 id="logging">Logging</h1>
 
-<div class="container">
-  <h1>404</h1>
+<ul>
+  <li><a href="Introduction.html">The Java Programming Language</a></li>
+</ul>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#File: log4j.properties
+
+# Root logger option
+log4j.rootLogger=INFO, stdout
+
+# Direct log messages to stdout
+log4j.appender.stdout=org.apache.log4j.ConsoleAppender
+log4j.appender.stdout.Target=System.out
+log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
+log4j.appender.stdout.layout.ConversionPattern=%d{HH:mm:ss.SSS}[%-5p][%thread][%c{36}:%L] - %m%n
+
+log4j.logger.akka=INFO
+log4j.logger.org.apache.kafka=INFO
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;configuration&gt;
+
+  &lt;appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender"&gt;
+    &lt;!-- encoders are assigned the type
+         ch.qos.logback.classic.encoder.PatternLayoutEncoder by default --&gt;
+    &lt;encoder&gt;
+      &lt;pattern&gt;%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n&lt;/pattern&gt;
+    &lt;/encoder&gt;
+  &lt;/appender&gt;
+
+  &lt;logger name="org.apache.flink.runtime.jobgraph.JobGraph" level="DEBUG"/&gt;
+
+  &lt;root level="debug"&gt;
+    &lt;appender-ref ref="STDOUT" /&gt;
+  &lt;/root&gt;
+&lt;/configuration&gt;
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>slf4jVersion=1.7.30
+slf4jFluentVersion=0.13.3
+
+val slf4jFluentVersion: String by project
+val logbackClassicVersion: String by project
+
+// LOGGING
+implementation("org.fissore:slf4j-fluent:$slf4jFluentVersion")
+
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+
+
+val log = FluentLoggerFactory.getLogger(KafkaPublisherImpl::class.java)
+log.info().log("Starting GenericKafkaFlinkJob...")
+log.info().log("[Configuration] - $config")
+</code></pre></div></div>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kn">import</span> <span class="nn">org.fissore.slf4j.FluentLogger</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.fissore.slf4j.FluentLoggerFactory</span><span class="o">;</span>
+
+<span class="kd">private</span> <span class="kd">static</span> <span class="nc">FluentLogger</span> <span class="n">log</span> <span class="o">=</span> <span class="nc">FluentLoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="s">"ConvertService"</span><span class="o">);</span>
+
+  <span class="n">log</span><span class="o">.</span><span class="na">debug</span><span class="o">().</span><span class="na">log</span><span class="o">(</span><span class="s">"parse_keyword "</span> <span class="o">+</span> <span class="n">it</span><span class="o">.</span><span class="na">current</span><span class="o">());</span>
+</code></pre></div></div>
 
                 </div>
             </main>
-        </div></div><footer class="site-footer h-card">
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#logging">Logging</a></li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
   <data class="u-url" href="/documents/"></data>
 
   <div class="wrapper">

@@ -2,21 +2,42 @@
 <html lang="en">
 
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>LFMUNOZ | articles, notes, and references</title>
+<title>Analysis | LFMUNOZ</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="LFMUNOZ" />
+<meta property="og:title" content="Analysis" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="articles, notes, and references" />
 <meta property="og:description" content="articles, notes, and references" />
-<link rel="canonical" href="lfmunoz.github.io/documents/404.html" />
-<meta property="og:url" content="lfmunoz.github.io/documents/404.html" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/Analysis/RealNumbers.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/Analysis/RealNumbers.html" />
 <meta property="og:site_name" content="LFMUNOZ" />
 <script type="application/ld+json">
-{"@type":"WebPage","headline":"LFMUNOZ","url":"lfmunoz.github.io/documents/404.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+{"@type":"WebPage","headline":"Analysis","url":"lfmunoz.github.io/documents/books/Analysis/RealNumbers.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
 <body><header class="site-header" role="banner">
@@ -169,30 +190,173 @@
 </div><div class="column-main">
             <main class="page-content" aria-label="Content">
                 <div class="wrapper">
-                    <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+                    <h1 id="real-numbers">Real Numbers</h1>
 
-<div class="container">
-  <h1>404</h1>
+<ul>
+  <li><a href="Introduction.html">Analysis</a></li>
+</ul>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
+<h2 id="order">Order</h2>
+
+<div class="definition">
+  <p><strong>Definition:</strong> Order</p>
+
+  <p>Let S be a set. An <strong>order</strong> on S is a relation, denoted by &lt;, with the following two properties:</p>
+
+  <p><strong>i. Trichotomy</strong> If $x,y \in S$ then exactly one of these is true (x &lt; y) or (x &gt; y) or (x = y)</p>
+
+  <p><strong>ii. Transitivity</strong> If $x,y,z \in S$ and if (x &lt; y) and (y &lt; z) then (x &lt; z).</p>
+
 </div>
+
+<p>If you have an <strong>order</strong> on S then you have an <strong>ordered set</strong>.</p>
+
+<h2 id="upper-bound">Upper Bound</h2>
+
+<div class="definition">
+  <p><strong>Definition:</strong> Say $E \subset S$ ordered. If there exists $\beta \in S$ (beta for bound) s.t. for all $x \in E$ we have $x \leq \beta$ we call $\beta$ an upper bound for E, and we say E is <strong>bounded above</strong>.</p>
+
+</div>
+
+<p>i.e., S can be $\mathbb{Q}$, E can be the interval [0,1], then $\beta$ is a number like 10, or 2. What we are asking: Is there a number that is bigger than everything? Yes, then we call that an upper bound. It is saying that the subset E of S, has a largest number, the sequence ends.</p>
+
+<p>Idea of lower bound, just replace $\leq$ by $\geq$.</p>
+
+<p>An <strong>uppper bound</strong> is a number that is bigger than everything in the set. The bigger number doesn’t have to be in the set but notice the less than or equal to, so it can be equal to the largest number in the set.</p>
+
+<h2 id="least-upper-bound">Least Upper Bound</h2>
+
+<div class="definition">
+  <p><strong>Definition:</strong>  Suppose S is an ordered set, $E \subset S$, and E is bounded above. If there exists $\alpha \in S$ s.t.</p>
+
+  <p><strong>i.</strong> $\alpha$ is an upper bound of E,</p>
+
+  <p><strong>ii.</strong> if $\gamma &lt; \alpha $ then $\gamma$ is not an upper bound for E.</p>
+
+  <p>Then $\alpha$ is called the <strong>least upper bound</strong> of E or <strong>supremum</strong> of E. we write</p>
+
+\[\alpha = \sup E.\]
+
+</div>
+
+<p>The supremum is the least biggest thing. I think for this definition to make sense gamma must be in E?</p>
+
+<p><strong>Example:</strong> If $ E = \{ \frac{1}{2}, 1, 2 \}$ then sup E = 2.</p>
+
+<p>We justify this by noticing that 2 is an upper bound of E, because it is the largest number in the set. It is the least upper bound because suppose there was an upper bound less than 2, call it $\gamma$ well then $\gamma$ wouldn’t be bigger than 2 and therefore it isn’t an upper bound for that set.</p>
+
+<h2 id="least-upper-bound-property">Least-Upper-Bound Property</h2>
+
+<div class="definition">
+  <p><strong>Theorem:</strong> Suppose S is an ordered set with the <strong>least-upper-bound property</strong>, $B \subset S$, B is not empty, and B is bounded below. Let L be the set of all lower bounds of B. Then</p>
+
+\[\alpha = \sup L\]
+
+  <p>exists in S, and $\alpha = \inf B$. In particular $\inf B$ exists in S.</p>
+</div>
+
+<div class="definition">
+  <p><strong>Theorem:</strong> A set S has the <strong>least-upper-bound property</strong> (satisfies the compleness axiom) if every nonempty subset of S that has an <strong>upper bound</strong> also has a <strong>least-upper-bound</strong> in S.</p>
+</div>
+
+<h1 id="construction-of-real-numbers">Construction of Real Numbers</h1>
+
+<p>How do we fill the holes in the number line? For example we have a length which we call $\sqrt{2}$, that doesn’t exists in the rationals, it leaves a hole. I want to fill all the wholes but I don’t even know where all the holes are at. What can do I?</p>
+
+<p>Consider:</p>
+
+\[A = \{ x \in \mathbb{Q} | x^2 &lt; 2 \}\]
+
+<p>The problem is that there is nothign at the edge but I wish there were because that is were one of our holes is at. This points to an idea that is called a least upper bound.</p>
+
+<div class="definition">
+  <p><strong><em>Theorem</em>:</strong> $\mathbb{R}$ is an ordered field, with the least upper-bound-property and $\mathbb{R}$ contains $\mathbb{Q}$ as a subfield.</p>
+
+</div>
+
+<div class="definition">
+  <p><strong>Dedekind:</strong> A cut $\alpha$ is a subset of $\mathbb{Q}$, s.t.</p>
+
+  <p><strong>i.</strong> $\alpha \neq \emptyset, \mathbb{Q} $ (not empty and also not the entire thing, cut is not trivial)</p>
+
+  <p><strong>ii.</strong> If $p \in \alpha$, $q \in \mathbb{Q}$ and q &lt; p, then $q \in \alpha$ (closed downward, or closed to the left)</p>
+
+  <p><strong>iii.</strong> If $p \in \alpha$ then p &lt; r for some $r \in \alpha$ (there is no largest number, there is something to the right of p that is also in $\alpha$)</p>
+
+</div>
+
+<p>ii. implies two facts which we will use freely: <br />
+If $p \in \alpha$ and $q \notin \alpha$ then p &lt; q. <br />
+If $r \notin \alpha$ and r &lt; s the $s \notin \alpha.$ \</p>
+
+<p>Let $\mathbb{R} \equiv \{ \alpha | \alpha \text{ is a cut} \}$</p>
+
+<p>what is the cut of 1? All the rationals to the left of 1. What is the cut for square of 2, all the rationals to the left of 2.</p>
+
+<p>Define: order  $\alpha &lt; \beta$, means $\alpha \subset \beta$ and $\alpha \neq \beta$. Properly contained. (where $\alpha$ and $\beta$ are two cuts.)</p>
+
+<p>Check order, Trichotomy and Transitivity</p>
+
+<p>Addition define $\alpha + \beta \equiv { r + s | r \in \alpha \text{ and } s \in \beta }$</p>
+
+<p>check that it is a cut. nontrivial, closed to the left, no largest number</p>
+
+<p>show axioms A1-A5. field.</p>
+
+<p>Also $\mathbb{R}$ contains $\mathbb{Q}$ as a subfield. Associates to $q \in \mathbb{Q}$ the cut $\q* = { r \in Q: r &lt; q }$</p>
+
+<h1 id="summary">Summary</h1>
+
+<p>$\mathbb{Q}$ has gaps, not every bounded set has a supremum. Think of the $\sqrt{2}$, there is no rational that is at that gap, but many rationals approach that number. Doesn’t have the least-upperbound-property.</p>
+
+<p>This leads to the idea of dedekind cut. The real numbers is just the set of all cuts.</p>
+
+<p>Defiend order by inclusion, if one cut was inside another then it was smaller.</p>
+
+<p>Defiend arithmetic which includes operations + and $\times$.</p>
+
+<p>Also R contains Q as a subfield.</p>
+
+<p>Associate to $q \in Q$ the cut $q* = { r \in Q : r &lt; q }$.</p>
+
+<p>Note the length “$\sqrt{2}$” sits in R as ${ q : q^2 &lt; 2 <del>\text{or}</del> q &lt; 0 }$.</p>
+
+<p>=== Consequences of Least-Upper-Bound Property ===</p>
+
+<p>Archimedian property of the real numbers.</p>
+
+<p>If $x,y \in R$, x &gt; 0, then  $\exists$ positive integer n s.t nx &gt; y.</p>
+
+<h2 id="dedekind-cuts-criticism">Dedekind cuts criticism</h2>
+
+<p>In mathematics often there is something that works. It may not be understood deeply enough why it works. Someone offers an explanation
+but some people find it flawed but at least it is some explanation.</p>
+
+<p>Some people disagree that Dedekind cuts are valid it doesn’t matter because maybe there isn’t some other better formulation
+which is more accurate or makes more sense, but that doesn’t mean what Dedekind cuts are trying to do isn’t valid.</p>
+
 
                 </div>
             </main>
-        </div></div><footer class="site-footer h-card">
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#real-numbers">Real Numbers</a>
+    <ul>
+      <li><a href="#order">Order</a></li>
+      <li><a href="#upper-bound">Upper Bound</a></li>
+      <li><a href="#least-upper-bound">Least Upper Bound</a></li>
+      <li><a href="#least-upper-bound-property">Least-Upper-Bound Property</a></li>
+    </ul>
+  </li>
+  <li><a href="#construction-of-real-numbers">Construction of Real Numbers</a></li>
+  <li><a href="#summary">Summary</a>
+    <ul>
+      <li><a href="#dedekind-cuts-criticism">Dedekind cuts criticism</a></li>
+    </ul>
+  </li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
   <data class="u-url" href="/documents/"></data>
 
   <div class="wrapper">

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Concurrency | LFMUNOZ</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Concurrency" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="articles, notes, and references" />
+<meta property="og:description" content="articles, notes, and references" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/SoftwareEngineering/Concurrency.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/SoftwareEngineering/Concurrency.html" />
+<meta property="og:site_name" content="LFMUNOZ" />
+<script type="application/ld+json">
+{"@type":"WebPage","headline":"Concurrency","url":"lfmunoz.github.io/documents/books/SoftwareEngineering/Concurrency.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
+<body><header class="site-header" role="banner">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2YJDWQX6GK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-2YJDWQX6GK');
+  </script>
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/documents/">LFMUNOZ</a><nav class="site-nav">
+      <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+      <label for="nav-trigger">
+        <span class="menu-icon">
+          <svg viewBox="0 0 18 15" width="18px" height="15px">
+            <path
+              d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+          </svg>
+        </span>
+      </label>
+
+      <div class="trigger"><a class="page-link" href="/documents/about/">About</a></div>
+    </nav></div>
+</header><div class="main"><div class="column-sidebar">
+
+    <div class="nav-section">
+        <div class="nav-title">Posts</div><div class="post-container"><a class="post-link" href="/documents/2020/12/17/i-wish-i-was-worse.html"> I wish I was worse at dancing</a>
+            <span class="post-meta">Dec 17, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/12/13/too-many-options.html"> Too many options slows production</a>
+            <span class="post-meta">Dec 13, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/12/06/dream-cats-and-dogs.html"> A dream of dogs and cats</a>
+            <span class="post-meta">Dec 6, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/11/27/http-rest-bad-design.html"> RESTful HTTP creates coupling</a>
+            <span class="post-meta">Nov 27, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/08/01/organization-and-structure.html"> Organization and Structure of Applications</a>
+            <span class="post-meta">Aug 1, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/07/12/listening-to-music.html"> Listening to Music</a>
+            <span class="post-meta">Jul 12, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/07/05/frameworks.html"> Frameworks and Libraries</a>
+            <span class="post-meta">Jul 5, 2020</span>
+        </div><p class="rss-subscribe">subscribe <a href="/documents/feed.xml">via RSS</a></p>
+    </div>
+
+    <div class="nav-section">
+        <div class="nav-title">Guides</div>
+        <ul>
+            
+            <li>
+                <strong> Computer Science</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/Algorithms/Introduction.html">Algorithms</a></li>
+                    
+                    <li><a href="/documents/articles/SoftwareEngineering.html">Software Engineering</a></li>
+                    
+                    <li><a href="/documents/books/DesignPatterns.html">Design Patterns</a></li>
+                    
+                    <li><a href="/documents/books/Linux/Introduction.html">Linux</a></li>
+                    
+                    <li><a href="/documents/books/Databases/Introduction.html">Databases</a></li>
+                    
+                    <li><a href="/documents/books/SoftwareEngineering/Concurrency.html">Concurrency</a></li>
+                    
+                    <li><a href="/documents/books/Security/Introduction.html">Security</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Programming Languages</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/C/Introduction.html">C</a></li>
+                    
+                    <li><a href="/documents/books/Cpp/Introduction.html">C++</a></li>
+                    
+                    <li><a href="/documents/books/Rust/Introduction.html">Rust</a></li>
+                    
+                    <li><a href="/documents/books/Go/Introduction.html">Go</a></li>
+                    
+                    <li><a href="/documents/books/Java/Introduction.html">Java</a></li>
+                    
+                    <li><a href="/documents/books/Kotlin/Introduction.html">Kotlin</a></li>
+                    
+                    <li><a href="/documents/lang/Python/Introduction.html">Python</a></li>
+                    
+                    <li><a href="/documents/lang/Bash/Introduction.html">Bash</a></li>
+                    
+                    <li><a href="/documents/books/Make/Introduction.html">Makefile</a></li>
+                    
+                    <li><a href="/documents/lang/SQL/Introduction.html">SQL</a></li>
+                    
+                    <li><a href="/documents/lang/HTML/Introduction.html">HTML</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Technologies</strong>
+                <ul>
+                    
+                    <li><a href="/documents/tech/Android/Introduction.html">Android</a></li>
+                    
+                    <li><a href="/documents/books/Docker/Introduction.html">Docker</a></li>
+                    
+                    <li><a href="/documents/books/Envoy/Introduction.html">Envoy</a></li>
+                    
+                    <li><a href="/documents/books/Terraform/Introduction.html">Terraform</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Mathematics</strong>
+                <ul>
+                    
+                    <li><a href="/documents/mathematics/Foundations.html">Foundations</a></li>
+                    
+                    <li><a href="/documents/books/Logic/Introduction.html">Logic</a></li>
+                    
+                    <li><a href="/documents/books/SetTheory/Introduction.html">Set Theory</a></li>
+                    
+                    <li><a href="/documents/books/Geometry/Introduction.html">Geometry</a></li>
+                    
+                    <li><a href="/documents/books/Analysis/Introduction.html">Analysis</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Miscellaneous</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/Non-Duality/Introduction.html">Non-Duality</a></li>
+                    
+                </ul>
+            </li>
+
+            
+        </ul>
+    </div>
+
+
+</div><div class="column-main">
+            <main class="page-content" aria-label="Content">
+                <div class="wrapper">
+                    <h1 id="concurrency">Concurrency</h1>
+
+<p>The most important thing to understand is that a computer does NOT execute the program you wrote. That would be too slow, you didn’t mean to do that, so the compiler or processor or cache system will re-write it for you.</p>
+
+<p><strong>Important:</strong> Re-ordering can happen for many reasons (compiler, caching system, CPU pre-fetch) but it doesn’t matter, the end effect is re-ordering.</p>
+
+<p><strong>Sequential consistency</strong> : Executing the program you wrote. Defined in 1979 by Leslie Lamport as</p>
+
+<blockquote>
+  <p>The result of any execution is the same as if the operations of all the processors were executed in some sequential order and the operations of each individual processor appear in this sequence in the order specified by its program</p>
+</blockquote>
+
+<p>This means the execution order of a program in the same processor (or thread) is the same as the program order. The execution order of a program between processors (or threads) is undefined.</p>
+
+<p>Let’s explore the classic example of trying to modify a global variable from two different threads.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> thread 1:     [read incr write]  [read incr write]  [read incr write]
+ thread 2:       [read incr write]  [read incr write]  [read incr write]
+ Time   t: --------------------------------------------------------------------------------&gt;
+</code></pre></div></div>
+
+<details>
+<summary> <strong> cat concurrency.c </strong> </summary>
+
+<p>
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;pthread.h&gt;
+#include &lt;stdio.h&gt;
+</span>
+<span class="k">static</span> <span class="kt">int</span> <span class="n">glob</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="c1">// Loop 'arg' times incrementing 'glob'</span>
+<span class="cm">/*
+mov eax, counter
+inc eax
+mov counter, eax
+*/</span>
+<span class="k">static</span> <span class="kt">void</span> <span class="o">*</span><span class="nf">threadFuncIncGlob</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">arg</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">loops</span> <span class="o">=</span> <span class="mi">1000</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">*</span> <span class="mi">10</span><span class="p">;</span>  <span class="c1">// 1 million</span>
+    <span class="kt">int</span> <span class="n">loc</span><span class="p">,</span> <span class="n">j</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">loops</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">loc</span> <span class="o">=</span> <span class="n">glob</span><span class="p">;</span>
+        <span class="n">loc</span><span class="o">++</span><span class="p">;</span>
+        <span class="n">glob</span> <span class="o">=</span> <span class="n">loc</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*
+gcc -O0 concurrency.c -o concurrency.elf -pthread
+./concurrency.elf
+glob = 1017103
+*/</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">s</span><span class="p">;</span>
+    <span class="n">pthread_t</span> <span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">;</span>
+
+    <span class="n">s</span> <span class="o">=</span> <span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">t1</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="n">threadFuncIncGlob</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">s</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="n">printf</span><span class="p">(</span><span class="s">"pthread_create %d"</span><span class="p">,</span> <span class="n">s</span><span class="p">);</span>
+
+    <span class="n">s</span> <span class="o">=</span> <span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">t2</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="n">threadFuncIncGlob</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">s</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="n">printf</span><span class="p">(</span><span class="s">"pthread_create %d"</span><span class="p">,</span> <span class="n">s</span><span class="p">);</span>
+
+    <span class="n">s</span> <span class="o">=</span> <span class="n">pthread_join</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">s</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="n">printf</span><span class="p">(</span><span class="s">"pthread_join %d"</span><span class="p">,</span> <span class="n">s</span><span class="p">);</span>
+
+    <span class="n">s</span> <span class="o">=</span> <span class="n">pthread_join</span><span class="p">(</span><span class="n">t2</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">s</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="n">printf</span><span class="p">(</span><span class="s">"pthread_join %d"</span><span class="p">,</span> <span class="n">s</span><span class="p">);</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">"glob = %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">glob</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+</code></pre></div>    </div>
+  </p></details>
+
+<p>As the programmer you talk to the compiler through source code.</p>
+
+<p>What the compiler knows is all memory operations in this thread and exactly what they do including data dependencies.</p>
+
+<p>What the compiler doesn’t know is which memory locations are mutable shared variables which could change asynchronously due memory operations in another thread</p>
+
+<p>Solution: Tell it. Somehow identify the operations on mutable shared locations. This is why we use mutual exclusion and atomics.</p>
+
+<h2 id="mutual-exclusion-mutex">Mutual Exclusion (mutex)</h2>
+
+<p>Wouldn’t it be nice if you could mark all pieces of code that access data structures concurrency as mutually exclusive.</p>
+
+<p>Then if any thread was accessing a data structure and any other thread tried to access the same data structure it would have to wait until the first thread was finished.</p>
+
+<p>That would make it impossible for a thread to see a broken invariant except when it was the thread doing the modification.</p>
+
+<p>Before accessing a shared data structure, you lock the mutex associated with that data, and when you’ve finished accessing the data structure, you unlock the mutex.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">std</span><span class="o">::</span><span class="n">mutex</span>
+<span class="n">lock</span><span class="p">()</span> 
+<span class="n">unlock</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>The common advice for avoiding deadlock is to always lock the two mutexes in the
+same order: if you always lock mutex A before mutex B, then you’ll never deadlock.</p>
+
+<h1 id="understanding-re-ordering">Understanding re-ordering</h1>
+
+<p>In our current chip designs: the memory doesn’t get out of sync. That is, despite what you think about how memory is working, each core actually has a correct and accurate view of the memory at all times. If two cores happen to be accessing the same memory the CPU takes care of ensuring they are both working with the correct memory. This is something known as <strong>cache coherence</strong>.</p>
+
+<p>But we all know if we don’t use mutexes our program memory will become horribly corrupt. Something doesn’t seem right. So I should clarify. As far as the CPU is concerned it has a consistent view of the memory.</p>
+
+<p>When one core writes an integer to the cache, any other core which then reads from that location will get that new value.
+To be clear, a core will not read an outdated value from the memory cache.</p>
+
+<p>The moment you have larger data structures however things aren’t so simple.</p>
+
+<p>A sequence of atomic operations is not atomic itself.</p>
+
+<p>This is the first role which locks play. If the code in both threads uses a lock around these 4 bytes, the second core won’t read any of the data until you have finished copying all of it.</p>
+
+<p>To truly maximize the use of even the fastest cache, the CPU changes the order in which data is written and read from that cache.</p>
+
+<p>So while you may have written values 1,2,3 in sequence, the CPU could easily chose to write in the order 1,3,2 instead. If this happens the other thread might get the 3, but not the 2!</p>
+
+<p>This is why it’s actually not enough to just lock access to parts of memory, since the CPU could just reorder memory writes outside of that block.</p>
+
+<p>When a CPU encounters a fence it knows that all its reordering of loads and stores has to be complete before it passes the fence. 
+  This ensures that if two threads both use a fence, the second thread will see the complete set of written data and not just a part of it.</p>
+
+<p>They key to understanding the need for a mutex lies in the reordering of memory access and that lack atomicity in large data structures.</p>
+
+<p>Without CPU support there is no way to implement a mutex in user space: this operation must be atomic with respect to the other threads.</p>
+
+<p>If a system call does provide a full mutex, why would we bother with any test-and-set in userspace? The answer is that system calls have quite a bit of overhead and should be avoided when possible.</p>
+
+<p>Under Linux, there is a system call futex which provides mutex like semantics.</p>
+
+<h1 id="learning">Learning</h1>
+
+<ul>
+  <li>Great Overview of Concurrency</li>
+  <li>
+    <p><a href="https://www.youtube.com/watch?v=A8eCGOqgvH4">https://www.youtube.com/watch?v=A8eCGOqgvH4</a></p>
+  </li>
+  <li>
+    <p><a href="https://en.wikipedia.org/wiki/Consistency_model#Processor_consistency">https://en.wikipedia.org/wiki/Consistency_model#Processor_consistency</a></p>
+  </li>
+  <li>
+    <p>Leslie Lamport, “How to Make a Multiprocessor Computer That Correctly Executes Multiprocess Programs”, IEEE Trans. Comput. C-28,9 (Sept. 1979), 690-691.</p>
+  </li>
+  <li>Notes on structured concurrency, or: Go statement considered harmful
+<a href="https://vorpus.org/blog/notes-on-structured-concurrency-or-go-statement-considered-harmful/">https://vorpus.org/blog/notes-on-structured-concurrency-or-go-statement-considered-harmful/</a></li>
+</ul>
+
+<p>https://stackoverflow.com/questions/39393850/can-num-be-atomic-for-int-num</p>
+
+                </div>
+            </main>
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#concurrency">Concurrency</a>
+    <ul>
+      <li><a href="#mutual-exclusion-mutex">Mutual Exclusion (mutex)</a></li>
+    </ul>
+  </li>
+  <li><a href="#understanding-re-ordering">Understanding re-ordering</a></li>
+  <li><a href="#learning">Learning</a></li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
+  <data class="u-url" href="/documents/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">LFMUNOZ</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">LFMUNOZ</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/lfmunoz"><svg class="svg-icon"><use xlink:href="/documents/assets/minima-social-icons.svg#github"></use></svg> <span class="username">lfmunoz</span></a></li><li><a href="https://www.twitter.com/lfmunoz4"><svg class="svg-icon"><use xlink:href="/documents/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">lfmunoz4</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>articles, notes, and references</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

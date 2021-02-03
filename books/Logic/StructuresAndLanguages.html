@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Structures and Language | LFMUNOZ</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Structures and Language" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="articles, notes, and references" />
+<meta property="og:description" content="articles, notes, and references" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/Logic/StructuresAndLanguages.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/Logic/StructuresAndLanguages.html" />
+<meta property="og:site_name" content="LFMUNOZ" />
+<script type="application/ld+json">
+{"@type":"WebPage","headline":"Structures and Language","url":"lfmunoz.github.io/documents/books/Logic/StructuresAndLanguages.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
+<body><header class="site-header" role="banner">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2YJDWQX6GK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-2YJDWQX6GK');
+  </script>
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/documents/">LFMUNOZ</a><nav class="site-nav">
+      <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+      <label for="nav-trigger">
+        <span class="menu-icon">
+          <svg viewBox="0 0 18 15" width="18px" height="15px">
+            <path
+              d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+          </svg>
+        </span>
+      </label>
+
+      <div class="trigger"><a class="page-link" href="/documents/about/">About</a></div>
+    </nav></div>
+</header><div class="main"><div class="column-sidebar">
+
+    <div class="nav-section">
+        <div class="nav-title">Posts</div><div class="post-container"><a class="post-link" href="/documents/2020/12/17/i-wish-i-was-worse.html"> I wish I was worse at dancing</a>
+            <span class="post-meta">Dec 17, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/12/13/too-many-options.html"> Too many options slows production</a>
+            <span class="post-meta">Dec 13, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/12/06/dream-cats-and-dogs.html"> A dream of dogs and cats</a>
+            <span class="post-meta">Dec 6, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/11/27/http-rest-bad-design.html"> RESTful HTTP creates coupling</a>
+            <span class="post-meta">Nov 27, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/08/01/organization-and-structure.html"> Organization and Structure of Applications</a>
+            <span class="post-meta">Aug 1, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/07/12/listening-to-music.html"> Listening to Music</a>
+            <span class="post-meta">Jul 12, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/07/05/frameworks.html"> Frameworks and Libraries</a>
+            <span class="post-meta">Jul 5, 2020</span>
+        </div><p class="rss-subscribe">subscribe <a href="/documents/feed.xml">via RSS</a></p>
+    </div>
+
+    <div class="nav-section">
+        <div class="nav-title">Guides</div>
+        <ul>
+            
+            <li>
+                <strong> Computer Science</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/Algorithms/Introduction.html">Algorithms</a></li>
+                    
+                    <li><a href="/documents/articles/SoftwareEngineering.html">Software Engineering</a></li>
+                    
+                    <li><a href="/documents/books/DesignPatterns.html">Design Patterns</a></li>
+                    
+                    <li><a href="/documents/books/Linux/Introduction.html">Linux</a></li>
+                    
+                    <li><a href="/documents/books/Databases/Introduction.html">Databases</a></li>
+                    
+                    <li><a href="/documents/books/SoftwareEngineering/Concurrency.html">Concurrency</a></li>
+                    
+                    <li><a href="/documents/books/Security/Introduction.html">Security</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Programming Languages</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/C/Introduction.html">C</a></li>
+                    
+                    <li><a href="/documents/books/Cpp/Introduction.html">C++</a></li>
+                    
+                    <li><a href="/documents/books/Rust/Introduction.html">Rust</a></li>
+                    
+                    <li><a href="/documents/books/Go/Introduction.html">Go</a></li>
+                    
+                    <li><a href="/documents/books/Java/Introduction.html">Java</a></li>
+                    
+                    <li><a href="/documents/books/Kotlin/Introduction.html">Kotlin</a></li>
+                    
+                    <li><a href="/documents/lang/Python/Introduction.html">Python</a></li>
+                    
+                    <li><a href="/documents/lang/Bash/Introduction.html">Bash</a></li>
+                    
+                    <li><a href="/documents/books/Make/Introduction.html">Makefile</a></li>
+                    
+                    <li><a href="/documents/lang/SQL/Introduction.html">SQL</a></li>
+                    
+                    <li><a href="/documents/lang/HTML/Introduction.html">HTML</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Technologies</strong>
+                <ul>
+                    
+                    <li><a href="/documents/tech/Android/Introduction.html">Android</a></li>
+                    
+                    <li><a href="/documents/books/Docker/Introduction.html">Docker</a></li>
+                    
+                    <li><a href="/documents/books/Envoy/Introduction.html">Envoy</a></li>
+                    
+                    <li><a href="/documents/books/Terraform/Introduction.html">Terraform</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Mathematics</strong>
+                <ul>
+                    
+                    <li><a href="/documents/mathematics/Foundations.html">Foundations</a></li>
+                    
+                    <li><a href="/documents/books/Logic/Introduction.html">Logic</a></li>
+                    
+                    <li><a href="/documents/books/SetTheory/Introduction.html">Set Theory</a></li>
+                    
+                    <li><a href="/documents/books/Geometry/Introduction.html">Geometry</a></li>
+                    
+                    <li><a href="/documents/books/Analysis/Introduction.html">Analysis</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Miscellaneous</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/Non-Duality/Introduction.html">Non-Duality</a></li>
+                    
+                </ul>
+            </li>
+
+            
+        </ul>
+    </div>
+
+
+</div><div class="column-main">
+            <main class="page-content" aria-label="Content">
+                <div class="wrapper">
+                    <h1 id="languages">Languages</h1>
+
+<blockquote>
+  <p>We must know we shall know - Hilbert’s tombstone</p>
+</blockquote>
+
+<p>We want to construct very restricted formal languages to be able to form certain precise statements about certain kinds of mathematical structures.</p>
+
+<p>We are discussing the syntax of a language, the marks on the paper or pixels on the screen.</p>
+
+<p>These are formal rules about what constitutes a language, and allows us to identify the terms, formulas, and sentences of a language.</p>
+
+<div class="definition">
+  <p><strong>Definition:</strong> first-order language $\mathcal{L}$</p>
+
+  <p>A <strong>first-order language $\mathcal{L}$</strong> is an infinite collection of distinct symbols, no one of which is properly contained in another, separated into the following categories:</p>
+
+  <ul>
+    <li><em>Parantheses</em>: (, ).</li>
+    <li><em>Connectives</em>: $\lor$ $\lnot$.</li>
+    <li><em>Quantifier</em>: $\forall$.</li>
+    <li><em>Variables</em>, one for each positive integer $n: v_1, v_2, \dots, v_n$. The set of variable symbols will be denoted Vars.</li>
+    <li><em>Equality symbol</em> =.</li>
+    <li><em>Constant symbols</em>: Some set of zero or more symbols.</li>
+    <li><em>Function symbols</em>: For each positive integer n, some set of zero or more n-ary function symbols.</li>
+    <li><em>Relation symbols</em>: For each positive interger n, some set of zero or more n-ary relation symbols.</li>
+  </ul>
+</div>
+
+<p>In general to specify a language we need to list the constant symbols, the function symbols, and the relation symbols.</p>
+
+<p>Strings in our language refer to mathematical objects. Those strings are called terms.</p>
+
+<div class="definition">
+  <p><strong>Definition:</strong>  term of  $\mathcal{L}$</p>
+
+  <p>If  $\mathcal{L}$ is a language, a <strong>term</strong> of  $\mathcal{L}$ is a nonempty finite string t of symbols from  $\mathcal{L}$  such that either:</p>
+
+  <ol>
+    <li>t is a variable, or</li>
+    <li>t is a constant symbol, or</li>
+    <li>t is $ft_1t_2 \dots t_n$, where f is an n-ary function symbol of $\mathcal{L}$ and each of the $t_i$ is a term of $\mathcal{L}$.</li>
+  </ol>
+</div>
+
+<p>We need to make sure that strings that we write down can be interpreted in only one way. This property is called <em>unique readability</em>.</p>
+
+<div class="definition">
+  <p><strong>Definition:</strong> formula of $\mathcal{L}$</p>
+
+  <p>If $\mathcal{L}$ is a first-order language, a <strong>formula of $\mathcal{L}$</strong> is a nonempty finite string $\phi$ of symbols from $\mathcal{L}$ such that either:</p>
+
+  <ol>
+    <li>$\phi$ is $=t_1t_2$, where $t_1$ and $t_2$ are terms of $\mathcal{L}$ or</li>
+    <li>$\phi$ is $Rt_1t_2 \dots t_n$, where R is an n-ary relation symbol of $\mathcal{L}$ and $t_1, t_2, \dots, t_n$ are all terms of $\mathcal{L}$ or</li>
+    <li>$\phi$ is $(\lnot \alpha)$, where $\alpha$ is a formlya of $\mathcal{L}$, or</li>
+    <li>$\phi$ is $(\alpha \lor \beta)$, where $\alpha$ and $\beta$ are formulas of $\mathcal{L}$, or</li>
+    <li>$\phi$ is $(\forall v)(\alpha)$, where v is a variable and $\alpha$ is a formula of $\mathcal{L}$</li>
+  </ol>
+</div>
+
+<p>The <strong>terms</strong> of $\mathcal{L}$ play the role of the nouns of the language.</p>
+
+<p>The <strong>formulas</strong> will be the statements. Statements can be either true or false</p>
+
+<div class="definition">
+  <p><strong>Definition:</strong> The language $\mathcal{L}_{NT}$</p>
+
+  <p>The language $\mathcal{L}_{NT}$ is $\{ 0, S, +, ·, E, &lt; \}$, where</p>
+  <ul>
+    <li>0 is a constant symbol,</li>
+    <li>S is a unary function symbol,</li>
+    <li>+, ·, and E are binary function symbols, and</li>
+    <li>&lt; is a binary relation symbol.</li>
+  </ul>
+
+  <p>This will be referred to as the language of number theory.</p>
+</div>
+
+<div class="definition">
+  <p><strong>Definition:</strong>  Free Variables</p>
+
+  <p>Suppose that v is a variable and φ is a formula. We will say that v is free in φ if</p>
+
+  <ol>
+    <li>φ is atomic and v occurs in (is a symbol in) φ, or</li>
+    <li>φ is (¬α) and v is free in α, or</li>
+    <li>φ is (α ∨ β) and v is free in at least one of α or β, or</li>
+    <li>φ is (∀u)(α) and v is not u and v is free in α.</li>
+  </ol>
+</div>
+
+<div class="definition">
+  <p><strong>Definition:</strong>  Sentence</p>
+
+  <p>A sentence in a language $\mathcal{L}$  is a formula of $\mathcal{L}$  that contains no free variables.</p>
+</div>
+
+<h1 id="structures">Structures</h1>
+
+<p>Here we tie together the syntax and the semantics.</p>
+
+<div class="definition">
+  <p><strong>Definition:</strong> Structure</p>
+
+  <p>Fix a language $\mathcal{L}$ . An $\mathcal{L}$-structure $\mathbb{A}$ is a nonempty set A, called the universe of $\mathbb{A}$, together with:</p>
+
+  <ol>
+    <li>For each constant symbol c of $\mathcal{L}$ , an element $c^\mathbb{A}$ of A,</li>
+    <li>For each n-ary function symbol f of $\mathcal{L}$ , a function $f^\mathbb{A} : A^n \to A$, and</li>
+    <li>For each n-ary relation symbol R of $\mathcal{L}$ , an n-ary relation $R^\mathbb{A}$ on A (i.e., a subset of $A^n$ ).</li>
+  </ol>
+
+  <p>Notice that the domain of the function $f^\mathbb{A}$ is the set $A^n$ , so $f^\mathbb{A}$ is defined
+for all elements of $A^n$</p>
+</div>
+
+<p><strong>What is the difference between a Model and a Structure?</strong></p>
+
+<p>A structure is a set with some interpretable symbols(constants, relations and functions) within a fixed language. You do not ask for more from a structure. A model (of a theory) is a structure which satisfies the axioms of the theory.</p>
+
+<p>When you say $\mathcal{L}$-structure, it is implying that it doesn’t matter what sort of theory I am assuming on the structure. If you say “a model of ZFC” that implies a model which satisfies all the axioms of ZFC.</p>
+
+<p>In other words when we say “model” we mean that there is a particular theory which holds in the structure, and when we say “structure” we are mainly interested in an arbitrary interpretation of the language.</p>
+
+<p><strong>Historical Note:</strong> The term ‘structure’ is a replacement for the earlier term ‘system’ which was used by various authors (Weber, Hilbert, Dedekind) and meant something along the lines of “a set with added features”.</p>
+
+<div class="definition">
+  <p><strong>Definition:</strong> Variable assignment function</p>
+
+  <p>If  $\mathbb{A}$  is an $\mathcal{L}$-structure, a <strong>variable assignment function into  $\mathbb{A}$</strong>  is a function <strong>s</strong> that assigns to each variable an element of the universe A. So a variable assignment function into  $\mathbb{A}$  is any function with domain Vars and codomain A.</p>
+
+\[s: Vars \to A\]
+
+</div>
+
+<div class="definition">
+  <p><strong>Definition:</strong>  x-modification of the assignment function s.</p>
+
+  <p>If <strong>s</strong> is a variable assignment function into  $\mathbb{A}$  and x is a
+variable and $a \in A$ , then $s[x|a]$ is the variable assignment function into  $\mathbb{A}$ 
+defined as follows:</p>
+
+\[s[x|a](v) =
+\begin{cases}
+s(v) ~~   \text{if } v \neq x \\
+a ~~~~~~~ \text{if } v = x
+\end{cases}\]
+
+  <p>We call the function $s[x|a]$ an <strong>x-modification of the assignment function</strong> s.</p>
+
+</div>
+
+<p>The variable x is assigned to a particular element of the universe.</p>
+
+<div class="definition">
+  <p><strong>Definition:</strong> term assignment function generated by s</p>
+
+  <p>Suppose that $\mathbb{A}$ is an $\mathcal{L}$-structure and s is a variable
+assignment function into $\mathbb{A}$. The function $\bar{s}$, called the <strong>term assignment
+function generated by s</strong>, is the function with domain consisting of the
+set of $\mathcal{L}$-terms and codomain A defined recursively as follows:</p>
+
+  <ol>
+    <li>If t is a variable, $\bar{s}(t) = s(t)$.</li>
+    <li>If t is a constant symbol c, then $\bar{s}(t) = c^{\mathbb{A}}$ .</li>
+    <li>If t is $f t_1 t_2 \dots t_n$, then $\bar{s}(t) = f^{\mathbb{A}}(\bar{s}(t_1 ), \bar{s}(t_2), \dots , \bar{s}(t_n))$.</li>
+  </ol>
+
+</div>
+
+<p>Here we extend a variable assignment function s to a term assignment function $\bar{s}$.</p>
+
+<div class="definition">
+  <p><strong>Definition:</strong> $\mathbb{A}$ satisfies $\phi$</p>
+
+  <p>Suppose that $\mathbb{A}$ is an $\mathcal{L}$-structure, $\phi$ is an L-formula,
+and $s : Vars \to A$ is an assignment function. We will say that <strong>$\mathcal{L}$ satisfies
+$\phi$ with assignment s</strong>, and write $\mathbb{A} \vDash \phi[s]$, in the following circumstances:</p>
+
+  <ol>
+    <li>If $\phi$ is $= t_1 t_2$ and $\hat{s}(t_1)$ is the same element of the universe A as $\hat{s}(t_2)$, or</li>
+    <li>If $\phi$ is $R t_1 t_2 \dots t_n$ and $\{ s(t_1 ), s(t_2 ), \dots , s(t_n ) \} \in R^{\mathbb{A}}$ , or</li>
+    <li>If $\phi$ is $(\lnot \alpha)$ and $\mathbb{A} \nvDash α[s]$, (where $\nvDash$ means “does not satisfy”) or</li>
+    <li>If $\phi$ is $(\alpha \lor \beta)$ and $\mathbb{A} \vDash \alpha[s]$, or $\mathbb{A} \vDash \beta[s]$ (or both), or</li>
+    <li>If $\phi$ is $(\forall x)(\alpha)$ and, for each element a of $\mathbb{A}$, $\mathbb{A} \vDash \alpha[s(x|a)]$.</li>
+  </ol>
+
+  <p>If $\Gamma$ is a set of $\mathcal{L}$-formulas, we say that $\mathbb{A}$ satisfies $\Gamma$ with assignment s,
+and write $\mathbb{A} \vDash \Gamma[s]$ if for each $\gamma \in \Gamma$ , $\mathbb{A} \vDash \gamma[s]$.</p>
+</div>
+
+<p>The symbol $\vDash$ is not part of the language $\mathcal{L}$, it is a metalinguistic symbol that we use to talk about the formulas in the language and structures for the language.</p>
+
+<div class="definition">
+  <p><strong>Definition:</strong> Model</p>
+
+  <p>If $\phi$ is a formula in the language $\mathcal{L}$ and $\mathbb{A}$ is an $\mathcal{L}$-structure, we say that $\mathbb{A}$ is a <strong>model</strong> of $\phi$, and write $\mathbb{A} \vDash \phi$, if and only if $\mathbb{A} \vDash \phi[s]$ for every assignment function s.</p>
+
+  <p>If $\Phi$ is a set of $\mathcal{L}$-formulas, we will say that $\mathbb{A}$ models $\Phi$, and write $\mathbb{A} \vDash \Phi$, if and only if $\mathbb{A} \vDash \phi$ for each $\phi \in \Phi$.</p>
+
+</div>
+
+<p>If $\phi$ is a sentence, then $\mathbb{A} \vDash \phi$ if and only if $\mathbb{A} \vDash \phi[s]$ for any assignment function s. In this case we will say that the sentence $\phi$ is true in $\mathbb{A}$.</p>
+
+<div class="definition">
+  <p><strong>Definition:</strong> Substitute</p>
+
+  <p>Suppose that u is a term, x is a variable, and t is a term. We dine the term $u^x_t$ (read “u x replaced by t”) as follows:</p>
+
+  <ol>
+    <li>If u is a variable not equal to x, then $u^x_t$ is u</li>
+    <li>If u is x, then $u^x_t$ is t</li>
+    <li>If u is a constant symbol, then $u^x_t$ is u</li>
+    <li>If u is $fu_1u_2 \dots u_n$, where f is an n-ary function symbol and the $u_i$ are terms, then $u^x_t$ is $f(u_1)^x_t(u_2)^x_t \dots (u_n)^x_t$</li>
+  </ol>
+
+</div>
+
+                </div>
+            </main>
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#languages">Languages</a></li>
+  <li><a href="#structures">Structures</a></li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
+  <data class="u-url" href="/documents/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">LFMUNOZ</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">LFMUNOZ</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/lfmunoz"><svg class="svg-icon"><use xlink:href="/documents/assets/minima-social-icons.svg#github"></use></svg> <span class="username">lfmunoz</span></a></li><li><a href="https://www.twitter.com/lfmunoz4"><svg class="svg-icon"><use xlink:href="/documents/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">lfmunoz4</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>articles, notes, and references</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

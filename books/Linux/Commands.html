@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Important Commands | LFMUNOZ</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Important Commands" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="articles, notes, and references" />
+<meta property="og:description" content="articles, notes, and references" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/Linux/Commands.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/Linux/Commands.html" />
+<meta property="og:site_name" content="LFMUNOZ" />
+<script type="application/ld+json">
+{"@type":"WebPage","headline":"Important Commands","url":"lfmunoz.github.io/documents/books/Linux/Commands.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
+<body><header class="site-header" role="banner">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2YJDWQX6GK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-2YJDWQX6GK');
+  </script>
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/documents/">LFMUNOZ</a><nav class="site-nav">
+      <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+      <label for="nav-trigger">
+        <span class="menu-icon">
+          <svg viewBox="0 0 18 15" width="18px" height="15px">
+            <path
+              d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+          </svg>
+        </span>
+      </label>
+
+      <div class="trigger"><a class="page-link" href="/documents/about/">About</a></div>
+    </nav></div>
+</header><div class="main"><div class="column-sidebar">
+
+    <div class="nav-section">
+        <div class="nav-title">Posts</div><div class="post-container"><a class="post-link" href="/documents/2020/12/17/i-wish-i-was-worse.html"> I wish I was worse at dancing</a>
+            <span class="post-meta">Dec 17, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/12/13/too-many-options.html"> Too many options slows production</a>
+            <span class="post-meta">Dec 13, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/12/06/dream-cats-and-dogs.html"> A dream of dogs and cats</a>
+            <span class="post-meta">Dec 6, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/11/27/http-rest-bad-design.html"> RESTful HTTP creates coupling</a>
+            <span class="post-meta">Nov 27, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/08/01/organization-and-structure.html"> Organization and Structure of Applications</a>
+            <span class="post-meta">Aug 1, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/07/12/listening-to-music.html"> Listening to Music</a>
+            <span class="post-meta">Jul 12, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/07/05/frameworks.html"> Frameworks and Libraries</a>
+            <span class="post-meta">Jul 5, 2020</span>
+        </div><p class="rss-subscribe">subscribe <a href="/documents/feed.xml">via RSS</a></p>
+    </div>
+
+    <div class="nav-section">
+        <div class="nav-title">Guides</div>
+        <ul>
+            
+            <li>
+                <strong> Computer Science</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/Algorithms/Introduction.html">Algorithms</a></li>
+                    
+                    <li><a href="/documents/articles/SoftwareEngineering.html">Software Engineering</a></li>
+                    
+                    <li><a href="/documents/books/DesignPatterns.html">Design Patterns</a></li>
+                    
+                    <li><a href="/documents/books/Linux/Introduction.html">Linux</a></li>
+                    
+                    <li><a href="/documents/books/Databases/Introduction.html">Databases</a></li>
+                    
+                    <li><a href="/documents/books/SoftwareEngineering/Concurrency.html">Concurrency</a></li>
+                    
+                    <li><a href="/documents/books/Security/Introduction.html">Security</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Programming Languages</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/C/Introduction.html">C</a></li>
+                    
+                    <li><a href="/documents/books/Cpp/Introduction.html">C++</a></li>
+                    
+                    <li><a href="/documents/books/Rust/Introduction.html">Rust</a></li>
+                    
+                    <li><a href="/documents/books/Go/Introduction.html">Go</a></li>
+                    
+                    <li><a href="/documents/books/Java/Introduction.html">Java</a></li>
+                    
+                    <li><a href="/documents/books/Kotlin/Introduction.html">Kotlin</a></li>
+                    
+                    <li><a href="/documents/lang/Python/Introduction.html">Python</a></li>
+                    
+                    <li><a href="/documents/lang/Bash/Introduction.html">Bash</a></li>
+                    
+                    <li><a href="/documents/books/Make/Introduction.html">Makefile</a></li>
+                    
+                    <li><a href="/documents/lang/SQL/Introduction.html">SQL</a></li>
+                    
+                    <li><a href="/documents/lang/HTML/Introduction.html">HTML</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Technologies</strong>
+                <ul>
+                    
+                    <li><a href="/documents/tech/Android/Introduction.html">Android</a></li>
+                    
+                    <li><a href="/documents/books/Docker/Introduction.html">Docker</a></li>
+                    
+                    <li><a href="/documents/books/Envoy/Introduction.html">Envoy</a></li>
+                    
+                    <li><a href="/documents/books/Terraform/Introduction.html">Terraform</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Mathematics</strong>
+                <ul>
+                    
+                    <li><a href="/documents/mathematics/Foundations.html">Foundations</a></li>
+                    
+                    <li><a href="/documents/books/Logic/Introduction.html">Logic</a></li>
+                    
+                    <li><a href="/documents/books/SetTheory/Introduction.html">Set Theory</a></li>
+                    
+                    <li><a href="/documents/books/Geometry/Introduction.html">Geometry</a></li>
+                    
+                    <li><a href="/documents/books/Analysis/Introduction.html">Analysis</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Miscellaneous</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/Non-Duality/Introduction.html">Non-Duality</a></li>
+                    
+                </ul>
+            </li>
+
+            
+        </ul>
+    </div>
+
+
+</div><div class="column-main">
+            <main class="page-content" aria-label="Content">
+                <div class="wrapper">
+                    <h1 id="important-commands">Important Commands</h1>
+
+<h2 id="xargs">xargs</h2>
+
+<p>This command is used when you want to pass a lot of arguments to one command.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># read all files to stdout</span>
+<span class="nb">ls</span> <span class="nt">-l</span> | <span class="nb">awk</span> <span class="s1">'{print $1}'</span> | xargs <span class="nb">cat</span>
+</code></pre></div></div>
+
+<h2 id="grep---print-lines-matching-a-pattern">grep - print lines matching a pattern</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># display all the lines containing the string bash</span>
+<span class="nb">grep </span>bash /etc/passwd
+
+<span class="c"># If the string includes spaces, enclose it in double quotation marks:</span>
+<span class="nb">grep</span> <span class="s2">"Gnome Display Manager"</span> /etc/passwd
+
+<span class="c"># display the lines that do not match a pattern:</span>
+<span class="nb">grep</span> <span class="nt">-v</span> nologin /etc/passwd
+
+<span class="c"># recursively search for a pattern through all files in the specified directory</span>
+<span class="nb">grep</span> <span class="nt">-r</span> linuxize.com /etc
+
+<span class="nb">grep</span> <span class="nt">-E</span> <span class="s2">"fileName.*tank.*jar"</span> json.txt
+</code></pre></div></div>
+
+<p>Note: GNU Grep has three regular expression feature sets,</p>
+<ul>
+  <li>Basic (default)</li>
+  <li>Extended</li>
+  <li>
+    <p>Perl-compatible</p>
+  </li>
+  <li>-E extended regular expressions</li>
+  <li>-o Print each match, but only the match, not the entire line.</li>
+  <li>-R  recursive search, follows symbolic links</li>
+  <li>-r  recursively search, do not follow symbolic links</li>
+  <li>-i  ignore case</li>
+  <li>-l show only file name</li>
+  <li>-w  search for whole words, (enclosed by non-word characters)</li>
+  <li>-n show line number</li>
+  <li>-c count matches (alternative: wc -l)</li>
+  <li>-A 5  print lines after match</li>
+  <li>-B 5  print lines before match</li>
+  <li>-C 5  print lines after and before match</li>
+  <li>-v Invert the sense of matching</li>
+  <li>-H print the file name for each match</li>
+  <li>-s Suppress error messages about nonexistent or unreadable files</li>
+</ul>
+
+<h2 id="find">find</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find <span class="nb">.</span> <span class="nt">-name</span> <span class="s2">"*.php"</span> <span class="nt">-print</span> | xargs <span class="nb">sed</span> <span class="nt">-i</span> <span class="s1">'s/foo/bar/g'</span>
+</code></pre></div></div>
+
+<h2 id="sed---stream-editor-for-filtering-and-transforming-text">sed - stream editor for filtering and transforming text</h2>
+
+<p>sed is a stream editor. It works with streams of characters on a per-line basis. It has a primitive programming language that includes goto-style loops and simple conditionals (in addition to pattern matching and address matching).</p>
+
+<p>I would tend to use sed where there are patterns in the text</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sed</span> <span class="s1">'s/day/night/'</span> &lt;old <span class="o">&gt;</span>new
+
+<span class="nb">sed</span> <span class="nt">-n</span> <span class="s1">'/tank.*jar/p'</span> json.txt
+
+<span class="c"># don't print first line</span>
+<span class="nb">sed</span> <span class="s1">'1 d'</span> 
+</code></pre></div></div>
+
+<h3 id="references">References</h3>
+
+<p>https://www.grymoire.com/Unix/sed.html</p>
+
+<h2 id="head---output-the-first-part-of-files">head - output the first part of files</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gcc --version | head -n1
+</code></pre></div></div>
+
+<ul>
+  <li>-c, –bytes=[-]K</li>
+  <li>-n, –lines=[-]K</li>
+</ul>
+
+<p>The leading (optional) ‘-‘ means print all but the last K lines (or bytes) of each file</p>
+
+<h2 id="less">less</h2>
+
+<ul>
+  <li>/characters - search for characters</li>
+  <li>n - find next occurance</li>
+  <li>q - quit less</li>
+  <li>up arrow down arrow - move by one line</li>
+  <li>space - go down one page</li>
+  <li>b - go up one page</li>
+</ul>
+
+<h1 id="archiving-and-compression">Archiving and compression</h1>
+
+<p><strong>tar Archiving</strong></p>
+<ul>
+  <li>tar -cvf archive_name.tar dirname/
+    <ul>
+      <li>-c create a new archive</li>
+      <li>-v verbosity, lists files which are processed</li>
+      <li>-f following text is the archive name</li>
+    </ul>
+  </li>
+  <li>tar cvzf archive_name.tar.gz dirname/
+    <ul>
+      <li>-z filter the archive through gzip</li>
+    </ul>
+  </li>
+  <li>tar cvjf archive_name.tar.bz2 dirname/</li>
+</ul>
+
+<p><strong>tar Extracting</strong></p>
+<ul>
+  <li>tar xvf archive_name.<strong>tar</strong>
+    <ul>
+      <li>-x extract files from archive</li>
+    </ul>
+  </li>
+  <li>tar xvfz archive_name.tar.<strong>gz</strong>
+    <ul>
+      <li>-z  Use the option z for uncompressing a gzip tar archive.</li>
+    </ul>
+  </li>
+  <li>tar xvfj archive_name.tar.<strong>bz2</strong>
+    <ul>
+      <li>-j Use the option j for uncompressing a bzip2 tar archive.</li>
+    </ul>
+  </li>
+  <li>tar xvzf /path/to/yourfile<strong>.tgz</strong>
+    <ul>
+      <li>f for file, should come at last just before file name.</li>
+    </ul>
+  </li>
+  <li>tar -xvzf /path/to/yourfile.tgz -C /path/where/to/extract/  –strip-components=1
+    <ul>
+      <li>-C option to extract archive contents to a different directory</li>
+      <li>–strip-components=1 automatically remove that first folder for you.</li>
+    </ul>
+  </li>
+  <li>tar -xjf linux-2.6.38.tar.bz2 –transform ‘s/linux-2.6.38/linux-2.6.38.1/’
+    <ul>
+      <li>use –transform option for a bit more flexibility. It accepts any sed replacement operation.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>tar Listing</strong></p>
+<ul>
+  <li>tar tvf archive_name.tar
+    <ul>
+      <li>-t  View the tar archive file content without extracting</li>
+    </ul>
+  </li>
+  <li>tar tvfz archive_name.tar.gz</li>
+  <li>tar tvfj archive_name.tar.bz2</li>
+</ul>
+
+<p><strong>tar Adding</strong></p>
+<ul>
+  <li>tar rvf archive_name.tar newfile
+    <ul>
+      <li>-r  You can add additional files to an existing tar archive</li>
+    </ul>
+  </li>
+  <li>tar rvf archive_name.tar newdir/
+    <ul>
+      <li>-r Adding a directory to the tar is also similar</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Note:</strong> You cannot add file or directory to a compressed archive.</p>
+
+<p><strong>Estimate the tar archive size ( in KB )</strong></p>
+<ul>
+  <li>tar -cf - /directory/to/archive/ | wc -c</li>
+  <li>tar -czf - /directory/to/archive/ | wc -c</li>
+  <li>tar -cjf - /directory/to/archive/ | wc -c</li>
+</ul>
+
+<p>https://www.cyberciti.biz/howto/question/general/compress-file-unix-linux-cheat-sheet.php</p>
+
+<h1 id="debugging">Debugging</h1>
+
+<ul>
+  <li>od
+    <ul>
+      <li>od -c input.txt  # the contents of input in character format (meaning show \n)</li>
+      <li>od -c -          # - accepts input from stdin</li>
+      <li>od -x input.txt  # output as 2-byte hex</li>
+    </ul>
+  </li>
+  <li>hd</li>
+  <li>hexdump</li>
+  <li>xxd
+    <ul>
+      <li>xxd text.tmp     # show hex and ascii</li>
+    </ul>
+  </li>
+  <li>48 decimal/ 30 hex = 0</li>
+  <li>64 decimal/ 41 hex = A</li>
+  <li>97 decimal/ 61 hex = a</li>
+</ul>
+
+<h1 id="tmux">tmux</h1>
+
+<ul>
+  <li>tmux new -s session_name</li>
+  <li>tmux attach -t session_name</li>
+  <li>tmux switch -t session_name</li>
+  <li>tmux list-sessions</li>
+  <li>
+    <p>tmux detach (prefix + d)</p>
+  </li>
+  <li>ctrl+b ?  - help</li>
+  <li>ctrl+b c  - create new window</li>
+  <li>ctrl+b ,  - rename window</li>
+  <li>ctrl+b <num> - go to window number</num></li>
+  <li>ctrl+b n   - go to next window</li>
+  <li>ctrl+b p   - go to previous window</li>
+  <li>ctrl+b l  - go to last window (good for switchin between windows)</li>
+  <li>ctrl+b &amp; - close window</li>
+  <li>
+    <p>ctrl+b w - to select from a list of windows</p>
+  </li>
+  <li>windows can be split into panes</li>
+  <li>ctrl+b “  - slit window vertically</li>
+  <li>ctrl+b o - cycle between panes</li>
+  <li>ctrl+b % - slip window horizontaly</li>
+  <li>ctrl+b <arrow key=""> - move to differen panes</arrow></li>
+  <li>ctrl+b ; - switch to last used pane</li>
+  <li>
+    <p>ctrl+b x - close a pane</p>
+  </li>
+  <li>ctrl+b+d -detach from session</li>
+  <li>tmux ls - list the runnin sessions</li>
+  <li>tmux attach -t <num> - attach to a session</num></li>
+  <li>ctrl+b $ - rename session (keep them short)</li>
+  <li>ctrl+b s - show show session list and swtich</li>
+  <li>ctrl+b % - kill session</li>
+</ul>
+
+<h3 id="references-1">References</h3>
+
+<ul>
+  <li>https://robots.thoughtbot.com/a-tmux-crash-course</li>
+</ul>
+
+<h1 id="networking">Networking</h1>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># netstat</span>
+apt <span class="nb">install </span>net-tools
+
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for </span>i <span class="k">in</span> <span class="o">{</span>21..121<span class="o">}</span><span class="p">;</span> <span class="k">do </span><span class="nb">sudo </span>ifconfig eth0:<span class="nv">$i</span> 10.37.137.<span class="nv">$i</span> up <span class="p">;</span> <span class="k">done</span>
+
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+
+sysctl:
+        @sysctl fs.epoll.max_user_watches #= 27007754
+        @sysctl fs.file-max #= 11000000
+        @sysctl fs.nr_open #= 11000000
+        @sysctl kernel.threads-max #= 1030264
+        @sysctl net.core.netdev_max_backlog #= 1000
+        @sysctl net.core.rmem_max #= 134217728
+        @sysctl net.core.somaxconn #= 10000
+        @sysctl net.core.wmem_max #= 134217728
+        @sysctl net.ipv4.ip_local_port_range #= 1025    65000
+        @sysctl net.ipv4.tcp_max_orphans #= 262144
+        @sysctl net.ipv4.tcp_max_syn_backlog #= 10000
+        @sysctl net.ipv4.tcp_max_tw_buckets #= 262144
+        @sysctl net.ipv4.tcp_mem #= 3088632     4118178 6177264
+        @sysctl net.netfilter.nf_conntrack_count #= 707669
+        @sysctl net.netfilter.nf_conntrack_max #= 2000000
+        @sysctl net.nf_conntrack_max #= 2000000
+
+
+set-sysctl:
+        @sudo sysctl -w fs.epoll.max_user_watches=27007754
+        @sudo sysctl -w fs.file-max=11000000
+        @sudo sysctl -w fs.nr_open=11000000
+        @sudo sysctl -w kernel.threads-max=1030264
+        @sudo sysctl -w net.core.netdev_max_backlog=1000
+        @sudo sysctl -w net.core.rmem_max=134217728
+        @sudo sysctl -w net.core.somaxconn=10000
+        @sudo sysctl -w net.core.wmem_max=134217728
+        @sudo sysctl -w net.ipv4.ip_local_port_range="1025 65000"
+        @sudo sysctl -w net.ipv4.tcp_max_orphans=262144
+        @sudo sysctl -w net.ipv4.tcp_max_syn_backlog=10000
+        @sudo sysctl -w net.ipv4.tcp_max_tw_buckets=262144
+        #@sudo sysctl -w net.ipv4.tcp_mem=3088632       4118178 6177264
+        @sudo sysctl -w net.netfilter.nf_conntrack_count=707669
+        @sudo sysctl -w net.netfilter.nf_conntrack_max=2000000
+        @sudo sysctl -w net.nf_conntrack_max=2000000
+
+
+
+</code></pre></div></div>
+
+
+                </div>
+            </main>
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#important-commands">Important Commands</a>
+    <ul>
+      <li><a href="#xargs">xargs</a></li>
+      <li><a href="#grep---print-lines-matching-a-pattern">grep - print lines matching a pattern</a></li>
+      <li><a href="#find">find</a></li>
+      <li><a href="#sed---stream-editor-for-filtering-and-transforming-text">sed - stream editor for filtering and transforming text</a>
+        <ul>
+          <li><a href="#references">References</a></li>
+        </ul>
+      </li>
+      <li><a href="#head---output-the-first-part-of-files">head - output the first part of files</a></li>
+      <li><a href="#less">less</a></li>
+    </ul>
+  </li>
+  <li><a href="#archiving-and-compression">Archiving and compression</a></li>
+  <li><a href="#debugging">Debugging</a></li>
+  <li><a href="#tmux">tmux</a>
+     -  <a href="#references-1">References</a></li>
+  <li><a href="#networking">Networking</a></li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
+  <data class="u-url" href="/documents/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">LFMUNOZ</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">LFMUNOZ</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/lfmunoz"><svg class="svg-icon"><use xlink:href="/documents/assets/minima-social-icons.svg#github"></use></svg> <span class="username">lfmunoz</span></a></li><li><a href="https://www.twitter.com/lfmunoz4"><svg class="svg-icon"><use xlink:href="/documents/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">lfmunoz4</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>articles, notes, and references</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

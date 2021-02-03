@@ -2,21 +2,42 @@
 <html lang="en">
 
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>LFMUNOZ | articles, notes, and references</title>
+<title>gRPC | LFMUNOZ</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="LFMUNOZ" />
+<meta property="og:title" content="gRPC" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="articles, notes, and references" />
 <meta property="og:description" content="articles, notes, and references" />
-<link rel="canonical" href="lfmunoz.github.io/documents/404.html" />
-<meta property="og:url" content="lfmunoz.github.io/documents/404.html" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/Go/gRPC.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/Go/gRPC.html" />
 <meta property="og:site_name" content="LFMUNOZ" />
 <script type="application/ld+json">
-{"@type":"WebPage","headline":"LFMUNOZ","url":"lfmunoz.github.io/documents/404.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+{"@type":"WebPage","headline":"gRPC","url":"lfmunoz.github.io/documents/books/Go/gRPC.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
 <body><header class="site-header" role="banner">
@@ -169,30 +190,119 @@
 </div><div class="column-main">
             <main class="page-content" aria-label="Content">
                 <div class="wrapper">
-                    <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+                    <h1 id="grpc">gRPC</h1>
 
-<div class="container">
-  <h1>404</h1>
+<ul>
+  <li>Official Documentation
+    <ul>
+      <li>https://developers.google.com/protocol-buffers/docs/gotutorial</li>
+    </ul>
+  </li>
+  <li>gRPC uses HTTP/2</li>
+  <li>gRPC uses the protocol buffer data format</li>
+</ul>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+<details>
+<summary> cat src/api/chat.proto </summary>
+
+<p>
+    <div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">syntax</span> <span class="o">=</span> <span class="s">"proto3"</span><span class="p">;</span>
+
+
+<span class="n">option</span> <span class="n">go_package</span> <span class="o">=</span> <span class="s">"github.com/lfmunoz/documents/tree/master/books/Go/src/chat"</span><span class="p">;</span>
+<span class="k">package</span> <span class="n">chat</span><span class="p">;</span>
+
+
+
+<span class="n">message</span> <span class="n">Message</span> <span class="p">{</span>
+  <span class="kt">string</span> <span class="n">body</span> <span class="o">=</span> <span class="m">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">service</span> <span class="n">ChatService</span> <span class="p">{</span>
+  <span class="n">rpc</span> <span class="n">SayHello</span><span class="p">(</span><span class="n">Message</span><span class="p">)</span> <span class="n">returns</span> <span class="p">(</span><span class="n">Message</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+
+
+</code></pre></div>    </div>
+  </p></details>
+<p><br /></p>
+
+<details>
+<summary> cat src/chat/chat.go </summary>
+
+<p>
+    <div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">package</span> <span class="n">chat</span>
+
+<span class="k">import</span> <span class="p">(</span>
+	<span class="s">"log"</span>
+
+	<span class="s">"golang.org/x/net/context"</span>
+<span class="p">)</span>
+
+<span class="k">type</span> <span class="n">Server</span> <span class="k">struct</span> <span class="p">{</span>
+	<span class="n">UnimplementedChatServiceServer</span>
+<span class="p">}</span>
+
+<span class="k">func</span> <span class="p">(</span><span class="n">s</span> <span class="o">*</span><span class="n">Server</span><span class="p">)</span> <span class="n">SayHello</span><span class="p">(</span><span class="n">ctx</span> <span class="n">context</span><span class="o">.</span><span class="n">Context</span><span class="p">,</span> <span class="n">in</span> <span class="o">*</span><span class="n">Message</span><span class="p">)</span> <span class="p">(</span><span class="o">*</span><span class="n">Message</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
+	<span class="n">log</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"Receive message body from client: %s"</span><span class="p">,</span> <span class="n">in</span><span class="o">.</span><span class="n">Body</span><span class="p">)</span>
+
+	<span class="k">return</span> <span class="o">&amp;</span><span class="n">Message</span><span class="p">{</span><span class="n">Body</span><span class="o">:</span> <span class="s">"Hello From the Server!"</span><span class="p">},</span> <span class="no">nil</span>
+<span class="p">}</span>
+
+</code></pre></div>    </div>
+  </p></details>
+<p><br /></p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+	<span class="n">hst0</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="n">core</span><span class="o">.</span><span class="n">Address</span><span class="p">{</span><span class="n">Address</span><span class="o">:</span> <span class="o">&amp;</span><span class="n">core</span><span class="o">.</span><span class="n">Address_SocketAddress</span><span class="p">{</span>
+		<span class="n">SocketAddress</span><span class="o">:</span> <span class="o">&amp;</span><span class="n">core</span><span class="o">.</span><span class="n">SocketAddress</span><span class="p">{</span>
+			<span class="n">Address</span><span class="o">:</span>  <span class="s">"localhost"</span><span class="p">,</span>
+			<span class="n">Protocol</span><span class="o">:</span> <span class="n">core</span><span class="o">.</span><span class="n">SocketAddress_TCP</span><span class="p">,</span>
+			<span class="n">PortSpecifier</span><span class="o">:</span> <span class="o">&amp;</span><span class="n">core</span><span class="o">.</span><span class="n">SocketAddress_PortValue</span><span class="p">{</span>
+				<span class="n">PortValue</span><span class="o">:</span> <span class="kt">uint32</span><span class="p">(</span><span class="m">443</span><span class="p">),</span>
+			<span class="p">},</span>
+		<span class="p">},</span>
+	<span class="p">}}</span>
+	<span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"</span><span class="p">)</span>
+	<span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">hst0</span><span class="o">.</span><span class="n">String</span><span class="p">())</span>
+	<span class="n">m</span> <span class="o">:=</span> <span class="n">jsonpb</span><span class="o">.</span><span class="n">Marshaler</span><span class="p">{}</span>
+	<span class="n">result</span><span class="p">,</span> <span class="n">_</span> <span class="o">:=</span> <span class="n">m</span><span class="o">.</span><span class="n">MarshalToString</span><span class="p">(</span><span class="n">hst0</span><span class="p">)</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+    
+
+
+	<span class="c">// Protocol Buffer to JSON</span>
+	<span class="n">x</span> <span class="o">:=</span> <span class="n">chat</span><span class="o">.</span><span class="n">Message</span><span class="p">{</span><span class="n">Body</span><span class="o">:</span> <span class="s">"Hello From the Server!"</span><span class="p">}</span>
+	<span class="n">m</span> <span class="o">:=</span> <span class="n">jsonpb</span><span class="o">.</span><span class="n">Marshaler</span><span class="p">{}</span>
+	<span class="n">result</span><span class="p">,</span> <span class="n">_</span> <span class="o">:=</span> <span class="n">m</span><span class="o">.</span><span class="n">MarshalToString</span><span class="p">(</span><span class="o">&amp;</span><span class="n">x</span><span class="p">)</span>
+	<span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+
+</code></pre></div></div>
+
+<p>https://pkg.go.dev/github.com/golang/protobuf/proto#Message</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+	<span class="c">// fmt.Println(l)</span>
+	<span class="n">m</span> <span class="o">:=</span> <span class="n">jsonpb</span><span class="o">.</span><span class="n">Marshaler</span><span class="p">{}</span>
+
+	<span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">s</span> <span class="o">:=</span> <span class="k">range</span> <span class="n">l</span> <span class="p">{</span>
+		<span class="c">// fmt.Println(i, s)</span>
+		<span class="n">result</span><span class="p">,</span> <span class="n">_</span> <span class="o">:=</span> <span class="n">m</span><span class="o">.</span><span class="n">MarshalToString</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+		<span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+	<span class="p">}</span>
+
+
+</code></pre></div></div>
 
                 </div>
             </main>
-        </div></div><footer class="site-footer h-card">
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#grpc">gRPC</a></li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
   <data class="u-url" href="/documents/"></data>
 
   <div class="wrapper">

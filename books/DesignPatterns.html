@@ -2,21 +2,42 @@
 <html lang="en">
 
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>LFMUNOZ | articles, notes, and references</title>
+<title>Design Patterns | LFMUNOZ</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="LFMUNOZ" />
+<meta property="og:title" content="Design Patterns" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="articles, notes, and references" />
 <meta property="og:description" content="articles, notes, and references" />
-<link rel="canonical" href="lfmunoz.github.io/documents/404.html" />
-<meta property="og:url" content="lfmunoz.github.io/documents/404.html" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/DesignPatterns.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/DesignPatterns.html" />
 <meta property="og:site_name" content="LFMUNOZ" />
 <script type="application/ld+json">
-{"@type":"WebPage","headline":"LFMUNOZ","url":"lfmunoz.github.io/documents/404.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+{"@type":"WebPage","headline":"Design Patterns","url":"lfmunoz.github.io/documents/books/DesignPatterns.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
 <body><header class="site-header" role="banner">
@@ -169,30 +190,55 @@
 </div><div class="column-main">
             <main class="page-content" aria-label="Content">
                 <div class="wrapper">
-                    <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+                    <h1 id="design-patterns">Design Patterns</h1>
 
-<div class="container">
-  <h1>404</h1>
+<p>Creational Patterns</p>
+<ul>
+  <li>Abstract Factory Pattern</li>
+  <li>Builder Pattern - Allows you to create different flavors of an object while avoiding constructor pollution. Useful when there could be several flavors of an object. Or when there are a lot of steps involved in creation of an object.</li>
+  <li>Factory Method Pattern</li>
+  <li>Prototype Pattern</li>
+  <li>Singleton Pattern</li>
+</ul>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+<p>Structural Patterns (or Interface Patterns)</p>
+
+<ul>
+  <li>Concerned with how objects are made up and simplify relationships between objects.</li>
+  <li>Either extend functionality (Decorator) or simplifies functionality (Flyweight, Facade).</li>
+  <li>Adapter Pattern - Converts the interface of a class into another interface the clients expect. Adapter lets classes work together that couldn’t otherwise because of incompatible interfaces.</li>
+  <li>Facade Pattern - Used to provide a simplified interface to a complicated system</li>
+  <li>Bridge Pattern - Decouple an abstraction from its implementation so that the two can vary independently</li>
+  <li>Composite Pattern - Define an interface that applies to individual objects and groups of objects</li>
+  <li>Decorator Pattern - Used to add new functionality to an existing object without being obtrusive. Wraps an object.</li>
+  <li>Flyweight Pattern - Conserves memory by sharing portions of an object between objects.</li>
+  <li>Proxy Pattern (Surrogate)- Provide a surrogate or placeholder for another object o control</li>
+</ul>
+
+<p>Behavioral Patterns - Concerned with how objects interact with one another. We want to have loose coupling</p>
+<ul>
+  <li>Chain of Responsibility Pattern (CoR)</li>
+  <li>Command Pattern</li>
+  <li>Interpreter Pattern</li>
+  <li>Iterator Pattern - Provides a way to access the elements of an aggregate object sequentially without exposing its underlying representation</li>
+  <li>Mediator Pattern - Controls communication between objects so neither objects has to be coupled to the others.</li>
+  <li>Memento Pattern</li>
+  <li>Observer Pattern</li>
+  <li>State Pattern - Allows an object to alter its behavior when its internal state changes. The object will appear to change its class.</li>
+  <li>Strategy Pattern</li>
+  <li>Template Method Pattern</li>
+  <li>Visitor Pattern - Separate algorithm from object</li>
+  <li>Template Pattern - Defines the steps of an algorithm and allows subclasses to provide the implementation for one or more steps.</li>
+</ul>
 
                 </div>
             </main>
-        </div></div><footer class="site-footer h-card">
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#design-patterns">Design Patterns</a></li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
   <data class="u-url" href="/documents/"></data>
 
   <div class="wrapper">

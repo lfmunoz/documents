@@ -2,21 +2,42 @@
 <html lang="en">
 
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>LFMUNOZ | articles, notes, and references</title>
+<title>Chapter 1 Exercises | LFMUNOZ</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="LFMUNOZ" />
+<meta property="og:title" content="Chapter 1 Exercises" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="articles, notes, and references" />
 <meta property="og:description" content="articles, notes, and references" />
-<link rel="canonical" href="lfmunoz.github.io/documents/404.html" />
-<meta property="og:url" content="lfmunoz.github.io/documents/404.html" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/Analysis/Principles_Of_Mathematical_Analysis_Rudin/Chapter_1.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/Analysis/Principles_Of_Mathematical_Analysis_Rudin/Chapter_1.html" />
 <meta property="og:site_name" content="LFMUNOZ" />
 <script type="application/ld+json">
-{"@type":"WebPage","headline":"LFMUNOZ","url":"lfmunoz.github.io/documents/404.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+{"@type":"WebPage","headline":"Chapter 1 Exercises","url":"lfmunoz.github.io/documents/books/Analysis/Principles_Of_Mathematical_Analysis_Rudin/Chapter_1.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
 <body><header class="site-header" role="banner">
@@ -169,30 +190,119 @@
 </div><div class="column-main">
             <main class="page-content" aria-label="Content">
                 <div class="wrapper">
-                    <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+                    <h1 id="chapter-1">Chapter 1</h1>
 
-<div class="container">
-  <h1>404</h1>
+<hr />
+<h2 id="1">1</h2>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+<p><strong>PROBLEM:</strong> If r is rational ($r \neq 0$) and x is irrational, prove that r+x and rx are irrational.</p>
+
+<p><strong>PROOF BY CONTRADICTION:</strong></p>
+
+<p>Let $r \in Q$ and $x \in R$</p>
+
+<p>Assume $r + x \in Q$, then $ r - r + x \in Q$, but that is saying $x \in Q$. We get a contradiction because we started with knowing that $x \in R$.</p>
+
+<p>Similarly, assume $rx \in Q$. We get that $ \frac{rx}{r} \in Q$, which is a contradiction.</p>
+
+<hr />
+<h2 id="2">2</h2>
+
+<p><strong>PROBLEM:</strong> Prove that there is no rational number whose square is 12</p>
+
+<p><strong>PROOF BY CONTRADICTION:</strong></p>
+
+<p>Since $\sqrt{12} = 2\sqrt{3}$ it is enough to prove that $\sqrt{3}$ is irrational.</p>
+
+<p>Let m and n be integers having no common factors. We have $3 n^2 = m^2$.</p>
+
+<p>This means $m^2$ is divisible by 3 which also means $m$ is divisible by 3. Let $m = 3k$ then we get</p>
+
+\[3n^2 = 9 k^2\]
+
+\[n^2 = 3 k^2\]
+
+<p>It then follows that n is divisible by 3. That is a contradiction because we assumed that n and m don’t have any common factors.</p>
+
+<hr />
+<h2 id="3">3</h2>
+
+<p><strong>PROBLEM:</strong> Prove proposition 1.5.</p>
+
+<p><strong>Proposition:</strong> The axioms for multiplication imply the following statements</p>
+
+<ul>
+  <li>a) if $x \neq 0$ and $xy = zx$ then $y = z$</li>
+  <li>b) if $x \neq 0$ and $xy = x$ then $y = 1$</li>
+  <li>c) if $x \neq 0$ and $xy = 1$ then $y = 1/x$</li>
+  <li>d) if $x \neq 0$ then $1 / (1/x) = x$</li>
+</ul>
+
+<hr />
+<h2 id="4">4</h2>
+
+<p><strong>PROBLEM:</strong> Let E be a nonempty subset of an ordered set; suppose $\alpha$ is a lower bound of E and $\beta$ is an upper bound of E. Prove that $\alpha \leq \beta$.</p>
+
+<hr />
+<h2 id="5">5</h2>
+
+<p><strong>PROBLEM:</strong></p>
+
+<hr />
+<h2 id="6">6</h2>
+
+<p><strong>PROBLEM:</strong> Prove that there is no rational number whose square is 12</p>
+
+<hr />
+<h2 id="7">7</h2>
+<p><strong>PROBLEM:</strong> Prove that there is no rational number whose square is 12
+—-</p>
+<h2 id="8">8</h2>
+<p><strong>PROBLEM:</strong> Prove that there is no rational number whose square is 12
+—-</p>
+<h2 id="9">9</h2>
+<p><strong>PROBLEM:</strong> Prove that there is no rational number whose square is 12
+—-</p>
+<h2 id="10">10</h2>
+<p><strong>PROBLEM:</strong> Prove that there is no rational number whose square is 12
+—-</p>
+<h2 id="11">11</h2>
+<p><strong>PROBLEM:</strong> Prove that there is no rational number whose square is 12
+—-</p>
+<h2 id="12">12</h2>
+<p><strong>PROBLEM:</strong> Prove that there is no rational number whose square is 12
+—-</p>
+<h2 id="13">13</h2>
+<p><strong>PROBLEM:</strong> Prove that there is no rational number whose square is 12
+—-</p>
+<h2 id="14">14</h2>
+<p><strong>PROBLEM:</strong> Prove that there is no rational number whose square is 12</p>
 
                 </div>
             </main>
-        </div></div><footer class="site-footer h-card">
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#chapter-1">Chapter 1</a>
+    <ul>
+      <li><a href="#1">1</a></li>
+      <li><a href="#2">2</a></li>
+      <li><a href="#3">3</a></li>
+      <li><a href="#4">4</a></li>
+      <li><a href="#5">5</a></li>
+      <li><a href="#6">6</a></li>
+      <li><a href="#7">7</a></li>
+      <li><a href="#8">8</a></li>
+      <li><a href="#9">9</a></li>
+      <li><a href="#10">10</a></li>
+      <li><a href="#11">11</a></li>
+      <li><a href="#12">12</a></li>
+      <li><a href="#13">13</a></li>
+      <li><a href="#14">14</a></li>
+    </ul>
+  </li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
   <data class="u-url" href="/documents/"></data>
 
   <div class="wrapper">

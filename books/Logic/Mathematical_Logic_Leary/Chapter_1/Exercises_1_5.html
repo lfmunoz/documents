@@ -2,21 +2,42 @@
 <html lang="en">
 
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>LFMUNOZ | articles, notes, and references</title>
+<title>Exercises 1.5 | LFMUNOZ</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="LFMUNOZ" />
+<meta property="og:title" content="Exercises 1.5" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="articles, notes, and references" />
 <meta property="og:description" content="articles, notes, and references" />
-<link rel="canonical" href="lfmunoz.github.io/documents/404.html" />
-<meta property="og:url" content="lfmunoz.github.io/documents/404.html" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/Logic/Mathematical_Logic_Leary/Chapter_1/Exercises_1_5.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/Logic/Mathematical_Logic_Leary/Chapter_1/Exercises_1_5.html" />
 <meta property="og:site_name" content="LFMUNOZ" />
 <script type="application/ld+json">
-{"@type":"WebPage","headline":"LFMUNOZ","url":"lfmunoz.github.io/documents/404.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+{"@type":"WebPage","headline":"Exercises 1.5","url":"lfmunoz.github.io/documents/books/Logic/Mathematical_Logic_Leary/Chapter_1/Exercises_1_5.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
 <body><header class="site-header" role="banner">
@@ -169,30 +190,144 @@
 </div><div class="column-main">
             <main class="page-content" aria-label="Content">
                 <div class="wrapper">
-                    <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+                    <h1 id="exercises-15">Exercises 1.5</h1>
 
-<div class="container">
-  <h1>404</h1>
+<hr />
+<h2 id="exercise-151">Exercise 1.5.1</h2>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+<ol>
+  <li>For each of the following, find the free variables, if any, and decide if the
+given formula is a sentence. The language includes a binary function
+symbol +, a binary relation symbol &lt;, and constant symbols 0 and 2.</li>
+</ol>
+
+<p>(a) (∀x)(∀y)(x + y = 2)
+(b) (x + y &lt; x) ∨ (∀z)(z &lt; 0)
+(c) ((∀y)(y &lt; x)) ∨ ((∀x)(x &lt; y))</p>
+
+<p><strong>SOLUTION:</strong></p>
+
+<p>(a) It is a sentence, no free variables</p>
+
+<p>(b) x and y are not free, therefore not a sentence</p>
+
+<p>(c) x is not free on the left or, y is not free on right of or. Not a sentence</p>
+
+<hr />
+<h2 id="exercise-152">Exercise 1.5.2</h2>
+
+<ol>
+  <li>Explain precisely, using the definition of a free variable, how you know
+that the variable v 2 is free in the formula
+$(∀v_1 )(¬(∀v_5 )(v_2 = v_1 + v_5 ))$.</li>
+</ol>
+
+<p><strong>SOLUTION:</strong></p>
+
+<p>Definition states that v id free if $\phi$ if $\phi$ is $(\forall u)(\phi)$ and v is not u and v is free in $\phi$.  Here $v^2$ is not $v_1$ or $v_3$ and it is free in $\phi$</p>
+
+<hr />
+<h2 id="exercise-153">Exercise 1.5.3</h2>
+
+<ol>
+  <li>In mathematics, we often see statements such as sin 2 x + cos 2 x = 1.
+Notice that this is not a sentence, as the variable x is free. But we all
+agree that this statement is true, given the usual interpretations of the
+symbols. How can we square this with the claim that sentences are the
+formulas that can be either true or false?</li>
+</ol>
+
+<p><strong>SOLUTION:</strong></p>
+
+<p>That statement implies that we mean for all x</p>
+
+\[(\forall x)(sin^2x + cos^2 x = 1)\]
+
+<hr />
+<h2 id="exercise-154">Exercise 1.5.4</h2>
+
+<p>If we look at the first of our example formulas in this section,
+¬(∀x)[(y &lt; x) ∨ (y = x)],
+and we interpret the variables as ranging over the natural numbers, you
+will probably agree that the formula is false if y represents the natural
+number 0 and true if y represents any other number. (If you aren’t
+happy with 0 being a natural number, then use 1.) On the other hand,
+if we interpret the variables as ranging over the integers, what can we
+say about the truth or falsehood of this formula? Can you think of an
+interpretation for the symbols that would make sense if we try to apply
+this formula to the collection of complex numbers?</p>
+
+<p><strong>SOLUTION:</strong></p>
+
+<p>The formula can be true if we limit what x and y can be. For exxample if $y,x \in \mathbb{N}$
+formula is true.</p>
+
+<hr />
+<h2 id="exercise-155">Exercise 1.5.5</h2>
+
+<ol>
+  <li>A variable may occur several times in a given formula. For example,
+the variable v 1 occurs four times in the formula
+
+
+(∀v 1 ) (v 1 = v 3 ) ∨ (v 1 = Sv 2 ) ∨ (0 + v 17 &lt; v 1 − S0) .
+What should it mean for an occurrence of a variable to be free? Write a
+definition that begins: The nth occurrence of a variable v in a formula
+φ is said to be free if . . . . An occurrence of v in φ that is not free is
+said to be bound. Give an example of a formula in a suitable language
+that contains both free and bound occurrences of a variable v.</li>
+</ol>
+
+<p><strong>SOLUTION:</strong></p>
+
+<p>The nth occurence of a variable v in formula $\phi$ is said to be free if it is not within the scope of</p>
+
+<p>for all quantifers</p>
+
+\[(\forall v) (v &gt; 0) \lor (v + x &gt; 0)\]
+
+<hr />
+<h2 id="exercise-156">Exercise 1.5.6</h2>
+
+<ol>
+  <li>Look at the formula
+
+ 
+
+(∀y)(x = y) ∨ (∀x)(x &lt; 0) .</li>
+</ol>
+
+<p>If we denote this formula by φ(x) and t is the term S0, find φ(t).
+[Suggestion: The trick here is to see that there is a bit of a lie in the
+discussion of φ(t) in the text. Having completed Exercise 5, we can now
+say that we only replace the free occurrences of the variable x when we
+move from φ(x) to φ(t).]</p>
+
+<p><strong>SOLUTION:</strong></p>
+
+<p>$\phi(x) = [ (\forall y) (x = y) \lor (\forall x) (x &lt; 0)]$</p>
+
+<p>$\phi(x) = [ (\forall y) (s0 = y) \lor (\forall x) (x &lt; 0)]$</p>
+
+<p>We only replace the free variables</p>
 
                 </div>
             </main>
-        </div></div><footer class="site-footer h-card">
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#exercises-15">Exercises 1.5</a>
+    <ul>
+      <li><a href="#exercise-151">Exercise 1.5.1</a></li>
+      <li><a href="#exercise-152">Exercise 1.5.2</a></li>
+      <li><a href="#exercise-153">Exercise 1.5.3</a></li>
+      <li><a href="#exercise-154">Exercise 1.5.4</a></li>
+      <li><a href="#exercise-155">Exercise 1.5.5</a></li>
+      <li><a href="#exercise-156">Exercise 1.5.6</a></li>
+    </ul>
+  </li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
   <data class="u-url" href="/documents/"></data>
 
   <div class="wrapper">

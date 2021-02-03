@@ -2,21 +2,42 @@
 <html lang="en">
 
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>LFMUNOZ | articles, notes, and references</title>
+<title>Time | LFMUNOZ</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="LFMUNOZ" />
+<meta property="og:title" content="Time" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="articles, notes, and references" />
 <meta property="og:description" content="articles, notes, and references" />
-<link rel="canonical" href="lfmunoz.github.io/documents/404.html" />
-<meta property="og:url" content="lfmunoz.github.io/documents/404.html" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/Cpp/Time.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/Cpp/Time.html" />
 <meta property="og:site_name" content="LFMUNOZ" />
 <script type="application/ld+json">
-{"@type":"WebPage","headline":"LFMUNOZ","url":"lfmunoz.github.io/documents/404.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+{"@type":"WebPage","headline":"Time","url":"lfmunoz.github.io/documents/books/Cpp/Time.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
 <body><header class="site-header" role="banner">
@@ -169,30 +190,106 @@
 </div><div class="column-main">
             <main class="page-content" aria-label="Content">
                 <div class="wrapper">
-                    <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+                    <h1 id="time">Time</h1>
 
-<div class="container">
-  <h1>404</h1>
+<ul>
+  <li><a href="Introduction.html">C++</a></li>
+</ul>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+<p>The C++ standard library does not provide a proper date type. C++ inherits the structs and functions for date and time manipulation from C.</p>
+
+<ul>
+  <li>24:00 Sunday or 00:00 Monday are both midnight meaning Sunday to Monday</li>
+  <li>12 pm is noon</li>
+  <li>12 am is midnight</li>
+  <li>Number of SECONDS since 00:00 hours, Jan 1, 1970 UTC</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  1   2   3   4   5   6   7   8   9   10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  1
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+0   1   2   3   4   5   6   7   8   9   10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  1
+12                                              pm  1   2   3   4   5   6   7   8   9   10  11  12
+24                                             noon                                             0 
+midnight                                                                                     midnight
+</code></pre></div></div>
+
+<details>
+<summary> <strong> cat time.cpp </strong> </summary>
+
+<p>
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// ________________________________________________________________________________</span>
+<span class="c1">//  INCLUDE</span>
+<span class="c1">// ________________________________________________________________________________</span>
+<span class="cp">#include &lt;iostream&gt;
+#include &lt;ctime&gt;  </span><span class="cm">/* time_t, struct tm, difftime, time, mktime */</span><span class="cp">
+</span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    
+    <span class="c1">// std::time_t time( std::time_t* arg );</span>
+    <span class="c1">// Returns the current calendar time encoded as a std::time_t object</span>
+    <span class="c1">//  also stores it in the object pointed to by arg, unless arg is a null pointer.</span>
+    <span class="c1">// Number of SECONDS since 00:00 hours, Jan 1, 1970 UTC</span>
+    <span class="kt">time_t</span> <span class="n">currentTime</span> <span class="o">=</span> <span class="n">time</span><span class="p">(</span><span class="nb">nullptr</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"time_t="</span> <span class="o">&lt;&lt;</span>  <span class="n">currentTime</span> <span class="o">&lt;&lt;</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+
+    <span class="c1">// std::tm* localtime( const std::time_t *time );</span>
+    <span class="c1">// Converts given time since epoch as std::time_t value into calendar time, </span>
+    <span class="c1">//  expressed in local time.</span>
+    <span class="n">tm</span><span class="o">*</span> <span class="n">localTime</span> <span class="o">=</span> <span class="n">localtime</span><span class="p">(</span><span class="o">&amp;</span><span class="n">currentTime</span><span class="p">);</span>
+
+    <span class="c1">// char* asctime( const std::tm* time_ptr );</span>
+    <span class="c1">// Converts given calendar time std::tm to a textual representation </span>
+    <span class="c1">//  of the following fixed 25-character form: Www Mmm dd hh:mm:ss yyyy\n</span>
+    <span class="kt">char</span><span class="o">*</span> <span class="n">time</span> <span class="o">=</span> <span class="n">asctime</span><span class="p">(</span><span class="n">localTime</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">time</span><span class="p">;</span>
+
+    <span class="c1">// std::size_t strftime( char* str, std::size_t count, const char* format, const std::tm* time );</span>
+    <span class="c1">// Converts the date and time information from a given calendar time time to a </span>
+    <span class="c1">// null-terminated multibyte character string str according to format string format</span>
+    <span class="c1">// %F = "%Y-%m-%d" (the ISO 8601 date format)</span>
+    <span class="c1">// %p = a.m. or p.m. </span>
+    <span class="kt">char</span> <span class="n">mbstr</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">strftime</span><span class="p">(</span><span class="n">mbstr</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">mbstr</span><span class="p">),</span> <span class="s">"%F"</span><span class="p">,</span> <span class="n">localTime</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">mbstr</span> <span class="o">&lt;&lt;</span> <span class="sc">'\n'</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*
+g++ -std=c++11 time.cpp -o time.elf
+./time.elf
+time_t=1607796630
+Sat Dec 12 12:10:30 2020
+2020-12-12
+
+*/</span>
+
+</code></pre></div>    </div>
+  </p></details>
+
+<h2 id="references">References</h2>
+
+<ul>
+  <li>https://www.epochconverter.com/</li>
+  <li>https://en.cppreference.com/w/cpp/chrono/c/strftime</li>
+</ul>
 
                 </div>
             </main>
-        </div></div><footer class="site-footer h-card">
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#time">Time</a>
+    <ul>
+      <li><a href="#references">References</a></li>
+    </ul>
+  </li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
   <data class="u-url" href="/documents/"></data>
 
   <div class="wrapper">

@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>C++ - Classes | LFMUNOZ</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="C++ - Classes" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="articles, notes, and references" />
+<meta property="og:description" content="articles, notes, and references" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/Cpp/Classes.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/Cpp/Classes.html" />
+<meta property="og:site_name" content="LFMUNOZ" />
+<script type="application/ld+json">
+{"@type":"WebPage","headline":"C++ - Classes","url":"lfmunoz.github.io/documents/books/Cpp/Classes.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
+<body><header class="site-header" role="banner">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2YJDWQX6GK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-2YJDWQX6GK');
+  </script>
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/documents/">LFMUNOZ</a><nav class="site-nav">
+      <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+      <label for="nav-trigger">
+        <span class="menu-icon">
+          <svg viewBox="0 0 18 15" width="18px" height="15px">
+            <path
+              d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+          </svg>
+        </span>
+      </label>
+
+      <div class="trigger"><a class="page-link" href="/documents/about/">About</a></div>
+    </nav></div>
+</header><div class="main"><div class="column-sidebar">
+
+    <div class="nav-section">
+        <div class="nav-title">Posts</div><div class="post-container"><a class="post-link" href="/documents/2020/12/17/i-wish-i-was-worse.html"> I wish I was worse at dancing</a>
+            <span class="post-meta">Dec 17, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/12/13/too-many-options.html"> Too many options slows production</a>
+            <span class="post-meta">Dec 13, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/12/06/dream-cats-and-dogs.html"> A dream of dogs and cats</a>
+            <span class="post-meta">Dec 6, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/11/27/http-rest-bad-design.html"> RESTful HTTP creates coupling</a>
+            <span class="post-meta">Nov 27, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/08/01/organization-and-structure.html"> Organization and Structure of Applications</a>
+            <span class="post-meta">Aug 1, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/07/12/listening-to-music.html"> Listening to Music</a>
+            <span class="post-meta">Jul 12, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/07/05/frameworks.html"> Frameworks and Libraries</a>
+            <span class="post-meta">Jul 5, 2020</span>
+        </div><p class="rss-subscribe">subscribe <a href="/documents/feed.xml">via RSS</a></p>
+    </div>
+
+    <div class="nav-section">
+        <div class="nav-title">Guides</div>
+        <ul>
+            
+            <li>
+                <strong> Computer Science</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/Algorithms/Introduction.html">Algorithms</a></li>
+                    
+                    <li><a href="/documents/articles/SoftwareEngineering.html">Software Engineering</a></li>
+                    
+                    <li><a href="/documents/books/DesignPatterns.html">Design Patterns</a></li>
+                    
+                    <li><a href="/documents/books/Linux/Introduction.html">Linux</a></li>
+                    
+                    <li><a href="/documents/books/Databases/Introduction.html">Databases</a></li>
+                    
+                    <li><a href="/documents/books/SoftwareEngineering/Concurrency.html">Concurrency</a></li>
+                    
+                    <li><a href="/documents/books/Security/Introduction.html">Security</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Programming Languages</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/C/Introduction.html">C</a></li>
+                    
+                    <li><a href="/documents/books/Cpp/Introduction.html">C++</a></li>
+                    
+                    <li><a href="/documents/books/Rust/Introduction.html">Rust</a></li>
+                    
+                    <li><a href="/documents/books/Go/Introduction.html">Go</a></li>
+                    
+                    <li><a href="/documents/books/Java/Introduction.html">Java</a></li>
+                    
+                    <li><a href="/documents/books/Kotlin/Introduction.html">Kotlin</a></li>
+                    
+                    <li><a href="/documents/lang/Python/Introduction.html">Python</a></li>
+                    
+                    <li><a href="/documents/lang/Bash/Introduction.html">Bash</a></li>
+                    
+                    <li><a href="/documents/books/Make/Introduction.html">Makefile</a></li>
+                    
+                    <li><a href="/documents/lang/SQL/Introduction.html">SQL</a></li>
+                    
+                    <li><a href="/documents/lang/HTML/Introduction.html">HTML</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Technologies</strong>
+                <ul>
+                    
+                    <li><a href="/documents/tech/Android/Introduction.html">Android</a></li>
+                    
+                    <li><a href="/documents/books/Docker/Introduction.html">Docker</a></li>
+                    
+                    <li><a href="/documents/books/Envoy/Introduction.html">Envoy</a></li>
+                    
+                    <li><a href="/documents/books/Terraform/Introduction.html">Terraform</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Mathematics</strong>
+                <ul>
+                    
+                    <li><a href="/documents/mathematics/Foundations.html">Foundations</a></li>
+                    
+                    <li><a href="/documents/books/Logic/Introduction.html">Logic</a></li>
+                    
+                    <li><a href="/documents/books/SetTheory/Introduction.html">Set Theory</a></li>
+                    
+                    <li><a href="/documents/books/Geometry/Introduction.html">Geometry</a></li>
+                    
+                    <li><a href="/documents/books/Analysis/Introduction.html">Analysis</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Miscellaneous</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/Non-Duality/Introduction.html">Non-Duality</a></li>
+                    
+                </ul>
+            </li>
+
+            
+        </ul>
+    </div>
+
+
+</div><div class="column-main">
+            <main class="page-content" aria-label="Content">
+                <div class="wrapper">
+                    <h1 id="classes">Classes</h1>
+
+<p>A “const function”, denoted with the keyword const after a function declaration, makes it a compiler error for this class function to change a member variable of the class.
+Another way of thinking about such “const function” is by viewing a class function as a normal function taking an implicit this pointer. 
+ adding the const at the end can then be understood as a declaration with a const this pointer</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+
+<span class="c1">// ________________________________________________________________________________</span>
+<span class="c1">//  INCLUDE</span>
+<span class="c1">// ________________________________________________________________________________</span>
+<span class="cp">#include &lt;bits/stdc++.h&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="n">https</span><span class="o">:</span><span class="c1">//en.wikipedia.org/wiki/Rule_of_three_%28C++_programming%29</span>
+<span class="c1">//________________________________________________________________________________ </span>
+<span class="c1">// Generic.hpp</span>
+<span class="c1">//________________________________________________________________________________ </span>
+<span class="cp">#ifndef GVSU_CAR_H
+#define GVSU_CAR_H
+</span>
+<span class="c1">// Interface goes into a .h file</span>
+<span class="k">class</span> <span class="nc">Generic</span> <span class="p">{</span>
+    <span class="nl">public:</span>
+    <span class="n">Generic</span><span class="p">();</span>
+    <span class="o">~</span><span class="n">Generic</span><span class="p">();</span>
+    <span class="kt">int</span> <span class="n">myMethod</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">);</span>
+
+<span class="p">};</span>  <span class="c1">// note the semicolon after the class declaration! </span>
+
+<span class="cp">#endif
+</span>
+<span class="c1">//________________________________________________________________________________ </span>
+<span class="c1">// Filename: Generic.cpp</span>
+<span class="c1">//________________________________________________________________________________ </span>
+<span class="k">class</span> <span class="nc">Generic</span> <span class="p">{</span>
+    <span class="c1">// Three levels of protection for class members in C++: public, private, and protected.</span>
+    <span class="c1">//  protection level defaults to private</span>
+    <span class="nl">private:</span>
+        <span class="k">const</span> <span class="kt">double</span> <span class="n">MPG</span> <span class="o">=</span> <span class="mf">22.3</span><span class="p">;</span>
+      <span class="c1">// Instance variables can not be assigned a value when declared in the header file;</span>
+      <span class="c1">// they are initialized in the constructor instead.</span>
+        <span class="kt">int</span> <span class="n">value</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">m_a</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">m_b</span><span class="p">;</span>
+
+    <span class="nl">public:</span>
+        <span class="n">Generic</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="p">}</span>
+    <span class="c1">// member function</span>
+    <span class="c1">// You can give default values for parameters of functions</span>
+    <span class="c1">// parameters without default values must precede all the parameters with defaults</span>
+    <span class="kt">void</span> <span class="n">setValues</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span> <span class="p">{</span> 
+        <span class="n">m_a</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span> <span class="n">m_b</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span> 
+    <span class="p">}</span>
+
+
+    <span class="c1">// non-mutable member functions </span>
+    <span class="c1">// member function that do no alter their instance variables</span>
+    <span class="kt">bool</span> <span class="n">isEven</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">value</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="p">};</span> <span class="c1">// NOTE: Ending semicolon is important to remember</span>
+
+
+<span class="c1">// Is possible to declare an array (size not known), as a private member of a class </span>
+<span class="c1">// and later set the size in the constructor of the class? </span>
+<span class="c1">// No array declarations in headers must have constant sized value. Use vector or a pointer.</span>
+
+<span class="c1">// The options for initializing objects bewilder even experienced C++ pro-</span>
+<span class="c1">// grammers. Here’s a general rule to make initialization simple: use braced</span>
+<span class="c1">// ­initializers everywhere</span>
+
+<span class="c1">// Filename: main.cpp</span>
+
+<span class="c1">// non-member or global function</span>
+<span class="c1">// argc - argument count</span>
+<span class="c1">// argv - argument of values</span>
+<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
+
+
+    <span class="n">HwProblem</span> <span class="n">hw</span><span class="p">;</span> <span class="c1">// calls default constructor</span>
+    <span class="c1">// Empty set of parentheses would make of rectc a function declaration instead </span>
+    <span class="c1">// of an object declaration: It would be a function that takes no arguments and</span>
+    <span class="c1">//  returns a value of type Rectangle.</span>
+    <span class="n">Rectangle</span> <span class="n">rectc</span><span class="p">();</span> <span class="c1">// oops, default constructor NOT called </span>
+
+    <span class="n">Generic</span> <span class="n">aGeneric</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Generic</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">// NOT VALID </span>
+
+    <span class="c1">// The new operator returns a pointer to whatever follows it.</span>
+    <span class="n">Generic</span><span class="o">*</span> <span class="n">aGeneric</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Generic</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="n">aGeneric</span><span class="o">-&gt;</span><span class="n">bar</span><span class="p">();</span> <span class="c1">// dereference the pointer and call the method</span>
+
+    <span class="c1">// We can request a block of memory in global storage for certain data </span>
+    <span class="c1">// types by using new, and we return the memory by using delete. Only </span>
+    <span class="c1">// objects created using new should be deleted with delete</span>
+    <span class="n">Foo</span><span class="o">*</span> <span class="n">fooPointer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Foo</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">// create a pointer to Foo and give it a</span>
+                                     <span class="c1">// value</span>
+    <span class="n">Foo</span> <span class="n">myFooInstance</span> <span class="o">=</span> <span class="o">*</span><span class="n">fooPointer</span><span class="p">;</span> <span class="c1">// dereference the pointer and assign it</span>
+                                     <span class="c1">// to myFooInstance; copy is made (!)</span>
+
+    <span class="n">Generic</span> <span class="n">aGeneric</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+    <span class="c1">// These are equivalent</span>
+    <span class="n">Generic</span> <span class="n">aGeneric</span><span class="p">;</span>
+    <span class="n">Generic</span> <span class="n">aGeneric</span><span class="p">()</span>
+
+<span class="p">}</span>
+
+
+<span class="c1">// Heap objects: created explicitly by the programmer by invoking new.</span>
+ <span class="c1">// Detroy explicitly by the programmer</span>
+<span class="n">Car</span> <span class="o">*</span><span class="n">his</span><span class="p">;</span>
+<span class="n">his</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">Car</span> <span class="p">(</span><span class="s">"1HTSF30Y68E387874"</span><span class="p">);</span>
+
+<span class="c1">// Atomatic object</span>
+<span class="n">Car</span> <span class="nf">hers</span><span class="p">(</span><span class="s">"1F6DP5ED7B0858285"</span><span class="p">);</span> <span class="cm">/* she owns a Ford */</span>
+
+<span class="c1">// C++ Reference</span>
+<span class="c1">// A C++ reference is not a pointer, but it is an alias to an existing data;</span>
+<span class="n">Car</span> <span class="nf">hers</span><span class="p">(</span><span class="s">"1F6DP5ED7B0858285"</span><span class="p">);</span> <span class="cm">/* she owns a Ford */</span>
+<span class="n">Car</span> <span class="n">blue_ford</span><span class="o">&amp;</span> <span class="o">=</span> <span class="n">hers</span><span class="p">;</span>
+
+<span class="kt">int</span><span class="o">&amp;</span> <span class="n">feb</span> <span class="o">=</span> <span class="n">days_of_months</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+
+
+<span class="c1">// Copy constructor</span>
+<span class="c1">// pass by reference as a read-only object</span>
+<span class="n">MyClass</span> <span class="p">(</span><span class="k">const</span> <span class="n">MyClass</span><span class="o">&amp;</span> <span class="n">source</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">}</span>
+
+<span class="c1">// Move Constructor</span>
+<span class="n">MyClass</span> <span class="p">(</span><span class="n">MyClass</span><span class="o">&amp;&amp;</span> <span class="n">source</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">}</span>
+
+
+<span class="c1">// NAMESAPCE </span>
+
+<span class="k">namespace</span> <span class="n">gvsu</span> <span class="p">{</span>
+    <span class="k">class</span> <span class="nc">Car</span> <span class="p">{</span>
+        <span class="nl">private:</span>
+
+    <span class="p">}</span>
+<span class="p">}</span>
+
+
+<span class="c1">// move assignment</span>
+<span class="kt">void</span> <span class="k">operator</span><span class="o">=</span> <span class="p">(</span><span class="n">Coin</span><span class="o">&amp;&amp;</span> <span class="n">src</span><span class="p">)</span> <span class="p">{</span>
+<span class="n">value</span> <span class="o">=</span> <span class="n">src</span><span class="p">.</span><span class="n">value</span><span class="p">;</span>
+<span class="n">serial</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">src</span><span class="p">.</span><span class="n">serial</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// copy assignment</span>
+<span class="kt">void</span> <span class="k">operator</span><span class="o">=</span> <span class="p">(</span><span class="k">const</span> <span class="n">Coin</span><span class="o">&amp;</span> <span class="n">src</span><span class="p">)</span> <span class="p">{</span>
+<span class="n">value</span> <span class="o">=</span> <span class="n">src</span><span class="p">.</span><span class="n">value</span><span class="p">;</span>
+<span class="n">serial</span> <span class="o">=</span> <span class="n">src</span><span class="p">.</span><span class="n">serial</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">sawyer</span><span class="p">;</span>
+<span class="n">cout</span> <span class="p">.</span> <span class="k">operator</span><span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">sawyer</span><span class="p">);</span> <span class="c1">// equivalent expanded expression</span>
+<span class="k">operator</span><span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">cout</span><span class="p">,</span> <span class="n">sawyer</span><span class="p">);</span> <span class="c1">// alternate syntax of invocation</span>
+
+<span class="c1">// correct, but the void return type will prevent chaining of &lt;&lt;</span>
+<span class="kt">void</span> <span class="k">operator</span><span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">os</span><span class="p">,</span> <span class="k">const</span> <span class="n">Book</span><span class="o">&amp;</span> <span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="n">os</span> <span class="o">&lt;&lt;</span> <span class="n">b</span><span class="p">.</span><span class="n">getTitle</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">" by "</span> <span class="o">&lt;&lt;</span> <span class="n">b</span><span class="p">.</span><span class="n">getAuthor</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="c1">// To allow chaining, we must change the return type</span>
+<span class="c1">// from void to ostream&amp;</span>
+<span class="n">ostream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">os</span><span class="p">,</span> <span class="k">const</span> <span class="n">Book</span><span class="o">&amp;</span> <span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="n">os</span> <span class="o">&lt;&lt;</span> <span class="n">b</span><span class="p">.</span><span class="n">getTitle</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">" by "</span> <span class="o">&lt;&lt;</span> <span class="n">b</span><span class="p">.</span><span class="n">getAuthor</span><span class="p">();</span>
+<span class="k">return</span> <span class="n">os</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cp">#include &lt;string&gt;
+#include &lt;iostream&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="k">class</span> <span class="nc">Book</span> <span class="p">{</span>
+<span class="cm">/* a friend function is a standalone function that is given permission
+* to access private identifiers (functions/data) of this class */</span>
+    <span class="k">friend</span> <span class="n">ostream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">ostream</span><span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="n">Book</span><span class="o">&amp;</span> <span class="n">b</span><span class="p">);</span>
+<span class="nl">public:</span>
+    <span class="n">Book</span> <span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">string</span><span class="p">);</span> <span class="cm">/* constructor */</span>
+    <span class="o">~</span><span class="n">Book</span><span class="p">();</span>
+<span class="cm">/* destructor */</span>
+<span class="cm">/* other member functions of Book will go here */</span>
+<span class="nl">private:</span>
+    <span class="n">string</span> <span class="n">author</span><span class="p">,</span> <span class="n">title</span><span class="p">;</span>
+<span class="p">};</span>
+
+
+
+<span class="c1">// ________________________________________________________________________________</span>
+<span class="c1">// Point</span>
+<span class="c1">// ________________________________________________________________________________</span>
+<span class="k">class</span> <span class="nc">Point</span>  <span class="p">{</span>
+    <span class="nl">public:</span>
+        <span class="kt">int</span> <span class="n">x</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">y</span><span class="p">;</span>
+
+    <span class="n">Point</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">Point</span><span class="p">(</span><span class="kt">int</span> <span class="n">_x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">_y</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">_x</span><span class="p">;</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">_y</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">string</span> <span class="n">to_string</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s">""</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+
+<span class="p">};</span>
+
+<span class="n">ostream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">os</span><span class="p">,</span> <span class="k">const</span> <span class="n">Point</span><span class="o">&amp;</span> <span class="n">point</span><span class="p">)</span> <span class="p">{</span> 
+    <span class="n">os</span> <span class="o">&lt;&lt;</span> <span class="s">"("</span> <span class="o">&lt;&lt;</span> <span class="n">point</span><span class="p">.</span><span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="s">" "</span> <span class="o">&lt;&lt;</span> <span class="n">point</span><span class="p">.</span><span class="n">y</span> <span class="o">&lt;&lt;</span> <span class="s">")"</span><span class="p">;</span> 
+    <span class="k">return</span> <span class="n">os</span><span class="p">;</span> 
+<span class="p">}</span> 
+
+<span class="kt">double</span> <span class="nf">distance</span><span class="p">(</span><span class="n">Point</span> <span class="n">pA</span><span class="p">,</span> <span class="n">Point</span> <span class="n">pB</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">sqrt</span><span class="p">(</span> <span class="n">pow</span><span class="p">(</span><span class="n">pA</span><span class="p">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">pB</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="mi">2</span> <span class="p">)</span> <span class="o">+</span> <span class="n">pow</span><span class="p">(</span><span class="n">pA</span><span class="p">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">pB</span><span class="p">.</span><span class="n">y</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="o">+</span> <span class="mi">16</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">double</span> <span class="nf">total_distance</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Point</span><span class="o">&gt;</span> <span class="n">aVector</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">double</span> <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">aVector</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">total</span> <span class="o">+=</span> <span class="n">distance</span><span class="p">(</span><span class="n">aVector</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">aVector</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">total</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+
+
+ <span class="c1">// does this need to be released why not?</span>
+ <span class="c1">// why use new verses not using new</span>
+  <span class="c1">//     CipherText cText = CipherText(cipherText);</span>
+
+
+  <span class="k">class</span> <span class="nc">CipherText</span> <span class="p">{</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">idx</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="nl">public:</span>
+        <span class="n">string</span> <span class="n">m_text</span><span class="p">;</span>
+
+    <span class="n">CipherText</span><span class="p">(</span><span class="n">string</span> <span class="n">text</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">m_text</span> <span class="o">=</span> <span class="n">text</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kt">char</span> <span class="n">next</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kt">char</span> <span class="n">letter</span> <span class="o">=</span> <span class="n">m_text</span><span class="p">[</span><span class="n">idx</span><span class="p">];</span>
+        <span class="k">while</span><span class="p">(</span> <span class="n">letter</span> <span class="o">&lt;</span> <span class="sc">'A'</span> <span class="o">||</span> <span class="n">letter</span> <span class="o">&gt;</span> <span class="sc">'Z'</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">letter</span> <span class="o">=</span> <span class="n">m_text</span><span class="p">[</span><span class="o">++</span><span class="n">idx</span><span class="p">];</span>
+        <span class="p">}</span>
+        <span class="n">idx</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">letter</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">Fibonacci</span> <span class="p">{</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">idx</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">numbers</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">13</span><span class="p">};</span>
+    <span class="nl">public:</span>
+        <span class="n">Fibonacci</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
+
+        <span class="kt">int</span> <span class="n">next</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">idx</span> <span class="o">==</span> <span class="n">numbers</span><span class="p">.</span><span class="n">size</span><span class="p">())</span> <span class="p">{</span>
+                <span class="n">numbers</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">numbers</span><span class="p">[</span><span class="n">idx</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">numbers</span><span class="p">[</span><span class="n">idx</span><span class="o">-</span><span class="mi">1</span><span class="p">]);</span>
+            <span class="p">}</span>
+            <span class="k">return</span> <span class="n">numbers</span><span class="p">[</span><span class="n">idx</span><span class="o">++</span><span class="p">];</span>
+        <span class="p">}</span>
+
+        <span class="kt">void</span> <span class="n">reset</span><span class="p">()</span> <span class="p">{</span>
+            <span class="n">idx</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="p">}</span>
+<span class="p">};</span>
+
+
+
+</code></pre></div></div>
+
+                </div>
+            </main>
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#classes">Classes</a></li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
+  <data class="u-url" href="/documents/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">LFMUNOZ</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">LFMUNOZ</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/lfmunoz"><svg class="svg-icon"><use xlink:href="/documents/assets/minima-social-icons.svg#github"></use></svg> <span class="username">lfmunoz</span></a></li><li><a href="https://www.twitter.com/lfmunoz4"><svg class="svg-icon"><use xlink:href="/documents/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">lfmunoz4</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>articles, notes, and references</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

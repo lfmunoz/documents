@@ -2,21 +2,42 @@
 <html lang="en">
 
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>LFMUNOZ | articles, notes, and references</title>
+<title>Testing | LFMUNOZ</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="LFMUNOZ" />
+<meta property="og:title" content="Testing" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="articles, notes, and references" />
 <meta property="og:description" content="articles, notes, and references" />
-<link rel="canonical" href="lfmunoz.github.io/documents/404.html" />
-<meta property="og:url" content="lfmunoz.github.io/documents/404.html" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/Rust/Testing.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/Rust/Testing.html" />
 <meta property="og:site_name" content="LFMUNOZ" />
 <script type="application/ld+json">
-{"@type":"WebPage","headline":"LFMUNOZ","url":"lfmunoz.github.io/documents/404.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+{"@type":"WebPage","headline":"Testing","url":"lfmunoz.github.io/documents/books/Rust/Testing.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
 <body><header class="site-header" role="banner">
@@ -169,30 +190,80 @@
 </div><div class="column-main">
             <main class="page-content" aria-label="Content">
                 <div class="wrapper">
-                    <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+                    <h1 id="testing">Testing</h1>
 
-<div class="container">
-  <h1>404</h1>
+<ul>
+  <li><a href="Introduction.html">The Rust Programming Language</a></li>
+</ul>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+<p>cargo test compiles your code in test mode and runs the resulting test binary.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>cargo <span class="nb">test</span> <span class="nt">--</span> <span class="nt">--test-threads</span><span class="o">=</span>1
+
+<span class="c">#Run only one test</span>
+cargo <span class="nb">test </span>one_hundred
+
+<span class="c">#Run anything starting with add</span>
+cargo <span class="nb">test </span>add
+
+<span class="c">#Run only ignored tests</span>
+cargo <span class="nb">test</span> <span class="nt">--</span> <span class="nt">--ignored</span>   
+</code></pre></div></div>
+
+<p>At its simplest, a test in Rust is a function that’s annotated with the test
+attribute.</p>
+
+<p>To change a function into a test function, add #[test] on the line before fn .</p>
+
+<p>When you run
+your tests with the cargo test command, Rust builds a test runner binary
+that runs the functions annotated with the test attribute and reports on
+whether each test function passes or fails.</p>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">#[cfg(test)]</span>
+<span class="k">mod</span> <span class="n">tests</span> <span class="p">{</span>
+ <span class="nd">#[test]</span>
+  <span class="k">fn</span> <span class="nf">it_works</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nd">assert_eq!</span><span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nd">#[test]</span>
+  <span class="k">fn</span> <span class="nf">another</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nd">panic!</span><span class="p">(</span><span class="s">"Make this test fail"</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">assert</span><span class="o">!</span><span class="p">(</span><span class="n">larger</span><span class="nf">.can_hold</span><span class="p">(</span><span class="o">&amp;</span><span class="n">smaller</span><span class="p">));</span>
+<span class="nd">assert_ne!</span>
+<span class="nd">assert!</span><span class="p">(</span><span class="n">result</span><span class="nf">.contains</span><span class="p">(</span><span class="s">"Carol"</span><span class="p">),</span> <span class="s">"Greeting did not contain name, value was `{}`"</span><span class="p">,</span> <span class="n">result</span><span class="p">);</span>
+
+<span class="nd">#[test]</span>
+<span class="nd">#[should_panic]</span>
+<span class="k">fn</span> <span class="nf">greater_than_100</span><span class="p">()</span> <span class="p">{</span>
+<span class="nn">Guess</span><span class="p">::</span><span class="nf">new</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nd">#[ignore]</span>
+<span class="k">fn</span> <span class="nf">expensive_test</span><span class="p">()</span> <span class="p">{</span>
+<span class="c">// code that takes an hour to run</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>cfg stands for configuration and tells Rust that the following item should
+only be included given a certain configuration option
+In this case, the
+configuration option is test , which is provided by Rust for compiling and
+running tests. By using the cfg attribute, Cargo compiles our test code
+only if we actively run the tests with cargo test</p>
+
 
                 </div>
             </main>
-        </div></div><footer class="site-footer h-card">
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#testing">Testing</a></li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
   <data class="u-url" href="/documents/"></data>
 
   <div class="wrapper">

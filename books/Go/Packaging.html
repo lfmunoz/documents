@@ -2,21 +2,42 @@
 <html lang="en">
 
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>LFMUNOZ | articles, notes, and references</title>
+<title>Packaging | LFMUNOZ</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="LFMUNOZ" />
+<meta property="og:title" content="Packaging" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="articles, notes, and references" />
 <meta property="og:description" content="articles, notes, and references" />
-<link rel="canonical" href="lfmunoz.github.io/documents/404.html" />
-<meta property="og:url" content="lfmunoz.github.io/documents/404.html" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/Go/Packaging.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/Go/Packaging.html" />
 <meta property="og:site_name" content="LFMUNOZ" />
 <script type="application/ld+json">
-{"@type":"WebPage","headline":"LFMUNOZ","url":"lfmunoz.github.io/documents/404.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+{"@type":"WebPage","headline":"Packaging","url":"lfmunoz.github.io/documents/books/Go/Packaging.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
 <body><header class="site-header" role="banner">
@@ -169,30 +190,76 @@
 </div><div class="column-main">
             <main class="page-content" aria-label="Content">
                 <div class="wrapper">
-                    <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+                    <h1 id="packaging">Packaging</h1>
 
-<div class="container">
-  <h1>404</h1>
+<ul>
+  <li><a href="Introduction.html">The Go Programming Language</a></li>
+</ul>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+<p>All code files in a folder must use the same package name, and it’s common practice to name the package after the folder.</p>
+
+<p>All init functions in any code file that are part of the program will get called before the main function.</p>
+
+<p>This variable is located outside the scope of any function and so is considered a package-level variable.</p>
+
+<p>In Go, identifiers are either exported or unexported from a package. An exported identifier can be directly accessed by code in other packages when the respective package is imported. These identifiers start with a capital letter. Unexported identifiers start with a lowercase letter and can’t be directly accessed by code in other packages</p>
+
+<h2 id="modules">Modules</h2>
+
+<p>A Module is a way to group together a set of packages and give it a version number to mark it’s existence (state) at a specific point in time.</p>
+
+<p>Go Modules use Semantic Versioning for their numbering scheme. (https://semver.org/)</p>
+
+<p>Modules allow for the deprecation of the GOPATH</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Initialize a new module:</span>
+go mod init github.com/lfmunoz/documents/tree/master/books/Go/src
+go: creating new go.mod: module github.com/lfmunoz/documents/tree/master/books/Go/src
+
+<span class="c"># View final versions that will be used in a build for all direct and indirect dependencies </span>
+go list <span class="nt">-m</span> all 
+github.com/lfmunoz/documents/tree/master/books/Go/src
+
+
+<span class="c"># Allows you to store your dependencies in the vendor directory inside of the project directory</span>
+<span class="c"># Allow projects more control over their dependencies than having to use go get every time and hope the dependent library still existed as a project, that it hadn’t been deleted from github, and that no breaking changes had been pushed to master</span>
+go mod vendor
+</code></pre></div></div>
+
+<details>
+<summary> cat src/go.mod </summary>
+
+<p>
+    <div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">module</span> <span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">lfmunoz</span><span class="o">/</span><span class="n">documents</span><span class="o">/</span><span class="n">tree</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">books</span><span class="o">/</span><span class="n">Go</span><span class="o">/</span><span class="n">src</span>
+
+<span class="k">go</span> <span class="m">1.15</span>
+
+<span class="n">require</span> <span class="p">(</span>
+	<span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">golang</span><span class="o">/</span><span class="n">protobuf</span> <span class="n">v1</span><span class="m">.4.2</span>
+	<span class="n">golang</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">x</span><span class="o">/</span><span class="n">net</span> <span class="n">v0</span><span class="m">.0.0</span><span class="o">-</span><span class="m">20190311183353</span><span class="o">-</span><span class="n">d8887717615a</span>
+	<span class="n">google</span><span class="o">.</span><span class="n">golang</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">grpc</span> <span class="n">v1</span><span class="m">.34.0</span>
+	<span class="n">google</span><span class="o">.</span><span class="n">golang</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">grpc</span><span class="o">/</span><span class="n">cmd</span><span class="o">/</span><span class="n">protoc</span><span class="o">-</span><span class="n">gen</span><span class="o">-</span><span class="k">go</span><span class="o">-</span><span class="n">grpc</span> <span class="n">v1</span><span class="m">.0.1</span> <span class="c">// indirect</span>
+	<span class="n">google</span><span class="o">.</span><span class="n">golang</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">protobuf</span> <span class="n">v1</span><span class="m">.25.0</span>
+<span class="p">)</span>
+
+</code></pre></div>    </div>
+  </p></details>
+<p><br /></p>
+
+<p>There are four directives: module, require, replace, exclude</p>
 
                 </div>
             </main>
-        </div></div><footer class="site-footer h-card">
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#packaging">Packaging</a>
+    <ul>
+      <li><a href="#modules">Modules</a></li>
+    </ul>
+  </li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
   <data class="u-url" href="/documents/"></data>
 
   <div class="wrapper">

@@ -2,21 +2,42 @@
 <html lang="en">
 
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>LFMUNOZ | articles, notes, and references</title>
+<title>GDB | LFMUNOZ</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="LFMUNOZ" />
+<meta property="og:title" content="GDB" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="articles, notes, and references" />
 <meta property="og:description" content="articles, notes, and references" />
-<link rel="canonical" href="lfmunoz.github.io/documents/404.html" />
-<meta property="og:url" content="lfmunoz.github.io/documents/404.html" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/Linux/GDB.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/Linux/GDB.html" />
 <meta property="og:site_name" content="LFMUNOZ" />
 <script type="application/ld+json">
-{"@type":"WebPage","headline":"LFMUNOZ","url":"lfmunoz.github.io/documents/404.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+{"@type":"WebPage","headline":"GDB","url":"lfmunoz.github.io/documents/books/Linux/GDB.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
 <body><header class="site-header" role="banner">
@@ -169,30 +190,216 @@
 </div><div class="column-main">
             <main class="page-content" aria-label="Content">
                 <div class="wrapper">
-                    <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+                    <h1 id="gdb">GDB</h1>
 
-<div class="container">
-  <h1>404</h1>
+<p>GDB is a debugger. GDB is an interactive tool.</p>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+<p>Install gdb and ddd</p>
+
+<p>when you compile make sure you use the -g option.
+The -g option tells the compiler to save the symbol table—that is, the list of memory addresses corresponding to your
+program’s variables and lines of code—within the generated executable.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gcc <span class="nt">-g</span> program.c <span class="nt">-o</span> programname
+nasm <span class="nt">-f</span> elf64 <span class="nt">-g</span> <span class="nt">-F</span> stabs file.asm
+gcc <span class="nt">-g</span> main.c
+
+gdb ./a.out
+ddd ./a.out
+</code></pre></div></div>
+
+<h1 id="commands">Commands</h1>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+# Add break point
+b main
+b functionName # better to use function name if code changes
+break 16  
+break main.c:8
+b 16
+
+# adding conditions on break points
+condition 1 num_y == 1 # for breakpoint 1 only stop when num_y ==1 
+break 30 if  num_y == 1 # combine break and condition
+
+
+
+# only stays in effect until the first time line is reached
+tbreak
+
+# Remove break point
+clear 16
+
+# List all break points
+info break 
+
+
+#Single-stepping
+
+# Go to next line not entering function call
+next 
+n # don't step into functions
+
+# Run the next line of the program
+step 
+s
+s N  # run the next N lines of the program
+
+# Run program until a breakpiont or error
+run 
+r
+r arg1 arg
+r &lt; file1
+
+#  Resume execution until next breakpoint
+continue
+c
+
+# Run until current fucntion is finished 
+f
+
+# inspect variable
+# j is a local variable at break point
+print j
+p var # print current value of variable "var"
+p/x y # print in hex
+p/c y # print char
+p/s y  # print string
+
+
+# Quick GDB
+q
+
+#watchpoint combines the notation of breakpoint and     variable inspection
+# instructs the debugger to pause execution of the pogram whenever the value
+# of a specified variable changes
+
+watch z
+watch (z &gt; 28)
+
+#
+frame 1 # previous frame
+frame 0 # current fram
+
+up # takes you to previous frame
+down # takes you next frame
+
+backtrace # will show entire stack
+
+
+
+breakpoint command lists
+Wouldn’t it be nice if GDB were to automatically perform a set of commands
+each time it reaches a breakpoint?
+
+printf basically works the same way in GDB as
+it does in C, but the parentheses are optional.
+
+commands breakpoint-number
+...
+commands
+...
+end
+
+
+commands 1
+silent
+printf "fibonacci was passed %d.\n", n
+continue
+end
+
+
+
+define print_and_go
+printf $arg0, $arg1
+continue
+end
+
+commands 1
+silent
+print_ang_go "fib was passeed %d\n" n
+end
+
+show user # show all the macros
+
+
+# tells gdb to automatically print the specifieditem each time there is a pause in execution
+display
+dsp
+
+call printtree(root)
+
+# get a quick review of the structure of a class or struct
+ptype node
+
+
+
+# examine memory
+x
+
+</code></pre></div></div>
+
+<h1 id="command-line">Command line</h1>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> gdb <span class="nt">-ex</span> <span class="s1">'break fun1'</span> <span class="nt">-ex</span> <span class="s1">'break fun2'</span> <span class="nt">-ex</span> <span class="s1">'break fun3'</span> ./myprog
+ gdb <span class="nt">-ex</span> <span class="s1">'break main'</span> <span class="nt">-ex</span> <span class="s1">'info b'</span> <span class="nt">-ex</span> <span class="s1">'set print pretty on'</span> ./myprog
+</code></pre></div></div>
+
+<h1 id="configuration--automation">Configuration / Automation</h1>
+
+<p>GDB’s startup files are named .gdbinit by default (gdb executes file .gdbinit after running).
+You can have one in your home directory for general purposes and another in the directory
+containing a particular project for purposes specific to that project.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Example .gdbinit</span>
+<span class="nb">set </span>pagination off
+<span class="nb">set </span>logging file gdb.txt
+<span class="nb">set </span>logging on
+file a.out
+b f
+commands
+bt
+<span class="k">continue
+</span>end
+info breakpoints
+r
+<span class="nb">set </span>logging off
+quit
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># run gdb on x first reading in commands from file z</span>
+gdb <span class="nt">-command</span><span class="o">=</span>z x
+</code></pre></div></div>
+
+<h1 id="errors">Errors</h1>
+
+<p><strong>Segmentation faults</strong> occur when a running program attempts to access memory that it does not have permission
+to access. Typically the cause is an out-of-bounds array index or an errant pointer value.</p>
+
+<h1 id="references">References</h1>
+
+<ul>
+  <li>GDB Internals Documentation</li>
+  <li>
+    <p>https://sourceware.org/gdb/wiki/Internals</p>
+  </li>
+  <li>GDB Documentation</li>
+  <li>https://sourceware.org/gdb/current/onlinedocs/gdb.html#File-Options</li>
+</ul>
 
                 </div>
             </main>
-        </div></div><footer class="site-footer h-card">
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#gdb">GDB</a></li>
+  <li><a href="#commands">Commands</a></li>
+  <li><a href="#command-line">Command line</a></li>
+  <li><a href="#configuration--automation">Configuration / Automation</a></li>
+  <li><a href="#errors">Errors</a></li>
+  <li><a href="#references">References</a></li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
   <data class="u-url" href="/documents/"></data>
 
   <div class="wrapper">

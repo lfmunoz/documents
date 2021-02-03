@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="lfmunoz.github.io/documents/feed.xml" rel="self" type="application/atom+xml" /><link href="lfmunoz.github.io/documents/" rel="alternate" type="text/html" /><updated>2021-02-03T01:36:44+00:00</updated><id>lfmunoz.github.io/documents/feed.xml</id><title type="html">LFMUNOZ</title><subtitle>articles, notes, and references</subtitle><entry><title type="html">I wish I was worse at dancing</title><link href="lfmunoz.github.io/documents/2020/12/17/i-wish-i-was-worse.html" rel="alternate" type="text/html" title="I wish I was worse at dancing" /><published>2020-12-17T00:00:00+00:00</published><updated>2020-12-17T00:00:00+00:00</updated><id>lfmunoz.github.io/documents/2020/12/17/i-wish-i-was-worse</id><content type="html" xml:base="lfmunoz.github.io/documents/2020/12/17/i-wish-i-was-worse.html">&lt;p&gt;Oh wait I was worse. Last few months I’ve been posting my dance class videos every week on youtube &lt;a href=&quot;https://www.youtube.com/watch?v=0x8TYugQpRQ&quot;&gt;LFM - Dance Journal&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Every week I think… video is not that good, not going to post this week but at the same time why delete it? Google will store my videos for free, at 4K, I can just make it private. Once I upload, the more I watch it the more I fall in love with it, the more I feel it’s worth sharing. I actually start thinking… I wish I was worse! I wish I had more videos from last year then I would have a complete story, a complete fossil record. I’m already in the top 80 percentile maybe higher, there are too many people who might watch it and feel they couldn’t do it. If I had videos of when I started they could just go back to a point where their level matched my level and see this beautiful progression. That is powerful, something that has only recently been possible.&lt;/p&gt;
+
+&lt;p&gt;I predict some time soon we will see the full progression of the creation of a professional musician, dancer, programmer, etc. I’m talking about seeing someone that is a bad dancer and has videos of each week as they progressed to becoming good. It creates a truthfulness that is undeniable, it highlights the art itself, defines what it.&lt;/p&gt;
+
+&lt;p&gt;There are professional dancers who post old videos of themselves, but I’ve never seen a full progression. I’ve seen amateurs post a progression of daily clips for a year, maybe two and then they plateau, quit and stop progressing which is why they are not professional. I would want to see someone that put in the 10,000 hours, didn’t quit and had a deep genuine passion for the art. I see videos of kids who are good, almost like they were born good, but also not exactly what a full progression is, they need to be bad first or else they become unconsciously competent instead of consciously competent. The first isn’t as useful.&lt;/p&gt;
+
+&lt;p&gt;Another motivation for posting videos is that we are flooded with professional dancers with professional production. How many retries did it take for the video you are watching? One? Doubt it. There’s something about that I don’t like: A distortion of reality?  A misrepresentation of how high the bar is? The videos I enjoy the most are of dancers that are slightly better than me.&lt;/p&gt;
+
+&lt;p&gt;Anyway a partial record is always better than no record.&lt;/p&gt;</content><author><name></name></author><summary type="html">Oh wait I was worse. Last few months I’ve been posting my dance class videos every week on youtube LFM - Dance Journal.</summary></entry><entry><title type="html">Too many options slows production</title><link href="lfmunoz.github.io/documents/2020/12/13/too-many-options.html" rel="alternate" type="text/html" title="Too many options slows production" /><published>2020-12-13T00:00:00+00:00</published><updated>2020-12-13T00:00:00+00:00</updated><id>lfmunoz.github.io/documents/2020/12/13/too-many-options</id><content type="html" xml:base="lfmunoz.github.io/documents/2020/12/13/too-many-options.html">&lt;p&gt;In Marketing and Psychology there is a well known principle called &lt;strong&gt;“The Paradox of Choice”&lt;/strong&gt;. I’ve noticed a similar principle in programming languages and frameworks as well.&lt;/p&gt;
+
+&lt;p&gt;If you work with Gradle for example, it uses Groovy scripts which I feel has too many options. I often see scripts with different variations all doing the same thing, for example declaring a dependency.&lt;/p&gt;
+
+&lt;div class=&quot;language-groovy highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// GOOD&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;testCompile&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;org.junit.jupiter:junit-jupiter:5.4.0&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 
+&lt;span class=&quot;c1&quot;&gt;// NOT GOOD&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;testCompile&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;org.junit.jupiter:junit-jupiter:5.4.0&quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;testCompile&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'org.junit.jupiter:junit-jupiter:5.4.0'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;testCompile&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'org.junit.jupiter:junit-jupiter:5.4.0'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;testCompile&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;group:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'org.junit.jupiter'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;name:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'junit-jupiter'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;version:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'5.4.0'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;As a programmer I don’t want all those options.&lt;/p&gt;
+
+&lt;p&gt;(1) It’s difficult to remember if there are any subtle differences or they are just doing the exact thing.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;In C/C++ and Java “ is for multiple characters and ‘ is a single character&lt;/li&gt;
+  &lt;li&gt;In Bash, Groovy, Kotlin “ allows variable replacement while ‘ doesn’t allow variable replacement&lt;/li&gt;
+  &lt;li&gt;In Python there is no difference between and “ and ‘&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;(2) When I copy code from other project there are inconsistencies, someone in the team likes single quotes another likes double quotes, now I need coordinate to have code consistency.&lt;/p&gt;
+
+&lt;p&gt;Go is language that I enjoy because it is minimal and opinionated, giving it a sort of straight-forwardness feel. In most other languages good programmers intuitively follow the principle:&lt;/p&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;&lt;strong&gt;Programming Principle:&lt;/strong&gt; Limit the language features you use.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Just because there is a language feature doesn’t mean you should use it. Many features are actually anti-patterns, but they are there nevertheless.  For example goto in C. The with-statement in JavaScript (deprecated). In VHDL there is also a with-statement and if you know what you’re doing you simply don’t use it. These statements have better alternatives.&lt;/p&gt;
+
+&lt;p&gt;With frameworks you see the same situation, i.e, in Spring Boot, you can do &lt;strong&gt;GetMapping&lt;/strong&gt; or &lt;strong&gt;RequestMapping&lt;/strong&gt; to annotate an HTTP endpoint. Generally when I figure the options I pick one and stick to it, i.e, limit the features I use.&lt;/p&gt;</content><author><name></name></author><summary type="html">In Marketing and Psychology there is a well known principle called “The Paradox of Choice”. I’ve noticed a similar principle in programming languages and frameworks as well.</summary></entry><entry><title type="html">A dream of dogs and cats</title><link href="lfmunoz.github.io/documents/2020/12/06/dream-cats-and-dogs.html" rel="alternate" type="text/html" title="A dream of dogs and cats" /><published>2020-12-06T00:00:00+00:00</published><updated>2020-12-06T00:00:00+00:00</updated><id>lfmunoz.github.io/documents/2020/12/06/dream-cats-and-dogs</id><content type="html" xml:base="lfmunoz.github.io/documents/2020/12/06/dream-cats-and-dogs.html">&lt;p&gt;&lt;strong&gt;Saturday night December 5, 2020:&lt;/strong&gt; I watched Raiders of the Lost Ark. Good movie,
+but I’ve seen it before and went to sleep feeling a bit disappointed. The feeling is difficult to express in words, but the gist is I’m being told that I need to be doing something else on my days off. It’s a paradox because if we are happy does it matter we do? Especially on down time? Yes, it matters we should trust our feelings. I received a beautiful reaffirmation in a dream.&lt;/p&gt;
+
+&lt;p&gt;That same night I had a vivid dream.  I was in a big mansion overlooking the ocean
+on a mountain range. The house belonged to my family and they were away on vacation. I went inside and went into one of the rooms. There were pets in there, dogs, cats, and I was horrified and upset that my parents could leave these poor animals locked in a room.&lt;/p&gt;
+
+&lt;p&gt;There was a pile of food so they weren’t going to die but they had nothing to do in the room.
+There was a fluffy dog on a couch just sleeping, lethargic, perhaps depressed. I opened the door and let various animals roam around the house. I became concerned that they might destroy parts of the house, but fuck the house, my dream Self thought, it’s cruel to leave those animals locked in the room. I went into different rooms and saw the same thing. There were animals in every room. Some immediately ran out others were depressed and didn’t move much.&lt;/p&gt;
+
+&lt;p&gt;I woke up and one of first thoughts I had as the “waking self” was about buying books. I got up went on amazon and spent 200 dollars. Reflecting back I interpret it as following:&lt;/p&gt;
+
+&lt;p&gt;From reading books such as Aion I know that a house, city, castle, church, are common representation of wholeness, the true Self. The rooms are all parts of myself, I go into the rooms and see animals or small spirits or thoughts, ideas and creativity. I let them out and some ideas don’t want to come out while some are eager to come out.  When I woke up my first thought is about buying books. I don’t pick my thoughts they appear to me, so I correctly didn’t even question that thought. Especially early in the morning we are more suggestible and more in alignment with our “higher-Self”.&lt;/p&gt;
+
+&lt;p&gt;I’m thinking dreams are a way for different tendencies inside of us to coalesce and communicate, often not making sense due to contradictions and paradoxes, opposite “spirits”. Anyway, here is is my Amazon order:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Delivery estimate: Tuesday, December 8, 2020 by 10pm
+
+Set Theory And Its Philosophy: A Critical Introduction
+Potter, Michael
+Sold by: Amazon.com Services LLC
+$49.95
+Buy it again
+Delivery estimate: Tuesday, December 8, 2020 by 10pm
+
+Star Maker
+Stapledon, Olaf
+Sold by: Amazon.com Services LLC
+$10.79
+Buy it again
+
+The Phoenix Project (A Novel About IT, DevOps, and Helping Your Business Win)
+Kim, Gene
+Sold by: Amazon.com Services LLC
+$16.90
+Buy it again
+
+Introduction to Graph Theory (Dover Books on Mathematics)
+Richard J. Trudeau
+Sold by: Amazon.com Services LLC
+$12.19
+Buy it again
+
+Classic Set Theory (Chapman &amp;amp; Hall Mathematics S)
+Goldrei, D.C.
+Sold by: ayvax
+$98.45
+
+TOTAL
+$203.81
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">Saturday night December 5, 2020: I watched Raiders of the Lost Ark. Good movie, but I’ve seen it before and went to sleep feeling a bit disappointed. The feeling is difficult to express in words, but the gist is I’m being told that I need to be doing something else on my days off. It’s a paradox because if we are happy does it matter we do? Especially on down time? Yes, it matters we should trust our feelings. I received a beautiful reaffirmation in a dream.</summary></entry><entry><title type="html">RESTful HTTP creates coupling</title><link href="lfmunoz.github.io/documents/2020/11/27/http-rest-bad-design.html" rel="alternate" type="text/html" title="RESTful HTTP creates coupling" /><published>2020-11-27T00:00:00+00:00</published><updated>2020-11-27T00:00:00+00:00</updated><id>lfmunoz.github.io/documents/2020/11/27/http-rest-bad-design</id><content type="html" xml:base="lfmunoz.github.io/documents/2020/11/27/http-rest-bad-design.html">&lt;p&gt;Imagine your requirements for a design wasn’t to support some RPC technology but instead it was support all RPC technologies. This may seem like a lot of unnecessary work to some, but I would say it takes similar effort to at least support the possibility and it follows the principle of &lt;strong&gt;Design For Change&lt;/strong&gt;. I will pick a technology but at the same time I am also designing it like I’m going to change to another ( HTTP, gRPC, WebSocket, Kafka, AMPQ, STOMP, etc). When there is no coupling it doesn’t make a difference how the data is arriving.&lt;/p&gt;
+
+&lt;p&gt;The problem is that technologies will tilt you into coupling your code. For example HTTP REST wants you to split your data into a header and body payload:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;DELETE /api/appSpecific/{id}
+   +                      +
+   |                      |
+   |                      +-----+ http specific header causes 
+   +----------------------------+  coupling and redundancy
+{
+  object payload...    
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Data objects will often need the Id embedded into the object and other RPC technologies will not have this split. It is fine to make the decision that the application is going to use HTTP and that changing it will be a complete re-write but my point is this is often poor design. A better approach is to layer it like this:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;HTTP Generic Packet -&amp;gt; MyAppDTO -&amp;gt; Application Code
+GRPC Generic Packet -&amp;gt; MyAppDTO -&amp;gt; Application Code
+Kafka Generic Packet -&amp;gt; MyAppDTO -&amp;gt; Application Code
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Often, people see code layered like this and it doesn’t look clean because:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A) They have no experience in having gone through a re-write. For example I’ve had to refactor applications from RabbitMQ to KAFKA and from HTTP to WebSockets.&lt;/li&gt;
+  &lt;li&gt;B) They’re used to seeing example code from all these projects doing what I am suggesting not to do. These programmers often don’t write many applications using competing technologies.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Looking at a typical gRPC designs you see:&lt;/p&gt;
+
+&lt;div class=&quot;language-protobuf highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Naive implementation (beginner design)&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;service&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Greeter&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// Sends a greeting&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;rpc&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SayHello&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;HelloRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;returns&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;HelloReply&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Intermediate implementation decouples what objects you send&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;service&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;GRPC&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;rpc&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;grpc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RpcRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;returns&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RpcResponse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Advanced implementation additionally decouples serialization&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;service&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;GRPC&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;rpc&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;grpc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;bytes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;returns&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;bytes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Many libraries will want you to register your serializer with their implementations or worse
+specify a serializer for each object type. Avoid this feature, don’t allow the frameworks to wrap their tentacles around your code. If you do it generically it will work with any library.&lt;/p&gt;
+
+&lt;p&gt;Let’s look at Kafka, you will often see:&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Naive implementation&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;props&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setProperty&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;key.deserializer&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;MyObjectSerializer&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// not generic  (coupled)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;props&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setProperty&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;value.deserializer&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;MyKeySerializer&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// not generic (cohesion)&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;KafkaConsumer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;MyAppObjectKey&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MyAppObjectValue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;consumer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;KafkaConsumer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;props&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Design for change implementation&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;props&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setProperty&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;key.deserializer&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;ByteArraySerializer&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// generic&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;props&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setProperty&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;value.deserializer&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;ByteArraySerializer&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// generic&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;KafkaConsumer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;ByteArray&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ByteArray&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;props&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The naive implementations don’t clearly separate out the applications objects from the input and output implementations. This means you cannot easily switch between them. If you simply create a intermediate object, there is hard separation. In Kafka this would look like this:&lt;/p&gt;
+
+&lt;div class=&quot;language-kotlin highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Kafka specific intermediate container object&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;data class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;KafkaMessage&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;py&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ByteArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;py&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ByteArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;py&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MutableMap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ByteArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-kotlin highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;data class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;SomeAppSpecificDomainObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;py&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;py&quot;&gt;meataData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;py&quot;&gt;created&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Instant&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Instant&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// domain object going to kafka&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;toKafkaMessage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;KafkaMessage&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;py&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mapper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;writeAsByteArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
+        &lt;span class=&quot;kd&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;py&quot;&gt;key&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;toByteArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;KafkaMessage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// domain object going to gRpc&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;toGrpcMessage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// domain object going to... it doesn't matter code will write itself&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;toAnything&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; 
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;There is clear decoupling in the application. I use domain objects but when doing input/output/rpc I simply convert to a specific messages container that is technology specific. When testing I verify the consumer and producers work but only care that I can send and receive KafkaMessages, what is inside of those messages doesn’t make a difference that is a different layer and a separate test. If I verify I can create a generic KafkaMessages out of my domain objects and I separately verify I can send KafkaMessage objects across the network then that is a verification for the full path, that is how managing complexity is done.&lt;/p&gt;
+
+&lt;p&gt;Would you have Kafka tests for each topic? Why is that you see HTTP tests hitting every endpoint? With HTTP the container object looks something like this:&lt;/p&gt;
+
+&lt;div class=&quot;language-kotlin highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;data class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;HttRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;py&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;POST&quot;&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;py&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;some payload&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;py&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;cookies, and tokens&quot;&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;py&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;/home/url/string&quot;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This is implicit and hidden in many frameworks which causes coupling. If you were to use explicit container objects with clear separations then you get malleable, verifiable, and readable code.&lt;/p&gt;</content><author><name></name></author><summary type="html">Imagine your requirements for a design wasn’t to support some RPC technology but instead it was support all RPC technologies. This may seem like a lot of unnecessary work to some, but I would say it takes similar effort to at least support the possibility and it follows the principle of Design For Change. I will pick a technology but at the same time I am also designing it like I’m going to change to another ( HTTP, gRPC, WebSocket, Kafka, AMPQ, STOMP, etc). When there is no coupling it doesn’t make a difference how the data is arriving.</summary></entry><entry><title type="html">Organization and Structure of Applications</title><link href="lfmunoz.github.io/documents/2020/08/01/organization-and-structure.html" rel="alternate" type="text/html" title="Organization and Structure of Applications" /><published>2020-08-01T00:00:00+00:00</published><updated>2020-08-01T00:00:00+00:00</updated><id>lfmunoz.github.io/documents/2020/08/01/organization-and-structure</id><content type="html" xml:base="lfmunoz.github.io/documents/2020/08/01/organization-and-structure.html">&lt;p&gt;In programming there is a guideline that says&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Group together items that are likely to change together&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Yet most software systems simply ignores this and lure us into having a structure organized by category. If you look at the filesystem of the Linux Operating System you see the following:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/etc
+/var/log
+/bin  
+/usr 
+/lib 
+/home/luis
+/root
+/dev 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Here you have &lt;em&gt;/var/log&lt;/em&gt; whose purpose is to hold the logs of every application on the system. It would be better if it was&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;app/http/config
+app/http/logs
+app/home/root
+app/home/luis
+system/bin
+system/lib
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The problem being that an application is spread out. Ideally if I was going to remove an application I should be able to remove a single directory. Also if I am working with an application I shouldn’t have to navigate across the entire filesystem to modify the configuration and then go look at the logs. Microsoft Windows almost got it right, they have a folder called Program Files:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Program Files/Steam
+Program Files/Visual Basic
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;If I delete  &lt;em&gt;Program Files/Steam&lt;/em&gt; most of the application will be gone. Unfortunately there are shared library files that might remain, a System Registry that holds information about an application even after it has been uninstalled and Menu shortcuts.  These are artifacts of poor design, there is no reason the system couldn’t keep track of all application information within one folder.&lt;/p&gt;
+
+&lt;p&gt;These days if feels wrong to install an application on my Linux Desktop. I feel like it will pollute it. If there
+is a docker image I rather run that. Docker keeps applications contained and organized. If I want to remove
+an application I can simply remove the image. If you use the package manager the chances that your system will returns to the exact state after uninstalling  an application is near zero.&lt;/p&gt;
+
+&lt;p&gt;When I was studying government in High School, we were learning how laws get passed I thought it was strange that each year new laws get passed because how can that be sustaintable? If each year there are more regulations, more laws to comply with, wouldn’t there be a point where the complexity is just too large and the whole system would collapse?&lt;/p&gt;
+
+&lt;p&gt;I mention this because this is how systems are today, each time you install a program if the system cannot guanratee it will completely remove an application without pollution then the system is not sustainable.  I find myself having to completely reinstall my Operating System everything 1-3 years in part because of pollution.&lt;/p&gt;
+
+&lt;p&gt;Android, interestingly, has a per-app subdirectory simply out of necessity of how its security works. Each application can only write to one folder, this is good for security but also makes it so all the data for an application can easily be removed.&lt;/p&gt;
+
+&lt;p&gt;Next, looking at a typtical Java application structure you will often see:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/repository/UserRepository.java
+/repository/BookRepository.java
+/service/UserService.java
+/service/BookService.java
+/config/BookConfig.java
+/config/UserConfig.java
+/domain/UserEntity.java
+/domain/BookEntity.java
+/web/userApi.java
+/web/BookApi.java
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;For example  &lt;a href=&quot;https://www.jhipster.tech/&quot;&gt;Jhipster&lt;/a&gt; follows this.  That layout comes from a misapplication of the popular book &lt;em&gt;Domain-Driven Design&lt;/em&gt; by Eric Evans it says: “Partition a complex program into LAYERS. Develop a design within each LAYER that is cohesive and that depends only on the layers below.”  Then it describes two common layers:&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Repository:&lt;/em&gt;  The purpose of which is to encapsulate all the logic needed to obtain object references.  Repository acts as a storage place for globally accessible objects.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Services:&lt;/em&gt; There are some actions in the domain, some verbs, which do not seem to belong to any object. Adding such behavior to an object would spoil the object, making it stand for functionality which does not belong to it. When such a behavior is recognized in the domain, the best practice is to declare it as a Service.&lt;/p&gt;
+
+&lt;p&gt;None of this indicates you should layout the application with a folder per layer, yet that is what you see in many applications. In my experience this is not efficient. It would better if the layout was:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;components/user/UserRepository.java
+components/user/UserService.java
+components/user/UserApi.java
+components/book/BookRepository.java
+components/book/BookService.java
+components/book/BookApi.java
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;If I change the repository from &lt;em&gt;PostgresQL&lt;/em&gt; to &lt;em&gt;MySQL&lt;/em&gt; it is unlikely I will change &lt;em&gt;BookRepository&lt;/em&gt; because 
+that code communicates through an interface that won’t change even if the database changes. If I am making changes to Book it is likely that &lt;em&gt;BookService&lt;/em&gt;, &lt;em&gt;BookRepository&lt;/em&gt; and &lt;em&gt;BookApi&lt;/em&gt; will have to change. It doesn’t make sense to spread out the code for Book.&lt;/p&gt;
+
+&lt;p&gt;In front-end applications we are starting to see a component folder. A component will include CSS, HTML, and JavaScript in a single file.  This is closer to how I layout my applications.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; # Default Vue.js Layout
+  src
+├── App.vue
+├── assets
+│   └── logo.png
+├── components
+│   └── HelloWorld.vue
+└── main.js
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Front-end technology moves faster than back-end so I see this as an indication that these developers are understanding the benefits of keeping similiar code together.  I hope to see more back-end code following the principle because it is easier to read and work with. You often can tell a layout is problematic by how many files you have to open to implement a feature or fix. Also by how difficult it is to find sections of code after you haven’t worked on them for a while.&lt;/p&gt;</content><author><name></name></author><summary type="html">In programming there is a guideline that says</summary></entry><entry><title type="html">Listening to Music</title><link href="lfmunoz.github.io/documents/2020/07/12/listening-to-music.html" rel="alternate" type="text/html" title="Listening to Music" /><published>2020-07-12T00:00:00+00:00</published><updated>2020-07-12T00:00:00+00:00</updated><id>lfmunoz.github.io/documents/2020/07/12/listening-to-music</id><content type="html" xml:base="lfmunoz.github.io/documents/2020/07/12/listening-to-music.html">&lt;p&gt;For years I’ve been listening to music wrong. You may think that there is no way to listen to music wrong, but there is if you are active listening or &lt;em&gt;dancing&lt;/em&gt;. You want to piece together the structure of what the producer created and understand her intentions.  All music has structure and if you are listening correctly you can reverse engineer the production of the song and predict the sounds that will naturally follow.&lt;/p&gt;
+
+&lt;p&gt;What I would do is start bobbing to the bass and start the count randomly.  The problem is the count isn’t random. A melody will start and end at specific places. You can’t count until you know the pattern or the melody. Typically, the pattern fits an 8-count sequence, the difficulty is knowing where each 8-count sequence starts and not getting confused by an 8-count sequence that is twice as fast.&lt;/p&gt;
+
+&lt;p&gt;The producer created the song with a specific tempo and although counting twice as fast will still work, that is a different intent. It is important that you detect the starting point and tempo as the producer created it. When you learn how to correctly listen you can pick these patterns up almost instantly.&lt;/p&gt;
+
+&lt;p&gt;A simple example is the song &lt;a href=&quot;https://www.youtube.com/watch?v=9-xnOMZyJes&quot;&gt;Computer Love by Zapp and Roger&lt;/a&gt; Play it from the middle, you will hear a “ssh ssh ssh” sound. On which count does this sound land?  How obvious is it to you that this sound lands on the 3rd count?  What would be wrong about counting the “ssh ssh ssh” sound as 1?&lt;/p&gt;
+
+&lt;p&gt;The song makes more sense when that sound is on the 3rd count. The signing starts aligned and there will be a larger structure contained within the smaller 8-count structure.  To get this right you should beatbox or hum the pattern first. Then fit it to the bass or beat. That way you will be aligned and timed correctly.&lt;/p&gt;
+
+&lt;p&gt;More Examples:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Cardi B - WAP FT. Megan Thee Stallion  - Timing=8 / BASS=1 4 and 6&lt;/li&gt;
+  &lt;li&gt;Tyla Yaweh - Stuntin’ On You ft. DaBaby - Timing=6 / BASS= 1 2 3 / SNAP=6&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">For years I’ve been listening to music wrong. You may think that there is no way to listen to music wrong, but there is if you are active listening or dancing. You want to piece together the structure of what the producer created and understand her intentions. All music has structure and if you are listening correctly you can reverse engineer the production of the song and predict the sounds that will naturally follow.</summary></entry><entry><title type="html">Frameworks and Libraries</title><link href="lfmunoz.github.io/documents/2020/07/05/frameworks.html" rel="alternate" type="text/html" title="Frameworks and Libraries" /><published>2020-07-05T00:00:00+00:00</published><updated>2020-07-05T00:00:00+00:00</updated><id>lfmunoz.github.io/documents/2020/07/05/frameworks</id><content type="html" xml:base="lfmunoz.github.io/documents/2020/07/05/frameworks.html">&lt;p&gt;&lt;span class=&quot;intro&quot;&gt;Should Frameworks and Libraries be avoided or embraced? &lt;/span&gt; Obviously I can’t give you an absolute answer, but there are guidelines, rules and code smells that will separate a well structured system from a kludge.&lt;/p&gt;
+
+&lt;p&gt;Once upon a time I thought, “Wow, everything has already been written. There is a library for that, let me just download it and use it. All I have to do is just stitch it together. Most programming is just about finding the right framework or library.”&lt;/p&gt;
+
+&lt;p&gt;Unfortunately it’s more complicated than that. That sort of thinking will lead to overly embracing frameworks which leads to having overly complicated code,  performance problems and extra refactorings. Professional programmers always use frameworks and libraries with caution. Here are some guidelines:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;If a framework has a feature that doesn’t mean you should be using it. More likely you should be avoiding it.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;For example, with &lt;em&gt;Spring Boot&lt;/em&gt; you get dependency injection. Often in such projects I see dependency injection abused, meaning used everywhere even when it would be just as easy to pass in arguments that aren’t &lt;em&gt;@Autowired&lt;/em&gt;. Proper use of dependecy injection means using it at strategic boundaries where you end up with isolated subsystems that can be easily swapped.&lt;/p&gt;
+
+&lt;p&gt;The intermediate programmers thinks she understands that coupling is bad but often she hasn’t taken the concept far enough. Coupling also means using a feature from a third party library and therefore using it only when necessary will keep coupling low. Keeping coupling low creates boundaries of seperation and allows the code to be more malleable.  Malleability is important becomes it means adding a feature or making a modification will be feasible with minimum effort.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;If you think you can do it in one day do it . Even after you figure out it will take you three days.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;For example, if you need to communicate with &lt;em&gt;RabbitMQ&lt;/em&gt;, &lt;em&gt;Kafka&lt;/em&gt; or &lt;em&gt;ElasticSearch&lt;/em&gt;  most programmers would reach for &lt;em&gt;Spring Boot&lt;/em&gt; (i.e., &lt;em&gt;“org.springframework.kafka:spring-kafka”&lt;/em&gt;) or some other  library which is just wrapper code around the already good libraries provided by the implementation developers (i.e., &lt;em&gt;“org.apache.kafka:kafka-clients”&lt;/em&gt;). This rule says that if you think you can get the same required functionality by using a lower-level library absoutely do it. The lower-level libraries have better code quality, performance and stability.  The lower-libraries are written by domain experts the framework wrappers are written by competent programmers who read through the documnetation of the lower-libraries.&lt;/p&gt;
+
+&lt;p&gt;To understand this fully look through this issue: &lt;a href=&quot;https://issues.apache.org/jira/browse/FLINK-10195&quot;&gt;FLINK-10195&lt;/a&gt;.  Note one of the &lt;em&gt;Apache Flink&lt;/em&gt; developers  says, “Although this has been very much a crash course in &lt;em&gt;RabbitMQ&lt;/em&gt; for me.  Looking at forums it looks like the prefetch.count is the way that this is handled normally.” Most of these framework wrappers are written for the intermediate programmer. Instead of dealing with simliar issues to &lt;em&gt;FLINK-10195&lt;/em&gt; consider how long it will take you to rollout your own &lt;em&gt;RabbitMQ&lt;/em&gt; connector and do it:  &lt;a href=&quot;https://gist.github.com/lfmunoz/c7922382a13e2c576ff77b3b9f3f99ae&quot;&gt;RabbitConsumerBare.kt&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Intermediate programmers go for the wrapper libraries  and violate this rule because they don’t trust their own abilities. Often they will  justify it by  telling themselves that they are  saving time which  is due to the false sense of productivity that you will get  in the beginning stages. If the application is going to live through a few years and multiple versions that initial productivity will become irrelevant. It will quickly be over shadowed by the tentacles and complexity the framework coupling has created.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Separate your code from the library, replacing the library should be not be a re-write.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Here is a common scenario:  You  have a &lt;em&gt;Spring Boot&lt;/em&gt; Application and you start using &lt;em&gt;Spring Boot AMQP&lt;/em&gt;. You just added the &lt;em&gt;Gradle&lt;/em&gt; dependency and start putting annotations. You go read the documentation to understand the configuration settings and for the most part is just works.  You feel productive. Later you realize the way they are using channels and connections to &lt;em&gt;RabbitMQ&lt;/em&gt; isn’t as efficient as it can be. It also is blocking and you want something asynchronous. It is also not efficiently managing threads. This is the price to pay for productivity you say. Your application becomes popular and you find yourself having to remove &lt;em&gt;RabbitMQ&lt;/em&gt; completely because you realize that &lt;em&gt;RSocket&lt;/em&gt; would give you more bandwidth and lower latency. Now you come face-to-face with a months worth re-writing code. Even then how poorly seperated the business logic from the framework is overlooked.&lt;/p&gt;
+
+&lt;p&gt;When an application is correctly structured changing from &lt;em&gt;RabbitMQ&lt;/em&gt; to &lt;em&gt;RSocket&lt;/em&gt; is straightfoward, satisfiying, everything falls into place and there is a feeling that it is writing itself.  Professional programmers learn this by doing a couple major refactors and they reflect back and realize that the lastest and greatest framework a year later is obselete and must be replaced with a newer framework. When using a framework or library write code asking what if I use a different library or framework how much of my code must be re-written, what files must be changed? This will guide you in making better choices.&lt;/p&gt;</content><author><name></name></author><summary type="html">Should Frameworks and Libraries be avoided or embraced? Obviously I can’t give you an absolute answer, but there are guidelines, rules and code smells that will separate a well structured system from a kludge.</summary></entry></feed>

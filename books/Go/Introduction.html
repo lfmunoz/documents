@@ -2,21 +2,42 @@
 <html lang="en">
 
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>LFMUNOZ | articles, notes, and references</title>
+<title>Go | LFMUNOZ</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="LFMUNOZ" />
+<meta property="og:title" content="Go" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="articles, notes, and references" />
 <meta property="og:description" content="articles, notes, and references" />
-<link rel="canonical" href="lfmunoz.github.io/documents/404.html" />
-<meta property="og:url" content="lfmunoz.github.io/documents/404.html" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/Go/Introduction.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/Go/Introduction.html" />
 <meta property="og:site_name" content="LFMUNOZ" />
 <script type="application/ld+json">
-{"@type":"WebPage","headline":"LFMUNOZ","url":"lfmunoz.github.io/documents/404.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+{"@type":"WebPage","headline":"Go","url":"lfmunoz.github.io/documents/books/Go/Introduction.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
 <body><header class="site-header" role="banner">
@@ -169,30 +190,206 @@
 </div><div class="column-main">
             <main class="page-content" aria-label="Content">
                 <div class="wrapper">
-                    <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+                    <h1 id="the-go-programming-language">The Go Programming Language</h1>
 
-<div class="container">
-  <h1>404</h1>
+<p>Go is a general-purpose language designed with systems programming in mind.</p>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+<ul>
+  <li>Syntax similar to <a href="../C/Introduction.html">C Programming Language</a></li>
+  <li>Traditional compile and link model to generate executable binaries</li>
+  <li>Statically typed</li>
+  <li>Strongly typed</li>
+  <li>Inbuilt support for Garbage Collection</li>
+  <li>Inbuilt support for Concurrent Programming</li>
+  <li>Concise syntax with few keywords to memorize</li>
+  <li>Simplicity and minimalism - No Generics</li>
+  <li>Fast compiler</li>
+  <li>No semicolon</li>
+  <li>Case-sensitive</li>
+</ul>
+
+<p>This language sits between Java and C++ as far as performance, rapid development and abstractions. Libraries tend to be less clean, mature and lacking features that equivalent Java libraries have. The code is less verbose and more straightforward compared to C++, which is in part because of Garbage Collection and built-in concurrency.</p>
+
+<p>Notable projects using Go: CockroachDB, Kubernetes, Terraform</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">// Mandatory statement, as Go programs run in packages.</span>
+<span class="c">// Note: If your main function doesn’t exist in package main,</span>
+<span class="c">//  the build tools won’t produce an executable.</span>
+<span class="k">package</span> <span class="n">main</span>
+
+<span class="k">import</span> <span class="s">"fmt"</span>
+
+<span class="c">// Main</span>
+<span class="c">//  go run main.go</span>
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+	<span class="c">// Single line comment</span>
+	<span class="c">/* Multi-line comment */</span>
+	<span class="c">// A name is exported if it starts with capital letter.</span>
+	<span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"Hello, World!"</span><span class="p">)</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<h2 id="table-of-contents">Table of Contents</h2>
+
+<ul>
+  <li><a href="DataTypes.html">Data Types</a>
+    <ul>
+      <li>identifiers, literals, primitives</li>
+      <li>variables</li>
+      <li>operators</li>
+    </ul>
+  </li>
+  <li><a href="ControlStatements.html">Control Statements</a>
+    <ul>
+      <li>if, switch</li>
+      <li>for, range, break, continue</li>
+    </ul>
+  </li>
+  <li><a href="Functions.html">Functions</a></li>
+  <li><a href="Collections.html">Collections</a></li>
+  <li><a href="Strings.html">Strings</a></li>
+  <li><a href="Structures.html">Structures</a>
+    <ul>
+      <li>type keyword</li>
+      <li>methods (extension functions)</li>
+      <li>enums</li>
+    </ul>
+  </li>
+  <li><a href="Packaging.html">Packaging</a>
+    <ul>
+      <li>Modules</li>
+    </ul>
+  </li>
+  <li><a href="Concurrency.html">Concurrency</a></li>
+  <li>
+    <p><a href="Testing.html">Testing</a></p>
+  </li>
+  <li><a href="JSON.html">JSON</a></li>
+  <li><a href="gRPC.html">gRPC</a></li>
+  <li><a href="HTTP.html">HTTP</a></li>
+</ul>
+
+<h1 id="installation">Installation</h1>
+
+<details>
+<summary> cat src/install_go.bash </summary>
+
+<p>
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#!/usr/bin/env bash
+</span>
+<span class="cp"># Download current version from: https://golang.org/dl/
+# wget https://golang.org/dl/go1.15.6.linux-amd64.tar.gz
+</span>
+<span class="n">tar</span> <span class="o">-</span><span class="n">C</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span> <span class="o">-</span><span class="n">xzf</span> <span class="n">go1</span><span class="p">.</span><span class="mi">15</span><span class="p">.</span><span class="mi">6</span><span class="p">.</span><span class="n">linux</span><span class="o">-</span><span class="n">amd64</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span>
+<span class="n">export</span> <span class="n">PATH</span><span class="o">=</span><span class="err">$</span><span class="n">PATH</span><span class="o">:/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">go</span><span class="o">/</span><span class="n">bin</span>
+<span class="n">go</span> <span class="n">version</span>
+
+</code></pre></div>    </div>
+  </p></details>
+<p><br /></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c"># Statically build binary</span>
+<span class="nb">env </span><span class="nv">CGO_ENABLED</span><span class="o">=</span>0 <span class="nv">GOOS</span><span class="o">=</span>linux <span class="nv">GOARCH</span><span class="o">=</span>amd64 go build cmd/main/main.go
+<span class="c"># CGO_ENABLED=0 This tells compiler to disable CGO and statically link C bindings as well.</span>
+<span class="c"># GOOS=linux This tells compiler for which OS it needs to compile.</span>
+<span class="c"># GOARCH=amd64 This tells compiler to compile for an amd64 compatible system architecture (64 bit processor).</span>
+
+<span class="c">#  see current latest OS/ARCH combination that you can target</span>
+go tool dist list
+</code></pre></div></div>
+<ul>
+  <li>Cgo lets Go packages call C code.
+    <ul>
+      <li>https://blog.golang.org/cgo</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="project-layout">Project Layout</h1>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.
+├── cmd               Main applications 
+│   ├── app
+│   └── skeleton
+│       └── main.go
+├── Makefile
+├── api             OpenAPI/Swagger specs, JSON schema files, protocol definition files
+├── pkg             Library code that's ok to use by external applications
+├── internal        Private application and library code.
+├── web             Web application specific components: static web assets
+├── test            Additional external test apps and test data.
+</code></pre></div></div>
+
+<ul>
+  <li>https://github.com/golang-standards/project-layout</li>
+</ul>
+
+<p>By default, the logger is set to write to the stderr device.</p>
+
+<p>JSON</p>
+
+<p>Error Handling in Go
+https://blog.golang.org/errors-are-values</p>
+
+<p>When you try to build a program with this import path, the go build command will
+search the GOPATH for this package location on disk.</p>
+
+<h1 id="resources">Resources</h1>
+
+<ul>
+  <li>http://play.golang.org</li>
+  <li>https://golang.org/pkg/fmt/</li>
+</ul>
+
+<h1 id="learning">Learning</h1>
+
+<p>Go In Action <br />
+William Kennedy, Brian Ketelsen and Erik St. Martin <br />
+Manning Publications Co. 2016 <br />
+ISBN 9781617291784</p>
+
+<ul>
+  <li>
+    <p>https://github.com/goinaction/code/blob/master/chapter5/listing50/listing50.go</p>
+  </li>
+  <li>
+    <p>https://www.golang-book.com/books/intro</p>
+  </li>
+  <li>Good source of Go examples
+    <ul>
+      <li>Mark McGranaghan</li>
+      <li>https://gobyexample.com/closures</li>
+      <li>https://github.com/mmcgrana/gobyexample</li>
+    </ul>
+  </li>
+  <li>Introduction
+    <ul>
+      <li>https://tour.golang.org/welcome/1</li>
+      <li>https://golang.org/doc/effective_go.html</li>
+    </ul>
+  </li>
+  <li>https://golang.org/doc/code.html</li>
+</ul>
+
 
                 </div>
             </main>
-        </div></div><footer class="site-footer h-card">
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#the-go-programming-language">The Go Programming Language</a>
+    <ul>
+      <li><a href="#table-of-contents">Table of Contents</a></li>
+    </ul>
+  </li>
+  <li><a href="#installation">Installation</a></li>
+  <li><a href="#project-layout">Project Layout</a></li>
+  <li><a href="#resources">Resources</a></li>
+  <li><a href="#learning">Learning</a></li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
   <data class="u-url" href="/documents/"></data>
 
   <div class="wrapper">

@@ -2,21 +2,42 @@
 <html lang="en">
 
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>LFMUNOZ | articles, notes, and references</title>
+<title>Docker | LFMUNOZ</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="LFMUNOZ" />
+<meta property="og:title" content="Docker" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="articles, notes, and references" />
 <meta property="og:description" content="articles, notes, and references" />
-<link rel="canonical" href="lfmunoz.github.io/documents/404.html" />
-<meta property="og:url" content="lfmunoz.github.io/documents/404.html" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/Docker/Introduction.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/Docker/Introduction.html" />
 <meta property="og:site_name" content="LFMUNOZ" />
 <script type="application/ld+json">
-{"@type":"WebPage","headline":"LFMUNOZ","url":"lfmunoz.github.io/documents/404.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+{"@type":"WebPage","headline":"Docker","url":"lfmunoz.github.io/documents/books/Docker/Introduction.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
 <body><header class="site-header" role="banner">
@@ -169,30 +190,105 @@
 </div><div class="column-main">
             <main class="page-content" aria-label="Content">
                 <div class="wrapper">
-                    <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+                    <h1 id="docker">Docker</h1>
 
-<div class="container">
-  <h1>404</h1>
+<p>Docker takes a logistical approach to solving common software problems and simplifies your experience with installing, running, publishing, and removing software. It’s a command-line program, a background daemon, and a set of remote services.</p>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+<h1 id="containers">Containers</h1>
+
+<p>You can think of a <strong>Docker container</strong> as a physical shipping container. It’s a box where you store and run an application and all of its dependencies. The component that fills the shipping container role is called an image.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+docker <span class="nb">exec</span> <span class="nt">-it</span> &lt;mycontainer&gt; bash
+
+<span class="c"># Run an image and remove it after exiting</span>
+docker run <span class="nt">-it</span> <span class="nt">--rm</span> erlang /bin/bash
+<span class="c"># –interactive or -i option tells Docker to keep the standard input </span>
+<span class="c">#   stream (stdin) open for the container even if no terminal is attached.</span>
+<span class="c"># –tty or -t option tells Docker to allocate a virtual terminal for the </span>
+<span class="c">#   container, which will allow you to pass signals to the container.</span>
+<span class="c"># --rm remove the container once it has finished running</span>
+<span class="c"># To detach from the terminal you can press Ctrl+P+Q</span>
+
+<span class="c"># Install and start a container running NGINX.</span>
+docker run <span class="nt">--detach</span> <span class="nt">--name</span> web nginx:latest
+<span class="c"># Detached (–detach or -d) means that the container will run in the background, </span>
+<span class="c">#  without being attached to any input or output stream.</span>
+
+
+</code></pre></div></div>
+
+<p>https://docs.docker.com/config/daemon/</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dockerd <span class="nt">--debug</span> <span class="se">\</span>
+  <span class="nt">--tls</span><span class="o">=</span><span class="nb">true</span> <span class="se">\</span>
+  <span class="nt">--tlscert</span><span class="o">=</span>/var/docker/server.pem <span class="se">\</span>
+  <span class="nt">--tlskey</span><span class="o">=</span>/var/docker/serverkey.pem <span class="se">\</span>
+  <span class="nt">--host</span> tcp://192.168.59.3:2376
+
+<span class="nb">nohup </span>dockerd <span class="nt">-s</span> vfs &amp;
+
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run -d --name bmweb \
+    # &lt;host file or dir&gt;:&lt;container file or dir&gt;
+    -v ~/projects/docker/example-docs:/usr/share/nginx/html:ro \
+    # &lt;hostPort&gt;:&lt;containerPort&gt;
+    -p 80:80 \
+    nginx:latest
+</code></pre></div></div>
+
+<h1 id="docker-images">Docker Images</h1>
+
+<h2 id="building-docker-images">Building Docker Images</h2>
+
+<div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">FROM</span><span class="s"> openjdk:8u141-jdk-slim</span>
+
+<span class="k">ENV</span><span class="s"> SPRING_OUTPUT_ANSI_ENABLED=ALWAYS \</span>
+    JHIPSTER_SLEEP=0 \
+    JAVA_OPTS=""
+
+# add directly the jar
+<span class="k">ADD</span><span class="s"> *.jar /app.jar</span>
+
+<span class="k">EXPOSE</span><span class="s"> 8080</span>
+<span class="k">CMD</span><span class="s"> echo "The application will start in ${JHIPSTER_SLEEP}s..." &amp;&amp; \</span>
+    sleep ${JHIPSTER_SLEEP} &amp;&amp; \
+    java ${JAVA_OPTS} -Djava.security.egd=file:/dev/./urandom -jar /app.jar
+    
+
+</code></pre></div></div>
+
+<div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c"># There are no big difference between ADD and COPY</span>
+<span class="c"># https://jhooq.com/docker-copy-vs-docker-add/</span>
+<span class="c">#  copy multiples files</span>
+<span class="k">COPY</span><span class="s"> hello* /destination-dir/</span>
+
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker build <span class="nt">-t</span> jmenga/todobacked-base <span class="nb">.</span>
+
+<span class="c"># Verify the images has been successfully published and tagged on docker host</span>
+docker images
+
+</code></pre></div></div>
+
 
                 </div>
             </main>
-        </div></div><footer class="site-footer h-card">
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#docker">Docker</a></li>
+  <li><a href="#containers">Containers</a></li>
+  <li><a href="#docker-images">Docker Images</a>
+    <ul>
+      <li><a href="#building-docker-images">Building Docker Images</a></li>
+    </ul>
+  </li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
   <data class="u-url" href="/documents/"></data>
 
   <div class="wrapper">

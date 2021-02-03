@@ -2,21 +2,42 @@
 <html lang="en">
 
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>LFMUNOZ | articles, notes, and references</title>
+<title>The Universal I/O Model | LFMUNOZ</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="LFMUNOZ" />
+<meta property="og:title" content="The Universal I/O Model" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="articles, notes, and references" />
 <meta property="og:description" content="articles, notes, and references" />
-<link rel="canonical" href="lfmunoz.github.io/documents/404.html" />
-<meta property="og:url" content="lfmunoz.github.io/documents/404.html" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/Linux/UniversalFileIO.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/Linux/UniversalFileIO.html" />
 <meta property="og:site_name" content="LFMUNOZ" />
 <script type="application/ld+json">
-{"@type":"WebPage","headline":"LFMUNOZ","url":"lfmunoz.github.io/documents/404.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+{"@type":"WebPage","headline":"The Universal I/O Model","url":"lfmunoz.github.io/documents/books/Linux/UniversalFileIO.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
 <body><header class="site-header" role="banner">
@@ -169,30 +190,139 @@
 </div><div class="column-main">
             <main class="page-content" aria-label="Content">
                 <div class="wrapper">
-                    <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+                    <h1 id="universal-io-model">Universal I/O Model</h1>
 
-<div class="container">
-  <h1>404</h1>
+<p>To perform file I/O, C programs typically employ I/O functions contained in the standard C library. This set of functions, referred to as the stdio library, includes fopen(), fclose(), scanf(), printf(), fgets(), fputs(), and so on. The stdio functions are layered on top of the I/O system calls (open(), close(), read(), write(), and so on).</p>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+<p>One of the distinguishing features of the UNIX I/O model is the concept of universality of I/O. This means that the same four system calls—open(), read(), write(), and close()—are used to perform I/O on all types of files, including terminals, pipes, sockets, devices, and regular files.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="cp">#include &lt;unistd.h&gt;
+#include &lt;sys/stat.h&gt;
+#include &lt;fcntl.h&gt;
+</span><span class="kt">int</span> <span class="nf">open</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">pathname</span> <span class="p">,</span> <span class="kt">int</span> <span class="n">flags</span> <span class="p">,</span> <span class="p">...</span> <span class="cm">/* mode_t mode */</span><span class="p">);</span>
+<span class="c1">// Returns file descriptor on success, or –1 on error</span>
+
+<span class="kt">ssize_t</span> <span class="nf">read</span><span class="p">(</span><span class="kt">int</span> <span class="n">fd</span> <span class="p">,</span> <span class="kt">void</span> <span class="o">*</span> <span class="n">buffer</span> <span class="p">,</span> <span class="kt">size_t</span> <span class="n">count</span> <span class="p">);</span>
+<span class="c1">// Returns number of bytes read, 0 on EOF, or –1 on error</span>
+
+<span class="kt">ssize_t</span> <span class="nf">write</span><span class="p">(</span><span class="kt">int</span> <span class="n">fd</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span> <span class="n">buffer</span> <span class="p">,</span> <span class="kt">size_t</span> <span class="n">count</span> <span class="p">);</span>
+<span class="c1">// Returns number of bytes written, or –1 on error</span>
+
+<span class="kt">int</span> <span class="nf">close</span><span class="p">(</span><span class="kt">int</span> <span class="n">fd</span> <span class="p">);</span>
+<span class="c1">//Returns 0 on success, or –1 on error</span>
+
+<span class="kt">off_t</span> <span class="nf">lseek</span><span class="p">(</span><span class="kt">int</span> <span class="n">fd</span> <span class="p">,</span> <span class="kt">off_t</span> <span class="n">offset</span> <span class="p">,</span> <span class="kt">int</span> <span class="n">whence</span> <span class="p">);</span>
+<span class="c1">// Returns new file offset if successful, or –1 on error</span>
+
+</code></pre></div></div>
+
+<p>All system calls for performing I/O refer to open files using a file descriptor, a 
+nonnegative integer. By default the a process will have the following file descriptors:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>File descriptor</td>
+      <td>Purpose</td>
+      <td>POSIX name</td>
+      <td>stdio stream</td>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>standard input</td>
+      <td>STDIN_FILENO</td>
+      <td>stdin</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>standard output</td>
+      <td>STDOUT_FILENO</td>
+      <td>stdout</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>standard error</td>
+      <td>STDERR_FILENO</td>
+      <td>stderr</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Note:</strong> A file descriptor is an integer which is passed to system calls
+as a parameter used to identify a file that was opened by that process.</p>
+
+<p>The kernels holds the following three data structures</p>
+<ul>
+  <li>the per-process file descriptor table;</li>
+  <li>the system-wide table of open file descriptions;  (open file table)</li>
+  <li>the file system i-node table</li>
+</ul>
+
+<p>If two processes each open the same file independently, there will be two entries in the kernel file table</p>
+
+<h2 id="open">open</h2>
+
+<ul>
+  <li>O_RDWR</li>
+  <li>O_WRONLY</li>
+  <li>
+    <p>O_RDONLY</p>
+  </li>
+  <li>O_APPEND</li>
+  <li>O_CREAT</li>
+  <li>O_TRUNC</li>
+</ul>
+
+<h2 id="lseek">lseek</h2>
+
+<p>For each open file, the kernel records a file offset, sometimes also called the read-write offset or pointer.</p>
+
+<ul>
+  <li>SEEK_SET - The file offset is set to offset bytes from the beginning of the file. Points to first byte.</li>
+  <li>SEEK_CUR - The file offset is adjusted by offset bytes relative to the current file offset. Points to current byte.</li>
+  <li>SEEK_END - The file offset is set to the size of the file plus offset. Points next byte after end of file.</li>
+</ul>
+
+<hr />
+<p><strong>Atomic Operations</strong></p>
+
+<p>All system calls are executed atomically.</p>
+
+<p>when we have multiple processes appending data to the same file (e.g., a global log file)
+This requires that the seek to the next byte past the end of
+the file and the write operation happen atomically. This is what opening a file
+with the O_APPEND flag guarantees</p>
+
+<hr />
+<p><strong>File holes</strong></p>
+
+<p>What happens if a program seeks past the end of a file, and then performs I/O? A call to read() will return 0, indicating end-of-file. It is possible to write bytes at an arbitrary point past the end of the file.</p>
+
+<p>The space in between the previous end of the file and the newly written bytes is
+referred to as a file hole.</p>
+
+<p>Note: If the edge of a hole falls within a block, rather than on a block boundary, then a complete block is allocated to store the data in the other part of the block, and the part corresponding to the hole is filled with null bytes.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Block size of the filesystem mounted in current directory
+stat -fc %s .
+4096
+</code></pre></div></div>
+
 
                 </div>
             </main>
-        </div></div><footer class="site-footer h-card">
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#universal-io-model">Universal I/O Model</a>
+    <ul>
+      <li><a href="#open">open</a></li>
+      <li><a href="#lseek">lseek</a></li>
+    </ul>
+  </li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
   <data class="u-url" href="/documents/"></data>
 
   <div class="wrapper">

@@ -2,21 +2,42 @@
 <html lang="en">
 
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>LFMUNOZ | articles, notes, and references</title>
+<title>Topology | LFMUNOZ</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="LFMUNOZ" />
+<meta property="og:title" content="Topology" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="articles, notes, and references" />
 <meta property="og:description" content="articles, notes, and references" />
-<link rel="canonical" href="lfmunoz.github.io/documents/404.html" />
-<meta property="og:url" content="lfmunoz.github.io/documents/404.html" />
+<link rel="canonical" href="lfmunoz.github.io/documents/mathematics/Topology.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/mathematics/Topology.html" />
 <meta property="og:site_name" content="LFMUNOZ" />
 <script type="application/ld+json">
-{"@type":"WebPage","headline":"LFMUNOZ","url":"lfmunoz.github.io/documents/404.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+{"@type":"WebPage","headline":"Topology","url":"lfmunoz.github.io/documents/mathematics/Topology.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
 <body><header class="site-header" role="banner">
@@ -169,30 +190,109 @@
 </div><div class="column-main">
             <main class="page-content" aria-label="Content">
                 <div class="wrapper">
-                    <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+                    <h1 id="topology">Topology</h1>
 
-<div class="container">
-  <h1>404</h1>
+<div class="definition">
+  <p><strong>Definitions</strong> Topological Space</p>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
+  <p>Let X be a non-empty set. A set O of subsets of X is said to be a topology on X if</p>
+
+  <p>(i) X and the empty set belong to O</p>
+
+  <p>$\emptyset \in O \land X \in O$</p>
+
+  <p>(ii) the union of any (finite or infinite) number of sets in O belongs to O, and</p>
+
+  <p>(iii) the intersection of any two sets in O belongs to O</p>
+
+  <p>The pair (X, O) is called a <strong>topological space</strong>.</p>
+
 </div>
+
+<table>
+  <thead>
+    <tr>
+      <th>$|M|$</th>
+      <th>Number of topologies</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>29</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>355</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>6,942</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>209,527</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>9,535,241</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="definition">
+  <p><strong>Definitions</strong> Discrete Topology</p>
+
+  <p>Let X be any non-empty set and let O be the collection
+of all subsets of X (the power set). Then O is called the <strong>discrete topology</strong> on the set X. The topological space (X, O) is called the <strong>discrete space</strong>.</p>
+
+</div>
+
+<p>The set X can be any non-empty set, so there is an infinite number of discrete spaces, one for each set X.</p>
+
+<div class="definition">
+  <p><strong>Definitions</strong> Indiscrete Topology</p>
+
+  <p>Let X be any non-empty set and $O = \{X, \emptyset \}$. Then O is called the indiscrete topology and (X, O) is said to be an indiscrete space.</p>
+</div>
+
+<div class="definition">
+  <p><strong>Definitions</strong> Open Sets</p>
+
+  <p>Let (X, O) be any topological space. Then the members of O are said to be open sets.</p>
+
+</div>
+
+<h1 id="learning">Learning</h1>
+
+<ul>
+  <li>Topology without tears
+    <ul>
+      <li>http://www.topologywithouttears.net</li>
+      <li>http://www.sidneymorris.net</li>
+    </ul>
+  </li>
+  <li>Munkres (2000) Topology, Second Edition.</li>
+  <li>https://dbfin.com/topology/munkres/</li>
+</ul>
 
                 </div>
             </main>
-        </div></div><footer class="site-footer h-card">
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#topology">Topology</a></li>
+  <li><a href="#learning">Learning</a></li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
   <data class="u-url" href="/documents/"></data>
 
   <div class="wrapper">

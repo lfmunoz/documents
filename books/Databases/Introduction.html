@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Databases | LFMUNOZ</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Databases" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="articles, notes, and references" />
+<meta property="og:description" content="articles, notes, and references" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/Databases/Introduction.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/Databases/Introduction.html" />
+<meta property="og:site_name" content="LFMUNOZ" />
+<script type="application/ld+json">
+{"@type":"WebPage","headline":"Databases","url":"lfmunoz.github.io/documents/books/Databases/Introduction.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
+<body><header class="site-header" role="banner">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2YJDWQX6GK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-2YJDWQX6GK');
+  </script>
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/documents/">LFMUNOZ</a><nav class="site-nav">
+      <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+      <label for="nav-trigger">
+        <span class="menu-icon">
+          <svg viewBox="0 0 18 15" width="18px" height="15px">
+            <path
+              d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+          </svg>
+        </span>
+      </label>
+
+      <div class="trigger"><a class="page-link" href="/documents/about/">About</a></div>
+    </nav></div>
+</header><div class="main"><div class="column-sidebar">
+
+    <div class="nav-section">
+        <div class="nav-title">Posts</div><div class="post-container"><a class="post-link" href="/documents/2020/12/17/i-wish-i-was-worse.html"> I wish I was worse at dancing</a>
+            <span class="post-meta">Dec 17, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/12/13/too-many-options.html"> Too many options slows production</a>
+            <span class="post-meta">Dec 13, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/12/06/dream-cats-and-dogs.html"> A dream of dogs and cats</a>
+            <span class="post-meta">Dec 6, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/11/27/http-rest-bad-design.html"> RESTful HTTP creates coupling</a>
+            <span class="post-meta">Nov 27, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/08/01/organization-and-structure.html"> Organization and Structure of Applications</a>
+            <span class="post-meta">Aug 1, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/07/12/listening-to-music.html"> Listening to Music</a>
+            <span class="post-meta">Jul 12, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/07/05/frameworks.html"> Frameworks and Libraries</a>
+            <span class="post-meta">Jul 5, 2020</span>
+        </div><p class="rss-subscribe">subscribe <a href="/documents/feed.xml">via RSS</a></p>
+    </div>
+
+    <div class="nav-section">
+        <div class="nav-title">Guides</div>
+        <ul>
+            
+            <li>
+                <strong> Computer Science</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/Algorithms/Introduction.html">Algorithms</a></li>
+                    
+                    <li><a href="/documents/articles/SoftwareEngineering.html">Software Engineering</a></li>
+                    
+                    <li><a href="/documents/books/DesignPatterns.html">Design Patterns</a></li>
+                    
+                    <li><a href="/documents/books/Linux/Introduction.html">Linux</a></li>
+                    
+                    <li><a href="/documents/books/Databases/Introduction.html">Databases</a></li>
+                    
+                    <li><a href="/documents/books/SoftwareEngineering/Concurrency.html">Concurrency</a></li>
+                    
+                    <li><a href="/documents/books/Security/Introduction.html">Security</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Programming Languages</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/C/Introduction.html">C</a></li>
+                    
+                    <li><a href="/documents/books/Cpp/Introduction.html">C++</a></li>
+                    
+                    <li><a href="/documents/books/Rust/Introduction.html">Rust</a></li>
+                    
+                    <li><a href="/documents/books/Go/Introduction.html">Go</a></li>
+                    
+                    <li><a href="/documents/books/Java/Introduction.html">Java</a></li>
+                    
+                    <li><a href="/documents/books/Kotlin/Introduction.html">Kotlin</a></li>
+                    
+                    <li><a href="/documents/lang/Python/Introduction.html">Python</a></li>
+                    
+                    <li><a href="/documents/lang/Bash/Introduction.html">Bash</a></li>
+                    
+                    <li><a href="/documents/books/Make/Introduction.html">Makefile</a></li>
+                    
+                    <li><a href="/documents/lang/SQL/Introduction.html">SQL</a></li>
+                    
+                    <li><a href="/documents/lang/HTML/Introduction.html">HTML</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Technologies</strong>
+                <ul>
+                    
+                    <li><a href="/documents/tech/Android/Introduction.html">Android</a></li>
+                    
+                    <li><a href="/documents/books/Docker/Introduction.html">Docker</a></li>
+                    
+                    <li><a href="/documents/books/Envoy/Introduction.html">Envoy</a></li>
+                    
+                    <li><a href="/documents/books/Terraform/Introduction.html">Terraform</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Mathematics</strong>
+                <ul>
+                    
+                    <li><a href="/documents/mathematics/Foundations.html">Foundations</a></li>
+                    
+                    <li><a href="/documents/books/Logic/Introduction.html">Logic</a></li>
+                    
+                    <li><a href="/documents/books/SetTheory/Introduction.html">Set Theory</a></li>
+                    
+                    <li><a href="/documents/books/Geometry/Introduction.html">Geometry</a></li>
+                    
+                    <li><a href="/documents/books/Analysis/Introduction.html">Analysis</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Miscellaneous</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/Non-Duality/Introduction.html">Non-Duality</a></li>
+                    
+                </ul>
+            </li>
+
+            
+        </ul>
+    </div>
+
+
+</div><div class="column-main">
+            <main class="page-content" aria-label="Content">
+                <div class="wrapper">
+                    <h1 id="performance">Performance</h1>
+
+<p><strong>Latency</strong> is defined as the elapsed time between issuing a request or a command to a particular subsystem and receiving a response or reply. It is measured in units of time (seconds, microseconds, etc) or cycles. Latency provides a measure of responsiveness and it is a critical metric for any subsystem that satisfies time-critical requests.</p>
+
+<p><strong>Bandwidth</strong> is defined as the throughput of system; that is, the rate at which it can satisfy requests. Bandwidth measured in quantity per unit time, where the quantity measured measured varies based on the type of request.</p>
+
+<p>Bandwidth is generally driven by product-cost constraints rather than fundamental liminations of a given technology. A bus can always be made wider to increase the number of bytes transmitted per cycle.</p>
+
+<p>Latency is fundamentally more difficult to improve since it is often dominated by liminations of a particular technology, or possible the law of physics.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th>Latency</th>
+      <th>Scaled</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1 CPU Cycle</td>
+      <td>0.3 ns</td>
+      <td>1 s</td>
+    </tr>
+    <tr>
+      <td>Main memory access</td>
+      <td>120 ns</td>
+      <td>6 min</td>
+    </tr>
+    <tr>
+      <td>Solid-stae disk I/O</td>
+      <td>50-150 us</td>
+      <td>2-6 days</td>
+    </tr>
+    <tr>
+      <td>Rotational disk I/O</td>
+      <td>1-10 ms</td>
+      <td>1-12 months</td>
+    </tr>
+    <tr>
+      <td>Internet: San Francisco to new York</td>
+      <td>40 ms</td>
+      <td>4 years</td>
+    </tr>
+    <tr>
+      <td>TCP packet re-transmit</td>
+      <td>1-3 s</td>
+      <td>105-317 years</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="databases-internals">Databases Internals</h1>
+
+<ul>
+  <li>Query Planning</li>
+  <li>Operator Execution</li>
+  <li>Access Methods</li>
+  <li>Buffer Pool Manager</li>
+  <li>Disk Manager</li>
+</ul>
+
+<h2 id="disk-manager">Disk Manager</h2>
+
+<p>file storage, page layout, tuple layout</p>
+
+<p>DBMS stores a database as one or more files. It uses more than one because you don’t want to hit system limits of single files if its terabytes for example. The format is usually proprietary and specific to the application.</p>
+
+<p>The <strong>storage manager</strong> is responsible for maintaining a database’s files on disk. It is a software layer. It represents the files as a collection of pages.</p>
+<ul>
+  <li>Keeps track of what data has been read and written to pages</li>
+  <li>Keeps track of how much free space there is in the pages</li>
+</ul>
+
+<p>A <strong>page</strong> is a fixed-size block of data.</p>
+<ul>
+  <li>Each page is given a unique identifier</li>
+  <li>It can contain tuples, meta-data, indexes, log records</li>
+  <li>Most systems do not mix page types</li>
+  <li>some systems require page to be self-contained</li>
+</ul>
+
+<p>There are different notions of pages</p>
+<ul>
+  <li>Hardware Page - from the storage device itself (usually 4k)
+    <ul>
+      <li>hardware can only guarantee a “failsafe write” of 4k (atomic write)</li>
+    </ul>
+  </li>
+  <li>OS Page - (usually 4k)</li>
+  <li>Database Page  (512B-16KB)</li>
+</ul>
+
+<p>Why not make your own file system? The engineering effort to make your own file system is not worth it, you get maybe 10 percent improvement, and now you are less portable.</p>
+
+<p>Why not allow the OS to manage the storage? The DBMS can do a better job. (flushing dirty pages, prefetching, buffer replacement, thread scheduling)</p>
+
+<p>To manage pages in files on the disk we have different ways</p>
+<ul>
+  <li>Heap file organization - unordered collection of pages where tuples are stored in random order.
+    <ul>
+      <li>create / get / write / delete page  and iterate</li>
+      <li>need meta-data to keep track what pages exist and which have free space</li>
+      <li>can be represented as a Linked List (not good idea) or Page Directory</li>
+    </ul>
+  </li>
+  <li>Sequential / Sorted File Organization</li>
+  <li>Hashing File Organization</li>
+</ul>
+
+<p>Note: At this level we don’t know anything about what is on the pages</p>
+
+<p>Linked List</p>
+
+<p>Maintain a <strong>header page</strong> at the beginning of the file that stores pointers to
+free page list, and data page list.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>              free  page    --&gt;   free page
+   | ---&gt;
+   |
+   |
+  --------
+  | header |
+   --------
+    |
+    | -------&gt;
+                data page  --&gt;     data page 
+
+</code></pre></div></div>
+
+<p>page directory</p>
+
+<p>You have a file with special pages in the beginning that is going to maintain the mapping to page IDs to their offset.</p>
+
+<p>DBMS maintains special pages that track the location of data pages in the database files.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>               Page  
+               Page
+Directroy      page 
+
+</code></pre></div></div>
+
+<p>Like a hash table, you want page 123 and the hash table tells you where to get it.</p>
+
+<p>What is inside the page?</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> | Header | Data |
+</code></pre></div></div>
+<p>ever page contains a header of metadata about the page’s content
+page size, checksum, DBMS version, transaction visibility, compression information</p>
+
+<p>the page layout can be</p>
+<ul>
+  <li>tuple-oriented - store tuples one after another</li>
+</ul>
+
+<p>The most common layout scheme is slotted pages
+header keeps track of the number of used slots and the offset of the starting location of the last slot used.</p>
+
+<p>header then a slot array and starting from the end  the tuples</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> | Header | Slots | Data |
+</code></pre></div></div>
+
+<ul>
+  <li>log-structured</li>
+</ul>
+
+<p>The way we identify tuples is with a unique record identifier
+most common is page_id + offset/slot</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">create</span> <span class="k">table</span> <span class="n">r</span> <span class="p">(</span><span class="n">id</span> <span class="nb">INT</span> <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">,</span> <span class="n">val</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">6</span><span class="p">));</span>
+<span class="k">insert</span> <span class="k">into</span> <span class="n">r</span> <span class="k">values</span> <span class="p">(</span><span class="mi">101</span><span class="p">,</span> <span class="s1">'aaa'</span><span class="p">),</span> <span class="p">(</span><span class="mi">102</span><span class="p">,</span> <span class="s1">'bbb'</span><span class="p">),</span> <span class="p">(</span><span class="mi">103</span><span class="p">,</span> <span class="s1">'ccc'</span><span class="p">);</span>
+<span class="c1">-- postgres  has CTID ( a virtual column with (page_id, offset) )</span>
+<span class="k">select</span> <span class="n">r</span><span class="p">.</span><span class="n">ctid</span><span class="p">,</span> <span class="n">r</span><span class="p">.</span><span class="o">*</span> <span class="k">from</span> <span class="n">r</span><span class="p">;</span>
+<span class="k">DELETE</span> <span class="k">from</span> <span class="n">r</span> <span class="k">WHERE</span> <span class="n">id</span> <span class="o">=</span> <span class="mi">102</span><span class="p">;</span>
+<span class="c1">-- which slot will it go in? 4</span>
+<span class="k">insert</span> <span class="k">into</span> <span class="n">r</span> <span class="k">values</span> <span class="p">(</span><span class="mi">104</span><span class="p">,</span> <span class="s1">'xxx'</span><span class="p">);</span>
+<span class="c1">-- this will compact the pages, write them out sequentially</span>
+<span class="k">VACUUM</span> <span class="k">FULL</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>A <strong>tuple</strong> is essentially a sequence of bytes. The DMBS interprets those bytes into attribute types and values.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>header | attribute data
+</code></pre></div></div>
+<p>header has visibility info (concurrency control) and a bit map for null values
+We generally do not store the meta-data about the schema.</p>
+
+<p>normalization is how we split our databse across different tables, this happens with foreign keys.   somtimes you want to embedd one table inside another to avoid teh overhead of the join, that is called <strong>denormalization</strong>.</p>
+
+<h3 id="buffer-manager">Buffer Manager</h3>
+
+<p>Programs in a database system make requests (i.e., calls) on the buffer manager when
+they need a block from disk.</p>
+
+<h1 id="learning">Learning</h1>
+
+<p>Database System Concepts, 7ed <br />
+Silberschatz, Korth, Sudarshan</p>
+
+<ul>
+  <li>Andy Pavlo - Fall 2019
+    <ul>
+      <li>https://www.youtube.com/playlist?list=PLSE8ODhjZXjbohkNBWQs_otTrBTrjyohi</li>
+      <li>https://15445.courses.cs.cmu.edu/fall2019/project1/</li>
+      <li>https://github.com/cmu-db/bustub</li>
+    </ul>
+  </li>
+</ul>
+
+
+                </div>
+            </main>
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#performance">Performance</a></li>
+  <li><a href="#databases-internals">Databases Internals</a>
+    <ul>
+      <li><a href="#disk-manager">Disk Manager</a>
+        <ul>
+          <li><a href="#buffer-manager">Buffer Manager</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#learning">Learning</a></li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
+  <data class="u-url" href="/documents/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">LFMUNOZ</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">LFMUNOZ</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/lfmunoz"><svg class="svg-icon"><use xlink:href="/documents/assets/minima-social-icons.svg#github"></use></svg> <span class="username">lfmunoz</span></a></li><li><a href="https://www.twitter.com/lfmunoz4"><svg class="svg-icon"><use xlink:href="/documents/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">lfmunoz4</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>articles, notes, and references</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

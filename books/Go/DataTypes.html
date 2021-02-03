@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Data Types | LFMUNOZ</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Data Types" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="articles, notes, and references" />
+<meta property="og:description" content="articles, notes, and references" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/Go/DataTypes.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/Go/DataTypes.html" />
+<meta property="og:site_name" content="LFMUNOZ" />
+<script type="application/ld+json">
+{"@type":"WebPage","headline":"Data Types","url":"lfmunoz.github.io/documents/books/Go/DataTypes.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
+<body><header class="site-header" role="banner">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2YJDWQX6GK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-2YJDWQX6GK');
+  </script>
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/documents/">LFMUNOZ</a><nav class="site-nav">
+      <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+      <label for="nav-trigger">
+        <span class="menu-icon">
+          <svg viewBox="0 0 18 15" width="18px" height="15px">
+            <path
+              d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+          </svg>
+        </span>
+      </label>
+
+      <div class="trigger"><a class="page-link" href="/documents/about/">About</a></div>
+    </nav></div>
+</header><div class="main"><div class="column-sidebar">
+
+    <div class="nav-section">
+        <div class="nav-title">Posts</div><div class="post-container"><a class="post-link" href="/documents/2020/12/17/i-wish-i-was-worse.html"> I wish I was worse at dancing</a>
+            <span class="post-meta">Dec 17, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/12/13/too-many-options.html"> Too many options slows production</a>
+            <span class="post-meta">Dec 13, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/12/06/dream-cats-and-dogs.html"> A dream of dogs and cats</a>
+            <span class="post-meta">Dec 6, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/11/27/http-rest-bad-design.html"> RESTful HTTP creates coupling</a>
+            <span class="post-meta">Nov 27, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/08/01/organization-and-structure.html"> Organization and Structure of Applications</a>
+            <span class="post-meta">Aug 1, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/07/12/listening-to-music.html"> Listening to Music</a>
+            <span class="post-meta">Jul 12, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/07/05/frameworks.html"> Frameworks and Libraries</a>
+            <span class="post-meta">Jul 5, 2020</span>
+        </div><p class="rss-subscribe">subscribe <a href="/documents/feed.xml">via RSS</a></p>
+    </div>
+
+    <div class="nav-section">
+        <div class="nav-title">Guides</div>
+        <ul>
+            
+            <li>
+                <strong> Computer Science</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/Algorithms/Introduction.html">Algorithms</a></li>
+                    
+                    <li><a href="/documents/articles/SoftwareEngineering.html">Software Engineering</a></li>
+                    
+                    <li><a href="/documents/books/DesignPatterns.html">Design Patterns</a></li>
+                    
+                    <li><a href="/documents/books/Linux/Introduction.html">Linux</a></li>
+                    
+                    <li><a href="/documents/books/Databases/Introduction.html">Databases</a></li>
+                    
+                    <li><a href="/documents/books/SoftwareEngineering/Concurrency.html">Concurrency</a></li>
+                    
+                    <li><a href="/documents/books/Security/Introduction.html">Security</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Programming Languages</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/C/Introduction.html">C</a></li>
+                    
+                    <li><a href="/documents/books/Cpp/Introduction.html">C++</a></li>
+                    
+                    <li><a href="/documents/books/Rust/Introduction.html">Rust</a></li>
+                    
+                    <li><a href="/documents/books/Go/Introduction.html">Go</a></li>
+                    
+                    <li><a href="/documents/books/Java/Introduction.html">Java</a></li>
+                    
+                    <li><a href="/documents/books/Kotlin/Introduction.html">Kotlin</a></li>
+                    
+                    <li><a href="/documents/lang/Python/Introduction.html">Python</a></li>
+                    
+                    <li><a href="/documents/lang/Bash/Introduction.html">Bash</a></li>
+                    
+                    <li><a href="/documents/books/Make/Introduction.html">Makefile</a></li>
+                    
+                    <li><a href="/documents/lang/SQL/Introduction.html">SQL</a></li>
+                    
+                    <li><a href="/documents/lang/HTML/Introduction.html">HTML</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Technologies</strong>
+                <ul>
+                    
+                    <li><a href="/documents/tech/Android/Introduction.html">Android</a></li>
+                    
+                    <li><a href="/documents/books/Docker/Introduction.html">Docker</a></li>
+                    
+                    <li><a href="/documents/books/Envoy/Introduction.html">Envoy</a></li>
+                    
+                    <li><a href="/documents/books/Terraform/Introduction.html">Terraform</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Mathematics</strong>
+                <ul>
+                    
+                    <li><a href="/documents/mathematics/Foundations.html">Foundations</a></li>
+                    
+                    <li><a href="/documents/books/Logic/Introduction.html">Logic</a></li>
+                    
+                    <li><a href="/documents/books/SetTheory/Introduction.html">Set Theory</a></li>
+                    
+                    <li><a href="/documents/books/Geometry/Introduction.html">Geometry</a></li>
+                    
+                    <li><a href="/documents/books/Analysis/Introduction.html">Analysis</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Miscellaneous</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/Non-Duality/Introduction.html">Non-Duality</a></li>
+                    
+                </ul>
+            </li>
+
+            
+        </ul>
+    </div>
+
+
+</div><div class="column-main">
+            <main class="page-content" aria-label="Content">
+                <div class="wrapper">
+                    <h1 id="data-types">Data Types</h1>
+
+<ul>
+  <li><a href="Introduction.html">The Go Programming Language</a></li>
+</ul>
+
+<p>In Go, types are composed of smaller types, which is in contrast to traditional inheritance-based models.</p>
+
+<h2 id="identifiers">Identifiers</h2>
+
+<p>An <strong>identifier</strong> starts with a letter A to Z or a to z or an underscore _ followed by zero or more letters, underscores, and digits (0 to 9).</p>
+
+<p>Go does not allow punctuation characters such as @, $, and % within identifiers.</p>
+
+<h2 id="primitive-daa-types">Primitive daa types</h2>
+
+<p>architecture-independent:</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">uint8</span><span class="p">,</span><span class="kt">uint16</span><span class="p">,</span><span class="kt">uint32</span><span class="p">,</span><span class="kt">uint64</span>
+<span class="kt">int8</span><span class="p">,</span><span class="kt">int16</span><span class="p">,</span><span class="kt">int32</span><span class="p">,</span><span class="kt">int64</span>
+
+<span class="kt">float32</span><span class="p">,</span> <span class="kt">float64</span><span class="p">,</span> <span class="kt">complex64</span><span class="p">,</span> <span class="kt">complex128</span>
+
+<span class="kt">byte</span> <span class="c">// same as uint8</span>
+<span class="kt">uintptr</span> <span class="c">// an unsigned integer to store the uninterpreted bits of a pointer value</span>
+</code></pre></div></div>
+
+<h2 id="variables">Variables</h2>
+
+<p>In general use <strong>=</strong> to initialize to the default value and use <strong>:=</strong> when you want to initialize to a specific value.</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">// Declaration and initialization</span>
+<span class="c">//  Either the type or the = expression can be omitted, but not both.</span>
+<span class="c">//   var name type = expression</span>
+<span class="k">var</span> <span class="n">u2</span> <span class="kt">uint32</span> <span class="o">=</span> <span class="m">32</span> 
+
+<span class="c">// Declare a variable and initialize with 0</span>
+<span class="k">var</span>  <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span> <span class="kt">int</span>
+<span class="k">var</span>  <span class="n">c</span><span class="p">,</span> <span class="n">ch</span> <span class="kt">byte</span><span class="p">;</span>
+<span class="k">var</span>  <span class="n">f</span><span class="p">,</span> <span class="n">salary</span> <span class="kt">float32</span><span class="p">;</span>
+
+<span class="c">// Auto specify the type, the type of variable is automatically </span>
+<span class="c">//  computed by the compiler</span>
+<span class="n">d</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="m">5</span><span class="p">;</span>
+
+<span class="c">// := is called short variable declaration (type is inferred)</span>
+<span class="n">y</span> <span class="o">:=</span> <span class="m">42</span> 
+
+<span class="c">// Variables of different types can be declared in one go using type inference.</span>
+<span class="k">var</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="s">"foo"</span>  
+<span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c">// 3  int</span>
+<span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="c">// 4  int</span>
+<span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="c">// "foo" string</span>
+
+<span class="c">// const prefix to declare constants </span>
+<span class="c">// define constants in CAPITALS.</span>
+<span class="k">const</span> <span class="n">LENGTH</span> <span class="kt">int</span> <span class="o">=</span> <span class="m">10</span>
+
+</code></pre></div></div>
+
+<h2 id="literals">Literals</h2>
+
+<ul>
+  <li>Variables are lvalues</li>
+  <li>Numeric literals are rvalues</li>
+</ul>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">// Integer Literals</span>
+<span class="m">85</span>         <span class="c">/* decimal */</span>
+<span class="m">0213</span>       <span class="c">/* octal */</span>
+<span class="m">0x4b</span>       <span class="c">/* hexadecimal */</span>
+<span class="m">30</span>         <span class="c">/* int */</span>
+<span class="m">30</span><span class="n">u</span>        <span class="c">/* unsigned int */</span>
+<span class="m">30</span><span class="n">l</span>        <span class="c">/* long */</span>
+<span class="m">30</span><span class="n">ul</span>       <span class="c">/* unsigned long */</span>
+
+<span class="c">// Floating-point Literals</span>
+<span class="m">3.14159</span>      
+<span class="m">314159E-5</span><span class="n">L</span>   
+
+</code></pre></div></div>
+
+<h2 id="operators">Operators</h2>
+
+<p>similar to <a href="../C/Introduction.html">C Programming Language</a></p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&amp;</span> <span class="c">// This operator returns the address of the variable.</span>
+<span class="o">*</span> <span class="c">// This operator provides pointer to a variable.</span>
+<span class="o">&lt;-</span> <span class="c">// The name of this operator is receive. </span>
+   <span class="c">// It is used to receive a value from the channel.</span>
+
+</code></pre></div></div>
+
+<p>Go doesn’t have a ternary operator, using if/else syntax is the idiomatic way</p>
+
+<h2 id="conversions">Conversions</h2>
+
+<p>Functions and packages will at times return interface{} as a type because the type would be unpredictable or unknown to them. Returning interface allows them to pass data around without know it’s type</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cannot convert result (type interface {}) to type float64: need type assertion
+invalid operation: myInt += 5 (mismatched types interface {} and int)
+</code></pre></div></div>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">myInt</span><span class="p">,</span> <span class="n">ok</span> <span class="o">:=</span> <span class="n">result</span><span class="o">.</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span>
+<span class="k">if</span> <span class="o">!</span><span class="n">ok</span> <span class="p">{</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"got data of type %T but wanted int"</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">Exit</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+                </div>
+            </main>
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#data-types">Data Types</a>
+    <ul>
+      <li><a href="#identifiers">Identifiers</a></li>
+      <li><a href="#primitive-daa-types">Primitive daa types</a></li>
+      <li><a href="#variables">Variables</a></li>
+      <li><a href="#literals">Literals</a></li>
+      <li><a href="#operators">Operators</a></li>
+      <li><a href="#conversions">Conversions</a></li>
+    </ul>
+  </li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
+  <data class="u-url" href="/documents/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">LFMUNOZ</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">LFMUNOZ</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/lfmunoz"><svg class="svg-icon"><use xlink:href="/documents/assets/minima-social-icons.svg#github"></use></svg> <span class="username">lfmunoz</span></a></li><li><a href="https://www.twitter.com/lfmunoz4"><svg class="svg-icon"><use xlink:href="/documents/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">lfmunoz4</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>articles, notes, and references</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

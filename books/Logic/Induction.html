@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Induction | LFMUNOZ</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Induction" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="articles, notes, and references" />
+<meta property="og:description" content="articles, notes, and references" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/Logic/Induction.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/Logic/Induction.html" />
+<meta property="og:site_name" content="LFMUNOZ" />
+<script type="application/ld+json">
+{"@type":"WebPage","headline":"Induction","url":"lfmunoz.github.io/documents/books/Logic/Induction.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
+<body><header class="site-header" role="banner">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2YJDWQX6GK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-2YJDWQX6GK');
+  </script>
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/documents/">LFMUNOZ</a><nav class="site-nav">
+      <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+      <label for="nav-trigger">
+        <span class="menu-icon">
+          <svg viewBox="0 0 18 15" width="18px" height="15px">
+            <path
+              d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+          </svg>
+        </span>
+      </label>
+
+      <div class="trigger"><a class="page-link" href="/documents/about/">About</a></div>
+    </nav></div>
+</header><div class="main"><div class="column-sidebar">
+
+    <div class="nav-section">
+        <div class="nav-title">Posts</div><div class="post-container"><a class="post-link" href="/documents/2020/12/17/i-wish-i-was-worse.html"> I wish I was worse at dancing</a>
+            <span class="post-meta">Dec 17, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/12/13/too-many-options.html"> Too many options slows production</a>
+            <span class="post-meta">Dec 13, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/12/06/dream-cats-and-dogs.html"> A dream of dogs and cats</a>
+            <span class="post-meta">Dec 6, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/11/27/http-rest-bad-design.html"> RESTful HTTP creates coupling</a>
+            <span class="post-meta">Nov 27, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/08/01/organization-and-structure.html"> Organization and Structure of Applications</a>
+            <span class="post-meta">Aug 1, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/07/12/listening-to-music.html"> Listening to Music</a>
+            <span class="post-meta">Jul 12, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/07/05/frameworks.html"> Frameworks and Libraries</a>
+            <span class="post-meta">Jul 5, 2020</span>
+        </div><p class="rss-subscribe">subscribe <a href="/documents/feed.xml">via RSS</a></p>
+    </div>
+
+    <div class="nav-section">
+        <div class="nav-title">Guides</div>
+        <ul>
+            
+            <li>
+                <strong> Computer Science</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/Algorithms/Introduction.html">Algorithms</a></li>
+                    
+                    <li><a href="/documents/articles/SoftwareEngineering.html">Software Engineering</a></li>
+                    
+                    <li><a href="/documents/books/DesignPatterns.html">Design Patterns</a></li>
+                    
+                    <li><a href="/documents/books/Linux/Introduction.html">Linux</a></li>
+                    
+                    <li><a href="/documents/books/Databases/Introduction.html">Databases</a></li>
+                    
+                    <li><a href="/documents/books/SoftwareEngineering/Concurrency.html">Concurrency</a></li>
+                    
+                    <li><a href="/documents/books/Security/Introduction.html">Security</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Programming Languages</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/C/Introduction.html">C</a></li>
+                    
+                    <li><a href="/documents/books/Cpp/Introduction.html">C++</a></li>
+                    
+                    <li><a href="/documents/books/Rust/Introduction.html">Rust</a></li>
+                    
+                    <li><a href="/documents/books/Go/Introduction.html">Go</a></li>
+                    
+                    <li><a href="/documents/books/Java/Introduction.html">Java</a></li>
+                    
+                    <li><a href="/documents/books/Kotlin/Introduction.html">Kotlin</a></li>
+                    
+                    <li><a href="/documents/lang/Python/Introduction.html">Python</a></li>
+                    
+                    <li><a href="/documents/lang/Bash/Introduction.html">Bash</a></li>
+                    
+                    <li><a href="/documents/books/Make/Introduction.html">Makefile</a></li>
+                    
+                    <li><a href="/documents/lang/SQL/Introduction.html">SQL</a></li>
+                    
+                    <li><a href="/documents/lang/HTML/Introduction.html">HTML</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Technologies</strong>
+                <ul>
+                    
+                    <li><a href="/documents/tech/Android/Introduction.html">Android</a></li>
+                    
+                    <li><a href="/documents/books/Docker/Introduction.html">Docker</a></li>
+                    
+                    <li><a href="/documents/books/Envoy/Introduction.html">Envoy</a></li>
+                    
+                    <li><a href="/documents/books/Terraform/Introduction.html">Terraform</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Mathematics</strong>
+                <ul>
+                    
+                    <li><a href="/documents/mathematics/Foundations.html">Foundations</a></li>
+                    
+                    <li><a href="/documents/books/Logic/Introduction.html">Logic</a></li>
+                    
+                    <li><a href="/documents/books/SetTheory/Introduction.html">Set Theory</a></li>
+                    
+                    <li><a href="/documents/books/Geometry/Introduction.html">Geometry</a></li>
+                    
+                    <li><a href="/documents/books/Analysis/Introduction.html">Analysis</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Miscellaneous</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/Non-Duality/Introduction.html">Non-Duality</a></li>
+                    
+                </ul>
+            </li>
+
+            
+        </ul>
+    </div>
+
+
+</div><div class="column-main">
+            <main class="page-content" aria-label="Content">
+                <div class="wrapper">
+                    <h1 id="induction">Induction</h1>
+
+<blockquote>
+  <p><strong>Induction Principle:</strong> Suppose that the first number, 0, has a certain property; and suppose also that if any number has that property, then so does the next; then it follows that all numbers have the property.</p>
+</blockquote>
+
+<p>Is this obvious?  Consider the following two theorems:</p>
+
+<hr />
+
+<p><strong>Theorem A:</strong></p>
+<ol>
+  <li>The number 1 is a natural number.</li>
+  <li>If k is a natural number, then k+1 is a natural number.</li>
+</ol>
+
+<p>Then the natural numbers are infinite</p>
+
+<p><strong>Theorem B:</strong></p>
+<ol>
+  <li>P(0) is true</li>
+  <li>If P(0), P(1), P(2), …, P(n) are true, then P(n+1) is true as well.</li>
+</ol>
+
+<p>Then P(n) is true for all n ∈ ℕ</p>
+
+<hr />
+
+<p>These two theorems seem completely different. The first I would consider obvious the second brings up doubts because how can it not depend on what P(n) is. The reason is that you aren’t specifying what n is, so there is a recursive relationship that is established, a sort of domino effect.</p>
+
+<p>There is no proof for induction because it is an axiomatic property of the natural numbers. Understanding induction requires understanding how the natural numbers are formed. Therefore although induction must be accepted as axiom it is equivalent to the Well-Ordering Property.</p>
+
+<hr />
+<p><strong>The Well-Ordering Property :</strong>  Every nonempty set of non-negative integers has a least element.</p>
+
+<p>That is, there is some integer $a \in S$ such that $a \leq b$ for all b’s belonging to S.</p>
+
+<p>The well ordering priciple requires two things:</p>
+<ul>
+  <li>A non empty set</li>
+  <li>Non-negative integers</li>
+</ul>
+
+<hr />
+<p><strong>Principle of Induction</strong> Let S be a subset of $\mathbb N$ such that:</p>
+
+<ol>
+  <li>$1 \in S$,</li>
+  <li>if $k \in S$ then $k+1 \in S$,</li>
+</ol>
+
+<p>then $S = \mathbb N$</p>
+
+<hr />
+
+<p><strong>Theorem:</strong> The Well-Ordering Property and Principle of Induction are equivalent.</p>
+
+\[WOP \iff POI\]
+
+<p><strong>Proof:</strong> (By contradiction) Assume that the conclusion of POI is false, then if we get a contradiction it must be true.</p>
+
+<p>Suppose S has the POI but $S \neq \mathbb N$. <br />
+(Assumption for contradiction: There are elments in S that are not in N.)</p>
+
+<p>Then $A = \mathbb N - S$ has a least element n <br />
+(By WOP and A contains elements in S not in A)</p>
+
+<p>Notice n &gt; 1, because $1 \in S$ so  $1 \notin A$. <br />
+(By POI that is premise 1. Important to note that n is not one, zero or negative)</p>
+
+<p>Consider n - 1, it is not in A because n was the least element <br />
+so $(n - 1) \in S$ but $(n-1) + 1 \in S$. <br />
+(By POI premise 2)</p>
+
+<p>This is a contradiction because n was thought to be the least element in A, therefore it can’t be in S.</p>
+
+<hr />
+
+<p>What makes a proof by induction work is the fact that the natural numbers can be defined recursively. There is a base case, consisting of the smallest natural number and there is a recursive case, showing how to construct bigger natural numbers from smaller ones.</p>
+
+<p>We abstract away natural numbers for a different object, call it P(n) but this new object has this same induction property as the natural numbers.</p>
+
+<hr />
+<p><strong>Definition:</strong> The principle of mathematical induction(statement form) consists of all statements in the form</p>
+
+\[[ P(1) \land \forall n  ( P(n) \implies P(n+1) ) ] \implies \forall n P(n)\]
+
+<p>where P(n) is any statement containing a free natural number variable n.</p>
+
+<hr />
+
+<p>P(n) is the statement that it’s possible to reach the nth step. P(1) says it’s possible to reach the first step and $\forall n ( P(n) \implies P(n+1) )$ says that, for any n, if you can reach the nth step, you can also reach the (n+1)-th step. If you can get to the first step and you always take one more step, then you can go as high as you want.</p>
+
+<p>In a proof of induction, the goal is to prove a statement of the form 
+$\forall n P(n)$. It suffices to prove P(1), the <strong>base case</strong>, and  $\forall n ( P(n) \implies P(n+1) )$, the <strong>induction step</strong>. To prove this quantified statement it suffices to prove the unquantified implication. This will usually be proved by conditional proof, which means the induction step starts with assuming P(n). P(n) is often called the <strong>induction hypothesis</strong>. It is then required to prove P(n+1) from this assumption.</p>
+
+<p>People are often surprised by the fact that, in an induction proof, you get to assume P(n), which is very similar to what you are trying to prove. But note that the statement to be proved is $\forall n P(n)$, whereas the induction hypothesis is just P(n).</p>
+
+<p>You assume P(n) and that leads to a proof of $\forall n P(n)$. This is not the same as assuming the theorem that we are trying to prove. The theorem is a universal statement – it claims that a certain formula holds for every natural number.</p>
+
+<h2 id="template-for-induction-proofs">Template for Induction Proofs</h2>
+
+<p>Suppose that you want to prove that some property P(n) holds of all natural numbers.</p>
+
+<p>To do so:</p>
+<ol>
+  <li>Prove that P(0) is true.
+    <ul>
+      <li>This is called the basis or the base case.</li>
+    </ul>
+  </li>
+  <li>Prove that for all n ∈ ℕ, that if P(n) is true, then P(n + 1) is true as well.
+    <ul>
+      <li>This is called the inductive step.</li>
+      <li>P(n) is called the inductive hypothesis.</li>
+    </ul>
+  </li>
+  <li>Conclude by induction that P(n) holds for all n.</li>
+</ol>
+
+<p>Follow the following steps</p>
+
+<ol>
+  <li>State that your proof works by induction.</li>
+  <li>State your choice of P(n).</li>
+  <li>Prove the bast case
+    <ul>
+      <li>State what P(0)</li>
+      <li>Prove it using any technique you’d like.</li>
+    </ul>
+  </li>
+  <li>Prove the inductive step:
+    <ul>
+      <li>State that for some arbitrary n ∈ ℕ that you’re assuming P(n) and mention what P(n) is.</li>
+    </ul>
+  </li>
+  <li>State that you are trying to prove P(n + 1) and what P(n + 1) means.
+    <ul>
+      <li>Prove P(n + 1) using any technique you’d like</li>
+    </ul>
+  </li>
+</ol>
+
+<p>Note: Induction can be used only to prove results obtained in some other way, it is not a tool for discovering formula or theorems.</p>
+
+<h2 id="example-detect-counterfeit-coin">Example: Detect Counterfeit Coin</h2>
+
+<p><strong>Problem:</strong><br />
+If we have n weighings on a scale, what is the largest number of coins out of which we can find the counterfeit?</p>
+
+<p><strong>Theorem:</strong> 
+ If exactly one coin in a group of $3^n$ coins is heavier than the rest, that coin can be found using only n weighings on a balance.</p>
+
+<p><strong>Proof:</strong> By induction.</p>
+
+<p>Let P(n) be “Given n weightings, we can detect which one out of $3^n$ coins is counterfeit.”</p>
+
+<p>We prove that P(n) is true for all n ∈ ℕ.</p>
+
+<p>For the <strong>base case</strong>, we show P(0), that we can detect which one of $3^0 = 1$ coins is counterfeit.
+Exactly one coin is counterfeit, so the sole coin must be counterfeit and we can find it with n=0 weighings.</p>
+
+<p>For the <strong>inductive step</strong>, suppose P(k) holds for some k ∈ ℕ, so we can detect which of $3^k$ coins is counterfeit using k weighings.</p>
+
+<p>We will show P(k + 1) holds, meaning we can detect a counterfeit in $3^{k+1}$ coins using k + 1 weighings.</p>
+
+<p>Given $3^{k+1} = 3*3^k$ coins, split them into three groups of size $3^k$; call them A, B, and C. 
+Put the coins in A on one side of the scale and the coins in B on the other. 
+We consider three cases based on how the scale tips:</p>
+
+<ul>
+  <li>Case 1: Side A is heavier. Then the counterfeit must be in group A.</li>
+  <li>Case 2: Side B is heavier. Then the counterfeit must be in group B.</li>
+  <li>Case 3: The scale is balanced. Then the counterfeit must be in group C, since it isn’t in groups A or B.</li>
+</ul>
+
+<p>In all cases, we use one weighing to find a set of $3^n$ coins containing the counterfeit coin.</p>
+
+<p>By the inductive hypothesis, with n more weighings, we can find which of these $3^n$ coins is counterfeit. This means that we can find the counterfeit of $3^{n+1}$ coins in (n + 1) weighings. Thus P(n + 1) holds,
+completing the induction.</p>
+
+<h2 id="example-convex-polygon">Example: Convex Polygon</h2>
+
+<p>A <strong>convex polygon</strong> is a polygon where, for any two points in or on the polygon, the line between those points is contained within the polygon.</p>
+
+<p><strong>Theorem:</strong> For any convex polygon with n vertices, the sum of the angles in that polygon is (n – 2) · 180°</p>
+
+<p>By induction.</p>
+
+<p>Let P(n) be “all convex polygons with n vertices have angles that sum to (n – 2) · 180°.”</p>
+
+<p>We will prove P(n) holds for all n ∈ ℕ where n ≥ 3.</p>
+
+<p>Basis</p>
+
+<p>As a base case, we prove P(3): the sum of the angles in any convex polygon with three vertices is 180°. Any such polygon is a triangle, so its angles sum to 180°.</p>
+
+<p>For the inductive step, assume for some n ≥ 3 that</p>
+
+<p>P(n) holds and all convex polygons with n vertices have angles that sum to (n–2) · 180°.</p>
+
+<p>We prove P(n+1), that the sum of the angles in any convex polygon with n+1 vertices is (n–1) · 180°. 
+Let A be an arbitrary convex polygon with n+1 vertices. Take any three consecutive vertices in A</p>
+
+<p>The sum of the angles in A is equal to the sum of the angles in triangle B (180°) 
+and the sum of the angles in convex polygon C (which, by the IH, is (n – 2) · 180°). Therefore, the sum of the angles in A is (n–1) · 180°. Thus P(n + 1) holds, completing the induction</p>
+
+<h2 id="example-power-set">Example: Power Set</h2>
+
+<p><strong>Theorem:</strong> For any finite set S, if |S|= n, then S has $2^n$ subsets.</p>
+
+<p><strong>Proof:</strong> by induction.</p>
+
+<p>Let	P(n) be	the	predicate “A set	with	cardinality	n	has	$2^n$	subsets.”</p>
+
+<p>We prove that P(n) is true for all n ∈ ℕ</p>
+
+<p><strong>Basis	step:</strong></p>
+
+<p>P(0) is	true,	because	the	set	with cardinality 0 (the	empty	set) has 1	subset (itself)	and	$2^0 = 1$.</p>
+
+<p><strong>Inductive	step:</strong></p>
+
+<p>We show that if a set with k elements has $2^k$ subsets, then a set	with k+1 elements	has	$2^{k+1}$	subsets.</p>
+
+<p>Assume that	for	an arbitrary k, any	set	with cardinality k has $2^k$ subsets.</p>
+
+<p>Let T be a set such	that |T| = k+1.</p>
+
+<p>Enumerate	the	elements of T</p>
+
+<p>$T = {e_1, e_2, \dots, e_k, e_{k+1} }$.</p>
+
+<p>Let $S = { e_1, e_2, \dots , e_k }$</p>
+
+<p>Then |S| = k,	so S has $2^k$	subsets, according to	the	inductive	hypothesis.</p>
+
+<p>Note that $T = S ∪ e_{k+1}$,	so	every	subset of	S	is also	a	subset of	T.</p>
+
+<p>Any	subset of T	either	contains the element $e_{k+1}$, or	it	doesn’t	contain	$e_{k+1}$.</p>
+
+<p>If a subset of T doesn’t	contain $e_{k+1}$, then	it is	also a	subset of	S, and	there	are	$2^k$	of
+those	subsets.</p>
+
+<p>On	the	other	hand,	if a subset	of T does	contain	the	element	$e_{k+1}$, then that subset	is formed	by	including	${e_k+1}$ in one of	the	$2^k$	subsets	of S,	so T has $2^k$ subsets containing $e_{k+1}$.</p>
+
+<p>We have	shown	that T has $2^k$ subsets	containing $e_{k+1}$, and	another	$2^k$	subsets	not	containing	
+$e_{k+1}$, so	the	total	number of	subsets	of T	is $2^k	+	2^k	=	(2)2^k = 2^{k+1}$.</p>
+
+<p><strong>Key Sentence:</strong>  If you have a set of 2 elements it has 4 subsets, a set with 3 elements has 8 subsets, which are the original 4 subsets + those same subsets with an included element in each one.</p>
+
+<h1 id="references">References</h1>
+
+<p>http://web.stanford.edu/class/archive/cs/cs103/cs103.1152/lectures/03/Small03.pdf
+https://web.stanford.edu/class/archive/cs/cs103/cs103.1142/lectures/03/Small03.pdf</p>
+
+<p>http://web.stanford.edu/class/archive/cs/cs103/cs103.1126/lectures/04/Slides04.pdf</p>
+
+                </div>
+            </main>
+        </div></div><footer class="site-footer h-card">
+  <data class="u-url" href="/documents/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">LFMUNOZ</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">LFMUNOZ</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/lfmunoz"><svg class="svg-icon"><use xlink:href="/documents/assets/minima-social-icons.svg#github"></use></svg> <span class="username">lfmunoz</span></a></li><li><a href="https://www.twitter.com/lfmunoz4"><svg class="svg-icon"><use xlink:href="/documents/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">lfmunoz4</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>articles, notes, and references</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

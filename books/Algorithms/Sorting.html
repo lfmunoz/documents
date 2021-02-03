@@ -2,21 +2,42 @@
 <html lang="en">
 
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>LFMUNOZ | articles, notes, and references</title>
+<title>Sorting | LFMUNOZ</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="LFMUNOZ" />
+<meta property="og:title" content="Sorting" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="articles, notes, and references" />
 <meta property="og:description" content="articles, notes, and references" />
-<link rel="canonical" href="lfmunoz.github.io/documents/404.html" />
-<meta property="og:url" content="lfmunoz.github.io/documents/404.html" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/Algorithms/Sorting.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/Algorithms/Sorting.html" />
 <meta property="og:site_name" content="LFMUNOZ" />
 <script type="application/ld+json">
-{"@type":"WebPage","headline":"LFMUNOZ","url":"lfmunoz.github.io/documents/404.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+{"@type":"WebPage","headline":"Sorting","url":"lfmunoz.github.io/documents/books/Algorithms/Sorting.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
 <body><header class="site-header" role="banner">
@@ -169,30 +190,134 @@
 </div><div class="column-main">
             <main class="page-content" aria-label="Content">
                 <div class="wrapper">
-                    <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+                    <h1 id="sorting">Sorting</h1>
 
-<div class="container">
-  <h1>404</h1>
+<p><strong>Problem Statement:</strong></p>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+<p><strong>Input:</strong> Sequence $a_1,a_2, \dots, a_n$ of numbers. <br />
+<strong>Output:</strong> Permutation  of $a_1, a_2, \dots, a_n$  such that $a_1 &lt; a_2 &lt;  \dots &lt; a_n$</p>
+
+<p><strong>Note:</strong> A <strong>permutation</strong> is a re-arrangement of numbers.</p>
+
+<p><strong>Should I use built-in sorting?</strong> Yes</p>
+
+<ul>
+  <li>C++ STL algorithm::sort</li>
+  <li>Java Collections.sort</li>
+  <li>JavaScript [].sort()</li>
+</ul>
+
+<p><strong>What is the quickest sorting method to use?</strong></p>
+
+<p>No algorithm is best in all cases. Generally Quick Sort, Merge Sort, or Radix Sort.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Algorithm</th>
+      <th>Data Structure</th>
+      <th>Time Complexity</th>
+      <th>Worst Case Auxiliary Space Complexity</th>
+      <th> </th>
+      <th> </th>
+    </tr>
+    <tr>
+      <th> </th>
+      <th> </th>
+      <th>Best</th>
+      <th>Average</th>
+      <th>Worst</th>
+      <th>Worst</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="QuickSort.html">Quick Sort</a></td>
+      <td>Array</td>
+      <td>O(n log(n))</td>
+      <td>O(n log(n))</td>
+      <td>$O(n^2)$</td>
+      <td>O(log(n))</td>
+    </tr>
+    <tr>
+      <td><a href="">Merge sort</a></td>
+      <td>Array</td>
+      <td>O(n log(n))</td>
+      <td>O(n log(n))</td>
+      <td>O(n log(n))</td>
+      <td>O(n)</td>
+    </tr>
+    <tr>
+      <td><a href="">Heapsort</a></td>
+      <td>Array</td>
+      <td>O(n log(n))</td>
+      <td>O(n log(n))</td>
+      <td>O(n log(n))</td>
+      <td>O(1)</td>
+    </tr>
+    <tr>
+      <td><a href="">Bubble Sort</a></td>
+      <td>Array</td>
+      <td>O(n)</td>
+      <td>$O(n^2)$</td>
+      <td>$O(n^2)$</td>
+      <td>O(1)</td>
+    </tr>
+    <tr>
+      <td><a href="">Insertion Sort</a></td>
+      <td>Array</td>
+      <td>$O(n^2)$</td>
+      <td>$O(n^2)$</td>
+      <td>$O(n^2)$</td>
+      <td>O(1)</td>
+    </tr>
+    <tr>
+      <td><a href="">Selection Sort</a></td>
+      <td>Array</td>
+      <td>$O(n^2)$</td>
+      <td>$O(n^2)$</td>
+      <td>$O(n^2)$</td>
+      <td>O(1)</td>
+    </tr>
+    <tr>
+      <td><a href="">Bucket Sort</a></td>
+      <td>Array</td>
+      <td>O(n+k)</td>
+      <td>O(n+k)</td>
+      <td>$O(n^2)$</td>
+      <td>O(nk)</td>
+    </tr>
+    <tr>
+      <td><a href="">Radix Sort</a></td>
+      <td>Array</td>
+      <td>O(nk)</td>
+      <td>O(nk)</td>
+      <td>O(nk)</td>
+      <td>O(n+k)</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+<p><strong>Theorem:</strong> Complexity of sorting.</p>
+
+<p>Any comparison-based sorting program must use at least \(\lceil \lg{N!} \rceil &gt; N \lg{N - N / ln2}\) comparisons for some input.</p>
+
+<p><strong>Proof</strong></p>
+
+<p>Each comparison can cut down the number of possible arrangements of the elements to be considered by at most 2. Since there are N! possible arrangements before the sort and the goal is to have one possible arrangement (the sorted one), the number of comparisons must be at least the number of times N! can be divided by 2 before reaching a number less than unity, that is to say $\lceil lg N! \rceil$</p>
+
+<hr />
+
 
                 </div>
             </main>
-        </div></div><footer class="site-footer h-card">
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#sorting">Sorting</a></li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
   <data class="u-url" href="/documents/"></data>
 
   <div class="wrapper">

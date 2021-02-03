@@ -2,21 +2,42 @@
 <html lang="en">
 
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>LFMUNOZ | articles, notes, and references</title>
+<title>Coroutines | LFMUNOZ</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="LFMUNOZ" />
+<meta property="og:title" content="Coroutines" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="articles, notes, and references" />
 <meta property="og:description" content="articles, notes, and references" />
-<link rel="canonical" href="lfmunoz.github.io/documents/404.html" />
-<meta property="og:url" content="lfmunoz.github.io/documents/404.html" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/Kotlin/Coroutines.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/Kotlin/Coroutines.html" />
 <meta property="og:site_name" content="LFMUNOZ" />
 <script type="application/ld+json">
-{"@type":"WebPage","headline":"LFMUNOZ","url":"lfmunoz.github.io/documents/404.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+{"@type":"WebPage","headline":"Coroutines","url":"lfmunoz.github.io/documents/books/Kotlin/Coroutines.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
 <body><header class="site-header" role="banner">
@@ -169,30 +190,58 @@
 </div><div class="column-main">
             <main class="page-content" aria-label="Content">
                 <div class="wrapper">
-                    <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+                    <h1 id="coroutines">Coroutines</h1>
 
-<div class="container">
-  <h1>404</h1>
+<ul>
+  <li><a href="Introduction.html">The Kotlin Programming Language</a></li>
+</ul>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+
+<span class="c1">// https://www.lukaslechner.com/why-exception-handling-with-kotlin-coroutines-is-so-hard-and-how-to-successfully-master-it/</span>
+
+<span class="nf">coroutineScope</span><span class="p">{}</span> <span class="n">re-throws</span> <span class="n">exceptions</span> <span class="n">of</span> <span class="n">its</span> <span class="n">failing</span> <span class="n">children</span> <span class="n">instead</span> <span class="n">of</span> <span class="n">propagating</span> <span class="n">them</span> <span class="n">up</span> <span class="n">the</span> <span class="n">job</span> <span class="n">hierarchy</span><span class="p">.</span>
+
+
+
+    <span class="k">fun</span> <span class="nf">start</span><span class="p">():</span> <span class="nc">Job</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">scope</span><span class="p">.</span><span class="nf">launch</span> <span class="p">{</span>
+            <span class="n">log</span><span class="p">.</span><span class="nf">info</span><span class="p">().</span><span class="nf">log</span><span class="p">(</span><span class="s">"~~ Created {} Vert.X eventloop-threads..."</span><span class="p">,</span> <span class="n">eventLoopThreads</span><span class="p">)</span>
+            <span class="n">eb</span><span class="p">.</span><span class="n">consumer</span><span class="p">&lt;</span><span class="nc">JsonObject</span><span class="p">&gt;(</span><span class="nc">MGR_ADDR</span><span class="p">,</span> <span class="nf">eventBusHandler</span><span class="p">())</span>
+            <span class="n">log</span><span class="p">.</span><span class="nf">info</span><span class="p">().</span><span class="nf">log</span><span class="p">(</span><span class="s">"~~ Creating {} Agents..."</span><span class="p">,</span> <span class="n">agentConfig</span><span class="p">.</span><span class="n">numberOfClients</span><span class="p">)</span>
+            <span class="n">threadId</span> <span class="p">=</span> <span class="nc">Thread</span><span class="p">.</span><span class="nf">currentThread</span><span class="p">().</span><span class="n">id</span>
+            <span class="nf">addAgents</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">agentConfig</span><span class="p">.</span><span class="n">numberOfClients</span><span class="p">)</span>
+            <span class="n">reconnectLoop</span><span class="p">.</span><span class="nf">start</span><span class="p">(</span><span class="n">clientLoadDelay</span><span class="p">)</span>
+            <span class="n">checkerLoop</span><span class="p">.</span><span class="nf">start</span><span class="p">(</span><span class="nc">CHECKER_LOOP_DELAY</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">private</span> <span class="k">suspend</span> <span class="k">fun</span> <span class="nf">addAgents</span><span class="p">(</span><span class="n">inclusiveStart</span><span class="p">:</span> <span class="nc">Int</span><span class="p">,</span> <span class="n">inclusiveEnd</span><span class="p">:</span> <span class="nc">Int</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">isBusy</span><span class="p">)</span> <span class="k">return</span>
+        <span class="n">isBusy</span> <span class="p">=</span> <span class="k">true</span>
+        <span class="p">(</span><span class="nf">newFixedThreadPoolContext</span><span class="p">(</span><span class="n">eventLoopThreads</span><span class="p">,</span> <span class="s">"addAgents"</span><span class="p">).</span><span class="nf">use</span> <span class="p">{</span>
+            <span class="nf">withContext</span><span class="p">(</span><span class="n">it</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">db</span><span class="p">.</span><span class="k">open</span><span class="p">()</span>
+                <span class="kd">val</span> <span class="py">newAgents</span> <span class="p">=</span> <span class="p">(</span><span class="n">inclusiveStart</span> <span class="n">until</span> <span class="n">inclusiveEnd</span><span class="p">).</span><span class="nf">map</span> <span class="p">{</span>
+                    <span class="nf">async</span> <span class="p">{</span><span class="nf">createAgent</span><span class="p">(</span><span class="n">contextIterator</span><span class="p">.</span><span class="nf">next</span><span class="p">(),</span> <span class="n">agentConfig</span><span class="p">.</span><span class="nf">nextSerialNumber</span><span class="p">(</span><span class="n">it</span><span class="p">))}</span>
+                <span class="p">}.</span><span class="nf">awaitAll</span><span class="p">()</span>
+                <span class="n">agents</span><span class="p">.</span><span class="nf">addAll</span><span class="p">(</span><span class="n">newAgents</span><span class="p">)</span>
+                <span class="n">db</span><span class="p">.</span><span class="nf">close</span><span class="p">()</span>
+            <span class="p">}</span>
+        <span class="p">})</span>
+        <span class="n">isBusy</span> <span class="p">=</span> <span class="k">false</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
 
                 </div>
             </main>
-        </div></div><footer class="site-footer h-card">
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#coroutines">Coroutines</a></li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
   <data class="u-url" href="/documents/"></data>
 
   <div class="wrapper">

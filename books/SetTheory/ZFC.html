@@ -2,21 +2,42 @@
 <html lang="en">
 
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>LFMUNOZ | articles, notes, and references</title>
+<title>Zermelo–Fraenkel Set theory | LFMUNOZ</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="LFMUNOZ" />
+<meta property="og:title" content="Zermelo–Fraenkel Set theory" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="articles, notes, and references" />
 <meta property="og:description" content="articles, notes, and references" />
-<link rel="canonical" href="lfmunoz.github.io/documents/404.html" />
-<meta property="og:url" content="lfmunoz.github.io/documents/404.html" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/SetTheory/ZFC.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/SetTheory/ZFC.html" />
 <meta property="og:site_name" content="LFMUNOZ" />
 <script type="application/ld+json">
-{"@type":"WebPage","headline":"LFMUNOZ","url":"lfmunoz.github.io/documents/404.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+{"@type":"WebPage","headline":"Zermelo–Fraenkel Set theory","url":"lfmunoz.github.io/documents/books/SetTheory/ZFC.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
 <body><header class="site-header" role="banner">
@@ -169,30 +190,270 @@
 </div><div class="column-main">
             <main class="page-content" aria-label="Content">
                 <div class="wrapper">
-                    <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+                    <h1 id="zermelofraenkel-set-theory">Zermelo–Fraenkel Set Theory</h1>
 
-<div class="container">
-  <h1>404</h1>
+<ul>
+  <li><a href="Introduction.html">Set Theory</a></li>
+</ul>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
+<p>ZFC consists of 9 axioms mnemonic: <strong>EE PURP IC F</strong></p>
+
+<ul>
+  <li>EE - 2 basic existence axioms, one about the ∈ relation and the other about the existence
+of the empty set;</li>
+  <li>PURP - 4 construction axioms, which establish rules for building new sets from given ones.
+They are the pair set axiom, the union set axiom, the replacement axiom and the
+power set axiom;</li>
+  <li>IC - 2 further existence/construction axioms, these are slightly more advanced and newer
+compared to the others;</li>
+  <li>F - 1 axiom of foundation, excluding some constructions as not being sets.</li>
+</ul>
+
+<p>A relation is a predicate of two variables $\epsilon$ is a relation, it has no definition. There will be no definition of what ∈ is, or of what a set is. Instead, we have nine axioms concerning ∈ and sets, and it is only in terms of these nine axioms that ∈ and sets are defined at all.</p>
+
+<div class="definition">
+  <p><strong>ZF1. Axiom on Epsilon-Relation</strong></p>
+
+  <p>$x \in y$  is a proposition if and only if x and y are both sets</p>
+
+  <p><strong>ZF1 (Alternative): Axiom of Extensionality</strong></p>
+
+  <p>Two sets are equal if and only if they contain the same elements.</p>
+
+  <p>$\forall x \forall y ( x = y \iff \forall z (z \in x \iff z \in y))$</p>
+
 </div>
+
+<p>Remember proposition mean it is either true or false.</p>
+
+<p>$\forall x : \forall y : (x \in y)  XOR \neg (x \in y)$</p>
+
+<div class="definition">
+  <p><strong>ZF2. Axiom on existence of an empty set</strong></p>
+
+  <p>There exists a set that contains no elements</p>
+
+  <p>$\exists x : \forall y : (y \not \in x)$</p>
+</div>
+
+<div class="definition">
+  <p><strong>Theorem:</strong>  All empty sets are the same objects</p>
+
+  <p>There is only one empty set, call it $\emptyset$.</p>
+
+  <p><strong>Proof:</strong></p>
+
+  <p>Assume x and x’ are both empty sets, but then</p>
+
+  <p>$\forall y (y \in x  \to y \in x’)$</p>
+
+  <p>The first statement (antecedent) is false, then the conclusion (consequent) can be anything and the entire proposition is true.
+This just mens $x \subset x’$ but then $x \subset x$. In summary x = x’ so they must be the same object.</p>
+</div>
+
+<div class="definition">
+  <p><strong>ZF3. Axiom on Pair Sets</strong></p>
+
+  <p>Let x and y be sets. Then there exists a set that contains
+as its elements precisely the sets x and y</p>
+
+  <p>$\forall x :  \forall y : \exists m : \forall u ( u \in m \iff (u = x \lor u = y) )$</p>
+
+</div>
+
+<p>The set m is called the pair set of x and y and it is denoted by $\{ x, y \}$.</p>
+
+<p>Gives an unexceptional way of constructing a new set from known sets.</p>
+
+<div class="definition">
+  <p><strong>Problem:</strong> Show that given sets x and y there is a unique set z whose elements are x and y.</p>
+
+  <p><strong>Solution:</strong></p>
+
+  <p>By axiom of pairs there is at least one set z whose elements are x and y. If z’ is another
+such set, then any element of z’, namely x or y is also an element of z, and vice versa.
+By the axiom of extensionality we have z=z.</p>
+
+</div>
+
+<div class="definition">
+  <p><strong>Definition:</strong>  Ordered Pair</p>
+
+  <p>Given sets x and y, we write $(x,y)$ for the set $\{\{x\}, \{x,y\}\}$</p>
+
+  <p>which is called an <strong>ordered pair</strong>. The x and y are called the first and
+second coordinates, respectively, of the ordered pair.</p>
+
+</div>
+
+<div class="definition">
+  <p><strong>Theorem:</strong>  The ordered pair property</p>
+
+  <p>For any sets x,y,u,v, if $(x,y) = (u, v)$, then x = u and y = v.</p>
+
+</div>
+
+<p>An order must have the following</p>
+<ol>
+  <li>For any sets x and y, we want a unique set to stand for (x,y).</li>
+  <li>We want to be able to distinguish (x,y) from (y,x), or indeed from any other (a,b) where
+$a \neq x$ or $b \neq y$.</li>
+</ol>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<div class="definition">
+  <p><strong>ZF4. Axiom on Union Sets</strong></p>
+
+  <p>Let x be a set. Then there exists a set that whose elements are precisely the elements of the elements of x.</p>
+
+  <p>$∀ x : ∃ u : ∀ y : (y ∈ u ⇔ ∃ s : (y ∈ s ∧ s ∈ x))$</p>
+</div>
+
+<p>The set u is denoted by $\cup x$.</p>
+
+<p>Example Let a,b be sets  x  = { {a}, {b}} 
+U x = {a, b}</p>
+
+<p>second example
+x = { {a}, {a,b}} 
+Ux is a set by union set axiom</p>
+
+<div class="definition">
+  <p><strong>ZF5. Axiom of replacement</strong></p>
+
+  <p>Let R be a functional relation let m be a set. Then
+the image of m under R is again a set.</p>
+</div>
+
+<p>Relation R is called functional if $\forall x \exists ! y: R(x,y)$</p>
+
+<p>\exist !  = exists precisely</p>
+
+<p>THe image of a setm under a functinal relation R consists of all
+those y for which there is an x \in m such that R(x,y)</p>
+
+<p>the axiom of replacement implies, but is not implied by, the principle of 
+restricted comprehension:  Let P be a predicate of one variable and let m
+be a set. Then hose elments y \in m for which P(y) holds constitue a set</p>
+
+<p>Notation this set is usually denooted $\{ y \in m | P(y) \}$</p>
+
+<p>restrictive becasue the elements come from something that is arleady known to be a set .</p>
+
+<p>PUC - principle of universal comprehension (bad principle)</p>
+
+<p>historically in naive set theory, PUC was thought to be needed to define
+any set m P(m) (power set)  :=  { y | y \subset m }</p>
+
+<div class="definition">
+  <p><strong>ZF6. Axiom on existence power sets</strong></p>
+
+  <p>Let m be a set . then there exists a set  denoted
+P(m) whose elements are precisely the subsets of m.</p>
+
+</div>
+
+<p>$m = \{ a,b \}$</p>
+
+<p>$P(m) = \{ \emptyset, \{ a \}, \{ b \}, \{ a,b \} \}$</p>
+
+<p>how do we know the set exist? 
+from which set do these subsets come from?
+we need an extra axiom for the existence of power set</p>
+
+<div class="definition">
+  <p><strong>ZF7. Axiom of infinity</strong></p>
+
+  <p>there exists a set that contains the empty set
+and with every  of its elements y,
+it also contains it also contains 
+{y} as an element.</p>
+</div>
+
+<p>remark: one such set is the set with the elements
+$\{ \}, \{ \{ \} \}, \{ \{ \{ \} \} \}$</p>
+
+<p>corollay: N is a set</p>
+
+<p>remark: as a set the real numbers can be understood<br />
+P(N)</p>
+
+<div class="definition">
+  <p><strong>ZF8. Axiom of Choice</strong></p>
+
+  <p>let x be a set whose elements are 
+non empty
+mutually disjoint
+then there exists a set y
+which contains exactly one element
+of each element of x</p>
+</div>
+
+<p>remark: set y is called “dark” set.
+it isn’t clear how you pick each element of x</p>
+
+<p>inutition</p>
+
+<p>a)
+x = { { lefft shoe1, right shoe1}, 
+         {left shoe 2, right shoe 2}
+         }</p>
+
+<p>y = { left shoe1, left shoe2, … }</p>
+
+<p>you don’t need the axiom of choice</p>
+
+<p>b)
+x = { { lefft sock, right sock}, 
+         {left sock, right sock 2}
+         }</p>
+
+<p>you have two socks they look the same you need to invoke 
+the axiom of choice to build the set y</p>
+
+<p>y = {sock1, sock2, sock3,.. }</p>
+
+<p>remark: axiom of choice is independent
+of the other 8 axiomsl we could have set theory
+with or without it</p>
+
+<p>remark:
+proof that every vector space has a basis needs the axiom of choice
+proof that there exists a complete system of representatives of equivalence
+relation</p>
+
+<p>need aximo of choice</p>
+
+<div class="definition">
+  <p><strong>9. Axiom of Foundation</strong></p>
+
+  <p>eveyr non-empty set x contains an element y that
+has none of its elements in common with x.</p>
+
+</div>
+
+<p>immediate implication: there is no set
+that contains itself as an element.
+x \in x for no set x</p>
+
+<p>every set needs to be built from the empty set</p>
+
+<p>all of mathematics follows from these</p>
+
 
                 </div>
             </main>
-        </div></div><footer class="site-footer h-card">
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#zermelofraenkel-set-theory">Zermelo–Fraenkel Set Theory</a></li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
   <data class="u-url" href="/documents/"></data>
 
   <div class="wrapper">

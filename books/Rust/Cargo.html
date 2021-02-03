@@ -2,21 +2,42 @@
 <html lang="en">
 
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>LFMUNOZ | articles, notes, and references</title>
+<title>Cargo | LFMUNOZ</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="LFMUNOZ" />
+<meta property="og:title" content="Cargo" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="articles, notes, and references" />
 <meta property="og:description" content="articles, notes, and references" />
-<link rel="canonical" href="lfmunoz.github.io/documents/404.html" />
-<meta property="og:url" content="lfmunoz.github.io/documents/404.html" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/Rust/Cargo.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/Rust/Cargo.html" />
 <meta property="og:site_name" content="LFMUNOZ" />
 <script type="application/ld+json">
-{"@type":"WebPage","headline":"LFMUNOZ","url":"lfmunoz.github.io/documents/404.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+{"@type":"WebPage","headline":"Cargo","url":"lfmunoz.github.io/documents/books/Rust/Cargo.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
 <body><header class="site-header" role="banner">
@@ -169,30 +190,120 @@
 </div><div class="column-main">
             <main class="page-content" aria-label="Content">
                 <div class="wrapper">
-                    <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+                    <h1 id="cargo">Cargo</h1>
 
-<div class="container">
-  <h1>404</h1>
+<ul>
+  <li><a href="Introduction.html">The Rust Programming Language</a></li>
+</ul>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+<h1 id="cargo-1">Cargo</h1>
+
+<p>Cargo is similar to make</p>
+
+<p>Installed <strong>cargo</strong> with a <strong>curl</strong> command to downloads into <strong>~/.cargo/bin/rustc</strong></p>
+
+<p><strong>rustup</strong> is used for updating the compiler and looking at docs (<strong>rustup docs</strong>)</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rustc <span class="nt">--version</span>
+cargo <span class="nt">--version</span>
+rustup docs
+cargo new  
+cargo run <span class="c">#knows if needs to build</span>
+cargo build <span class="nt">--release</span> <span class="c">#builds a release which is faster</span>
+cargo build <span class="c">#without the release builds faster but executable is not optimized</span>
+cargo check <span class="c">#makes sure the program can build but doesn't generate executable used for dev</span>
+</code></pre></div></div>
+
+<h1 id="chapter-14--more-about-cargo">CHAPTER 14:  More about Cargo</h1>
+
+<p>In Rust, release profiles are predefined and customizable profiles with different
+configurations that allow a programmer to have more control over various
+options for compiling code</p>
+
+<p>Cargo has two main profiles: the dev profile Cargo uses when you run
+cargo build and the release profile Cargo uses when you run cargo build
+–release .</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Cargo.toml
+[profile.dev]
+opt-level = 0
+[profile.release]
+opt-level = 3
+</code></pre></div></div>
+
+<p>Documentation comments use three slashes, /// , instead of two and
+support Markdown notation for formatting the text.</p>
+
+<p>For convenience, running cargo doc –open will build the HTML for your
+current crate’s documentation</p>
+
+<p>Adding example code blocks to your documentation comments can help
+demonstrate how to use your library, and doing so has an additional bonus:
+running cargo test will run the code examples in your documentation as
+tests!</p>
+
+<p>Another style of doc comment, //! , adds documentation to the item that
+contains the comments rather than adding documentation to the items fol-
+lowing the comments.</p>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">pub</span> <span class="k">use</span> <span class="k">self</span><span class="p">::</span><span class="nn">kinds</span><span class="p">::</span><span class="n">PrimaryColor</span><span class="p">;</span>
+<span class="k">pub</span> <span class="k">use</span> <span class="k">self</span><span class="p">::</span><span class="nn">kinds</span><span class="p">::</span><span class="n">SecondaryColor</span><span class="p">;</span>
+<span class="k">pub</span> <span class="k">use</span> <span class="k">self</span><span class="p">::</span><span class="nn">utils</span><span class="p">::</span><span class="n">mix</span><span class="p">;</span>
+
+<span class="k">pub</span> <span class="k">mod</span> <span class="n">kinds</span> <span class="p">{</span>
+<span class="c">// --snip--</span>
+<span class="p">}</span>
+<span class="k">pub</span> <span class="k">mod</span> <span class="n">utils</span> <span class="p">{</span>
+<span class="c">// --snip--</span>
+<span class="p">}</span>
+
+
+<span class="k">use</span> <span class="nn">art</span><span class="p">::</span><span class="n">PrimaryColor</span><span class="p">;</span>
+<span class="k">use</span> <span class="nn">art</span><span class="p">::</span><span class="n">mix</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Before you can publish any crates, you need to create an account on https://crates.io/ and get an API token.</p>
+
+<p>cargo login abcdefghijklmnopqrstuvwxyz012345</p>
+
+<p>This command will inform Cargo of your API token and store it locally</p>
+
+<p>in ~/.cargo/credentials.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[package]
+name = "guessing_game"
+version = "0.1.0"
+authors = ["Your Name &lt;you@example.com&gt;"]
+description = "A fun game where you guess what number the computer has
+chosen."
+license = "MIT OR Apache-2.0"
+</code></pre></div></div>
+
+<p>are allocated on a first-come, first-served basis.</p>
+
+<p>A workspace is a set of packages that share the same Cargo.lock and output
+directory.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[workspace]
+members = [
+"adder",
+]
+
+[dependencies]
+add-one = { path = "../add-one" }
+
+</code></pre></div></div>
 
                 </div>
             </main>
-        </div></div><footer class="site-footer h-card">
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#cargo">Cargo</a></li>
+  <li><a href="#cargo-1">Cargo</a></li>
+  <li><a href="#chapter-14--more-about-cargo">CHAPTER 14:  More about Cargo</a></li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
   <data class="u-url" href="/documents/"></data>
 
   <div class="wrapper">

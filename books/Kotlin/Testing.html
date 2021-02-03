@@ -2,21 +2,42 @@
 <html lang="en">
 
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>LFMUNOZ | articles, notes, and references</title>
+<title>Testing | LFMUNOZ</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="LFMUNOZ" />
+<meta property="og:title" content="Testing" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="articles, notes, and references" />
 <meta property="og:description" content="articles, notes, and references" />
-<link rel="canonical" href="lfmunoz.github.io/documents/404.html" />
-<meta property="og:url" content="lfmunoz.github.io/documents/404.html" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/Kotlin/Testing.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/Kotlin/Testing.html" />
 <meta property="og:site_name" content="LFMUNOZ" />
 <script type="application/ld+json">
-{"@type":"WebPage","headline":"LFMUNOZ","url":"lfmunoz.github.io/documents/404.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+{"@type":"WebPage","headline":"Testing","url":"lfmunoz.github.io/documents/books/Kotlin/Testing.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
 <body><header class="site-header" role="banner">
@@ -169,30 +190,68 @@
 </div><div class="column-main">
             <main class="page-content" aria-label="Content">
                 <div class="wrapper">
-                    <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+                    <h1 id="testing">Testing</h1>
 
-<div class="container">
-  <h1>404</h1>
+<ul>
+  <li><a href="Introduction.html">The Kotlin Programming Language</a></li>
+</ul>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+<h2 id="gradle-kts-configuration">Gradle KTS Configuration</h2>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">val</span> <span class="py">guavaVersion</span> <span class="p">=</span> <span class="mf">29.0</span><span class="p">-</span><span class="n">jre</span>
+<span class="kd">val</span> <span class="py">jacksonVersion</span> <span class="p">=</span> <span class="mf">2.11.2</span>
+<span class="kd">val</span> <span class="py">slf4jVersion</span> <span class="p">=</span> <span class="mf">1.7.30</span>
+<span class="kd">val</span> <span class="py">slf4jFluentVersion</span> <span class="p">=</span> <span class="mf">0.13.3</span>
+<span class="kd">val</span> <span class="py">kotlinVersion</span> <span class="p">=</span> <span class="mf">1.4.0</span>
+<span class="kd">val</span> <span class="py">kotlinCoroutinesVersion</span> <span class="p">=</span> <span class="mf">1.4.0</span><span class="p">-</span><span class="nc">M1</span>
+
+
+<span class="kd">val</span> <span class="py">awaitilityVersion</span> <span class="p">=</span> <span class="mf">4.0.3</span>
+<span class="nf">testImplementation</span><span class="p">(</span><span class="s">"org.awaitility:awaitility:2.0.0"</span><span class="p">)</span>
+<span class="nf">testImplementation</span><span class="p">(</span><span class="s">"org.awaitility:awaitility-kotlin:4.0.1"</span><span class="p">)</span>
+
+<span class="kd">val</span> <span class="py">assertJVersion</span> <span class="p">=</span> <span class="s">"3.18.1"</span>
+<span class="nf">testImplementation</span><span class="p">(</span><span class="s">"org.assertj:assertj-core:$assertJVersion"</span><span class="p">)</span>
+
+
+<span class="kd">val</span> <span class="py">junitVersion</span> <span class="p">=</span> <span class="mf">5.6.2</span>
+<span class="nf">testImplementation</span><span class="p">(</span><span class="s">"org.junit.jupiter:junit-jupiter-api:$junitVersion"</span><span class="p">)</span>
+<span class="nf">testRuntimeOnly</span><span class="p">(</span><span class="s">"org.junit.jupiter:junit-jupiter-engine:$junitVersion"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="skeleton">Skeleton</h2>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">org.assertj.core.api.Assertions.assertThat</span>
+<span class="k">import</span> <span class="nn">org.assertj.core.api.Assertions.assertThatThrownBy</span>
+<span class="k">import</span> <span class="nn">org.junit.jupiter.api.Test</span>
+<span class="k">import</span> <span class="nn">java.lang.NullPointerException</span>
+
+<span class="k">internal</span> <span class="kd">class</span> <span class="nc">MappingTraversalKtTest</span> <span class="p">{</span>
+
+    <span class="nd">@Test</span>
+    <span class="k">fun</span> <span class="nf">`should</span> <span class="n">traverse</span> <span class="n">the</span> <span class="n">mapping</span> <span class="n">tree</span> <span class="n">and</span> <span class="n">collect</span> <span class="n">non-empty</span> <span class="n">mappings</span> <span class="k">in</span> <span class="n">a</span> <span class="nf">list`</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">val</span> <span class="py">mapping</span> <span class="p">=</span> <span class="nf">load</span><span class="p">(</span><span class="s">"traversal"</span><span class="p">).</span><span class="nf">modelMapping</span><span class="p">()</span>
+        <span class="kd">val</span> <span class="py">result</span> <span class="p">=</span> <span class="nf">collectMappings</span><span class="p">(</span><span class="n">mapping</span><span class="p">)</span>
+
+        <span class="nf">assertThat</span><span class="p">(</span><span class="n">result</span><span class="p">).</span><span class="nf">hasSize</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
 
                 </div>
             </main>
-        </div></div><footer class="site-footer h-card">
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#testing">Testing</a>
+    <ul>
+      <li><a href="#gradle-kts-configuration">Gradle KTS Configuration</a></li>
+      <li><a href="#skeleton">Skeleton</a></li>
+    </ul>
+  </li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
   <data class="u-url" href="/documents/"></data>
 
   <div class="wrapper">

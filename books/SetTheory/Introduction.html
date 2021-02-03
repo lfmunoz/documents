@@ -2,21 +2,42 @@
 <html lang="en">
 
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>LFMUNOZ | articles, notes, and references</title>
+<title>Set Theory | LFMUNOZ</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="LFMUNOZ" />
+<meta property="og:title" content="Set Theory" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="articles, notes, and references" />
 <meta property="og:description" content="articles, notes, and references" />
-<link rel="canonical" href="lfmunoz.github.io/documents/404.html" />
-<meta property="og:url" content="lfmunoz.github.io/documents/404.html" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/SetTheory/Introduction.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/SetTheory/Introduction.html" />
 <meta property="og:site_name" content="LFMUNOZ" />
 <script type="application/ld+json">
-{"@type":"WebPage","headline":"LFMUNOZ","url":"lfmunoz.github.io/documents/404.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+{"@type":"WebPage","headline":"Set Theory","url":"lfmunoz.github.io/documents/books/SetTheory/Introduction.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
 <body><header class="site-header" role="banner">
@@ -169,30 +190,70 @@
 </div><div class="column-main">
             <main class="page-content" aria-label="Content">
                 <div class="wrapper">
-                    <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+                    <h1 id="set-theory">Set Theory</h1>
 
-<div class="container">
-  <h1>404</h1>
+<blockquote>
+  <p>…what mathematicians say is no more reliable as a guide to the interpretation of their work than what artist say about their work, or musicians. - Michael Potter</p>
+</blockquote>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+<p><strong>Set theory</strong> is that branch of mathematics whose task is to investigate the fundamental notions “number”, “order”, and “function”, taking them in their pristine, simple form, and to develop thereby the logical foundations of all of arithmetic and analysis.</p>
+
+<p>Naive Set Theory has contradictions because we don’t define exactly what a set is.</p>
+
+<ul>
+  <li><a href="Collections.html">Collections</a>
+    <ul>
+      <li>ZU  or Scott–Potter set theory</li>
+      <li>set, collection, membership</li>
+      <li>subset, power set, empty set</li>
+      <li>intersection, union, complement</li>
+    </ul>
+  </li>
+  <li><a href="ZFC.html">Zermelo–Fraenkel Set theory</a></li>
+</ul>
+
+<p>Frege identified two ways of describing sets, by extension and by intension.</p>
+<ul>
+  <li>Extension means explicitly giving its elements
+    <ul>
+      <li>$\{ 2,4,6,8 \}$</li>
+    </ul>
+  </li>
+  <li>Intesion means giving a property which all its elements and only its elements possess.
+    <ul>
+      <li>$\{ x \in N : 0 &lt; x &lt; 9 \land ~ \text{x is even} \}$</li>
+    </ul>
+  </li>
+</ul>
+
+<p>A key feature of the mathematics of ZFC is that every object can be described in a finite way.</p>
+
+<p>Frege’s hope was to be able to define the natural numbers in terms of pure logic and sets and the set
+themselves from pure logic.</p>
+
+<p>Comprehension principle - The principle of creating sets from other sets.</p>
+
+<p>What sets there are and how we allow new sets to be constructed from known ones is done in terms
+of axioms, expressed in a the formal language of logic.</p>
+
+<p>The axioms attempt to steer us clear of contradictions. We cannot actually prove that we are avoiding paradoxes, it’s impossible
+due to Godel’s incompleteness theorem.</p>
+
+<p>Writing down axioms for sets in a formal language is a way of dodging the issue what sets really are.</p>
+
+<p>If something is not true for all objects, then it is false for a specific object</p>
+
+<p>The order of quantifiers matters</p>
+
 
                 </div>
             </main>
-        </div></div><footer class="site-footer h-card">
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#set-theory">Set Theory</a></li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
   <data class="u-url" href="/documents/"></data>
 
   <div class="wrapper">

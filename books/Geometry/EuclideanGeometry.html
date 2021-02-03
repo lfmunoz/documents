@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Euclidean Geometry | LFMUNOZ</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Euclidean Geometry" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="articles, notes, and references" />
+<meta property="og:description" content="articles, notes, and references" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/Geometry/EuclideanGeometry.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/Geometry/EuclideanGeometry.html" />
+<meta property="og:site_name" content="LFMUNOZ" />
+<script type="application/ld+json">
+{"@type":"WebPage","headline":"Euclidean Geometry","url":"lfmunoz.github.io/documents/books/Geometry/EuclideanGeometry.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
+<body><header class="site-header" role="banner">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2YJDWQX6GK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-2YJDWQX6GK');
+  </script>
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/documents/">LFMUNOZ</a><nav class="site-nav">
+      <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+      <label for="nav-trigger">
+        <span class="menu-icon">
+          <svg viewBox="0 0 18 15" width="18px" height="15px">
+            <path
+              d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+          </svg>
+        </span>
+      </label>
+
+      <div class="trigger"><a class="page-link" href="/documents/about/">About</a></div>
+    </nav></div>
+</header><div class="main"><div class="column-sidebar">
+
+    <div class="nav-section">
+        <div class="nav-title">Posts</div><div class="post-container"><a class="post-link" href="/documents/2020/12/17/i-wish-i-was-worse.html"> I wish I was worse at dancing</a>
+            <span class="post-meta">Dec 17, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/12/13/too-many-options.html"> Too many options slows production</a>
+            <span class="post-meta">Dec 13, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/12/06/dream-cats-and-dogs.html"> A dream of dogs and cats</a>
+            <span class="post-meta">Dec 6, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/11/27/http-rest-bad-design.html"> RESTful HTTP creates coupling</a>
+            <span class="post-meta">Nov 27, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/08/01/organization-and-structure.html"> Organization and Structure of Applications</a>
+            <span class="post-meta">Aug 1, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/07/12/listening-to-music.html"> Listening to Music</a>
+            <span class="post-meta">Jul 12, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/07/05/frameworks.html"> Frameworks and Libraries</a>
+            <span class="post-meta">Jul 5, 2020</span>
+        </div><p class="rss-subscribe">subscribe <a href="/documents/feed.xml">via RSS</a></p>
+    </div>
+
+    <div class="nav-section">
+        <div class="nav-title">Guides</div>
+        <ul>
+            
+            <li>
+                <strong> Computer Science</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/Algorithms/Introduction.html">Algorithms</a></li>
+                    
+                    <li><a href="/documents/articles/SoftwareEngineering.html">Software Engineering</a></li>
+                    
+                    <li><a href="/documents/books/DesignPatterns.html">Design Patterns</a></li>
+                    
+                    <li><a href="/documents/books/Linux/Introduction.html">Linux</a></li>
+                    
+                    <li><a href="/documents/books/Databases/Introduction.html">Databases</a></li>
+                    
+                    <li><a href="/documents/books/SoftwareEngineering/Concurrency.html">Concurrency</a></li>
+                    
+                    <li><a href="/documents/books/Security/Introduction.html">Security</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Programming Languages</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/C/Introduction.html">C</a></li>
+                    
+                    <li><a href="/documents/books/Cpp/Introduction.html">C++</a></li>
+                    
+                    <li><a href="/documents/books/Rust/Introduction.html">Rust</a></li>
+                    
+                    <li><a href="/documents/books/Go/Introduction.html">Go</a></li>
+                    
+                    <li><a href="/documents/books/Java/Introduction.html">Java</a></li>
+                    
+                    <li><a href="/documents/books/Kotlin/Introduction.html">Kotlin</a></li>
+                    
+                    <li><a href="/documents/lang/Python/Introduction.html">Python</a></li>
+                    
+                    <li><a href="/documents/lang/Bash/Introduction.html">Bash</a></li>
+                    
+                    <li><a href="/documents/books/Make/Introduction.html">Makefile</a></li>
+                    
+                    <li><a href="/documents/lang/SQL/Introduction.html">SQL</a></li>
+                    
+                    <li><a href="/documents/lang/HTML/Introduction.html">HTML</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Technologies</strong>
+                <ul>
+                    
+                    <li><a href="/documents/tech/Android/Introduction.html">Android</a></li>
+                    
+                    <li><a href="/documents/books/Docker/Introduction.html">Docker</a></li>
+                    
+                    <li><a href="/documents/books/Envoy/Introduction.html">Envoy</a></li>
+                    
+                    <li><a href="/documents/books/Terraform/Introduction.html">Terraform</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Mathematics</strong>
+                <ul>
+                    
+                    <li><a href="/documents/mathematics/Foundations.html">Foundations</a></li>
+                    
+                    <li><a href="/documents/books/Logic/Introduction.html">Logic</a></li>
+                    
+                    <li><a href="/documents/books/SetTheory/Introduction.html">Set Theory</a></li>
+                    
+                    <li><a href="/documents/books/Geometry/Introduction.html">Geometry</a></li>
+                    
+                    <li><a href="/documents/books/Analysis/Introduction.html">Analysis</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Miscellaneous</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/Non-Duality/Introduction.html">Non-Duality</a></li>
+                    
+                </ul>
+            </li>
+
+            
+        </ul>
+    </div>
+
+
+</div><div class="column-main">
+            <main class="page-content" aria-label="Content">
+                <div class="wrapper">
+                    <h1 id="euclidean-geometry">Euclidean Geometry</h1>
+
+<blockquote>
+  <p>Geometry is the art of applying good reasoning to bad diagrams</p>
+</blockquote>
+
+<p><a href="Introduction.html">Geometry</a></p>
+
+<p>Elements of Euclid completed about 300 B.C.</p>
+
+<p>A beginning student of geometry asks him “What shall I get by learning these thigns? Euclid responds by calling a servant and saying “ Give him a coin, since he must make gain out of what he learns”</p>
+
+<p>King Ptolemy I asks him “Is there in geometry any shorter awy than the Elements? to which Euclid replies, “there is no royal road to geometry”</p>
+
+<p>Pattern for a Material Axiomatic System
+1) The basic technical terms of the discourse are indtroduced and their meaings explained. These basic terms are called primitive terms.</p>
+
+<p>2) A list of primitive statements about the primitive tmers is given. In order for the system to be significant to the reader, he or she must find these statements acceptable as true based on the explanations given in (1). These primary statements are called axioms.</p>
+
+<p>3) all other techincal terms are difined by means of previously introduced terms. Technical terms which are primitive tmers are accordingly called defined terms.</p>
+
+<p>4) All other statements of the discourse are logically deduced from previously accepted or established statements. These derived statements are called theorems.</p>
+
+<p>Note it is not possible to achieve unambiguity for all terms: disctionaries are after all circular. Thus it is necessary to accept some terms into the system without benefit of precise definition.</p>
+
+<p>Similarly one cannot decude every statement.</p>
+
+<p>logic is used in a general sense to refer  to principles of reasoning that the various special logics are presumed ot havein common. The belief (belief meaning something in the mind that isn’t proved) is that this common logic would be acceptable and potentially useful to particpants in any rational discussion.</p>
+
+<p>The mathematician should not forget that hsi intuition is the final authority, so that, in case of irreconcilable conflict between hsi intuition and some system of logic he should about the logic. He can try other systems of…logic, and perhaps find one more to his liking, but it would be difficult to change his intuition. - Rosser Logic for Mathematicians</p>
+
+<p>Logic is like a piar of tinted eyeglasses with which we are fitted early in life.</p>
+
+<p>There are arguments that, seemingly start from sound premises, violate none of the rules of logic, but reach conclusions that are errorneous or contradictory.</p>
+
+<p>Zeno’s paradox 
+the sum of infinitely many magnitudes must always be infinitely large (mathematicians now know this to be false)</p>
+
+<p>pg 26</p>
+
+<h1 id="book-i">Book I</h1>
+
+<p><strong>Definition 1.</strong> A point is that which has no part.</p>
+
+<p>If each point contributes zero to a one-meter length segment, then
+wouldn’t the entire segment have length zero? No, it doesn’t
+follow, you are using intuition and not logic. The length
+of a the segment may not be simply the sum of the lengths</p>
+
+<p>You can’t simply combine a collection of quantities
+as numerous as the points of a line segment.</p>
+
+<p>Simple addition, for example, combines only a finite
+number of terms.</p>
+
+<p>Who’s to say where length comes from? The points all by themselves?
+But what if they were strewn randomly about the plan?
+It seems their arrangement contributes something to the
+phenomenon of length.</p>
+
+<p>Who’s to say you can decompose a line to points.</p>
+
+<p>A point has no length as water droplet has no color.</p>
+
+<p>If you zoom into a line segment it wouldn’t be circles
+with a specific constant diameter lined up, would it?
+If that was the case there would have a contradiction with 
+the finding that $\sqrt{2}$ is irrational, because we have line segments that are not commensurable.</p>
+
+<p>Mathematical reasoning implies that the objects
+with which it deals with not only are nonsensible
+they do not physically exists.</p>
+
+<h3 id="primitive-terms">Primitive Terms</h3>
+
+<p>primitive terms - terms which at the outset of a deductive system
+are introduced and explained but never precisely defined. 
+(point, line, straight line)</p>
+
+<ol>
+  <li>A point is that which has no part.</li>
+  <li>A line is breadthless length. (both curved and straight)</li>
+  <li>The extremities of a line are points. (line segment, finite line)</li>
+  <li>
+    <p>A straight line is a line which lies evenly with the points on itself.
+line of sight, or a stretched fiber</p>
+  </li>
+  <li>A surface is that which has length and breadth only</li>
+  <li>The extremities of a surface are lines</li>
+  <li>A plane surface is a surface which lies evenly with the straight lines of itself.</li>
+</ol>
+
+<h4 id="defined-terms">Defined Terms</h4>
+
+<ol>
+  <li>A plane angle is the inclination to one another of two lines in a plane which meet one another do not lie in a straight line.</li>
+  <li>
+    <p>And when the lines containing the angles are straight, the angle is called rectilinear.</p>
+  </li>
+  <li>
+    <p>When a straight line set up on a straight line makes the adjacent equal to one another, each of the equal angles is right, and the straight line standing on the other is called perpendicular to that on which it stands.</p>
+  </li>
+  <li>
+    <p>An obtuse angle is an angle greater than a right angle</p>
+  </li>
+  <li>
+    <p>An acute angle is an angle less than a right angle.</p>
+  </li>
+  <li>
+    <p>A circle is a plane figure contained by one line such that all the straight lines falling upon it (the radii) from one point among those lying within in are equal to one another</p>
+  </li>
+  <li>
+    <p>And the point is called the center of the circle</p>
+  </li>
+  <li>
+    <p>Rectilinear figures are those which are contained by straight lines, trilateral figures (triangles) being those contained by three, quadrilateral those contained by four, and multilateral those contained by more than four straight lines.</p>
+  </li>
+  <li>
+    <p>Of trilateral figures, an equilateral triangle is that which has its three sides equal, an isosceles triangle that which has two of its sides…equal, and a scalene triangle that which has its three sides unequal.</p>
+  </li>
+  <li>
+    <p>Further, of trilateral figures, a right-angled triangle is that which has right angle, an obtuse-angled triangle that which has an obtuse angle, and an acuate triangle that which has its three angles acute.</p>
+  </li>
+  <li>
+    <p>Of quadrilateral figures, a square is that which is both equilateral and right angled</p>
+  </li>
+  <li>Parallel straight lines are straight lines which being in the same plane being produced indefinitely in both directions, do not meet one another in either direction.</li>
+</ol>
+
+<p>Definition 24. A degree is one-ninetieth of a right angle</p>
+
+<h1 id="postulate">Postulate</h1>
+
+<p>Postulate 1. It is possible to draw one and only one straight line from any point to any point</p>
+
+<p>Postulate 2. From each end of a finite straight ilne it is possible to produce it continously in a straight line by an amount greater than any assigned length.</p>
+
+<p>Postulate 3. It is possible to describe one and only one circle with any center and radius</p>
+
+<p>Postulate 4. All right angles are equal to one another.</p>
+
+<p>Postulate 5. If a straight line falling on two straight lines make the interior angle on the same side less than two right angles, the two straight liens, if produced indefinately, meet on that side onw hich the angles less than the two right angles.</p>
+
+<h2 id="common-notions">Common Notions</h2>
+
+<ol>
+  <li>if a = b and c = b then a = c</li>
+  <li>if a =b and c = d then a + c = b + d</li>
+  <li>if a = b and c = d then a - c = b - d</li>
+  <li>Things which conside with one another are equal to one another</li>
+  <li>a + b &gt; a</li>
+</ol>
+
+<p>pg 58</p>
+
+<p>Playfair’s Postulate 
+Given a line l and a point P not on that line, there exists a unique line through P parallel to l.</p>
+
+<p>The 5th postulate is not empirically verifiable.</p>
+
+<blockquote>
+  <p>Out of nothing I have created a strange new universe - Janos Boylai</p>
+</blockquote>
+
+<h1 id="common-notion">Common Notion</h1>
+
+<p>Element was based on what seem indubitable principles, buttressed by what I found to be impeccable logic. For more than two millenia the Elements has had this sort of effect on its readers.</p>
+
+<p>19th century discussions of the nature of gemometric truth were dominated by the doctrine of Immanuel Kant (1724-1804). 
+Kant drew a distinction between statements he called “analytic” and those he called “synthetic”</p>
+
+<p>An order distinction was “a priori” and “empirical” statements.</p>
+
+<p>A question which deserves investigation, whether there exists a knowledge independent of experience, and even of all impressions of the senses. Such knowledge is called a priori and distinguished from empirical knowledge which has its sources in experience.</p>
+
+<p>All bachelors are unmarried
+It is raining outside</p>
+
+<p>In all judgments in which there is a relation between subject and predicate, that relation can be of two kinds. Either the predicate B belongs to the subject A as somethign contained (though covertly) in the concept A; or B lies outside the sphere of the concept A, though somehow connected with it. In the former I can the judgement analytic in the latter synthetic.</p>
+
+<p>In the former nothing is added by the predicate to the concept of the subject, but the concept is ony divided into its constituent concepts which were always conceived as exsting within it, though confusedely; while the latter addds to the concept of the subject a predicate not conceived as existign whtiin it, and not extracted from it by any process of mere analysis.</p>
+
+<ul>
+  <li>Kant</li>
+</ul>
+
+<p>A synthetic a priory statement, is what Kant was interested in. Being synthetic it would be more than elaboration of somethign already known implicitly; it would provide information that is genuinely new. And being a priori it would have the certainty kant felt to be inherent in any knowledge independent of the testimony of our senses.</p>
+
+<p>a proposition is analytic if the predicate concept of the proposition is contained within the subject concept
+By contrast, in synthetic propositions, the predicate concept “amplifies” or adds to the subject concept. distinction is to say that a proposition is analytic if its truth depends entirely on the definition of its terms (that is, it is true by definition), while the truth of a synthetic proposition depends not on mere linguistic convention, but on how the world actually is in some respect</p>
+
+<p>Kant found the theorems of Euclidean geometry to be synthetic a priori statements.</p>
+
+<p>Strictly mathematical judgments are a priori and not empirical because they carry with them neccessity, which cannot be obtained from experience.</p>
+
+<p>Synthetic proposition can indeed be established by the laws of logic but only by presupposing another synthetic proposition from which it follows.</p>
+
+<p>His position was that the Postulates, but not the Common Notions, are synthetic</p>
+
+<p>Kant’s doctrine of space.</p>
+
+<p>Kant decideed that data from our senses is processed by our unconscious minds before we receive it in consciousness.
+We never hear raw sound. When we think about space we find Euclid’s Postulates to be true.</p>
+
+<p>The way the unconscious or the brain organizes the data acording to certain principles before passing it on to our awareness, is what gives us intuition about the postulates.</p>
+
+<p>Euclids Postulates contain information not extratable from their components by understanding or logical analysis: they are synthetic.  Euclid’s Postulates describe how the Sense Data Processor organizes data about real space.</p>
+
+<p>X is a structure within our brains that controls the way we perceive space.</p>
+
+<p>Plato described geometry as knowledge of what eternally exists. Pondering the fact that no drawing of a circle was ever mathematically perfect, and so could not be the real circle, he was led to postulate a timelessly existing realm of archetypes, the World of FOrms, in which he supposed our sould to have resided before we were born, and which he supposed to contain perfect examples of the objects taht exist only impefectly int he world we inhabit – including geometric objects like circles and straight lines.</p>
+
+<p>Plato identified the two, what we experience is the world as it is but downgrading both, located complete reality only in the underlying World of Forms</p>
+
+<p>Some scholars argue there was a time, long before Thales, when people didn’t realize that they themselves were teh sources of teh statements taht came suddenly into their heads, so experieced their own thoughts as voices of gods (and thefore as diamonds)</p>
+
+<p>AY pry OR eye</p>
+
+<h1 id="the-problem-with-postulate-5">The problem with postulate 5</h1>
+
+<p>1) If two straight lines are equidistant no matter how much they are produced then they never meet</p>
+
+<p>2) If two straight lines never meet no matter how much they are produced then they are equidistant</p>
+
+<p>If know a certain pair of straight lines neever meet, no matter how much they are produced, and we find them to be equidistant over the tiny portion of the potential lengths to which we have access, how can we be sure the distance between them doesn’t fluctuate somewhere beyond our reach?</p>
+
+<p>“Because they are straight”. No remember straight line is a primitive term and the only porperties of primitive terms we can use are those contained in the axioms.</p>
+
+<p>Poseidonio didn’t understand iff the two directions are proved independently.</p>
+
+<p>Poseidonios we could not possible check that they are equidistance over their entire potential lengths, because we cannot travel indefinately far.</p>
+
+<p>We can however verify some instances of Ecluid’s postulate. Given two straight lines cut by a thrid so that the interior angles ont he same side add up to less than 180. Eculids postulate asserts that the two straight lines will meet at some point that is only a finite distance away</p>
+
+<p>Poseidonios Postulates is better because it is shorter and easier to comprehend
+Euclids postulate is better because it is experimentally verifiable at least in part
+Logical vview is that neither is preferable because they are logically equivalent.</p>
+
+<p>Gauss’ Postulate: It is possible to construct a triangle whose area is greater than any given area.</p>
+
+<p>It is true that I have come up much which by most people would be held to constitute a proof: but in my eyes it proves as good as nothing.</p>
+
+<p>Whoever prososes a replacement postulate will of course use it to prove Postulate 5 – that’s the whole point – and therby establish (1). But the proposed postuate A will surely be somethign that is provbable in Euclidian geometry (as originally organized), and thus will occur as well. Thus no replacement postulate can be logically prior to Postulate 5; they are all logically equivalent to it and therefore, in the logical view all worthless.</p>
+
+<p>They coudl see no way of proving Postulate 5 without a replacement postulate. It would be equivalent to Postulate 5 and therefore indistinguishable from it when it counted - logically.</p>
+
+<p>It is not permissble to speak of an object as having a well-defined beginning or end or therefore a length in the mathematical sense.</p>
+
+<h1 id="the-possibility-of-non-euclidean-geometry">The possibility of non-euclidean geometry</h1>
+
+<p>Postulate 5 in unprovable. That cannot be proved though.</p>
+
+<p>1) Neutral geomtry by itself does not imply Postulate 5</p>
+
+<p>2) a new geometry contrary to Euclid’s is logically possible.</p>
+
+<p>The psychological distance between the two staetments is enormous.</p>
+
+<p>Neutral foundation:
+Euclids primitive terms and Definitions of defined terms, Euclids Common Notions, Postulates 1-4, Postulates 6-10</p>
+
+<p>Now add ~Postulate 5</p>
+
+<p>All we have to show is that no contradictions can be decucued from this. This can be established at once. Just notice that if a contradiction were deducible from these premises, then the very same deduction could be viewed from another angle, as a proof by contradiction of Postulate 5.</p>
+
+<p>If no deduction of Postulate 5 from Neutral geometry is possible. THen no proof by contradiction of Postulate 5 from Neutral geometry is possible.</p>
+
+<blockquote>
+  <p>…many things have an epoch, in which  they are discovered at the same time in several places, just as violets appear on all sides in springtime. - Farkas Bolyai</p>
+</blockquote>
+
+<p>in Greek hyperbole means excess</p>
+
+<p>Can you prove that the lines will meet?</p>
+
+<p>It is so clear from the drawing that EF meets AB that you can’t help but thik it would be easy to prove.</p>
+
+<p>pg 176</p>
+
+<p>Which geometry is correct? Planck mission released in 2015 show the cosmological curvature parameter to be 0.000±0.005, consistent with a flat universe.</p>
+
+<p>Al-Khwarizmi came up with a solution to the 5th Postulate using motion.</p>
+
+<p>What is a number?
+A deck of cards is object which you can assign different numbers depending on how you think of it. 1 deck, 52 cards, 4 suits, 13 faces. All these numbers are given to the same object. Numbers are attributes given to objects.</p>
+
+<p>a priori - know that prior to any testing, measuring, surveing whatever</p>
+
+<p>how is synthetic a priori knowledge possible. you have to do a calculation.</p>
+
+<p>synthesis - you are synthesizing two unrelated concepts
+analytic - you are analyzing a concept into or decomposing one into another</p>
+
+<p>the world appears as 3d euclidean space
+this is a priori.</p>
+
+<p>space  - geometry
+time - arithmetic , sequences</p>
+
+<p>Russell And Frege wanted to replaced Kants view.
+Ruseel and Frege wanted arithmetic to be fondational, not geometry.</p>
+
+<h1 id="references">References</h1>
+
+<p>https://iep.utm.edu/apriori/#H2</p>
+
+<p>The Non-Euclidean Revolution</p>
+
+<p>https://www.youtube.com/watch?v=i5goUkT1irw</p>
+
+<p>https://www.youtube.com/watch?v=jJq1vZbOrwI</p>
+
+<p>https://www.youtube.com/watch?v=AjVM5Q-pvjw</p>
+
+<p>https://mathcs.clarku.edu/~djoyce/java/elements/elements.html</p>
+
+<p>https://pdfs.semanticscholar.org/f230/109318d653269f58b7c662fe8fa511a8afa8.pdf</p>
+
+                </div>
+            </main>
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#euclidean-geometry">Euclidean Geometry</a></li>
+  <li><a href="#book-i">Book I</a>
+     -  <a href="#primitive-terms">Primitive Terms</a>
+         -  <a href="#defined-terms">Defined Terms</a></li>
+  <li><a href="#postulate">Postulate</a>
+    <ul>
+      <li><a href="#common-notions">Common Notions</a></li>
+    </ul>
+  </li>
+  <li><a href="#common-notion">Common Notion</a></li>
+  <li><a href="#the-problem-with-postulate-5">The problem with postulate 5</a></li>
+  <li><a href="#the-possibility-of-non-euclidean-geometry">The possibility of non-euclidean geometry</a></li>
+  <li><a href="#references">References</a></li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
+  <data class="u-url" href="/documents/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">LFMUNOZ</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">LFMUNOZ</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/lfmunoz"><svg class="svg-icon"><use xlink:href="/documents/assets/minima-social-icons.svg#github"></use></svg> <span class="username">lfmunoz</span></a></li><li><a href="https://www.twitter.com/lfmunoz4"><svg class="svg-icon"><use xlink:href="/documents/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">lfmunoz4</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>articles, notes, and references</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

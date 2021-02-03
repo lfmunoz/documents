@@ -2,21 +2,42 @@
 <html lang="en">
 
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>LFMUNOZ | articles, notes, and references</title>
+<title>Functions | LFMUNOZ</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="LFMUNOZ" />
+<meta property="og:title" content="Functions" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="articles, notes, and references" />
 <meta property="og:description" content="articles, notes, and references" />
-<link rel="canonical" href="lfmunoz.github.io/documents/404.html" />
-<meta property="og:url" content="lfmunoz.github.io/documents/404.html" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/Analysis/Functions.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/Analysis/Functions.html" />
 <meta property="og:site_name" content="LFMUNOZ" />
 <script type="application/ld+json">
-{"@type":"WebPage","headline":"LFMUNOZ","url":"lfmunoz.github.io/documents/404.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+{"@type":"WebPage","headline":"Functions","url":"lfmunoz.github.io/documents/books/Analysis/Functions.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
 <body><header class="site-header" role="banner">
@@ -169,30 +190,137 @@
 </div><div class="column-main">
             <main class="page-content" aria-label="Content">
                 <div class="wrapper">
-                    <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+                    <h1 id="functions">Functions</h1>
 
-<div class="container">
-  <h1>404</h1>
+<ul>
+  <li><a href="Introduction.html">Analysis</a></li>
+</ul>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
+<p>Loosely speaking, a function is rule that, for each element in some set D of possible inputs, assigns a possible output.</p>
+
+<div class="definition">
+  <p><strong>Definition</strong>: Function</p>
+
+  <p>A function f from a set X to a set Y, denoted $f: X \to Y$, associates to each $x \in X$ an element $f(x) \in Y$.</p>
+
+  <p>The set X is called the <strong>domain</strong> of f, and the elements $f(x)$ are called the <strong>values</strong> of f. The set of all values of f is called the <strong>range</strong> of f.  The set Y is called the <strong>co-domain</strong> of f.</p>
+
 </div>
+
+<p>It never has one “A” pointing to more than one “B”,</p>
+
+<p>If it passes the vertical line test it is a function</p>
+
+<ul>
+  <li>Dom(f) denotes the domain of f.</li>
+  <li>Cod(f) denote the co-domain of f.</li>
+</ul>
+
+<p>We can think of f as matching subsets of X with subsets of Y and vice-versa. X, the domain, is the set of possible inputs to the function. Y the co-domain, is the set from which the function’s output values are chosen. The co-domain is the set of values that could possibly be output, while the range is the set of values that actually do come out.</p>
+
+<p>The notation $f: X \to Y$ is read “f is a function from X to Y” or “f is a function that maps X to Y”.</p>
+
+<p>the set of elements that get pointed to in Y (the actual values produced by the function) is called the Range.</p>
+
+<p>A function can then be defined as a set of ordered pairs</p>
+
+<div class="definition">
+  <p><strong>Definition</strong>:  Image</p>
+
+  <p>Let A and B be two sets and let f be a mapping of A into B.</p>
+
+  <p>If $E \subset A$, $f(E)$ is defined to be the set of all elements $f(x)$, for $x \in E$. We call $f(E)$ the <strong>image</strong> of E under f. In this notation, $f(A)$ is the range of f. It is clear that $f(A) \subset B$. If $f(A) = B$ then we say that f maps A <strong>onto</strong> B (onto is more specific than into).</p>
+</div>
+
+<div class="definition">
+  <p><strong>Definition</strong>:  onto (or surjective)</p>
+
+  <p>A function is said to be <strong>onto</strong> if for each $y \in Y$ there is an $x \in X$ with $f(x)=y$.</p>
+
+  <p>or</p>
+
+  <p>A function is <strong>onto</strong> or <strong>surjective</strong> if every element of B is the image under f of some element of A.</p>
+
+  <p>or</p>
+
+  <p>If $f\colon X \rightarrow Y$, then $f$ is said to be <strong>onto</strong> or <strong>surjective</strong> if $\forall y \in Y, \, \exists x \in X, \;\; f(x)=y$</p>
+</div>
+
+<p>A not-surjective function has a “hole” in its range. 
+This means the function lacks a “right inverse” $f∘g=1$. 
+There’s no complete way, given a desired  f(x) , to find the desired x .</p>
+
+<p>The function  $f: \mathbb{N} \to \mathbb{N}$  given by $f(x)=x^2$ is not surjective, because not all numbers are perfect integer squares. For example, there is no x such that $f(x)=3$ because $\sqrt{3} \not \in \mathbb{N}$.</p>
+
+<div class="definition">
+  <p><strong>Definition</strong>:  Inverse image</p>
+
+  <p>Let A and B be two sets and let f be a mapping of A into B.</p>
+
+  <p>If $E \subset B$ then $f^{-1}(E)$ denotes the set of all $x \in A$ such that $f(x) \in E$. We call $f^{-1}(E)$ the <strong>inverse image</strong> of E under f. If $y \in B$ then $f^{-1}(y)$ is the set of all $x \in A$ such that $f(x) = y$.  If, for each $y \in B$, $f^{-1}(y)$ consists of at most one element of A, then f is said to be a 1-1 (<strong>one-to-one</strong>) mapping of A into B.</p>
+
+  <p>This may be also expressed as follows: f is a 1-1 mapping of A into B provided that $f(x_1) \neq f(x_2)$ whenever $x_1 \neq x_2$, $x \in A, x_2 in A$.</p>
+
+</div>
+
+<div class="definition">
+  <p><strong>Definition</strong>:  one-to-one (or injective)</p>
+
+  <p>The function f is said to be <strong>one-to-one</strong> if for all $x, x’ \in X$, if f(x) = f(x’) then x = x’ (or, equivalently, if $x \neq x’$ then $f(x) \neq f(x’)$).</p>
+
+  <p>or</p>
+
+  <p>f is called one-to-one, or injective, iff different elements of X always have different elements of Y.</p>
+
+  <p>or</p>
+
+  <p>$ \forall a,b \in X, \;\; f(a)=f(b) \Rightarrow a=b$</p>
+</div>
+
+<p>A not-injective function has a “collision” in its range. 
+This means the function lacks a “left inverse”  $g∘f=1$.
+There’s not a complete way to recover the original value of x, given only f(x).</p>
+
+<p>To be Injective, a Horizontal Line should never intersect the curve at 2 or more points.</p>
+
+<p>$f(x)=x^2$ is not injective, because  $f(−x)=f(x)$</p>
+
+<p>A bijection is one-to-one and onto.</p>
+
+<div class="definition">
+  <p><strong>Definition</strong> : Cartesian Product</p>
+
+  <p>For two nonempty sets A and B, the Cartesian product, denoted $A \times B$ is the set of all ordered paris (a,b) of elements $a \in A$ and $b \in B$. That is,</p>
+
+\[A \times B = \{  (a,b) ~ | ~ a \in A ~~~ \text{and} ~~~ b \in B \}\]
+
+  <p>The Cartesian product of two sets A and B is the set of all pairs (a,b) where $a \in A$ and $b \in B$.</p>
+</div>
+
+<div class="definition">
+  <p><strong>Definition</strong> : Continous Function</p>
+
+  <p>The function f is continuous at some point a of its domain if the limit of f(x) as x approaches a through the domain of f exists and is equal to f(a).</p>
+
+\[\lim_{x \to a} f(x) = f(a)\]
+
+</div>
+
+<h1 id="references">References</h1>
+
+<ul>
+  <li>https://www.mathsisfun.com/sets/injective-surjective-bijective.html</li>
+</ul>
 
                 </div>
             </main>
-        </div></div><footer class="site-footer h-card">
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#functions">Functions</a></li>
+  <li><a href="#references">References</a></li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
   <data class="u-url" href="/documents/"></data>
 
   <div class="wrapper">

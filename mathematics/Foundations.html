@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Mathematics Foundations | LFMUNOZ</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Mathematics Foundations" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="articles, notes, and references" />
+<meta property="og:description" content="articles, notes, and references" />
+<link rel="canonical" href="lfmunoz.github.io/documents/mathematics/Foundations.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/mathematics/Foundations.html" />
+<meta property="og:site_name" content="LFMUNOZ" />
+<script type="application/ld+json">
+{"@type":"WebPage","headline":"Mathematics Foundations","url":"lfmunoz.github.io/documents/mathematics/Foundations.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
+<body><header class="site-header" role="banner">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2YJDWQX6GK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-2YJDWQX6GK');
+  </script>
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/documents/">LFMUNOZ</a><nav class="site-nav">
+      <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+      <label for="nav-trigger">
+        <span class="menu-icon">
+          <svg viewBox="0 0 18 15" width="18px" height="15px">
+            <path
+              d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+          </svg>
+        </span>
+      </label>
+
+      <div class="trigger"><a class="page-link" href="/documents/about/">About</a></div>
+    </nav></div>
+</header><div class="main"><div class="column-sidebar">
+
+    <div class="nav-section">
+        <div class="nav-title">Posts</div><div class="post-container"><a class="post-link" href="/documents/2020/12/17/i-wish-i-was-worse.html"> I wish I was worse at dancing</a>
+            <span class="post-meta">Dec 17, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/12/13/too-many-options.html"> Too many options slows production</a>
+            <span class="post-meta">Dec 13, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/12/06/dream-cats-and-dogs.html"> A dream of dogs and cats</a>
+            <span class="post-meta">Dec 6, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/11/27/http-rest-bad-design.html"> RESTful HTTP creates coupling</a>
+            <span class="post-meta">Nov 27, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/08/01/organization-and-structure.html"> Organization and Structure of Applications</a>
+            <span class="post-meta">Aug 1, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/07/12/listening-to-music.html"> Listening to Music</a>
+            <span class="post-meta">Jul 12, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/07/05/frameworks.html"> Frameworks and Libraries</a>
+            <span class="post-meta">Jul 5, 2020</span>
+        </div><p class="rss-subscribe">subscribe <a href="/documents/feed.xml">via RSS</a></p>
+    </div>
+
+    <div class="nav-section">
+        <div class="nav-title">Guides</div>
+        <ul>
+            
+            <li>
+                <strong> Computer Science</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/Algorithms/Introduction.html">Algorithms</a></li>
+                    
+                    <li><a href="/documents/articles/SoftwareEngineering.html">Software Engineering</a></li>
+                    
+                    <li><a href="/documents/books/DesignPatterns.html">Design Patterns</a></li>
+                    
+                    <li><a href="/documents/books/Linux/Introduction.html">Linux</a></li>
+                    
+                    <li><a href="/documents/books/Databases/Introduction.html">Databases</a></li>
+                    
+                    <li><a href="/documents/books/SoftwareEngineering/Concurrency.html">Concurrency</a></li>
+                    
+                    <li><a href="/documents/books/Security/Introduction.html">Security</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Programming Languages</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/C/Introduction.html">C</a></li>
+                    
+                    <li><a href="/documents/books/Cpp/Introduction.html">C++</a></li>
+                    
+                    <li><a href="/documents/books/Rust/Introduction.html">Rust</a></li>
+                    
+                    <li><a href="/documents/books/Go/Introduction.html">Go</a></li>
+                    
+                    <li><a href="/documents/books/Java/Introduction.html">Java</a></li>
+                    
+                    <li><a href="/documents/books/Kotlin/Introduction.html">Kotlin</a></li>
+                    
+                    <li><a href="/documents/lang/Python/Introduction.html">Python</a></li>
+                    
+                    <li><a href="/documents/lang/Bash/Introduction.html">Bash</a></li>
+                    
+                    <li><a href="/documents/books/Make/Introduction.html">Makefile</a></li>
+                    
+                    <li><a href="/documents/lang/SQL/Introduction.html">SQL</a></li>
+                    
+                    <li><a href="/documents/lang/HTML/Introduction.html">HTML</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Technologies</strong>
+                <ul>
+                    
+                    <li><a href="/documents/tech/Android/Introduction.html">Android</a></li>
+                    
+                    <li><a href="/documents/books/Docker/Introduction.html">Docker</a></li>
+                    
+                    <li><a href="/documents/books/Envoy/Introduction.html">Envoy</a></li>
+                    
+                    <li><a href="/documents/books/Terraform/Introduction.html">Terraform</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Mathematics</strong>
+                <ul>
+                    
+                    <li><a href="/documents/mathematics/Foundations.html">Foundations</a></li>
+                    
+                    <li><a href="/documents/books/Logic/Introduction.html">Logic</a></li>
+                    
+                    <li><a href="/documents/books/SetTheory/Introduction.html">Set Theory</a></li>
+                    
+                    <li><a href="/documents/books/Geometry/Introduction.html">Geometry</a></li>
+                    
+                    <li><a href="/documents/books/Analysis/Introduction.html">Analysis</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Miscellaneous</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/Non-Duality/Introduction.html">Non-Duality</a></li>
+                    
+                </ul>
+            </li>
+
+            
+        </ul>
+    </div>
+
+
+</div><div class="column-main">
+            <main class="page-content" aria-label="Content">
+                <div class="wrapper">
+                    <h1 id="foundations">Foundations</h1>
+
+<p>Mathematics is just a language.</p>
+
+<blockquote>
+  <p>What we cannot speak about clearly, that we must passover in silence - Wittgenstein</p>
+</blockquote>
+
+<p>If we have concepts about the real world and it’s not possible 
+to cast them into precise mathematical form that usually is an indicator that some aspects of these concepts have not been well understood .</p>
+
+<ul>
+  <li>Classical Mechanics</li>
+  <li>Electromagnatis</li>
+  <li>quantum mechanis</li>
+  <li>stastistical physics</li>
+  <li>general relativity</li>
+</ul>
+
+<p>To understand any of that at a professional level, you first need to understand:</p>
+
+<ul>
+  <li>Geometry - Metric</li>
+  <li>Bundles</li>
+  <li>Differential Manifolds</li>
+  <li>Topological Manifolds - Interesting topologies, locally look like some $R^d$</li>
+  <li><a href="Topology.html">Topology</a> - A notion of continuity</li>
+  <li><a href="/documents/books/SetTheory/Introduction">Set Theory</a> - From the language of Logic we write Axioms</li>
+  <li><a href="/documents/books/Logic/Introduction.html">Logic</a>- Propositional / Predicate Logic</li>
+</ul>
+
+<p>A recurrent theme in mathematics is the study/classification of spaces by means of structure preserving maps between those spaces.</p>
+
+<p>A space is meant to be some set equipped with some structure.</p>
+
+<p>Definition: A map $\phi A \to B$ is a relation such that for every $a \in A$ there exists exactly one $\a \in B$ such that $\phi(a,b)$</p>
+
+<p>Notation: $a \to \phi(a)$ is an abuse of notation</p>
+
+<p>$phi(a,b)$ is a relation that takes two variables a produces a truth value.</p>
+
+<p>Euclid’s work consists of a single deductive chain of 465 theorems.</p>
+
+<p>Applied Mathematics - Developed with an eye on practical applications.</p>
+
+<p>Pure Mathematics - Basis for applied mathematics. The real mathematics. Pure mathematics is a box of games.</p>
+
+<p>Pure mathematics is the world’s best game. It is dramatic, challenging, endless and full of surprises.</p>
+
+<h1 id="logic">Logic</h1>
+
+<p>according to the orthodox view of logic,
+logic has no special content, not even objects so ethereal as those apparently
+needed for mathematics.</p>
+
+<h1 id="set-theory">Set Theory</h1>
+
+<p>On the neo-Fregean conception, all mathematics is embedded in set
+theory and all the entities of mathematics are sets. In particular, numbers
+are sets. But, it appears, if numbers are sets then they must be particular
+sets, and the philosopher should be able to identify which ones they are.
+However, mathematicians have long recognized that arithmetic can be
+reduced to set theory in many different ways: the natural numbers can
+be identified with the von Neumann numbers, the Zermelo numbers, or
+with any of an infinite number of other sequences of sets.</p>
+
+<div class="definition">
+
+  <p><strong>Definition:</strong></p>
+
+  <p>Let x be a set.</p>
+
+  <p>For each formula $\phi(x)$ we write $\{ z \in x : \phi(z) \}$ for the set y in ZF4 such that</p>
+
+  <p>$\forall z (z \in y \iff (z \in x \land \phi(z)))$.</p>
+
+  <p>We write $\mathscr{P}(x)$, called the power set of x, for the y in ZF5 such that</p>
+
+  <p>$\forall z ( z \in y \iff z \subseteq x).$</p>
+
+  <p>We write $\cup x$, called the union of x, for the y in ZF6 such that</p>
+
+  <p>$\forall z (z \in y \iff \exists w ( z \in w \land w \in x))$.</p>
+
+</div>
+
+<div class="definition">
+
+  <p><strong>Definition:</strong> Function</p>
+
+  <p>Let F be a set of ordered pairs. F is said to be a function if</p>
+
+  <p>$\forall a \forall b \forall b’ (( \langle a, b \rangle \in F \land \langle a, b’ \rangle  \in F ) \to b = b’ )$</p>
+
+  <p>The <strong>domain</strong> of a function F, written as Dom(F), is the set defined by</p>
+
+  <p>$Dom(F) = \{a \in \cup (\cup F) : \exists b \langle a, b \rangle \in F \}$</p>
+
+  <p><strong>Alternative:</strong></p>
+
+  <p>Let A, B and F be sets with $F \subseteq A \times B$. We say that F is a <strong>function</strong> with <strong>domain</strong> A
+ and <strong>codomain</strong> B if</p>
+
+  <p>$\forall a (a \in A \to \exists b( b \in B \land \langle a,b \rangle \in F \land \forall b’ ( \langle a,b’ \rangle \in F \to b’ = b) ))$</p>
+
+  <p>In words: A function with domain A and codomain B is a subset f of $A \times B$ such that, for each $a \in A$, there is one and only one $b \in B$ such that  $(a,b) \in f$</p>
+</div>
+
+<div class="definition">
+
+  <p><strong>Definition:</strong></p>
+
+  <p>For sets X and Y the <strong>Cartesian product</strong>, written as $X \times Y$, is the set</p>
+
+  <p>$\{x \in \mathscr{P}(\mathscr{P}(X \cup Y)): \exists x \exists y ((x \in X \land y \in Y) \land z = \langle x,y \rangle)\}$</p>
+
+</div>
+
+<div class="definition">
+
+  <p><strong>Definition:</strong></p>
+
+  <p>Suppose that the set F is a function</p>
+
+  <p>The range of a function F, written as Range(F), is the set defined by</p>
+
+  <p>$Range(F) = \{b \in \cup(\cup(F)) : \exists a \langle a,b \rangle \in F \}$.</p>
+
+  <p>Suppose that X is a subset of Dom(F). Then the restriction of the function F to X, written as $F|_x$ is the set</p>
+
+  <p>$\{\langle x, y \rangle \in F : a \in X \}$.</p>
+
+  <p>In general, if G is a function with $G \subseteq F$, then G is said to be a restriction of F and F is said to be an 
+extension of G.</p>
+
+</div>
+
+<h1 id="analysis">Analysis</h1>
+
+<p>In the orignal formulation by Leibniz and Newton there were deficiencies which centred
+around the use of the infinite. The use of the infinitely large, for instance the use of $\dots$
+and the infinitely small, i.e, the infinitesimals.</p>
+
+<p>Through the work of Cauch, Bolzano and Weierstrass, calculus acquired the rigorous foundation which
+is used today.</p>
+
+<p>Libeiz an Netwoton freely used infinitesimals</p>
+
+<p>an infinitely small number</p>
+
+<p>Berkeley called infinitesimals “ghosts of departed quantities”
+The use of limits, with formal definitions in terms of $\epislons$
+and $\deltas$ came to replace the informal use of infinitesimals in mathematical proofs</p>
+
+<p>infinitesimals were intuitive and they worked.</p>
+
+<p>In early 1960s, Abraham Robinson developed a system of hyperral numbers,
+extending the system of real numbers by adjoining infinitely
+small and infinitely large numbers.</p>
+
+<p>With hyperreals, it’s possible to legitimately use infinitesimals for calculus.
+This is called Nonstandard analysis. It simplified classical definitions, theorems,
+and proofs and also led to new discoveries.</p>
+
+<div class="definition">
+  <p><strong>Definition:</strong> A sequence (of real numbers)</p>
+
+  <p>A <strong>sequence</strong> of real numbers is a function from the natural numbers to the real numbers.</p>
+
+  <p>$f : N \to R$</p>
+
+  <p>Thus a sequence can be denoted by any of:</p>
+
+  <p>$f(m), f(m + 1), f(m + 2), \dots$</p>
+
+  <p>$\{a_i \}_{i=m}^{\infty}$  where $a_i = f(i)$</p>
+
+  <p>$\{a_n \}_{n \in N}$</p>
+
+</div>
+
+<p>A sequence is a “list” of numbers that may or may not exhibit a certain pattern.</p>
+
+<p>http://www.ms.uky.edu/~droyster/courses/fall06/PDFs/Chapter06.pdf</p>
+
+<p>https://mathcs.org/analysis/reals/numseq/sequence.html</p>
+
+<div class="definition">
+  <p><strong>Definition:</strong> Convergence</p>
+
+  <p>A sequence  of real (or complex) numbers is said to converge to a real (or complex) number L if for every  $\epsilon &gt; 0$ there is an integer $N &gt; 0$ 
+such that if $j &gt; N$ then $| a_j - L | &lt; \epsilon$</p>
+
+  <p>If {ak} converges to L we will write lim k→∞ ak = L or simply ak → L. If a sequence does not converge, then we say that it <strong>diverges</strong>.</p>
+</div>
+
+<h1 id="abstract-algebra">Abstract Algebra</h1>
+
+<p>Also known as Modern Algebra</p>
+
+<div class="definition">
+  <p><strong>Definition:</strong> Group</p>
+
+  <p>A <strong>group</strong> is an ordered pair (G, *) where G is a set and * is binary operation on G satisfying the following axioms:</p>
+
+  <p>(i) Associative: (a * b) * c = a * (b * c), for all $a,b,c \in G$.</p>
+
+  <p>(ii) Identity: There exists an element e in G, called an <strong>identify</strong> of G, such that for all $a \in G$ we have 
+a * e  = e * a = a.</p>
+
+  <p>(iii) Inverse: For each $a \in G$ there is an element $a^{-1}$ of G, called an <strong>inverse</strong> of a, such that 
+$a * a^{-1} = a^{-1} * a = e$.</p>
+
+  <p><strong>Definition:</strong> Abelian Group (commutative)</p>
+
+  <p>The group (G, *) is called <strong>abelian</strong> (or commutative) if a * b = b * a for all $a, b \in G$</p>
+
+</div>
+
+<p>Mnemonic: AII A</p>
+
+<p>If G is finite we say G is a <strong>finite group</strong>. Note that axiom (ii) ensures that a group is always nonempty.</p>
+
+<h1 id="latex">Latex</h1>
+
+<p>$\mathfrak{A}$</p>
+
+<p>$\mathcal{A}$</p>
+
+<p>$\mathbb{A}$</p>
+
+<p>$\mathbf{A}$</p>
+
+<p>$\mathscr{A}$</p>
+
+
+                </div>
+            </main>
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#foundations">Foundations</a></li>
+  <li><a href="#logic">Logic</a></li>
+  <li><a href="#set-theory">Set Theory</a></li>
+  <li><a href="#analysis">Analysis</a></li>
+  <li><a href="#abstract-algebra">Abstract Algebra</a></li>
+  <li><a href="#latex">Latex</a></li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
+  <data class="u-url" href="/documents/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">LFMUNOZ</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">LFMUNOZ</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/lfmunoz"><svg class="svg-icon"><use xlink:href="/documents/assets/minima-social-icons.svg#github"></use></svg> <span class="username">lfmunoz</span></a></li><li><a href="https://www.twitter.com/lfmunoz4"><svg class="svg-icon"><use xlink:href="/documents/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">lfmunoz4</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>articles, notes, and references</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

@@ -2,21 +2,42 @@
 <html lang="en">
 
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>LFMUNOZ | articles, notes, and references</title>
+<title>Git | LFMUNOZ</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="LFMUNOZ" />
+<meta property="og:title" content="Git" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="articles, notes, and references" />
 <meta property="og:description" content="articles, notes, and references" />
-<link rel="canonical" href="lfmunoz.github.io/documents/404.html" />
-<meta property="og:url" content="lfmunoz.github.io/documents/404.html" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/Git/Introduction.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/Git/Introduction.html" />
 <meta property="og:site_name" content="LFMUNOZ" />
 <script type="application/ld+json">
-{"@type":"WebPage","headline":"LFMUNOZ","url":"lfmunoz.github.io/documents/404.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+{"@type":"WebPage","headline":"Git","url":"lfmunoz.github.io/documents/books/Git/Introduction.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
 <body><header class="site-header" role="banner">
@@ -169,30 +190,178 @@
 </div><div class="column-main">
             <main class="page-content" aria-label="Content">
                 <div class="wrapper">
-                    <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+                    <h1 id="git">Git</h1>
 
-<div class="container">
-  <h1>404</h1>
+<p>For a commit with only one parent, rev~ and rev^ mean the same thing.</p>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+<ul>
+  <li>Tilde ~ is almost linear in appearance and wants to go backward in a straight line</li>
+  <li>
+    <p>Caret ^ suggests an interesting segment of a tree or a fork in the road</p>
+  </li>
+  <li>HEAD means (the reference to the) current commit</li>
+  <li>HEAD~1 means (the reference to) 1 commit before</li>
+  <li>HEAD~ ALSO means (the reference to) 1 commit before</li>
+  <li>HEAD~87 means (the reference to) 87 commits before</li>
+  <li>HEAD~3..HEAD means from 3 commits to current commit</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>G   H   I   J
+ \ /     \ /
+  D   E   F
+   \  |  / \
+    \ | /   |
+     \|/    |
+      B     C
+       \   /
+        \ /
+         A
+
+A =      = A^0
+B = A^   = A^1     = A~1
+C = A^2
+D = A^^  = A^1^1   = A~2
+E = B^2  = A^^2
+F = B^3  = A^^3
+G = A^^^ = A^1^1^1 = A~3
+H = D^2  = B^^2    = A^^^2  = A~2^2
+I = F^   = B^3^    = A^^3^
+J = F^2  = B^3^2   = A^^3^2
+</code></pre></div></div>
+
+<h2 id="git-log">Git log</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git log --branches --remotes --tags --graph --oneline --decorate
+git lg --all
+</code></pre></div></div>
+
+<h2 id="creating-patches">Creating patches</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Changes you made relative to the index (staging area for next commit)</span>
+git diff <span class="o">&gt;</span> add-rspec.patch
+
+<span class="c"># git diff &lt;x&gt; &lt;x+∆x&gt;</span>
+git diff &lt;branch&gt;..&lt;current_branch&gt;
+
+git diff <span class="nt">--oneline</span> <span class="nt">--graph</span> master..feature
+
+
+
+</code></pre></div></div>
+
+<p>You create a branch then make some changes and commit those changes. To create
+a patch based on the changes you use *git format-patch [ <since> | <revision range="">]*</revision></since></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c"># -o is specified, output files are created in &lt;dir&gt; (default current dir)</span>
+
+<span class="c"># Extract all commits which are in the current branch but not in the origin branch:</span>
+git format-patch origin
+
+</code></pre></div></div>
+
+<h2 id="applying-patches">Applying patches</h2>
+
+<ul>
+  <li><strong>git apply</strong> provides the patch as unstaged changes</li>
+  <li><strong>git am</strong> apply the patches as commits</li>
+</ul>
+
+<p>https://git-scm.com/docs/git-apply</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># check out to the branch where you want your patch file to be applied.</span>
+git checkout &lt;feature&gt;
+
+
+git apply <span class="nt">--reject</span> <span class="nt">--whitespace</span><span class="o">=</span>fix
+
+
+git apply <span class="nt">--3way</span>
+<span class="c"># </span>
+
+<span class="c">#  use the “git am” command and specify the Git patch file to be used.</span>
+<span class="c">#  git am &lt;patch_file&gt;</span>
+git am patches/0001-My-feature-commit-1.patch
+
+<span class="c"># skip a Git patch apply operation and ignore conflicts</span>
+git am <span class="nt">--skip</span>
+
+<span class="c"># Git apply merging errors, identify the files that are causing problems, </span>
+<span class="c">#  edit them, and run the “git am” command with the “–continue” option.</span>
+git am <span class="nt">--continue</span>
+</code></pre></div></div>
+
+<h3 id="references">References</h3>
+
+<ul>
+  <li>https://git-scm.com/docs/git-format-patch</li>
+</ul>
+
+<h1 id="setup-tips">Setup Tips</h1>
+
+<h3 id="problem-git-log-disappears-from-console-when-you-exit-less">Problem: Git log disappears from console when you exit less</h3>
+
+<p>When git uses <strong>less</strong> as pager the output of commands like git log disappear from the console when you exit <strong>less</strong>. This is not convenient so here is the fix:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># fix just for git commands:</span>
+git config <span class="nt">--global</span> <span class="nt">--replace-all</span> core.pager <span class="s2">"less -iXFR"</span>
+
+<span class="c"># fix globally or local session</span>
+<span class="nb">export </span><span class="nv">LESS</span><span class="o">=</span><span class="nt">-iXFR</span>
+</code></pre></div></div>
+
+<ul>
+  <li>-i - ignore case when searching (but respect case if search term contains uppercase letters)</li>
+  <li>-X - do not clear screen on exit</li>
+  <li>-F - exit if text is less then one screen long</li>
+  <li>-R - default on my system, something related to colors</li>
+</ul>
+
+<h1 id="tutorial">Tutorial</h1>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+git lg <span class="nt">--all</span>
+<span class="k">*</span> 51e2008 - <span class="o">(</span>HEAD -&gt; featureA<span class="o">)</span> // 2. Change to factorial 
+| <span class="k">*</span> 4840aa5 - <span class="o">(</span>master<span class="o">)</span> // 3. Add debugging statements 
+|/  
+<span class="k">*</span> 69e1857 - // 1. Adding fib feature 
+<span class="k">*</span> bc7db88  - // 0. Start of project <span class="o">(</span>skeleton<span class="o">)</span>
+
+</code></pre></div></div>
+
+<h1 id="archive">Archive</h1>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git archive --output=../infra_dev_envoy.tar --format=tar HEAD
+</code></pre></div></div>
+
+<h1 id="remote">Remote</h1>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Change remote URL</span>
+git remote set-url origin git@github.com:lfmunoz/documents.git
+</code></pre></div></div>
 
                 </div>
             </main>
-        </div></div><footer class="site-footer h-card">
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#git">Git</a>
+    <ul>
+      <li><a href="#git-log">Git log</a></li>
+      <li><a href="#creating-patches">Creating patches</a></li>
+      <li><a href="#applying-patches">Applying patches</a>
+        <ul>
+          <li><a href="#references">References</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#setup-tips">Setup Tips</a>
+     -  <a href="#problem-git-log-disappears-from-console-when-you-exit-less">Problem: Git log disappears from console when you exit less</a></li>
+  <li><a href="#tutorial">Tutorial</a></li>
+  <li><a href="#archive">Archive</a></li>
+  <li><a href="#remote">Remote</a></li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
   <data class="u-url" href="/documents/"></data>
 
   <div class="wrapper">

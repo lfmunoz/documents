@@ -2,21 +2,42 @@
 <html lang="en">
 
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>LFMUNOZ | articles, notes, and references</title>
+<title>Propositional Logic | LFMUNOZ</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="LFMUNOZ" />
+<meta property="og:title" content="Propositional Logic" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="articles, notes, and references" />
 <meta property="og:description" content="articles, notes, and references" />
-<link rel="canonical" href="lfmunoz.github.io/documents/404.html" />
-<meta property="og:url" content="lfmunoz.github.io/documents/404.html" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/Logic/PropositionalLogic.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/Logic/PropositionalLogic.html" />
 <meta property="og:site_name" content="LFMUNOZ" />
 <script type="application/ld+json">
-{"@type":"WebPage","headline":"LFMUNOZ","url":"lfmunoz.github.io/documents/404.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+{"@type":"WebPage","headline":"Propositional Logic","url":"lfmunoz.github.io/documents/books/Logic/PropositionalLogic.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
 <body><header class="site-header" role="banner">
@@ -169,30 +190,238 @@
 </div><div class="column-main">
             <main class="page-content" aria-label="Content">
                 <div class="wrapper">
-                    <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+                    <h1 id="propositional-logic">Propositional Logic</h1>
 
-<div class="container">
-  <h1>404</h1>
+<p><a href="Introduction.html">Logic</a></p>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
+<p><strong>Propositional logic</strong> (also called sentential calculus or sentential logic or Zeroth-order logic) is a formal system in which formulas of a formal language may be interpreted to represent propositions.</p>
+
+<blockquote>
+  <p>The theorems of mathematics all say the same, namely nothing - Wittgenstein</p>
+</blockquote>
+
+<p>Wht does he mean? If we have theorems of the type $A \iff B$, A and B being propositions then obviously A says nothing else than B does. It is a tautologically, but psychologically it may be useful to have a reformulation.</p>
+
+<div class="definition">
+  <p><strong>Definition:</strong> Proposition</p>
+
+  <p>A <strong>proposition</strong> $p$ is a variable that can take the value “true” or “false”. No others.</p>
+
 </div>
+
+<p>The term <strong>proposition</strong> is sometimes used synonymously with <strong>statement</strong>. However, it is sometimes used to name something abstract that two different statements with the same meaning are both said to “express”. In this usage, the English sentence, “It is raining”, and the French sentence “Il pleut”, would be considered to express the same proposition.</p>
+
+<p>It is not the task of propositional logic to decide whether</p>
+<ul>
+  <li>a statement is a proposition or not</li>
+  <li>a statement is true or false.</li>
+</ul>
+
+<p>A proposition deals with the entire proposition and just assumes that it is either true or false.</p>
+
+<p>It is possible to build new propositions from given ones using <strong>logical operators</strong>. There are 4 <strong>unary operator</strong> which take a proposition and makes a new proposition. These exhaust all possibilities for unary $4=2^2$.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>$p$</th>
+      <th>$\neg p$</th>
+      <th>$id(p)$</th>
+      <th>$\top_p$</th>
+      <th>$\bot_p$</th>
+    </tr>
+    <tr>
+      <th> </th>
+      <th>inverse</th>
+      <th>identity</th>
+      <th>tautology</th>
+      <th>contradiction / absurdity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>T</td>
+      <td>F</td>
+      <td>T</td>
+      <td>T</td>
+      <td>F</td>
+    </tr>
+    <tr>
+      <td>F</td>
+      <td>T</td>
+      <td>F</td>
+      <td>T</td>
+      <td>F</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Binary operators</strong> take two propositions and makes a new proposition. There are four combinations of the truth values of two propositions and, since a binary operator assigns one of the two possible truth values to each of those, we have $16 = 2^4$  binary operators in total.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>P</th>
+      <th>Q</th>
+      <th>$\neg P$</th>
+      <th>$ P \land Q$</th>
+      <th>$ P \lor Q$</th>
+      <th>$ P \to Q$</th>
+      <th>$P \leftrightarrow Q$</th>
+      <th>$P \oplus Q$</th>
+      <th>$P \uparrow Q$</th>
+    </tr>
+    <tr>
+      <th> </th>
+      <th> </th>
+      <th>inverse</th>
+      <th>and / conjunction</th>
+      <th>or / disjunction</th>
+      <th>implication / conditional</th>
+      <th>iff / biconditional</th>
+      <th>xor</th>
+      <th>nand</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>T</td>
+      <td>T</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>F</td>
+      <td>T</td>
+    </tr>
+    <tr>
+      <td>T</td>
+      <td>F</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>T</td>
+      <td>T</td>
+    </tr>
+    <tr>
+      <td>F</td>
+      <td>T</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>T</td>
+      <td>T</td>
+    </tr>
+    <tr>
+      <td>F</td>
+      <td>F</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>F</td>
+      <td>F</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>ex falso quodlibet, from the false everything follows</p>
+
+<div class="definition">
+  <p><strong>Theorem:</strong> Let p,q be propositions. $ (p \implies q)  \iff  (\neg q \implies \neg p)$</p>
+
+  <p><strong>Proof:</strong>  Construct truth table</p>
+
+</div>
+
+<p>Note: All higher order operators $\phi (p_1, \dots , p_N)$ can be constructed from a single binary operator <strong>nand</strong>.</p>
+
+<p>Corollary: we can prove asserts by way of contradiction</p>
+
+<p>assume we know p is true, we want to prove that then q is true
+what we can do instead is
+assume that what we want to prove is false and to prove that
+means that the assumption isn’t true.</p>
+
+<p>All highe rorder operations can be constructed from a single binary operator. The NAND operator</p>
+
+<div class="definition">
+  <p><strong>Theorem:</strong>  Propositional logic is consistent</p>
+
+  <p><strong>Proof:</strong> Suffices to show that there exists a proposition
+that cannot be proved within propositional logic.
+Propositional Logic has an empty sequence of axioms.</p>
+
+  <p>Only T and M must carry any proof
+only things you can prove are tautologies</p>
+
+  <p>i.e, $q \land \neg q$ cannot be proven because that isn’t a tautology.
+We constructed a proposition that cannot be proven, so Propositional Logic is consistent.</p>
+
+</div>
+
+<p>R, Q, P - formulae, Schematic Letters, propositions</p>
+
+<p>Standing in for sentences which are or express propositions.</p>
+
+<p>Interpret a setence letter just by assigning to it a truth-value (T or F)</p>
+
+<p>$\vDash$  entails (sign is pronounced turnstile)</p>
+
+<p>$\Gamma \vDash \phi$</p>
+
+<p>There is no interpretation in which every formula $\gamma$ is true and the formula 
+$\phi$ is false.</p>
+
+<p>Any sentence that exemplifies schema \(\gamma \entails \phi\)
+with actual formulae will be called a sequent</p>
+
+<p><strong>Modus Ponens</strong>
+if P then Q; P; therefore Q</p>
+
+<p>An <strong>argument-schema</strong> counts as a valid schema if there is no interpretation in wich
+each of the premise-formulae comes out true and the conclusion-formula comes out false</p>
+
+<p>$\phi$ is any formula</p>
+
+<p>$\gamma$ is any set of formula</p>
+
+<p>\(\entails \phi\)  claim that $\phi$ is valid
+There is no interpretation in which $\phi$ is false</p>
+
+<p>\(\gamma \entails\) there is no interpretation in which every formulate in $\gamma$ is true
+can be read as “is inconsistent”</p>
+
+<p>There is a proof whose conclusion is $\phi$ and whose undischarged assumptions
+are all in the set $\gamma$</p>
+
+<p>When is true the sequent is correct</p>
+
+<p>$\gamma$ can be empty $\entails \phi$ this sequence is correct iff there is a proof of $\phi$ with no
+discharged assumptions</p>
+
+<p>A <strong>sequent</strong> makes a definite claim that certain formulae are related in a particular way and it is either true or false</p>
+
+<p>$\phi$ is a statement the conclusion of the sequent and $\gamma$ is a set of statements the assumptions of the sequent</p>
+
+<p>⊢ \vdash</p>
+
+<p>⊨ \vDash</p>
 
                 </div>
             </main>
-        </div></div><footer class="site-footer h-card">
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#propositional-logic">Propositional Logic</a></li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
   <data class="u-url" href="/documents/"></data>
 
   <div class="wrapper">

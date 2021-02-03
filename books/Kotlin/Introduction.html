@@ -2,21 +2,42 @@
 <html lang="en">
 
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>LFMUNOZ | articles, notes, and references</title>
+<title>Kotlin | LFMUNOZ</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="LFMUNOZ" />
+<meta property="og:title" content="Kotlin" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="articles, notes, and references" />
 <meta property="og:description" content="articles, notes, and references" />
-<link rel="canonical" href="lfmunoz.github.io/documents/404.html" />
-<meta property="og:url" content="lfmunoz.github.io/documents/404.html" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/Kotlin/Introduction.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/Kotlin/Introduction.html" />
 <meta property="og:site_name" content="LFMUNOZ" />
 <script type="application/ld+json">
-{"@type":"WebPage","headline":"LFMUNOZ","url":"lfmunoz.github.io/documents/404.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+{"@type":"WebPage","headline":"Kotlin","url":"lfmunoz.github.io/documents/books/Kotlin/Introduction.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
 <body><header class="site-header" role="banner">
@@ -169,30 +190,79 @@
 </div><div class="column-main">
             <main class="page-content" aria-label="Content">
                 <div class="wrapper">
-                    <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+                    <h1 id="the-kotlin-programming-language">The Kotlin Programming Language</h1>
 
-<div class="container">
-  <h1>404</h1>
+<ul>
+  <li>Kotlin Home
+    <ul>
+      <li>https://kotlinlang.org/docs/tutorials/command-line.html</li>
+    </ul>
+  </li>
+</ul>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+<details>
+<summary> <strong> [ Skeleton.kt] </strong> </summary>
+
+<p>
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Main</span>
+<span class="c1">// kotlinc Skeleton.kt -include-runtime -d hello.jar</span>
+<span class="c1">// or bash /home/luis/.IdeaIC2018.2/config/plugins/Kotlin/kotlinc/bin/kotlinc Skeleton.kt -include-runtime -d hello.jar</span>
+<span class="c1">// java -jar hello.jar</span>
+<span class="n">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="o">:</span> <span class="n">Array</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">"Hello, World!"</span><span class="p">)</span>
+<span class="p">}</span>
+
+</code></pre></div>    </div>
+  </p></details>
+
+<h2 id="toc">TOC</h2>
+
+<ul>
+  <li><a href="Coroutines.html">Coroutines</a>
+    <ul>
+      <li>suspend</li>
+      <li>runBlocking, launch, async</li>
+    </ul>
+  </li>
+  <li><a href="DataClass.html">Data Classes</a>
+    <ul>
+      <li>sealed classes</li>
+      <li>enum</li>
+    </ul>
+  </li>
+  <li><a href="IO.html">Input Output</a>
+    <ul>
+      <li>readLines(), readText(), bufferedReader(),</li>
+      <li>writeText(), writeTextFile()</li>
+      <li>mkdirs()</li>
+    </ul>
+  </li>
+  <li><a href="Random.html">Random</a></li>
+  <li><a href="Testing.html">Testing</a>
+    <ul>
+      <li>Junit5</li>
+      <li>AssertJ</li>
+      <li>Awaitility</li>
+    </ul>
+  </li>
+  <li><a href="Junit5.html">Junit5</a></li>
+  <li><a href="Logging.html">Logging</a></li>
+  <li><a href="Metrics.html">Metrics</a></li>
+</ul>
+
 
                 </div>
             </main>
-        </div></div><footer class="site-footer h-card">
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#the-kotlin-programming-language">The Kotlin Programming Language</a>
+    <ul>
+      <li><a href="#toc">TOC</a></li>
+    </ul>
+  </li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
   <data class="u-url" href="/documents/"></data>
 
   <div class="wrapper">

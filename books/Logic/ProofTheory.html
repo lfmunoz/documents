@@ -2,21 +2,42 @@
 <html lang="en">
 
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>LFMUNOZ | articles, notes, and references</title>
+<title>Proof Theory | LFMUNOZ</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="LFMUNOZ" />
+<meta property="og:title" content="Proof Theory" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="articles, notes, and references" />
 <meta property="og:description" content="articles, notes, and references" />
-<link rel="canonical" href="lfmunoz.github.io/documents/404.html" />
-<meta property="og:url" content="lfmunoz.github.io/documents/404.html" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/Logic/ProofTheory.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/Logic/ProofTheory.html" />
 <meta property="og:site_name" content="LFMUNOZ" />
 <script type="application/ld+json">
-{"@type":"WebPage","headline":"LFMUNOZ","url":"lfmunoz.github.io/documents/404.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+{"@type":"WebPage","headline":"Proof Theory","url":"lfmunoz.github.io/documents/books/Logic/ProofTheory.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
 <body><header class="site-header" role="banner">
@@ -169,26 +190,79 @@
 </div><div class="column-main">
             <main class="page-content" aria-label="Content">
                 <div class="wrapper">
-                    <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+                    <h1 id="proof-theory">Proof Theory</h1>
 
-<div class="container">
-  <h1>404</h1>
+<ul>
+  <li>
+    <p><a href="Induction.html">Induction</a></p>
+  </li>
+  <li>A <strong>lemma</strong> is a result of no intrinsic interest proved as a step towards the proof of a theorem</li>
+  <li>A <strong>proposition</strong> is a result of less independent importance than a theorem</li>
+  <li>A <strong>corollary</strong> is an easy consequence of a theorem</li>
+</ul>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+<p>These distinctions are of no formal significance, we use them only as a way of providing signposts to the reader as the relative importance of the result.</p>
+
+<p><strong>Definitions</strong> explain our use of various words and symbols. It is a requirement of a definition that it should be formally eliminable, so that every occurrence of the word defined could in principle be replaced by the phrase that defines it, but this process of elimination must stop eventually, therefore some words or symbols we do not define byt merely take as given: they are called <strong>primitives.</strong></p>
+
+<p>If we are to avoid an infinite regress, there must be some propositions that are not proved, we call these <strong>axioms</strong>.</p>
+
+<p>An alternative to axioms is empiricist such as Lakatos(1976).</p>
+
+<p>Realism is thus committed to the notion that words mathematicians use already have a meaning independent of the system of axioms in which the words occur. If the axioms make existential claims they by taking them to be true we commit ourselves to the existence of the requisite objects.</p>
+
+<p>Often variables that occur in mathematical texts are intended to range over only a restricted class of objects, and in order to aid readability we use letters to mark these restrictions: m,n,k for natural numbers, z,w for complex numbers, G,H for groups.</p>
+
+<p>Greek letters are to be thought as part of the specification language (metalanguage), not as part of the formal language itself. $\Phi$ used to comment on the features that certain formula have in common, or to introduce abbreviations for formulae with a certain pattern.</p>
+
+<p>Propositional Logic - has no quantifiers</p>
+
+<p>first-order - the variables we use as placeholders in quantified sentences have objects as their intended range (comon practice to use lower-case letters x,y,z,t)</p>
+
+<p>second-order permits in addition the use of quantified variables ranging over properties of objects (common practice ot use upper case letters X,Y,Z for such variables) (quantifies over sets, relations, functions)</p>
+
+<p>We cannot in the language itself assert an infinite list of object language sentences, but we can in the metalanguage make a commitment to assert any member of such a list by means of finite description of its syntactic form. This is known as an <strong>axiom scheme</strong>.</p>
+
+<p>It will be a mechanical matter to check whether any given finite string of symbols is an instance of the schema.</p>
+
+<p>first-order logic has a complete formalization but second-order logic does not. The result of this was that it had become standard to state mathematical theories in  first-order form using axiom schemes.</p>
+
+<p>$!x\Phi(x)$  read “the x such that $\Phi(x)$. refer to the unique object which is $\Phi$ if there is one, and ot nothing otherwise</p>
+
+<p>expressions of the sort that denote objects are called terms.</p>
+
+<p>Proper names are also terms but they do not depend on variables. We shall use lower-case Greek letters such as $\rho \tau$, to stand for arbitary terms.</p>
+
+<p>Law of the Ecluded Middle: Either a statement is true or its negation is true (there is no “middle” possibility).</p>
+
+<p>Law of Contradiction: A statement and its negation cannot both be true</p>
+
+<p>Proof by contradiction (proof by reductio ad absurdum)</p>
+
+<p>Individuals are objects that can’t be predicated of or had by other objects.</p>
+
+<p>Properties are way that something can be</p>
+
+<p>Relations are ways that things can be related to each other.</p>
+
+<h3 id="contrapositive">Contrapositive</h3>
+
+\[P \rightarrow Q \iff \neg Q \rightarrow \neg P\]
+
+<p>^ P ^ Q ^ $P \rightarrow Q$ ^<br />
+| 0 | 0   | 1 | 
+| 0 | 1   | 1 |
+| 1 | 0   | 0 |
+| 1 | 1   | 1 |</p>
+
+<p>^ $\neg Q$ ^ $\neg P$ ^ $ \neg Q \rightarrow \neg P$ ^<br />
+| 1 | 1   | 1 | 
+| 0 | 1   | 1 |
+| 1 | 0   | 0 |
+| 0 | 0   | 1 |</p>
+
+<p>“If something is a bat, then it is a mammal.”
+“If something is not a mammal, then it is not a bat.”</p>
 
                 </div>
             </main>

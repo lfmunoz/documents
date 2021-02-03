@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Envoy | LFMUNOZ</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Envoy" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="articles, notes, and references" />
+<meta property="og:description" content="articles, notes, and references" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/Envoy/Introduction.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/Envoy/Introduction.html" />
+<meta property="og:site_name" content="LFMUNOZ" />
+<script type="application/ld+json">
+{"@type":"WebPage","headline":"Envoy","url":"lfmunoz.github.io/documents/books/Envoy/Introduction.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
+<body><header class="site-header" role="banner">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2YJDWQX6GK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-2YJDWQX6GK');
+  </script>
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/documents/">LFMUNOZ</a><nav class="site-nav">
+      <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+      <label for="nav-trigger">
+        <span class="menu-icon">
+          <svg viewBox="0 0 18 15" width="18px" height="15px">
+            <path
+              d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+          </svg>
+        </span>
+      </label>
+
+      <div class="trigger"><a class="page-link" href="/documents/about/">About</a></div>
+    </nav></div>
+</header><div class="main"><div class="column-sidebar">
+
+    <div class="nav-section">
+        <div class="nav-title">Posts</div><div class="post-container"><a class="post-link" href="/documents/2020/12/17/i-wish-i-was-worse.html"> I wish I was worse at dancing</a>
+            <span class="post-meta">Dec 17, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/12/13/too-many-options.html"> Too many options slows production</a>
+            <span class="post-meta">Dec 13, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/12/06/dream-cats-and-dogs.html"> A dream of dogs and cats</a>
+            <span class="post-meta">Dec 6, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/11/27/http-rest-bad-design.html"> RESTful HTTP creates coupling</a>
+            <span class="post-meta">Nov 27, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/08/01/organization-and-structure.html"> Organization and Structure of Applications</a>
+            <span class="post-meta">Aug 1, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/07/12/listening-to-music.html"> Listening to Music</a>
+            <span class="post-meta">Jul 12, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/07/05/frameworks.html"> Frameworks and Libraries</a>
+            <span class="post-meta">Jul 5, 2020</span>
+        </div><p class="rss-subscribe">subscribe <a href="/documents/feed.xml">via RSS</a></p>
+    </div>
+
+    <div class="nav-section">
+        <div class="nav-title">Guides</div>
+        <ul>
+            
+            <li>
+                <strong> Computer Science</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/Algorithms/Introduction.html">Algorithms</a></li>
+                    
+                    <li><a href="/documents/articles/SoftwareEngineering.html">Software Engineering</a></li>
+                    
+                    <li><a href="/documents/books/DesignPatterns.html">Design Patterns</a></li>
+                    
+                    <li><a href="/documents/books/Linux/Introduction.html">Linux</a></li>
+                    
+                    <li><a href="/documents/books/Databases/Introduction.html">Databases</a></li>
+                    
+                    <li><a href="/documents/books/SoftwareEngineering/Concurrency.html">Concurrency</a></li>
+                    
+                    <li><a href="/documents/books/Security/Introduction.html">Security</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Programming Languages</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/C/Introduction.html">C</a></li>
+                    
+                    <li><a href="/documents/books/Cpp/Introduction.html">C++</a></li>
+                    
+                    <li><a href="/documents/books/Rust/Introduction.html">Rust</a></li>
+                    
+                    <li><a href="/documents/books/Go/Introduction.html">Go</a></li>
+                    
+                    <li><a href="/documents/books/Java/Introduction.html">Java</a></li>
+                    
+                    <li><a href="/documents/books/Kotlin/Introduction.html">Kotlin</a></li>
+                    
+                    <li><a href="/documents/lang/Python/Introduction.html">Python</a></li>
+                    
+                    <li><a href="/documents/lang/Bash/Introduction.html">Bash</a></li>
+                    
+                    <li><a href="/documents/books/Make/Introduction.html">Makefile</a></li>
+                    
+                    <li><a href="/documents/lang/SQL/Introduction.html">SQL</a></li>
+                    
+                    <li><a href="/documents/lang/HTML/Introduction.html">HTML</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Technologies</strong>
+                <ul>
+                    
+                    <li><a href="/documents/tech/Android/Introduction.html">Android</a></li>
+                    
+                    <li><a href="/documents/books/Docker/Introduction.html">Docker</a></li>
+                    
+                    <li><a href="/documents/books/Envoy/Introduction.html">Envoy</a></li>
+                    
+                    <li><a href="/documents/books/Terraform/Introduction.html">Terraform</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Mathematics</strong>
+                <ul>
+                    
+                    <li><a href="/documents/mathematics/Foundations.html">Foundations</a></li>
+                    
+                    <li><a href="/documents/books/Logic/Introduction.html">Logic</a></li>
+                    
+                    <li><a href="/documents/books/SetTheory/Introduction.html">Set Theory</a></li>
+                    
+                    <li><a href="/documents/books/Geometry/Introduction.html">Geometry</a></li>
+                    
+                    <li><a href="/documents/books/Analysis/Introduction.html">Analysis</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Miscellaneous</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/Non-Duality/Introduction.html">Non-Duality</a></li>
+                    
+                </ul>
+            </li>
+
+            
+        </ul>
+    </div>
+
+
+</div><div class="column-main">
+            <main class="page-content" aria-label="Content">
+                <div class="wrapper">
+                    <h1 id="envoy">Envoy</h1>
+
+<p><strong>Envoy</strong> is an open source edge and service proxy, designed for cloud-native applications.</p>
+
+<p>It is an application written in C++ that runs as a service and has many networking features generally centered around proxying network connections.  You write a config file (generally YAML or JSON) which often can be complicated and you feed that to envoy instructing it what to do. It gives you the ability to:</p>
+
+<ul>
+  <li>Make intelligent routing decisions based on source destination port, address, protocol, SNI (rate limiting,  load balance, block)</li>
+  <li>Gather statistics  (measure API usage)</li>
+  <li>Secure connections (enable mutual TSL, terminate TSL)</li>
+  <li>
+    <p>Service discovery by having envoy read its configuration dynamically and/or remotely (reload without dropping connections)</p>
+  </li>
+  <li>Homepage
+    <ul>
+      <li>https://www.envoyproxy.io/</li>
+      <li>https://github.com/envoyproxy/envoy</li>
+    </ul>
+  </li>
+  <li>Alternatives
+    <ul>
+      <li>Linkerd, NGINX, HAProxy, Traefik,</li>
+      <li>F5 and Cisco (hardware)</li>
+    </ul>
+  </li>
+  <li>Important Terms
+    <ul>
+      <li><strong>Downstream:</strong> A downstream host <strong>connects to Envoy</strong>, sends requests, and receives responses.</li>
+      <li><strong>Upstream:</strong> An upstream host <strong>receives connections and requests from Envoy</strong> and returns responses.</li>
+      <li><strong>Listener:</strong> A listener is a named network location (e.g., port, unix domain socket, etc.) that can be connected to by downstream clients. Envoy exposes one or more listeners that downstream hosts connect to.</li>
+      <li><strong>Cluster:</strong> A cluster is a group of logically similar upstream hosts that Envoy connects to.</li>
+      <li>A <strong>Service mesh</strong> - consists of two major components:
+        <ul>
+          <li><strong>Control plane</strong> - manages and configures the data plane to route traffic.</li>
+          <li><strong>Data plane</strong> - Composed of a set of intelligent proxies (Envoy). The proxies mediate and control all network communication between microservices.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="install">Install</h2>
+
+<details>
+<summary> <strong> cat src/install_envoy.bash </strong> </summary>
+<p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/usr/bin/env bash</span>
+
+<span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+curl <span class="nt">-sL</span> <span class="s1">'https://getenvoy.io/gpg'</span> | <span class="nb">sudo </span>apt-key add -
+<span class="c"># verify the key</span>
+apt-key fingerprint 6FF974DB | <span class="nb">grep</span> <span class="s2">"5270 CEAC"</span>
+<span class="nb">sudo </span>add-apt-repository <span class="s2">"deb [arch=amd64] https://dl.bintray.com/tetrate/getenvoy-deb </span><span class="si">$(</span>lsb_release <span class="nt">-cs</span><span class="si">)</span><span class="s2"> stable"</span>
+<span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> getenvoy-envoy
+
+
+</code></pre></div>    </div>
+  </p></details>
+<p><br /></p>
+
+<h2 id="skeleton">Skeleton</h2>
+
+<p>This example will proxy 0.0.0.0:80 to www.lfmunoz.com:80</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># run envoy with the following command</span>
+envoy <span class="nt">-c</span> src/proxy_http.yaml
+
+</code></pre></div></div>
+
+<details>
+<summary> <strong> cat src/proxy_http.yaml </strong> </summary>
+<p>
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Enable Admin UI</span>
+<span class="na">admin</span><span class="pi">:</span>
+  <span class="c1"># access_log_path: /dev/null</span>
+  <span class="na">access_log_path</span><span class="pi">:</span> <span class="s">/tmp/admin_access.log</span>
+  <span class="na">address</span><span class="pi">:</span>
+    <span class="na">socket_address</span><span class="pi">:</span> <span class="pi">{</span> <span class="nv">address</span><span class="pi">:</span> <span class="nv">0.0.0.0</span><span class="pi">,</span> <span class="nv">port_value</span><span class="pi">:</span> <span class="nv">9901</span> <span class="pi">}</span>
+
+<span class="na">static_resources</span><span class="pi">:</span>
+  <span class="na">listeners</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">listener_0</span>
+    <span class="na">address</span><span class="pi">:</span>
+      <span class="na">socket_address</span><span class="pi">:</span> <span class="pi">{</span> <span class="nv">address</span><span class="pi">:</span> <span class="nv">0.0.0.0</span><span class="pi">,</span> <span class="nv">port_value</span><span class="pi">:</span> <span class="nv">80</span><span class="pi">}</span>
+    <span class="na">filter_chains</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">filters</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">envoy.filters.network.http_connection_manager</span>
+        <span class="na">typed_config</span><span class="pi">:</span>
+          <span class="s2">"</span><span class="s">@type"</span><span class="pi">:</span> <span class="s">type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3.HttpConnectionManager</span>
+          <span class="na">stat_prefix</span><span class="pi">:</span> <span class="s">ingress_http</span>
+          <span class="na">codec_type</span><span class="pi">:</span> <span class="s">AUTO</span>
+          <span class="na">route_config</span><span class="pi">:</span>
+            <span class="na">name</span><span class="pi">:</span> <span class="s">local_route</span>
+            <span class="na">virtual_hosts</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">local_service</span>
+              <span class="na">domains</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">*"</span><span class="pi">]</span>
+              <span class="na">routes</span><span class="pi">:</span>
+              <span class="pi">-</span> <span class="na">match</span><span class="pi">:</span> <span class="pi">{</span> <span class="nv">prefix</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/"</span> <span class="pi">}</span>
+                <span class="na">route</span><span class="pi">:</span> <span class="pi">{</span> <span class="nv">cluster</span><span class="pi">:</span> <span class="nv">some_service</span> <span class="pi">}</span>
+          <span class="na">http_filters</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">envoy.filters.http.router</span>
+
+  <span class="na">clusters</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">some_service</span>
+    <span class="na">connect_timeout</span><span class="pi">:</span> <span class="s">0.25s</span>
+    <span class="na">type</span><span class="pi">:</span> <span class="s">LOGICAL_DNS</span>
+    <span class="na">lb_policy</span><span class="pi">:</span> <span class="s">ROUND_ROBIN</span>
+    <span class="na">load_assignment</span><span class="pi">:</span>
+      <span class="na">cluster_name</span><span class="pi">:</span> <span class="s">some_service</span>
+      <span class="na">endpoints</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">lb_endpoints</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">endpoint</span><span class="pi">:</span>
+            <span class="na">address</span><span class="pi">:</span>
+              <span class="na">socket_address</span><span class="pi">:</span>
+                <span class="na">address</span><span class="pi">:</span> <span class="s">www.lfmunoz.com</span>
+                <span class="na">port_value</span><span class="pi">:</span> <span class="m">80</span>
+
+</code></pre></div>    </div>
+  </p></details>
+<p><br /></p>
+
+<h2 id="command-line">Command line</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Run and specify the config file</span>
+envoy <span class="nt">-c</span> &lt;path to config&gt;.<span class="o">{</span>json,yaml,pb,pb_text<span class="o">}</span>
+
+<span class="c"># Validating your Envoy configuration </span>
+envoy <span class="nt">--mode</span> validate <span class="nt">-c</span> my-envoy-config.yaml
+
+<span class="c"># Envoy system logs are sent to /dev/stderr. </span>
+<span class="c"># Override with --log-path</span>
+envoy <span class="nt">-c</span> envoy-demo.yaml <span class="nt">--log-path</span> logs/custom.log
+
+<span class="c"># Debugging Envoy, use -l or --log-level</span>
+<span class="c"># levels: trace debug info warning/warn error critical off</span>
+envoy <span class="nt">-c</span> envoy-demo.yaml <span class="nt">--log-level</span> debug
+</code></pre></div></div>
+
+<h1 id="api">API</h1>
+
+<p>There are 4 basic building blocks in Envoy:</p>
+<ul>
+  <li>Listeners (LDS) - tells the Envoy to bind to a port</li>
+  <li>Filters(LDS) - tells the listeners what to do with the requests they receive.  (similar to netty)</li>
+  <li>Routes(RDS) - information on how to proxy the requests</li>
+  <li>Clusters (CDS) - a list of endpoints which are the backends for a service</li>
+</ul>
+
+<p>xDS gives us the capability to dynamically configure Envoy. However, each discovery service is independent of each other and eventually consistent.</p>
+
+<p>Aggregated Discovery Service (ADS) publishes all configuration updates through a gRPC stream to ensure the calling sequence of each discovery service and avoid the inconsistency of configuration data caused by the update sequence of discovery service.</p>
+
+<p>Using proto3 and implemented as both gRPC and REST+JSON/YAML endpoints.</p>
+<ul>
+  <li>https://github.com/envoyproxy/data-plane-api</li>
+</ul>
+
+<p>The v2 APIs are composed of:</p>
+
+<ul>
+  <li>Endpoint Discovery Service (EDS): EDS allows an Envoy deployment to circumvent the limitations of DNS</li>
+  <li>Cluster Discovery Service (CDS):  dynamically add/update/remove all upstream clusters (each cluster itself has its own service/endpoint discovery).</li>
+  <li>Route Discovery Service (RDS):  dynamically add/update HTTP route tables.</li>
+  <li>Listener Discovery Service (LDS):  dynamically add/update/remove entire listeners, including their full L4 and L7 filter stacks.</li>
+  <li>Health Discovery Service (HDS):  This API will allow an Envoy to become a member of a distributed health checking network.</li>
+  <li>Aggregated Discovery Service (ADS):</li>
+  <li>Secret Discovery Service (SDS)</li>
+</ul>
+
+<p>In aggregate, we call all of the above APIs xDS  (LDS/EDS/RDS/CDS/SDS, together “xDS”)</p>
+
+<h1 id="static-configuration">Static Configuration</h1>
+
+<p>You will need to specify</p>
+<ul>
+  <li>listeners</li>
+  <li>clusters</li>
+  <li>static_resources.</li>
+</ul>
+
+<p>By configuring a Listener, users can enable the flow of traffic through the proxy, and then perform operations on the data using Filters.</p>
+
+<p>This example will proxy HTTP 0.0.0.0:80 to HTTP www.lfmunoz.com:80</p>
+
+<details>
+<summary> <strong> cat src/proxy_http.yaml </strong> </summary>
+<p>
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Enable Admin UI</span>
+<span class="na">admin</span><span class="pi">:</span>
+  <span class="c1"># access_log_path: /dev/null</span>
+  <span class="na">access_log_path</span><span class="pi">:</span> <span class="s">/tmp/admin_access.log</span>
+  <span class="na">address</span><span class="pi">:</span>
+    <span class="na">socket_address</span><span class="pi">:</span> <span class="pi">{</span> <span class="nv">address</span><span class="pi">:</span> <span class="nv">0.0.0.0</span><span class="pi">,</span> <span class="nv">port_value</span><span class="pi">:</span> <span class="nv">9901</span> <span class="pi">}</span>
+
+<span class="na">static_resources</span><span class="pi">:</span>
+  <span class="na">listeners</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">listener_0</span>
+    <span class="na">address</span><span class="pi">:</span>
+      <span class="na">socket_address</span><span class="pi">:</span> <span class="pi">{</span> <span class="nv">address</span><span class="pi">:</span> <span class="nv">0.0.0.0</span><span class="pi">,</span> <span class="nv">port_value</span><span class="pi">:</span> <span class="nv">80</span><span class="pi">}</span>
+    <span class="na">filter_chains</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">filters</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">envoy.filters.network.http_connection_manager</span>
+        <span class="na">typed_config</span><span class="pi">:</span>
+          <span class="s2">"</span><span class="s">@type"</span><span class="pi">:</span> <span class="s">type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3.HttpConnectionManager</span>
+          <span class="na">stat_prefix</span><span class="pi">:</span> <span class="s">ingress_http</span>
+          <span class="na">codec_type</span><span class="pi">:</span> <span class="s">AUTO</span>
+          <span class="na">route_config</span><span class="pi">:</span>
+            <span class="na">name</span><span class="pi">:</span> <span class="s">local_route</span>
+            <span class="na">virtual_hosts</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">local_service</span>
+              <span class="na">domains</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">*"</span><span class="pi">]</span>
+              <span class="na">routes</span><span class="pi">:</span>
+              <span class="pi">-</span> <span class="na">match</span><span class="pi">:</span> <span class="pi">{</span> <span class="nv">prefix</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/"</span> <span class="pi">}</span>
+                <span class="na">route</span><span class="pi">:</span> <span class="pi">{</span> <span class="nv">cluster</span><span class="pi">:</span> <span class="nv">some_service</span> <span class="pi">}</span>
+          <span class="na">http_filters</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">envoy.filters.http.router</span>
+
+  <span class="na">clusters</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">some_service</span>
+    <span class="na">connect_timeout</span><span class="pi">:</span> <span class="s">0.25s</span>
+    <span class="na">type</span><span class="pi">:</span> <span class="s">LOGICAL_DNS</span>
+    <span class="na">lb_policy</span><span class="pi">:</span> <span class="s">ROUND_ROBIN</span>
+    <span class="na">load_assignment</span><span class="pi">:</span>
+      <span class="na">cluster_name</span><span class="pi">:</span> <span class="s">some_service</span>
+      <span class="na">endpoints</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">lb_endpoints</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">endpoint</span><span class="pi">:</span>
+            <span class="na">address</span><span class="pi">:</span>
+              <span class="na">socket_address</span><span class="pi">:</span>
+                <span class="na">address</span><span class="pi">:</span> <span class="s">www.lfmunoz.com</span>
+                <span class="na">port_value</span><span class="pi">:</span> <span class="m">80</span>
+
+</code></pre></div>    </div>
+  </p></details>
+
+<p>This example will proxy TCP 0.0.0.0:80 to TCP www.lfmunoz.com:2010</p>
+
+<details>
+<summary> <strong> cat src/proxy_tcp.yaml </strong> </summary>
+<p>
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">static_resources</span><span class="pi">:</span>
+  <span class="na">listeners</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">tcp_listener</span>
+    <span class="na">address</span><span class="pi">:</span>
+      <span class="na">socket_address</span><span class="pi">:</span>
+        <span class="na">address</span><span class="pi">:</span> <span class="s">0.0.0.0</span>
+        <span class="na">port_value</span><span class="pi">:</span> <span class="m">80</span>
+    <span class="na">filter_chains</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">filters</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">envoy.tcp_proxy</span>
+        <span class="na">config</span><span class="pi">:</span>
+          <span class="na">stat_prefix</span><span class="pi">:</span> <span class="s">ingress_tcp</span>
+          <span class="na">cluster</span><span class="pi">:</span> <span class="s">netcat_cluster</span>
+          <span class="na">access_log</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">envoy.file_access_log</span>
+              <span class="na">config</span><span class="pi">:</span>
+                <span class="na">path</span><span class="pi">:</span> <span class="s">/dev/stdout</span>
+
+  <span class="na">clusters</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">netcat_cluster</span>
+    <span class="na">connect_timeout</span><span class="pi">:</span> <span class="s">0.25s</span>
+    <span class="na">type</span><span class="pi">:</span> <span class="s">LOGICAL_DNS</span>
+    <span class="na">lb_policy</span><span class="pi">:</span> <span class="s">ROUND_ROBIN</span>
+    <span class="na">load_assignment</span><span class="pi">:</span>
+      <span class="na">cluster_name</span><span class="pi">:</span> <span class="s">netcat_cluster</span>
+      <span class="na">endpoints</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">lb_endpoints</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">endpoint</span><span class="pi">:</span>
+            <span class="na">address</span><span class="pi">:</span>
+              <span class="na">socket_address</span><span class="pi">:</span>
+                <span class="na">address</span><span class="pi">:</span> <span class="s">apache.org</span>
+                <span class="na">port_value</span><span class="pi">:</span> <span class="m">80</span>
+
+<span class="na">admin</span><span class="pi">:</span>
+  <span class="na">access_log_path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/dev/null"</span>
+  <span class="na">address</span><span class="pi">:</span>
+    <span class="na">socket_address</span><span class="pi">:</span>
+      <span class="na">address</span><span class="pi">:</span> <span class="s">0.0.0.0</span>
+      <span class="na">port_value</span><span class="pi">:</span> <span class="m">9000</span>
+
+
+</code></pre></div>    </div>
+  </p></details>
+
+<p>This example will proxy https</p>
+
+<details>
+<summary> <strong> cat src/proxy_https.yaml </strong> </summary>
+<p>
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">admin</span><span class="pi">:</span>
+  <span class="na">access_log_path</span><span class="pi">:</span> <span class="s">/dev/null</span>
+  <span class="na">address</span><span class="pi">:</span>
+    <span class="na">socket_address</span><span class="pi">:</span>
+      <span class="na">address</span><span class="pi">:</span> <span class="s">0.0.0.0</span>
+      <span class="na">port_value</span><span class="pi">:</span> <span class="m">9901</span>
+
+<span class="na">static_resources</span><span class="pi">:</span>
+<span class="c1"># ________________________________________________________________________________</span>
+<span class="c1"># LISTENERS</span>
+<span class="c1"># ________________________________________________________________________________</span>
+  <span class="na">listeners</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">listener_0</span>
+    <span class="na">address</span><span class="pi">:</span>
+      <span class="na">socket_address</span><span class="pi">:</span>
+        <span class="na">address</span><span class="pi">:</span> <span class="s">0.0.0.0</span>
+        <span class="na">port_value</span><span class="pi">:</span> <span class="m">80</span>
+    <span class="na">filter_chains</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">filters</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">envoy.filters.network.http_connection_manager</span>
+        <span class="na">typed_config</span><span class="pi">:</span>
+          <span class="s2">"</span><span class="s">@type"</span><span class="pi">:</span> <span class="s">type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3.HttpConnectionManager</span>
+          <span class="na">stat_prefix</span><span class="pi">:</span> <span class="s">ingress_http</span>
+          <span class="na">access_log</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">envoy.access_loggers.file</span>
+            <span class="na">typed_config</span><span class="pi">:</span>
+              <span class="s2">"</span><span class="s">@type"</span><span class="pi">:</span> <span class="s">type.googleapis.com/envoy.extensions.access_loggers.file.v3.FileAccessLog</span>
+              <span class="na">path</span><span class="pi">:</span> <span class="s">/dev/stdout</span>
+          <span class="na">http_filters</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">envoy.filters.http.router</span>
+          <span class="na">route_config</span><span class="pi">:</span>
+            <span class="na">name</span><span class="pi">:</span> <span class="s">local_route</span>
+            <span class="na">virtual_hosts</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">local_service</span>
+              <span class="na">domains</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">*"</span><span class="pi">]</span>
+              <span class="c1"># All paths are matched and routed to the service_envoyproxy_io cluster</span>
+              <span class="na">routes</span><span class="pi">:</span>
+              <span class="pi">-</span> <span class="na">match</span><span class="pi">:</span>
+                  <span class="na">prefix</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/"</span>
+                <span class="na">route</span><span class="pi">:</span>
+                  <span class="na">host_rewrite_literal</span><span class="pi">:</span> <span class="s">www.envoyproxy.io</span>
+                  <span class="na">cluster</span><span class="pi">:</span> <span class="s">service_envoyproxy_io</span>
+
+<span class="c1"># ________________________________________________________________________________</span>
+<span class="c1"># CLUSTERS</span>
+<span class="c1"># ________________________________________________________________________________</span>
+  <span class="na">clusters</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">service_envoyproxy_io</span>
+    <span class="na">connect_timeout</span><span class="pi">:</span> <span class="s">30s</span>
+    <span class="na">type</span><span class="pi">:</span> <span class="s">LOGICAL_DNS</span>
+    <span class="c1"># Comment out the following line to test on v6 networks</span>
+    <span class="na">dns_lookup_family</span><span class="pi">:</span> <span class="s">V4_ONLY</span>
+    <span class="na">load_assignment</span><span class="pi">:</span>
+      <span class="na">cluster_name</span><span class="pi">:</span> <span class="s">service_envoyproxy_io</span>
+      <span class="na">endpoints</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">lb_endpoints</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">endpoint</span><span class="pi">:</span>
+            <span class="na">address</span><span class="pi">:</span>
+              <span class="na">socket_address</span><span class="pi">:</span>
+                <span class="na">address</span><span class="pi">:</span> <span class="s">www.envoyproxy.io</span>
+                <span class="na">port_value</span><span class="pi">:</span> <span class="m">443</span>
+    <span class="na">transport_socket</span><span class="pi">:</span>
+      <span class="na">name</span><span class="pi">:</span> <span class="s">envoy.transport_sockets.tls</span>
+      <span class="na">typed_config</span><span class="pi">:</span>
+        <span class="s2">"</span><span class="s">@type"</span><span class="pi">:</span> <span class="s">type.googleapis.com/envoy.extensions.transport_sockets.tls.v3.UpstreamTlsContext</span>
+        <span class="na">sni</span><span class="pi">:</span> <span class="s">www.envoyproxy.io</span>
+
+
+</code></pre></div>    </div>
+  </p></details>
+
+<h1 id="dynamic-configuration">Dynamic Configuration</h1>
+
+<p>https://www.envoyproxy.io/docs/envoy/latest/configuration/overview/examples</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">admin</span><span class="pi">:</span>
+  <span class="na">access_log_path</span><span class="pi">:</span> <span class="s">/tmp/admin_access.log</span>
+  <span class="na">address</span><span class="pi">:</span>
+    <span class="na">socket_address</span><span class="pi">:</span> <span class="pi">{</span> <span class="nv">address</span><span class="pi">:</span> <span class="nv">127.0.0.1</span><span class="pi">,</span> <span class="nv">port_value</span><span class="pi">:</span> <span class="nv">9901</span> <span class="pi">}</span>
+
+<span class="na">dynamic_resources</span><span class="pi">:</span>
+  <span class="na">lds_config</span><span class="pi">:</span>
+    <span class="na">resource_api_version</span><span class="pi">:</span> <span class="s">V3</span>
+    <span class="na">api_config_source</span><span class="pi">:</span>
+      <span class="na">api_type</span><span class="pi">:</span> <span class="s">GRPC</span>
+      <span class="na">transport_api_version</span><span class="pi">:</span> <span class="s">V3</span>
+      <span class="na">grpc_services</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">envoy_grpc</span><span class="pi">:</span>
+            <span class="na">cluster_name</span><span class="pi">:</span> <span class="s">xds_cluster</span>
+  <span class="na">cds_config</span><span class="pi">:</span>
+    <span class="na">resource_api_version</span><span class="pi">:</span> <span class="s">V3</span>
+    <span class="na">api_config_source</span><span class="pi">:</span>
+      <span class="na">api_type</span><span class="pi">:</span> <span class="s">GRPC</span>
+      <span class="na">transport_api_version</span><span class="pi">:</span> <span class="s">V3</span>
+      <span class="na">grpc_services</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">envoy_grpc</span><span class="pi">:</span>
+            <span class="na">cluster_name</span><span class="pi">:</span> <span class="s">xds_cluster</span>
+
+<span class="na">static_resources</span><span class="pi">:</span>
+  <span class="na">clusters</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">xds_cluster</span>
+    <span class="na">connect_timeout</span><span class="pi">:</span> <span class="s">0.25s</span>
+    <span class="na">type</span><span class="pi">:</span> <span class="s">STATIC</span>
+    <span class="na">lb_policy</span><span class="pi">:</span> <span class="s">ROUND_ROBIN</span>
+    <span class="na">typed_extension_protocol_options</span><span class="pi">:</span>
+      <span class="s">envoy.extensions.upstreams.http.v3.HttpProtocolOptions</span><span class="pi">:</span>
+        <span class="s2">"</span><span class="s">@type"</span><span class="pi">:</span> <span class="s">type.googleapis.com/envoy.extensions.upstreams.http.v3.HttpProtocolOptions</span>
+        <span class="na">explicit_http_config</span><span class="pi">:</span>
+          <span class="na">http2_protocol_options</span><span class="pi">:</span>
+            <span class="c1"># Configure an HTTP/2 keep-alive to detect connection issues and reconnect</span>
+            <span class="c1"># to the admin server if the connection is no longer responsive.</span>
+            <span class="na">connection_keepalive</span><span class="pi">:</span>
+              <span class="na">interval</span><span class="pi">:</span> <span class="s">30s</span>
+              <span class="na">timeout</span><span class="pi">:</span> <span class="s">5s</span>
+    <span class="na">load_assignment</span><span class="pi">:</span>
+      <span class="na">cluster_name</span><span class="pi">:</span> <span class="s">xds_cluster</span>
+      <span class="na">endpoints</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">lb_endpoints</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">endpoint</span><span class="pi">:</span>
+            <span class="na">address</span><span class="pi">:</span>
+              <span class="na">socket_address</span><span class="pi">:</span>
+                <span class="na">address</span><span class="pi">:</span> <span class="s">127.0.0.1</span>
+                <span class="na">port_value</span><span class="pi">:</span> <span class="m">5678</span>
+</code></pre></div></div>
+
+<h1 id="control-plane">Control plane</h1>
+
+<p>There are a number of control planes compatible with Envoy’s API such as Gloo or Istio.</p>
+<ul>
+  <li>https://istio.io/</li>
+  <li>https://github.com/heptio/contour</li>
+  <li>https://gloo.solo.io/</li>
+  <li>
+    <p>https://github.com/uswitch/yggdrasil/blob/master/pkg/envoy/boilerplate.go</p>
+  </li>
+  <li>Create your own using this official reference implementation
+    <ul>
+      <li>https://github.com/envoyproxy/go-control-plane</li>
+      <li>https://github.com/envoyproxy/java-control-plane</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Envoy’s configuration via its xDS APIs is eventually consistent by design meaning there is no way to affect an “atomic update” to all of the proxies in the cluster.</p>
+
+<p>“Simple” control planes typically use the State-of-The-World (SoTW) xDS API which means that the control plane sends a complete snapshot of a resource set whenever any resource in that set changes.</p>
+
+<h1 id="references">References</h1>
+
+<p>https://github.com/salrashid123/envoy_control</p>
+
+<p>https://mattklein123.dev/2020/03/15/on-the-state-of-envoy-proxy-control-planes/</p>
+
+<p>https://blog.gojekengineering.com/demystifying-the-packet-flow-in-istio-part-1-1cad8e9b3a2c</p>
+
+                </div>
+            </main>
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#envoy">Envoy</a>
+    <ul>
+      <li><a href="#install">Install</a></li>
+      <li><a href="#skeleton">Skeleton</a></li>
+      <li><a href="#command-line">Command line</a></li>
+    </ul>
+  </li>
+  <li><a href="#api">API</a></li>
+  <li><a href="#static-configuration">Static Configuration</a></li>
+  <li><a href="#dynamic-configuration">Dynamic Configuration</a></li>
+  <li><a href="#control-plane">Control plane</a></li>
+  <li><a href="#references">References</a></li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
+  <data class="u-url" href="/documents/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">LFMUNOZ</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">LFMUNOZ</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/lfmunoz"><svg class="svg-icon"><use xlink:href="/documents/assets/minima-social-icons.svg#github"></use></svg> <span class="username">lfmunoz</span></a></li><li><a href="https://www.twitter.com/lfmunoz4"><svg class="svg-icon"><use xlink:href="/documents/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">lfmunoz4</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>articles, notes, and references</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

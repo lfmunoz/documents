@@ -2,21 +2,42 @@
 <html lang="en">
 
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>LFMUNOZ | articles, notes, and references</title>
+<title>Bash | LFMUNOZ</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="LFMUNOZ" />
+<meta property="og:title" content="Bash" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="articles, notes, and references" />
 <meta property="og:description" content="articles, notes, and references" />
-<link rel="canonical" href="lfmunoz.github.io/documents/404.html" />
-<meta property="og:url" content="lfmunoz.github.io/documents/404.html" />
+<link rel="canonical" href="lfmunoz.github.io/documents/lang/Bash/Introduction.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/lang/Bash/Introduction.html" />
 <meta property="og:site_name" content="LFMUNOZ" />
 <script type="application/ld+json">
-{"@type":"WebPage","headline":"LFMUNOZ","url":"lfmunoz.github.io/documents/404.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+{"@type":"WebPage","headline":"Bash","url":"lfmunoz.github.io/documents/lang/Bash/Introduction.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
 <body><header class="site-header" role="banner">
@@ -169,30 +190,79 @@
 </div><div class="column-main">
             <main class="page-content" aria-label="Content">
                 <div class="wrapper">
-                    <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+                    <h1 id="bash">Bash</h1>
 
-<div class="container">
-  <h1>404</h1>
+<ul>
+  <li>GNU Project’s shell—the Bourne Again SHell</li>
+  <li>Bash is a case sensitive environment</li>
+  <li>It is convention to give files that are Bash scripts an extension of <strong>.sh</strong></li>
+  <li>
+    <p>There are many areas in Bash scripts where formatting is important. Typically it involves spaces and either the presence or absence of a space can be the difference between the command working or not.</p>
+  </li>
+  <li>Homepage
+    <ul>
+      <li>https://www.gnu.org/software/bash/</li>
+    </ul>
+  </li>
+</ul>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+
+<span class="c">#  The hash exclamation mark ( #! ) character sequence </span>
+<span class="c">#   is referred to as the **Shebang**</span>
+
+<span class="c">#  The shebang must be on the very first line of the file</span>
+
+<span class="c"># "!/usr/bin/env bash" would have the added benefit </span>
+<span class="c">#   that it searches PATH for bash, and /usr/bin/env </span>
+<span class="c">#   is more common than /bin/bash</span>
+
+<span class="c"># chmod +x skeleton.sh</span>
+<span class="c"># ./skeleton.sh</span>
+<span class="nb">echo </span>Hello World
+
+</code></pre></div></div>
+
+<h2 id="table-of-contents">Table of Contents</h2>
+
+<ul>
+  <li><a href="Variables.html">Variables</a>
+    <ul>
+      <li>command line arguments</li>
+      <li>environment variables</li>
+      <li>.bashrc, .bash_profile</li>
+    </ul>
+  </li>
+  <li><a href="Conditional.html">Conditional Statements</a>
+    <ul>
+      <li>if, case</li>
+      <li>for, range, break, continue</li>
+    </ul>
+  </li>
+  <li><a href="Looping.html">Looping Statements</a></li>
+</ul>
+
+<p>Bash only looks in those specific directories and doesn’t consider sub directories or your current directory.</p>
+
+<h1 id="learning">Learning</h1>
+
+<ul>
+  <li>https://www.gnu.org/software/bash/manual/bash.html</li>
+</ul>
 
                 </div>
             </main>
-        </div></div><footer class="site-footer h-card">
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#bash">Bash</a>
+    <ul>
+      <li><a href="#table-of-contents">Table of Contents</a></li>
+    </ul>
+  </li>
+  <li><a href="#learning">Learning</a></li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
   <data class="u-url" href="/documents/"></data>
 
   <div class="wrapper">

@@ -2,21 +2,42 @@
 <html lang="en">
 
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>LFMUNOZ | articles, notes, and references</title>
+<title>Assembly Language | LFMUNOZ</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="LFMUNOZ" />
+<meta property="og:title" content="Assembly Language" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="articles, notes, and references" />
 <meta property="og:description" content="articles, notes, and references" />
-<link rel="canonical" href="lfmunoz.github.io/documents/404.html" />
-<meta property="og:url" content="lfmunoz.github.io/documents/404.html" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/C/Assembly.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/C/Assembly.html" />
 <meta property="og:site_name" content="LFMUNOZ" />
 <script type="application/ld+json">
-{"@type":"WebPage","headline":"LFMUNOZ","url":"lfmunoz.github.io/documents/404.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+{"@type":"WebPage","headline":"Assembly Language","url":"lfmunoz.github.io/documents/books/C/Assembly.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
 <body><header class="site-header" role="banner">
@@ -169,30 +190,64 @@
 </div><div class="column-main">
             <main class="page-content" aria-label="Content">
                 <div class="wrapper">
-                    <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+                    <details>
+<summary> <strong> cat assembly.c </strong> </summary>
 
-<div class="container">
-  <h1>404</h1>
+<p>
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;stdio.h&gt;
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+    <span class="kt">int</span> <span class="n">add</span><span class="p">,</span> <span class="n">sub</span><span class="p">,</span> <span class="n">mul</span><span class="p">,</span> <span class="n">quo</span><span class="p">,</span> <span class="n">rem</span> <span class="p">;</span>
+    <span class="kt">int</span> <span class="n">arg1</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">arg2</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+
+    <span class="cm">/* Perform Addition, Subtraction, Multiplication &amp; Division */</span>
+    <span class="n">__asm__</span> <span class="p">(</span> <span class="s">"addl %%ebx, %%eax;"</span> <span class="o">:</span> <span class="s">"=a"</span> <span class="p">(</span><span class="n">add</span><span class="p">)</span> <span class="o">:</span> <span class="s">"a"</span> <span class="p">(</span><span class="n">arg1</span><span class="p">)</span> <span class="p">,</span> <span class="s">"b"</span> <span class="p">(</span><span class="n">arg2</span><span class="p">)</span> <span class="p">);</span>
+    <span class="n">__asm__</span> <span class="p">(</span> <span class="s">"subl %%ebx, %%eax;"</span> <span class="o">:</span> <span class="s">"=a"</span> <span class="p">(</span><span class="n">sub</span><span class="p">)</span> <span class="o">:</span> <span class="s">"a"</span> <span class="p">(</span><span class="n">arg1</span><span class="p">)</span> <span class="p">,</span> <span class="s">"b"</span> <span class="p">(</span><span class="n">arg2</span><span class="p">)</span> <span class="p">);</span>
+    <span class="n">__asm__</span> <span class="p">(</span> <span class="s">"imull %%ebx, %%eax;"</span> <span class="o">:</span> <span class="s">"=a"</span> <span class="p">(</span><span class="n">mul</span><span class="p">)</span> <span class="o">:</span> <span class="s">"a"</span> <span class="p">(</span><span class="n">arg1</span><span class="p">)</span> <span class="p">,</span> <span class="s">"b"</span> <span class="p">(</span><span class="n">arg2</span><span class="p">)</span> <span class="p">);</span>
+
+    <span class="n">__asm__</span> <span class="p">(</span> <span class="s">"movl $0x0, %%edx;"</span>
+              <span class="s">"movl %2, %%eax;"</span>
+              <span class="s">"movl %3, %%ebx;"</span>
+              <span class="s">"idivl %%ebx;"</span> <span class="o">:</span> <span class="s">"=a"</span> <span class="p">(</span><span class="n">quo</span><span class="p">),</span> <span class="s">"=d"</span> <span class="p">(</span><span class="n">rem</span><span class="p">)</span> <span class="o">:</span> <span class="s">"g"</span> <span class="p">(</span><span class="n">arg1</span><span class="p">),</span> <span class="s">"g"</span> <span class="p">(</span><span class="n">arg2</span><span class="p">)</span> <span class="p">);</span>
+
+    <span class="n">printf</span><span class="p">(</span> <span class="s">"%d + %d = %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="n">add</span> <span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span> <span class="s">"%d - %d = %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="n">sub</span> <span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span> <span class="s">"%d * %d = %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="n">mul</span> <span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span> <span class="s">"%d / %d = %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="n">quo</span> <span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span> <span class="s">"%d %% %d = %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="n">rem</span> <span class="p">);</span>
+
+    <span class="k">return</span> <span class="mi">0</span> <span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/******************************************************************************** 
+gcc -O0 assembly.c -o assembly.elf
+./assembly.elf
+10 + 20 = 30
+10 - 20 = -10
+10 * 20 = 200
+10 / 20 = 0
+10 % 20 = 10
+********************************************************************************/</span>
+
+</code></pre></div>    </div>
+  </p></details>
+
+<p>GCC uses AT&amp;T style assembly statements and we can use asm keyword to specify basic as well as extended assembly instructions.</p>
+
+<h1 id="learning">Learning</h1>
+
+<p>https://www.codeproject.com/Articles/15971/Using-Inline-Assembly-in-C-C</p>
 
                 </div>
             </main>
-        </div></div><footer class="site-footer h-card">
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#learning">Learning</a></li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
   <data class="u-url" href="/documents/"></data>
 
   <div class="wrapper">

@@ -2,21 +2,42 @@
 <html lang="en">
 
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>LFMUNOZ | articles, notes, and references</title>
+<title>Geometry | LFMUNOZ</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="LFMUNOZ" />
+<meta property="og:title" content="Geometry" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="articles, notes, and references" />
 <meta property="og:description" content="articles, notes, and references" />
-<link rel="canonical" href="lfmunoz.github.io/documents/404.html" />
-<meta property="og:url" content="lfmunoz.github.io/documents/404.html" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/Geometry/Introduction.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/Geometry/Introduction.html" />
 <meta property="og:site_name" content="LFMUNOZ" />
 <script type="application/ld+json">
-{"@type":"WebPage","headline":"LFMUNOZ","url":"lfmunoz.github.io/documents/404.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+{"@type":"WebPage","headline":"Geometry","url":"lfmunoz.github.io/documents/books/Geometry/Introduction.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
 <body><header class="site-header" role="banner">
@@ -169,30 +190,89 @@
 </div><div class="column-main">
             <main class="page-content" aria-label="Content">
                 <div class="wrapper">
-                    <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+                    <h1 id="geometry">Geometry</h1>
 
-<div class="container">
-  <h1>404</h1>
+<ul>
+  <li><a href="Epistemology.html">Epistemology</a>
+    <ul>
+      <li>The study of the nature and origin of knowledge.</li>
+    </ul>
+  </li>
+  <li><a href="EuclideanGeometry.html">Euclidean Geometry</a></li>
+</ul>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+<p>In mathematics you can go in two directions: forwards towards the cutting edge, or backwards into the foundations. If you go forwards there is no end, if you go backwards you will hit a dead end real quick. I used to believe Mathematically proven is often synonym for “absolutely certain”, but in Geometry you’ll learn that bootstrapping a mathematical system is not precise and there is a conflict with intuition and logic.</p>
+
+<p>The Pythagoreans in Ancient Greece were the first to discover that logic and intuition can disagree. It was intuitively evident that a common measure can be found for any pair of segments, yet they found a proof to the contrary.</p>
+
+<details>
+<summary> proof of irrationals </summary>
+
+<div class="definition">
+
+    <p><strong>Theorem:</strong> $\sqrt{2}$ is irrational</p>
+
+    <p><strong>Proof:</strong> by contradiction</p>
+
+    <p>Assume $\sqrt{2}$ is rational.</p>
+
+    <p>Let $\sqrt{2} = \frac{p}{q}$  where p and q are whole numbers with no common factor.</p>
+
+    <p>Squaring both sides gives</p>
+
+    <p>$2 = \frac{p^2}{q^2}$</p>
+
+    <p>$2 q^2 = p^2$</p>
+
+    <p>This means $p^2$ is even. Then $p$ must also be even because any even number squared it also even.</p>
+
+    <p>This has two consequences:</p>
+    <ul>
+      <li>p is twice some other whole number.</li>
+      <li>q is odd, for which we said p and q have no common factor, and an even q would have a factor 2 in common with p</li>
+    </ul>
+
+  </div>
+</details>
+<p><br /></p>
+
+<p>Pytahgoreans were preplexed. They were sure, on intuitive grounds, that $\sqrt{2}$ being the quotient of two lengths, is a rational number. On the other hand they were equally sure, on the grounds of logic and computation, that $\sqrt{2}$ is not a rational number.</p>
+
+<p>Mathematicians decided to accept logic instead of intuition. However axioms are still accepted without proof primarily because of intuitive appeal.</p>
+
+<p><img src="/documents/assets/ThirdteenFloor.png" alt="Geometric World" /></p>
+
+<p>One such intuition is that the shortest distance between any two points in a straight line.</p>
+
+<p>Another problem is that it is difficult to say exactly what points or lines are. In Euclid’s elements it says:</p>
+
+<p><strong>Definition:</strong> A <strong>point</strong> is that which has no part.</p>
+
+<p>This is the dead end because you cannot further define what a point is, there is some mathematical object called a point that we cannot say anything else about. Initution on the subject will also break down, i.e, if each point contributes zero to a one-meter length segment, then wouldn’t the entire segment have length zero? No, that doesn’t follow, you are using intuition and not logic. The length of a segment may not be simply the sum of the lengths.</p>
+
+<p><strong>Note:</strong> The existence of irrational numbers to me means there is no smallest number. You can always compute a smaller number. Reality is infinite in the sense there is always a smaller distance or measure.</p>
+
+<h1 id="learning">Learning</h1>
+
+<ul>
+  <li>Euclid’s Elements</li>
+  <li>David Hilbert - Foundations of Geometry
+    <ul>
+      <li>Euclid’s Elements Reformulation in modern terms.</li>
+    </ul>
+  </li>
+</ul>
+
 
                 </div>
             </main>
-        </div></div><footer class="site-footer h-card">
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#geometry">Geometry</a></li>
+  <li><a href="#learning">Learning</a></li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
   <data class="u-url" href="/documents/"></data>
 
   <div class="wrapper">

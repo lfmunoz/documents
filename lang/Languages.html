@@ -2,21 +2,42 @@
 <html lang="en">
 
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>LFMUNOZ | articles, notes, and references</title>
+<title>Languages | LFMUNOZ</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="LFMUNOZ" />
+<meta property="og:title" content="Languages" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="articles, notes, and references" />
 <meta property="og:description" content="articles, notes, and references" />
-<link rel="canonical" href="lfmunoz.github.io/documents/404.html" />
-<meta property="og:url" content="lfmunoz.github.io/documents/404.html" />
+<link rel="canonical" href="lfmunoz.github.io/documents/lang/Languages.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/lang/Languages.html" />
 <meta property="og:site_name" content="LFMUNOZ" />
 <script type="application/ld+json">
-{"@type":"WebPage","headline":"LFMUNOZ","url":"lfmunoz.github.io/documents/404.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+{"@type":"WebPage","headline":"Languages","url":"lfmunoz.github.io/documents/lang/Languages.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
 <body><header class="site-header" role="banner">
@@ -169,30 +190,61 @@
 </div><div class="column-main">
             <main class="page-content" aria-label="Content">
                 <div class="wrapper">
-                    <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+                    <h1 id="languages">Languages</h1>
 
-<div class="container">
-  <h1>404</h1>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># expression 
+b + 1
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+# statement
+a = b + 1; 
+</code></pre></div></div>
+
+<p>A <strong>statement</strong> forms a complete unit of execution. A statement consists of expressions.</p>
+
+<p>An <strong>expression</strong> is a construct made up of variables, operators, and method invocations, which are constructed according to the syntax of the language, that evaluates to a single value.</p>
+
+<hr />
+
+<p>A <strong>parameter</strong> is the variable which is part of the method’s signature (method declaration). The receiving variable used within the function.</p>
+
+<p>An <strong>argument</strong> is an expression used when calling the method.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// i and f are the parameters</span>
+<span class="kt">void</span> <span class="nf">Foo</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="kt">float</span> <span class="n">f</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Do things</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">Bar</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">anInt</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="c1">// anInt and 2.0 are the arguments</span>
+    <span class="n">Foo</span><span class="p">(</span><span class="n">anInt</span><span class="p">,</span> <span class="mi">2</span><span class="p">.</span><span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="programming">Programming</h1>
+
+<p>Computer programs are the most complicated thing humans make. Humans must make programs that are perfect, we cannot reach perfection but we should do the best possible. One way is to have a discipline and program in a form that is less like to cause problems, this is unique to a programming language. We don’t use all the language features we use a subset that has empirically shown to cause less problems.</p>
+
+<p>Arrange the important parts of the code so it fits on one page. Make that code understandable to a person reading it from top to bottom. Do not require the code to be repeatedly scanned in order to understand how data is used and how control moves about.</p>
+
+<p>modularization: code is factored into “modules” of some sort where each module has a clear responsibility. The action of the code can be documented and understood without a user having to understand its implementation details.</p>
+
+<p>encapsulation: modules make a distinction between their “public” surface area and their “private” implementation details so that the latter can be improved without affecting the correctness of the program as a whole.</p>
+
+<p>re-use: when a problem is solved correctly once, it is solved for all time; the solution can be re-used in the creation of new solutions. Techniques such as making a library of utility functions, or making functionality in a base class that can be extended by a derived class, or architectures that encourage composition, are all techniques for code re-use. Again, the point is to lower costs.</p>
+
+<p>annotation: code is annotated to describe the valid values that might go into a variable, for instance.
+automatic detection of errors: a team working on a large program is wise to build a device which determines early when a programming error has been made and tells you about it so that it can be fixed quickly, before the error is compounded with more errors. Techniques such as writing a test suite, or running a static analyzer fall into this category.</p>
 
                 </div>
             </main>
-        </div></div><footer class="site-footer h-card">
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#languages">Languages</a></li>
+  <li><a href="#programming">Programming</a></li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
   <data class="u-url" href="/documents/"></data>
 
   <div class="wrapper">

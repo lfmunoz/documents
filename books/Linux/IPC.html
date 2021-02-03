@@ -2,21 +2,42 @@
 <html lang="en">
 
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>LFMUNOZ | articles, notes, and references</title>
+<title>Inter-process communication | LFMUNOZ</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="LFMUNOZ" />
+<meta property="og:title" content="Inter-process communication" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="articles, notes, and references" />
 <meta property="og:description" content="articles, notes, and references" />
-<link rel="canonical" href="lfmunoz.github.io/documents/404.html" />
-<meta property="og:url" content="lfmunoz.github.io/documents/404.html" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/Linux/IPC.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/Linux/IPC.html" />
 <meta property="og:site_name" content="LFMUNOZ" />
 <script type="application/ld+json">
-{"@type":"WebPage","headline":"LFMUNOZ","url":"lfmunoz.github.io/documents/404.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+{"@type":"WebPage","headline":"Inter-process communication","url":"lfmunoz.github.io/documents/books/Linux/IPC.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
 <body><header class="site-header" role="banner">
@@ -169,30 +190,70 @@
 </div><div class="column-main">
             <main class="page-content" aria-label="Content">
                 <div class="wrapper">
-                    <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+                    <h1 id="inter-process-communication">Inter-process communication</h1>
 
-<div class="container">
-  <h1>404</h1>
+<p>Communication: These facilities are concerned with exchanging data between processes.</p>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+<p>Synchronization: These facilities are concerned with synchronizing the actions of processes or threads.</p>
+
+<p>Shared memory: Shared memory allows processes to exchange information by
+placing it in a region of memory that is shared between the processes. (The kernel
+accomplishes this by making page-table entries in each process point to the
+same pages of RAM</p>
+
+<p>Both have the same basic tools – semaphores, shared memory and message queues. 
+ They offer a slightly different interface to those tools, but the basic concepts are the same.</p>
+
+<ul>
+  <li>IPC Examples</li>
+  <li>http://hildstrom.com/projects/ipc_sysv_posix/index.html</li>
+</ul>
+
+<h2 id="posix-shared-memory">POSIX shared memory</h2>
+
+<ul>
+  <li>POSIX shared memory objects allow us to avoid the overhead of using a disk file when a backing store is not required.</li>
+  <li>POSIX shared memory objects have at least kernel persistence; that is, they continue to exist until they are explicitly removed or the system is rebooted.</li>
+</ul>
+
+<p>Linux uses a dedicated tmpfs file system</p>
+
+<p>mounted under the directory /dev/shm . This file system has kernel persistence—the shared memory
+objects that it contains will persist even if no process currently has them open, but they will be lost if the system is shut down.</p>
+
+<p>To use a POSIX shared memory object, we perform two steps:</p>
+<ul>
+  <li>Use the shm_open() function to open an object with a specified name.</li>
+  <li>Pass the file descriptor obtained in the previous step in a call to mmap() that specifies MAP_SHARED in the flags argument. This maps the shared memory object into the process’s virtual address space.</li>
+</ul>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;fcntl.h&gt;
+#include &lt;sys/stat.h&gt;
+#include &lt;sys/mman.h&gt;
+</span><span class="cm">/* Defines O_* constants */</span>
+<span class="cm">/* Defines mode constants */</span>
+<span class="kt">int</span> <span class="nf">shm_open</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">name</span> <span class="p">,</span> <span class="kt">int</span> <span class="n">oflag</span> <span class="p">,</span> <span class="n">mode_t</span> <span class="n">mode</span> <span class="p">);</span>
+<span class="c1">// Returns file descriptor on success, or –1 on error</span>
+
+<span class="cp">#include &lt;sys/mman.h&gt;
+</span><span class="kt">int</span> <span class="nf">shm_unlink</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">name</span> <span class="p">);</span>
+<span class="c1">// Returns 0 on success, or –1 on error</span>
+
+</code></pre></div></div>
+
 
                 </div>
             </main>
-        </div></div><footer class="site-footer h-card">
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#inter-process-communication">Inter-process communication</a>
+    <ul>
+      <li><a href="#posix-shared-memory">POSIX shared memory</a></li>
+    </ul>
+  </li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
   <data class="u-url" href="/documents/"></data>
 
   <div class="wrapper">

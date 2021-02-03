@@ -2,21 +2,42 @@
 <html lang="en">
 
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>LFMUNOZ | articles, notes, and references</title>
+<title>Exercises 1.2 | LFMUNOZ</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="LFMUNOZ" />
+<meta property="og:title" content="Exercises 1.2" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="articles, notes, and references" />
 <meta property="og:description" content="articles, notes, and references" />
-<link rel="canonical" href="lfmunoz.github.io/documents/404.html" />
-<meta property="og:url" content="lfmunoz.github.io/documents/404.html" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/Logic/Mathematical_Logic_Leary/Chapter_1/Exercises_1_2.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/Logic/Mathematical_Logic_Leary/Chapter_1/Exercises_1_2.html" />
 <meta property="og:site_name" content="LFMUNOZ" />
 <script type="application/ld+json">
-{"@type":"WebPage","headline":"LFMUNOZ","url":"lfmunoz.github.io/documents/404.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+{"@type":"WebPage","headline":"Exercises 1.2","url":"lfmunoz.github.io/documents/books/Logic/Mathematical_Logic_Leary/Chapter_1/Exercises_1_2.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
 <body><header class="site-header" role="banner">
@@ -169,30 +190,136 @@
 </div><div class="column-main">
             <main class="page-content" aria-label="Content">
                 <div class="wrapper">
-                    <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+                    <h2 id="exercises-12">Exercises 1.2</h2>
 
-<div class="container">
-  <h1>404</h1>
+<hr />
+<ol>
+  <li>Carefully write out the symbols that you would want to have in a language L that you intend to use to write statements of elementary algebra. Indicate which of the symbols are constant symbols, and the arity of the function and relation symbols that you choose. Now write out another language, M (i.e., another list of symbols) with the same number of constant symbols, function symbols, and relation symbols that you would not want to use for elementary algebra. Think about the value of good notation.</li>
+</ol>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+<p>+, =, *, (,), / 
+-&gt; ? $ # @</p>
+
+<hr />
+<ol>
+  <li>What are good examples of unary (1-ary) functions? Binary functions?
+Can you find natural examples of relations with arity 1, 2, 3, and 4? As</li>
+</ol>
+
+<p>you think about this problem, stay mindful of the difference between
+the function and the function symbol, between the relation and the
+relation symbol.</p>
+
+<p>++, abs arity 1</p>
+<ul>
+  <li>arity 2
+?: arity 3</li>
+</ul>
+
+<hr />
+
+<ol>
+  <li>In the town of Sneezblatt there are three eating establishments: McBurgers, Chez Fancy, and Sven’s Tandoori Palace. Think for a minute about
+statements that you might want to make about these restaurants, and
+then write out L, the formal language for your theory of restaurants.
+Have fun with this, but try to include both function and relation symbols in L. What interpretations are you planning for your symbols?</li>
+</ol>
+
+<table>
+  <tbody>
+    <tr>
+      <td>L is   { ↑ ,</td>
+      <td> </td>
+      <td>, &gt;, &lt; }</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>McBugers
+Chez gacy
+Sirens Tandori Palance</p>
+
+<hr />
+
+<ol>
+  <li>You have been put in charge of drawing up the schedule for a basketball
+league. This league involves eight teams, each of which must play each
+of the other seven teams exactly two times: once at home and once
+on the road. Think of a reasonable language for this situation. What
+constants would you need? Do you need any relation symbols? Function
+symbols? It would be nice if your finished schedule did not have any
+team playing two games on the same day. Can you think of a way
+to state this using the formal symbols that you have chosen? Can you
+express the sentence which states that each team plays every other team
+exactly two times?</li>
+</ol>
+
+<hr />
+<ol>
+  <li>Let’s work out a language for elementary trigonometry. To get you
+started, let us suggest that you start off with lots of constant symbols—
+one for each real number. It is tempting to use the symbol 7 to stand
+for the number seven, but this runs into problems. (Do you see why
+this is illegal? 7, 77, 7/3, . . . .) Now, what functions would you like
+to discuss? Think of symbols for them. What are the arities of your
+function symbols? Do not forget that you need symbols for addition
+and multiplication! What relation symbols would you like to use?</li>
+</ol>
+
+<hr />
+<ol>
+  <li>A computer language is another example of a language. For example,
+the symbol := might be a binary function symbol, where the interpretation of the instruction
+x := 7
+would be to alter the internal state of the computer by placing the value</li>
+</ol>
+
+<p>relational function a constant</p>
+<ul>
+  <li>two
+x,y variable</li>
+</ul>
+
+<p>7 into the position in memory referenced by the variable x. Think about
+the function associated with the binary function symbol
+if , then .
+What are the inputs into this function? What sort of thing does the
+function do? Look at the statement
+If x + y &gt; 3, then z := 7.
+Identify the function symbols, constant symbols, and relation symbols.
+What are the arities of each function and relation symbol?</p>
+
+<hr />
+<ol>
+  <li>What would be a good language for the theory of vector spaces? This
+problem is slightly more difficult, as there are two different varieties of
+objects, scalars and vectors, and you have to be able to tell them apart.
+Write out the axioms of vector spaces in your language. Or, better
+yet, use a language that includes a unary function symbol for each real
+number so that scalars don’t exist as objects at all!</li>
+</ol>
+
+<hr />
+<ol>
+  <li>It is not actually necessary to include function symbols in the language,
+since a function is just a special kind of relation. Just to see an example,
+think about the function f : N → N defined by $f(x) = x^2$
+. Remembering that a relation on N × N is just a set of ordered pairs of natural
+numbers, find a relation R on N × N such that (x, y) is an element of R
+if and only if y = f(x). Convince yourself that you could do the same
+for any function defined on any domain. What condition must be true
+if a relation R on A × B is to be a function mapping A to B?</li>
+</ol>
+
 
                 </div>
             </main>
-        </div></div><footer class="site-footer h-card">
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#exercises-12">Exercises 1.2</a></li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
   <data class="u-url" href="/documents/"></data>
 
   <div class="wrapper">

@@ -2,21 +2,42 @@
 <html lang="en">
 
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>LFMUNOZ | articles, notes, and references</title>
+<title>Predicate Logic | LFMUNOZ</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="LFMUNOZ" />
+<meta property="og:title" content="Predicate Logic" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="articles, notes, and references" />
 <meta property="og:description" content="articles, notes, and references" />
-<link rel="canonical" href="lfmunoz.github.io/documents/404.html" />
-<meta property="og:url" content="lfmunoz.github.io/documents/404.html" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/Logic/PredicateLogic.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/Logic/PredicateLogic.html" />
 <meta property="og:site_name" content="LFMUNOZ" />
 <script type="application/ld+json">
-{"@type":"WebPage","headline":"LFMUNOZ","url":"lfmunoz.github.io/documents/404.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+{"@type":"WebPage","headline":"Predicate Logic","url":"lfmunoz.github.io/documents/books/Logic/PredicateLogic.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
 <body><header class="site-header" role="banner">
@@ -169,30 +190,115 @@
 </div><div class="column-main">
             <main class="page-content" aria-label="Content">
                 <div class="wrapper">
-                    <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+                    <h1 id="predicate-logic">Predicate Logic</h1>
 
-<div class="container">
-  <h1>404</h1>
+<p><a href="Introduction.html">Logic</a></p>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
+<div class="definition">
+  <p><strong>Definition:</strong> Predicate</p>
+
+  <p>A <strong>predicate</strong> is a propositional value function of some variable or variables.</p>
+
 </div>
+
+<p>i.e, You have P(x) and the truth value depends on what x is, where x can be anything. Propositional Logic isn’t about the nature of the variables.</p>
+
+<p>Construct new predicate from given ones.</p>
+
+<p>a) $Q(,x,y, z) \iff P(x)  \land R(y,z)$</p>
+
+<p>b) convert predicate of 1 variable into a proposition</p>
+
+<p>a propositon $\forall x: P(x)$</p>
+
+<p>a proposition that has been constructed from a predicate of 1 variable</p>
+
+<p>“for all x P(x) is true”</p>
+
+<p>defiend to be true if P(x) \iff is true independent of x. the proposition is true indepedent of x.</p>
+
+<p>it isn’t the task of predicate logic to construct these propsotion but as a feel good example:</p>
+
+<p>P(x) \iff “x is a human being” \implies “x has been created”
+then \forall x : P(x) is true</p>
+
+<div class="definition">
+  <p>Definition: Existence Qualification</p>
+
+  <p>$\exists x: P(x) \iff \neg \forall x : \neg P(x)$</p>
+
+  <p>“there exists an x such that P(x)”</p>
+
+  <p><strong>Corollary:</strong>  $\forall  x : \neg P(x) \iff \neg (\exists x: P(x) )$</p>
+
+</div>
+
+<p>if something isn’t true for any x, then certainly it is not true that there exists one where it’s true</p>
+
+<p>remark 1: quantification for predicates of more than 1 variable
+Q(y) \iff \forall x: P(x, y) 
+x is a bound variable
+y is a free variable</p>
+
+<p>remark 2: order of quantification matters</p>
+
+<h2 id="predicate-interpretations">Predicate Interpretations</h2>
+
+<p>$\neg \exists x \forall y (y \in x)$</p>
+
+<ul>
+  <li>There is no set x such that all sets y are elements of x</li>
+  <li>There is no set to which all sets belong</li>
+</ul>
+
+<p>$\forall x \exists y \neg( x  \in y)$</p>
+
+<ul>
+  <li>For every set x, there is a set y of which x is not an element</li>
+  <li>For any set there is a set to which it doesn’t belong</li>
+</ul>
+
+<p>$∃x∀y(x+y=y)$</p>
+<ul>
+  <li>valid. we require that x be a fixed value that satisfies the equation regardless of the value of y; clearly x=0 will do
+$∀y∃x(x+y=0).$</li>
+  <li>valid. x  depends on y; if y=3, x=−3, if y=0, x=0.</li>
+</ul>
+
+<p>$∀x∃y(x&lt;y)$</p>
+<ul>
+  <li>valid. given any number there is a strictly larger number,
+$∃y∀x(x&lt;y)$</li>
+  <li>not valid.  there is a single number that is strictly larger than all real numbers.</li>
+</ul>
+
+<p>$\forall x \forall y ( x \in y \land y \in z) \to x \in z)$</p>
+<ul>
+  <li>all elements of any element of z are themselves elements of z</li>
+</ul>
+
+<p>$\exists y ( y \in x \land \forall y’ (y’ \in x \to y’ = y))$</p>
+<ul>
+  <li>The set x contains exactly one element</li>
+</ul>
+
+<p>$\exists x \forall y (y \in x \iff \phi(y))$</p>
+<ul>
+  <li>There is a set x and all its members have property $\phi(y)$</li>
+</ul>
 
                 </div>
             </main>
-        </div></div><footer class="site-footer h-card">
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#predicate-logic">Predicate Logic</a>
+    <ul>
+      <li><a href="#predicate-interpretations">Predicate Interpretations</a></li>
+    </ul>
+  </li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
   <data class="u-url" href="/documents/"></data>
 
   <div class="wrapper">

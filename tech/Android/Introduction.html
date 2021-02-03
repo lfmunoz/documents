@@ -2,21 +2,42 @@
 <html lang="en">
 
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>LFMUNOZ | articles, notes, and references</title>
+<title>Android | LFMUNOZ</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="LFMUNOZ" />
+<meta property="og:title" content="Android" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="articles, notes, and references" />
 <meta property="og:description" content="articles, notes, and references" />
-<link rel="canonical" href="lfmunoz.github.io/documents/404.html" />
-<meta property="og:url" content="lfmunoz.github.io/documents/404.html" />
+<link rel="canonical" href="lfmunoz.github.io/documents/tech/Android/Introduction.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/tech/Android/Introduction.html" />
 <meta property="og:site_name" content="LFMUNOZ" />
 <script type="application/ld+json">
-{"@type":"WebPage","headline":"LFMUNOZ","url":"lfmunoz.github.io/documents/404.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+{"@type":"WebPage","headline":"Android","url":"lfmunoz.github.io/documents/tech/Android/Introduction.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
 <body><header class="site-header" role="banner">
@@ -169,30 +190,117 @@
 </div><div class="column-main">
             <main class="page-content" aria-label="Content">
                 <div class="wrapper">
-                    <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+                    <h1 id="android">Android</h1>
 
-<div class="container">
-  <h1>404</h1>
+<h2 id="icons">Icons</h2>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+<p>https://material.io/resources/icons/?icon=build_circle&amp;style=baseline</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">androidx.compose.material.icons.filled.PieChart</span>
+<span class="k">import</span> <span class="nn">androidx.compose.material.icons.filled.SentimentSatisfied</span>
+<span class="k">import</span> <span class="nn">androidx.compose.material.icons.filled.SentimentSatisfiedAlt</span>
+<span class="k">import</span> <span class="nn">androidx.compose.material.icons.filled.Settings</span>
+<span class="k">import</span> <span class="nn">androidx.compose.material.icons.rounded.Build</span>
+
+<span class="n">icon</span> <span class="p">=</span> <span class="nc">Icons</span><span class="p">.</span><span class="nc">Filled</span><span class="p">.</span><span class="nc">SentimentSatisfiedAlt</span>
+<span class="n">icon</span> <span class="p">=</span> <span class="nc">Icons</span><span class="p">.</span><span class="nc">Filled</span><span class="p">.</span><span class="nc">ExitToApp</span>
+<span class="n">icon</span> <span class="p">=</span> <span class="nc">Icons</span><span class="p">.</span><span class="nc">Rounded</span><span class="p">.</span><span class="nc">Build</span><span class="p">,</span>
+<span class="n">icon</span> <span class="p">=</span> <span class="nc">Icons</span><span class="p">.</span><span class="nc">Filled</span><span class="p">.</span><span class="nc">Settings</span><span class="p">,</span>
+</code></pre></div></div>
+
+<h1 id="android-jetpack-compose">Android Jetpack Compose</h1>
+
+<ul>
+  <li>Official Examples
+    <ul>
+      <li>https://github.com/android/compose-samples</li>
+    </ul>
+  </li>
+</ul>
+
+<p>https://developer.android.com/jetpack/androidx/explorer
+https://developer.android.com/jetpack/androidx/releases/compose-material
+SDK Versions
+https://developer.android.com/guide/topics/manifest/uses-sdk-element
+Edit</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Column</span><span class="p">(</span>
+    <span class="n">modifier</span> <span class="p">=</span> <span class="nc">Modifier</span><span class="p">.</span><span class="nf">fillMaxWidth</span><span class="p">(),</span>
+    <span class="n">verticalArrangement</span> <span class="p">=</span> <span class="nc">Arrangement</span><span class="p">.</span><span class="nc">Top</span><span class="p">,</span>
+    <span class="n">horizontalAlignment</span> <span class="p">=</span> <span class="nc">Alignment</span><span class="p">.</span><span class="nc">End</span>
+<span class="p">)</span> <span class="p">{</span>
+    <span class="nc">Row</span> <span class="p">{</span>
+        <span class="nc">RallyTab</span><span class="p">(</span>
+            <span class="n">text</span> <span class="p">=</span> <span class="s">"Account"</span><span class="p">,</span>
+            <span class="n">icon</span> <span class="p">=</span> <span class="nc">Icons</span><span class="p">.</span><span class="nc">Filled</span><span class="p">.</span><span class="nc">Settings</span><span class="p">,</span>
+            <span class="n">onSelected</span> <span class="p">=</span> <span class="p">{</span> <span class="nf">onTabSelected</span><span class="p">(</span><span class="nc">SorshaScreen</span><span class="p">.</span><span class="nc">Account</span><span class="p">)</span> <span class="p">},</span>
+            <span class="n">selected</span> <span class="p">=</span> <span class="k">true</span>
+        <span class="p">)</span>
+
+        <span class="nc">RallyTab</span><span class="p">(</span>
+            <span class="n">text</span> <span class="p">=</span> <span class="s">"Axxxccount"</span><span class="p">,</span>
+            <span class="n">icon</span> <span class="p">=</span> <span class="nc">Icons</span><span class="p">.</span><span class="nc">Filled</span><span class="p">.</span><span class="nc">Settings</span><span class="p">,</span>
+            <span class="n">onSelected</span> <span class="p">=</span> <span class="p">{</span> <span class="nf">onTabSelected</span><span class="p">(</span><span class="nc">SorshaScreen</span><span class="p">.</span><span class="nc">Account</span><span class="p">)</span> <span class="p">},</span>
+            <span class="n">selected</span> <span class="p">=</span> <span class="k">true</span>
+        <span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<h1 id="box-model">Box Model</h1>
+
+<p><img src="/documents/assets/css_boxes.png" alt="Box Model" /></p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Preview</span>
+<span class="nd">@Composable</span>
+<span class="k">fun</span> <span class="nf">PaddingExample</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nc">Text</span><span class="p">(</span>
+        <span class="n">text</span> <span class="p">=</span> <span class="s">"Hello World!"</span><span class="p">,</span>
+        <span class="n">color</span> <span class="p">=</span> <span class="nc">Color</span><span class="p">.</span><span class="nc">White</span><span class="p">,</span>
+        <span class="n">modifier</span> <span class="p">=</span> <span class="nc">Modifier</span>
+            <span class="p">.</span><span class="nf">padding</span><span class="p">(</span><span class="mi">8</span><span class="p">.</span><span class="n">dp</span><span class="p">)</span> <span class="c1">// margin</span>
+            <span class="p">.</span><span class="nf">border</span><span class="p">(</span><span class="mi">2</span><span class="p">.</span><span class="n">dp</span><span class="p">,</span> <span class="nc">Color</span><span class="p">.</span><span class="nc">White</span><span class="p">)</span> <span class="c1">// outer border</span>
+            <span class="p">.</span><span class="nf">padding</span><span class="p">(</span><span class="mi">8</span><span class="p">.</span><span class="n">dp</span><span class="p">)</span> <span class="c1">// space between the borders</span>
+            <span class="p">.</span><span class="nf">border</span><span class="p">(</span><span class="mi">2</span><span class="p">.</span><span class="n">dp</span><span class="p">,</span> <span class="nc">Color</span><span class="p">.</span><span class="nc">Green</span><span class="p">)</span> <span class="c1">// inner border</span>
+            <span class="p">.</span><span class="nf">padding</span><span class="p">(</span><span class="mi">8</span><span class="p">.</span><span class="n">dp</span><span class="p">)</span> <span class="c1">// padding</span>
+    <span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>https://stackoverflow.com/questions/62939473/how-to-add-margin-in-jetpack-compose</p>
+
+<p>https://developer.android.com/jetpack/compose/layout#modifiers</p>
+
+<p>https://developer.android.com/jetpack/androidx/releases/compose-ui#1.0.0-alpha09</p>
+
+<p>https://developer.android.com/jetpack/androidx/versions/all-channel</p>
+
+<h1 id="publishing">Publishing</h1>
+
+<p>Create a new developer account</p>
+
+<ul>
+  <li>https://play.google.com/console/u/0/signup</li>
+  <li>You’ll need to pay a one-time registration fee of 25 dollars</li>
+</ul>
+
 
                 </div>
             </main>
-        </div></div><footer class="site-footer h-card">
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#android">Android</a>
+    <ul>
+      <li><a href="#icons">Icons</a></li>
+    </ul>
+  </li>
+  <li><a href="#android-jetpack-compose">Android Jetpack Compose</a></li>
+  <li><a href="#box-model">Box Model</a></li>
+  <li><a href="#publishing">Publishing</a></li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
   <data class="u-url" href="/documents/"></data>
 
   <div class="wrapper">

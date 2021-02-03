@@ -2,21 +2,42 @@
 <html lang="en">
 
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>LFMUNOZ | articles, notes, and references</title>
+<title>Input Output | LFMUNOZ</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="LFMUNOZ" />
+<meta property="og:title" content="Input Output" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="articles, notes, and references" />
 <meta property="og:description" content="articles, notes, and references" />
-<link rel="canonical" href="lfmunoz.github.io/documents/404.html" />
-<meta property="og:url" content="lfmunoz.github.io/documents/404.html" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/Kotlin/IO.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/Kotlin/IO.html" />
 <meta property="og:site_name" content="LFMUNOZ" />
 <script type="application/ld+json">
-{"@type":"WebPage","headline":"LFMUNOZ","url":"lfmunoz.github.io/documents/404.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+{"@type":"WebPage","headline":"Input Output","url":"lfmunoz.github.io/documents/books/Kotlin/IO.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
 <body><header class="site-header" role="banner">
@@ -169,30 +190,65 @@
 </div><div class="column-main">
             <main class="page-content" aria-label="Content">
                 <div class="wrapper">
-                    <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+                    <h1 id="input--output">Input / Output</h1>
 
-<div class="container">
-  <h1>404</h1>
+<ul>
+  <li><a href="Introduction.html">The Kotlin Programming Language</a></li>
+</ul>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">import</span> <span class="nn">java.io.File</span>
+<span class="k">import</span> <span class="nn">java.io.IOException</span>
+<span class="k">import</span> <span class="nn">java.nio.file.Files</span>
+<span class="k">import</span> <span class="nn">java.nio.file.Path</span>
+<span class="k">import</span> <span class="nn">java.nio.file.Paths</span>
+
+
+<span class="k">fun</span> <span class="nf">loadResource</span><span class="p">(</span><span class="n">file</span><span class="p">:</span> <span class="nc">String</span><span class="p">)</span> <span class="p">:</span> <span class="nc">String</span> <span class="p">{</span>
+    <span class="nf">println</span><span class="p">(</span><span class="s">"reading file $file"</span><span class="p">)</span>
+<span class="c1">//    Resources.getResource("/html/file.html").readText()</span>
+    <span class="k">return</span> <span class="p">{}</span><span class="o">::</span><span class="k">class</span><span class="p">.</span><span class="n">java</span><span class="p">.</span><span class="nf">getResource</span><span class="p">(</span><span class="n">file</span><span class="p">).</span><span class="nf">readText</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="k">fun</span> <span class="nf">readFileAsLines</span><span class="p">(</span><span class="n">fileName</span><span class="p">:</span> <span class="nc">String</span><span class="p">):</span> <span class="nc">List</span><span class="p">&lt;</span><span class="nc">String</span><span class="p">&gt;</span>
+        <span class="p">=</span> <span class="nc">File</span><span class="p">(</span><span class="n">fileName</span><span class="p">).</span><span class="nf">bufferedReader</span><span class="p">().</span><span class="nf">readLines</span><span class="p">()</span>
+
+<span class="k">fun</span> <span class="nf">writeTextFile</span><span class="p">(</span><span class="n">fileName</span><span class="p">:</span> <span class="nc">String</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nc">String</span><span class="p">)</span>
+        <span class="p">=</span> <span class="nc">File</span><span class="p">(</span><span class="n">fileName</span><span class="p">).</span><span class="nf">writeText</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+
+
+<span class="k">fun</span> <span class="nf">readPropertiesFile</span><span class="p">(</span><span class="n">fileName</span><span class="p">:</span> <span class="nc">String</span><span class="p">)</span> <span class="p">:</span> <span class="nc">Map</span><span class="p">&lt;</span><span class="nc">String</span><span class="p">,</span> <span class="nc">String</span><span class="p">&gt;</span> <span class="p">{</span>
+<span class="c1">//    val fileObject = File(fileName)</span>
+    <span class="c1">// create a new file</span>
+<span class="c1">//    val isNewFileCreated :Boolean = fileObject.createNewFile()</span>
+    <span class="k">return</span> <span class="nf">readFileAsLines</span><span class="p">(</span><span class="n">fileName</span><span class="p">).</span><span class="nf">filter</span> <span class="p">{</span><span class="n">it</span><span class="p">.</span><span class="nf">isNotEmpty</span><span class="p">()}</span>
+            <span class="p">.</span><span class="nf">associate</span> <span class="p">{</span>
+                <span class="kd">val</span> <span class="py">arr</span> <span class="p">=</span> <span class="n">it</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="s">"="</span><span class="p">)</span>
+                <span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nf">trim</span><span class="p">()</span> <span class="n">to</span> <span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nf">trim</span><span class="p">()</span>
+            <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">fun</span> <span class="nf">writePropertiesFile</span><span class="p">(</span><span class="n">fileName</span><span class="p">:</span> <span class="nc">String</span><span class="p">,</span> <span class="n">properties</span><span class="p">:</span> <span class="nc">Map</span><span class="p">&lt;</span><span class="nc">String</span><span class="p">,</span> <span class="nc">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="py">text</span> <span class="p">=</span> <span class="n">properties</span><span class="p">.</span><span class="nf">map</span> <span class="p">{</span>
+        <span class="s">"${it.key}=${it.value}"</span>
+    <span class="p">}.</span><span class="nf">joinToString</span><span class="p">(</span><span class="s">"\n"</span><span class="p">)</span>
+    <span class="nf">writeTextFile</span><span class="p">(</span><span class="n">fileName</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">fun</span> <span class="nf">createDir</span><span class="p">(</span><span class="n">pathName</span><span class="p">:</span> <span class="nc">String</span><span class="p">)</span> <span class="p">:</span> <span class="nc">Boolean</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nc">File</span><span class="p">(</span><span class="n">pathName</span><span class="p">).</span><span class="nf">mkdirs</span><span class="p">()</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
 
                 </div>
             </main>
-        </div></div><footer class="site-footer h-card">
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#input--output">Input / Output</a></li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
   <data class="u-url" href="/documents/"></data>
 
   <div class="wrapper">

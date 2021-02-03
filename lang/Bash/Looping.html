@@ -2,21 +2,42 @@
 <html lang="en">
 
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>LFMUNOZ | articles, notes, and references</title>
+<title>Looping | LFMUNOZ</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="LFMUNOZ" />
+<meta property="og:title" content="Looping" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="articles, notes, and references" />
 <meta property="og:description" content="articles, notes, and references" />
-<link rel="canonical" href="lfmunoz.github.io/documents/404.html" />
-<meta property="og:url" content="lfmunoz.github.io/documents/404.html" />
+<link rel="canonical" href="lfmunoz.github.io/documents/lang/Bash/Looping.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/lang/Bash/Looping.html" />
 <meta property="og:site_name" content="LFMUNOZ" />
 <script type="application/ld+json">
-{"@type":"WebPage","headline":"LFMUNOZ","url":"lfmunoz.github.io/documents/404.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+{"@type":"WebPage","headline":"Looping","url":"lfmunoz.github.io/documents/lang/Bash/Looping.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
 <body><header class="site-header" role="banner">
@@ -169,30 +190,146 @@
 </div><div class="column-main">
             <main class="page-content" aria-label="Content">
                 <div class="wrapper">
-                    <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+                    <h1 id="looping">Looping</h1>
 
-<div class="container">
-  <h1>404</h1>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+<span class="c"># Basic while loop</span>
+<span class="nv">counter</span><span class="o">=</span>1
+<span class="k">while</span> <span class="o">[</span> <span class="nv">$counter</span> <span class="nt">-le</span> 10 <span class="o">]</span>
+<span class="k">do
+    </span><span class="nb">echo</span> <span class="nv">$counter</span>
+    <span class="o">((</span>counter++<span class="o">))</span>
+<span class="k">done
+</span><span class="nb">echo </span>All <span class="k">done
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+
+
+</span><span class="nv">names</span><span class="o">=</span><span class="s1">'Stan Kyle Cartman'</span>
+<span class="k">for </span>name <span class="k">in</span> <span class="nv">$names</span>
+<span class="k">do
+</span><span class="nb">echo</span> <span class="nv">$name</span>
+<span class="k">done
+</span><span class="nb">echo </span>All <span class="k">done
+
+for </span>value <span class="k">in</span> <span class="o">{</span>1..5<span class="o">}</span>
+<span class="k">do
+</span><span class="nb">echo</span> <span class="nv">$value</span>
+<span class="k">done
+</span><span class="nb">echo </span>All <span class="k">done
+
+
+
+for </span>value <span class="k">in</span> <span class="o">{</span>10..0..2<span class="o">}</span>
+<span class="k">do
+</span><span class="nb">echo</span> <span class="nv">$value</span>
+<span class="k">done
+</span><span class="nb">echo </span>All <span class="k">done
+
+
+
+for </span>value <span class="k">in</span> <span class="nv">$1</span>/<span class="k">*</span>
+<span class="k">do
+</span><span class="nv">used</span><span class="o">=</span><span class="si">$(</span> <span class="nb">df</span> <span class="nv">$1</span> | <span class="nb">tail</span> <span class="nt">-1</span> | <span class="nb">awk</span> <span class="s1">'{ print $5 }'</span> | <span class="nb">sed</span> <span class="s1">'s/%//'</span> <span class="si">)</span>
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$used</span> <span class="nt">-gt</span> 90 <span class="o">]</span>
+<span class="k">then
+</span><span class="nb">echo </span>Low disk space 1&gt;&amp;2
+<span class="nb">break
+</span><span class="k">fi
+</span><span class="nb">cp</span> <span class="nv">$value</span> <span class="nv">$1</span>/backup/
+<span class="k">done</span>
+
+
+
+</code></pre></div></div>
+
+<p>Command substitution allows us to take the output of a command or program (what would normally be printed to the screen) and save it as the value of a variable</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">myvar</span><span class="o">=</span><span class="si">$(</span> <span class="nb">ls</span> /etc | <span class="nb">wc</span> <span class="nt">-l</span> <span class="si">)</span>
+</code></pre></div></div>
+
+<p>let is a builtin function of Bash that allows us to do simple arithmetic. It follows the basic format:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+<span class="c"># Basic arithmetic using let</span>
+
+<span class="c"># This is the basic format. Note that if we don't put quotes around the expression then it must be written with no spaces.</span>
+<span class="nb">let </span><span class="nv">a</span><span class="o">=</span>5+4
+<span class="nb">echo</span> <span class="nv">$a</span> <span class="c"># 9</span>
+
+<span class="nb">let</span> <span class="s2">"a = 5 + 4"</span>
+<span class="nb">echo</span> <span class="nv">$a</span> <span class="c"># 9</span>
+
+<span class="nb">let </span>a++
+<span class="nb">echo</span> <span class="nv">$a</span> <span class="c"># 10</span>
+
+<span class="nb">let</span> <span class="s2">"a = 4 * 5"</span>
+<span class="nb">echo</span> <span class="nv">$a</span> <span class="c"># 20</span>
+
+</code></pre></div></div>
+
+<p>expr is similar to let except instead of saving the result to a variable it instead prints the answer.</p>
+
+<p>Unlike let you don’t need to enclose the expression in quotes.</p>
+
+<p>You also must have spaces between the items of the expression.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+
+<span class="nb">expr </span>5+4
+<span class="nb">expr </span>5 <span class="se">\*</span> <span class="nv">$1</span>
+
+
+<span class="nv">a</span><span class="o">=</span><span class="si">$(</span> <span class="nb">expr </span>10 - 3 <span class="si">)</span>
+<span class="nb">echo</span> <span class="nv">$a</span> <span class="c"># 7</span>
+
+<span class="c">#Double Parentheses</span>
+
+
+<span class="nv">a</span><span class="o">=</span><span class="k">$((</span> <span class="m">4</span> <span class="o">+</span> <span class="m">5</span> <span class="k">))</span>
+
+<span class="nv">b</span><span class="o">=</span><span class="k">$((</span> a <span class="o">+</span> <span class="m">3</span> <span class="k">))</span>
+<span class="nb">echo</span> <span class="nv">$b</span> <span class="c"># 11</span>
+
+<span class="o">((</span> b +<span class="o">=</span> 3 <span class="o">))</span>
+
+<span class="o">((</span> b++ <span class="o">))</span>
+
+<span class="c"># we don't need to escape the * sign.</span>
+<span class="nv">a</span><span class="o">=</span><span class="k">$((</span> <span class="m">4</span> <span class="o">*</span> <span class="m">5</span> <span class="k">))</span>
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c"># Show the length of a variable.</span>
+<span class="nv">a</span><span class="o">=</span><span class="s1">'Hello World'</span>
+<span class="nb">echo</span> <span class="k">${#</span><span class="nv">a</span><span class="k">}</span> <span class="c"># 11</span>
+
+<span class="nv">b</span><span class="o">=</span>4953
+<span class="nb">echo</span> <span class="k">${#</span><span class="nv">b</span><span class="k">}</span> <span class="c"># 4</span>
+
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+endpointArr=(
+  os::005094-0210172920300921
+)
+
+
+
+echo "=============================== RUN ============================================="
+for ENDPOINT_ID in "${endpointArr[@]}"; do
+  curl -k -sSD/dev/stderr -X POST --header 'Content-Type: application/json' --header 'Accept: */*' --header "Authorization: Bearer ${TOKEN}" \
+    -d "${JSON}" "https://${USP_HOST}/api/workflows/$WF_ID/agent/$ENDPOINT_ID" | jq "."
+done
+</code></pre></div></div>
 
                 </div>
             </main>
-        </div></div><footer class="site-footer h-card">
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#looping">Looping</a></li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
   <data class="u-url" href="/documents/"></data>
 
   <div class="wrapper">

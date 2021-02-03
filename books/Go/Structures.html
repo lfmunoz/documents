@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Structures | LFMUNOZ</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Structures" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="articles, notes, and references" />
+<meta property="og:description" content="articles, notes, and references" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/Go/Structures.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/Go/Structures.html" />
+<meta property="og:site_name" content="LFMUNOZ" />
+<script type="application/ld+json">
+{"@type":"WebPage","headline":"Structures","url":"lfmunoz.github.io/documents/books/Go/Structures.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
+<body><header class="site-header" role="banner">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2YJDWQX6GK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-2YJDWQX6GK');
+  </script>
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/documents/">LFMUNOZ</a><nav class="site-nav">
+      <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+      <label for="nav-trigger">
+        <span class="menu-icon">
+          <svg viewBox="0 0 18 15" width="18px" height="15px">
+            <path
+              d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+          </svg>
+        </span>
+      </label>
+
+      <div class="trigger"><a class="page-link" href="/documents/about/">About</a></div>
+    </nav></div>
+</header><div class="main"><div class="column-sidebar">
+
+    <div class="nav-section">
+        <div class="nav-title">Posts</div><div class="post-container"><a class="post-link" href="/documents/2020/12/17/i-wish-i-was-worse.html"> I wish I was worse at dancing</a>
+            <span class="post-meta">Dec 17, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/12/13/too-many-options.html"> Too many options slows production</a>
+            <span class="post-meta">Dec 13, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/12/06/dream-cats-and-dogs.html"> A dream of dogs and cats</a>
+            <span class="post-meta">Dec 6, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/11/27/http-rest-bad-design.html"> RESTful HTTP creates coupling</a>
+            <span class="post-meta">Nov 27, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/08/01/organization-and-structure.html"> Organization and Structure of Applications</a>
+            <span class="post-meta">Aug 1, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/07/12/listening-to-music.html"> Listening to Music</a>
+            <span class="post-meta">Jul 12, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/07/05/frameworks.html"> Frameworks and Libraries</a>
+            <span class="post-meta">Jul 5, 2020</span>
+        </div><p class="rss-subscribe">subscribe <a href="/documents/feed.xml">via RSS</a></p>
+    </div>
+
+    <div class="nav-section">
+        <div class="nav-title">Guides</div>
+        <ul>
+            
+            <li>
+                <strong> Computer Science</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/Algorithms/Introduction.html">Algorithms</a></li>
+                    
+                    <li><a href="/documents/articles/SoftwareEngineering.html">Software Engineering</a></li>
+                    
+                    <li><a href="/documents/books/DesignPatterns.html">Design Patterns</a></li>
+                    
+                    <li><a href="/documents/books/Linux/Introduction.html">Linux</a></li>
+                    
+                    <li><a href="/documents/books/Databases/Introduction.html">Databases</a></li>
+                    
+                    <li><a href="/documents/books/SoftwareEngineering/Concurrency.html">Concurrency</a></li>
+                    
+                    <li><a href="/documents/books/Security/Introduction.html">Security</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Programming Languages</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/C/Introduction.html">C</a></li>
+                    
+                    <li><a href="/documents/books/Cpp/Introduction.html">C++</a></li>
+                    
+                    <li><a href="/documents/books/Rust/Introduction.html">Rust</a></li>
+                    
+                    <li><a href="/documents/books/Go/Introduction.html">Go</a></li>
+                    
+                    <li><a href="/documents/books/Java/Introduction.html">Java</a></li>
+                    
+                    <li><a href="/documents/books/Kotlin/Introduction.html">Kotlin</a></li>
+                    
+                    <li><a href="/documents/lang/Python/Introduction.html">Python</a></li>
+                    
+                    <li><a href="/documents/lang/Bash/Introduction.html">Bash</a></li>
+                    
+                    <li><a href="/documents/books/Make/Introduction.html">Makefile</a></li>
+                    
+                    <li><a href="/documents/lang/SQL/Introduction.html">SQL</a></li>
+                    
+                    <li><a href="/documents/lang/HTML/Introduction.html">HTML</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Technologies</strong>
+                <ul>
+                    
+                    <li><a href="/documents/tech/Android/Introduction.html">Android</a></li>
+                    
+                    <li><a href="/documents/books/Docker/Introduction.html">Docker</a></li>
+                    
+                    <li><a href="/documents/books/Envoy/Introduction.html">Envoy</a></li>
+                    
+                    <li><a href="/documents/books/Terraform/Introduction.html">Terraform</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Mathematics</strong>
+                <ul>
+                    
+                    <li><a href="/documents/mathematics/Foundations.html">Foundations</a></li>
+                    
+                    <li><a href="/documents/books/Logic/Introduction.html">Logic</a></li>
+                    
+                    <li><a href="/documents/books/SetTheory/Introduction.html">Set Theory</a></li>
+                    
+                    <li><a href="/documents/books/Geometry/Introduction.html">Geometry</a></li>
+                    
+                    <li><a href="/documents/books/Analysis/Introduction.html">Analysis</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Miscellaneous</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/Non-Duality/Introduction.html">Non-Duality</a></li>
+                    
+                </ul>
+            </li>
+
+            
+        </ul>
+    </div>
+
+
+</div><div class="column-main">
+            <main class="page-content" aria-label="Content">
+                <div class="wrapper">
+                    <h1 id="structures">Structures</h1>
+
+<ul>
+  <li><a href="Introduction.html">The Go Programming Language</a></li>
+</ul>
+
+<h2 id="user-defined-types">User-defined types</h2>
+
+<details>
+<summary> cat src/struct.go </summary>
+
+<p>
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">package</span> <span class="n">main</span>
+
+<span class="n">import</span> <span class="s">"fmt"</span>
+
+<span class="c1">// ________________________________________________________________________________</span>
+<span class="c1">// Types</span>
+<span class="c1">// ________________________________________________________________________________</span>
+<span class="n">type</span> <span class="n">userT</span> <span class="k">struct</span> <span class="p">{</span>
+	<span class="n">name</span>       <span class="n">string</span>
+	<span class="n">email</span>      <span class="n">string</span>
+	<span class="n">ext</span>        <span class="kt">int</span>
+	<span class="n">privileged</span> <span class="n">bool</span>
+<span class="p">}</span>
+
+<span class="n">type</span> <span class="n">adminT</span> <span class="k">struct</span> <span class="p">{</span>
+	<span class="n">person</span> <span class="n">userT</span>
+	<span class="n">level</span>  <span class="n">string</span>
+<span class="p">}</span>
+
+<span class="c1">// taking an existing type and using</span>
+<span class="c1">// it as the type specification for the new type.</span>
+<span class="n">type</span> <span class="n">Duration</span> <span class="n">int64</span>
+
+<span class="c1">// ________________________________________________________________________________</span>
+<span class="c1">// ________________________________________________________________________________</span>
+<span class="n">func</span> <span class="nf">basicUsage</span><span class="p">()</span> <span class="p">{</span>
+	<span class="c1">// initialized with default value</span>
+	<span class="c1">// idiomatic to use the keyword var</span>
+	<span class="n">var</span> <span class="n">bill</span> <span class="n">userT</span>
+	<span class="n">fmt</span><span class="p">.</span><span class="n">Println</span><span class="p">(</span><span class="n">bill</span><span class="p">)</span> <span class="c1">// {0   false}</span>
+
+	<span class="c1">// If the variable will be initialized to something other than</span>
+	<span class="c1">// its zero value, then use the short variable declaration operator</span>
+	<span class="c1">// with a struct literal.</span>
+	<span class="n">lisa</span> <span class="o">:=</span> <span class="n">userT</span><span class="p">{</span>
+		<span class="nl">name:</span>       <span class="s">"Lisa"</span><span class="p">,</span>
+		<span class="nl">email:</span>      <span class="s">"lisa@email.com"</span><span class="p">,</span>
+		<span class="nl">ext:</span>        <span class="mi">123</span><span class="p">,</span>
+		<span class="nl">privileged:</span> <span class="nb">true</span><span class="p">,</span> <span class="c1">// it requires a trailing comma.</span>
+	<span class="p">}</span>
+	<span class="n">fmt</span><span class="p">.</span><span class="n">Println</span><span class="p">(</span><span class="n">lisa</span><span class="p">)</span>
+
+	<span class="c1">// Order is important</span>
+	<span class="n">lisaAlt</span> <span class="o">:=</span> <span class="n">userT</span><span class="p">{</span><span class="s">"Lisa"</span><span class="p">,</span> <span class="s">"lisa@email.com"</span><span class="p">,</span> <span class="mi">123</span><span class="p">,</span> <span class="nb">true</span><span class="p">}</span>
+	<span class="n">fmt</span><span class="p">.</span><span class="n">Println</span><span class="p">(</span><span class="n">lisaAlt</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">func</span> <span class="nf">nested</span><span class="p">()</span> <span class="p">{</span>
+	<span class="n">fred</span> <span class="o">:=</span> <span class="n">adminT</span><span class="p">{</span>
+		<span class="nl">person:</span> <span class="n">userT</span><span class="p">{</span>
+			<span class="nl">name:</span>       <span class="s">"Lisa"</span><span class="p">,</span>
+			<span class="nl">email:</span>      <span class="s">"lisa@email.com"</span><span class="p">,</span>
+			<span class="nl">ext:</span>        <span class="mi">123</span><span class="p">,</span>
+			<span class="nl">privileged:</span> <span class="nb">true</span><span class="p">,</span>
+		<span class="p">},</span>
+		<span class="nl">level:</span> <span class="s">"super"</span><span class="p">,</span>
+	<span class="p">}</span>
+	<span class="n">fmt</span><span class="p">.</span><span class="n">Println</span><span class="p">(</span><span class="n">fred</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">// ________________________________________________________________________________</span>
+<span class="c1">// Main</span>
+<span class="c1">// ________________________________________________________________________________</span>
+<span class="n">func</span> <span class="nf">mainA</span><span class="p">()</span> <span class="p">{</span>
+	<span class="n">basicUsage</span><span class="p">()</span>
+	<span class="n">nested</span><span class="p">()</span>
+	<span class="n">var</span> <span class="n">dur</span> <span class="n">Duration</span>
+	<span class="c1">// dur = int64(1000)</span>
+	<span class="c1">// cannot use int64(1000) (type int64) as type Duration in assignment</span>
+	<span class="n">fmt</span><span class="p">.</span><span class="n">Println</span><span class="p">(</span><span class="n">dur</span><span class="p">)</span>
+<span class="p">}</span>
+
+</code></pre></div>    </div>
+  </p></details>
+<p><br /></p>
+
+<p>But the cool thing about Go is that, when we use an anonymous nested struct, all the nested struct fields are automatically available on parent struct. This is called field promotion.</p>
+
+<h2 id="methods">Methods</h2>
+
+<p>Methods provide a way to add behavior to user-defined types.</p>
+
+<p>Methods are extension functions that contain an extra parameter that’s declared between the keyword func and the function name.</p>
+
+<p>There are two types of receivers in Go: value receivers and pointer receivers.</p>
+
+<details>
+<summary> cat src/method.go </summary>
+
+<p>
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">package</span> <span class="n">main</span>
+
+<span class="nf">import</span> <span class="p">(</span>
+	<span class="s">"fmt"</span>
+<span class="p">)</span>
+
+<span class="n">type</span> <span class="n">user</span> <span class="k">struct</span> <span class="p">{</span>
+	<span class="n">name</span>  <span class="n">string</span>
+	<span class="n">email</span> <span class="n">string</span>
+<span class="p">}</span>
+
+<span class="c1">// pointer receiver</span>
+<span class="c1">// When you call a method declared with a pointer receiver, the value used to</span>
+<span class="c1">// make the call is shared with the method.</span>
+<span class="n">func</span> <span class="p">(</span><span class="n">u</span> <span class="o">*</span><span class="n">user</span><span class="p">)</span> <span class="n">notifyp</span><span class="p">()</span> <span class="p">{</span>
+	<span class="n">fmt</span><span class="p">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"Sending user email to %s&lt;%s&gt;</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span>
+		<span class="n">u</span><span class="p">.</span><span class="n">name</span><span class="p">,</span>
+		<span class="n">u</span><span class="p">.</span><span class="n">email</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">// value receiver</span>
+<span class="c1">// method will be operating against a copy of the value</span>
+<span class="c1">// used to make the method call.</span>
+<span class="n">func</span> <span class="p">(</span><span class="n">u</span> <span class="n">user</span><span class="p">)</span> <span class="n">notify</span><span class="p">()</span> <span class="p">{</span>
+	<span class="n">fmt</span><span class="p">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"Sending user email to %s&lt;%s&gt;</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span>
+		<span class="n">u</span><span class="p">.</span><span class="n">name</span><span class="p">,</span>
+		<span class="n">u</span><span class="p">.</span><span class="n">email</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">type</span> <span class="n">admin</span> <span class="k">struct</span> <span class="p">{</span>
+	<span class="n">user</span>  <span class="c1">// Embedded Type</span>
+	<span class="n">level</span> <span class="n">string</span>
+<span class="p">}</span>
+
+<span class="c1">// main is the entry point for the application.</span>
+<span class="n">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+	<span class="c1">// Create an admin user.</span>
+	<span class="n">ad</span> <span class="o">:=</span> <span class="n">admin</span><span class="p">{</span>
+		<span class="nl">user:</span> <span class="n">user</span><span class="p">{</span>
+			<span class="nl">name:</span>  <span class="s">"john smith"</span><span class="p">,</span>
+			<span class="nl">email:</span> <span class="s">"john@yahoo.com"</span><span class="p">,</span>
+		<span class="p">},</span>
+		<span class="nl">level:</span> <span class="s">"super"</span><span class="p">,</span>
+	<span class="p">}</span>
+
+	<span class="c1">// We can access the inner type's method directly.</span>
+	<span class="n">ad</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">notify</span><span class="p">()</span>
+
+	<span class="c1">// The inner type's method is promoted.</span>
+	<span class="n">ad</span><span class="p">.</span><span class="n">notify</span><span class="p">()</span>
+
+	<span class="n">lisa</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="n">user</span><span class="p">{</span><span class="s">"Lisa"</span><span class="p">,</span> <span class="s">"lisa@email.com"</span><span class="p">}</span>
+	<span class="c1">// Go adjusts the pointer value to comply with the</span>
+	<span class="c1">// 	method’s receiver.</span>
+	<span class="c1">//  (*lisa).notify()</span>
+	<span class="n">lisa</span><span class="p">.</span><span class="n">notify</span><span class="p">()</span>
+
+	<span class="c1">// calling a pointer receiver, go adjusts the value</span>
+	<span class="c1">//(&amp;bill).notify()</span>
+<span class="p">}</span>
+
+</code></pre></div>    </div>
+  </p></details>
+<p><br /></p>
+
+<h2 id="interfaces">Interfaces</h2>
+
+<p>Interfaces in Go provide a way to specify the behavior of an object: if something can do this, then it can be used here.</p>
+
+<details>
+<summary> cat src/interfaces.go </summary>
+
+<p>
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">package</span> <span class="n">main</span>
+
+<span class="n">import</span> <span class="s">"math"</span>
+
+<span class="n">type</span> <span class="n">Shape</span> <span class="n">interface</span> <span class="p">{</span>
+	<span class="c1">// A method set is a list of methods that a type must have</span>
+	<span class="c1">//  in order to “implement” the interface.</span>
+	<span class="n">area</span><span class="p">()</span> <span class="n">float64</span>
+<span class="p">}</span>
+
+<span class="n">type</span> <span class="n">Rectangle</span> <span class="k">struct</span> <span class="p">{</span>
+	<span class="c1">// Cannot be accessed outside of this package because</span>
+	<span class="c1">// they the field names start with lowercase</span>
+	<span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span> <span class="n">float64</span>
+<span class="p">}</span>
+
+<span class="n">func</span> <span class="n">distance</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span> <span class="n">float64</span><span class="p">)</span> <span class="n">float64</span> <span class="p">{</span>
+	<span class="n">a</span> <span class="o">:=</span> <span class="n">x2</span> <span class="o">-</span> <span class="n">x1</span>
+	<span class="n">b</span> <span class="o">:=</span> <span class="n">y2</span> <span class="o">-</span> <span class="n">y1</span>
+	<span class="k">return</span> <span class="n">math</span><span class="p">.</span><span class="n">Sqrt</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="o">*</span><span class="n">b</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">// Rectangle has area methods which return float64s</span>
+<span class="c1">// so implement the Shape interface.</span>
+<span class="n">func</span> <span class="p">(</span><span class="n">r</span> <span class="o">*</span><span class="n">Rectangle</span><span class="p">)</span> <span class="n">area</span><span class="p">()</span> <span class="n">float64</span> <span class="p">{</span>
+	<span class="n">l</span> <span class="o">:=</span> <span class="n">distance</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">x1</span><span class="p">,</span> <span class="n">r</span><span class="p">.</span><span class="n">y1</span><span class="p">,</span> <span class="n">r</span><span class="p">.</span><span class="n">x1</span><span class="p">,</span> <span class="n">r</span><span class="p">.</span><span class="n">y2</span><span class="p">)</span>
+	<span class="n">w</span> <span class="o">:=</span> <span class="n">distance</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">x1</span><span class="p">,</span> <span class="n">r</span><span class="p">.</span><span class="n">y1</span><span class="p">,</span> <span class="n">r</span><span class="p">.</span><span class="n">x2</span><span class="p">,</span> <span class="n">r</span><span class="p">.</span><span class="n">y1</span><span class="p">)</span>
+	<span class="k">return</span> <span class="n">l</span> <span class="o">*</span> <span class="n">w</span>
+<span class="p">}</span>
+
+</code></pre></div>    </div>
+  </p></details>
+<p><br /></p>
+
+<h2 id="embedding">Embedding</h2>
+
+<p>Go does not provide the typical, type-driven notion of subclassing, but it does have the ability to “borrow” pieces of an implementation by embedding types within a struct or interface.</p>
+
+<p>https://golang.org/doc/effective_go.html#embedding</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">// Only interfaces can be embedded within interfaces.</span>
+<span class="c">// ReadWriter is the interface that combines the Reader and Writer interfaces.</span>
+<span class="k">type</span> <span class="n">ReadWriter</span> <span class="k">interface</span> <span class="p">{</span>
+    <span class="n">Reader</span>
+    <span class="n">Writer</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<p>When we embed a type, the methods of that type become methods of the outer type, but when they are invoked the receiver of the method is the inner type, not the outer one.</p>
+
+<h2 id="enums">Enums</h2>
+
+<p>https://www.ribice.ba/golang-enums/</p>
+
+<p>enums in Go aren’t as useful due to Go’s implementation. The biggest drawback is that they aren’t strictly typed, thus you have to manually validate them.</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">type</span> <span class="n">LeaveType</span> <span class="kt">string</span>
+
+<span class="k">const</span><span class="p">(</span>
+    <span class="n">AnnualLeave</span> <span class="n">LeaveType</span> <span class="o">=</span> <span class="s">"AnnualLeave"</span>
+    <span class="n">Sick</span> <span class="o">=</span> <span class="s">"Sick"</span>
+    <span class="n">BankHoliday</span> <span class="o">=</span> <span class="s">"BankHoliday"</span>
+    <span class="n">Other</span> <span class="o">=</span> <span class="s">"Other"</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="reference">Reference</h2>
+
+<p>https://medium.com/rungo/structures-in-go-76377cc106a2</p>
+
+                </div>
+            </main>
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#structures">Structures</a>
+    <ul>
+      <li><a href="#user-defined-types">User-defined types</a></li>
+      <li><a href="#methods">Methods</a></li>
+      <li><a href="#interfaces">Interfaces</a></li>
+      <li><a href="#embedding">Embedding</a></li>
+      <li><a href="#enums">Enums</a></li>
+      <li><a href="#reference">Reference</a></li>
+    </ul>
+  </li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
+  <data class="u-url" href="/documents/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">LFMUNOZ</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">LFMUNOZ</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/lfmunoz"><svg class="svg-icon"><use xlink:href="/documents/assets/minima-social-icons.svg#github"></use></svg> <span class="username">lfmunoz</span></a></li><li><a href="https://www.twitter.com/lfmunoz4"><svg class="svg-icon"><use xlink:href="/documents/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">lfmunoz4</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>articles, notes, and references</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

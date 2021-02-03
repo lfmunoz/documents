@@ -2,21 +2,42 @@
 <html lang="en">
 
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>LFMUNOZ | articles, notes, and references</title>
+<title>Exercises 1.3 | LFMUNOZ</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="LFMUNOZ" />
+<meta property="og:title" content="Exercises 1.3" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="articles, notes, and references" />
 <meta property="og:description" content="articles, notes, and references" />
-<link rel="canonical" href="lfmunoz.github.io/documents/404.html" />
-<meta property="og:url" content="lfmunoz.github.io/documents/404.html" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/Logic/Mathematical_Logic_Leary/Chapter_1/Exercises_1_3.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/Logic/Mathematical_Logic_Leary/Chapter_1/Exercises_1_3.html" />
 <meta property="og:site_name" content="LFMUNOZ" />
 <script type="application/ld+json">
-{"@type":"WebPage","headline":"LFMUNOZ","url":"lfmunoz.github.io/documents/404.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+{"@type":"WebPage","headline":"Exercises 1.3","url":"lfmunoz.github.io/documents/books/Logic/Mathematical_Logic_Leary/Chapter_1/Exercises_1_3.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
 <body><header class="site-header" role="banner">
@@ -169,30 +190,92 @@
 </div><div class="column-main">
             <main class="page-content" aria-label="Content">
                 <div class="wrapper">
-                    <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+                    <h2 id="exercises-13">Exercises 1.3</h2>
 
-<div class="container">
-  <h1>404</h1>
+<hr />
+<ol>
+  <li>Suppose that the language L consists of two constant symbols, ♦ and
+♥, a unary relation symbol U, a binary function symbol [, and a 3-
+ary function symbol ]. Write down at least three distinct terms of the
+language L. Write down a couple of nonterms that look like they might
+be terms and explain why they are not terms. Write a couple of formulas
+and a couple of nonformulas that look like they ought to be formulas.</li>
+</ol>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+<p>L♦ ♥  constant</p>
+
+<p>b binary</p>
+
+<p># 3-anary function</p>
+
+<p>♦♦
+Y♦
+♦b♦</p>
+
+<hr />
+<ol>
+  <li>The fact that we write all of our operations on the left is important
+for unique readability. Suppose, for example, that we wrote our binary
+operations in the middle (and did not allow the use of parentheses). If
+our language included the binary function symbol #, then the term
+u#v#w
+could be interpreted two ways. This can make a difference: Suppose
+that the operation associated with the function symbol # is “subtract.”
+Find three real numbers u, v, and w such that the two different interpretations of u#v#w lead to different answers. Any nonassociative binary
+function will yield another counterexample to unique readability. Can
+you think of three such functions?</li>
+</ol>
+
+<p>u # v # w</p>
+
+<hr />
+<ol>
+  <li>The language of number theory is
+LNT is {0, S, +, ·, E, &lt;},
+where the intended meanings of the symbols are as follows: 0 stands for
+the number zero, S is the successor function S(x) = x + 1, the symbols
++, ·, and &lt; mean what you expect, and E stands for exponentiation,
+so E(3, 2) = 9. Assume that LNT -formulas will be interpreted with
+respect to the nonnegative integers and write an LNT -formula to express
+the claim that p is a prime number. Can you write the statement of
+Lagrange’s Theorem, which states that every natural number is the sum
+of four squares?
+Write a formula stating that there is no largest prime number. How
+would we express the Goldbach Conjecture, that every even number
+greater than two can be expressed as the sum of two primes?
+What is the formal statement of the Twin Primes Conjecture, which
+says that there are infinitely many pairs (x, y) such that x and y are
+both prime and y = x + 2? The Bounded Gap Theorem, proven in
+2013, says that there are infinitely many pairs of prime numbers that
+differ by 70,000,000 or less. Write a formal statement of that theorem.
+Use shorthand in your answers to this problem. For example, after you
+have found the formula which says that p is prime, call the formula
+Prime(p), and use Prime(p) in your later answers.</li>
+</ol>
+
+<p>LNt is 
+{0, s, t, *, E, &lt;}</p>
+
+<hr />
+<ol>
+  <li>Suppose that our language has infinitely many constant symbols of the
+form 0
+,
+00
+,
+000
+, . . . and no function or relation symbols other than =. Explain why this situation leads to problems by looking at the formula
+=000000. Where in our definitions do we outlaw this sort of problem?</li>
+</ol>
 
                 </div>
             </main>
-        </div></div><footer class="site-footer h-card">
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#exercises-13">Exercises 1.3</a></li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
   <data class="u-url" href="/documents/"></data>
 
   <div class="wrapper">

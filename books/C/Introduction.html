@@ -2,21 +2,42 @@
 <html lang="en">
 
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>LFMUNOZ | articles, notes, and references</title>
+<title>C | LFMUNOZ</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="LFMUNOZ" />
+<meta property="og:title" content="C" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="articles, notes, and references" />
 <meta property="og:description" content="articles, notes, and references" />
-<link rel="canonical" href="lfmunoz.github.io/documents/404.html" />
-<meta property="og:url" content="lfmunoz.github.io/documents/404.html" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/C/Introduction.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/C/Introduction.html" />
 <meta property="og:site_name" content="LFMUNOZ" />
 <script type="application/ld+json">
-{"@type":"WebPage","headline":"LFMUNOZ","url":"lfmunoz.github.io/documents/404.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+{"@type":"WebPage","headline":"C","url":"lfmunoz.github.io/documents/books/C/Introduction.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
 <body><header class="site-header" role="banner">
@@ -169,30 +190,112 @@
 </div><div class="column-main">
             <main class="page-content" aria-label="Content">
                 <div class="wrapper">
-                    <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+                    <h1 id="the-c-programming-language">The C Programming Language</h1>
 
-<div class="container">
-  <h1>404</h1>
+<p>C is a general purpose language developed in 1972 by Dennis Ritchie at the Bell Telephone Laboratories for use with the Unix operating system.</p>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+<ul>
+  <li>As close to the machine as possible without going to assembly</li>
+  <li>Case Sensitive</li>
+  <li>Strongly typed language</li>
+  <li>No automatic memory management</li>
+</ul>
+
+<details>
+<summary> skeleton.cpp </summary>
+
+<p>
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="cp">#include &lt;stdio.h&gt; // C library to perform Input/Output operations
+</span><span class="c1">// Single Line Comment</span>
+<span class="cm">/* Multi-line Comment */</span>
+<span class="c1">// ________________________________________________________________________________</span>
+<span class="c1">// Main</span>
+<span class="c1">// gcc -o program program.c</span>
+<span class="c1">// ________________________________________________________________________________</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
+   <span class="n">printf</span><span class="p">(</span><span class="s">"Hello World</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span> <span class="c1">// Hello Word</span>
+   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+</code></pre></div>    </div>
+  </p></details>
+<p><br /></p>
+
+<h2 id="toc">TOC</h2>
+
+<ul>
+  <li><a href="DataTypes.html">Data Types</a></li>
+  <li><a href="ControlStatements.html">Control Statements</a>
+    <ul>
+      <li>if, switch, ?:</li>
+      <li>do, do-while, for, goto</li>
+    </ul>
+  </li>
+  <li><a href="Strings.html">Strings</a>
+    <ul>
+      <li>conversion (i.e, string to int)</li>
+      <li>sprintf</li>
+    </ul>
+  </li>
+  <li><a href="Functions.html">Functions</a>
+    <ul>
+      <li>pass by value</li>
+      <li>pass by reference
+        <ul>
+          <li>multi-dimensional array</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="Pointers.html">Pointers And Arrays</a>
+    <ul>
+      <li>pointer to pointer</li>
+      <li>Pointers to functions</li>
+    </ul>
+  </li>
+  <li><a href="Structures.html">Structures</a>
+    <ul>
+      <li>union</li>
+      <li>pointer-&gt;member = value;</li>
+    </ul>
+  </li>
+  <li><a href="MemoryManagement.html">Memory Management</a>
+    <ul>
+      <li>malloc, free, calloc, memcpy</li>
+      <li>memory leaks</li>
+    </ul>
+  </li>
+  <li><a href="Assembly.html">Inline Assembly</a></li>
+</ul>
+
+<h1 id="references">References</h1>
+
+<ul>
+  <li>C Standard Library Reference
+    <ul>
+      <li><a href="http://www.cplusplus.com/reference/">http://www.cplusplus.com/reference/</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="learning">Learning</h1>
+
 
                 </div>
             </main>
-        </div></div><footer class="site-footer h-card">
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#the-c-programming-language">The C Programming Language</a>
+    <ul>
+      <li><a href="#toc">TOC</a></li>
+    </ul>
+  </li>
+  <li><a href="#references">References</a></li>
+  <li><a href="#learning">Learning</a></li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
   <data class="u-url" href="/documents/"></data>
 
   <div class="wrapper">

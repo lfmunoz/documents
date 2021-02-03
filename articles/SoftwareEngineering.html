@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Software Engineering | LFMUNOZ</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Software Engineering" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="articles, notes, and references" />
+<meta property="og:description" content="articles, notes, and references" />
+<link rel="canonical" href="lfmunoz.github.io/documents/articles/SoftwareEngineering.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/articles/SoftwareEngineering.html" />
+<meta property="og:site_name" content="LFMUNOZ" />
+<script type="application/ld+json">
+{"@type":"WebPage","headline":"Software Engineering","url":"lfmunoz.github.io/documents/articles/SoftwareEngineering.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
+<body><header class="site-header" role="banner">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2YJDWQX6GK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-2YJDWQX6GK');
+  </script>
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/documents/">LFMUNOZ</a><nav class="site-nav">
+      <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+      <label for="nav-trigger">
+        <span class="menu-icon">
+          <svg viewBox="0 0 18 15" width="18px" height="15px">
+            <path
+              d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+          </svg>
+        </span>
+      </label>
+
+      <div class="trigger"><a class="page-link" href="/documents/about/">About</a></div>
+    </nav></div>
+</header><div class="main"><div class="column-sidebar">
+
+    <div class="nav-section">
+        <div class="nav-title">Posts</div><div class="post-container"><a class="post-link" href="/documents/2020/12/17/i-wish-i-was-worse.html"> I wish I was worse at dancing</a>
+            <span class="post-meta">Dec 17, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/12/13/too-many-options.html"> Too many options slows production</a>
+            <span class="post-meta">Dec 13, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/12/06/dream-cats-and-dogs.html"> A dream of dogs and cats</a>
+            <span class="post-meta">Dec 6, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/11/27/http-rest-bad-design.html"> RESTful HTTP creates coupling</a>
+            <span class="post-meta">Nov 27, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/08/01/organization-and-structure.html"> Organization and Structure of Applications</a>
+            <span class="post-meta">Aug 1, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/07/12/listening-to-music.html"> Listening to Music</a>
+            <span class="post-meta">Jul 12, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/07/05/frameworks.html"> Frameworks and Libraries</a>
+            <span class="post-meta">Jul 5, 2020</span>
+        </div><p class="rss-subscribe">subscribe <a href="/documents/feed.xml">via RSS</a></p>
+    </div>
+
+    <div class="nav-section">
+        <div class="nav-title">Guides</div>
+        <ul>
+            
+            <li>
+                <strong> Computer Science</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/Algorithms/Introduction.html">Algorithms</a></li>
+                    
+                    <li><a href="/documents/articles/SoftwareEngineering.html">Software Engineering</a></li>
+                    
+                    <li><a href="/documents/books/DesignPatterns.html">Design Patterns</a></li>
+                    
+                    <li><a href="/documents/books/Linux/Introduction.html">Linux</a></li>
+                    
+                    <li><a href="/documents/books/Databases/Introduction.html">Databases</a></li>
+                    
+                    <li><a href="/documents/books/SoftwareEngineering/Concurrency.html">Concurrency</a></li>
+                    
+                    <li><a href="/documents/books/Security/Introduction.html">Security</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Programming Languages</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/C/Introduction.html">C</a></li>
+                    
+                    <li><a href="/documents/books/Cpp/Introduction.html">C++</a></li>
+                    
+                    <li><a href="/documents/books/Rust/Introduction.html">Rust</a></li>
+                    
+                    <li><a href="/documents/books/Go/Introduction.html">Go</a></li>
+                    
+                    <li><a href="/documents/books/Java/Introduction.html">Java</a></li>
+                    
+                    <li><a href="/documents/books/Kotlin/Introduction.html">Kotlin</a></li>
+                    
+                    <li><a href="/documents/lang/Python/Introduction.html">Python</a></li>
+                    
+                    <li><a href="/documents/lang/Bash/Introduction.html">Bash</a></li>
+                    
+                    <li><a href="/documents/books/Make/Introduction.html">Makefile</a></li>
+                    
+                    <li><a href="/documents/lang/SQL/Introduction.html">SQL</a></li>
+                    
+                    <li><a href="/documents/lang/HTML/Introduction.html">HTML</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Technologies</strong>
+                <ul>
+                    
+                    <li><a href="/documents/tech/Android/Introduction.html">Android</a></li>
+                    
+                    <li><a href="/documents/books/Docker/Introduction.html">Docker</a></li>
+                    
+                    <li><a href="/documents/books/Envoy/Introduction.html">Envoy</a></li>
+                    
+                    <li><a href="/documents/books/Terraform/Introduction.html">Terraform</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Mathematics</strong>
+                <ul>
+                    
+                    <li><a href="/documents/mathematics/Foundations.html">Foundations</a></li>
+                    
+                    <li><a href="/documents/books/Logic/Introduction.html">Logic</a></li>
+                    
+                    <li><a href="/documents/books/SetTheory/Introduction.html">Set Theory</a></li>
+                    
+                    <li><a href="/documents/books/Geometry/Introduction.html">Geometry</a></li>
+                    
+                    <li><a href="/documents/books/Analysis/Introduction.html">Analysis</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Miscellaneous</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/Non-Duality/Introduction.html">Non-Duality</a></li>
+                    
+                </ul>
+            </li>
+
+            
+        </ul>
+    </div>
+
+
+</div><div class="column-main">
+            <main class="page-content" aria-label="Content">
+                <div class="wrapper">
+                    <h1 id="software-engineering">Software Engineering</h1>
+
+<blockquote>
+  <p>An engineer can do for a nickel what any fool can do for a dollar - Henry Ford</p>
+</blockquote>
+
+<p>A successful project</p>
+
+<ol>
+  <li>Is delivered on the agreed time</li>
+  <li>At the agreed cost</li>
+  <li>With the agreed functionality</li>
+  <li>At an acceptable quality level</li>
+  <li>And leaves the team energized for future projects</li>
+</ol>
+
+<h2 id="why-do-software-projects-get-into-trouble">Why Do Software Projects Get into Trouble?</h2>
+
+<ol>
+  <li>Bad requirements Vague, ambiguous, and/or incomplete requirements. (This issue is usually beyond the control of the development team.)</li>
+  <li>Poor project management Poor planning, estimation, and tracking. (The developers are not the project managers.)</li>
+  <li>Complexity. Number three overall but number one for the technical team. So, our number one goal should be to manage complexity. The Primary Technical Imperative: Manage Complexity</li>
+</ol>
+
+<p>1/4 of all projects fail to the point that they are cancelled</p>
+
+<h3 id="net-negative-producing-programmer">Net Negative Producing Programmer</h3>
+
+<p>Schulmeyer’s study implies that about 20% of developers are NNPPs. What to do about this is unclear, just make sure you aren’t one of them.</p>
+
+<p>“We’ve known since the early ‘60s but have never come to grips with the implications that there are net negative producing programmers (NNPPs) on almost all projects, who insert enough spoilage to exceed the value of their production. This negative production does not merely apply to extreme cases. In a team of ten, expect as many as three people to have a defect rate high enough to make them NNPPs. With a normal distribution of skills, the probability that there is not even one NNPP out of ten is virtually nil.”</p>
+
+<h1 id="software-development">Software Development</h1>
+
+<blockquote>
+  <p>Requirements =&gt; Design =&gt; Construction  =&gt; Test</p>
+</blockquote>
+
+<p>These aren’t phases in a software development life cycle (i.e., not implying waterfall). These are activities in the decision-making process that is at the root of software development.</p>
+
+<h2 id="requirements">Requirements</h2>
+
+<p><strong>The Product Backlog</strong> - The single ordered list of everything that might be needed in the product. The items are known as <strong>PBIs</strong> (Product Backlog items).</p>
+
+<p>A good backlog is ordered, has estimates, and  has good descriptions</p>
+
+<p><strong>Epic</strong> - User story that is too large to be implemented in a single Sprint</p>
+
+<p><strong>Acceptance Criteria</strong> - Objective criteria by which we can evaluate whether we have implemented enough of user story in this sprint.  The basis for functional testing of completed user stories.</p>
+
+<p><strong>Stakeholders</strong> - Anyone whose problem you need to solve</p>
+
+<p>Requirement Roles</p>
+<ul>
+  <li>Originator - End users who is using product</li>
+  <li>Source - Who you hear the requirement from, often someone who represents the end user like a marketing person</li>
+  <li>Steward - Captures and writes the requirements</li>
+  <li>Verifier - Person who packages the requirements</li>
+  <li>Implementer - Person who provides the solution</li>
+</ul>
+
+<h2 id="design">Design</h2>
+
+<p>While requirements are decisions that are made by somebody else (e.g., stakeholders). Design is made up of decisions that developers make.</p>
+
+<ul>
+  <li>You must understand requirements to create a good design; design must be consistent with the requirements. - Implication Requirements must be good, complete, and unambiguous.</li>
+  <li>Real-world designs are constrained and influenced by technology.  - Prototyping is very useful for exploring and testing various design ideas.</li>
+  <li>Design involves tradeoffs. -  No single “right” design exists, only better or worse mixes of tradeoffs. Your professional judgement is required.</li>
+  <li>Design is almost always an evolutionary process. - You’re never going to get it right the first time. Some iteration will always be required.</li>
+  <li>Some design is better than no design, but the best is the enemy of the good. - Sometimes you just need to go into production.</li>
+</ul>
+
+<p>Identify the significant elements of that internal structure
+Explain the important relationships between those elements
+Provide sufficient detail to construct those elements</p>
+
+<p>As a communication tool, design enables vital communication between technical peers, with the project manager, and with Quality Assurance.</p>
+
+<p>Different designs vary in the code volume required to implement them by a factor of 10, but the average programmer considers only one design that will actually work before beginning coding.</p>
+
+<h3 id="theres-no-such-thing-as-self-documenting-code">There’s no such thing as “self-documenting code.”</h3>
+
+<p>Code does not answer these questions:</p>
+<ol>
+  <li>What is this code intended to do? Code will tell you only what it does, not what it was intended to do.</li>
+  <li>Why does this code look the way it does? Code will not tell you why it looks the way it does. (“Has to be” versus “happens to be.”)</li>
+</ol>
+
+<h2 id="construction">Construction</h2>
+
+<p>In a typical software budget, 80% of the budget is spent on maintaining existing code! Decreasing maintenance costs is much more powerful than decreasing development costs.</p>
+
+<p>Uncle Bob talks about how when you first start a project it is easy to add features.</p>
+
+<p>You start a project and a week later you have something running and someone comes to you and says, can you add this, and a week later you add the feature and it is working.</p>
+
+<p>Then you add another feature. A year later, someone comes to you and says can you add this feature, and you think about it and realize it won’t be easy. it will take 6 months.</p>
+
+<p>how can you be so productive at first and so unproductive later. the issue is not understanding the primary imperative.</p>
+
+<blockquote>
+  <p>The Primary Technical Imperative: Manage Complexity</p>
+</blockquote>
+
+<p><strong>modularization:</strong> code is factored into “modules” of some sort where each module has a clear responsibility. The action of the code can be documented and understood without a user having to understand its implementation details.</p>
+
+<p><strong>encapsulation:</strong> modules make a distinction between their “public” surface area and their “private” implementation details so that the latter can be improved without affecting the correctness of the program as a whole.</p>
+
+<p><strong>re-use:</strong> when a problem is solved correctly once, it is solved for all time; the solution can be re-used in the creation of new solutions. Techniques such as making a library of utility functions, or making functionality in a base class that can be extended by a derived class, or architectures that encourage composition, are all techniques for code re-use. Again, the point is to lower costs.</p>
+
+<p><strong>automatic detection of errors:</strong> a team working on a large program is wise to build a device which determines early when a programming error has been made and tells you about it so that it can be fixed quickly, before the error is compounded with more errors. Techniques such as writing a test suite, or running a static analyzer fall into this category.</p>
+
+<p>Complexity has essential and accidental properties:</p>
+
+<p>Essential properties The properties a thing has by virtue of being that thing.</p>
+
+<p>Accidental properties The properties a thing happens to have.</p>
+
+<h3 id="lowering-quality-lengthens-development-time">Lowering quality lengthens development time.</h3>
+
+<p>Quality software takes the least amount of time to develop. If you have code that is simple as possible, tests that are complete and a design that fits just right, additions and changes happen in the fastest possible way because the impact is lowest. Consequently, if you hack something out, the more you hack the slower you go because the cost of addition or change grows with each line of code.</p>
+
+<h2 id="test">Test</h2>
+
+<p>Test Driven Development is not about writing test cases for testability and quaility assurance . It is a requirement pratice or discovery practice not a test practice.</p>
+
+
+                </div>
+            </main>
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#software-engineering">Software Engineering</a>
+    <ul>
+      <li><a href="#why-do-software-projects-get-into-trouble">Why Do Software Projects Get into Trouble?</a>
+        <ul>
+          <li><a href="#net-negative-producing-programmer">Net Negative Producing Programmer</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#software-development">Software Development</a>
+    <ul>
+      <li><a href="#requirements">Requirements</a></li>
+      <li><a href="#design">Design</a>
+        <ul>
+          <li><a href="#theres-no-such-thing-as-self-documenting-code">There’s no such thing as “self-documenting code.”</a></li>
+        </ul>
+      </li>
+      <li><a href="#construction">Construction</a>
+        <ul>
+          <li><a href="#lowering-quality-lengthens-development-time">Lowering quality lengthens development time.</a></li>
+        </ul>
+      </li>
+      <li><a href="#test">Test</a></li>
+    </ul>
+  </li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
+  <data class="u-url" href="/documents/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">LFMUNOZ</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">LFMUNOZ</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/lfmunoz"><svg class="svg-icon"><use xlink:href="/documents/assets/minima-social-icons.svg#github"></use></svg> <span class="username">lfmunoz</span></a></li><li><a href="https://www.twitter.com/lfmunoz4"><svg class="svg-icon"><use xlink:href="/documents/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">lfmunoz4</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>articles, notes, and references</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

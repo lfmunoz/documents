@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Rust | LFMUNOZ</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Rust" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="articles, notes, and references" />
+<meta property="og:description" content="articles, notes, and references" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/Rust/Introduction.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/Rust/Introduction.html" />
+<meta property="og:site_name" content="LFMUNOZ" />
+<script type="application/ld+json">
+{"@type":"WebPage","headline":"Rust","url":"lfmunoz.github.io/documents/books/Rust/Introduction.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
+<body><header class="site-header" role="banner">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2YJDWQX6GK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-2YJDWQX6GK');
+  </script>
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/documents/">LFMUNOZ</a><nav class="site-nav">
+      <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+      <label for="nav-trigger">
+        <span class="menu-icon">
+          <svg viewBox="0 0 18 15" width="18px" height="15px">
+            <path
+              d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+          </svg>
+        </span>
+      </label>
+
+      <div class="trigger"><a class="page-link" href="/documents/about/">About</a></div>
+    </nav></div>
+</header><div class="main"><div class="column-sidebar">
+
+    <div class="nav-section">
+        <div class="nav-title">Posts</div><div class="post-container"><a class="post-link" href="/documents/2020/12/17/i-wish-i-was-worse.html"> I wish I was worse at dancing</a>
+            <span class="post-meta">Dec 17, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/12/13/too-many-options.html"> Too many options slows production</a>
+            <span class="post-meta">Dec 13, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/12/06/dream-cats-and-dogs.html"> A dream of dogs and cats</a>
+            <span class="post-meta">Dec 6, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/11/27/http-rest-bad-design.html"> RESTful HTTP creates coupling</a>
+            <span class="post-meta">Nov 27, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/08/01/organization-and-structure.html"> Organization and Structure of Applications</a>
+            <span class="post-meta">Aug 1, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/07/12/listening-to-music.html"> Listening to Music</a>
+            <span class="post-meta">Jul 12, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/07/05/frameworks.html"> Frameworks and Libraries</a>
+            <span class="post-meta">Jul 5, 2020</span>
+        </div><p class="rss-subscribe">subscribe <a href="/documents/feed.xml">via RSS</a></p>
+    </div>
+
+    <div class="nav-section">
+        <div class="nav-title">Guides</div>
+        <ul>
+            
+            <li>
+                <strong> Computer Science</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/Algorithms/Introduction.html">Algorithms</a></li>
+                    
+                    <li><a href="/documents/articles/SoftwareEngineering.html">Software Engineering</a></li>
+                    
+                    <li><a href="/documents/books/DesignPatterns.html">Design Patterns</a></li>
+                    
+                    <li><a href="/documents/books/Linux/Introduction.html">Linux</a></li>
+                    
+                    <li><a href="/documents/books/Databases/Introduction.html">Databases</a></li>
+                    
+                    <li><a href="/documents/books/SoftwareEngineering/Concurrency.html">Concurrency</a></li>
+                    
+                    <li><a href="/documents/books/Security/Introduction.html">Security</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Programming Languages</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/C/Introduction.html">C</a></li>
+                    
+                    <li><a href="/documents/books/Cpp/Introduction.html">C++</a></li>
+                    
+                    <li><a href="/documents/books/Rust/Introduction.html">Rust</a></li>
+                    
+                    <li><a href="/documents/books/Go/Introduction.html">Go</a></li>
+                    
+                    <li><a href="/documents/books/Java/Introduction.html">Java</a></li>
+                    
+                    <li><a href="/documents/books/Kotlin/Introduction.html">Kotlin</a></li>
+                    
+                    <li><a href="/documents/lang/Python/Introduction.html">Python</a></li>
+                    
+                    <li><a href="/documents/lang/Bash/Introduction.html">Bash</a></li>
+                    
+                    <li><a href="/documents/books/Make/Introduction.html">Makefile</a></li>
+                    
+                    <li><a href="/documents/lang/SQL/Introduction.html">SQL</a></li>
+                    
+                    <li><a href="/documents/lang/HTML/Introduction.html">HTML</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Technologies</strong>
+                <ul>
+                    
+                    <li><a href="/documents/tech/Android/Introduction.html">Android</a></li>
+                    
+                    <li><a href="/documents/books/Docker/Introduction.html">Docker</a></li>
+                    
+                    <li><a href="/documents/books/Envoy/Introduction.html">Envoy</a></li>
+                    
+                    <li><a href="/documents/books/Terraform/Introduction.html">Terraform</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Mathematics</strong>
+                <ul>
+                    
+                    <li><a href="/documents/mathematics/Foundations.html">Foundations</a></li>
+                    
+                    <li><a href="/documents/books/Logic/Introduction.html">Logic</a></li>
+                    
+                    <li><a href="/documents/books/SetTheory/Introduction.html">Set Theory</a></li>
+                    
+                    <li><a href="/documents/books/Geometry/Introduction.html">Geometry</a></li>
+                    
+                    <li><a href="/documents/books/Analysis/Introduction.html">Analysis</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Miscellaneous</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/Non-Duality/Introduction.html">Non-Duality</a></li>
+                    
+                </ul>
+            </li>
+
+            
+        </ul>
+    </div>
+
+
+</div><div class="column-main">
+            <main class="page-content" aria-label="Content">
+                <div class="wrapper">
+                    <h1 id="the-rust-programming-language">The Rust Programming Language</h1>
+
+<ul>
+  <li>Rust Home
+    <ul>
+      <li>https://kotlinlang.org/docs/tutorials/command-line.html</li>
+    </ul>
+  </li>
+</ul>
+
+<details>
+<summary> <strong> [ skeleton.rs ] </strong> </summary>
+
+<p>
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Main</span>
+<span class="c1">//  rustc skeleton.rs</span>
+<span class="c1">//  ./skeleton  </span>
+<span class="n">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">println</span><span class="o">!</span><span class="p">(</span><span class="s">"Hello, world!"</span><span class="p">);</span>
+<span class="p">}</span>
+
+</code></pre></div>    </div>
+  </p></details>
+
+<ul>
+  <li>Rust code uses snake case as the conventional style for function and variable names.</li>
+  <li>Rust doesn’t care where you define your functions (the order)</li>
+  <li>Rust is an expression-based language. Statements are instructions that perform some action and do not return a value. Expressions evaluate to a resulting value.</li>
+</ul>
+
+<h1 id="toc">TOC</h1>
+
+<ul>
+  <li><a href="Cargo.html">Cargo</a>
+    <ul>
+      <li>Installing Rust</li>
+    </ul>
+  </li>
+  <li><a href="DataTypes.html">Data Types</a>
+    <ul>
+      <li>literals: hex, decimal, binary, byte</li>
+      <li>variables: bool, f32, u8, i8, u128</li>
+      <li>modifiers: mut, const</li>
+      <li>shadowing</li>
+    </ul>
+  </li>
+  <li><a href="IO.html">IO</a>
+    <ul>
+      <li>fs::read_to_string</li>
+      <li>env::args()</li>
+    </ul>
+  </li>
+  <li><a href="Generics.html">Generics</a>
+    <ul>
+      <li>pub</li>
+      <li>trait - similar to interface</li>
+    </ul>
+  </li>
+  <li><a href="Collections.html">Collections</a>
+    <ul>
+      <li>Vec, HashMap</li>
+      <li>String - collection of bytes</li>
+    </ul>
+  </li>
+  <li><a href="FunctionalProgramming.html">Functional Programing</a>
+    <ul>
+      <li>closures</li>
+    </ul>
+  </li>
+  <li><a href="ErrorHandling.html">Error Handling</a></li>
+  <li><a href="Testing.html">Testing</a></li>
+  <li><a href="Modules.html">Modules</a>
+    <ul>
+      <li>crates, packages</li>
+    </ul>
+  </li>
+  <li><a href="Concurrency.html">Concurrency</a></li>
+</ul>
+
+<h1 id="data-structures">Data Structures</h1>
+
+<p>Tuples</p>
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="n">tup</span><span class="p">:</span> <span class="p">(</span><span class="nb">i32</span><span class="p">,</span> <span class="nb">f64</span><span class="p">,</span> <span class="nb">u8</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mf">6.4</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="k">let</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span> <span class="o">=</span> <span class="n">tup</span><span class="p">;</span> <span class="c">// destructuring,</span>
+<span class="k">let</span> <span class="n">five_hundred</span> <span class="o">=</span> <span class="n">x</span><span class="na">.0</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Arrays</p>
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="n">a</span><span class="p">:</span> <span class="p">[</span><span class="nb">i32</span><span class="p">;</span> <span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
+<span class="k">let</span> <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span> <span class="c">// must have the same type (fixed length)</span>
+</code></pre></div></div>
+
+<h1 id="loops">Loops</h1>
+
+<p>Expressions do not include ending semicolons. If you add a semicolon
+to the end of an expression, you turn it into a statement, which will then not
+return a value.</p>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="n">number</span> <span class="o">&lt;</span> <span class="mi">5</span> <span class="p">{</span> <span class="c">// must be bool</span>
+    <span class="nd">println!</span><span class="p">(</span><span class="s">"condition was true"</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
+    <span class="nd">println!</span><span class="p">(</span><span class="s">"x"</span><span class="p">)</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nd">println!</span><span class="p">(</span><span class="s">"condition was false"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Rust has three kinds of loops: <strong>loop</strong> , <strong>while</strong> , and <strong>for</strong>.</p>
+
+<p>The loop keyword tells Rust to execute a block of code over and over again
+forever or until you explicitly tell it to stop.</p>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">loop</span> <span class="p">{</span>
+  <span class="nd">println!</span><span class="p">(</span><span class="s">"again!"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">break</span> <span class="n">counter</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
+
+<span class="k">let</span> <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">];</span>
+<span class="k">for</span> <span class="n">element</span> <span class="n">in</span> <span class="n">a</span><span class="nf">.iter</span><span class="p">()</span> <span class="p">{</span>
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="n">number</span> <span class="nf">in</span> <span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">4</span><span class="p">)</span><span class="nf">.rev</span><span class="p">()</span> <span class="p">{</span>
+<span class="nd">println!</span><span class="p">(</span><span class="s">"{}!"</span><span class="p">,</span> <span class="n">number</span><span class="p">);</span>  <span class="c">//  ! means it is a macro not function</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="chapter-4-understanding-ownership">CHAPTER 4: UNDERSTANDING OWNERSHIP</h1>
+
+<p>Each value in Rust has a variable that’s called its owner.
+There can be only one owner at a time.
+When the owner goes out of scope, the value will be dropped.</p>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="k">mut</span> <span class="n">s</span> <span class="o">=</span> <span class="nn">String</span><span class="p">::</span><span class="nf">from</span><span class="p">(</span><span class="s">"hello"</span><span class="p">);</span>
+<span class="n">s</span><span class="nf">.push_str</span><span class="p">(</span><span class="s">", world!"</span><span class="p">);</span> <span class="c">// push_str() appends a literal to a String</span>
+<span class="k">let</span> <span class="n">r1</span> <span class="o">=</span> <span class="o">&amp;</span><span class="k">mut</span> <span class="n">s</span><span class="p">;</span>
+<span class="k">let</span> <span class="n">bytes</span> <span class="o">=</span> <span class="n">s</span><span class="nf">.as_bytes</span><span class="p">();</span>
+
+<span class="k">fn</span> <span class="nf">change</span><span class="p">(</span><span class="n">some_string</span><span class="p">:</span> <span class="o">&amp;</span><span class="k">mut</span> <span class="nb">String</span><span class="p">)</span> <span class="p">{</span>
+<span class="n">some_string</span><span class="nf">.push_str</span><span class="p">(</span><span class="s">", world"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">let</span> <span class="n">s</span> <span class="o">=</span> <span class="nn">String</span><span class="p">::</span><span class="nf">from</span><span class="p">(</span><span class="s">"hello world"</span><span class="p">);</span>
+<span class="k">let</span> <span class="n">hello</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="o">..</span><span class="mi">5</span><span class="p">];</span>
+<span class="k">let</span> <span class="n">world</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">[</span><span class="mi">6</span><span class="o">..</span><span class="mi">11</span><span class="p">];</span>
+</code></pre></div></div>
+
+<h1 id="chapter-5-using-structs-to-structure-related-data">Chapter 5: Using Structs to Structure Related Data</h1>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">User</span> <span class="p">{</span>
+  <span class="n">username</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
+  <span class="n">email</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
+  <span class="n">sign_in_count</span><span class="p">:</span> <span class="nb">u64</span><span class="p">,</span>
+  <span class="n">active</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="err">``</span>
+
+<span class="n">the</span> <span class="n">entire</span> <span class="n">instance</span> <span class="n">must</span> <span class="n">be</span> <span class="n">mutable</span><span class="p">;</span> <span class="n">Rust</span> <span class="n">doesn</span><span class="err">’</span><span class="n">t</span> <span class="n">allow</span> <span class="n">us</span> <span class="n">to</span> <span class="n">mark</span> <span class="n">only</span> <span class="n">certain</span> <span class="n">fields</span> <span class="k">as</span> <span class="n">mutable</span>
+
+<span class="err">```</span><span class="n">rust</span>
+<span class="k">let</span> <span class="n">user2</span> <span class="o">=</span> <span class="n">User</span> <span class="p">{</span>
+<span class="n">email</span><span class="p">:</span> <span class="nn">String</span><span class="p">::</span><span class="nf">from</span><span class="p">(</span><span class="s">"another@example.com"</span><span class="p">),</span>
+<span class="n">username</span><span class="p">:</span> <span class="nn">String</span><span class="p">::</span><span class="nf">from</span><span class="p">(</span><span class="s">"anotherusername567"</span><span class="p">),</span>
+<span class="o">..</span><span class="n">user1</span>
+<span class="p">};</span>
+
+<span class="c">//Tuple Struct</span>
+<span class="k">struct</span> <span class="nf">Color</span><span class="p">(</span><span class="nb">i32</span><span class="p">,</span> <span class="nb">i32</span><span class="p">,</span> <span class="nb">i32</span><span class="p">);</span>
+
+<span class="nd">println!</span><span class="p">(</span><span class="s">"rect1 is{:?}"</span><span class="p">,</span> <span class="n">rect1</span><span class="p">)</span>
+
+<span class="nd">#[derive(Debug)]</span>
+<span class="k">struct</span> <span class="n">Rectangle</span> <span class="p">{</span>
+<span class="n">width</span><span class="p">:</span> <span class="nb">u32</span><span class="p">,</span>
+<span class="n">height</span><span class="p">:</span> <span class="nb">u32</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="k">impl</span> <span class="n">Rectangle</span> <span class="p">{</span>
+  <span class="k">fn</span> <span class="nf">area</span><span class="p">(</span><span class="o">&amp;</span><span class="k">self</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nb">u32</span> <span class="p">{</span>
+    <span class="k">self</span><span class="py">.width</span> <span class="o">*</span> <span class="k">self</span><span class="py">.height</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c">// associated fucntions don't take a &amp;self</span>
+<span class="k">impl</span> <span class="n">Rectangle</span> <span class="p">{</span>
+  <span class="k">fn</span> <span class="nf">square</span><span class="p">(</span><span class="n">size</span><span class="p">:</span> <span class="nb">u32</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="n">Rectangle</span> <span class="p">{</span>
+    <span class="n">Rectangle</span> <span class="p">{</span> <span class="n">width</span><span class="p">:</span> <span class="n">size</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="n">size</span> <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">let</span> <span class="n">sq</span> <span class="o">=</span> <span class="nn">Rectangle</span><span class="p">::</span><span class="nf">square</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h1 id="chapter-6-enums-and-pattern-matching">CHAPTER 6: Enums and Pattern Matching</h1>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="n">four</span> <span class="o">=</span> <span class="nn">IpAddrKind</span><span class="p">::</span><span class="n">V4</span><span class="p">;</span>
+<span class="k">let</span> <span class="n">six</span> <span class="o">=</span> <span class="nn">IpAddrKind</span><span class="p">::</span><span class="n">V6</span><span class="p">;</span>
+<span class="k">enum</span> <span class="n">IpAddrKind</span> <span class="p">{</span>
+  <span class="n">V4</span><span class="p">,</span>
+  <span class="n">V6</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="k">enum</span> <span class="n">IpAddr</span> <span class="p">{</span>
+  <span class="nf">V4</span><span class="p">(</span><span class="nb">String</span><span class="p">),</span>
+  <span class="nf">V6</span><span class="p">(</span><span class="nb">String</span><span class="p">),</span>
+<span class="p">}</span>
+
+<span class="k">let</span> <span class="n">home</span> <span class="o">=</span> <span class="nn">IpAddr</span><span class="p">::</span><span class="nf">V4</span><span class="p">(</span><span class="nn">String</span><span class="p">::</span><span class="nf">from</span><span class="p">(</span><span class="s">"127.0.0.1"</span><span class="p">));</span>
+</code></pre></div></div>
+
+<p>Rust
+doesn’t have the null feature that many other languages have. Null is a value
+that means there is no value there.</p>
+
+<p>Rust does not have nulls, but it does have an enum that
+can encode the concept of a value being present or absent.</p>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">enum</span> <span class="nb">Option</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="p">{</span>
+<span class="nf">Some</span><span class="p">(</span><span class="n">T</span><span class="p">),</span>
+<span class="nb">None</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="k">let</span> <span class="n">absent_number</span><span class="p">:</span> <span class="nb">Option</span><span class="o">&lt;</span><span class="nb">i32</span><span class="o">&gt;</span> <span class="o">=</span> <span class="nb">None</span><span class="p">;</span>
+
+<span class="k">fn</span> <span class="nf">value_in_cents</span><span class="p">(</span><span class="n">coin</span><span class="p">:</span> <span class="n">Coin</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nb">u8</span> <span class="p">{</span>
+  <span class="k">match</span> <span class="n">coin</span> <span class="p">{</span>
+    <span class="nn">Coin</span><span class="p">::</span><span class="n">Penny</span> <span class="k">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nn">Coin</span><span class="p">::</span><span class="n">Nickel</span> <span class="k">=&gt;</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="nn">Coin</span><span class="p">::</span><span class="n">Dime</span> <span class="k">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="nn">Coin</span><span class="p">::</span><span class="n">Quarter</span> <span class="k">=&gt;</span> <span class="mi">25</span><span class="p">,</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Matches in Rust are exhaustive: we must exhaust
+every last possibility in order for the code to be valid.</p>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="n">some_u8_value</span> <span class="o">=</span> <span class="mi">0u8</span><span class="p">;</span>
+<span class="k">match</span> <span class="n">some_u8_value</span> <span class="p">{</span>
+<span class="mi">1</span> <span class="k">=&gt;</span> <span class="nd">println!</span><span class="p">(</span><span class="s">"one"</span><span class="p">),</span>
+<span class="mi">3</span> <span class="k">=&gt;</span> <span class="nd">println!</span><span class="p">(</span><span class="s">"three"</span><span class="p">),</span>
+<span class="mi">5</span> <span class="k">=&gt;</span> <span class="nd">println!</span><span class="p">(</span><span class="s">"five"</span><span class="p">),</span>
+<span class="mi">7</span> <span class="k">=&gt;</span> <span class="nd">println!</span><span class="p">(</span><span class="s">"seven"</span><span class="p">),</span>
+<span class="mi">_</span> <span class="k">=&gt;</span> <span class="p">(),</span>
+<span class="p">}</span>
+
+<span class="k">if</span> <span class="k">let</span> <span class="nf">Some</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">=</span> <span class="n">some_u8_value</span> <span class="p">{</span>
+<span class="nd">println!</span><span class="p">(</span><span class="s">"three"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>In other words, you can think of if let as syntax sugar for a match that
+runs code when the value matches one pattern and then ignores all other
+values.</p>
+
+<h1 id="chapter-15--smart-pointers">CHAPTER 15:  Smart Pointers</h1>
+
+<p>A pointer is a general concept for a variable that contains an address in memory.</p>
+
+<p>References are indicated by the &amp; symbol and borrow the value they point to.
+They don’t have any special capabilities other than referring to data. Also, they
+don’t have any overhead and are the kind of pointer we use most often.</p>
+
+<p>Smart pointers are usually implemented using structs. The charac-
+teristic that distinguishes a smart pointer from an ordinary struct is that
+smart pointers implement the Deref and Drop traits.</p>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">enum</span> <span class="n">List</span> <span class="p">{</span>
+  <span class="nf">Cons</span><span class="p">(</span><span class="nb">i32</span><span class="p">,</span> <span class="nb">Box</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&gt;</span><span class="p">),</span>
+  <span class="nb">Nil</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+<span class="k">let</span> <span class="n">list</span> <span class="o">=</span> <span class="nf">Cons</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nn">Box</span><span class="p">::</span><span class="nf">new</span><span class="p">(</span><span class="nf">Cons</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> 
+  <span class="nn">Box</span><span class="p">::</span><span class="nf">new</span><span class="p">(</span><span class="nf">Cons</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span>
+  <span class="nn">Box</span><span class="p">::</span><span class="nf">new</span><span class="p">(</span><span class="nb">Nil</span><span class="p">))))));</span> <span class="p">}</span> 
+
+<span class="k">let</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="k">let</span> <span class="n">y</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">;</span>
+<span class="nd">assert_eq!</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">x</span><span class="p">);</span>
+<span class="nd">assert_eq!</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="o">*</span><span class="n">y</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>if we want to make an
+assertion about the value in y , we have to use *y to follow the reference to the
+value it’s pointing to (hence dereference)</p>
+
+<p>To enable multiple ownership, Rust has a type called Rc<T> , which is an
+abbreviation for reference counting.</T></p>
+
+<p>Unlike Rc<T> , the RefCell<T> type represents single ownership over the data it
+holds.</T></T></p>
+
+
+                </div>
+            </main>
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#the-rust-programming-language">The Rust Programming Language</a></li>
+  <li><a href="#toc">TOC</a></li>
+  <li><a href="#data-structures">Data Structures</a></li>
+  <li><a href="#loops">Loops</a></li>
+  <li><a href="#chapter-4-understanding-ownership">CHAPTER 4: UNDERSTANDING OWNERSHIP</a></li>
+  <li><a href="#chapter-5-using-structs-to-structure-related-data">Chapter 5: Using Structs to Structure Related Data</a></li>
+  <li><a href="#chapter-6-enums-and-pattern-matching">CHAPTER 6: Enums and Pattern Matching</a></li>
+  <li><a href="#chapter-15--smart-pointers">CHAPTER 15:  Smart Pointers</a></li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
+  <data class="u-url" href="/documents/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">LFMUNOZ</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">LFMUNOZ</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/lfmunoz"><svg class="svg-icon"><use xlink:href="/documents/assets/minima-social-icons.svg#github"></use></svg> <span class="username">lfmunoz</span></a></li><li><a href="https://www.twitter.com/lfmunoz4"><svg class="svg-icon"><use xlink:href="/documents/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">lfmunoz4</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>articles, notes, and references</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

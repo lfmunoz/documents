@@ -2,21 +2,42 @@
 <html lang="en">
 
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>LFMUNOZ | articles, notes, and references</title>
+<title>Modules | LFMUNOZ</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="LFMUNOZ" />
+<meta property="og:title" content="Modules" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="articles, notes, and references" />
 <meta property="og:description" content="articles, notes, and references" />
-<link rel="canonical" href="lfmunoz.github.io/documents/404.html" />
-<meta property="og:url" content="lfmunoz.github.io/documents/404.html" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/Rust/Modules.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/Rust/Modules.html" />
 <meta property="og:site_name" content="LFMUNOZ" />
 <script type="application/ld+json">
-{"@type":"WebPage","headline":"LFMUNOZ","url":"lfmunoz.github.io/documents/404.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+{"@type":"WebPage","headline":"Modules","url":"lfmunoz.github.io/documents/books/Rust/Modules.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
 <body><header class="site-header" role="banner">
@@ -169,30 +190,96 @@
 </div><div class="column-main">
             <main class="page-content" aria-label="Content">
                 <div class="wrapper">
-                    <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+                    <h1 id="modules">Modules</h1>
 
-<div class="container">
-  <h1>404</h1>
+<ul>
+  <li><a href="Introduction.html">The Rust Programming Language</a></li>
+</ul>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+<p>A crate is a binary or library.</p>
+
+<p>A package is one or more crates that provide a set of functionality.</p>
+
+<p>A package must contain zero or one library crates, and no more. It can contain as many
+binary crates as you’d like, but it must contain at least one crate (either
+library or binary).</p>
+
+<p>If a package contains src/main.rs</p>
+
+<p>and src/lib.rs, it has two crates: a library and a binary, both with the same</p>
+
+<p>name as the package.</p>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mod</span> <span class="n">front_of_house</span> <span class="p">{</span>
+<span class="k">mod</span> <span class="n">hosting</span> <span class="p">{</span>
+<span class="k">fn</span> <span class="nf">add_to_waitlist</span><span class="p">()</span> <span class="p">{}</span>
+<span class="k">fn</span> <span class="nf">seat_at_table</span><span class="p">()</span> <span class="p">{}</span>
+<span class="p">}</span>
+<span class="k">mod</span> <span class="n">serving</span> <span class="p">{</span>
+<span class="k">fn</span> <span class="nf">take_order</span><span class="p">()</span> <span class="p">{}</span>
+<span class="k">fn</span> <span class="nf">serve_order</span><span class="p">()</span> <span class="p">{}</span>
+<span class="k">fn</span> <span class="nf">take_payment</span><span class="p">()</span> <span class="p">{}</span>
+<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>A path can take two forms:</p>
+
+<p>An absolute path starts from a crate root by using a crate name or a literal crate .
+A relative path starts from the current module and uses self , super , or an identifier in the current module.</p>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">use</span> <span class="k">self</span><span class="p">::</span><span class="nn">front_of_house</span><span class="p">::</span><span class="n">hosting</span><span class="p">;</span>
+<span class="k">use</span> <span class="nn">crate</span><span class="p">::</span><span class="nn">front_of_house</span><span class="p">::</span><span class="n">hosting</span><span class="p">;</span>
+<span class="k">pub</span> <span class="k">fn</span> <span class="nf">eat_at_restaurant</span><span class="p">()</span> <span class="p">{</span>
+<span class="nn">hosting</span><span class="p">::</span><span class="nf">add_to_waitlist</span><span class="p">();</span>
+<span class="nn">hosting</span><span class="p">::</span><span class="nf">add_to_waitlist</span><span class="p">();</span>
+<span class="nn">hosting</span><span class="p">::</span><span class="nf">add_to_waitlist</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Bringing the function’s parent module into scope with use so we have to
+specify the parent module when calling the function makes it clear that
+the function isn’t locally defined while still minimizing repetition of the
+full path.</p>
+
+<p>On the other hand, when bringing in structs, enums, and other items
+with use , it’s idiomatic to specify the full path.</p>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">use</span> <span class="nn">std</span><span class="p">::</span><span class="nn">collections</span><span class="p">::</span><span class="n">HashMap</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nn">std</span><span class="p">::</span><span class="nn">io</span><span class="p">::</span><span class="n">Result</span> <span class="k">as</span> <span class="n">IoResult</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>https://crates.io/</p>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">use</span> <span class="nn">std</span><span class="p">::</span><span class="n">io</span><span class="p">;</span>
+<span class="k">use</span> <span class="nn">std</span><span class="p">::</span><span class="nn">cmp</span><span class="p">::</span><span class="n">Ordering</span><span class="p">;</span>
+
+
+<span class="k">use</span> <span class="nn">std</span><span class="p">::{</span><span class="n">io</span><span class="p">,</span> <span class="nn">cmp</span><span class="p">::</span><span class="n">Ordering</span><span class="p">};</span>
+</code></pre></div></div>
+
+<p>If we want to bring all public items defined in a path into scope, we can
+specify that path followed by * , the glob operator:</p>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">use</span> <span class="nn">std</span><span class="p">::</span><span class="nn">collections</span><span class="p">::</span><span class="o">*</span><span class="p">;</span>
+
+<span class="k">mod</span> <span class="n">front_of_house</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Using a semicolon after mod front_of_house rather than using a block
+tells Rust to load the contents of the module from another file with the
+same name as the module</p>
 
                 </div>
             </main>
-        </div></div><footer class="site-footer h-card">
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#modules">Modules</a></li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
   <data class="u-url" href="/documents/"></data>
 
   <div class="wrapper">

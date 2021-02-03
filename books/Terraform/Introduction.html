@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Terraform | LFMUNOZ</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Terraform" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="articles, notes, and references" />
+<meta property="og:description" content="articles, notes, and references" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/Terraform/Introduction.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/Terraform/Introduction.html" />
+<meta property="og:site_name" content="LFMUNOZ" />
+<script type="application/ld+json">
+{"@type":"WebPage","headline":"Terraform","url":"lfmunoz.github.io/documents/books/Terraform/Introduction.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
+<body><header class="site-header" role="banner">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2YJDWQX6GK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-2YJDWQX6GK');
+  </script>
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/documents/">LFMUNOZ</a><nav class="site-nav">
+      <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+      <label for="nav-trigger">
+        <span class="menu-icon">
+          <svg viewBox="0 0 18 15" width="18px" height="15px">
+            <path
+              d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+          </svg>
+        </span>
+      </label>
+
+      <div class="trigger"><a class="page-link" href="/documents/about/">About</a></div>
+    </nav></div>
+</header><div class="main"><div class="column-sidebar">
+
+    <div class="nav-section">
+        <div class="nav-title">Posts</div><div class="post-container"><a class="post-link" href="/documents/2020/12/17/i-wish-i-was-worse.html"> I wish I was worse at dancing</a>
+            <span class="post-meta">Dec 17, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/12/13/too-many-options.html"> Too many options slows production</a>
+            <span class="post-meta">Dec 13, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/12/06/dream-cats-and-dogs.html"> A dream of dogs and cats</a>
+            <span class="post-meta">Dec 6, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/11/27/http-rest-bad-design.html"> RESTful HTTP creates coupling</a>
+            <span class="post-meta">Nov 27, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/08/01/organization-and-structure.html"> Organization and Structure of Applications</a>
+            <span class="post-meta">Aug 1, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/07/12/listening-to-music.html"> Listening to Music</a>
+            <span class="post-meta">Jul 12, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/07/05/frameworks.html"> Frameworks and Libraries</a>
+            <span class="post-meta">Jul 5, 2020</span>
+        </div><p class="rss-subscribe">subscribe <a href="/documents/feed.xml">via RSS</a></p>
+    </div>
+
+    <div class="nav-section">
+        <div class="nav-title">Guides</div>
+        <ul>
+            
+            <li>
+                <strong> Computer Science</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/Algorithms/Introduction.html">Algorithms</a></li>
+                    
+                    <li><a href="/documents/articles/SoftwareEngineering.html">Software Engineering</a></li>
+                    
+                    <li><a href="/documents/books/DesignPatterns.html">Design Patterns</a></li>
+                    
+                    <li><a href="/documents/books/Linux/Introduction.html">Linux</a></li>
+                    
+                    <li><a href="/documents/books/Databases/Introduction.html">Databases</a></li>
+                    
+                    <li><a href="/documents/books/SoftwareEngineering/Concurrency.html">Concurrency</a></li>
+                    
+                    <li><a href="/documents/books/Security/Introduction.html">Security</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Programming Languages</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/C/Introduction.html">C</a></li>
+                    
+                    <li><a href="/documents/books/Cpp/Introduction.html">C++</a></li>
+                    
+                    <li><a href="/documents/books/Rust/Introduction.html">Rust</a></li>
+                    
+                    <li><a href="/documents/books/Go/Introduction.html">Go</a></li>
+                    
+                    <li><a href="/documents/books/Java/Introduction.html">Java</a></li>
+                    
+                    <li><a href="/documents/books/Kotlin/Introduction.html">Kotlin</a></li>
+                    
+                    <li><a href="/documents/lang/Python/Introduction.html">Python</a></li>
+                    
+                    <li><a href="/documents/lang/Bash/Introduction.html">Bash</a></li>
+                    
+                    <li><a href="/documents/books/Make/Introduction.html">Makefile</a></li>
+                    
+                    <li><a href="/documents/lang/SQL/Introduction.html">SQL</a></li>
+                    
+                    <li><a href="/documents/lang/HTML/Introduction.html">HTML</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Technologies</strong>
+                <ul>
+                    
+                    <li><a href="/documents/tech/Android/Introduction.html">Android</a></li>
+                    
+                    <li><a href="/documents/books/Docker/Introduction.html">Docker</a></li>
+                    
+                    <li><a href="/documents/books/Envoy/Introduction.html">Envoy</a></li>
+                    
+                    <li><a href="/documents/books/Terraform/Introduction.html">Terraform</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Mathematics</strong>
+                <ul>
+                    
+                    <li><a href="/documents/mathematics/Foundations.html">Foundations</a></li>
+                    
+                    <li><a href="/documents/books/Logic/Introduction.html">Logic</a></li>
+                    
+                    <li><a href="/documents/books/SetTheory/Introduction.html">Set Theory</a></li>
+                    
+                    <li><a href="/documents/books/Geometry/Introduction.html">Geometry</a></li>
+                    
+                    <li><a href="/documents/books/Analysis/Introduction.html">Analysis</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Miscellaneous</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/Non-Duality/Introduction.html">Non-Duality</a></li>
+                    
+                </ul>
+            </li>
+
+            
+        </ul>
+    </div>
+
+
+</div><div class="column-main">
+            <main class="page-content" aria-label="Content">
+                <div class="wrapper">
+                    <h1 id="terraform">Terraform</h1>
+
+<p><strong>Terraform</strong> is an open-source tool that is specifically dedicated to creating, modifying, and even deleting infrastructure on cloud, focusing on “Infrastructure as Code.” <strong>Infrastructure as code</strong> means provisioning infrastructure through software to achieve consistent and predictable environments</p>
+
+<ul>
+  <li><a href="https://registry.terraform.io/">https://registry.terraform.io/)</a></li>
+  <li><a href="https://www.terraform.io/docs/configuration/index.html">https://www.terraform.io/docs/configuration/index.html</a></li>
+  <li>
+    <p><a href="https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource">https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource</a></p>
+  </li>
+  <li>Written in <a href="../Go/Introduction.html">The Go Programming Language</a>.</li>
+  <li>What is running on a virtual server is outside of Terraform’s scope and the responsibility of some other tool.</li>
+  <li>Uses a declarative language known as <strong>HashiCorp Configuration Language (HCL)</strong> (use ruby syntax highlighting markdown)</li>
+  <li>Terraform attemps to be <strong>idempotent</strong> in the sense that if you haven’t changed anything about your configuration and you apply it again to the same environment, nothing will change in the environment.</li>
+  <li>Terraform is a push-type model. Constrast to if there was an agent running on the environment and it pulls its configuration from a central source on a regular basis.</li>
+</ul>
+
+<p>Everything is controlled by a Command Line Interface (CLI)</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Initializes project, downloads plugins, checks modules</span>
+terraform init  
+
+<span class="c"># Analyze code and show you the changes that will be made</span>
+terraform plan 
+
+<span class="c"># Applying a configuration is the process of creating, updating, and destroying</span>
+<span class="c">#  real infrastructure objects in order to make their settings match the configuration</span>
+terraform apply 
+<span class="c"># specific modules</span>
+terraform apply <span class="nt">-target</span><span class="o">=</span>aws_security_group.my_sg <span class="nt">-target</span><span class="o">=</span>aws_security_group.my_2nd_sg
+
+<span class="c"># Process of destroying all the resources that were built</span>
+terraform destroy
+
+terraform show
+
+<span class="c"># Format the .tf files</span>
+terraform <span class="nb">fmt</span> 
+
+<span class="c"># Validate the .tf files have correct syntaxx</span>
+terraform validate 
+
+terraform graph
+
+
+<span class="c"># Run with debug enabled</span>
+<span class="nv">TF_LOG</span><span class="o">=</span>DEBUG terraform apply
+
+
+<span class="k">${</span><span class="nv">path</span><span class="p">.module</span><span class="k">}</span>
+path.root 
+</code></pre></div></div>
+
+<h1 id="installation">Installation</h1>
+
+<details>
+<summary> <strong> cat src/install_terraform.bash </strong> </summary>
+
+<p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/usr/bin/env bash</span>
+
+
+
+curl <span class="nt">-fsSL</span> https://apt.releases.hashicorp.com/gpg | <span class="nb">sudo </span>apt-key add -
+<span class="nb">sudo </span>apt-add-repository <span class="s2">"deb [arch=amd64] https://apt.releases.hashicorp.com </span><span class="si">$(</span>lsb_release <span class="nt">-cs</span><span class="si">)</span><span class="s2"> main"</span>
+<span class="nb">sudo </span>apt-get update <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt-get <span class="nb">install </span>terraform
+terraform <span class="nt">-help</span>
+
+
+
+
+<span class="c"># Install aws cli</span>
+<span class="c">#  https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html</span>
+<span class="c"># /usr/local/bin/aws --version</span>
+<span class="c"># aws configure</span>
+
+</code></pre></div>    </div>
+  </p></details>
+
+<h1 id="overview">Overview</h1>
+
+<p>When you create a new configuration — or check out an existing configuration from version control — you need to initialize the directory with <strong>terraform init</strong>. This command will create a <strong>.terraform/</strong> folder in the current directory and download plugins.</p>
+
+<p><strong>First rule of Terraform:</strong> Make all changes in Terraform.  The State File is the truth.</p>
+
+<p>Do not store <strong>.tfstate</strong> into git, storing in source control could expose potentially sensitive data and risks running Terraform against an old version of state. You are likely to forget to commit and push your changes after running terraform apply, so your teammates will have out-of-date .tfstate files.  Don’t do it.</p>
+
+<h1 id="module">Module</h1>
+
+<p>Every Terraform configuration has at least one module, known as its <strong>root module</strong>, which consists of the resources defined in the .tf files in the main working directory (<strong>./</strong>).</p>
+
+<details>
+<summary> <strong> cat src/install_terraform.bash </strong> </summary>
+
+<p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># ________________________________________________________________________________</span>
+<span class="c">#  root module for example_aws</span>
+<span class="c"># Note: Any set of Terraform configuration files in a folder is a module,</span>
+<span class="c">#   but not all configurations files are root modules</span>
+
+<span class="c"># ________________________________________________________________________________</span>
+<span class="c"># PROVIDERS</span>
+<span class="c"># ________________________________________________________________________________</span>
+<span class="c"># To declare that a module requires particular versions of a </span>
+<span class="c">#  specific provider, use a required_providers block </span>
+<span class="c">#  inside a terraform block:</span>
+terraform <span class="o">{</span>
+  required_providers <span class="o">{</span>
+    aws <span class="o">=</span> <span class="o">{</span>
+      <span class="nb">source</span>  <span class="o">=</span> <span class="s2">"hashicorp/aws"</span>
+      version <span class="o">=</span> <span class="s2">"~&gt; 2.70"</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+  required_version <span class="o">=</span> <span class="s2">"&gt;= 0.13"</span>
+<span class="o">}</span>
+
+<span class="c"># A **provider** is a plugin that Terraform uses to translate the API interactions with the service. Also offers a collection of resource types. </span>
+
+
+<span class="c"># Explicit provider blocks appear only in the root module, </span>
+<span class="c"># child modules can simply use resources for that </span>
+<span class="c"># provider and have them automatically associated </span>
+<span class="c"># with the root provider configurations.</span>
+
+<span class="c"># A provider block without an alias argument is the default configuration </span>
+<span class="c"># for all the resources</span>
+provider <span class="s2">"aws"</span> <span class="o">{</span>
+  <span class="c"># alias  = "east"   alias not needed because we only have 1 provider</span>
+  profile <span class="o">=</span> <span class="s2">"default"</span>
+  region  <span class="o">=</span> <span class="s2">"us-east-1"</span>
+<span class="o">}</span>
+
+<span class="c"># ________________________________________________________________________________</span>
+<span class="c"># CONFIG</span>
+<span class="c"># ________________________________________________________________________________</span>
+variable <span class="s2">"instances"</span> <span class="o">{</span>
+  default <span class="o">=</span> <span class="o">{</span>
+    <span class="s2">"nginx0"</span> <span class="o">=</span> <span class="o">{</span>
+      scripts <span class="o">=</span> <span class="o">[</span><span class="s2">"docker/nginx"</span><span class="o">]</span>
+      <span class="nb">type</span> <span class="o">=</span> <span class="s2">"t2.micro"</span>
+      count   <span class="o">=</span> 1
+    <span class="o">}</span>,
+    <span class="s2">"nginx1"</span> <span class="o">=</span> <span class="o">{</span>
+      scripts <span class="o">=</span> <span class="o">[</span><span class="s2">"docker/nginx"</span><span class="o">]</span>
+      <span class="nb">type</span>    <span class="o">=</span> <span class="s2">"t2.micro"</span>
+      count   <span class="o">=</span> 2
+    <span class="o">}</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c"># ________________________________________________________________________________</span>
+<span class="c"># STAGE 1: SETUP INFRASTRUCTURE</span>
+<span class="c"># ________________________________________________________________________________</span>
+<span class="c"># A module is a container for multiple resources that are used together.</span>
+module <span class="s2">"aws_cluster"</span> <span class="o">{</span>
+
+  for_each <span class="o">=</span> var.instances
+  <span class="nb">source</span>   <span class="o">=</span> <span class="s2">"../../modules/aws"</span>
+  config   <span class="o">=</span> merge<span class="o">(</span>each.value, <span class="o">{</span> name <span class="o">=</span> each.key <span class="o">})</span>
+<span class="o">}</span>
+
+
+<span class="c"># ________________________________________________________________________________</span>
+<span class="c"># OUTPUT INFRASTRUCTURE</span>
+<span class="c"># ________________________________________________________________________________</span>
+output <span class="s2">"aws_output"</span> <span class="o">{</span>
+ value <span class="o">=</span> module.aws_cluster
+<span class="o">}</span>
+
+<span class="c">#output "docker_instance_output" {</span>
+<span class="c">#  value = flatten([for key, value in module.docker_instance :</span>
+<span class="c">#    value.return</span>
+<span class="c">#  ])</span>
+<span class="c">#}</span>
+<span class="c">#</span>
+<span class="c">#resource "local_file" "output" {</span>
+<span class="c">#  content = jsonencode(flatten([for key, value in module.docker_instance :</span>
+<span class="c">#    value.return</span>
+<span class="c">#  ]))</span>
+<span class="c">#  filename = "../${path.root}/infrastructure.json"</span>
+<span class="c">#}</span>
+
+
+<span class="c">#output "docker_instance_debug" {</span>
+<span class="c"># value = [for key, value in module.docker_instance : </span>
+<span class="c">#   { "$key" = value.debug }</span>
+<span class="c"># ]</span>
+<span class="c">#}</span>
+
+<span class="c">#output "docker_instance_debug" {</span>
+<span class="c"># value = [for key, value in module.docker_instance : </span>
+<span class="c">#   { "$key" = value.debug }</span>
+<span class="c"># ]</span>
+<span class="c">#}</span>
+
+<span class="o">}</span>
+<span class="o">}</span>
+
+variable <span class="s2">"instances"</span> <span class="o">{</span>
+  <span class="nb">type</span> <span class="o">=</span> map<span class="o">(</span>
+    object<span class="o">({</span>
+      <span class="nb">type</span> <span class="o">=</span> string
+      script <span class="o">=</span> string
+    <span class="o">}))</span>
+<span class="o">}</span>
+
+
+// A module is a container <span class="k">for </span>multiple resources that are used together.
+module <span class="s2">"aws_cluster"</span> <span class="o">{</span>
+  for_each <span class="o">=</span> var.instances
+  <span class="nb">source</span>   <span class="o">=</span> <span class="s2">"./file"</span>
+  name     <span class="o">=</span> each.key
+  config   <span class="o">=</span> each.value
+<span class="o">}</span>
+
+
+output <span class="s2">"instances_config"</span> <span class="o">{</span>
+  value <span class="o">=</span> <span class="o">[</span> <span class="k">for </span>k, v <span class="k">in </span>module.file_instance : v.output <span class="o">]</span>
+<span class="o">}</span>
+
+
+
+
+</code></pre></div>    </div>
+  </p></details>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>├── example_aws              - root module of aws example
+│   ├── root.tf
+│   └── terraform.tfvars
+├── modules
+│   ├── aws
+│   │   └── aws.tf
+│   ├── docker
+│   │   └── docker.tf
+│   ├── copy
+│   │   └── copy.tf
+│   ├── copy_multiple
+│   │   └── copy_multiple.tf
+
+
+</code></pre></div></div>
+
+<p>Any set of Terraform configuration files in a folder is a module.</p>
+
+<details>
+<summary> <strong> cat src/modules/aws/aws.tf </strong> </summary>
+
+<p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># ________________________________________________________________________________</span>
+<span class="c"># PROVIDERS</span>
+<span class="c"># ________________________________________________________________________________</span>
+<span class="c"># Providers should be configured by the user of the module and </span>
+<span class="c">#  not by the module itself.</span>
+
+<span class="c"># A module intended to be called by one or more other modules must</span>
+<span class="c">#  not contain any provider blocks</span>
+
+<span class="c"># ________________________________________________________________________________</span>
+<span class="c"># INPUT VARIABLES</span>
+<span class="c"># ________________________________________________________________________________</span>
+variable <span class="s2">"config"</span> <span class="o">{</span>
+  default <span class="o">=</span> <span class="o">{</span>
+    name <span class="o">=</span> <span class="s2">"blank_name"</span>
+    scripts <span class="o">=</span> <span class="o">[]</span>
+    <span class="nb">type</span> <span class="o">=</span> <span class="s2">"t2.micro"</span>
+    count  <span class="o">=</span> 1
+  <span class="o">}</span>
+<span class="o">}</span>
+<span class="c"># ________________________________________________________________________________</span>
+<span class="c"># AWS</span>
+<span class="c"># ________________________________________________________________________________</span>
+resource <span class="s2">"aws_instance"</span> <span class="s2">"server"</span> <span class="o">{</span>
+
+  ami <span class="o">=</span> <span class="s2">"ami-0739f8cdb239fe9ae"</span>
+  <span class="c"># t2.micro	1vcpu 	1 gig</span>
+  <span class="c"># t2.small  1vcpu 	2 gig</span>
+  <span class="c"># t2.medium 2vcpu 	4 gig</span>
+  <span class="c"># t2.large  2vcpu 	8 gig</span>
+  <span class="c"># t2.xlarge 4vcpu 	16 gig</span>
+  instance_type          <span class="o">=</span> var.config.type
+  vpc_security_group_ids <span class="o">=</span> <span class="o">[</span><span class="s2">"sg-040039cb63f60bdb4"</span><span class="o">]</span>
+  subnet_id              <span class="o">=</span> <span class="s2">"subnet-0868fc4b14c516ad0"</span>
+  key_name               <span class="o">=</span> <span class="s2">"eco-analytics-keypair"</span>
+
+  connection <span class="o">{</span>
+    <span class="nb">type</span>        <span class="o">=</span> <span class="s2">"ssh"</span>
+    host        <span class="o">=</span> self.public_ip
+    user        <span class="o">=</span> <span class="s2">"ubuntu"</span>
+    private_key <span class="o">=</span> file<span class="o">(</span><span class="s2">"</span><span class="k">${</span><span class="nv">path</span><span class="p">.root</span><span class="k">}</span><span class="s2">/../certs/keypair.pem"</span><span class="o">)</span>
+  <span class="o">}</span>
+
+  tags <span class="o">=</span> <span class="o">{</span>
+    Name <span class="o">=</span> var.name
+  <span class="o">}</span>
+
+  provisioner <span class="s2">"remote-exec"</span> <span class="o">{</span>
+    scripts <span class="o">=</span> <span class="o">[</span><span class="s2">"</span><span class="k">${</span><span class="nv">path</span><span class="p">.root</span><span class="k">}</span><span class="s2">/../provision_scripts/docker_install.bash"</span><span class="o">]</span>
+  <span class="o">}</span>
+
+  provisioner <span class="s2">"local-exec"</span> <span class="o">{</span>
+    <span class="nb">command</span> <span class="o">=</span> <span class="o">&lt;&lt;</span><span class="no">EOT</span><span class="sh">
+      ssh-keyscan -H </span><span class="k">${</span><span class="nv">self</span><span class="p">.public_ip</span><span class="k">}</span><span class="sh"> &gt;&gt; ~/.ssh/known_hosts
+      echo </span><span class="k">${</span><span class="nv">self</span><span class="p">.public_ip</span><span class="k">}</span><span class="sh"> &gt;&gt; </span><span class="k">${</span><span class="nv">path</span><span class="p">.root</span><span class="k">}</span><span class="sh">/../public-ip.txt
+</span><span class="no">    EOT
+</span>  <span class="o">}</span>
+
+  provisioner <span class="s2">"local-exec"</span> <span class="o">{</span>
+    when <span class="o">=</span> destroy
+    <span class="nb">command</span> <span class="o">=</span> <span class="o">&lt;&lt;</span><span class="no">EOT</span><span class="sh">
+      ssh-keygen -R </span><span class="k">${</span><span class="nv">self</span><span class="p">.public_ip</span><span class="k">}</span><span class="sh">
+</span><span class="no">    EOT
+</span>  <span class="o">}</span>
+
+<span class="o">}</span>
+
+<span class="c"># ________________________________________________________________________________</span>
+<span class="c"># OUTPUT VARIABLES</span>
+<span class="c"># ________________________________________________________________________________</span>
+output <span class="s2">"ipv4_address"</span> <span class="o">{</span>
+  value <span class="o">=</span> aws_instance.server.<span class="k">*</span>.public_ip
+<span class="o">}</span>
+</code></pre></div>    </div>
+  </p></details>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># NAME is an identifier you can use throughout the Terraform code</span>
+<span class="n">module</span> <span class="s2">"&lt;NAME&gt;"</span> <span class="p">{</span>
+  <span class="c1"># SOURCE is the path where the module code can be found</span>
+  <span class="n">source</span> <span class="o">=</span> <span class="s2">"&lt;SOURCE&gt;"</span>
+  <span class="c1"># CONFIG consists of one or more arguments that are specific to that module</span>
+  <span class="p">[</span><span class="no">CONFIG</span> <span class="o">...</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="n">module</span> <span class="s2">"webserver_cluster"</span> <span class="p">{</span>
+  <span class="n">source</span> <span class="o">=</span> <span class="s2">"../../../modules/services/webserver-cluster"</span>
+  <span class="n">source</span> <span class="o">=</span> <span class="s2">"github.com/foo/modules//webserver-cluster?ref=v0.0.1"</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">terraform</span> <span class="p">{</span>
+  <span class="n">required_providers</span> <span class="p">{</span>
+    <span class="n">aws</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="n">source</span>  <span class="o">=</span> <span class="s2">"hashicorp/aws"</span>
+      <span class="n">version</span> <span class="o">=</span> <span class="s2">"&gt;= 2.7.0"</span>
+    <span class="p">}</span>
+    <span class="n">local</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">source</span> <span class="o">=</span> <span class="s2">"hashicorp/local"</span>
+        <span class="n">version</span> <span class="o">=</span> <span class="s2">"2.0.0"</span>
+
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Terraform Cloud’s main unit of organization is a workspace. A <strong>workspace</strong> is a collection of everything Terraform needs to run: a Terraform configuration (usually from a VCS repo), values for that configuration’s variables, and state data to keep track of operations between runs.</p>
+
+<p>Name your workspaces with both their component and their environment</p>
+
+<h1 id="provider">Provider</h1>
+
+<p>A <strong>provider</strong> is a plugin that Terraform uses to translate the API interactions with the service. Also offers a collection of resource types.</p>
+
+<ul>
+  <li>
+    <p>Every provider has its own documentation, describing its resource types and their arguments.</p>
+  </li>
+  <li>Public providers are distributed on the Terraform Registry
+    <ul>
+      <li>https://registry.terraform.io/browse/providers</li>
+    </ul>
+  </li>
+  <li>Provider configurations belong in the root module of a Terraform configuration.</li>
+</ul>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">terraform</span> <span class="p">{</span>
+  <span class="n">required_providers</span> <span class="p">{</span>
+    <span class="n">docker</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="n">source</span> <span class="o">=</span> <span class="s2">"terraform-providers/docker"</span>
+    <span class="p">}</span>
+    <span class="n">aws</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="n">source</span>  <span class="o">=</span> <span class="s2">"hashicorp/aws"</span>
+      <span class="n">version</span> <span class="o">=</span> <span class="s2">"~&gt; 2.70"</span>
+    <span class="p">}</span>
+    <span class="n">local</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">source</span> <span class="o">=</span> <span class="s2">"hashicorp/local"</span>
+        <span class="n">version</span> <span class="o">=</span> <span class="s2">"2.0.0"</span>
+
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+ 
+<span class="sr">//</span> <span class="n">local</span> <span class="nb">name</span>
+<span class="n">provider</span> <span class="s2">"aws"</span> <span class="p">{</span>
+  <span class="n">profile</span> <span class="o">=</span> <span class="s2">"default"</span>
+  <span class="n">region</span>  <span class="o">=</span> <span class="s2">"us-west-2"</span>
+<span class="p">}</span>
+
+<span class="sr">//</span> <span class="n">local</span> <span class="nb">name</span>
+<span class="n">provider</span> <span class="s2">"docker"</span> <span class="p">{}</span>
+</code></pre></div></div>
+
+<p>Providers are the most common type of Plugin, which expose the features that a specific service offers via its application programming interface (API). Providers define Resources and are responsible for managing their life cycles. Examples of providers are the Amazon Web Service Provider or the Google Cloud Provider. Example resources are aws_instance and google_compute_instance.</p>
+
+<ul>
+  <li>https://www.terraform.io/docs/providers/docker/index.html</li>
+</ul>
+
+<h1 id="resource">Resource</h1>
+<p>The <strong>resource</strong> block defines a piece of infrastructure.</p>
+
+<ul>
+  <li>A resource might be an EC2 instance, docker image, docker container</li>
+  <li>Each resource type is implemented by a provider.</li>
+  <li>The arguments within the body of a resource block are specific to the selected resource type.</li>
+</ul>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">resource</span> <span class="s2">"aws_instance"</span> <span class="s2">"example"</span> <span class="p">{</span>
+  <span class="n">ami</span>           <span class="o">=</span> <span class="s2">"ami-830c94e3"</span>
+  <span class="n">instance_type</span> <span class="o">=</span> <span class="s2">"t2.micro"</span>
+<span class="p">}</span>
+
+<span class="n">resource</span> <span class="s2">"docker_image"</span> <span class="s2">"nginx"</span> <span class="p">{</span>
+  <span class="n">provider</span>     <span class="o">=</span> <span class="n">docker</span><span class="p">.</span><span class="nf">manager</span>
+  <span class="nb">name</span>         <span class="o">=</span> <span class="s2">"nginx:latest"</span>
+  <span class="n">keep_locally</span> <span class="o">=</span> <span class="kp">false</span>
+<span class="p">}</span>
+
+<span class="sr">//</span> <span class="n">https</span><span class="ss">:/</span><span class="o">/</span><span class="n">registry</span><span class="p">.</span><span class="nf">terraform</span><span class="p">.</span><span class="nf">io</span><span class="o">/</span><span class="n">providers</span><span class="o">/</span><span class="n">hashicorp</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">latest</span><span class="o">/</span><span class="n">docs</span><span class="o">/</span><span class="n">resources</span><span class="o">/</span><span class="n">file</span>
+<span class="n">resource</span> <span class="s2">"local_file"</span> <span class="s2">"foo"</span> <span class="p">{</span>
+    <span class="n">content</span>     <span class="o">=</span> <span class="s2">"foo!"</span>
+    <span class="n">filename</span> <span class="o">=</span> <span class="s2">"${path.module}/foo.bar"</span>
+<span class="p">}</span>
+
+
+</code></pre></div></div>
+
+<p>meta-arguments can be used with any resource type to change the behavior:</p>
+<ul>
+  <li>depends_on - for specifying hidden dependencies</li>
+  <li>count - for creating multiple resource instances according to a count</li>
+  <li>for_each -to create multiple instances according to a map, or set of strings</li>
+  <li>provider - for selecting a non-default provider configuration</li>
+  <li>lifecycle - for lifecycle customizations</li>
+  <li>
+    <p>provisioner and connection - for taking extra actions after resource creation</p>
+  </li>
+  <li>Official resource docs
+    <ul>
+      <li>https://www.terraform.io/docs/configuration/resources.html</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="provisioners">Provisioners</h1>
+
+<p><strong>Provisioners</strong> can be used to model specific actions on the local machine or on a remote machine in order to prepare servers or other infrastructure objects for service.</p>
+
+<p>Multiple provisioners can be specified within a resource. Multiple provisioners are executed in the order they’re defined in the configuration file.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">provisioner</span> <span class="s2">"remote-exec"</span> <span class="p">{</span>
+        <span class="n">inline</span> <span class="o">=</span> <span class="p">[</span>
+          <span class="s2">"export PATH=$PATH:/usr/bin"</span><span class="p">,</span>
+          <span class="s2">"sudo yum -y update"</span><span class="p">,</span>
+          <span class="s2">"sudo yum -y install httpd"</span><span class="p">,</span>
+          <span class="s2">"sudo /etc/init.d/httpd start"</span><span class="p">,</span>
+
+          <span class="s2">"sudo wget https://raw.githubusercontent.com/javabrown/terraform_aws_single-web-server/amazon-linux-ec2-sites/web-config/rk.conf -O /etc/httpd/conf.d/rk.conf"</span><span class="p">,</span>
+
+          <span class="s2">"sudo mkdir /var/www/mywebsite"</span><span class="p">,</span> 
+
+          <span class="s2">"sudo wget https://raw.githubusercontent.com/javabrown/terraform_aws_single-web-server/amazon-linux-ec2-sites/web-config/site-1/index.html -O /var/www/mywebsite/index.html"</span><span class="p">,</span>
+          <span class="s2">"sudo service httpd restart"</span><span class="p">,</span>
+        <span class="p">]</span>
+<span class="p">}</span>
+
+  <span class="n">provisioner</span> <span class="s2">"remote-exec"</span> <span class="p">{</span>
+    <span class="n">scripts</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"${path.root}/../provision_scripts/docker_install.bash"</span><span class="p">]</span>
+     <span class="n">on_failure</span> <span class="o">=</span> <span class="n">continue</span>
+  <span class="p">}</span>
+
+  <span class="n">provisioner</span> <span class="s2">"local-exec"</span> <span class="p">{</span>
+    <span class="n">command</span> <span class="o">=</span> <span class="o">&lt;&lt;</span><span class="no">EOT</span><span class="sh">
+      ssh-keyscan -H ${self.public_ip} &gt;&gt; ~/.ssh/known_hosts
+      echo ${self.public_ip} &gt;&gt; ${path.root}/../public-ip.txt
+    EOT
+  }
+
+  provisioner "local-exec" {
+    when = destroy
+    command = &lt;&lt;EOT
+      ssh-keygen -R ${self.public_ip}
+    EOT
+  }
+
+</span></code></pre></div></div>
+
+<h1 id="dependson">DependsOn</h1>
+
+<p>I would like to run in order as follows.</p>
+
+<p>get_my_public_ip -&gt; ec2 -&gt; db -&gt; test_http_status</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span> <span class="s2">"external"</span> <span class="s2">"get_my_public_ip"</span> <span class="p">{</span>
+  <span class="n">program</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"sh"</span><span class="p">,</span> <span class="s2">"scripts/get_my_public_ip.sh"</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="n">module</span> <span class="s2">"ec2"</span> <span class="p">{</span>
+  <span class="o">...</span>
+<span class="p">}</span>
+
+<span class="n">module</span> <span class="s2">"db"</span> <span class="p">{</span>
+  <span class="o">...</span>
+<span class="p">}</span>
+
+
+<span class="n">data</span> <span class="s2">"external"</span> <span class="s2">"test_http_status"</span> <span class="p">{</span>
+  <span class="n">program</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"sh"</span><span class="p">,</span> <span class="s2">"scripts/test_http_status.sh"</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>You can use depends_on to explicitly declare the dependency. You can also specify multiple resources in the depends_on argument, and Terraform will wait until all of them have been created before creating the target resource.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">resource</span> <span class="s2">"null_resource"</span> <span class="s2">"test_status"</span> <span class="p">{</span>
+  <span class="n">depends_on</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"module.db.id"</span><span class="p">]</span> <span class="c1">#or any output variable</span>
+  <span class="n">provisioner</span> <span class="s2">"local-exec"</span> <span class="p">{</span>
+    <span class="n">command</span> <span class="o">=</span> <span class="s2">"scripts/test_http_status.sh"</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+
+<span class="n">resource</span> <span class="s2">"aws_instance"</span> <span class="s2">"web"</span> <span class="p">{</span>
+  <span class="n">depends_on</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"aws_instance.leader"</span><span class="p">,</span> <span class="s2">"module.vpc"</span><span class="p">]</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<p>The syntax of depends_on is a list of resources and modules:</p>
+
+<p>Resources are TYPE.NAME, such as aws_instance.web.
+Modules are module.NAME, such as module.foo.</p>
+
+<p>https://www.terraform.io/docs/configuration-0-11/resources.html#explicit-dependencies</p>
+
+<h1 id="variables">Variables</h1>
+
+<ul>
+  <li>Variables must be unique among all variables in the same module.</li>
+  <li>Can be accessed from within expressions as <strong>var.&lt; NAME &gt;</strong></li>
+  <li>primitives include: string, number, bool</li>
+  <li>collections include
+    <ul>
+      <li>list(&lt; TYPE &gt;)</li>
+      <li>set(&lt; TYPE &gt;)</li>
+      <li>map(&lt; TYPE &gt;)</li>
+      <li>object({&lt; ATTR NAME &gt; = &lt; TYPE &gt;, … })</li>
+      <li>tuple([ &lt; TYPE &gt;, …])</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Terraform requires that it can compute count and for_each during the plan phase, before any resources are created or modified. That means count and for_each can reference hard-coded values, variables, data sources, and even lists of resources (so long as the length of the list can be determined during plan), but not computed resource outputs.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sr">//</span> <span class="n">string</span> 
+<span class="n">variable</span> <span class="s2">"image_id"</span> <span class="p">{</span>
+  <span class="n">type</span> <span class="o">=</span> <span class="n">string</span>
+  <span class="sr">//</span> <span class="n">optional</span>
+  <span class="n">default</span> <span class="o">=</span> <span class="s2">"my-imagine-id"</span>
+  <span class="sr">//</span> <span class="n">optional</span>
+  <span class="n">description</span> <span class="o">=</span> <span class="s2">"The id of the machine image (AMI) to use for the server."</span>
+
+  <span class="sr">//</span> <span class="n">optional</span>
+  <span class="n">validation</span> <span class="p">{</span>
+    <span class="n">condition</span>     <span class="o">=</span> <span class="n">length</span><span class="p">(</span><span class="n">var</span><span class="p">.</span><span class="nf">image_id</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">4</span> <span class="o">&amp;&amp;</span> <span class="n">substr</span><span class="p">(</span><span class="n">var</span><span class="p">.</span><span class="nf">image_id</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="o">==</span> <span class="s2">"ami-"</span>
+    <span class="n">error_message</span> <span class="o">=</span> <span class="s2">"The image_id value must be a valid AMI id, starting with </span><span class="se">\"</span><span class="s2">ami-</span><span class="se">\"</span><span class="s2">."</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="sr">//</span> <span class="no">List</span> <span class="n">of</span> <span class="n">strings</span>
+<span class="n">variable</span> <span class="s2">"availability_zone_names"</span> <span class="p">{</span>
+  <span class="n">type</span>    <span class="o">=</span> <span class="n">list</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+  <span class="n">default</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"us-west-1a"</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="sr">//</span> <span class="no">List</span> <span class="n">of</span> <span class="n">objects</span>
+<span class="n">variable</span> <span class="s2">"docker_ports"</span> <span class="p">{</span>
+  <span class="n">type</span> <span class="o">=</span> <span class="n">list</span><span class="p">(</span><span class="n">object</span><span class="p">({</span>
+    <span class="n">internal</span> <span class="o">=</span> <span class="n">number</span>
+    <span class="n">external</span> <span class="o">=</span> <span class="n">number</span>
+    <span class="n">protocol</span> <span class="o">=</span> <span class="n">string</span>
+  <span class="p">}))</span>
+  <span class="n">default</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="n">internal</span> <span class="o">=</span> <span class="mi">8300</span>
+      <span class="n">external</span> <span class="o">=</span> <span class="mi">8300</span>
+      <span class="n">protocol</span> <span class="o">=</span> <span class="s2">"tcp"</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+
+<span class="c1"># count</span>
+<span class="n">variable</span> <span class="s2">"user_names"</span> <span class="p">{</span>
+  <span class="n">description</span> <span class="o">=</span> <span class="s2">"Create IAM users with these names"</span>
+  <span class="n">type</span>        <span class="o">=</span> <span class="n">list</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+  <span class="n">default</span>     <span class="o">=</span> <span class="p">[</span><span class="s2">"neo"</span><span class="p">,</span> <span class="s2">"trinity"</span><span class="p">,</span> <span class="s2">"morpheus"</span><span class="p">]</span>
+<span class="p">}</span>
+<span class="n">resource</span> <span class="s2">"aws_iam_user"</span> <span class="s2">"example"</span> <span class="p">{</span>
+  <span class="n">count</span> <span class="o">=</span> <span class="n">length</span><span class="p">(</span><span class="n">var</span><span class="p">.</span><span class="nf">user_names</span><span class="p">)</span>
+  <span class="nb">name</span>  <span class="o">=</span> <span class="n">var</span><span class="p">.</span><span class="nf">user_names</span><span class="p">[</span><span class="n">count</span><span class="p">.</span><span class="nf">index</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="n">output</span> <span class="s2">"neo_arn"</span> <span class="p">{</span>
+  <span class="n">value</span>       <span class="o">=</span> <span class="n">aws_iam_user</span><span class="p">.</span><span class="nf">example</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nf">arn</span>
+  <span class="n">description</span> <span class="o">=</span> <span class="s2">"The ARN for user Neo"</span>
+<span class="p">}</span>
+<span class="n">output</span> <span class="s2">"all_arns"</span> <span class="p">{</span>
+  <span class="n">value</span>       <span class="o">=</span> <span class="n">aws_iam_user</span><span class="p">.</span><span class="nf">example</span><span class="p">[</span><span class="o">*</span><span class="p">].</span><span class="nf">arn</span>
+  <span class="n">description</span> <span class="o">=</span> <span class="s2">"The ARNs for all users"</span>
+<span class="p">}</span>
+
+<span class="c1"># for_each</span>
+
+<span class="n">resource</span> <span class="s2">"aws_iam_user"</span> <span class="s2">"example"</span> <span class="p">{</span>
+  <span class="n">for_each</span> <span class="o">=</span> <span class="n">toset</span><span class="p">(</span><span class="n">var</span><span class="p">.</span><span class="nf">user_names</span><span class="p">)</span>
+  <span class="nb">name</span>     <span class="o">=</span> <span class="n">each</span><span class="p">.</span><span class="nf">value</span>
+<span class="p">}</span>
+
+<span class="n">output</span> <span class="s2">"all_arns"</span> <span class="p">{</span>
+  <span class="n">value</span> <span class="o">=</span> <span class="n">values</span><span class="p">(</span><span class="n">aws_iam_user</span><span class="p">.</span><span class="nf">example</span><span class="p">)[</span><span class="o">*</span><span class="p">].</span><span class="nf">arn</span>
+<span class="p">}</span>
+
+
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># specify individual variables </span>
+terraform apply <span class="nt">-var</span><span class="o">=</span><span class="s2">"image_id=ami-abc123"</span>
+<span class="c"># specify variable definitions file </span>
+terraform apply <span class="nt">-var-file</span><span class="o">=</span><span class="s2">"testing.tfvars"</span>
+</code></pre></div></div>
+
+<p>A variable definitions file</p>
+<ul>
+  <li>consists only of variable name assignments</li>
+  <li>ends in either <strong>.tfvars</strong> or <strong>.tfvars.json</strong></li>
+</ul>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sr">//</span> <span class="p">.</span><span class="nf">tfvars</span>
+<span class="n">image_id</span> <span class="o">=</span> <span class="s2">"ami-abc123"</span>
+<span class="n">availability_zone_names</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="s2">"us-east-1a"</span><span class="p">,</span>
+  <span class="s2">"us-west-1c"</span><span class="p">,</span>
+<span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">//</span><span class="w"> </span><span class="err">.tfvars.json</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="nl">"image_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-abc123"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"availability_zone_names"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"us-west-1a"</span><span class="p">,</span><span class="w"> </span><span class="s2">"us-west-1c"</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<ul>
+  <li>https://www.terraform.io/docs/configuration/outputs.html</li>
+</ul>
+
+<h1 id="data-source">Data Source</h1>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>data "local_file" "input" {
+  filename = var.input_file
+}
+
+resource "aws_cloudwatch_event_target" "data" {
+  rule      = aws_cloudwatch_event_rule.scheduler.name
+  target_id = "finance_producer_cloudwatch"
+  arn       = aws_lambda_function.finance_data_producer.arn
+  input     = data.local_file.input.content
+}
+</code></pre></div></div>
+
+<h1 id="patterns">Patterns</h1>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">variable</span> <span class="s2">"create_vm_images"</span> <span class="p">{</span>
+  <span class="n">default</span> <span class="o">=</span> <span class="kp">true</span>
+<span class="p">}</span>
+
+<span class="n">resource</span> <span class="s2">"null_resource"</span> <span class="s2">"win_vm"</span> <span class="p">{</span>
+  <span class="n">for_each</span> <span class="o">=</span> <span class="n">var</span><span class="p">.</span><span class="nf">create_vm_images</span> <span class="p">?</span> <span class="n">var</span><span class="p">.</span><span class="nf">vms_to_image</span> <span class="p">:</span> <span class="p">{}</span>
+  <span class="o">...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nv">TF_LOG</span><span class="o">=</span>DEBUG terraform apply
+</code></pre></div></div>
+
+<p>https://www.terraform.io/docs/provisioners/local-exec.html</p>
+
+<h1 id="references">References</h1>
+
+<p>https://github.com/shuaibiyy/awesome-terraform</p>
+
+<p>https://github.com/28mm/blast-radius</p>
+
+<p>https://blog.gruntwork.io/how-to-create-reusable-infrastructure-with-terraform-modules-25526d65f73d</p>
+
+<p>https://blog.gruntwork.io/terraform-tips-tricks-loops-if-statements-and-gotchas-f739bbae55f9</p>
+
+<p>https://github.com/hashicorp/terraform/blob/master/CHANGELOG.md</p>
+
+                </div>
+            </main>
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#terraform">Terraform</a></li>
+  <li><a href="#installation">Installation</a></li>
+  <li><a href="#overview">Overview</a></li>
+  <li><a href="#module">Module</a></li>
+  <li><a href="#provider">Provider</a></li>
+  <li><a href="#resource">Resource</a></li>
+  <li><a href="#provisioners">Provisioners</a></li>
+  <li><a href="#dependson">DependsOn</a></li>
+  <li><a href="#variables">Variables</a></li>
+  <li><a href="#data-source">Data Source</a></li>
+  <li><a href="#patterns">Patterns</a></li>
+  <li><a href="#references">References</a></li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
+  <data class="u-url" href="/documents/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">LFMUNOZ</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">LFMUNOZ</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/lfmunoz"><svg class="svg-icon"><use xlink:href="/documents/assets/minima-social-icons.svg#github"></use></svg> <span class="username">lfmunoz</span></a></li><li><a href="https://www.twitter.com/lfmunoz4"><svg class="svg-icon"><use xlink:href="/documents/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">lfmunoz4</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>articles, notes, and references</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

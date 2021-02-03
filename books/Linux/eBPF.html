@@ -2,21 +2,42 @@
 <html lang="en">
 
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>LFMUNOZ | articles, notes, and references</title>
+<title>eBPF | LFMUNOZ</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="LFMUNOZ" />
+<meta property="og:title" content="eBPF" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="articles, notes, and references" />
 <meta property="og:description" content="articles, notes, and references" />
-<link rel="canonical" href="lfmunoz.github.io/documents/404.html" />
-<meta property="og:url" content="lfmunoz.github.io/documents/404.html" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/Linux/eBPF.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/Linux/eBPF.html" />
 <meta property="og:site_name" content="LFMUNOZ" />
 <script type="application/ld+json">
-{"@type":"WebPage","headline":"LFMUNOZ","url":"lfmunoz.github.io/documents/404.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+{"@type":"WebPage","headline":"eBPF","url":"lfmunoz.github.io/documents/books/Linux/eBPF.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
 <body><header class="site-header" role="banner">
@@ -169,30 +190,59 @@
 </div><div class="column-main">
             <main class="page-content" aria-label="Content">
                 <div class="wrapper">
-                    <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+                    <h1 id="ebpf-extended-berkeley-packet-filter">eBPF (Extended Berkeley Packet Filter)</h1>
 
-<div class="container">
-  <h1>404</h1>
+<details>
+<summary> <strong> cat src/ebpf/install_ebpf.bash </strong> </summary>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+<p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/usr/bin/env bash</span>
+
+<span class="c"># check what linux kernel version youa are on</span>
+<span class="nb">cat</span> /etc/lsb-release
+<span class="nb">uname</span> <span class="nt">-a</span>
+
+<span class="c"># check kernel compilation options</span>
+<span class="nb">grep </span>BPF /boot/config-<span class="sb">`</span><span class="nb">uname</span> <span class="nt">-r</span><span class="sb">`</span>
+
+
+<span class="c"># Look at documentation</span>
+<span class="c"># https://github.com/iovisor/bcc/blob/master/INSTALL.md#ubuntu---binary</span>
+
+<span class="c"># Download examples</span>
+<span class="c"># git clone https://github.com/iovisor/bcc</span>
+
+<span class="c"># Download tools</span>
+<span class="c"># sudo apt-get install bpfcc-tools linux-headers-$(uname -r)</span>
+
+<span class="c"># Install from source </span>
+<span class="nb">sudo </span>apt-get <span class="nt">-y</span> <span class="nb">install </span>bison build-essential <span class="se">\ </span>
+    cmake flex git libedit-dev libllvm6.0 llvm-6.0-dev <span class="se">\ </span>
+    libclang-6.0-dev python zlib1g-dev libelf-dev
+
+git clone github.com/iovisor/bcc.git
+<span class="nb">mkdir </span>bcc/build<span class="p">;</span> <span class="nb">cd </span>bcc/build 
+cmake .. <span class="nt">-DCMAKE_INSTALL_PREFIX</span><span class="o">=</span>/usr 
+make 
+<span class="nb">sudo </span>make <span class="nb">install</span> 
+
+<span class="c"># Check it works</span>
+<span class="nb">sudo </span>opensnoop-bpfcc
+<span class="nb">sudo</span> ./examples/hello_world.py
+
+
+</code></pre></div>    </div>
+  </p></details>
+
 
                 </div>
             </main>
-        </div></div><footer class="site-footer h-card">
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#ebpf-extended-berkeley-packet-filter">eBPF (Extended Berkeley Packet Filter)</a></li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
   <data class="u-url" href="/documents/"></data>
 
   <div class="wrapper">

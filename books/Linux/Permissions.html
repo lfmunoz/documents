@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Permissions | LFMUNOZ</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Permissions" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="articles, notes, and references" />
+<meta property="og:description" content="articles, notes, and references" />
+<link rel="canonical" href="lfmunoz.github.io/documents/books/Linux/Permissions.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/books/Linux/Permissions.html" />
+<meta property="og:site_name" content="LFMUNOZ" />
+<script type="application/ld+json">
+{"@type":"WebPage","headline":"Permissions","url":"lfmunoz.github.io/documents/books/Linux/Permissions.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
+<body><header class="site-header" role="banner">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2YJDWQX6GK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-2YJDWQX6GK');
+  </script>
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/documents/">LFMUNOZ</a><nav class="site-nav">
+      <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+      <label for="nav-trigger">
+        <span class="menu-icon">
+          <svg viewBox="0 0 18 15" width="18px" height="15px">
+            <path
+              d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+          </svg>
+        </span>
+      </label>
+
+      <div class="trigger"><a class="page-link" href="/documents/about/">About</a></div>
+    </nav></div>
+</header><div class="main"><div class="column-sidebar">
+
+    <div class="nav-section">
+        <div class="nav-title">Posts</div><div class="post-container"><a class="post-link" href="/documents/2020/12/17/i-wish-i-was-worse.html"> I wish I was worse at dancing</a>
+            <span class="post-meta">Dec 17, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/12/13/too-many-options.html"> Too many options slows production</a>
+            <span class="post-meta">Dec 13, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/12/06/dream-cats-and-dogs.html"> A dream of dogs and cats</a>
+            <span class="post-meta">Dec 6, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/11/27/http-rest-bad-design.html"> RESTful HTTP creates coupling</a>
+            <span class="post-meta">Nov 27, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/08/01/organization-and-structure.html"> Organization and Structure of Applications</a>
+            <span class="post-meta">Aug 1, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/07/12/listening-to-music.html"> Listening to Music</a>
+            <span class="post-meta">Jul 12, 2020</span>
+        </div><div class="post-container"><a class="post-link" href="/documents/2020/07/05/frameworks.html"> Frameworks and Libraries</a>
+            <span class="post-meta">Jul 5, 2020</span>
+        </div><p class="rss-subscribe">subscribe <a href="/documents/feed.xml">via RSS</a></p>
+    </div>
+
+    <div class="nav-section">
+        <div class="nav-title">Guides</div>
+        <ul>
+            
+            <li>
+                <strong> Computer Science</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/Algorithms/Introduction.html">Algorithms</a></li>
+                    
+                    <li><a href="/documents/articles/SoftwareEngineering.html">Software Engineering</a></li>
+                    
+                    <li><a href="/documents/books/DesignPatterns.html">Design Patterns</a></li>
+                    
+                    <li><a href="/documents/books/Linux/Introduction.html">Linux</a></li>
+                    
+                    <li><a href="/documents/books/Databases/Introduction.html">Databases</a></li>
+                    
+                    <li><a href="/documents/books/SoftwareEngineering/Concurrency.html">Concurrency</a></li>
+                    
+                    <li><a href="/documents/books/Security/Introduction.html">Security</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Programming Languages</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/C/Introduction.html">C</a></li>
+                    
+                    <li><a href="/documents/books/Cpp/Introduction.html">C++</a></li>
+                    
+                    <li><a href="/documents/books/Rust/Introduction.html">Rust</a></li>
+                    
+                    <li><a href="/documents/books/Go/Introduction.html">Go</a></li>
+                    
+                    <li><a href="/documents/books/Java/Introduction.html">Java</a></li>
+                    
+                    <li><a href="/documents/books/Kotlin/Introduction.html">Kotlin</a></li>
+                    
+                    <li><a href="/documents/lang/Python/Introduction.html">Python</a></li>
+                    
+                    <li><a href="/documents/lang/Bash/Introduction.html">Bash</a></li>
+                    
+                    <li><a href="/documents/books/Make/Introduction.html">Makefile</a></li>
+                    
+                    <li><a href="/documents/lang/SQL/Introduction.html">SQL</a></li>
+                    
+                    <li><a href="/documents/lang/HTML/Introduction.html">HTML</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Technologies</strong>
+                <ul>
+                    
+                    <li><a href="/documents/tech/Android/Introduction.html">Android</a></li>
+                    
+                    <li><a href="/documents/books/Docker/Introduction.html">Docker</a></li>
+                    
+                    <li><a href="/documents/books/Envoy/Introduction.html">Envoy</a></li>
+                    
+                    <li><a href="/documents/books/Terraform/Introduction.html">Terraform</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Mathematics</strong>
+                <ul>
+                    
+                    <li><a href="/documents/mathematics/Foundations.html">Foundations</a></li>
+                    
+                    <li><a href="/documents/books/Logic/Introduction.html">Logic</a></li>
+                    
+                    <li><a href="/documents/books/SetTheory/Introduction.html">Set Theory</a></li>
+                    
+                    <li><a href="/documents/books/Geometry/Introduction.html">Geometry</a></li>
+                    
+                    <li><a href="/documents/books/Analysis/Introduction.html">Analysis</a></li>
+                    
+                </ul>
+            </li>
+
+            
+            <li>
+                <strong> Miscellaneous</strong>
+                <ul>
+                    
+                    <li><a href="/documents/books/Non-Duality/Introduction.html">Non-Duality</a></li>
+                    
+                </ul>
+            </li>
+
+            
+        </ul>
+    </div>
+
+
+</div><div class="column-main">
+            <main class="page-content" aria-label="Content">
+                <div class="wrapper">
+                    <h1 id="permissions">Permissions</h1>
+
+<p><a href="Introduction.html">Linux</a></p>
+
+<h2 id="users-and-groups">Users and Groups</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>useradd &lt;username&gt;
+useradd <span class="nt">-G</span> admins,webadmin,developers tecmint
+
+passwd &lt;username&gt;
+
+userdel paul
+
+
+<span class="c"># interactive </span>
+adduser username
+
+<span class="c"># add the user to the sudo group</span>
+usermod <span class="nt">-aG</span> <span class="nb">sudo </span>username
+
+<span class="c"># switch to the new user account.</span>
+su - username
+</code></pre></div></div>
+
+<ul>
+  <li>-c comment: Add a comment for the user</li>
+  <li>-d home-directory: Create a new home-directory</li>
+  <li>-e yyyy-mm-dd: Date for the account to be disabled</li>
+  <li>-f days: Number of days after the password expires until the account is disabled. (If 0 is specified, the account is disabled immediately after the password expires. If -1 is specified, the account is not be disabled after the password expires.)</li>
+  <li>-g group-name: Primary Group name or group number for the user’s default group (group name must exist)</li>
+  <li>-G group-list: List of secondary additional (other than default) group names or group numbers, separated by commas, of which the user is a member (group name must exist)</li>
+  <li>-m: Create the home directory</li>
+  <li>-M: Do not create the home directory</li>
+  <li>-s: User’s login shell (default /bin/bash)</li>
+</ul>
+
+<p><strong>/etc/passwd</strong>  contains one line for each user account on the system.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Each line is composed of seven fields separated by colons ( : )</span>
+<span class="nb">cat</span> /etc/passwd 
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+<span class="nb">sync</span>:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System <span class="o">(</span>admin<span class="o">)</span>:/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+_apt:x:100:65534::/nonexistent:/usr/sbin/nologin
+systemd-timesync:x:101:101:systemd Time Synchronization,,,:/run/systemd:/usr/sbin/nologin
+systemd-network:x:102:103:systemd Network Management,,,:/run/systemd:/usr/sbin/nologin
+systemd-resolve:x:103:104:systemd Resolver,,,:/run/systemd:/usr/sbin/nologin
+messagebus:x:104:105::/nonexistent:/usr/sbin/nologin
+sshd:x:105:65534::/run/sshd:/usr/sbin/nologin
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cat /etc/shadow
+root:$6$PCN10PSIYZH8ciji$vOZj3SEnB0dT8agKPrlKTT1WWXlpj5TvTSlQazyHIG/FVB3dAsh2GKV96rBEUEQnnRn8uUsWzZKJwQxP/mlbY0:18600:0:99999:7:::
+daemon:*:18572:0:99999:7:::
+bin:*:18572:0:99999:7:::
+sys:*:18572:0:99999:7:::
+sync:*:18572:0:99999:7:::
+games:*:18572:0:99999:7:::
+man:*:18572:0:99999:7:::
+lp:*:18572:0:99999:7:::
+mail:*:18572:0:99999:7:::
+news:*:18572:0:99999:7:::
+uucp:*:18572:0:99999:7:::
+proxy:*:18572:0:99999:7:::
+www-data:*:18572:0:99999:7:::
+backup:*:18572:0:99999:7:::
+list:*:18572:0:99999:7:::
+irc:*:18572:0:99999:7:::
+gnats:*:18572:0:99999:7:::
+nobody:*:18572:0:99999:7:::
+_apt:*:18572:0:99999:7:::
+systemd-timesync:*:18600:0:99999:7:::
+systemd-network:*:18600:0:99999:7:::
+systemd-resolve:*:18600:0:99999:7:::
+messagebus:*:18600:0:99999:7:::
+sshd:*:18600:0:99999:7:::
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> /etc/group
+root:x:0:
+daemon:x:1:
+bin:x:2:
+sys:x:3:
+adm:x:4:
+<span class="nb">tty</span>:x:5:
+disk:x:6:
+lp:x:7:
+mail:x:8:
+news:x:9:
+uucp:x:10:
+man:x:12:
+proxy:x:13:
+kmem:x:15:
+dialout:x:20:
+fax:x:21:
+voice:x:22:
+cdrom:x:24:
+floppy:x:25:
+tape:x:26:
+<span class="nb">sudo</span>:x:27:
+audio:x:29:
+dip:x:30:
+www-data:x:33:
+backup:x:34:
+operator:x:37:
+list:x:38:
+irc:x:39:
+src:x:40:
+gnats:x:41:
+shadow:x:42:
+utmp:x:43:
+video:x:44:
+sasl:x:45:
+plugdev:x:46:
+staff:x:50:
+games:x:60:
+<span class="nb">users</span>:x:100:
+nogroup:x:65534:
+systemd-timesync:x:101:
+systemd-journal:x:102:
+systemd-network:x:103:
+systemd-resolve:x:104:
+messagebus:x:105:
+ssh:x:106:
+docker:x:999:
+</code></pre></div></div>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;pwd.h&gt;
+</span><span class="k">struct</span> <span class="n">passwd</span> <span class="o">*</span><span class="nf">getpwnam</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">name</span> <span class="p">);</span>
+<span class="k">struct</span> <span class="n">passwd</span> <span class="o">*</span><span class="nf">getpwuid</span><span class="p">(</span><span class="n">uid_t</span> <span class="n">uid</span> <span class="p">);</span>
+<span class="c1">// Both return a pointer on success, or NULL on error</span>
+
+<span class="cp">#define _XOPEN_SOURCE
+#include &lt;unistd.h&gt;
+</span><span class="kt">char</span> <span class="o">*</span><span class="nf">crypt</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">key</span> <span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">salt</span> <span class="p">);</span>
+<span class="c1">// Returns pointer to statically allocated string containing</span>
+<span class="c1">//  encrypted password on success, or NULL on error</span>
+</code></pre></div></div>
+
+<h2 id="file-permissions">File Permissions</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>d rwx rwx rwx
+   +   +   +
+   |   |   |
+   |   |   |
+   |   |   +-----+ All Users
+   |   |
+   |   +---------+ Group
+   |
+   +-------------+ Owner
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>drwxr-xr-x   7 luis luis 4.0K Feb 21  2016 VirtualBox VMs/
+<span class="nt">-rw-r--r--</span>   1 luis luis  317 Apr 18 18:24 index.html
+<span class="nt">-rw-r--r--</span>   1 luis luis  304 Feb 14 23:51 missfont.log
+</code></pre></div></div>
+<p>The first character can be any of these:</p>
+<ul>
+  <li>d = directory</li>
+  <li>
+    <ul>
+      <li>= regular file</li>
+    </ul>
+  </li>
+  <li>l = symbolic link</li>
+  <li>s = Unix domain socket</li>
+  <li>p = named pipe</li>
+  <li>c = character device file</li>
+  <li>b = block device file</li>
+</ul>
+
+<p>Read permission.</p>
+<ul>
+  <li>regular file - it can be opened and read.</li>
+  <li>directory - you can list the contents.</li>
+</ul>
+
+<p>Write permission.</p>
+<ul>
+  <li>regular file - you can modify the file, aka write new data to the file.</li>
+  <li>directory - you can add, remove, and rename files in the directory.</li>
+</ul>
+
+<p>Execute permission.</p>
+<ul>
+  <li>regular file - you can execute the file as a program or a shell script.</li>
+  <li>directory, the execute permission (also called the “search bit”) allows you to access files in the directory and enter it, with the cd command, for example. However, note that although the execute bit lets you enter the directory, you’re not allowed to list its contents, unless you also have the read permissions to that directory</li>
+</ul>
+
+<p>chmod - change file mode bits</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>drwxr-xr-x
+</code></pre></div></div>
+<p>Think of this in terms of binary 7 7 7 = rwx rwx rwx
+-R - change files and directories recursively</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Wipe out all the permissions but add read permission for everybody</span>
+<span class="nv">$ </span><span class="nb">chmod </span><span class="nv">a</span><span class="o">=</span>r testfile 
+<span class="c"># Add execute permissions for group:</span>
+<span class="nv">$ </span><span class="nb">chmod </span>g+x testfile 
+<span class="c"># Remove the execute permission from both the file's owner and group</span>
+<span class="nv">$ </span><span class="nb">chmod </span>ug-x testfile 
+<span class="nv">$ </span><span class="nb">chmod </span>755 testfile
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>644 = rw-r--r--   Usual permissions for reading an HTML web page or Read-only text files.
+664 = rw-rw-r--   Used in most plain text hit-counter logs (writable = on)
+666 = rw-rw-rw-   Used in scripts that require World writable permission.
+711 = rwx--x--x   Used by Perl scripts to make them executable only upon access.
+751 = rwxr-x--x   Used by Perl scripts that must be written to and executed (hit counters).
+755 = rwxr-xr-x   Used by some Perl-scripts and binary database files.
+775 = rwxrwxr-x   Normal permission for your website's Root directory
+777 = rwxrwxrwx   The whole ball of wax. You better have tight security on any file marked with these permissions. 777 is usually only assigned to a CGI Directory, rather than to an individual file.
+</code></pre></div></div>
+
+                </div>
+            </main>
+        </div><div class="right-side-bar">
+<ul>
+  <li><a href="#permissions">Permissions</a>
+    <ul>
+      <li><a href="#users-and-groups">Users and Groups</a></li>
+      <li><a href="#file-permissions">File Permissions</a></li>
+    </ul>
+  </li>
+</ul>
+
+</div></div><footer class="site-footer h-card">
+  <data class="u-url" href="/documents/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">LFMUNOZ</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">LFMUNOZ</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/lfmunoz"><svg class="svg-icon"><use xlink:href="/documents/assets/minima-social-icons.svg#github"></use></svg> <span class="username">lfmunoz</span></a></li><li><a href="https://www.twitter.com/lfmunoz4"><svg class="svg-icon"><use xlink:href="/documents/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">lfmunoz4</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>articles, notes, and references</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

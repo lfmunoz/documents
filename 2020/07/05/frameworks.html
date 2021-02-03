@@ -6,17 +6,19 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>LFMUNOZ | articles, notes, and references</title>
+<title>Frameworks and Libraries | LFMUNOZ</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="LFMUNOZ" />
+<meta property="og:title" content="Frameworks and Libraries" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="articles, notes, and references" />
-<meta property="og:description" content="articles, notes, and references" />
-<link rel="canonical" href="lfmunoz.github.io/documents/404.html" />
-<meta property="og:url" content="lfmunoz.github.io/documents/404.html" />
+<meta name="description" content="Should Frameworks and Libraries be avoided or embraced? Obviously I can’t give you an absolute answer, but there are guidelines, rules and code smells that will separate a well structured system from a kludge." />
+<meta property="og:description" content="Should Frameworks and Libraries be avoided or embraced? Obviously I can’t give you an absolute answer, but there are guidelines, rules and code smells that will separate a well structured system from a kludge." />
+<link rel="canonical" href="lfmunoz.github.io/documents/2020/07/05/frameworks.html" />
+<meta property="og:url" content="lfmunoz.github.io/documents/2020/07/05/frameworks.html" />
 <meta property="og:site_name" content="LFMUNOZ" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-07-05T00:00:00+00:00" />
 <script type="application/ld+json">
-{"@type":"WebPage","headline":"LFMUNOZ","url":"lfmunoz.github.io/documents/404.html","description":"articles, notes, and references","@context":"https://schema.org"}</script>
+{"@type":"BlogPosting","headline":"Frameworks and Libraries","dateModified":"2020-07-05T00:00:00+00:00","datePublished":"2020-07-05T00:00:00+00:00","url":"lfmunoz.github.io/documents/2020/07/05/frameworks.html","mainEntityOfPage":{"@type":"WebPage","@id":"lfmunoz.github.io/documents/2020/07/05/frameworks.html"},"description":"Should Frameworks and Libraries be avoided or embraced? Obviously I can’t give you an absolute answer, but there are guidelines, rules and code smells that will separate a well structured system from a kludge.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/documents/assets/main.css"><link type="application/atom+xml" rel="alternate" href="lfmunoz.github.io/documents/feed.xml" title="LFMUNOZ" /></head>
 <body><header class="site-header" role="banner">
@@ -169,27 +171,49 @@
 </div><div class="column-main">
             <main class="page-content" aria-label="Content">
                 <div class="wrapper">
-                    <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+                    <article class="post">
 
-<div class="container">
-  <h1>404</h1>
+  <header class="post-header">
+    <h1 class="post-title">Frameworks and Libraries</h1>
+  </header>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+  <div class="post-content">
+    <p><span class="intro">Should Frameworks and Libraries be avoided or embraced? </span> Obviously I can’t give you an absolute answer, but there are guidelines, rules and code smells that will separate a well structured system from a kludge.</p>
 
+<p>Once upon a time I thought, “Wow, everything has already been written. There is a library for that, let me just download it and use it. All I have to do is just stitch it together. Most programming is just about finding the right framework or library.”</p>
+
+<p>Unfortunately it’s more complicated than that. That sort of thinking will lead to overly embracing frameworks which leads to having overly complicated code,  performance problems and extra refactorings. Professional programmers always use frameworks and libraries with caution. Here are some guidelines:</p>
+
+<blockquote>
+  <p>If a framework has a feature that doesn’t mean you should be using it. More likely you should be avoiding it.</p>
+</blockquote>
+
+<p>For example, with <em>Spring Boot</em> you get dependency injection. Often in such projects I see dependency injection abused, meaning used everywhere even when it would be just as easy to pass in arguments that aren’t <em>@Autowired</em>. Proper use of dependecy injection means using it at strategic boundaries where you end up with isolated subsystems that can be easily swapped.</p>
+
+<p>The intermediate programmers thinks she understands that coupling is bad but often she hasn’t taken the concept far enough. Coupling also means using a feature from a third party library and therefore using it only when necessary will keep coupling low. Keeping coupling low creates boundaries of seperation and allows the code to be more malleable.  Malleability is important becomes it means adding a feature or making a modification will be feasible with minimum effort.</p>
+
+<blockquote>
+  <p>If you think you can do it in one day do it . Even after you figure out it will take you three days.</p>
+</blockquote>
+
+<p>For example, if you need to communicate with <em>RabbitMQ</em>, <em>Kafka</em> or <em>ElasticSearch</em>  most programmers would reach for <em>Spring Boot</em> (i.e., <em>“org.springframework.kafka:spring-kafka”</em>) or some other  library which is just wrapper code around the already good libraries provided by the implementation developers (i.e., <em>“org.apache.kafka:kafka-clients”</em>). This rule says that if you think you can get the same required functionality by using a lower-level library absoutely do it. The lower-level libraries have better code quality, performance and stability.  The lower-libraries are written by domain experts the framework wrappers are written by competent programmers who read through the documnetation of the lower-libraries.</p>
+
+<p>To understand this fully look through this issue: <a href="https://issues.apache.org/jira/browse/FLINK-10195">FLINK-10195</a>.  Note one of the <em>Apache Flink</em> developers  says, “Although this has been very much a crash course in <em>RabbitMQ</em> for me.  Looking at forums it looks like the prefetch.count is the way that this is handled normally.” Most of these framework wrappers are written for the intermediate programmer. Instead of dealing with simliar issues to <em>FLINK-10195</em> consider how long it will take you to rollout your own <em>RabbitMQ</em> connector and do it:  <a href="https://gist.github.com/lfmunoz/c7922382a13e2c576ff77b3b9f3f99ae">RabbitConsumerBare.kt</a>.</p>
+
+<p>Intermediate programmers go for the wrapper libraries  and violate this rule because they don’t trust their own abilities. Often they will  justify it by  telling themselves that they are  saving time which  is due to the false sense of productivity that you will get  in the beginning stages. If the application is going to live through a few years and multiple versions that initial productivity will become irrelevant. It will quickly be over shadowed by the tentacles and complexity the framework coupling has created.</p>
+
+<blockquote>
+  <p>Separate your code from the library, replacing the library should be not be a re-write.</p>
+</blockquote>
+
+<p>Here is a common scenario:  You  have a <em>Spring Boot</em> Application and you start using <em>Spring Boot AMQP</em>. You just added the <em>Gradle</em> dependency and start putting annotations. You go read the documentation to understand the configuration settings and for the most part is just works.  You feel productive. Later you realize the way they are using channels and connections to <em>RabbitMQ</em> isn’t as efficient as it can be. It also is blocking and you want something asynchronous. It is also not efficiently managing threads. This is the price to pay for productivity you say. Your application becomes popular and you find yourself having to remove <em>RabbitMQ</em> completely because you realize that <em>RSocket</em> would give you more bandwidth and lower latency. Now you come face-to-face with a months worth re-writing code. Even then how poorly seperated the business logic from the framework is overlooked.</p>
+
+<p>When an application is correctly structured changing from <em>RabbitMQ</em> to <em>RSocket</em> is straightfoward, satisfiying, everything falls into place and there is a feeling that it is writing itself.  Professional programmers learn this by doing a couple major refactors and they reflect back and realize that the lastest and greatest framework a year later is obselete and must be replaced with a newer framework. When using a framework or library write code asking what if I use a different library or framework how much of my code must be re-written, what files must be changed? This will guide you in making better choices.</p>
+
+
+  </div>
+
+</article>
                 </div>
             </main>
         </div></div><footer class="site-footer h-card">
