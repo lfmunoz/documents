@@ -113,3 +113,53 @@ ufw delete allow http
 ufw reset
 ```
 
+
+
+# SSH
+
+
+```
+# generate key pair
+ssh-keygen -t rsa -b 4096
+ssh-keygen -t ecdsa -b 521
+
+#  public key must be copied to a server and installed in an authorized_keys file.
+ssh-copy-id -i ~/.ssh/tatu-key-ecdsa user@host
+
+#  put the public key into the ~/.ssh/authorized_keys 
+cat ~/.ssh/id_rsa.pub | ssh USER@HOST "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"
+
+
+```
+
+
+```
+# The permissions of ~/.ssh on the server should be 700
+# ~/.ssh/authorized_keys (on the server) is supposed to have a mode of 600
+# review /var/log/auth.log for debugging
+# /home/luis/.ssh/
+.
+├── config
+├── id_rsa
+├── id_rsa.pub
+├── known_hosts
+├── authorized_keys
+```
+
+
+```
+# /home/luis/.ssh/config
+
+Host webA
+    HostName websiteB.com
+    User john
+    IdentityFile ~/.ssh/id_rsa
+
+Host webB
+    HostName websiteA.com
+    User luis
+    Port 24
+    IdentityFile ~/.ssh/id_rsa
+
+```
+

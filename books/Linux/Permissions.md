@@ -14,6 +14,37 @@ toc: true
 
 ## Users and Groups
 
+
+```bash
+useradd <username>
+useradd -G admins,webadmin,developers tecmint
+
+passwd <username>
+
+userdel paul
+
+
+# interactive 
+adduser username
+
+# add the user to the sudo group
+usermod -aG sudo username
+
+# switch to the new user account.
+su - username
+```
+
+* -c comment: Add a comment for the user 
+* -d home-directory: Create a new home-directory 
+* -e yyyy-mm-dd: Date for the account to be disabled 
+* -f days: Number of days after the password expires until the account is disabled. (If 0 is specified, the account is disabled immediately after the password expires. If -1 is specified, the account is not be disabled after the password expires.) 
+* -g group-name: Primary Group name or group number for the user's default group (group name must exist) 
+* -G group-list: List of secondary additional (other than default) group names or group numbers, separated by commas, of which the user is a member (group name must exist) 
+* -m: Create the home directory 
+* -M: Do not create the home directory 
+* -s: User's login shell (default /bin/bash)
+
+
 **/etc/passwd**  contains one line for each user account on the system. 
 
 ```bash

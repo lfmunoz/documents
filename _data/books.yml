@@ -28,6 +28,8 @@ list:
       url: /books/Java/Introduction.html
     - title: Kotlin
       url: /books/Kotlin/Introduction.html
+    - title: Python
+      url: /lang/Python/Introduction.html
     - title: Bash
       url: /lang/Bash/Introduction.html
     - title: Makefile

@@ -165,3 +165,11 @@ git lg --all
 ```
 git archive --output=../infra_dev_envoy.tar --format=tar HEAD
 ```
+
+
+# Remote
+
+```bash
+# Change remote URL
+git remote set-url origin git@github.com:lfmunoz/documents.git
+```

@@ -61,6 +61,7 @@ $T(n) \leq  c \cdot n^k $.
 </div>
 
 
+$1 < log n < \sqrt{n} < n < n log n < n^2 < n^3 < ... < 2^n < 3^n < ... < n^n$
 
 
 
@@ -92,9 +93,92 @@ $a > 0, b > 0, and f(n) = O(n^k)$ where $k \geq 0$
 
 
 
+
+
+## Big O Examples
+
+
+
+```c
+//O(log_2 n)
+for(i = 1; i < n; i = i * 2) {
+    statement;
+}
+```
+
+
+
+```c
+//O(log_2 n)
+for(i = n; i >= 1; i = i /2  ) {
+    statement;
+}
+```
+
+
+
+```c
+// O(n)
+void printAllElementOfArray(int arr[], int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        printf("%d\n", arr[i]);
+    }
+}
+```
+
+```c
+//O(n^2)
+void printAllPossibleOrderedPairs(int arr[], int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        for (int j = 0; j < size; j++)
+        {
+            printf("%d = %d\n", arr[i], arr[j]);
+        }
+     }
+}
+```
+
+
+```c
+// O(n^2)
+sum = 0;
+for (i = 0; i < n; i++ )
+    for (j = 0; j < i; j++) 
+        sum++;
+```
+
+
+
+
+```c
+//O(2^n)
+int fibonacci(int num)
+{
+    if (num <= 1) return num;
+    return fibonacci(num - 2) + fibonacci(num - 1);
+}
+```
+
+```c
+
+// O(n)
+void test(int n) {
+    if (n > 0) {
+        test(n-1);
+    }
+}
+```
+
+
 ## References 
 
 * Masters Theorem Decreasing Function - Abdul Bari
 * https://www.youtube.com/watch?v=OynWkEj0S-s
 
+* https://www.youtube.com/watch?v=9SgLBjXqwd4
 
+* https://developerinsider.co/big-o-notation-explained-with-examples/

@@ -61,7 +61,20 @@ implementation("org.fissore:slf4j-fluent:$slf4jFluentVersion")
 
 
 ```
+
+
+
 val log = FluentLoggerFactory.getLogger(KafkaPublisherImpl::class.java)
 log.info().log("Starting GenericKafkaFlinkJob...")
 log.info().log("[Configuration] - $config")
+```
+
+```java
+
+import org.fissore.slf4j.FluentLogger;
+import org.fissore.slf4j.FluentLoggerFactory;
+
+private static FluentLogger log = FluentLoggerFactory.getLogger("ConvertService");
+
+  log.debug().log("parse_keyword " + it.current());
 ```
